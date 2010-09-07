@@ -1,4 +1,5 @@
 ﻿	07.09.2010
+		** có nên đang ký môn Java?
 		- Setup: x
 			. Win7
 			. VS2k8
@@ -21,9 +22,25 @@
 			. Create Project Store Place by GoogleCode
 			. Import to host
 			. Document: 
-		
-		
-		
+				- Một khách hàng có bao nhiêu số điện thoại? Sẽ quản lý khách hàng bằng cách nào ? Trong tin nhắn không có  lưu thông tin 
+				khách hàng
+				[Customer]
+				- Current PCode? => khách hàng có thể sử dụng 2 PCode khác nhau hay không?
+				- Mất điện thoại => mất PCode vì có lưu trong tin nhắn => khách hàng sẽ mất tiền nếu không khóa tài khoản lại
+				hoặc nếu không đổi PCode khác
+				Pacific Code:
+					. Date: date of the day
+					. LastDate: date of the day
+					=> what different from ??
+					
+					"2. SMS from No registered phone"
+					=> Số điện thoại khác có thể mua hàng từ PCode hay không?
+					"If the Password exist for a shop?" => có nghĩa là sao? số điện thoại đã tồn tại trong của hàng đó?
+					Nếu là của cửa hàng khác thì sao? có tạo thành một mã code mới không?
+					Nếu là của của hàng cũ? nạp tiền vào mã code cũ???
+					
+		- Y tuong:
+			phim hay, ca nhac hay => link toi trang Google...
 
 	06.09.2010
         - Skype ID
