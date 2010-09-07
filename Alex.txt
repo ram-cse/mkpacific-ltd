@@ -1,0 +1,72 @@
+﻿	07.09.2010
+		- Setup: x
+			. Win7
+			. VS2k8
+			. Office
+			. Winrar, Skype, Adobe, Firefox 
+			Nodepad++, Photoshop, TotalCmd, Office
+			TortoiseSVN, Orbitdownloader, UltraISO, SaveAsPDF
+			. Visio
+			. MindMap
+			
+		
+		- Tìm hiểu:
+			. ASP.Net MVC
+			. WCF
+			. Cài IIS (từ CD Win7)
+			. Project HW bằng ASP.Net
+			. Setup ASP.Net MVC
+		
+		- Main:
+			. Create Project Store Place by GoogleCode
+			. Import to host
+			. Document: 
+		
+		
+		
+
+	06.09.2010
+        - Skype ID
+        - Set Up:
+            . MindMap
+            . Office 2k8
+            . VS.Net 2K8
+            . DB:MS SQL 2008
+            
+        - Plan
+        
+            . Tìm hiểu kỹ thuật: SOAP || Web Service ??
+                Kỹ thuật WCF
+                    http://cid-0030df1a0e8e9dc5.skydrive.live.com/self.aspx/MIC%20Tutorials/WCF/WCF|_Lesson|_2.pdf
+                Kỹ thuật ASP.Net MVC
+                    http://namnvhue.spaces.live.com/blog/cns!3441CD967DBDEAB3!198.entry
+            
+            . Qui trình: Unitied Process
+                1. Statement Of Work.
+                2. Specs (Use Cases, Features, UIs).
+                3. Project Plan (Estimation, Schedule, Risk List)
+                4. Configuration Plan.
+                5. Architecture Design.
+                6. Detailed Design (Class, Sequence).
+                7. Data Design.
+                8. Source Code.
+                9. Test document (Test Plan, Test Cases, Test Data, Test Results)
+                10. Release (Setup, Installation Guide, User Guide)
+            
+            . Thiết kế CSDL: ..
+            . Xác định Requirement: 1 document (Visio) mô tả qui trình, các bước nghiệp vụ. 1 document mô tả lại
+            bằng word. Liệt kê những gì đã có, những gì chưa có (Chỉ làm đơn giản, sẽ thay đổi nhiều lần sau khi xác định rõ)
+            . UseCase: (có thể có để mô tả chi tiết)
+            . Soure Code: Dựng 1 webservice giả lập để demo những gì làm
+                - Gọi WebService: send nội dung (chưa mã hóa) yêu cầu phát sinh mã code
+                    
+                - Xử lý: Dựa vào Rule, phát sinh PC
+                
+                - Mã hóa, trả ra yêu cầu
+            
+        - Read Document
+        
+        - Subversion:
+            Tài liệu tham khảo:
+                - CSDL Moodle KHTN:...
+                - ASP.Net: 
