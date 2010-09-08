@@ -702,6 +702,7 @@ msdnaa
 0811014@student.hcmus.edu.vn
 100990
 
+
 ------------------------------------------------------------------
 0512086@student.hcmus.edu.vn => Nguyen Nhu Cuong
 301287
@@ -713,6 +714,7 @@ http://msdn70.e-academy.com/natsci_compsci
 
 Tên đăng nhập của bạn là: 0512086@student.hcmus.edu.vn
 Mật khẩu của bạn là: TGA75694
+-> đang sử dụng Visio
 -------------------------------------------------------------------
 0512044	Châu Chí	Thiện	0	CQ	20/10/83
 pass:201083
