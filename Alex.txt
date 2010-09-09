@@ -1,4 +1,35 @@
-﻿	08.09.2010
+﻿	09.09.2010
+		- SQL 2008
+		- Thiết kế CSDL MoneyPacificPayment
+			.
+		- MVC:8 Sample
+			SP1:
+				. Overviewed the basic folder structure
+				. Create & run MVC Project
+				. Controller with four Controller Action respond to URL Request
+				
+			SP2: View and ViewModel
+				. Using a MVC 2 MasterPage
+				. Add a View Page for an action of a controlller
+					The code call "return View()";
+				. "One common technique is to use a ViewModel"
+				Note: Prior to ASP.NET 4, the <%= %> syntax was used to execute code and write it out to the page. Starting with ASP.NET 4, 
+				you should always use the <%: %> syntax instead, since it will automatically HTML Encode the results, similar to how we used
+				Server.HtmlEncode() in our controller action earlier.
+				
+				We’re using the Server.HtmlEncode utility method to sanitize the user input.
+				This prevents users from injecting Javascript into our View with a link like 
+				/Store/Browse?Genre=<script>window.location=’http://hackersite.com’</script>.
+				
+				Tạo HtmlHelper => sử dụng HTML.Truncate(..)
+				HtmlHelper là lớp gì? tại sao khi sử dụng lại không cần gọi đúng tên (chỉ gọi Html), lớp đó đã có hay chưa??
+				
+		CHỜ TỚI KHI XONG DỰ ÁN
+		NHẪN
+		
+		*** Re do it 10 times at least.. (tonight).
+
+	08.09.2010
 		- Cài đặt:
 			. Rational Rose: dùng để phân tích yêu cầu
 			http://www.directdownloads.ws/downloads/85560-ibm-rational-rose-enterprise-v-7.html
