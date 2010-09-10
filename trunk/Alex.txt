@@ -1,4 +1,14 @@
-﻿	09.09.2010
+﻿	10.09.2010
+		- Thiết kế CSDL:
+			. chuẩn đặt tên trường
+			. Thiết kế MoneyPacific01, và MoneyPacific02 nhưng còn nhập nhằng trong vấn đề yêu cầu. Nếu thiết kế quá đơn giản sẽ nhanh hơn nhưng khó mở rộng sau này => cần xác định lại yêu cầu cho rõ ràng.
+
+		- Xác định lại yêu cầu vào tập tin First.docx
+		- 2 câu hỏi:
+			Transaction: là giao dịch mua bán giữa cửa hàng (store) với trung tâm => SAI, transaction lưu tất cả thông tin hoạt động giao dịch của cả hệ thống ***
+			xyz xyz: giao dịch giữa các tài khoản PCode với nhau
+				Có bao nhiêu loại giao dịch này?
+	09.09.2010
 		- SQL 2008
 		- Thiết kế CSDL MoneyPacificPayment
 			.
