@@ -15,7 +15,7 @@
 				. Trả lại chuỗi tin nhắn thông qua WCFservice
 				
 				. x WCF Server (console) & client console
-				.   WCF Server (console) & clien winform
+				. x WCF Server (console) & clien winform
 				.   WCF Server (IIS) & client winform
 				
 				. Cấu hình cho chạy tại IIS ***
