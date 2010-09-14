@@ -1,4 +1,56 @@
-﻿	10.09.2010
+﻿	14.09.2010
+		- Add LinQ to Project. Design 3Layer
+		- A small demo application call the WCF Service...
+		- Chức năng cơ bản:
+
+			+ Ứng dụng Client: Đã được viết bằng PHP nhưng tự động gửi mail chứ không phải tự động gọi WCF Service
+				. Đọc tập tin cấu hình Server, chỉ gồm: thông tin địa chỉ 							
+				. Send tin nhắn tới server bằng cú pháp: Toàn bộ nội dung SMS.
+				. Không cần lọc nội dung tin vì không sợ DDOS
+				. Nhận tin nhắn với cấu trúc: SoDT Người nhận
+			+ Ứng dụng Server: 
+				. Nhận chuỗi tin nhắn thông qua WCF
+				. Gửi xuống controller phân tích cú pháp
+				. Nhận lệnh, xử lý & trả ra chuỗi kết quả.
+				. Trả lại chuỗi tin nhắn thông qua WCFservice
+				
+				. x WCF Server (console) & client console
+				.   WCF Server (console) & clien winform
+				.   WCF Server (IIS) & client winform
+				
+				. Cấu hình cho chạy tại IIS ***
+				  Hiện tại đang chạy service trên Console...
+				  
+				  *** "What method interoperability do you want to use?"
+				  
+			Sample 06.StaffServiceConsole & 06.StaffClient đã chạy được
+				
+	
+		Difference between WCF and Web service
+		http://www.wcftutorial.net/Difference-between-WCF-and-Webservice.aspx
+		
+		http://codepronet.blogspot.com/2009/03/wcf-tutorial.html
+		
+		Nhac  Bao Yen:
+		http://mp3.zing.vn/mp3/nghe-album/Ai-Ve-Xu-Viet-Bao-Yen-V.78054.html
+		
+	
+		
+
+	13.09.2010
+		- 
+		- Hỏi: 
+			+ Cột SMS trong bảng Transaction dùng để làm gì?
+			VD: SMS101, SMS207 ...
+			+ Cột Transaction - ID Transaction: new ID Transaction
+			có ý nghĩa gì??
+			
+		- SN của AMinh
+		- Test WCF WebService:
+			C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\WcfTestClient.exe
+		- 
+
+	10.09.2010
 		- Thiết kế CSDL:
 			. chuẩn đặt tên trường
 			. Thiết kế MoneyPacific01, và MoneyPacific02 nhưng còn nhập nhằng trong vấn đề yêu cầu. Nếu thiết kế quá đơn giản sẽ nhanh hơn nhưng khó mở rộng sau này => cần xác định lại yêu cầu cho rõ ràng.
@@ -12,8 +64,8 @@
 		- SQL 2008
 		- Thiết kế CSDL MoneyPacificPayment
 			.
-		- MVC:8 Sample
-			SP1:
+		- MVC:8 Sample 
+			SP1: 
 				. Overviewed the basic folder structure
 				. Create & run MVC Project
 				. Controller with four Controller Action respond to URL Request

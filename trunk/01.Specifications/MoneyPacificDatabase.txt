@@ -1,0 +1,94 @@
+﻿
+	Hỏi, có thể tự nghĩ ra câu trả lời hoặc một gợi ý để giải quyết cho trường hợp tốt nhất
+
+	+ Customer:
+		Date: ngày khởi tạo?
+		Last Date: ngày ?
+		Last Id Transaction: ..
+		Current P Code: => 1 số điện thoại là 1 người, số code này có thể dùng qua điện thoại khác hay không?
+		Number transaction: tổng số transaction ?
+		Phone number: 
+			Số điện thoại của khách hàng? có thể dùng số điện thoại khác hay không?
+		Name: tên khách hàng
+		Address: địa chỉ
+		Secur code: mã bảo mật? dùng để làm gì? để khôi phục mã Pacific Code ??
+		Customer ID: mã xác định duy nhất một khách hàng
+		Email: ?? 
+			=> Các thông tin cá nhân? khi mua khác hàng phải ghi thông tin cá nhân cho: Cửa hàng hoặc Web Site
+			Pacific Code: Pass Store * amount * customer phone * amount for control
+				=> khi số điện thoại đã tồn tại trong danh sách một khách hàng nào đó
+				tự động nạp tiền vào tài khoản Pacific Code ?
+				Nếu một khách hàng có nhiều Pacific Code thì nạp vào tài khỏan nào 
+				hay là tạo mới một PCode cho khách hàng
+		Pin code: 
+			Mã pin là mã vùng-> mat khau
+		
+		Status:
+			Status này sẽ đựơc định nghĩa sau? khi đang phát triển dĩ nhiên sẽ có nhu cầu thêm
+			status id mới cho trường hợp mới? Có khi nào bị thay mã code hay không, ví dụ: 91 hiện tại là lock,
+			sau này có thể bị thành black list không?
+			...
+	
+	+ Store:
+			Cửa hàng của MP, mua hàng bằng cách nhắn tin trên website
+		
+		Date: ngày đăng ký cửa hàng
+		ID Store: mã xác định duy nhất của hàng
+		Pass Store: mật mã cửa hàng, dùng để gửi tin nhắn nạp tiền cho khách hàng hoặc mua mã PCode
+		Last date: 
+			ngày cuối cùng có giao dịch?
+		Last transaction: 
+			id transaction cuối cùng
+		Number sale: 
+			số lần thực hiện mua bán? hay là số thứ tự?
+		Total sale:
+			tổng số lần mua bán hay là tổng số tiền 
+		Comment: (thông tin comment này  là do MP ghi, để dùng để quản lý)
+		Phone number: ?? 
+			no change? nghĩa là sao, không được thay đổi? một Store chỉ có duy nhất 1 số điện thoại dùng để mua ban
+			nếu SHOP đó muốn có thêm 2 số dt để mua bán => phải đăng ký thành 1 Store mới hay không?
+		
+	+ Transaction:
+		ID Transaction: mã xác định giao dịch
+		Date: ngày thực hiện giao dịch mua bán
+		Origine: thông tin này là thông tin gì?
+		From: ? từ một khách hàng (Customer ID)
+		Phone Number: số điện thoại đã dùng để mua hàng? nếu mua trên internet thì lưu bằng thông tin gì? có rule chưa: vd. 00000
+		To: 
+			thanh toán cho một khách hàng nào đó... (ID là gì?)
+			thanh toán như thế nào? thông qua mã  PCode? tự động tiền sẽ chuyển từ PCode 01 sang PCode 02???
+		Amount: số tiền thanh toán?
+			đơn vị tính là gì? sau này có thay đổi không? ví dụ USD => ERO
+			đơn vị tính là Việt Nam Đồng (dùng cho việt nam)?
+		Status:
+			11 giao dịch bằng phone?
+			501
+			502
+			503, 810/31, 810/32?
+			.. => tại sao không dùng 001, 002, 003, 004.. dùng những con số đơn giản & liên tục, dùng như thế này có Ý NGHĨA gì không?
+			có dựa trên cái STATUS CHUẨN nào có sẵn hay không?
+		
+		Comment: (ko quan trọng để hỏi) thông tin này do hệ thống ghi? khách hàng có ghi đựơc hay không?
+		IP time: thời gian thực hiện giao dịch ? ngày và giờ việt nam???
+		
+	+ Pacific Code:
+		Date: Ngày tạo?
+		Last date: ? ngày nào? ngày cập nhật thêm tiền? hay là ngày cập nhật
+			
+			=> trang web này giống 1 trang web bên pháp? đó là trang web nào? để có thể lấy thêm thông tin?
+		
+		Expire date:
+			=> Sẽ có 1 cái rule về Expire
+		Comment:
+		
+		
+		- Làm sao để xác định 1 Customer?
+			. Xác định qua số điện thoại:
+				Một khách hàng có thể có 2 số điện thoại => vậy có 2 mã code?
+				Có thể gom các mã code thành 1 mã để mua hàng hay ko?
+			.
+
+	Các trường hợp khi nhận tin nhắn:
+		1. Số điện thoại mới, chưa được đăng ký
+		2. Số điện thoại cũ
+		
