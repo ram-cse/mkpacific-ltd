@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PacificCode>
+  <parameter name="a" index="1" value="random"/>
+  <parameter name="b" index="2" value="random"/>
+  <parameter name="c" index="3" value="random"/>
+  <parameter name="d" index="4" value="random"/>
+
+  <parameter name="e" index="5" value="random"/>
+  <parameter name="f" index="6" value="random"/>
+  <parameter name="g" index="7" value="random"/>
+  <parameter name="h" index="8" value="random"/>
+
+  <parameter name="i" index="9" value="random"/>
+  <parameter name="j" index="10" value="random"/>
+  <parameter name="k" index="11" value="random"/>
+  <parameter name="l" index="12" value="random"/>
+
+  <parameter name="m" index="13" value="random"/>
+  <parameter name="n" index="14" value="random"/>
+  <parameter name="o" index="15" value="(a+b+c+d+e+f+g)/(h+i+j+k+l+m+n+1)"/>
+  <parameter name="p" index="16" value="(a+2*b+3*c+4*d+5*e+6*f+7*g)/(h+i+j+k+l+m+n+1)"/>
+</PacificCode>

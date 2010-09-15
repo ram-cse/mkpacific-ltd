@@ -1,14 +1,52 @@
 ﻿	15.09.2010:
 		- Fix lỗi Deploying WebSite on IIS
-			. Chỉnh ApplicationPool là ASP4.0 (trong IIS chưa cấu hình sẵn cho mình, mặc định nó là DefaultAppPoll)
-			. Lỗi mới phát sinh: khi tạo mới 1 website, nếu chưa có website nào bị lỗi ... thì webmới tạo sẽ bị lỗi
+			. x Chỉnh ApplicationPool là ASP4.0 (trong IIS chưa cấu hình sẵn cho mình, mặc định nó là DefaultAppPoll)
+			. x Lỗi mới phát sinh: khi tạo mới 1 website, nếu chưa có website nào bị lỗi ... thì webmới tạo sẽ bị lỗi
+				=> khởi động lại tự nhiên ko gặp lỗi này nữa. ko hiểu
+				
 		- Plan:
-			. Sửa được lỗi Deploying WebSite trên IIS
-			. Deploy WCF Application trên IIS
-			. Deploy WCF Library trên IIS
+			
+			. x Sửa được lỗi Deploying WebSite trên IIS
+			
+			. x Deploy WCF Application trên IIS
+				Deploy giống WEB => FileSystem: chọn 1 thư mục. Copy nội dung thư mục này lên 1 thư mục WebApplication của 
+				IIS
+				
+			. x Viết 1 Ứng dụng sử dụng WCF Application:
+			    Dùng chương trình svcutil.exe để down: Service.cs & App.config(đổi tên từ web.config) về.
+			    Add 2 tập tin này vào 1 project mới (có reference tới 
+				
+			. x Deploy WCF Library trên IIS
+			  x Viết ứng dụng gọi WCF Library chạy trên iis
+			  
 			. Truyền tin nhắn có cấu trúc: STORE_PHONE*12345*500000*0932130483*500000
 			. Nhận lại kết quả: 
 
+			. WCF Library - MoneyPacificService: 
+				+ Nhận chuỗi tin nhắn có nội dung như sau:
+				
+				  STORE_PHONE*PASSWORD*AMOUNT*CUSTOMER_PHONE*AMOUNT
+				  
+				+ Reply: (*** RULE ***)
+				  SoDienThoai*NoiDungTinNhan
+				  
+			. GetSmsServer:
+				
+				Đã có chức năng: 
+				+ Nhận SMS: Tự động gỏi MAIL
+				+ Nhận MAIL: tự động gửi SMS
+				
+				Chưa có chức năng:				
+			    + Nhận SMS: Tự động gọi WCF Service
+				+ Nhận trả lời WCF: tự động gửi SMS
+		
+		- Gửi mail cho: patrick.dumoleyn
+			Hỏi về chức năng của sms:
+			
+			SMS-Monitor có chức năng: 
+				- khi nhận được một sms thì sẽ tự động gửi mail: content of the sms message
+				- khi nhận được mai
+				
 		Lab của MS
 		http://msdn.microsoft.com/en-us/devlabs/ee794896.aspx
 		
