@@ -1,4 +1,20 @@
-﻿	14.09.2010
+﻿	15.09.2010:
+		- Fix lỗi Deploying WebSite on IIS
+			. Chỉnh ApplicationPool là ASP4.0 (trong IIS chưa cấu hình sẵn cho mình, mặc định nó là DefaultAppPoll)
+			. Lỗi mới phát sinh: khi tạo mới 1 website, nếu chưa có website nào bị lỗi ... thì webmới tạo sẽ bị lỗi
+		- Plan:
+			. Sửa được lỗi Deploying WebSite trên IIS
+			. Deploy WCF Application trên IIS
+			. Deploy WCF Library trên IIS
+			. Truyền tin nhắn có cấu trúc: STORE_PHONE*12345*500000*0932130483*500000
+			. Nhận lại kết quả: 
+
+		Lab của MS
+		http://msdn.microsoft.com/en-us/devlabs/ee794896.aspx
+		
+		Sử dụng key MSDNAA - VS2010 Professional:
+		
+	14.09.2010
 		- Add LinQ to Project. Design 3Layer
 		- A small demo application call the WCF Service...
 		- Chức năng cơ bản:
@@ -8,6 +24,7 @@
 				. Send tin nhắn tới server bằng cú pháp: Toàn bộ nội dung SMS.
 				. Không cần lọc nội dung tin vì không sợ DDOS
 				. Nhận tin nhắn với cấu trúc: SoDT Người nhận
+				
 			+ Ứng dụng Server: 
 				. Nhận chuỗi tin nhắn thông qua WCF
 				. Gửi xuống controller phân tích cú pháp
