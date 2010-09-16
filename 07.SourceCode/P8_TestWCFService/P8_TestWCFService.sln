@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P8_TestWCFService", "P8_TestWCFService\P8_TestWCFService.csproj", "{2B5187E6-70A3-4C03-B555-77250B94EC01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B5187E6-70A3-4C03-B555-77250B94EC01}.Debug|x86.ActiveCfg = Debug|x86
+		{2B5187E6-70A3-4C03-B555-77250B94EC01}.Debug|x86.Build.0 = Debug|x86
+		{2B5187E6-70A3-4C03-B555-77250B94EC01}.Release|x86.ActiveCfg = Release|x86
+		{2B5187E6-70A3-4C03-B555-77250B94EC01}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

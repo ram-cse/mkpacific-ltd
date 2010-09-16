@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="432b8a79-5147-4d31-83f2-f4356d1e7d1f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/moneypacific/MainService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MainService.xsd" MetadataType="Schema" ID="5fb5d403-ea09-4999-ba9b-abb775fbc20b" SourceId="1" SourceUrl="http://localhost/moneypacific/MainService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MainService.disco" MetadataType="Disco" ID="acb84904-3f78-4719-865c-bec5738c0f59" SourceId="1" SourceUrl="http://localhost/moneypacific/MainService.svc?disco" />
+    <MetadataFile FileName="MainService1.xsd" MetadataType="Schema" ID="87a8df7e-a675-4e8c-b2ea-5b06f958322d" SourceId="1" SourceUrl="http://localhost/moneypacific/MainService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MainService.wsdl" MetadataType="Wsdl" ID="e8e96eea-5683-4f18-b072-155ffc27f800" SourceId="1" SourceUrl="http://localhost/moneypacific/MainService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

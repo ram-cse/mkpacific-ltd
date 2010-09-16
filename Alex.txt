@@ -1,4 +1,39 @@
-﻿	15.09.2010:
+﻿	16.09.2010:
+	
+		WCF with php		
+		http://weblogs.asp.net/gunnarpeipman/archive/2007/09/17/using-wcf-services-with-php.aspx		
+		dùng PHP để gọi WCF Service
+	
+	Loi bai hat:
+		chuyen tinh ta tan vo
+		van buoc chan đêm từng đêm lệ sầu
+		
+	
+	
+		You are about to send information over the network. Insecure bindings or malicious services could allow private information to be viewed by orthers. Do no try to invoke service you do not trust, and use a secure binding if you are transmitting information you do not want others to see.
+		
+		0932130483*12345*500000*0939146267*500000
+	
+		*?* làm sao để cải thiện tốc độ code khi đã có ý tưởng và biết cách làm?
+		Ví dụ: cùng code 1 bài, nhưng bài đó trong khi thi sẽ làm trong vòng 45phút
+		nếu không phải trong lúc thi thì làm trong vòng 1 buổi
+		sau khi làm nhanh xong sẽ chỉnh sửa kỹ thuật & làm kỹ lại sau ***
+		
+		- SourceCode:
+			. Phát sinh PCode bất kỳ
+			. Đọc tập tin XML => Load thông tin luật phát sinh PacificCode
+			. Viết lớp Tiện Ích để sử lý số ngẫu nhiên 0-9
+			. Thêm dữ liệu: 3 đối tượng store + pass_store
+			
+			. Phân tích tin nhắn: -> gọi phương thức đặt hàng(store, pass_store, amount, sodienthoai)
+				Bước kiểm tra amount được xử lý ở lớp GUI (lớp dịch vụ)
+			. Xây dựng lớp MessageManger => gồm các phương thức static (tĩnh) tự động tạo các message 
+			theo chuẩn load từ các tập tin xml
+			
+		- *** nội dung dữ liệu gọi WCF có thể là chuỗi XML?? sẽ dễ dàng xử lý hơn và CHÍNH XÁC hơn
+		*** chức năng này sẽ làm nếu như can thiệp được vào phần mềm phía SERVER VIETNAM
+
+	15.09.2010:
 		- Fix lỗi Deploying WebSite on IIS
 			. x Chỉnh ApplicationPool là ASP4.0 (trong IIS chưa cấu hình sẵn cho mình, mặc định nó là DefaultAppPoll)
 			. x Lỗi mới phát sinh: khi tạo mới 1 website, nếu chưa có website nào bị lỗi ... thì webmới tạo sẽ bị lỗi
