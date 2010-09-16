@@ -10,6 +10,11 @@ namespace _08.MoneyPacificService.BUS
     public class GeneratorBUS
     {
 
+
+        // Những phương này không còn sử dụng nữa, 
+        // Thay vào là những phương thức trong lớp PacificCodeBUS
+
+        /*
         internal static PacificCode CreateNewCode()
         {
             // Phương thức này có họat động:
@@ -22,5 +27,6 @@ namespace _08.MoneyPacificService.BUS
         {
             throw new NotImplementedException();
         }
+        //* */
     }
 }

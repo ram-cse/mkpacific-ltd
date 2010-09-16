@@ -9,12 +9,17 @@ namespace _08.MoneyPacificService.DAO
     {
         internal static bool checkExist(DTO.Store senderStore)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            // chưa tồn tại
+
+            return false;
         }
 
         internal static bool checkPassword(DTO.Store senderStore)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            return true;
+            
         }
     }
 }

@@ -13,7 +13,9 @@ namespace _08.MoneyPacificService.BUS
 
         internal static bool checkValid(int amountBuy)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+
+            return true;
         }
     }
 }
