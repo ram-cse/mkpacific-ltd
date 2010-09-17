@@ -36,7 +36,7 @@ namespace _08.MoneyPacificService.BUS
             try
             {
                 string[] arrArgs = smsContent.Split(separateChar);
-                return int.Parse(arrArgs[4]);
+                return int.Parse(arrArgs[2]);
             }
             catch
             {
@@ -49,7 +49,7 @@ namespace _08.MoneyPacificService.BUS
             try
             {
                 string[] arrArgs = smsContent.Split(separateChar);
-                return int.Parse(arrArgs[3]);
+                return int.Parse(arrArgs[4]);
             }
             catch
             {

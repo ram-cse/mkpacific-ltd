@@ -7,5 +7,6 @@ namespace _08.MoneyPacificService.BUS
 {
     public class CustomerBUS
     {
+
     }
 }

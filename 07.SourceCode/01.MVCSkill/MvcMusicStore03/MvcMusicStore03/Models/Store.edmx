@@ -323,7 +323,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InvoiceLine_Album">
-          <End Role="Album" Type="MvcMusicStoreModel.Album" Multiplicity="1" />
+          <End Role="Album" Type="MvcMusicStoreModel.Album" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="OrderDetail" Type="MvcMusicStoreModel.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Album">
