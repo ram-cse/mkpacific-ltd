@@ -33,14 +33,14 @@ namespace MvcMusicStore03.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class MusicStoreEntities : ObjectContext
+    public partial class MvcMusicStoreEntities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
         /// Initializes a new MvcMusicStoreEntities object using the connection string found in the 'MvcMusicStoreEntities' section of the application configuration file.
         /// </summary>
-        public MusicStoreEntities() : base("name=MvcMusicStoreEntities", "MvcMusicStoreEntities")
+        public MvcMusicStoreEntities() : base("name=MvcMusicStoreEntities", "MvcMusicStoreEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -49,7 +49,7 @@ namespace MvcMusicStore03.Models
         /// <summary>
         /// Initialize a new MvcMusicStoreEntities object.
         /// </summary>
-        public MusicStoreEntities(string connectionString) : base(connectionString, "MvcMusicStoreEntities")
+        public MvcMusicStoreEntities(string connectionString) : base(connectionString, "MvcMusicStoreEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -58,7 +58,7 @@ namespace MvcMusicStore03.Models
         /// <summary>
         /// Initialize a new MvcMusicStoreEntities object.
         /// </summary>
-        public MusicStoreEntities(EntityConnection connection) : base(connection, "MvcMusicStoreEntities")
+        public MvcMusicStoreEntities(EntityConnection connection) : base(connection, "MvcMusicStoreEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();

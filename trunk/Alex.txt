@@ -1,4 +1,44 @@
-﻿	16.09.2010:
+﻿	17.09.2010:
+		** chức năng: đồng ý nhận tin tức trên web
+		
+		http://www.nhaccuatui.com/nghe?M=t0hgNY6l88
+		
+		Lịch: 
+		
+			- Làm xong chức năng phát sinh PCode, các thông báo lỗi
+			
+			- Làm chi tiết mô hình 3 lớp: 
+				+ CustomerBUS: thêm, sửa (khóa), kiểm tra tồn tại, kiểm tra mật khẩu
+				+ CustomerDAO: thêm, sửa, hiển thị danh sách
+				+ Store: thêm, sửa (khóa), kiểm tra tồn tại, kiểm tra mật khẩu
+				+ Store: thêm, sửa, hiển thị danh sách
+				+ TransactionBUS: Thêm, sửa, hiển thị danh sách, tìm kiếm theo nhiều điều kiện
+				+ TransactionDAO: ..
+			
+			- Mã hóa:
+				+ Một dll mã hóa đơn giản theo toán tử XOR
+				+ Bao gồm 2 phương thức: Encode, Decode.. khóa được lưu cứng trong code (bảo mật).
+				+ Cải thiện, có 3 khóa: được lưu thẳng trong tập tin, 3 khóa này lần lượt mã hóa những ký tự
+				có vị trí chia 3 dư là 1-2-0.
+			
+			- Thêm các bảng: loại tài khoản...
+			
+			- Down load các mẫu
+				
+			- Học MVC:
+				. S01
+				. S02
+				. S03
+				. S04
+				. S05
+				. S06
+				
+			
+		trang tin tức nước ngoài: http://www.nytimes.com/pages/business/economy/index.html
+
+	16.09.2010:
+	
+		
 	
 		WCF with php		
 		http://weblogs.asp.net/gunnarpeipman/archive/2007/09/17/using-wcf-services-with-php.aspx		

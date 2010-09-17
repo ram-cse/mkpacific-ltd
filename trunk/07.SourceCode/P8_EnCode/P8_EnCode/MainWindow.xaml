@@ -1,0 +1,11 @@
+﻿<Window x:Class="P8_EnCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ENCode-DECode" Height="160" Width="446">
+    <Grid>
+        <Button Content="Decode" Height="24" HorizontalAlignment="Left" Margin="310,83,0,0" Name="btnDecode" VerticalAlignment="Top" Width="102" Click="btnDecode_Click" />
+        <Button Content="Encode" Height="24" HorizontalAlignment="Left" Margin="310,53,0,0" Name="btnEncode" VerticalAlignment="Top" Width="102" Click="btnEncode_Click" />
+        <Label Content="C:\abc.txt" Height="34" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblPathFile" VerticalAlignment="Top" Width="362" BorderBrush="#FFD4CACA" BorderThickness="1" />
+        <Button Content="..." Height="33" HorizontalAlignment="Left" Margin="380,13,0,0" Name="btnBrowse" VerticalAlignment="Top" Width="32" Click="btnBrowse_Click" />
+    </Grid>
+</Window>
