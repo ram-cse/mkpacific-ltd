@@ -258,7 +258,7 @@ namespace _08.MoneyPacificService.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(20)")]
 		public string Phone
 		{
 			get
@@ -792,6 +792,8 @@ namespace _08.MoneyPacificService.DTO
 		
 		private string _Description;
 		
+		private System.Nullable<bool> _IsLocked;
+		
 		private EntitySet<Customer> _Customers;
 		
     #region Extensibility Method Definitions
@@ -804,6 +806,8 @@ namespace _08.MoneyPacificService.DTO
     partial void OnValueChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
+    partial void OnIsLockedChanging(System.Nullable<bool> value);
+    partial void OnIsLockedChanged();
     #endregion
 		
 		public CustomerStatus()
@@ -868,6 +872,26 @@ namespace _08.MoneyPacificService.DTO
 					this._Description = value;
 					this.SendPropertyChanged("Description");
 					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsLocked", DbType="Bit")]
+		public System.Nullable<bool> IsLocked
+		{
+			get
+			{
+				return this._IsLocked;
+			}
+			set
+			{
+				if ((this._IsLocked != value))
+				{
+					this.OnIsLockedChanging(value);
+					this.SendPropertyChanging();
+					this._IsLocked = value;
+					this.SendPropertyChanged("IsLocked");
+					this.OnIsLockedChanged();
 				}
 			}
 		}

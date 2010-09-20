@@ -29,8 +29,8 @@ namespace P8_TestWCFService
             
 
             MainServiceClient msclient = new MainServiceClient();
-            lblMessage.Content = "";
-            lblMessage.Content = msclient.SendMessage(txtContent.Text);
+            txtMessage.Text = "";
+            txtMessage.Text = msclient.SendMessage(txtContent.Text);
 
             msclient.Close();
         }
