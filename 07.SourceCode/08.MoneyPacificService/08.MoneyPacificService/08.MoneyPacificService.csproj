@@ -103,6 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMoneyPacific.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Util\Coder.cs" />
     <Compile Include="XAO\GeneratorXAO.cs" />
     <Compile Include="DTO\GeneratorDTO.cs" />
     <Compile Include="Service1.svc.cs">
@@ -114,9 +115,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="DTO\DBMoneyPacific.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

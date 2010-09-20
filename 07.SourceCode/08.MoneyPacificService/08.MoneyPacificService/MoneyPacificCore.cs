@@ -7,6 +7,7 @@ using _08.MoneyPacificService;
 using _08.MoneyPacificService.DTO;
 using _08.MoneyPacificService.DAO;
 using _08.MoneyPacificService.BUS;
+using _08.MoneyPacificService.Util;
 
 namespace _08.MoneyPacificService
 {
@@ -14,74 +15,79 @@ namespace _08.MoneyPacificService
     {
         internal static DBMoneyPacificDataContext db = new DBMoneyPacificDataContext();
 
-        internal static string GetRequest(string smsContent)
+        internal static string getRequest(string smsContent)
         {
+            // *** GIẢI MÃ - DECODE *** (not yet)
+            // smsContent = Coder.DeCode(smsContent);
 
             string smsResponse = "";
-            string sErrorMessage = "";
 
-            // NHẬN THÔNG TIN 
-            // *** GIẢI MÃ - DECODE *** (not yet)
+            string[] arrArg = smsContent.Split('*').ToArray();
 
-            // Cách xử lý này chưa chuẩn...
-            // Cần sửa lại theo 1 trong hai cách sau: 
-            //    1. Dùng XML có các parameter, gồm có các giá trị: name, value, index (vị trí tham số trong lời gọi)
-            //    2. Dùng 1 cấu trúc lệnh dạng mảng giống DOS Command
-
+            if (arrArg.Length == 1)
+            {
+                int newId = CustomerBUS.AddNew(smsContent);
+                return "this is an unit test: " + newId;
+            }
+            
             // command: chưa sử dụng
             string command = AnalystSyntaxBUS.getCommand(smsContent);
 
+            // Cần sửa lại cách nhận lệnh và tham số giống DOS Command
+            
             Store senderStore = AnalystSyntaxBUS.getSender(smsContent);
             int amountBuy = AnalystSyntaxBUS.getAmount(smsContent);
             int amountBuyConfirm = AnalystSyntaxBUS.getAmountConfirm(smsContent);
-            Customer newCustomer = AnalystSyntaxBUS.getCustomer(smsContent);
+            Customer buyerCustomer = AnalystSyntaxBUS.getCustomer(smsContent);
+
+            smsResponse = buyNewPacificCode(senderStore,amountBuy,buyerCustomer,amountBuyConfirm);
+            smsResponse = smsResponse + "---" + Coder.EnCode(smsResponse);
+            //smsResponse = Coder.EnCode(smsResponse);
+            return smsResponse;
+        }
+
+        //internal static string 
+
+        private static string buyNewPacificCode(Store senderStore, int amountBuy, Customer buyerCustomer, int amountBuyConfirm)
+        {
+            
+            string smsResponse = "";
+            string sErrorMessage = "";
 
 
             // KIỂM TRA
 
-            // 01. Kiểm tra người gửi có phải là STORE hay không?
-            //     a. Sai => "Yêu cầu bị từ chối" - bSender.. = false
-            //     b. Đúng => bSenderExist = .. true. 
-            //        RETURN luôn kết quả, send về cho người dùng
-            // (lý do tách 2 phần: kiểm tra tồn tại và kiểm tra pass ra riêng là
-            // để tách 2 phần thông báo lỗi cho người dùng cho rõ ràng 
-            
-            bool bSenderExist = StoreDAO.checkExist(senderStore);
+            // 01. Kiểm tra Store tồn tại & STATUS của Store.
+            // (Tách kiểm tra exist & pass ra thành 2 phần để báo lỗi rõ hơn)
 
-            // Nếu không tồn tại Store này
+            bool bSenderExist = StoreBUS.checkExist(senderStore);
+
             if (!bSenderExist)
             {
                 smsResponse = MessageManager.GenNotExistStoreMessage(senderStore.Phone);
                 return smsResponse;
             }
 
-
-            // 02. Kiểm tra thông tin PASSWORD của STORE chính xác hay không?
-            //     a. Sai => ErrorMessage += "-Sai mật khẩu";
-            //     b. Đúng => bCheckValidPassword = true
-
+            // 02. Kiểm tra PassStore
+            
             bool bCheckValidPassword = false;
-            
+
             bCheckValidPassword = StoreDAO.checkPassword(senderStore);
-            
+
             if (!bCheckValidPassword)
             {
                 sErrorMessage += MessageManager.GenErrorPasswordStoreMessage();
             }
 
-            // 03. Kiểm tra AMOUNT hợp lệ hay không (các loại thẻ sẽ bán)
-            //     a. Sai => .. & ErrorMessage += "-Số tiền không hợp lệ"
-            //     b. Đúng => b.. = true
-
+            // 03. Kiểm tra AMOUNT hợp lệ (load các loại thẻ đang bán)
+            
             bool bValidAmount = MoneyCardBUS.checkValid(amountBuy);
             if (!bValidAmount)
             {
                 sErrorMessage += MessageManager.GenInValidAmountMessage(amountBuy);
             }
 
-            // 04. Kiểm tra AMOUNT_CONFIRM - chứng thực số tiền có đúng hay không
-            //     a. Sai => .. false & ErrorMessage += "-Số tiền đăng ký và tiền chứng thực không khớp."
-            //     b. Đúng => b.. = true
+            // 04. Kiểm tra AMOUNT_CONFIRM             
 
             bool bValidConfirm = (amountBuy == amountBuyConfirm);
             if (!bValidConfirm)
@@ -90,65 +96,37 @@ namespace _08.MoneyPacificService
             }
 
             // 05. Kiểm tra CUSTOMER_PHONE hợp lệ
-            //     a. Sai => .. false & ErrorMessage += "-Số điện thoại này không có thật"
-            //     b. Đúng => b.. = true
 
-            bool bValidPhone = checkPhoneNumber(newCustomer.Phone);
+            bool bValidPhone = checkPhoneNumber(buyerCustomer.Phone);
             if (!bValidPhone)
             {
                 sErrorMessage += MessageManager.GenInValidPhoneMessage();
             }
 
+            // 06. Kiểm tra CUSTOMER_PHONE (tồn tại và STATUS)
 
-            // Kiểm tra lại: nếu bất kỳ biến nào ở trên có giá trị false thì Tổng hợp lại ErrorMessage
-            // và gửi về lại - RETURN cho SENDER_STORE
+            bool bCheckValidCustomer = false;
 
-            //     TẠO PACIFIC_CODE mới
-
-            // 06. Kiểm tra CUSTOMER_PHONE có tồn tại chưa
-            //     a. Đã tồn tại: lưu PacificCode mới với customer này
-            //     b. Chưa tồn tại:
-            //           - tạo mới customer với những thông tin cá nhân chưa có, chỉ có số điện thoại
-            //           - lưu PacificCode mới với customer vừa tạo này
-
+            buyerCustomer = CustomerBUS.getCustomer(buyerCustomer.Phone);
+            bCheckValidCustomer = CustomerBUS.checkCustomer(buyerCustomer);
+           
+            // Tạo PACIFIC_CODE mới với buyerCustomer (chắc chắn tạo dc)
+            
+            PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.ID, buyerCustomer.ID);
+            
             // Gửi 2 tin nhắn cho CUSTOMER & STORE (chưa làm cái này, phải xác định lại cấu trúc tin nhắn mới có thể làm được)
 
-            bool bGetNewPacificCode = false;            
-            PacificCode newPacificCode;
-            do
-            {
-                newPacificCode = PacificCodeBUS.GenerateNew();
-                // Nếu không bị trùng (trường hợp này rất ít khi xảy ra, tỉ lệ xảy ra là 1/10^11)
-                bGetNewPacificCode = !PacificCodeBUS.checkExist(newPacificCode.PacificCode1);
-            } while (bGetNewPacificCode == false);
-
             bool bRegisterSuccess = (
-                bCheckValidPassword 
-                && bValidAmount 
+                bCheckValidPassword
+                && bValidAmount
                 && bValidConfirm
                 && bValidPhone
+                && bCheckValidCustomer
                 );
 
-            // Lưu:
-            // Thông tin khách hàng (nếu là khách hàng mới thì thêm mới)
-            // Thông tin PacificCode với người sử dụng là newCustomer
-
-            // Cần viết một lóp có phương thức hoạt động như sau: truyền
-            // giá trị PCODE vào sẽ tự động sinh ra lời nhắn chuẩn
-            // Lời nhắn này được đọc từ tập tin XML
-
-            // Sau khi tạo thành công sẽ gửi 2 tin nhắn:
-            //
-            // + 1 tin nhắn gửi cho Store: thông báo là đã tạo thành công + mã số, không phải pacific_code
-            // trong ngày đầu tiên mua, store có thể yêu cầu gửi lại mã số cho người dùng (người đã mua số)
-            //
-            // + 1 tin nhắn gửi cho Customer: thông báo "Bạn vừa mua thành công mã PacificCode có giá trị: xyx.
-            // Mã PacificCode này có giá trị đến ngày DD tháng MM năm YYYY"
-
-            // Kiểm tra đúng, thỏa đk mua mới
             if (bRegisterSuccess)
             {
-                smsResponse = newCustomer.Phone;
+                smsResponse = buyerCustomer.Phone.Trim();
                 smsResponse += "*" + MessageManager.GenSucessCreatePacificCodeMessage(newPacificCode.PacificCode1, amountBuy);
             }
             else
@@ -159,8 +137,6 @@ namespace _08.MoneyPacificService
 
             return smsResponse;
         }
-
-        //internal static string 
 
         private static bool checkPhoneNumber(string sPhoneNumber)
         {

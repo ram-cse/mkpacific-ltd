@@ -1,10 +1,45 @@
-﻿Cảm nhận về 1000 năm thăng long hà nội
-
-http://nhovehanoi.com/32/70/438/3708.html
-http://www.tuyengiao.vn/Home/thanglonghanoi/thanglonghanoi/2009/5/9331.aspx
+﻿
+trời làm mưa tuôn nên khiến anh gặp em ...
+	20.09.2010:
+		ăn cà:
+		http://bachduong57.vnweblogs.com/post/15696/242200
+		
+		Plan báo cáo: Xong chức năng đặt hàng trong tuần
+		Plan cá nhân: trong ngày...  work as the hell
+		
+		* Sửa Database:
+			. Phone: 20 ky tự
+			. Phone: tồn tại duy nhất. Một phone là của một khách hàng
+			. STATUS: cần thêm 1 trường IsLocked trong STATUS
+				- Có 2 loại STATUS: 
+					. IsLocked = true: không được phép thực hiện giao dịch
+					. IsLocked = false: được phép thực hiện giao dịch
+		
+		* Load Rule by XML File
+		* Execute the math expresstion (kiểm tra xem đã có sẵn chưa)
+		* Lưu lại transaction: 
+			Store đã bán được PacificeCode
+			
+		- CustomerBUS: thêm, sửa (khóa), kiểm tra tồn tại, kiểm tra mật khẩu
+		- CustomerDAO: thêm, sửa, hiển thị danh sách
+		- StoreBUS: thêm, sửa, kiểm tra tồn tại, kiểm tra mất khẩu
+		- StoreDAO: thêm, sửa, hiển thị danh sách
+		- TransactionBUS: thêm, sửa, hiển thị danh sách, tìm kiếm theo điều kiện
+		- TransactionDAO: ..
+		* Mã hóa: 
+			+ EnCode, DeCode
+		- Thêm các bảng: loại tài khoản.. 
+		
+		
 
 	17.09.2010:
 		** chức năng: đồng ý nhận tin tức trên web
+		
+		Cảm nhận về 1000 năm thăng long hà nội
+
+		http://nhovehanoi.com/32/70/438/3708.html
+		http://www.tuyengiao.vn/Home/thanglonghanoi/thanglonghanoi/2009/5/9331.aspx
+
 		
 		http://www.nhaccuatui.com/nghe?M=t0hgNY6l88
 		

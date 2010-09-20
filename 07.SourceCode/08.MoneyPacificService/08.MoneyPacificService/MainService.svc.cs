@@ -12,7 +12,7 @@ namespace _08.MoneyPacificService
     {
         public string SendMessage(string smsContent)
         {
-            return MoneyPacificCore.GetRequest(smsContent);
+            return MoneyPacificCore.getRequest(smsContent);
         }
     }
 }
