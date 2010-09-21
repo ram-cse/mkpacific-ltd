@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using P8_EvaluateExpression;
+
 namespace P8_EvaluateExpression
 {
     /// <summary>
@@ -22,6 +24,11 @@ namespace P8_EvaluateExpression
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnCal_Click(object sender, RoutedEventArgs e)
+        {
+            txtKetQua.Text = ExpresstionClass.evaluateExp(txtBieuThuc.Text).ToString();
         }
     }
 }
