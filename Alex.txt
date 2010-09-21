@@ -1,5 +1,7 @@
 ﻿
-trời làm mưa tuôn nên khiến anh gặp em ...
+	trời làm mưa tuôn nên khiến anh gặp em ...
+	
+	I assume that you are using SQL Server Management Studio. In the Tools - Options menu, select the Designers node, and under Table options, uncheck "Prevent saving changes that require the table to be re-created".
 	20.09.2010:
 		ăn cà:
 		http://bachduong57.vnweblogs.com/post/15696/242200
