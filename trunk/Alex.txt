@@ -1,5 +1,22 @@
-﻿
+﻿	21.09.2010:
+		
+		- Tính giá trị Expression, thông qua biểu thức
+		- Load tập tin XML file, 
+			. Replace
+			. Replace các biến bằng giá trị
+		- Sửa database thành chính thức
+		- Sửa Project thành project chính thức
+		- Viết GateTransaction để lưu lại tất cả các dấu vết
+		& đảm bảo an toàn sau này
+		- Xử lý các trường hợp 
+		- Học anh văn qua các bài hướng dẫn mẫu (trưa)
+	
+	Hình như đa số ai cũng thế, mỗi lúc sẽ có một suy nghĩ khác. Hồi trc mình mơ ước nhiều, sung sức nhưng mau chán và khó thành hiện thực, từ từ mơ ước sẽ ít đi, đơn giản hơn nhưng chắc chắn. Đừng để nó mất luôn và luôn cố hết mình để ko bị hối hận là đc.
+	-----------------------------------------------------------
 	trời làm mưa tuôn nên khiến anh gặp em ...
+	
+	Nỗi buồn hoa phượng: 
+	http://www.nhaccuatui.com/nghe?L=88O45Xt3r20T
 	
 	I assume that you are using SQL Server Management Studio. In the Tools - Options menu, select the Designers node, and under Table options, uncheck "Prevent saving changes that require the table to be re-created".
 	20.09.2010:

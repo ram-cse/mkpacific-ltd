@@ -11,10 +11,19 @@ namespace P8_EvaluateExpression
     {
         internal char value;
 
+
+        public OperatorClass(char p)
+        {
+            this.value = p;
+        }
+
+        public OperatorClass()
+        {}
+
         internal int valuePrior()
         {
             int result = 0;
-            
+
             switch (value)
             {
                 case '+':
@@ -36,46 +45,59 @@ namespace P8_EvaluateExpression
                     result = 3;
                     break;
                 case '(':
-                    result = int.MaxValue;
+                    result = int.MinValue;
                     break;
                 case ')':
-                    result = int.MinValue;
+                    result = int.MaxValue;
                     break;
                 default:
                     result = 0;
                     break;
             }
 
-          return result;  
+            return result;
         }
 
-        internal double calculate(int x, int y)
+        internal double calculate(double x, double y)
         {
             double result = 0;
 
             switch (value)
             {
                 case '+':
-                    result = (double)(x + y);
+                    result = (x + y);
                     break;
                 case '-':
-                    result = (double)(x - y);
+                    result = (x - y);
                     break;
                 case '*':
-                    result = (double)(x * y);
+                    result = (x * y);
                     break;
                 case '/':
-                    result = (double)(x / y);
+                    result = (x / y);
                     break;
                 case '%':
-                    result = (double)(x % y);
+                    result = (x % y);
                     break;
                 case '^':
-                    result = (double)Math.Pow(x, y);
+                    result = Math.Pow(x, y);
                     break;
             }
 
             return result;
+        }
+
+        internal static bool IsOperator(char c)
+        {
+            if (c == '+' || c == '-' || c == '*' ||
+                c == '/' || c == '%' || c == '^')
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
