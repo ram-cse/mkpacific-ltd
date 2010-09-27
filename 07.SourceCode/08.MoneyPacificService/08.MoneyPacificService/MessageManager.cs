@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using _08.MoneyPacificService.DTO;
 
 namespace _08.MoneyPacificService
 {
     public class MessageManager
     {
         
-        internal static string GenSucessCreatePacificCodeMessage(string sPacificCode,int amount)
+        internal static string GenSucessCreatePacificCodeMessage(PacificCode newPCode)
         { 
             // Load từ tập tin XML, thay vào các biến giá trị
             // Tách chuỗi sPacificCode thành định dạng abcd-efgh-ijkm-mnop
+            string sPacificCode = newPCode.PacificCode1;
+            
 
             string sFormatPacificCode = sPacificCode.Substring(0, 4) + "-"
                 + sPacificCode.Substring(4, 4) + "-" + sPacificCode.Substring(8, 4) + "-"
                 + sPacificCode.Substring(12, 4);
 
             string sResult = "Bạn đã mua thành công một PacificCode: " + sFormatPacificCode
-                + " có giá trị  " + amount + " VND. Tài khoản này có giá trị đến ";
+                + " có giá trị  " + newPCode.InitialAmount + " VND. Tài khoản này có giá trị đến ngày " + newPCode.Date;
             return sResult;                
         }
 

@@ -15,6 +15,7 @@
       <Column Name="CurrentPacificCoded" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="TotalAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NumberTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BadTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SecurCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Pincode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="StatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -75,7 +76,7 @@
       <Column Name="LastDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="LastTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NumberSales" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalSales" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TotalSales" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

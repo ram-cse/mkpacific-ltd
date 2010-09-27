@@ -13,12 +13,29 @@ namespace _08.MoneyPacificService
 {
     public class MoneyPacificCore
     {
-        internal static DBMoneyPacificDataContext db = new DBMoneyPacificDataContext();
+        internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
         internal static string getRequest(string smsContent)
         {
             // *** GIẢI MÃ - DECODE *** (not yet)
             // smsContent = Coder.DeCode(smsContent);
+
+            /* // BEGIN TEST
+            Customer existCustomer = mpdb.Customers.Where(c => c.ID == 1).Single();
+
+            if (existCustomer.NumberTransaction == null)
+            {
+                existCustomer.NumberTransaction = 0;
+            }
+            else
+            {
+                existCustomer.NumberTransaction++;
+            }
+
+            mpdb.SubmitChanges();
+
+            return "test finished";
+            // END TEST*/
 
             string smsResponse = "";
 
@@ -41,8 +58,8 @@ namespace _08.MoneyPacificService
             Customer buyerCustomer = AnalystSyntaxBUS.getCustomer(smsContent);
 
             smsResponse = buyNewPacificCode(senderStore,amountBuy,buyerCustomer,amountBuyConfirm);
-            smsResponse = smsResponse + "---" + Coder.EnCode(smsResponse);
-            //smsResponse = Coder.EnCode(smsResponse);
+            //smsResponse = smsResponse + "---" + Coder.EnCode(smsResponse); // Kiểm tra ma hoa
+            //smsResponse = Coder.EnCode(smsResponse); // Mã hóa (đơn giản, nên dùng DynamicKey)
             return smsResponse;
         }
 
@@ -56,7 +73,6 @@ namespace _08.MoneyPacificService
 
 
             // KIỂM TRA
-
             // 01. Kiểm tra Store tồn tại & STATUS của Store.
             // (Tách kiểm tra exist & pass ra thành 2 phần để báo lỗi rõ hơn)
 
@@ -78,10 +94,19 @@ namespace _08.MoneyPacificService
             {
                 sErrorMessage += MessageManager.GenErrorPasswordStoreMessage();
             }
+            else // Neu dung password thi moi cho lay thong tin
+            {
+                // Sau khi kiem tra xong tồn tại thì nhận thông tin Store, Store ID để tạo PacificCode
+                senderStore = StoreBUS.getStore(senderStore.Phone, senderStore.PassStore);
+            }        
 
+            
+            
+            
             // 03. Kiểm tra AMOUNT hợp lệ (load các loại thẻ đang bán)
             
             bool bValidAmount = MoneyCardBUS.checkValid(amountBuy);
+            
             if (!bValidAmount)
             {
                 sErrorMessage += MessageManager.GenInValidAmountMessage(amountBuy);
@@ -90,6 +115,7 @@ namespace _08.MoneyPacificService
             // 04. Kiểm tra AMOUNT_CONFIRM             
 
             bool bValidConfirm = (amountBuy == amountBuyConfirm);
+
             if (!bValidConfirm)
             {
                 sErrorMessage += MessageManager.GenInValidAmountConfirmMessage();
@@ -98,6 +124,7 @@ namespace _08.MoneyPacificService
             // 05. Kiểm tra CUSTOMER_PHONE hợp lệ
 
             bool bValidPhone = checkPhoneNumber(buyerCustomer.Phone);
+            
             if (!bValidPhone)
             {
                 sErrorMessage += MessageManager.GenInValidPhoneMessage();
@@ -109,10 +136,7 @@ namespace _08.MoneyPacificService
 
             buyerCustomer = CustomerBUS.getCustomer(buyerCustomer.Phone);
             bCheckValidCustomer = CustomerBUS.checkCustomer(buyerCustomer);
-           
-            // Tạo PACIFIC_CODE mới với buyerCustomer (chắc chắn tạo dc)
-            
-            PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.ID, buyerCustomer.ID);
+                       
             
             // Gửi 2 tin nhắn cho CUSTOMER & STORE (chưa làm cái này, phải xác định lại cấu trúc tin nhắn mới có thể làm được)
 
@@ -126,13 +150,22 @@ namespace _08.MoneyPacificService
 
             if (bRegisterSuccess)
             {
+                // Tạo PACIFIC_CODE mới với buyerCustomer (chắc chắn tạo dc)
+                PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.ID, buyerCustomer.ID, amountBuy); 
+                
                 smsResponse = buyerCustomer.Phone.Trim();
-                smsResponse += "*" + MessageManager.GenSucessCreatePacificCodeMessage(newPacificCode.PacificCode1, amountBuy);
+                smsResponse += "*" + MessageManager.GenSucessCreatePacificCodeMessage(newPacificCode);
+
+                // Log Transaction
+                TransactionBUS.AddNew(newPacificCode);
             }
             else
             {
+                
                 smsResponse = senderStore.Phone;
                 smsResponse += "*" + sErrorMessage;
+
+                // Log Transaction
             }
 
             return smsResponse;
@@ -142,7 +175,7 @@ namespace _08.MoneyPacificService
         {
             // throw new NotImplementedException();
             // Chiều dài số điện thoại cần được định nghĩa lại
-            // Cần quy định lại số dt như thế nào thì được gọi là số điện thoại hợp lệ..
+            // Quy định lại số dt như thế nào thì được gọi là số điện thoại hợp lệ..
 
             bool bResult = true;
 

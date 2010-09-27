@@ -9,7 +9,7 @@ namespace _08.MoneyPacificService.DAO
 {
     public class CustomerDAO
     {
-        internal static DBMoneyPacificDataContext mpDb = new DBMoneyPacificDataContext();        
+        internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();        
         
         internal static int AddNew(string sPhoneNumber)
         {
@@ -17,15 +17,16 @@ namespace _08.MoneyPacificService.DAO
             // throw new NotImplementedException();
             Customer newCustomer = new Customer();
             newCustomer.Phone = sPhoneNumber;
-            mpDb.Customers.InsertOnSubmit(newCustomer);
-            mpDb.SubmitChanges();
+            
+            mpdb.Customers.InsertOnSubmit(newCustomer);
+            mpdb.SubmitChanges();
             return newCustomer.ID;
         }
 
         internal static bool checkExist(string sPhoneNumber)
         {
             bool bResult;            
-            bResult = mpDb.Customers.Where(l => l.Phone == sPhoneNumber).Any();            
+            bResult = mpdb.Customers.Where(l => l.Phone == sPhoneNumber).Any();            
             return bResult;
         }
 
@@ -33,15 +34,42 @@ namespace _08.MoneyPacificService.DAO
         {
             if (checkExist(sPhoneNumber))
             {
-                Customer[] existCustomer = mpDb.Customers.Where(c => c.Phone == sPhoneNumber).ToArray();
+                Customer[] existCustomer = mpdb.Customers.Where(c => c.Phone == sPhoneNumber).ToArray();
                 return existCustomer[0];
             }
             else
             {
                 int newID = CustomerDAO.AddNew(sPhoneNumber);
-                Customer newCustomer = mpDb.Customers.Single(c => c.ID == newID);
+                Customer newCustomer = mpdb.Customers.Single(c => c.ID == newID);
                 return newCustomer;
             }
         }
+
+        internal static void UpdateAfterInsertNewPCode(PacificCode newPacificCode)
+        {
+            Customer existCustomer = mpdb.Customers.Where(c => c.ID == newPacificCode.CustomerID).Single();
+
+            // NumberTransaction
+            if (existCustomer.NumberTransaction == null)
+            {
+                existCustomer.NumberTransaction = 1;
+            }
+            else
+            {
+                existCustomer.NumberTransaction++;
+            }
+
+            // TotalAmount
+            if (existCustomer.TotalAmount == null)
+            {
+                existCustomer.TotalAmount = newPacificCode.ActualAmount;
+            }
+            else
+            {
+                existCustomer.TotalAmount += newPacificCode.ActualAmount;
+            }            
+
+            // Xác nhận lưu 
+            mpdb.SubmitChanges();
+        }
     }
-}

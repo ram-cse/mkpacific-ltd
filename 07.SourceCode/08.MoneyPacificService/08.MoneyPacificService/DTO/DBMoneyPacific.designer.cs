@@ -183,6 +183,8 @@ namespace _08.MoneyPacificService.DTO
 		
 		private System.Nullable<int> _NumberTransaction;
 		
+		private System.Nullable<int> _BadTransaction;
+		
 		private string _SecurCode;
 		
 		private string _Pincode;
@@ -223,6 +225,8 @@ namespace _08.MoneyPacificService.DTO
     partial void OnTotalAmountChanged();
     partial void OnNumberTransactionChanging(System.Nullable<int> value);
     partial void OnNumberTransactionChanged();
+    partial void OnBadTransactionChanging(System.Nullable<int> value);
+    partial void OnBadTransactionChanged();
     partial void OnSecurCodeChanging(string value);
     partial void OnSecurCodeChanged();
     partial void OnPincodeChanging(string value);
@@ -494,6 +498,26 @@ namespace _08.MoneyPacificService.DTO
 					this._NumberTransaction = value;
 					this.SendPropertyChanged("NumberTransaction");
 					this.OnNumberTransactionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BadTransaction", DbType="Int")]
+		public System.Nullable<int> BadTransaction
+		{
+			get
+			{
+				return this._BadTransaction;
+			}
+			set
+			{
+				if ((this._BadTransaction != value))
+				{
+					this.OnBadTransactionChanging(value);
+					this.SendPropertyChanging();
+					this._BadTransaction = value;
+					this.SendPropertyChanged("BadTransaction");
+					this.OnBadTransactionChanged();
 				}
 			}
 		}
@@ -1545,7 +1569,7 @@ namespace _08.MoneyPacificService.DTO
 		
 		private System.Nullable<int> _NumberSales;
 		
-		private string _TotalSales;
+		private System.Nullable<double> _TotalSales;
 		
 		private string _Comment;
 		
@@ -1579,7 +1603,7 @@ namespace _08.MoneyPacificService.DTO
     partial void OnLastTransactionChanged();
     partial void OnNumberSalesChanging(System.Nullable<int> value);
     partial void OnNumberSalesChanged();
-    partial void OnTotalSalesChanging(string value);
+    partial void OnTotalSalesChanging(System.Nullable<double> value);
     partial void OnTotalSalesChanged();
     partial void OnCommentChanging(string value);
     partial void OnCommentChanged();
@@ -1740,8 +1764,8 @@ namespace _08.MoneyPacificService.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalSales", DbType="NChar(10)")]
-		public string TotalSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalSales", DbType="Float")]
+		public System.Nullable<double> TotalSales
 		{
 			get
 			{

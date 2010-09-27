@@ -18,7 +18,8 @@ namespace _08.MoneyPacificService.BUS
                 // Đã tồn tại, không thêm khách hàng nào hết
                 return 0;                
             }
-            else {
+            else 
+            {
                 return CustomerDAO.AddNew(sPhoneNumber);
             }
             
