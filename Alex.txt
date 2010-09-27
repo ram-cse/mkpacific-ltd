@@ -20,6 +20,8 @@
 		// Tất cả những j làm trong khoảng 6/09/2010 -> 26/09/2010 
 		// phải được làm lại chỉ trong 1 ngày 27/09/2010, và được dọn dẹp tất cả những gì dư thừa
 
+		http://jeffreypalermo.com/blog/you-should-not-use-asp.net-mvc-if/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+jeffreypalermo+%28Jeffrey+Palermo+%28.com%29%29
+		
 	24/09/2010:
 		- x Code ve trường hợp Transaction lưu khi mua PCode thành công
 		- Thiếu các trường hợp khi Transaction lưu khi mua PCode không thành công
