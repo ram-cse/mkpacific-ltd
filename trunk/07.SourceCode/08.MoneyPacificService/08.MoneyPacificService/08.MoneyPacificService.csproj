@@ -59,6 +59,7 @@
     </Content>
     <Content Include="App_Data\PacificCodeR.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MainService.svc" />
     <Content Include="Service1.svc" />
@@ -76,7 +77,6 @@
     <Compile Include="BUS\AnalystSyntaxBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\CustomerStatusBUS.cs" />
-    <Compile Include="BUS\GeneratorBUS.cs" />
     <Compile Include="IMainService.cs" />
     <Compile Include="MainService.svc.cs">
       <DependentUpon>MainService.svc</DependentUpon>
@@ -103,14 +103,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMoneyPacific.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Util\ExpressionClass.cs" />
+    <Compile Include="Util\OperatorClass.cs" />
     <Compile Include="Util\Coder.cs" />
-    <Compile Include="XAO\GeneratorXAO.cs" />
-    <Compile Include="DTO\GeneratorDTO.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XAO\PacificCodeXAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

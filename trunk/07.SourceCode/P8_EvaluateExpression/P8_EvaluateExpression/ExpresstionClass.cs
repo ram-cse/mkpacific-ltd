@@ -6,7 +6,7 @@ using Microsoft.VisualBasic;
 
 namespace P8_EvaluateExpression
 {
-    class ExpresstionClass
+    class ExpressionClass
     {
         private static List<double> lstNumber;
         private static List<OperatorClass> lstOperator;        

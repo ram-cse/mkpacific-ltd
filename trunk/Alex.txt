@@ -1,6 +1,106 @@
-﻿	21.09.2010:
+﻿	27/09/2010:
+		- Chuẩn hóa lại MoneyPacific: 
+			=> Sửa trường PacificCode trong table PacificCode thành CodeNumber
+		- Code bài BCD (huong doi tuong):
+		-> Van đe hình thoi
+		- Tìm hiểu tiếp tục CLR Trigger
+		- SQL
+		- Xem thông báo Java & LSĐảng 
+		- Tạo Script SQL phát sinh database
+		- Tìm Artisteer 2.5 + có crack
+		- Làm WCF Sample (8 bài)
 		
-		- Tính giá trị Expression, thông qua biểu thức
+		SV tình nguyện ?
+		http://www.saigonhotpot.com/
+		
+		--------
+		
+		-- Cài đặt tất cả các Rule 	`
+		
+		// Tất cả những j làm trong khoảng 6/09/2010 -> 26/09/2010 
+		// phải được làm lại chỉ trong 1 ngày 27/09/2010, và được dọn dẹp tất cả những gì dư thừa
+
+	24/09/2010:
+		- x Code ve trường hợp Transaction lưu khi mua PCode thành công
+		- Thiếu các trường hợp khi Transaction lưu khi mua PCode không thành công
+
+	23/09/2010
+	
+		- ? what is this?
+			DROP ASYMMETRIC KEY asymmetrickey1 
+			DROP LOGIN CLRLogin
+			RECONFIGURE;
+			GRANT UNSAFE ASSEMBLY TO CLRLogin --GRANT EXTERNAL ACCESS ASSEMBLY TO SQLCLRTestLogin 
+			
+		- Sample CLR đơn giản: 
+			. Sau khi insert, update, delete thì có thông báo tương ứng
+			
+			+ Creating a .NET class of triggering action
+			+ Making assembly(.DLL) from that Class
+			+ Enabling CLR environment in that database.
+			+ Registering the assembly in SQL Server
+			+ Creating CLR Trigger using that assembly
+			
+			Tạo P8_SampleClrTrigger loại Project là WCF nhưng không thành công
+			Tạo P9_SampleClrTrigger loại project là Library ... chưa biết cách thực thi
+			
+		* Lỗi Compile bằng VS2008 - .Net 3.5 sẽ fix được lỗi
+		Lý do VS2010 - .Net 4.0 chưa hỗ trợ
+
+			
+		- Cài đặt dc CLR Trigger
+		Before you compile Microsoft .NET Framework common language runtime (CLR) samples for SQL Server, verify that the path of the version of the .NET Framework compiler is the first Framework directory in the PATH environment variable. The location of the compiler that is shipped with this release of SQL Server is C:\<Windows root directory>\Microsoft.NET\Framework\v2.0.x. Drive C is the installation drive, <Windows root directory> is either Windows or WINNT, and x is five digits.
+		
+		- Cài đặt cho bảng PCode: lưu thông tin vào TransactionTable
+			. Insert: Lưu các thông tin liên quan: CustomerID, StoreID, CreateDate, Amount, ExpireDate, STATUS
+			. Update: Chỉ update số tiền 
+			. Delete: Bình thường không cho delete PCode
+			
+		- CLR Trigger
+		*** Invoking a WCF Service from a CLR Trigger
+		
+		- Deploy CLR Trigger với WiX (Window Installer XML)
+		- Viết Tutorial về WiX
+		
+		Các lời nhạc của MJackson
+		
+
+	22.09.2010:
+		- x Tính bieu thuc theo Rule từ XML
+		- TestDatabase
+			+ Trigger
+				. Trigger không có tham số...
+				. Trigger tự động thực hiện				
+				. Trigger dùng để:
+					Kiểm tra ràng buộc toàn vẹn phức tạp
+					Thực hiện các xử lý thiết kế đựơc thi hành ở Server
+					Các xử lý ta muốn tự động thực hiện khi có các thao tác Insert, Update hoặc Delete xảy ra.
+					Được dùng để thay thế Constraint trong trường hợp ta muốn việc kiểm tra ràng buộc dữ liệu 
+					kèm theo các câu thông báo thích hợp theo ý muốn người dùng
+				DDL Triggers are new to SQL Server 2005. This type of triggers, like reqular triggers, fire stored procedures in response to an event. they fire in respones to 
+				
+				http://forum.t3h.vn/showthread.php?t=1592
+				http://aspalliance.com/1273_CLR_Triggers_for_SQL_Server_2005.all
+				http://www.15seconds.com/issue/041006.htm
+				
+			Tạo trigger tự động lưu
+			
+		
+
+		// Các bài nhạc khiêu vũ
+		Nhac Vang tuyen chon:
+		http://www.nhaccuatui.com/nghe?L=o7RevWlaySw4
+		
+		Michael Jackson
+		http://www.nhaccuatui.com/nghe?L=cFMeuIb8xACa
+		
+		Qua Cơn Mê
+		http://www.nhaccuatui.com/nghe?L=SzG2gHFladS6
+		
+	21.09.2010:
+		* Cúp điện từ 1h30 - 4h
+		
+		- x Tính giá trị Expression, thông qua biểu thức
 		- Load tập tin XML file, 
 			. Replace
 			. Replace các biến bằng giá trị

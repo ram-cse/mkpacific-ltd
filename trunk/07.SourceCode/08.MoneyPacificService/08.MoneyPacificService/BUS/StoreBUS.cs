@@ -16,5 +16,10 @@ namespace _08.MoneyPacificService.BUS
         {
             return StoreDAO.checkExist(senderStore);
         }
+
+        internal static Store getStore(string storePhone, string passStore)
+        {
+            return StoreDAO.getStore(storePhone, passStore);
+        }
     }
 }
