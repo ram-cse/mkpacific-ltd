@@ -1,4 +1,16 @@
-﻿	27/09/2010:
+﻿	28/09/2010
+		- Cúp điện 9h - 14h
+		- Tìm hiểu PayPal, MobiVí, NgânLượng.Vn
+		- Đa hình: ...
+		- Đăng ký tình nguyện viên
+		- Hỏi thông tin LSĐảng
+
+		MoBiVi:
+		Xin chào , Lê Thành Dũng ( thanhdungit ) 
+		Hồ sơ tài khoản: UnverifiedEWallet 
+		Đăng nhập lần cuối: 2010-04-09 00:34:51
+
+	27/09/2010:
 		- Chuẩn hóa lại MoneyPacific: 
 			=> Sửa trường PacificCode trong table PacificCode thành CodeNumber
 		- Code bài BCD (huong doi tuong):
