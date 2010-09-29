@@ -1,4 +1,69 @@
-﻿	28/09/2010
+﻿	29/09/2010:
+		- Tạo Web Money Pacific Site bằng MVC
+			. Menu
+				Dash Board 
+				Setting
+				My WebSite
+					Add 
+				Report
+					Reort
+					WithDraw (rút tiền)
+				Manage Order
+					New Order
+					New Dilivery
+					End Transaction
+					Problem
+			
+		- MVC:
+			Mỗi chức năng là một phương thức...
+				Các gọi http://diachiweb.com/Tenlop/TenPhuongThuc//....
+			Tạo View:
+				Từ một phương thức trong Controller, phương thức đó phải có giá trị trả về là một View()
+				AddView: chọn Site Master..
+			ViewModel:
+				- Is a ViewTemplate for display information on the website
+				- Create a ViewModel for a Home-Index() page...
+				  Trong đó gồm các biến để hiển thị giá trị:
+					Ví dụ 
+						Genres lưu tên loại nhạc 
+						và List<string>Genres lưu danh sách các loại nhạc
+				- Trong Controller, nhớ gọi tạo giá trị cho biến loại ViewModel
+				rồi truyền vào View
+				- Tự trong View sẽ hiểu ViewModels khi được tạo ra(khi tao phải chọn ViewModels)
+				- ViewModels: which are create just to pass information from our controllers to our Views
+				- View: Model Classes are built to contain and manage out data and dynamic logic.
+				
+				We'll using the concept of Genre repeatedly. We want a model to manage it. Later on,
+				we'll hooking our Genre and Album classes to a database, they'll map directly to database file
+				Let start by create Genre class, Right-click Models Folder and add new Genre class and a string Name properties
+				
+				Có thể tạo View với ViewModel (template chứa các biến truyền giá trị) là Các Model
+			
+			Trong trang Index: có thể tạo link liên kết bằng các đoạn mã html
+			nhưng ta sẽ không làm như vậy..
+			That works, but it could lead to trouble later since it relies on a hardcoded string. For instance, if we wanted to rename the Controller, we'd need to search through our code looking for links that need to be updated.
+			
+			=> nó vẫn chạy tốt, nhưng có thể rất tới rắc rối sau này vì nó phụ thuộc vào code cứng. Ví dụ, nếu sau này chúng ta muốn đổi tên Controller, chung ta cần tìm những đoạn code đó để update sửa lại
+		
+		PHẦN 3: MODELS & DATA ACCESS
+		
+		Tại sao không dùng thẳng LINQ luôn mà lại dùng ADO.NET Entiry Data Model??
+		
+		var genreModel = storeDB.Genres.Include("Albums").Single(g => g.Name == genre); 
+		-> lấy luôn tất cả thông tin liên quan đến Albums ra ngoài
+		
+		public static class HtmlHelpers 
+		{   
+			public static string Truncate(this HtmlHelper helper, string input, int length) 
+			{ .. }
+		}
+		
+		static class: goi khong can bien dich khi dua len web ?? this HtmlHelper => viết thêm cho lớp này??
+		lớp sử dụng: Html
+		
+				
+				
+	28/09/2010:
 		- Cúp điện 9h - 14h
 		- Tìm hiểu PayPal, MobiVí, NgânLượng.Vn
 		- Đa hình: ...
