@@ -86,6 +86,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\EditorTemplate\Album.ascx" />
+    <Content Include="Views\StoreManager\Create.aspx" />
+    <Content Include="Views\StoreManager\Edit.aspx" />
     <Content Include="Views\StoreManager\Index.aspx" />
     <Content Include="Views\Store\Browse.aspx" />
     <Content Include="Views\Store\Detail.aspx" />

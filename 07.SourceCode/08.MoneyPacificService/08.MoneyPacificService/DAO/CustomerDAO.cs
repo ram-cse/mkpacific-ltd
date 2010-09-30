@@ -9,15 +9,15 @@ namespace _08.MoneyPacificService.DAO
 {
     public class CustomerDAO
     {
-        internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();        
-        
+        internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+
         internal static int AddNew(string sPhoneNumber)
         {
             // Kiểm tra tồn tại duy nhất
             // throw new NotImplementedException();
             Customer newCustomer = new Customer();
             newCustomer.Phone = sPhoneNumber;
-            
+
             mpdb.Customers.InsertOnSubmit(newCustomer);
             mpdb.SubmitChanges();
             return newCustomer.ID;
@@ -25,8 +25,8 @@ namespace _08.MoneyPacificService.DAO
 
         internal static bool checkExist(string sPhoneNumber)
         {
-            bool bResult;            
-            bResult = mpdb.Customers.Where(l => l.Phone == sPhoneNumber).Any();            
+            bool bResult;
+            bResult = mpdb.Customers.Where(l => l.Phone == sPhoneNumber).Any();
             return bResult;
         }
 
@@ -67,9 +67,10 @@ namespace _08.MoneyPacificService.DAO
             else
             {
                 existCustomer.TotalAmount += newPacificCode.ActualAmount;
-            }            
+            }
 
             // Xác nhận lưu 
             mpdb.SubmitChanges();
         }
     }
+}

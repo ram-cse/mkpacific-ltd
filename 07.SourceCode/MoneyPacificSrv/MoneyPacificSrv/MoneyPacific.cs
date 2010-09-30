@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+
+using MoneyPacificSrv.Cmd;
 using MoneyPacificSrv.Util;
 
 namespace MoneyPacificSrv
@@ -12,36 +14,55 @@ namespace MoneyPacificSrv
         {
             string smsResponse =  "Server is busy!..";
             
+
             // Phân tích để lấy command & arguments
 
             string sCommand = "";
             smsContent = smsContent.Trim(' ');
             string[] arrArg = smsContent.Split('*');
             sCommand = arrArg[0];
+            
+            // Get higher priorty Command
+            IMPCommand mpCommand;
 
-            // Chưa sử dụng tính Đa hình
-            // Not yet use Polymorphic 
-
-            if (Validator.isPhoneNumber(sCommand))
+            if (Validator.isPhoneNumber(sCommand) && (arrArg.Length == 5))
             {
-                smsResponse = buyNewPacificCode(arrArg);
+                sCommand = "BUY";                
+            }
+            else if (Validator.isPacificCode(sCommand))
+            {
+                sCommand = "CHECK_VALUE";
+            }
+
+            // Create Command and Execute
+            
+            if (sCommand == "BUY")
+            {   
+                mpCommand = new BuyPacificCodeCmd();
             }
             else if(sCommand == "PAY")
             {
-                smsResponse = "This Function is UnderConstruction!..";
+                mpCommand = new UnderContructionCmd();
+                smsResponse = "PAY - ";
             }
             else if (sCommand == "TRANFER")
             {
-                smsResponse = "This Function is UnderConstruction!..";
+                mpCommand = new UnderContructionCmd();
+                smsResponse = "TRANFER - ";
             }
             else if (sCommand == "MERGE")
             {
-                smsResponse = "This Function is UnderConstruction!..";
+                mpCommand = new UnderContructionCmd();
+                smsResponse = "MERGE - ";
             }
             else
             {
-                smsResponse = "This Function is UnderConstruction!..";
+                mpCommand = new UnderContructionCmd();
+                smsResponse = sCommand;
             }
+            
+            smsResponse += mpCommand.Execute(arrArg);
+
 
             return smsResponse;
         }

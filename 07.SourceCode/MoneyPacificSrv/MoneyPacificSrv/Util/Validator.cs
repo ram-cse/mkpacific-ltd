@@ -9,6 +9,11 @@ internal enum PHONE_NUMBER
     MAX = 20
 }
 
+internal enum PACIFIC_CODE
+{ 
+    LENGTH = 16
+}
+
 namespace MoneyPacificSrv.Util
 {
     public class Validator
@@ -35,6 +40,24 @@ namespace MoneyPacificSrv.Util
                 bResult = bResult && char.IsDigit(c);
             }
             return bResult;
+        }
+
+        internal static bool isPacificCode(string sInputString)
+        {
+            //throw new NotImplementedException();
+            bool bResult = true;
+
+            sInputString = sInputString.Trim(' ');
+
+            bResult = bResult && (sInputString.Length == (int)PACIFIC_CODE.LENGTH);
+
+            for (int i = 0; i < sInputString.Length; i++)
+            {
+                bResult = bResult && Char.IsDigit(sInputString[i]);
+            }
+
+            return bResult;
+
         }
     }
 }
