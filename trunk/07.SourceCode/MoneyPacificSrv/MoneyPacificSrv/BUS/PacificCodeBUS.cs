@@ -58,6 +58,12 @@ namespace MoneyPacificSrv.BUS
             return PacificCodeDAO.checkExist(sCodeNumber);
         }
 
+        private static bool checkPossibleCode(string sCodeNumber)
+        { 
+            // TODO:
+            return true;
+        }
+
         private static PacificCode GenerateNewCode(string xmlRuleFile)
         {
             return PacificCodeXAO.GenerateNewCode(xmlRuleFile);

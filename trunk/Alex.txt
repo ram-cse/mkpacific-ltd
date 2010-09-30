@@ -1,4 +1,18 @@
-﻿	29/09/2010:
+﻿
+	30/09/2010:
+		- Tính đa hình để gọi các command:
+			Sau khi gọi Command -> trả ra 1 object là đối tượng transaction
+			Object: viewModel - lưu thông tin transaction
+			Money Pacific: dựa vào đối tượng transaction -> lưu xuống csdl
+			
+		- Partical View:.. displayed insite another view.
+		- Đọc hiểu tài liệu:
+			"Value and details on phone bay M E" -> M E nghĩa là gì??
+		- Đăng ký tham gia vps: ...
+			
+		http://www.csharp-station.com/Tutorials/lesson09.aspx
+		
+	29/09/2010:
 		- Tạo Web Money Pacific Site bằng MVC
 			. Menu
 				Dash Board 

@@ -5,8 +5,9 @@ using System.Web;
 
 namespace MoneyPacificSrv.Cmd
 {
-    public interface IMPComand
+    public interface IMPCommand
     {
         string Execute(string[] args);
+        //virtual 
     }
 }

@@ -8,7 +8,7 @@ using MoneyPacificSrv.Util;
 
 namespace MoneyPacificSrv.Cmd
 {
-    public class BuyPacificCodeCmd : IMPComand
+    public class BuyPacificCodeCmd : IMPCommand
     {
         public string Execute(string[] args)
         {

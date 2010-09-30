@@ -1,0 +1,5 @@
+D:\MPP\mkpacific-ltd\07.SourceCode\p11_clr_trigger_2k8\p11_clr_trigger_2k8\bin\Debug\p11_clr_trigger_2k8.dll
+D:\MPP\mkpacific-ltd\07.SourceCode\p11_clr_trigger_2k8\p11_clr_trigger_2k8\bin\Debug\p11_clr_trigger_2k8.pdb
+D:\MPP\mkpacific-ltd\07.SourceCode\p11_clr_trigger_2k8\p11_clr_trigger_2k8\obj\Debug\ResolveAssemblyReference.cache
+D:\MPP\mkpacific-ltd\07.SourceCode\p11_clr_trigger_2k8\p11_clr_trigger_2k8\obj\Debug\p11_clr_trigger_2k8.dll
+D:\MPP\mkpacific-ltd\07.SourceCode\p11_clr_trigger_2k8\p11_clr_trigger_2k8\obj\Debug\p11_clr_trigger_2k8.pdb

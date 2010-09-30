@@ -48,23 +48,39 @@ namespace MvcMusicStore05.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var viewModel = new StoreManagerViewModel { 
+                Album = new Album(),
+                Genres = storeDB.Genres.ToList(),
+                Artists = storeDB.Artists.ToList()
+            };
+
+            return View(viewModel);
         } 
 
         //
         // POST: /StoreManager/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        //public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Album album)
         {
             try
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                storeDB.AddToAlbums(album);
+                storeDB.SaveChanges();
+                //return RedirectToAction("Index");
+                return RedirectToAction("/");
             }
             catch
             {
+                // Invalid - ReDisplay with Errors
+                var viewModel = new StoreManagerViewModel { 
+                    Album = album,
+                    Artists = storeDB.Artists.ToList(),
+                    Genres = storeDB.Genres.ToList()
+                };
                 return View();
             }
         }
@@ -74,7 +90,16 @@ namespace MvcMusicStore05.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            // Lay gia tri và truyền vào biến viewModel
+            var viewModel = new StoreManagerViewModel
+            {
+                Album = storeDB.Albums.Single(a => a.AlbumId == id),
+                Artists = storeDB.Artists.ToList(),
+                Genres = storeDB.Genres.ToList()
+            };
+
+            // Trả kết quả ra cho View
+            return View(viewModel);
         }
 
         //
@@ -83,15 +108,31 @@ namespace MvcMusicStore05.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
+            // Lấy thông tin đối tượng cần cập nhật thông qua ID
+            var album = storeDB.Albums.Single(a => a.AlbumId == id);
+
             try
             {
                 // TODO: Add update logic here
- 
+                // Cập nhật thông tin mới
+                UpdateModel(album, "Album"); // cap nhật doi tuong Album tu Model
+                storeDB.SaveChanges();
+
+                // Lưu xong trả về trang Index
                 return RedirectToAction("Index");
+                
             }
             catch
             {
-                return View();
+                // Trả lại trang View nếu không cập nhật được
+                var viewModel = new StoreManagerViewModel
+                {
+                    Album = album,
+                    Artists = storeDB.Artists.ToList(),
+                    Genres = storeDB.Genres.ToList()
+                };
+
+                return View(viewModel);
             }
         }
 

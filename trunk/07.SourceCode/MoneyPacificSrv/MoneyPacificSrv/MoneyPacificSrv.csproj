@@ -72,6 +72,7 @@
     <Compile Include="BUS\TransactionBUS.cs" />
     <Compile Include="Cmd\BuyPacificCodeCmd.cs" />
     <Compile Include="Cmd\IMPComand.cs" />
+    <Compile Include="Cmd\UnderContructionCmd.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\PacificCodeDAO.cs" />
@@ -117,8 +118,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2013</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2000</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
