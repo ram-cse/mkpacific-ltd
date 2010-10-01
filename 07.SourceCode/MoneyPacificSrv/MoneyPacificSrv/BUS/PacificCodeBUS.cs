@@ -11,6 +11,8 @@ namespace MoneyPacificSrv.BUS
 {
     public class PacificCodeBUS
     {
+        // TODO: Shout get from from CONFIG file
+        
         private static void AddNew(PacificCode newPacificCode)
         {
             StoreDAO.UpdateAfterInsertNewCode(newPacificCode);
@@ -22,12 +24,12 @@ namespace MoneyPacificSrv.BUS
             PacificCode newPacificCode = new PacificCode();
 
             // Generate NewCode from XML File
-            string xmlRuleFile = AppDomain.CurrentDomain.BaseDirectory + "\\App_Data\\PacificCodeR.xml"; 
+            
             bool bGetNewPacificCode = false;
             do
             {
-                newPacificCode = PacificCodeBUS.GenerateNewCode(xmlRuleFile);
-                bGetNewPacificCode = !PacificCodeBUS.checkExist(newPacificCode.CodeNumber);
+                newPacificCode = PacificCodeBUS.GenerateNewCode();
+                bGetNewPacificCode = !PacificCodeBUS.isExist(newPacificCode.CodeNumber);
             } while (bGetNewPacificCode == false);
 
             // Add information
@@ -51,22 +53,20 @@ namespace MoneyPacificSrv.BUS
 
             return newPacificCode;
         }
-
-
-        private static bool checkExist(string sCodeNumber)
+                
+        private static PacificCode GenerateNewCode()
         {
-            return PacificCodeDAO.checkExist(sCodeNumber);
+            return PacificCodeXAO.GenerateNewCode();
+        }
+        
+        internal static PacificCode getPacificCode(string sCodeNumber)
+        {
+            return PacificCodeDAO.getPacificCode(sCodeNumber);
         }
 
-        private static bool checkPossibleCode(string sCodeNumber)
-        { 
-            // TODO:
-            return true;
-        }
-
-        private static PacificCode GenerateNewCode(string xmlRuleFile)
+        internal static bool isExist(string sCodeNumber)
         {
-            return PacificCodeXAO.GenerateNewCode(xmlRuleFile);
+            return PacificCodeDAO.isExist(sCodeNumber);
         }
     }
 }

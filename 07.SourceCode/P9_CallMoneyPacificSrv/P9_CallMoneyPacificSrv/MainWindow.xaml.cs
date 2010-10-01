@@ -38,5 +38,15 @@ namespace P9_CallMoneyPacificSrv
                 txtMessage.Text = "WCF Service Error: " + ex.Message;
             }
         }
+
+        private void btnBuy_Click(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = "0932130483*12345*500000*0939146267*500000";
+        }
+
+        private void btnValue_Click(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = "0939146267*9428 4988 2578 2945";
+        }
     }
 }

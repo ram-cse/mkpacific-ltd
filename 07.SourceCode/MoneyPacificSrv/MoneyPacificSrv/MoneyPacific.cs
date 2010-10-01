@@ -12,65 +12,49 @@ namespace MoneyPacificSrv
     {
         internal static string getRequest(string smsContent)
         {
-            string smsResponse =  "Server is busy!..";
-            
-
-            // Phân tích để lấy command & arguments
-
+            string smsResponse = "";
             string sCommand = "";
+
+
+            // Phân tích để lấy command & arguments            
             smsContent = smsContent.Trim(' ');
             string[] arrArg = smsContent.Split('*');
-            sCommand = arrArg[0];
+
+            if (arrArg.Count() <= 1) return "Invalid Command";
+
+            // The first argument alway is the phonenumber
+            sCommand = arrArg[1];
             
-            // Get higher priorty Command
             IMPCommand mpCommand;
 
-            if (Validator.isPhoneNumber(sCommand) && (arrArg.Length == 5))
+            //if (Validator.isPhoneNumber(sCommand) && (arrArg.Length == 5))
+            
+            if (Validator.iPassStore(sCommand) && (arrArg.Length == 5))
             {
-                sCommand = "BUY";                
+                sCommand = "BUY";
             }
             else if (Validator.isPacificCode(sCommand))
             {
-                sCommand = "CHECK_VALUE";
+                sCommand = "VALUE";                
             }
 
-            // Create Command and Execute
-            
+            // Create Command and Execute            
             if (sCommand == "BUY")
             {   
                 mpCommand = new BuyPacificCodeCmd();
             }
-            else if(sCommand == "PAY")
+            else if (sCommand == "VALUE")
             {
-                mpCommand = new UnderContructionCmd();
-                smsResponse = "PAY - ";
-            }
-            else if (sCommand == "TRANFER")
-            {
-                mpCommand = new UnderContructionCmd();
-                smsResponse = "TRANFER - ";
-            }
-            else if (sCommand == "MERGE")
-            {
-                mpCommand = new UnderContructionCmd();
-                smsResponse = "MERGE - ";
-            }
+                mpCommand = new ValueDetailCmd();                
+            }            
             else
             {
                 mpCommand = new UnderContructionCmd();
-                smsResponse = sCommand;
+                smsResponse = sCommand + " - ";
             }
             
             smsResponse += mpCommand.Execute(arrArg);
-
-
             return smsResponse;
-        }
-
-        private static string buyNewPacificCode(string[] arrArguments)
-        {
-
-            return "Error argument!...";
         }
     }
 }

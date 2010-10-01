@@ -11,9 +11,14 @@ namespace MoneyPacificSrv.DAO
     {
         private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
-        internal static bool checkExist(string sCodeNumber)
+        internal static bool isExist(string sCodeNumber)
         {
             return mpdb.PacificCodes.Where(p => p.CodeNumber == sCodeNumber).Any();
+        }
+
+        internal static PacificCode getPacificCode(string sCodeNumber)
+        {
+            return mpdb.PacificCodes.Where(p => p.CodeNumber == sCodeNumber).Single<PacificCode>();
         }
     }
 }

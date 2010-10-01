@@ -30,9 +30,9 @@ namespace MoneyPacificSrv.Cmd
             Customer buyerCustomer = new Customer();
             buyerCustomer.Phone = args[3];
 
-            // Check Information:-----------------------
-            
-            // 01.
+            // Check Information:-----------------------            
+
+            // 01. check STORE
             bool bSenderExists = StoreBUS.checkExist(senderStore);
             if (!bSenderExists)
             {
@@ -40,7 +40,7 @@ namespace MoneyPacificSrv.Cmd
                 return smsRespones;
             }
 
-            // 02.
+            // 02. check STORE (password & status)
             bool bValidPassword = false;
             bValidPassword = StoreBUS.checkPassword(senderStore);
 
@@ -53,7 +53,7 @@ namespace MoneyPacificSrv.Cmd
                 senderStore = StoreBUS.getStore(senderStore.Phone, senderStore.PassStore);
             }
 
-            // 03.
+            // 03. check PACIFIC CODE Categories
             bool bValidAmount = false;
             bValidAmount = CategoriesBUS.isValidAmount(amountBuy);
 
@@ -62,7 +62,7 @@ namespace MoneyPacificSrv.Cmd
                 sErrorMessage += MessageManager.GenInvalidAmountMessage(amountBuy);
             }
 
-            // 04.
+            // 04. check CONFIRM AMOUNT
             bool bValidConfirm = (amountBuy == amountBuyConfirm);
 
             if (!bValidConfirm)
@@ -70,7 +70,7 @@ namespace MoneyPacificSrv.Cmd
                 sErrorMessage += MessageManager.GenInvalidAmountConfirmMessage();
             }
 
-            // 05.
+            // 05. check PHONE (valid and status)
             bool bValidPhone = Validator.isPhoneNumber(buyerCustomer.Phone);
 
             if (!bValidPhone)
@@ -78,7 +78,8 @@ namespace MoneyPacificSrv.Cmd
                 sErrorMessage = MessageManager.GenInvalidPhoneMessage();
             }
 
-            // 06.
+            // 06. check CUSTOMER (exist and status)
+            buyerCustomer = CustomerBUS.getCustomerOrCreateNotYetBuy(buyerCustomer.Phone);
             bool bValidCustomer = CustomerBUS.isValidCustomer(buyerCustomer.Phone);
                         
             // Get result: --------------------------
@@ -103,7 +104,7 @@ namespace MoneyPacificSrv.Cmd
             }
             else
             {
-                smsRespones = senderStore.Phone;
+                smsRespones = senderStore.Phone.Trim(' ');
                 smsRespones += "*" + sErrorMessage;
                 
                 // Log Transaction info
