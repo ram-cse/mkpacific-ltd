@@ -18,5 +18,5 @@
   <parameter name="m" index="13" value="random"/>
   <parameter name="n" index="14" value="random"/>
   <parameter name="o" index="15" value="(a+b+c+d+e+f+g)*(h+i+j+k+l+m+n)%10"/>
-  <parameter name="p" index="16" value="(a+2*b+3*c+4*d+5*e+6*f+7*g)*(h+i+j+k+l+m+n)%10*0"/>
+  <parameter name="p" index="16" value="(a+2*b+3*c+4*d+5*e+6*f+7*g)*(h+i+j+k+l+m+n)%10"/>
 </PacificCode>

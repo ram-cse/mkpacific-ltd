@@ -12,7 +12,9 @@ namespace MoneyPacificSrv.XAO
 {
     public class PacificCodeXAO
     {
-        internal static DTO.PacificCode GenerateNewCode(string xmlFile)
+        internal static string xmlRuleFile = AppDomain.CurrentDomain.BaseDirectory + "\\App_Data\\PacificCodeR.xml"; 
+
+        internal static PacificCode GenerateNewCode()
         {
             PacificCode newPCode = new PacificCode();
 
@@ -21,7 +23,7 @@ namespace MoneyPacificSrv.XAO
 
             // LOAD All information about Argument from XML file
 
-            xmlDoc.Load(xmlFile);
+            xmlDoc.Load(xmlRuleFile);
             XmlNode rootNode = xmlDoc.DocumentElement;
 
             foreach (XmlNode childNode in rootNode.ChildNodes)
@@ -71,6 +73,20 @@ namespace MoneyPacificSrv.XAO
             // EXPORT the result;
             newPCode.CodeNumber = sResultCode;
             return newPCode;
+
+        }
+
+        internal static bool isPossibleCode(string sCodeNumber)
+        {
+            string sConfirmCodeNumber = "";
+            
+            // Lấy thông tin các Argument từ tập tin XML
+            // Truyền giá trị từ sCodeNumber vào list Argument
+            // Tính giá trị Argment
+            // So sánh, nếu bằng nhau thì trả ra true
+
+            return true;
+            //return (sCodeNumber == sConfirmCodeNumber);
 
         }
     }

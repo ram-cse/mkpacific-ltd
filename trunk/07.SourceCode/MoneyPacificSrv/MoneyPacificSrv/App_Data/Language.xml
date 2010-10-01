@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MPMessage>
+  
+  <Language contry="vietnam" value ="vn">
+    <Message name="SAMPLE_MASSAGE" 
+             value="Lời nhắn ví dụ"/>
+    <Message name="GENERATE_PACIFICCOD_SUCCESSFULL" 
+             value="Bạn đã mua thành công PacificCode {0}, có giá trị {}. Tài khoản này có giá trị đến ngày {2} "/>
+  </Language>
+  
+  <Language contry="vietnam" value ="vn">
+  </Language>
+  
+</MPMessage>

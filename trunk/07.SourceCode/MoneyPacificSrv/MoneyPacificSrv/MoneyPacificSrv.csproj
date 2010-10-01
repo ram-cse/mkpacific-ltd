@@ -50,6 +50,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Language.xml" />
     <Content Include="App_Data\MoneyPacific.mdf" />
     <Content Include="App_Data\MoneyPacific_log.ldf">
       <DependentUpon>MoneyPacific.mdf</DependentUpon>
@@ -67,14 +68,17 @@
   <ItemGroup>
     <Compile Include="BUS\CategoriesBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
+    <Compile Include="BUS\CustomerStatusBUS.cs" />
     <Compile Include="BUS\PacificCodeBUS.cs" />
     <Compile Include="BUS\StoreBUS.cs" />
     <Compile Include="BUS\TransactionBUS.cs" />
     <Compile Include="Cmd\BuyPacificCodeCmd.cs" />
     <Compile Include="Cmd\IMPComand.cs" />
     <Compile Include="Cmd\UnderContructionCmd.cs" />
+    <Compile Include="Cmd\ValueDetailCmd.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\CustomerStatusDAO.cs" />
     <Compile Include="DAO\PacificCodeDAO.cs" />
     <Compile Include="DAO\StoreDAO.cs" />
     <Compile Include="DAO\TransactionDAO.cs" />
@@ -83,6 +87,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMoneyPacific.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\MPMessageDTO.cs" />
     <Compile Include="IMain.cs" />
     <Compile Include="Main.svc.cs">
       <DependentUpon>Main.svc</DependentUpon>
@@ -92,10 +97,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ExpressionClass.cs" />
     <Compile Include="Util\OperatorClass.cs" />
+    <Compile Include="Util\Util.cs" />
     <Compile Include="Util\Validator.cs" />
+    <Compile Include="XAO\MPMesssageXAO.cs" />
     <Compile Include="XAO\PacificCodeXAO.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="DTO\DBMoneyPacific.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
