@@ -11,7 +11,7 @@ namespace MoneyPacificSrv.Cmd
 
         public string Execute(string[] args)
         {
-            return "This function is under construction!..";
+            return "0*This function is under construction!..";
         }
 
         #endregion

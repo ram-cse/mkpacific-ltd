@@ -10,7 +10,7 @@ namespace MoneyPacificSrv.BUS
 {
     public class TransactionBUS
     {
-        internal static void AddNew(PacificCode newPacificCode)
+        internal static void addNew(PacificCode newPacificCode)
         {
             TransactionDAO.AddNew(newPacificCode);
         }

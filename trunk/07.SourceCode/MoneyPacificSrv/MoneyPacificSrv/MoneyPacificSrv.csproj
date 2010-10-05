@@ -12,7 +12,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MoneyPacificSrv</RootNamespace>
     <AssemblyName>MoneyPacificSrv</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,8 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
@@ -43,6 +44,9 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Web.Services" />
@@ -57,7 +61,9 @@
     </Content>
     <Content Include="App_Data\PacificCodeR.xml" />
     <Content Include="Main.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -97,10 +103,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ExpressionClass.cs" />
     <Compile Include="Util\OperatorClass.cs" />
-    <Compile Include="Util\Util.cs" />
+    <Compile Include="Util\Utility.cs" />
     <Compile Include="Util\Validator.cs" />
     <Compile Include="XAO\MPMesssageXAO.cs" />
     <Compile Include="XAO\PacificCodeXAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DTO\DBMoneyPacific.dbml">
@@ -108,9 +117,6 @@
       <LastGenOutput>DBMoneyPacific.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DTO\DBMoneyPacific.dbml.layout">

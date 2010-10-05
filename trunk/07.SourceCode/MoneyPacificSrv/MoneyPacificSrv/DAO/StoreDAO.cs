@@ -27,7 +27,7 @@ namespace MoneyPacificSrv.DAO
             return existStore;
         }
 
-        internal static void UpdateAfterInsertNewCode(PacificCode newPacificCode)
+        internal static void updateAfterInsertNewCode(PacificCode newPacificCode)
         {
             // GET
             Store existStore = mpdb.Stores.Where(s => s.ID == newPacificCode.StoreID).Single<Store>();

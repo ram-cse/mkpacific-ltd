@@ -12,7 +12,7 @@ namespace MoneyPacificSrv.DAO
     {
         private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
-        internal static void UpdateAfterInsertNewCode(PacificCode newPacificCode)
+        internal static void updateAfterInsertNewCode(PacificCode newPacificCode)
         {
 
             // GET
@@ -93,5 +93,33 @@ namespace MoneyPacificSrv.DAO
         }
 
 
+
+        internal static Customer getCustomer(int customerId)
+        {
+            return mpdb.Customers.Where(c => c.ID == customerId).Single<Customer>();
+        }
+
+
+
+        internal static void setStatus(string sPhoneNumber, string sStatus)
+        {
+            Customer existCustomer = CustomerDAO.getCustomer(sPhoneNumber);
+            setStatus(existCustomer.ID, sStatus);
+            
+        }
+
+        internal static void setStatus(int customerId, string sStatus)
+        {
+            Customer existCustomer = CustomerDAO.getCustomer(customerId);
+            
+            string oldStatus = CustomerStatusDAO.getValue(existCustomer.StatusID);
+            
+            // VD: set Status = x32, x33...
+            if (sStatus[0] == 'x')
+                sStatus = oldStatus[0] + sStatus.Substring(1, sStatus.Length - 1);
+
+            existCustomer.StatusID = CustomerStatusDAO.getId(sStatus);
+            mpdb.SubmitChanges();
+        }
     }
 }

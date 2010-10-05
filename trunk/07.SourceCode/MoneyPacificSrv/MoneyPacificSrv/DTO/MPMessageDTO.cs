@@ -22,10 +22,10 @@ namespace MoneyPacificSrv
             this.value = value;
         }
 
-        public string ToString()
-        {
-            return this.value;
-        }
+        //public string ToString()
+        //{
+        //      return this.value;
+        //}
 
         // public static string operator 
         // TODO:

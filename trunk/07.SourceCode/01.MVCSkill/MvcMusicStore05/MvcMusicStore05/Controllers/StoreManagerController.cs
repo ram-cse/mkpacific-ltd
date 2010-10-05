@@ -98,6 +98,8 @@ namespace MvcMusicStore05.Controllers
                 Genres = storeDB.Genres.ToList()
             };
 
+            viewModel.Album.Title = "TEST " + viewModel.Album.Title;
+
             // Trả kết quả ra cho View
             return View(viewModel);
         }
