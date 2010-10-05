@@ -1,4 +1,46 @@
-﻿	1/10/2010:
+﻿	5/10/2010:
+		- Dịch 1 bài tiếng anh ngắn (Gymlish)
+	    - Viết Tutorial bằng tiếng anh về WCF, WCF Call
+		- Tạo 1 lớp chặn các số trong BlackList lại, trả ra thông báo
+		- x Cấu hình triển khai WCF trên IIS localhost
+		
+		1.
+		Sửa cấu hình port cho site xong thì phải restart IIS để có
+		hiệu lực, nếu không sẽ gặp lỗi khó hiểu
+		
+		2.
+		=> includeExceptionDetailInFaults="true" sửa thành true để xem lỗi
+			<behavior name="MoneyPacificSrv.MainBehavior">
+				<serviceMetadata httpGetEnabled="true"/>
+				<serviceDebug includeExceptionDetailInFaults="true"/>
+			</behavior>
+		3. 
+		Failed to generate a user instance of SQL Server due to failure in retrieving the user's local application data path. 
+		Please make sure the user has a local user profile on the computer. The connection will be closed.
+		
+		=> Lỗi do chưa cài hoặc cấu hình SQLExpress -> cài hoặc cấu hình lại có thể sửa được
+		Sửa: chuyển sang kết nối với Server tại máy chủ
+		
+		- x Cấu hình triển khai WCF trên IIS LAN
+		- Cấu hình triển khai WCF trên Internet (giong LAN)
+		Gymlish: bài 2
+		- Làm lại MVC từ bài 1 - 4:
+			Lưu ý lỗi: <%:%> ko hỗ trợ trong .net framework 3.5, chỉ có trong 4.0
+			Master page: gồm 3 link: Home - Store - StoreManager
+			Store 	- Browse: List danh sach các Genres
+					- Detail: Click vào 1 Grenres, hiển thị thông tin chi tiết 
+					Genres đó gồm bao nhieu Albums (chỉ hiển thị tên)
+			Store Manager:
+					- Hiển thị tất cả các Album với 3 nút: Edit, Delete + (Create)
+		http://www.gymglish.com/wb/userwb/showlesson?e=thanhdungit%40gmail.com&s=04X6oF2h4Y&t=L
+		
+	4/10/2010:
+		- (MVC . Net Store) Phần 4
+		- Value & Detail on Computer (tiếp theo) &  vẫn còn lỗi
+		- Triển khai trên IIS local: gặp vài lỗi, có thể do không 
+		tương thích với DotNetFrameWork
+		
+	1/10/2010:
 		- x Value and details on phone:
 		- Value and details on Computer:
 		- Change the code on PC (Only on PC):
@@ -11,6 +53,17 @@
 			
 		http://mp3.zing.vn/mp3/nghe-album/Nua-Dem-Ngoai-Pho-Quang-Linh.377743.8.html
 
+		húng tôi chuyên cung cấp thẻ cào điện thoại cho Mobi sỉ và lẻ
+
+		Giá sỉ (nhiều hơn 50 card):
+		  Mobi  :
+		     Thẻ 500.000vnd bán 468.000 vnd
+		     Thẻ 300.000vnd bán 281.000 vnd
+		     Thẻ 200.000vnd bán 188.000 vnd
+		     Thẻ 100.000vnd bán 92.000 vnd
+		     Thẻ 50.000vnd bán 46.000 vnd
+
+	Hiện tại mình chỉ bán thẻ cào mobi ( sẽ có thẻ cào viettel và vina trong thời gian tới khi hoạt động đã ổn định ). Mình đang muốn thiết lập một hệ thống phân phối thẻ cào ra các thành phố và tỉnh, nếu ai có nhu cầu mua hàng, xin gởi mail cho mình, ghi các thông tin ( số điện thoại, loại thẻ, số thẻ và số lần lấy hàng trong một tháng, địa chỉ, cách giao dịch ... càng chi tiết càng tốt ). Mình sẽ tổng hợp thông tin lại (có thể sẽ gặp các bạn để đàm phán hoặc call nếu không gặp được) để tiến hành giao dịch. Ưu tiên các khách hàng có nhu cầu ổn định, và lấy số lượng lớn (100 thẻ trở lên mỗi tháng) vì số lượng hàng mình lấy một lần có giới hạn.
 	30/09/2010:
 		- x Tính đa hình để gọi các command:
 			Sau khi gọi Command -> trả ra 1 object là đối tượng transaction

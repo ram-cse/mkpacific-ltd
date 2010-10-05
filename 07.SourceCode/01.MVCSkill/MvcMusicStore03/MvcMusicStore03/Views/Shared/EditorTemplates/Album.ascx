@@ -1,5 +1,6 @@
 ﻿<%@ Import Namespace="MvcMusicStore03" %>
-<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<MvcMusicStore03.Models.Album>" %>
+<%@ Control Language="C#" 
+Inherits="System.Web.Mvc.ViewUserControl<MvcMusicStore03.Models.Album>" %>
 
 <p>
     <%: Html.LabelFor(model => model.Title) %>

@@ -14,7 +14,7 @@ namespace MoneyPacificSrv.XAO
     {
         internal static string xmlRuleFile = AppDomain.CurrentDomain.BaseDirectory + "\\App_Data\\PacificCodeR.xml"; 
 
-        internal static PacificCode GenerateNewCode()
+        internal static PacificCode generateNewCode()
         {
             PacificCode newPCode = new PacificCode();
 
@@ -47,6 +47,7 @@ namespace MoneyPacificSrv.XAO
             }
             
             // . Ruled Arguments
+            /*
             foreach (PCArg arg in lstArg)
             {
                 if (!Validator.isNumber(arg.value))
@@ -62,6 +63,9 @@ namespace MoneyPacificSrv.XAO
                     arg.value = ((int)ExpressionClass.evaluateExp(arg.value)).ToString();
                 }
             }
+            /*/
+            CalculateArgs(lstArg);
+            // */
 
             // MERGE all to CodeNumber
             string sResultCode = "";
@@ -78,16 +82,62 @@ namespace MoneyPacificSrv.XAO
 
         internal static bool isPossibleCode(string sCodeNumber)
         {
-            string sConfirmCodeNumber = "";
             
-            // Lấy thông tin các Argument từ tập tin XML
-            // Truyền giá trị từ sCodeNumber vào list Argument
-            // Tính giá trị Argment
-            // So sánh, nếu bằng nhau thì trả ra true
+            List<PCArg> lstArg = new List<PCArg>();
+            XmlDocument xmlDoc = new XmlDocument();
 
-            return true;
-            //return (sCodeNumber == sConfirmCodeNumber);
+            xmlDoc.Load(xmlRuleFile);
+            XmlNode rootNode = xmlDoc.DocumentElement;
 
+            // Load & set value for random arguments
+            foreach (XmlNode childNode in rootNode.ChildNodes)
+            {
+                PCArg newArg = new PCArg();
+                newArg.name = childNode.Attributes["name"].Value.Trim();
+                newArg.value = childNode.Attributes["value"].Value.Trim();
+                lstArg.Add(newArg);
+            }
+
+            for(int i = 0; i < lstArg.Count; i++)
+            {
+                if (lstArg[i].value.ToLower() == "random")
+                {
+                    lstArg[i].value = sCodeNumber[i].ToString();
+                }
+            }
+
+            // Calculate the remain arguments..
+           
+            CalculateArgs(lstArg);
+           
+            // get ConfirmCodeNumber and compare
+            string sConfirmCodeNumber = "";
+            for (int i = 0; i < lstArg.Count; i++)
+            {
+                sConfirmCodeNumber += lstArg[i].value;
+            }
+            
+            return (sCodeNumber == sConfirmCodeNumber);
+
+        }
+
+        private static void CalculateArgs(List<PCArg> lstArg)
+        {
+            foreach (PCArg arg in lstArg)
+            {
+                if (!Validator.isNumber(arg.value))
+                {
+                    foreach (PCArg argConst in lstArg)
+                    {
+                        // Replace all argruments in the expression by the correlative values
+                        if (Validator.isNumber(argConst.value))
+                        {
+                            arg.value = arg.value.Replace(argConst.name[0], argConst.value[0]);
+                        }
+                    }
+                    arg.value = ((int)ExpressionClass.evaluateExp(arg.value)).ToString();
+                }
+            }
         }
     }
 

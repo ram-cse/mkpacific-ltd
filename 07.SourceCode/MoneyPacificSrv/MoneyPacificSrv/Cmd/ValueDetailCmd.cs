@@ -13,6 +13,7 @@ namespace MoneyPacificSrv.Cmd
     {
         #region IMPCommand Members
 
+        
         public string Execute(string[] args)
         {
             /* PSEUDO CODE
@@ -50,19 +51,46 @@ namespace MoneyPacificSrv.Cmd
             Customer existCustomer = CustomerBUS.getCustomerOrCreateNotYetBuy(senderPhone);
             
             string sCodeNumber = args[1];
+            sCodeNumber = Utility.removeSpaceChar(sCodeNumber);
+            sCodeNumber = Utility.removeChar(sCodeNumber,'-');
+
+            string sMessage = "";
 
             if (PacificCodeBUS.isExist(sCodeNumber))
             {
                 PacificCode existPacificCode = PacificCodeBUS.getPacificCode(sCodeNumber);
+                
+                // Amoung > 0
 
+                string customerStatus = CustomerBUS.makeSuspicion(existCustomer.ID);
+                // Amount > 0 : Charge Fee 
+
+                sMessage = existCustomer.Phone.Trim() + "*"
+                    + MessageManager.getValue("CHECK_VALUE_DETAIL_SUCCESSFUL",
+                        Utility.insertSeparateChar(existPacificCode.CodeNumber, ' '),
+                        existPacificCode.ActualAmount.ToString(),
+                        ((DateTime)existPacificCode.ExpireDate).ToShortDateString());
+                
             }
+            else // Pacific is NO EXIST
+            {
+                if (PacificCodeBUS.isPossibleCode(sCodeNumber))
+                {
+                    // Add to Black List
+                    CustomerBUS.moveToBlackList(existCustomer.Phone);
+                    sMessage = "0*" + MessageManager.getValue("BE_BLACK_LIST");
+                }
+                else
+                {
+
+                    sMessage = CustomerBUS.makeSuspicion(existCustomer.ID);
+                }
+            }
+
+            if (sMessage != "")
+                return sMessage;
             else
-            { 
-            }
-
-            string sMessage = MessageManager.getValue("SAMPLE_MESSAGE");
-
-            return sMessage + "vui lòng chờ trong giây lát!.." ;
+                return "Error!..";
         }
 
         #endregion

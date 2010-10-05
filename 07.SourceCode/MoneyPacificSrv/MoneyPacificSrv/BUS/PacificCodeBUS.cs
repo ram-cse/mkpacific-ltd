@@ -6,6 +6,7 @@ using System.Web;
 using MoneyPacificSrv.DTO;
 using MoneyPacificSrv.DAO;
 using MoneyPacificSrv.XAO;
+using MoneyPacificSrv.Util;
 
 namespace MoneyPacificSrv.BUS
 {
@@ -13,10 +14,11 @@ namespace MoneyPacificSrv.BUS
     {
         // TODO: Shout get from from CONFIG file
         
-        private static void AddNew(PacificCode newPacificCode)
+        private static void addNew(PacificCode newPacificCode)
         {
-            StoreDAO.UpdateAfterInsertNewCode(newPacificCode);
-            CustomerDAO.UpdateAfterInsertNewCode(newPacificCode);
+            StoreDAO.updateAfterInsertNewCode(newPacificCode);
+            CustomerDAO.updateAfterInsertNewCode(newPacificCode);
+            PacificCodeDAO.addNew(newPacificCode);
         }
 
         internal static PacificCode getNewPacificCode(int storeId, int customerId, int amountBuy)
@@ -28,7 +30,7 @@ namespace MoneyPacificSrv.BUS
             bool bGetNewPacificCode = false;
             do
             {
-                newPacificCode = PacificCodeBUS.GenerateNewCode();
+                newPacificCode = PacificCodeBUS.generateNewCode();
                 bGetNewPacificCode = !PacificCodeBUS.isExist(newPacificCode.CodeNumber);
             } while (bGetNewPacificCode == false);
 
@@ -37,6 +39,7 @@ namespace MoneyPacificSrv.BUS
             newPacificCode.StoreID = storeId;
             newPacificCode.CustomerID = customerId;
             newPacificCode.InitialAmount = amountBuy;
+            newPacificCode.ActualAmount = amountBuy;
             newPacificCode.Date = DateTime.Now;
 
             int iYear = DateTime.Now.Year + 1;
@@ -49,14 +52,14 @@ namespace MoneyPacificSrv.BUS
             // Update Action on STORE & CUSTOMER should be done by
             // Trigger or CLR Trigger in Database
 
-            PacificCodeBUS.AddNew(newPacificCode);
+            PacificCodeBUS.addNew(newPacificCode);
 
             return newPacificCode;
         }
                 
-        private static PacificCode GenerateNewCode()
+        private static PacificCode generateNewCode()
         {
-            return PacificCodeXAO.GenerateNewCode();
+            return PacificCodeXAO.generateNewCode();
         }
         
         internal static PacificCode getPacificCode(string sCodeNumber)
@@ -65,8 +68,13 @@ namespace MoneyPacificSrv.BUS
         }
 
         internal static bool isExist(string sCodeNumber)
-        {
+        {   
             return PacificCodeDAO.isExist(sCodeNumber);
+        }
+
+        internal static bool isPossibleCode(string sCodeNumber)
+        {
+            return PacificCodeXAO.isPossibleCode(sCodeNumber);
         }
     }
 }

@@ -14,5 +14,10 @@ namespace MoneyPacificSrv.BUS
         {
             return CustomerStatusDAO.getId(customerStatus);
         }
+
+        internal static string getValue(int? iNullableID)
+        {
+            return CustomerStatusDAO.getValue(iNullableID);
+        }
     }
 }

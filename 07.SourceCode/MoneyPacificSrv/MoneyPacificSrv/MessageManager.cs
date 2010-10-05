@@ -16,38 +16,66 @@ namespace MoneyPacificSrv
     {
         internal static string sLanguage = "vn";
         internal static MPMessageDTO[] arrMessage = new MPMessageDTO[]{
+            
             new MPMessageDTO("SAMPLE_MESSAGE", "Loi nhan vi du!... "),
-            new MPMessageDTO("GENERATE_SUCCESSFUL", "Bạn đã mua thành công một PacificCode: "
-                + "{0} có giá trị  {1} VND. Tài khoản này có giá trị đến ngày {3}" )
-                
+            
+            new MPMessageDTO("CHECK_VALUE_DETAIL_SUCCESSFUL", "Ma PacificCode {0} co gia tri hien tai la {1}. Va co han su dung den ngay{2}."),
+            
+            new MPMessageDTO("GENERATE_SUCCESSFUL", "Ban vua mua mot PacificCode: {0} co gia tri  {1} VND. va han su dung de ngay {2}" ),
+
+            new MPMessageDTO("WRONG_PASSWORD", "Sai mat khau"),
+          
+            new MPMessageDTO("INVALID_AMOUNT", "Khong co loai tai khoang: {0} VND"),
+            
+            new MPMessageDTO("INVALID_AMOUNT_CONFIRM", "So tien va Xac nhan so tien phai trung khop."),
+            
+            new MPMessageDTO("INVALID_PHONE", "So dien thoai nguoi nhan khong co that"),
+            
+            new MPMessageDTO("BLACK_LIST", "BLACK LIST!.. "),
+
+            new MPMessageDTO("CUSTOMER_IN_BLACK_LIST", "So Phone KH trong BLACK LIST, khong the mua!.. "),
+
+            new MPMessageDTO("BE_BLACK_LIST", "So Phone nay da dua vao BLACK LIST!.. "),
+            
+            new MPMessageDTO("NOT_EXIST_PACIFICCODE", "MoneyPacific: Xin loi quy khach, ma nay khong co hieu luc."),
+
+            new MPMessageDTO("WILL_BE_LOCKED", "MoneyPacific: Xin loi quy khach, ma nay khong co hieu luc, kiem tra sai lan nua so phone cua ban se bi KHOA!"),
+            
+            new MPMessageDTO("BE_LOCKED", "MoneyPacific: Qui khach da tao su nghi ngo, So Phone cua ban bi KHOA!"),
+
+            new MPMessageDTO("NOT_EXIST_STORE", "MoneyPacific: Yeu cau bi tu choi."),
+
+            new MPMessageDTO("LOCKED_CUSTOMER", "KH nay da bi khoa! ")
+    
         };
-        
-        internal static string GenNotExistStoreMessage(string sPhoneNumber)
+
+        /*
+        internal static string genNotExistStoreMessage()
         {
-            return (sPhoneNumber + "*" + "Yêu cầu bị từ chối! ");
+            return ("Yêu cầu bị từ chối!");
         }
 
-        internal static string GenErrorPasswordMessage()
+        internal static string genWrongPasswordMessage()
         {
             return "Sai mật khẩu. ";
         }
 
-        internal static string GenInvalidAmountMessage(int amountBuy)
+        internal static string genInvalidAmountMessage(int amountBuy)
         {
             return ("Không có tài khoản loại: " + amountBuy + " VND. ");
         }
 
-        internal static string GenInvalidAmountConfirmMessage()
+        internal static string genInvalidAmountConfirmMessage()
         {
             return ("Số tiền và Xác nhận số tiền phải trùng khớp. ");
         }
 
-        internal static string GenInvalidPhoneMessage()
+        internal static string genInvalidPhoneMessage()
         {
             return ("Số điện thoại này không có thật. ");
         }
 
-        internal static string GenSuccessCreatePacificCodeMessage(PacificCode newPacificCode)
+        internal static string genSuccessCreatePacificCodeMessage(PacificCode newPacificCode)
         {
             string sCodeNumber = newPacificCode.CodeNumber;
 
@@ -61,7 +89,7 @@ namespace MoneyPacificSrv
             
             return sResult;
         }
-
+        // */
         internal static string getValue(string sName, string[] args)
         {
             string sResult = "Error message!...";
@@ -88,7 +116,7 @@ namespace MoneyPacificSrv
 
             return sResult;
         }
-
+        
         internal static string getValue(string sName)
         {
             return getValue(sName, new string[]{});

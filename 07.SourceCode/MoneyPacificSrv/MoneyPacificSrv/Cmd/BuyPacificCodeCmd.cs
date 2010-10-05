@@ -35,8 +35,8 @@ namespace MoneyPacificSrv.Cmd
             // 01. check STORE
             bool bSenderExists = StoreBUS.checkExist(senderStore);
             if (!bSenderExists)
-            {
-                smsRespones = MessageManager.GenNotExistStoreMessage(senderStore.Phone);
+            {   
+                smsRespones = senderStore.Phone + "*" + MessageManager.getValue("NOT_EXIST_STORE");
                 return smsRespones;
             }
 
@@ -45,13 +45,17 @@ namespace MoneyPacificSrv.Cmd
             bValidPassword = StoreBUS.checkPassword(senderStore);
 
             if (!bValidPassword)
-            {
-                sErrorMessage += MessageManager.GenErrorPasswordMessage();
+            {   
+                sErrorMessage += MessageManager.getValue("WRONG_PASSWORD");
             }
             else
             {
                 senderStore = StoreBUS.getStore(senderStore.Phone, senderStore.PassStore);
             }
+
+            // *** KIEM TRA KH BLACK LIST sau khi Kiem tra STORE
+            if (CustomerBUS.isInBlackList(buyerCustomer.Phone))
+                return senderStore.Phone.Trim() + "*" + MessageManager.getValue("CUSTOMER_IN_BLACK_LIST");
 
             // 03. check PACIFIC CODE Categories
             bool bValidAmount = false;
@@ -59,7 +63,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidAmount)
             {
-                sErrorMessage += MessageManager.GenInvalidAmountMessage(amountBuy);
+                sErrorMessage += MessageManager.getValue("INVALID_AMOUNT_MESSAGE", amountBuy.ToString());                
             }
 
             // 04. check CONFIRM AMOUNT
@@ -67,7 +71,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidConfirm)
             {
-                sErrorMessage += MessageManager.GenInvalidAmountConfirmMessage();
+                sErrorMessage += MessageManager.getValue("INVALID_AMOUNT_CONFIRM");                
             }
 
             // 05. check PHONE (valid and status)
@@ -75,12 +79,11 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidPhone)
             {
-                sErrorMessage = MessageManager.GenInvalidPhoneMessage();
+                sErrorMessage = MessageManager.getValue("INVALID_PHONE");                
             }
 
             // 06. check CUSTOMER (exist and status)
             buyerCustomer = CustomerBUS.getCustomerOrCreateNotYetBuy(buyerCustomer.Phone);
-            bool bValidCustomer = CustomerBUS.isValidCustomer(buyerCustomer.Phone);
                         
             // Get result: --------------------------
             
@@ -88,8 +91,7 @@ namespace MoneyPacificSrv.Cmd
                 bValidPassword
                 && bValidAmount
                 && bValidConfirm
-                && bValidPhone
-                && bValidCustomer
+                && bValidPhone            
                 );
 
             if (bBuyPCodeSuccess)
@@ -97,10 +99,18 @@ namespace MoneyPacificSrv.Cmd
                 PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.ID, buyerCustomer.ID, amountBuy);
 
                 smsRespones = buyerCustomer.Phone.Trim();
-                smsRespones += "*" + MessageManager.GenSuccessCreatePacificCodeMessage(newPacificCode);
+                
+                
+                smsRespones += "*" + MessageManager.getValue("GENERATE_SUCCESSFUL", 
+                    Utility.insertSeparateChar(newPacificCode.CodeNumber.Trim(),' ',4),
+                    newPacificCode.ActualAmount.ToString(),
+                    ((DateTime)newPacificCode.ExpireDate).ToShortDateString());
+                
+                // Mua thanh cong thi CustomerSTATUS = "x01"
+                CustomerBUS.setStatus(buyerCustomer.Phone, "x01");
 
                 // Log Transaction info
-                TransactionBUS.AddNew(newPacificCode);
+                TransactionBUS.addNew(newPacificCode);
             }
             else
             {

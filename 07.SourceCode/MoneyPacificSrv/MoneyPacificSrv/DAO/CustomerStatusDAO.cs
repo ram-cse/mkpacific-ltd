@@ -15,5 +15,10 @@ namespace MoneyPacificSrv.DAO
             return (mpdb.CustomerStatus.Where(c => 
                 c.Value == customerStatus).Single<CustomerStatus>()).ID;
         }
+
+        internal static string getValue(int? iId)
+        {
+            return mpdb.CustomerStatus.Where(c => c.ID == iId).Single<CustomerStatus>().Value;
+        }
     }
 }

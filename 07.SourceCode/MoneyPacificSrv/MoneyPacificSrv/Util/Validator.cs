@@ -24,7 +24,11 @@ namespace MoneyPacificSrv.Util
         {
             bool bResult = true;
 
+            if (sPhoneNumber[0] == '+')
+                sPhoneNumber = sPhoneNumber.Substring(1, sPhoneNumber.Length - 1);
+
             bResult = bResult && (sPhoneNumber.Length <= (int)PHONE_NUMBER.MAX) && (sPhoneNumber.Length >= (int)PHONE_NUMBER.MIN);
+
 
             for (int i = 0; i < sPhoneNumber.Length; i++)
             {
@@ -60,7 +64,8 @@ namespace MoneyPacificSrv.Util
             bool bResult = true;
 
             // remove the space char
-            sCodeNumber = Util.removeSpaceChar(sCodeNumber);
+            sCodeNumber = Utility.removeSpaceChar(sCodeNumber);
+            sCodeNumber = Utility.removeChar(sCodeNumber,'-');
 
             // Kiểm tra
             bResult = bResult && (sCodeNumber.Length == (int)PACIFIC_CODE.LENGTH);

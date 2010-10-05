@@ -4,7 +4,7 @@
         <%: Html.ValidationSummary(true) %>
         
         <fieldset>
-            <legend>Fields</legend>
+            <legend>Fields TEMPLATE</legend>
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.AlbumId) %>
@@ -14,19 +14,23 @@
                 <%: Html.ValidationMessageFor(model => model.AlbumId) %>
             </div>
             
+            
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.GenreId) %>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.GenreId) %>
-                <%: Html.ValidationMessageFor(model => model.GenreId) %>
+                <!--%: Html.ValidationMessageFor(model => model.GenreId) %-->
+                <%: Html.DropDownList("Genre", new SelectList(ViewData["Genres"] as IEnumerable, "GenreID", "Name",Model.GenreId)) %>
             </div>
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.ArtistId) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ArtistId) %>
+                <%: Html.DropDownListFor("ArtistId",
+                    SelectList(ViewData["Artists"] as IEnumerable, "ArtistId", 
+                                    "Name", Model.ArtistId))%>
                 <%: Html.ValidationMessageFor(model => model.ArtistId) %>
             </div>
             
