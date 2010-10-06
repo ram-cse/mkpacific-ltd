@@ -69,8 +69,7 @@ namespace MoneyPacificSrv.Cmd
                     + MessageManager.getValue("CHECK_VALUE_DETAIL_SUCCESSFUL",
                         Utility.insertSeparateChar(existPacificCode.CodeNumber, ' '),
                         existPacificCode.ActualAmount.ToString(),
-                        ((DateTime)existPacificCode.ExpireDate).ToShortDateString());
-                
+                        ((DateTime)existPacificCode.ExpireDate).ToShortDateString());                
             }
             else // Pacific is NO EXIST
             {
@@ -82,7 +81,6 @@ namespace MoneyPacificSrv.Cmd
                 }
                 else
                 {
-
                     sMessage = CustomerBUS.makeSuspicion(existCustomer.ID);
                 }
             }

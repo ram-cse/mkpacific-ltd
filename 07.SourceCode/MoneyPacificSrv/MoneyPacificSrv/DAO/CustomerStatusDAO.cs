@@ -18,6 +18,7 @@ namespace MoneyPacificSrv.DAO
 
         internal static string getValue(int? iId)
         {
+            if (iId == null) iId = 1; // Default
             return mpdb.CustomerStatus.Where(c => c.ID == iId).Single<CustomerStatus>().Value;
         }
     }

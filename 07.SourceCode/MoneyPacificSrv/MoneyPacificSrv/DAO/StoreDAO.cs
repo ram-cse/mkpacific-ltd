@@ -52,10 +52,9 @@ namespace MoneyPacificSrv.DAO
                 {
                     existStore.TotalSales += newPacificCode.ActualAmount;
                 }
-            }
-
-            // SAVE
-            mpdb.SubmitChanges();
+                // SAVE
+                mpdb.SubmitChanges();
+            } 
         }
     }
 }

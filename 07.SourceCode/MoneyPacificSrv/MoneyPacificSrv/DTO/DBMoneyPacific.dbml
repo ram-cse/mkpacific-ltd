@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MoneyPacific" Class="DBMoneyPacificDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=Alex-PC;Initial Catalog=MoneyPacific;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MoneyPacificConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ALEX-PC;Initial Catalog=MoneyPacific;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MoneyPacificConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TransactionStatus" Member="TransactionStatus">
+    <Type Name="TransactionStatus">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="TransactionStatus_Transaction" Member="Transactions" ThisKey="ID" OtherKey="StatusID" Type="Transaction" />
+    </Type>
+  </Table>
   <Table Name="dbo.Categories" Member="Categories">
     <Type Name="Category">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -7,14 +15,6 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="Category_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="CateID" Type="PacificCode" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TransactionStatus" Member="TransactionStatus">
-    <Type Name="TransactionStatus">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="TransactionStatus_Transaction" Member="Transactions" ThisKey="ID" OtherKey="StatusID" Type="Transaction" />
     </Type>
   </Table>
   <Table Name="dbo.Customer" Member="Customers">
