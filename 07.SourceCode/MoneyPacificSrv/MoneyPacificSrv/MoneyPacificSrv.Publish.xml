@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/MoneyPacificSrv.pdb" publishTime="10/07/2010 11:49:47" />
+    <file relUrl="App_Data/Language.xml" publishTime="10/01/2010 16:44:09" />
+    <file relUrl="bin/MoneyPacificSrv.dll" publishTime="10/07/2010 11:49:47" />
+    <file relUrl="Web.config" publishTime="10/07/2010 11:31:20" />
+    <file relUrl="Main.svc" publishTime="09/27/2010 10:40:35" />
+    <file relUrl="App_Data/MoneyPacific_log.ldf" publishTime="10/07/2010 11:15:57" />
+    <file relUrl="App_Data/PacificCodeR.xml" publishTime="10/01/2010 11:14:48" />
+    <file relUrl="App_Data/MoneyPacific.mdf" publishTime="10/07/2010 11:15:57" />
+  </publishProfile>
+</publishData>
