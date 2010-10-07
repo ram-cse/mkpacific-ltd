@@ -13,8 +13,7 @@ namespace MoneyPacificSrv.DAO
         private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
         internal static void updateAfterInsertNewCode(PacificCode newPacificCode)
-        {
-
+        {   
             // GET
             Customer existCustomer = mpdb.Customers.Where(c => c.ID == newPacificCode.CustomerID).Single<Customer>();
             
