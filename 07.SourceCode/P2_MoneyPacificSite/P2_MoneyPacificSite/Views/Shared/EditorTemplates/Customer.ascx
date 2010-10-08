@@ -76,8 +76,7 @@
                         <div class="editor-field">
                             <%: Html.TextBoxFor(model => model.CreateDate, String.Format("{0:g}", Model.CreateDate)) %>
                             <%: Html.ValidationMessageFor(model => model.CreateDate) %>
-                        </div>
-          
+                        </div>          
                     </td>
                     <td>
                         <div class="editor-label">

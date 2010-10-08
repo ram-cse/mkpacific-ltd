@@ -8,27 +8,37 @@ namespace MoneyPacificSrv.DAO
 {
     public class StoreDAO
     {
-        private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+        // private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
         internal static bool checkPassword(DTO.Store senderStore)
         {
-            return mpdb.Stores.Where(l => (l.Phone == senderStore.Phone
-                 && l.PassStore == senderStore.PassStore)).Any();            
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            bool bResult = mpdb.Stores.Where(l => (l.Phone == senderStore.Phone
+                 && l.PassStore == senderStore.PassStore)).Any();
+            mpdb.Connection.Close();
+            return bResult;
+
         }
 
         internal static bool checkExist(Store senderStore)
         {
-            return mpdb.Stores.Any(l => l.Phone == senderStore.Phone);
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            bool bResult = mpdb.Stores.Any(l => l.Phone == senderStore.Phone);
+            mpdb.Connection.Close();
+            return bResult;
         }
 
         internal static Store getStore(string storePhone, string passStore)
         {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             Store existStore = mpdb.Stores.Where(s => s.Phone == storePhone && s.PassStore == passStore).FirstOrDefault();
+            mpdb.Connection.Close();
             return existStore;
         }
 
         internal static void updateAfterInsertNewCode(PacificCode newPacificCode)
         {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             // GET
             Store existStore = mpdb.Stores.Where(s => s.ID == newPacificCode.StoreID).Single<Store>();
 
@@ -54,7 +64,9 @@ namespace MoneyPacificSrv.DAO
                 }
                 // SAVE
                 mpdb.SubmitChanges();
-            } 
+            }
+
+            mpdb.Connection.Close();
         }
     }
 }

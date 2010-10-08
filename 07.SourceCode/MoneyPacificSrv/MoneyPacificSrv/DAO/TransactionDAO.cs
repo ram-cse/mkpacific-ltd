@@ -9,9 +9,11 @@ namespace MoneyPacificSrv.DAO
 {
     public class TransactionDAO
     {
-        internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+        // internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
         internal static void AddNew(DTO.PacificCode newSuccessPacificCode)
         {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+
             Transaction newTransaction = new Transaction();
 
             newTransaction.CreateDate = newSuccessPacificCode.Date;
@@ -23,6 +25,8 @@ namespace MoneyPacificSrv.DAO
 
             mpdb.Transactions.InsertOnSubmit(newTransaction);
             mpdb.SubmitChanges();
+
+            mpdb.Connection.Close();
         }
     }
 }
