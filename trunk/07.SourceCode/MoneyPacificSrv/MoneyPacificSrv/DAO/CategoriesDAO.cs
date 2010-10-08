@@ -9,11 +9,13 @@ namespace MoneyPacificSrv.DAO
 {
     public class CategoriesDAO
     {
-        internal static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
         
         internal static bool isValidAmount(int amountBuy)
-        {   
-            return (mpdb.Categories.Where(c => c.Value == amountBuy && c.Active == true).Any());
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();            
+            bool bResult =  (mpdb.Categories.Where(c => c.Value == amountBuy && c.Active == true).Any());
+            mpdb.Connection.Close();
+            return bResult;
         }
     }
 }

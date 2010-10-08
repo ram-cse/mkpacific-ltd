@@ -5,7 +5,7 @@
     <Grid>
         <TextBox Height="26" Margin="8,75,82,0" Name="txtContent" VerticalAlignment="Top" Text="0932130483*12345*500000*0939146267*500000" Foreground="#FF3399FF" />
         <Button Content="Send" Height="26" Margin="0,75,12,0" Name="btnSend" VerticalAlignment="Top" HorizontalAlignment="Right" Width="63" Click="btnSend_Click" />
-        <Label Content="MONEY Pacific" Height="41" HorizontalAlignment="Left" Margin="7,14,0,0" Name="lblMoneyPacific" VerticalAlignment="Top" Width="151" FontWeight="Bold" FontSize="20" Foreground="#FF5B5858" FontFamily="SimSun" />
+        <Label Content="MONEY Pacific : 2000" Height="41" HorizontalAlignment="Left" Margin="7,14,0,0" Name="lblMoneyPacific" VerticalAlignment="Top" Width="221" FontWeight="Bold" FontSize="20" Foreground="#FF5B5858" FontFamily="SimSun" />
         <Label Content="MONEY Pacific" FontFamily="SimSun" FontSize="20" FontWeight="Bold" Foreground="#FFE2700E" Height="41" HorizontalAlignment="Left" Margin="187,109,0,0" Name="label1" VerticalAlignment="Top" Width="151" />
         <TextBox Margin="9,109,12,12" Name="txtMessage" TextWrapping="Wrap" Text="..." Foreground="#FF0365C6" />
         <Button Content="Buy" Height="21" HorizontalAlignment="Left" Margin="9,48,0,0" Name="btnBuy" VerticalAlignment="Top" Width="59" Click="btnBuy_Click" />

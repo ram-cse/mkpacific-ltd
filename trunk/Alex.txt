@@ -1,4 +1,41 @@
-﻿
+﻿ID: 06520344
+supercloud_it: pass: 0919090044
+
+	8/10/2010:
+		Học JQuery
+		MOBIVI:
+			Tài khoản:
+				+ Tổng quan
+				+ Thông tin
+				+ Mật khẩu
+				+ Câu hỏi bí mật
+				+ TK Ngân Hàng				
+			Gửi Tiền:
+				- Mã nhận:
+				- Số tiền: (có confirm)
+				- Mô Tả: 
+				- Nguồn tiền: (từ PacificCode nào)
+				[Tiep Tuc] - [Xem Chi Phí]
+			Tính Tiền:
+				+ Gửi yêu cầu thanh toán
+				+ 
+					
+			Tính Tiền:
+			Thanh Toán:
+			Các Giao Dịch:
+			Ứng dụng Mobile:
+
+		http://cid-0030df1a0e8e9dc5.office.live.com/browse.aspx/MIC%20Tutorials
+		- Chức năng xem PacificCode trên WebSite
+		- Làm 3 chứa năng: 
+			. x Danh sách các PacificCode của một khách hàng
+			. x Chi tiết thông tin một PacificCode
+			. x Yêu cầu đổi thông tin PacificCode
+				=> chức năng xem chi tiết. Không gửi qua Code
+		- Các chức năng bổ sung:
+			+ Đăng nhập
+			+ Ajax
+
 	7/10/2010:
 		- *** Cấu hình cho phép WCF gọi từ máy khác trong mạng LAN
 			Biên dịch lại Client tạo ra Main.cs & app.config mới

@@ -10,10 +10,11 @@ namespace MoneyPacificSrv.DAO
 {
     public class CustomerDAO
     {
-        private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+        //private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
         internal static void updateAfterInsertNewCode(PacificCode newPacificCode)
-        {   
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             // GET
             Customer existCustomer = mpdb.Customers.Where(c => c.ID == newPacificCode.CustomerID).Single<Customer>();
             
@@ -44,20 +45,29 @@ namespace MoneyPacificSrv.DAO
 
             // SAVE
             mpdb.SubmitChanges();
+            mpdb.Connection.Close();
         }
 
         internal static bool isExist(string sPhone)
         {
-            return mpdb.Customers.Where(c=>c.Phone == sPhone).Any();
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            bool bResult = mpdb.Customers.Where(c=>c.Phone == sPhone).Any();
+            mpdb.Connection.Close();
+            return bResult;
         }
 
         internal static Customer getCustomer(string sPhone)
         {
-            return mpdb.Customers.Where(c => c.Phone == sPhone).Single<Customer>();
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            Customer oCustomer = mpdb.Customers.Where(c => c.Phone == sPhone).Single<Customer>();
+            mpdb.Connection.Close();
+            return oCustomer;
         }
 
         internal static Customer addNew(string sPhone)
         {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+
             Customer newCustomer = new Customer();
             
             newCustomer.Phone = sPhone;
@@ -68,13 +78,18 @@ namespace MoneyPacificSrv.DAO
             mpdb.Customers.InsertOnSubmit(newCustomer);
             mpdb.SubmitChanges();
 
+            mpdb.Connection.Close();
             return newCustomer;
         }
 
         internal static Customer addNew(string sPhone, bool isFirstBuy)
         {
+            
+
             if (isFirstBuy)
             {
+                DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+
                 Customer newCustomer = new Customer();
                 
                 newCustomer.Phone = sPhone;
@@ -82,7 +97,8 @@ namespace MoneyPacificSrv.DAO
                 
                 mpdb.Customers.InsertOnSubmit(newCustomer);
                 mpdb.SubmitChanges();
-                
+
+                mpdb.Connection.Close();
                 return newCustomer;
             }
             else
@@ -95,13 +111,17 @@ namespace MoneyPacificSrv.DAO
 
         internal static Customer getCustomer(int customerId)
         {
-            return mpdb.Customers.Where(c => c.ID == customerId).Single<Customer>();
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            Customer oCustomer = mpdb.Customers.Where(c => c.ID == customerId).Single<Customer>();
+            mpdb.Connection.Close();
+            return oCustomer;
         }
 
 
 
         internal static void setStatus(string sPhoneNumber, string sStatus)
         {
+            
             Customer existCustomer = CustomerDAO.getCustomer(sPhoneNumber);
             setStatus(existCustomer.ID, sStatus);
             
@@ -109,7 +129,10 @@ namespace MoneyPacificSrv.DAO
 
         internal static void setStatus(int customerId, string sStatus)
         {
-            Customer existCustomer = CustomerDAO.getCustomer(customerId);
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+
+            // Customer existCustomer = CustomerDAO.getCustomer(customerId); // LAY từ mpdb khác sẽ ko có tác dụng nếu có xử lý
+            Customer existCustomer = mpdb.Customers.Where(c => c.ID == customerId).Single<Customer>();
             
             string oldStatus = CustomerStatusDAO.getValue(existCustomer.StatusID);
             
@@ -119,6 +142,8 @@ namespace MoneyPacificSrv.DAO
 
             existCustomer.StatusID = CustomerStatusDAO.getId(sStatus);
             mpdb.SubmitChanges();
+
+            mpdb.Connection.Close();
         }
     }
 }
