@@ -1,4 +1,44 @@
-﻿	5/10/2010:
+﻿
+	7/10/2010:
+		- *** Cấu hình cho phép WCF gọi từ máy khác trong mạng LAN
+			Biên dịch lại Client tạo ra Main.cs & app.config mới
+			=> sẽ có thể gọi lại
+		- *** LỖI: Nếu có 2 chương trình cùng kết nối tới SQL SERVER
+		=> sẽ gây tranh chấp dữ liệu do bên WCF Service chỉ tạo kết nối một lần, không load lại dữ liệu mới
+		=> cần thay đổi tất cả các biến STATIS kết nối dữ liệu thành biến NON STATIC
+	
+		- Tìm hiểu lại cách phân quyền trong WCF
+		- Tìm hiểu lại CLR Trigger (dll)
+		- Service:
+			- Free: với giá ở thời điểm hiện tại
+		- Tạo khung WebSite: 
+			Controller - View - Model (DTO)
+			(Controller + DAO)
+			Làm các chức năng sau:
+				. Kiểm tra VALUE & DETAIL trên máy tính (WebSite)
+				. Change PacificCode trên máy tính
+				. Nhận lại tin nhắn SMS với thông tin vừa mua PacificCode:
+					- Với điều kiện PacificCode này chưa thực hiện giao dịch nào..
+				
+		- Tai
+
+	6/10/2010:
+		Sửa lỗi: authenfication (gọi wcf qua mạng cần phải chứng thực bảo mật)
+		?? 
+			http://geekswithblogs.net/claeyskurt/archive/2008/04/22/121508.aspx
+		CLR Trigger: => cài tất cả các RULE lên đây
+		
+		*** boyGJ.com
+		http://www.microsoft.com/web/downloads/platform.aspx?wt.mc_id=ban-f-us-nws--MSCOM_Aug2010
+		
+		- LINQ gõ bằng tay: ..
+		- Cấu hình IIS chạy localhost
+		- MVC
+		- Design Pattern
+		* Cài mạng tĩnh để không bị những lỗi ko rõ ràng
+		*** Mở FireWall, cho phép tất cả các action thong qua bang
+
+	5/10/2010:
 		- Dịch 1 bài tiếng anh ngắn (Gymlish)
 	    - Viết Tutorial bằng tiếng anh về WCF, WCF Call
 		- Tạo 1 lớp chặn các số trong BlackList lại, trả ra thông báo
