@@ -18,15 +18,15 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK__Album__ArtistId__276EDEB3", "Artist", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore05.Models.Artist), "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore05.Models.Album), true)]
-[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK_Album_Genre", "Genre", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore05.Models.Genre), "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore05.Models.Album), true)]
-[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK_Cart_Album", "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore05.Models.Album), "Cart", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore05.Models.Cart), true)]
-[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK_InvoiceLine_Album", "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore05.Models.Album), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore05.Models.OrderDetail), true)]
-[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK__InvoiceLi__Invoi__2F10007B", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore05.Models.Order), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore05.Models.OrderDetail), true)]
+[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK__Album__ArtistId__276EDEB3", "Artist", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore06.Models.Artist), "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore06.Models.Album), true)]
+[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK_Album_Genre", "Genre", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore06.Models.Genre), "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore06.Models.Album), true)]
+[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK_Cart_Album", "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore06.Models.Album), "Cart", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore06.Models.Cart), true)]
+[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK_InvoiceLine_Album", "Album", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore06.Models.Album), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore06.Models.OrderDetail), true)]
+[assembly: EdmRelationshipAttribute("MvcMusicStoreModel", "FK__InvoiceLi__Invoi__2F10007B", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(MvcMusicStore06.Models.Order), "OrderDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MvcMusicStore06.Models.OrderDetail), true)]
 
 #endregion
 
-namespace MvcMusicStore05.Models
+namespace MvcMusicStore06.Models
 {
     #region Contexts
     

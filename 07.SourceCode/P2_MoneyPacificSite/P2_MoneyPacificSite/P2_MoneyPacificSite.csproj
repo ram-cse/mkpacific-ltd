@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\PacificCodeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -69,7 +70,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MoneyPacific.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilator\MKMail.cs" />
     <Compile Include="ViewModels\CustomerBrowseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +81,11 @@
     <Content Include="Views\Customer\Browse.aspx" />
     <Content Include="Views\Customer\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Mail\SendEmailabc.ascx" />
+    <Content Include="Views\Mail\SendEmailabc.aspx" />
+    <Content Include="Views\Mail\SendM.aspx" />
+    <Content Include="Views\Mail\SendMa.aspx" />
+    <Content Include="Views\Mail\Test.aspx" />
     <Content Include="Views\PacificCode\Details.aspx" />
     <Content Include="Views\Shared\EditorTemplates\Customer.ascx" />
     <Content Include="Web.config" />

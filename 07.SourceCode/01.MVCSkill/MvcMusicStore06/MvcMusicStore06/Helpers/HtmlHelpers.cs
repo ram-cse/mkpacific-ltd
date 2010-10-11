@@ -5,7 +5,7 @@ using System.Web;
 
 using System.Web.Mvc;
 
-namespace MvcMusicStore05.Helpers
+namespace MvcMusicStore06.Helpers
 {
     //public static class HtmlHelpers
     //{
