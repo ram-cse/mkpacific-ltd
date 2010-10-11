@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-using MvcMusicStore05.Models;
-using MvcMusicStore05.ViewModels;
+using MvcMusicStore06.Models;
+using MvcMusicStore06.ViewModels;
 
-namespace MvcMusicStore05.Controllers
+namespace MvcMusicStore06.Controllers
 {
     public class StoreManagerController : Controller
     {

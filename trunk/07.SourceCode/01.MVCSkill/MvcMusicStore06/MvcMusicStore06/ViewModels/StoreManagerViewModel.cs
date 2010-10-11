@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-using MvcMusicStore05.Models;
+using MvcMusicStore06.Models;
 
 
-namespace MvcMusicStore05.ViewModels
+namespace MvcMusicStore06.ViewModels
 {
     public class StoreManagerViewModel
     {

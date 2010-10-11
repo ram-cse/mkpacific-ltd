@@ -1,5 +1,61 @@
-﻿ID: 06520344
-supercloud_it: pass: 0919090044
+﻿
+	Mặt trời lủng lẳng. 
+	Em nằm thẳng cẳng. 
+	Trên chiếc giường tây. 
+	Em cầm cây bút. 
+	Chấm chấm mút mút. 
+	Viết thư cho anh. 
+	Hỡi anh thân yêu. 
+	Từ ngày anh đi. 
+	Ở nhà vắng vẻ. 
+	Con chó nó đẻ 
+	Nó đẻ 4 con. 
+	Mặt nó to tròn 
+	Giống anh như đúc 
+	Em lấy tên anh 
+	Đặt tên cho chó 
+	Mỗi lần gọi nó 
+	Em nhớ đến anh
+
+	11/10/2010:
+	- Chức năng SendMail:
+	- 4 Function:
+		+ Xem thông tin chi tiết PacificCode
+		+ Gửi tin nhắn
+	- Ajax
+	- MVC:
+		trong tutorial chưa có phần này... (add script)
+		=> ko fải ko có, mà là đã có mà ko chịu đọc tiếp lại đòi test ngay >"<
+		
+		trong template chắc chắn phải include các tập tin .js vào để thực thi kiểm tra
+			<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+			<script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+			<script src="/Scripts/MicrosoftMvcValidation.js" type="text/javascript"></script>
+		
+		SingleOrDefault -> trả ra record default nếu ko có doi tuong nao het
+		
+		return count ?? 0; // => nếu là ? thi tra 0 (???)
+		return total ?? decimal.Zero; // neu total co gia tri thi tra ra total, neu khong co gia tri thi tra ra Zero
+		
+		// Generate a new random GUID using System.Guid Class 
+		
+		return Json(results); // để dùng JavaScript??
+		
+		
+		GOOD
+		One difference between the full ASP.NET MVC 2 Web Application template and the ASP.NET MVC 2 Empty Web Application template is that the empty template doesn't include an Account Controller. We'll add an Account Controller by copying a few files from a new ASP.NET MVC application created from the full ASP.NET MVC 2 Web Application template.
+		
+
+	
+	- Tìm lớp học: Môi giới BDS + Thẩm định giá BDS
+	- Đăng tin cho a Giang
+	- Tìm máy DELL cho Huyền ?
+	- Viết thư cho MX
+	- Tạo tài khoản ACB
+	
+	---------------------------------------------------------
+	ID: 06520344
+	supercloud_it: pass: 0919090044
 
 	8/10/2010:
 		Học JQuery

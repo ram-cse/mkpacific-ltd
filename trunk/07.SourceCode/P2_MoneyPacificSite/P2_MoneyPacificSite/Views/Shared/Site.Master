@@ -33,6 +33,7 @@
         </div>
 
         <div id="main">
+            <%: Html.ActionLink("Send a mail", "SendMail", "Mail") %>
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
             <div id="footer">

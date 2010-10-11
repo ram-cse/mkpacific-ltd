@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<MvcMusicStore05.Models.Album>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<MvcMusicStore06.Models.Album>>" %>
 
-<%@ Import Namespace="MvcMusicStore05.Models"%>
-<%@ Import Namespace="MvcMusicStore05.Helpers" %> 
+<%@ Import Namespace="MvcMusicStore06.Models"%>
+<%@ Import Namespace="MvcMusicStore06.Helpers" %> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
