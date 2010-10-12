@@ -1,0 +1,10 @@
+﻿
+	ERROR: LỖI Ở HÀM Mail/SendEmail:
+	xóa đi tạo lại thì chạy
+	để lại, tiep tục sửa thì ko chạy :|
+	
+	Để tạo ra lỗi này:
+	- Tạo 1 hàm tên SendMail(); & [HttpPost]SendMail();
+	=> Tạo View SendMail.aspx
+	- Xóa [HttpPost]SendMail(); đi,
+	-> Tạo Lại SendMail luôn bị lỗi
