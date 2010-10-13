@@ -5,8 +5,10 @@ using System.Web;
 
 namespace P4_MoneyPacificSite.ViewModels
 {
-    public class PacificCodeChangeCodeViewModel
+    public class MessageViewViewModel
     {
-        public string CodeNumber { get; set; }
+        public string Message;
+        public string Action;
+        public string Controller;
     }
 }

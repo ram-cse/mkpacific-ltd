@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>ChangeCode</h2>
-
+    <%: ViewData["Message"] %>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
@@ -16,16 +16,16 @@
             
                         
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.PacificCode) %>
+                <%: Html.LabelFor(model => model.CodeNumber) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.PacificCode) %>
-                <%: Html.ValidationMessageFor(model => model.PacificCode) %>
+                <%: Html.TextBoxFor(model => model.CodeNumber) %>
+                <%: Html.ValidationMessageFor(model => model.CodeNumber)%>
             </div>
             
-            <p>
+            <div>
                 <input type="submit" value="Change Code" />
-            </p>
+            </div>
 
         </fieldset>
 
