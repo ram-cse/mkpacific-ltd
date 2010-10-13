@@ -8,7 +8,9 @@ namespace P4_MoneyPacificSite.ViewModels
     public class PacificCodeSendMoneyViewModel
     {
         public string CodeNumber { get; set; }
+        public string PhoneNumber { get; set; }
+        public string PhoneNumberConfirm { get; set; }
         public double Amount { get; set; }
-        public double AmountConfirm { get; set; }
+        //public double AmountConfirm { get; set; }
     }
 }

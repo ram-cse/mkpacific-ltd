@@ -8,6 +8,7 @@
 
     <h2>SendMoney</h2>
 
+    <%: Html.Encode(ViewData["Co loi xay ra"]) %>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
@@ -31,16 +32,24 @@
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.AmountConfirm) %>
-            </div>
+                <%: Html.LabelFor(model => model.PhoneNumber) %>
+            </div>            
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.AmountConfirm) %>
-                <%: Html.ValidationMessageFor(model => model.AmountConfirm) %>
+                <%: Html.TextBoxFor(model => model.PhoneNumber)%>
+                <%: Html.ValidationMessageFor(model => model.PhoneNumber)%>
             </div>
             
-            <p>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.PhoneNumberConfirm)%>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextBoxFor(model => model.PhoneNumberConfirm)%>
+                <%: Html.ValidationMessageFor(model => model.PhoneNumberConfirm)%>
+            </div>
+            
+            <div>
                 <input type="submit" value="Send Money" />
-            </p>
+            </div>
         </fieldset>
 
     <% } %>

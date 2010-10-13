@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <p>
-        <%: Html.ActionLink("Back to List", "Browse") %>
+        <%: Html.ActionLink("Back to List", "Index") %>
     </p>
 
     <h2>ChiTiet</h2>

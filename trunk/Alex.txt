@@ -1,4 +1,22 @@
-﻿	12/10/2010
+﻿	17/10/2010:
+		- Họp mặt tại VPS
+		
+		
+	13/10/2010:
+
+http://ads.neudesicmediagroup.com/a.aspx?Task=Click&ZoneID=54&CampaignID=281&AdvertiserID=11&BannerID=176&SiteID=6&RandomNumber=713390539&Keywords=
+	Bài Tâm sự với em
+	http://www.nhaccuatui.com/nghe?M=cCe2BDgcCp 
+	
+	kien truc phan mem
+	http://daoquanghuynh.wordpress.com/2009/05/03/3-tier-3-layer-mvc-a-trio-of-famous-trios/
+	http://khoahockithuat.blogspot.com/2010/08/kien-truc-3-lop-va-mvc-pattern-phan-2.html
+	http://khoahockithuat.blogspot.com/2010/08/kien-truc-3-lop-va-mvc-pattern.html
+	
+	<script type="text/javascript" src="http://www.mon-email-anonyme.com/js/jquery/jquery.js"></script>
+ <script type="text/javascript" src="http://www.mon-email-anonyme.com/js/generic/functions.js"></script>
+ 
+	12/10/2010
 		- MoneyPacific Site
 			+ Làm lại: Index - liệt kê 4 chức năng
 				A. Detail of PacificCode

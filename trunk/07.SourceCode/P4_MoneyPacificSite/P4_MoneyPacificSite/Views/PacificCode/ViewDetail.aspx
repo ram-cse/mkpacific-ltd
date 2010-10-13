@@ -8,7 +8,7 @@ Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.ViewModels.PacificCodeView
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>ViewDetail</h2>
-
+    <%: Html.Encode(ViewData["ErrorMessage"]) %>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
@@ -18,6 +18,7 @@ Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.ViewModels.PacificCodeView
                 Pacific Code:                
             </div>
             <div class="editor-field">
+                
                 <%: Html.TextBoxFor(model => model.CodeNumber)%>
                 <%: Html.ValidationMessageFor(model => model.CodeNumber)%>
             </div>
