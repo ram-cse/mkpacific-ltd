@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 using P4_MoneyPacificSite.Models;
 using P4_MoneyPacificSite.ViewModels;
+using P4_MoneyPacificSite.Models.BUS;
+using P4_MoneyPacificSite.Utilators;
 
 namespace P4_MoneyPacificSite.Controllers
 {
@@ -46,9 +48,6 @@ namespace P4_MoneyPacificSite.Controllers
                 // + Lớp GenerateMessage
                 return View();
             }
-            
-
-            
         }
 
         //
@@ -89,10 +88,49 @@ namespace P4_MoneyPacificSite.Controllers
             return View();
         }
 
+        /*
+         * Kiểm tra PhoneNumber có tồn tại
+         *   + Neu ton tai thi lay PacificCode chưa có giao dịch nào 
+         * Kiểm tra theo RULE (cần nhập từ XML)
+         *   + Nếu CreateDate + GioiHanGioNhanSMS > Hien tai
+         *   + Nếu chưa có giao dịch nào xảy ra với PacificCode này
+         *   => thực hiện gửi tin nhắn 
+         * */
         [HttpPost]
         public ActionResult SendSMS(PacificCodeSendSMSViewModel obj)
         {
+            Customer existCustomer = CustomerBUS.getCustomer(obj.PhoneNumber);
+            string sMessage = "";
+            if (existCustomer != null)
+            {
+                PacificCode lastPacifiCode = PacificCodeBUS.getLastPacificCode(existCustomer.ID);
 
+                DateTime createTime = (DateTime)lastPacifiCode.Date;
+                if (createTime.AddHours(24) > DateTime.Now)
+                {
+                    bool bExist = TransactionBUS.isExist(lastPacifiCode.CodeNumber);
+                    if (!bExist)
+                    {
+                        sMessage = "Da gui lai tin nhan";
+                        Mail newMail = new Mail();
+                        newMail.Body = "GSM: " + existCustomer.Phone + "<br/>"
+                            + "Ban vua mua mot PacificCode: " + lastPacifiCode.CodeNumber
+                            + " co gia tri  " + lastPacifiCode.ActualAmount + " VND. "
+                            + "va han su dung de ngay {2}";
+
+                        MPMail.SendForEmail(newMail);
+                    }
+                }
+                else
+                {
+                    sMessage = "Da qua 24 gio tu luc PacificCode duoc tao";
+                }
+            }
+            else
+            {
+                sMessage = "Khach hang " + obj.PhoneNumber + " khong ton tai.";
+            }
+            ViewData["Message"] = sMessage;
             return View();
         }
 
@@ -114,6 +152,11 @@ namespace P4_MoneyPacificSite.Controllers
             // bằng JavaScript
             
         }
+        /*
+         * Kiểm tra Giá trị nhập hợp lệ
+         * Nếu Gửi thành công thì Gửi mail cho KH & thông báo trên web
+         * Không thành công thì thông báo ko thành công
+         * */
         [HttpPost]
         public ActionResult SendMoney(PacificCodeSendMoneyViewModel sendObject)
         {
@@ -121,8 +164,28 @@ namespace P4_MoneyPacificSite.Controllers
             {
                 // Service
 
+                if (sendObject.PhoneNumber == sendObject.PhoneNumberConfirm)
+                {
+                    PacificCode newPacificCode = PacificCodeBUS.SendMoney(sendObject.CodeNumber,
+                        sendObject.PhoneNumber, sendObject.Amount);
 
-                ViewData["ErrorMessage"] = "Thực hiện giao dịch thành công!...";
+                    if (newPacificCode != null)
+                    {
+                        // Nếu thành công thì gửi mail thông báo
+                        Mail newMail = new Mail();
+                        newMail.Subject = "Send to Customer";
+                        newMail.Body = "GSM: " + sendObject.PhoneNumber + "<br/>"
+                            + "Bạn vừa nhận được PacificCode: " + newPacificCode.CodeNumber + ". "
+                            + "Có giá trị " + newPacificCode.ActualAmount + " và "
+                            + "han su dung den ngay " + String.Format("{0:dd-MM-yyyy}", newPacificCode.ExpireDate);
+
+                        MPMail.SendForEmail(newMail);
+                        ViewData["ErrorMessage"] = "Thuc hien chuyen tien thanh cong!...";
+                        return View();
+                    }
+                }
+
+                ViewData["ErrorMessage"] = "Sai thong tin nhap...";
                 return View();
             }
             catch

@@ -117,8 +117,6 @@ namespace MoneyPacificSrv.DAO
             return oCustomer;
         }
 
-
-
         internal static void setStatus(string sPhoneNumber, string sStatus)
         {
             
