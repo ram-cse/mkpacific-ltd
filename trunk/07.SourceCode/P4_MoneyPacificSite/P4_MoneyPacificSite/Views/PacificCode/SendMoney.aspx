@@ -8,7 +8,7 @@
 
     <h2>SendMoney</h2>
 
-    <%: Html.Encode(ViewData["Co loi xay ra"]) %>
+    <%: Html.Encode(ViewData["ErrorMessage"]) %>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 

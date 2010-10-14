@@ -19,12 +19,12 @@ using System.Runtime.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Category), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.CustomerStatu), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Customer), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.CustomerStatus), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Customer), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Customer), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCodeStatu), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCodeStatus), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Store", "Store", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Store), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreStatu), "Store", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Store), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionStatu), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionStatus), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
 
 #endregion
 
@@ -111,18 +111,18 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<CustomerStatu> CustomerStatus
+        public ObjectSet<CustomerStatus> CustomerStatuses
         {
             get
             {
-                if ((_CustomerStatus == null))
+                if ((_CustomerStatuses == null))
                 {
-                    _CustomerStatus = base.CreateObjectSet<CustomerStatu>("CustomerStatus");
+                    _CustomerStatuses = base.CreateObjectSet<CustomerStatus>("CustomerStatuses");
                 }
-                return _CustomerStatus;
+                return _CustomerStatuses;
             }
         }
-        private ObjectSet<CustomerStatu> _CustomerStatus;
+        private ObjectSet<CustomerStatus> _CustomerStatuses;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -143,18 +143,18 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PacificCodeStatu> PacificCodeStatus
+        public ObjectSet<PacificCodeStatus> PacificCodeStatuses
         {
             get
             {
-                if ((_PacificCodeStatus == null))
+                if ((_PacificCodeStatuses == null))
                 {
-                    _PacificCodeStatus = base.CreateObjectSet<PacificCodeStatu>("PacificCodeStatus");
+                    _PacificCodeStatuses = base.CreateObjectSet<PacificCodeStatus>("PacificCodeStatuses");
                 }
-                return _PacificCodeStatus;
+                return _PacificCodeStatuses;
             }
         }
-        private ObjectSet<PacificCodeStatu> _PacificCodeStatus;
+        private ObjectSet<PacificCodeStatus> _PacificCodeStatuses;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -223,18 +223,18 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<TransactionStatu> TransactionStatus
+        public ObjectSet<TransactionStatus> TransactionStatuses
         {
             get
             {
-                if ((_TransactionStatus == null))
+                if ((_TransactionStatuses == null))
                 {
-                    _TransactionStatus = base.CreateObjectSet<TransactionStatu>("TransactionStatus");
+                    _TransactionStatuses = base.CreateObjectSet<TransactionStatus>("TransactionStatuses");
                 }
-                return _TransactionStatus;
+                return _TransactionStatuses;
             }
         }
-        private ObjectSet<TransactionStatu> _TransactionStatus;
+        private ObjectSet<TransactionStatus> _TransactionStatuses;
 
         #endregion
         #region AddTo Methods
@@ -256,11 +256,11 @@ namespace P4_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the CustomerStatus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the CustomerStatuses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToCustomerStatus(CustomerStatu customerStatu)
+        public void AddToCustomerStatuses(CustomerStatus customerStatus)
         {
-            base.AddObject("CustomerStatus", customerStatu);
+            base.AddObject("CustomerStatuses", customerStatus);
         }
     
         /// <summary>
@@ -272,11 +272,11 @@ namespace P4_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PacificCodeStatus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the PacificCodeStatuses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPacificCodeStatus(PacificCodeStatu pacificCodeStatu)
+        public void AddToPacificCodeStatuses(PacificCodeStatus pacificCodeStatus)
         {
-            base.AddObject("PacificCodeStatus", pacificCodeStatu);
+            base.AddObject("PacificCodeStatuses", pacificCodeStatus);
         }
     
         /// <summary>
@@ -312,11 +312,11 @@ namespace P4_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the TransactionStatus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the TransactionStatuses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToTransactionStatus(TransactionStatu transactionStatu)
+        public void AddToTransactionStatuses(TransactionStatus transactionStatus)
         {
-            base.AddObject("TransactionStatus", transactionStatu);
+            base.AddObject("TransactionStatuses", transactionStatus);
         }
 
         #endregion
@@ -925,15 +925,15 @@ namespace P4_MoneyPacificSite.Models
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerStatus")]
-        public CustomerStatu CustomerStatu
+        public CustomerStatus CustomerStatu
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatu>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatu>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus").Value = value;
             }
         }
         /// <summary>
@@ -941,17 +941,17 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<CustomerStatu> CustomerStatuReference
+        public EntityReference<CustomerStatus> CustomerStatuReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatu>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CustomerStatu>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus", value);
                 }
             }
         }
@@ -984,22 +984,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="CustomerStatu")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="CustomerStatus")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class CustomerStatu : EntityObject
+    public partial class CustomerStatus : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new CustomerStatu object.
+        /// Create a new CustomerStatus object.
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
-        public static CustomerStatu CreateCustomerStatu(global::System.Int32 id)
+        public static CustomerStatus CreateCustomerStatus(global::System.Int32 id)
         {
-            CustomerStatu customerStatu = new CustomerStatu();
-            customerStatu.ID = id;
-            return customerStatu;
+            CustomerStatus customerStatus = new CustomerStatus();
+            customerStatus.ID = id;
+            return customerStatus;
         }
 
         #endregion
@@ -1559,15 +1559,15 @@ namespace P4_MoneyPacificSite.Models
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeStatus")]
-        public PacificCodeStatu PacificCodeStatu
+        public PacificCodeStatus PacificCodeStatu
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatu>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatu>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus").Value = value;
             }
         }
         /// <summary>
@@ -1575,17 +1575,17 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<PacificCodeStatu> PacificCodeStatuReference
+        public EntityReference<PacificCodeStatus> PacificCodeStatuReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatu>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacificCodeStatu>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus", value);
                 }
             }
         }
@@ -1634,22 +1634,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="PacificCodeStatu")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="PacificCodeStatus")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class PacificCodeStatu : EntityObject
+    public partial class PacificCodeStatus : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new PacificCodeStatu object.
+        /// Create a new PacificCodeStatus object.
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
-        public static PacificCodeStatu CreatePacificCodeStatu(global::System.Int32 id)
+        public static PacificCodeStatus CreatePacificCodeStatus(global::System.Int32 id)
         {
-            PacificCodeStatu pacificCodeStatu = new PacificCodeStatu();
-            pacificCodeStatu.ID = id;
-            return pacificCodeStatu;
+            PacificCodeStatus pacificCodeStatus = new PacificCodeStatus();
+            pacificCodeStatus.ID = id;
+            return pacificCodeStatus;
         }
 
         #endregion
@@ -2846,15 +2846,15 @@ namespace P4_MoneyPacificSite.Models
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionStatus")]
-        public TransactionStatu TransactionStatu
+        public TransactionStatus TransactionStatu
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatu>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatu>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus").Value = value;
             }
         }
         /// <summary>
@@ -2862,17 +2862,17 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<TransactionStatu> TransactionStatuReference
+        public EntityReference<TransactionStatus> TransactionStatuReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatu>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TransactionStatu>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus", value);
                 }
             }
         }
@@ -2883,22 +2883,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TransactionStatu")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TransactionStatus")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class TransactionStatu : EntityObject
+    public partial class TransactionStatus : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new TransactionStatu object.
+        /// Create a new TransactionStatus object.
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
-        public static TransactionStatu CreateTransactionStatu(global::System.Int32 id)
+        public static TransactionStatus CreateTransactionStatus(global::System.Int32 id)
         {
-            TransactionStatu transactionStatu = new TransactionStatu();
-            transactionStatu.ID = id;
-            return transactionStatu;
+            TransactionStatus transactionStatus = new TransactionStatus();
+            transactionStatus.ID = id;
+            return transactionStatus;
         }
 
         #endregion

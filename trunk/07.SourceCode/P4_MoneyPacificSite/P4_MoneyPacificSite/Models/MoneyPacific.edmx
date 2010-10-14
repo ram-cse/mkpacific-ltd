@@ -97,9 +97,9 @@
           <Property Name="CateID" Type="int" />
           <Property Name="InitialAmount" Type="int" />
           <Property Name="ActualAmount" Type="int" />
-          <Property Name="Date" Type="date" />
-          <Property Name="LastDate" Type="date" />
-          <Property Name="ExpireDate" Type="date" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="LastDate" Type="datetime" />
+          <Property Name="ExpireDate" Type="datetime" />
           <Property Name="Comment" Type="nvarchar" MaxLength="255" />
           <Property Name="StatusID" Type="int" />
         </EntityType>
@@ -152,7 +152,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateDate" Type="datetime" />
           <Property Name="IDTransaction" Type="nchar" MaxLength="10" />
           <Property Name="Origine" Type="nchar" MaxLength="10" />
           <Property Name="Amount" Type="int" />
@@ -163,7 +163,7 @@
           <Property Name="PacificCodeID" Type="int" />
           <Property Name="PacificCode" Type="nchar" MaxLength="20" />
           <Property Name="Comment" Type="nvarchar" MaxLength="255" />
-          <Property Name="IPTime" Type="date" />
+          <Property Name="IPTime" Type="datetime" />
           <Property Name="SMS" Type="nchar" MaxLength="10" />
           <Property Name="StatusID" Type="int" />
         </EntityType>
@@ -267,20 +267,20 @@
         <EntityContainer Name="MoneyPacificEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="MoneyPacificModel.Category" />
           <EntitySet Name="Customers" EntityType="MoneyPacificModel.Customer" />
-          <EntitySet Name="CustomerStatus" EntityType="MoneyPacificModel.CustomerStatu" />
+          <EntitySet Name="CustomerStatuses" EntityType="MoneyPacificModel.CustomerStatus" />
           <EntitySet Name="PacificCodes" EntityType="MoneyPacificModel.PacificCode" />
-          <EntitySet Name="PacificCodeStatus" EntityType="MoneyPacificModel.PacificCodeStatu" />
+          <EntitySet Name="PacificCodeStatuses" EntityType="MoneyPacificModel.PacificCodeStatus" />
           <EntitySet Name="Stores" EntityType="MoneyPacificModel.Store" />
           <EntitySet Name="StoreStatus" EntityType="MoneyPacificModel.StoreStatu" />
           <EntitySet Name="sysdiagrams" EntityType="MoneyPacificModel.sysdiagram" />
           <EntitySet Name="Transactions" EntityType="MoneyPacificModel.Transaction" />
-          <EntitySet Name="TransactionStatus" EntityType="MoneyPacificModel.TransactionStatu" />
+          <EntitySet Name="TransactionStatuses" EntityType="MoneyPacificModel.TransactionStatus" />
           <AssociationSet Name="FK_PacificCode_Categories" Association="MoneyPacificModel.FK_PacificCode_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_Customer_CustomerStatus" Association="MoneyPacificModel.FK_Customer_CustomerStatus">
-            <End Role="CustomerStatus" EntitySet="CustomerStatus" />
+            <End Role="CustomerStatus" EntitySet="CustomerStatuses" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_Customer" Association="MoneyPacificModel.FK_PacificCode_Customer">
@@ -288,7 +288,7 @@
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_PacificCodeStatus" Association="MoneyPacificModel.FK_PacificCode_PacificCodeStatus">
-            <End Role="PacificCodeStatus" EntitySet="PacificCodeStatus" />
+            <End Role="PacificCodeStatus" EntitySet="PacificCodeStatuses" />
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_Store" Association="MoneyPacificModel.FK_PacificCode_Store">
@@ -300,7 +300,7 @@
             <End Role="Store" EntitySet="Stores" />
           </AssociationSet>
           <AssociationSet Name="FK_Transaction_TransactionStatus" Association="MoneyPacificModel.FK_Transaction_TransactionStatus">
-            <End Role="TransactionStatus" EntitySet="TransactionStatus" />
+            <End Role="TransactionStatus" EntitySet="TransactionStatuses" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
         </EntityContainer>
@@ -338,7 +338,7 @@
           <NavigationProperty Name="CustomerStatu" Relationship="MoneyPacificModel.FK_Customer_CustomerStatus" FromRole="Customer" ToRole="CustomerStatus" />
           <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_Customer" FromRole="Customer" ToRole="PacificCode" />
         </EntityType>
-        <EntityType Name="CustomerStatu">
+        <EntityType Name="CustomerStatus">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -370,7 +370,7 @@
           <NavigationProperty Name="PacificCodeStatu" Relationship="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" FromRole="PacificCode" ToRole="PacificCodeStatus" />
           <NavigationProperty Name="Store" Relationship="MoneyPacificModel.FK_PacificCode_Store" FromRole="PacificCode" ToRole="Store" />
         </EntityType>
-        <EntityType Name="PacificCodeStatu">
+        <EntityType Name="PacificCodeStatus">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -439,7 +439,7 @@
           <Property Name="StatusID" Type="Int32" />
           <NavigationProperty Name="TransactionStatu" Relationship="MoneyPacificModel.FK_Transaction_TransactionStatus" FromRole="Transaction" ToRole="TransactionStatus" />
         </EntityType>
-        <EntityType Name="TransactionStatu">
+        <EntityType Name="TransactionStatus">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -461,7 +461,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Customer_CustomerStatus">
-          <End Role="CustomerStatus" Type="MoneyPacificModel.CustomerStatu" Multiplicity="0..1" />
+          <End Role="CustomerStatus" Type="MoneyPacificModel.CustomerStatus" Multiplicity="0..1" />
           <End Role="Customer" Type="MoneyPacificModel.Customer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CustomerStatus">
@@ -485,7 +485,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PacificCode_PacificCodeStatus">
-          <End Role="PacificCodeStatus" Type="MoneyPacificModel.PacificCodeStatu" Multiplicity="0..1" />
+          <End Role="PacificCodeStatus" Type="MoneyPacificModel.PacificCodeStatus" Multiplicity="0..1" />
           <End Role="PacificCode" Type="MoneyPacificModel.PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PacificCodeStatus">
@@ -521,7 +521,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Transaction_TransactionStatus">
-          <End Role="TransactionStatus" Type="MoneyPacificModel.TransactionStatu" Multiplicity="0..1" />
+          <End Role="TransactionStatus" Type="MoneyPacificModel.TransactionStatus" Multiplicity="0..1" />
           <End Role="Transaction" Type="MoneyPacificModel.Transaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TransactionStatus">
@@ -563,7 +563,7 @@
             <ScalarProperty Name="Pincode" ColumnName="Pincode" />
             <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="CustomerStatus"><EntityTypeMapping TypeName="MoneyPacificModel.CustomerStatu"><MappingFragment StoreEntitySet="CustomerStatus">
+          <EntitySetMapping Name="CustomerStatuses"><EntityTypeMapping TypeName="MoneyPacificModel.CustomerStatus"><MappingFragment StoreEntitySet="CustomerStatus">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Value" ColumnName="Value" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -584,7 +584,7 @@
             <ScalarProperty Name="Comment" ColumnName="Comment" />
             <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="PacificCodeStatus"><EntityTypeMapping TypeName="MoneyPacificModel.PacificCodeStatu"><MappingFragment StoreEntitySet="PacificCodeStatus">
+          <EntitySetMapping Name="PacificCodeStatuses"><EntityTypeMapping TypeName="MoneyPacificModel.PacificCodeStatus"><MappingFragment StoreEntitySet="PacificCodeStatus">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Value" ColumnName="Value" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -633,7 +633,7 @@
             <ScalarProperty Name="SMS" ColumnName="SMS" />
             <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="TransactionStatus"><EntityTypeMapping TypeName="MoneyPacificModel.TransactionStatu"><MappingFragment StoreEntitySet="TransactionStatus">
+          <EntitySetMapping Name="TransactionStatuses"><EntityTypeMapping TypeName="MoneyPacificModel.TransactionStatus"><MappingFragment StoreEntitySet="TransactionStatus">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Value" ColumnName="Value" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -661,14 +661,14 @@
       <Diagram Name="MoneyPacific">
         <EntityTypeShape EntityType="MoneyPacificModel.Category" Width="1.5" PointX="3" PointY="7.125" Height="1.9802864583333326" IsExpanded="true" />
         <EntityTypeShape EntityType="MoneyPacificModel.Customer" Width="1.5" PointX="3" PointY="1" Height="4.6725065104166656" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.CustomerStatu" Width="1.5" PointX="0.75" PointY="2.375" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoneyPacificModel.CustomerStatus" Width="1.5" PointX="0.75" PointY="2.375" Height="1.9802864583333335" IsExpanded="true" />
         <EntityTypeShape EntityType="MoneyPacificModel.PacificCode" Width="1.5" PointX="5.25" PointY="1.25" Height="4.2879036458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.PacificCodeStatu" Width="1.5" PointX="3" PointY="9.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoneyPacificModel.PacificCodeStatus" Width="1.5" PointX="3" PointY="9.875" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="MoneyPacificModel.Store" Width="1.5" PointX="3" PointY="12.375" Height="3.9033007812499996" IsExpanded="true" />
         <EntityTypeShape EntityType="MoneyPacificModel.StoreStatu" Width="1.5" PointX="0.75" PointY="13.5" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="MoneyPacificModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="MoneyPacificModel.Transaction" Width="1.5" PointX="8" PointY="7" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.TransactionStatu" Width="1.5" PointX="5.75" PointY="8.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionStatus" Width="1.5" PointX="5.75" PointY="8.125" Height="1.7879850260416674" IsExpanded="true" />
         <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Categories" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="7.59375" />
           <ConnectorPoint PointX="5.2447891666666671" PointY="7.5937499999999991" />

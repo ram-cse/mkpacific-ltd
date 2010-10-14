@@ -96,6 +96,7 @@
       <DependentUpon>DBMoneyPacific.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTO\MPMessageDTO.cs" />
+    <Compile Include="DTO\PacificCode.cs" />
     <Compile Include="IMain.cs" />
     <Compile Include="Main.svc.cs">
       <DependentUpon>Main.svc</DependentUpon>

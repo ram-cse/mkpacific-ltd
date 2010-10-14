@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>SendSMS</h2>
-
+    <%: ViewData["Message"] %>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
