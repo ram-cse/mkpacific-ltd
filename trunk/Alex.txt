@@ -1,5 +1,85 @@
-﻿	17/10/2010:
+﻿
+	Tôi không phải là một trong những người thông minh nhất, nhưng tôi đủ thông minh, đủ vượt qua những người bình thường để có thể làm những điều phi thường. 
+		(Trích sách: Hai người giàu - một thông điệp
+	*** Mục tiêu nhỏ: 
+		+ Thành thục MVC
+		+ Sử dụng, chỉnh sửa được cái template mẫu: css & javascript (bằng cách typing :D)
+		+ Viết lại qui trình đầy đủ đưa 1 website lên mạng.. :D		
+	
+
+	16/10/2010:
 		- Họp mặt tại VPS
+		
+	15/10/2010:
+		- (v)Làm Web Đăng nhập, sử dụng Database của ASP MVC
+		- x Gửi mail cho Hải HTX		
+		- Đổi lấy bàn phím mềm
+		
+		public sealed class PropertiesMustMatchAttribute : ValidationAttribute
+		string valueAsString = value as string;
+		
+		1.
+		LogOn
+			+ <div id="logindisplay">                 
+                <% Html.RenderPartial("LogOnUserControl"); %>            
+            </div>
+			Gọi UserControl có tên là LogOnUserControl trong thư  mục share lên để thực thi
+			Kiểm tra đăng nhập bằng cách
+				if(Request.IsAuthenticated){ // Xử lý }
+		
+		2.
+		Register
+			+ [PropertiesMustMatch("Password", "ConfirmPassword", 
+			ErrorMessage = "The password and confirmation password do not match.")]
+			// => bắt buộc 2 truong Password & ConfirmPassword phai giong nhau (ngay trong lớp bên dưới có sử dụng dòng này)
+			
+			+ public sealed class ABC(thuoctinh1, thuoctinh2)
+			Đoán:
+			=> Xử lý trong design pattein (kiểm tra thuộc tính)
+			
+			+public string ConfirmProperty { get; private set; }
+			=> có thể gán private trong đây
+			
+			+ Trong 1 lớp chia làm 3 vùng
+			Model
+				Lớp chính
+			Service
+				Các interface & abtract
+			Validation
+				Các lớp kiểm tra (seal) cho lớp chính
+				
+			+ public sealed class ValidatePasswordLengthAttribute : ValidationAttribute
+			=> lớp kiểm tra độ dài thuộc tính thừa kế lại interface kiểm tra thuoc tinh
+			
+			
+			+ MembershipCreateStatus =>là 1 ENUM định nghĩa giá trị lỗi được hệ thống MVC dựng sẵn
+			
+			
+	
+	14/10/2010
+	
+		- Truyền Connection...? thiết kế lại mô hình lớp??
+		
+		Khác nhau giữa LINQ to SQL và ADO.Net DataContext Entities Model
+		http://blogs.microsoft.co.il/blogs/gilf/archive/2008/04/20/linq-to-sql-vs-entity-framework.aspx
+		http://social.msdn.microsoft.com/forums/en-US/linqprojectgeneral/thread/a67bb427-be19-4504-bf5f-2c4588dcd05e/
+		
+		<add key="sender" value="moneypacific.mail01" />
+		<add key="senderPass" value="lethanhdung" />
+		
+		- sửa lại Database:
+		PacificCode
+		Transaction
+			date => datetime
+		
+		LINQ:
+			InsertOnSubmit
+			SubmitChange
+		Entities Data Model
+			AddObject()
+			SaveChange
+		
+		- Tạo Menu, Ajax (..)
 		
 		
 	13/10/2010:
