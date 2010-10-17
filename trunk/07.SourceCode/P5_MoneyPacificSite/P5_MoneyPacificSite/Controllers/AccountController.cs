@@ -15,6 +15,15 @@ namespace P5_MoneyPacificSite.Controllers
         public IFormsAuthenticationService FormsService { get; set; }
         public IMembershipService MembershipService { get; set; }
 
+        // Gọi khi khởi tạo
+        protected override void Initialize(RequestContext requestContext)
+        {
+            if (FormsService == null) { FormsService = new FormsAuthenticationService(); }
+            if (MembershipService == null) { MembershipService = new AccountMembershipService(); }
+
+            base.Initialize(requestContext);
+        }
+
         public ActionResult LogOn()
         {
             return View();
@@ -80,5 +89,12 @@ namespace P5_MoneyPacificSite.Controllers
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             return View(model);
         }
+
+        public ActionResult LogOff()
+        {
+            FormsService.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
