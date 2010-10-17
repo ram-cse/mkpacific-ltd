@@ -1,4 +1,10 @@
 ﻿
+	17/19/2010:
+	
+	- Cài MS SQL 2008
+	
+	-------------------------------------------------------------------------------
+
 	Tôi không phải là một trong những người thông minh nhất, nhưng tôi đủ thông minh, đủ vượt qua những người bình thường để có thể làm những điều phi thường. 
 		(Trích sách: Hai người giàu - một thông điệp
 	*** Mục tiêu nhỏ: 
