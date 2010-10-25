@@ -8,6 +8,7 @@ using P4_MoneyPacificSite.Models;
 using P4_MoneyPacificSite.ViewModels;
 using P4_MoneyPacificSite.Models.BUS;
 using P4_MoneyPacificSite.Utilators;
+using GeneratorPacificCode;
 
 namespace P4_MoneyPacificSite.Controllers
 {
@@ -31,14 +32,16 @@ namespace P4_MoneyPacificSite.Controllers
         [HttpPost]
         public ActionResult ViewDetail(PacificCodeViewDetailViewModel obj)
         {
+            
             MoneyPacificEntities db = new MoneyPacificEntities();
             bool bExist = db.PacificCodes.Where
-                (p => p.CodeNumber == obj.CodeNumber).Any();
+                (p => p.CodeNumber.Trim() == obj.CodeNumber.Trim()).Any();
             PacificCode pCode;
             if (bExist)
             {
                 pCode = db.PacificCodes.Where
-                    (p => p.CodeNumber == obj.CodeNumber).SingleOrDefault<PacificCode>();
+                    (p => p.CodeNumber.Trim() == obj.CodeNumber.Trim()).SingleOrDefault<PacificCode>();
+                db.Connection.Close();
                 return RedirectToAction("ChiTiet", new { id = pCode.ID});
             }
             else
@@ -46,6 +49,7 @@ namespace P4_MoneyPacificSite.Controllers
                 ViewData["ErrorMessage"] = "Khong ton tai PacificCoe";
                 // + Lưu thông tin để bảo mật, tránh 1 người dùng lợi dụng chức này để truy tìm PacificCode
                 // + Lớp GenerateMessage
+                db.Connection.Close();
                 return View();
             }
         }
@@ -62,21 +66,35 @@ namespace P4_MoneyPacificSite.Controllers
         public ActionResult ChangeCode(PacificCodeChangeCodeViewModel obj )
         {
             MoneyPacificEntities db = new MoneyPacificEntities();
+
+            if (obj.CodeNumber == null) return View();
+
+            obj.CodeNumber = obj.CodeNumber.Trim(' ');
+
             bool bExist = db.PacificCodes.Where(p => p.CodeNumber == obj.CodeNumber).Any();
             if (bExist)
             {
                 PacificCode pCode = db.PacificCodes.Where
                     (p => p.CodeNumber.Trim() == obj.CodeNumber.Trim()).SingleOrDefault<PacificCode>();
-                int i = int.Parse(pCode.CodeNumber[0].ToString());
-                i = (i+1) % 10;
-                pCode.CodeNumber = i.ToString() + pCode.CodeNumber.Substring(1);
+                do
+                {
+                    pCode.CodeNumber = Generator.getNewCode();
+                    bExist = (db.PacificCodes.Where
+                    (p => p.CodeNumber.Trim() == pCode.CodeNumber.Trim()).Any());
+                } while (bExist);                   
+
                 db.SaveChanges();
                 obj.CodeNumber = pCode.CodeNumber;
+                ViewData["Message"] = obj.CodeNumber;
+            }
+            else
+            {
+                ViewData["Message"] = "Pacifice Code này ko tồn tại!.";
             }
 
             // Luu vao Transaction 
             // .. 
-            ViewData["Message"] = obj.CodeNumber;
+            db.Connection.Close();            
             return View();
         }
 
@@ -141,7 +159,7 @@ namespace P4_MoneyPacificSite.Controllers
         {
             var viewModel = new PacificCodeSendMoneyViewModel
             {
-                CodeNumber = "1935996349268167",
+                CodeNumber = "1767312140506642",
                 Amount = 1000,
                 PhoneNumber = "0932130483",
                 PhoneNumberConfirm = "0932130483"

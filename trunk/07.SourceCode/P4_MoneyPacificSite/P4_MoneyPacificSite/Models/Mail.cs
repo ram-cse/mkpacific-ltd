@@ -13,8 +13,12 @@ namespace P4_MoneyPacificSite.Models
         public string From { get; set; }
         public string Body { get; set; }
 
-
-
-        
+        public Mail()
+        {
+            Subject = "";
+            To = "";
+            From = "";
+            Body = "";
+        }
     }
 }

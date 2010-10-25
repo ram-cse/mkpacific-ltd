@@ -27,19 +27,19 @@ namespace P4_MoneyPacificSite.Controllers
         [HttpPost]
         public ActionResult SendMail(Mail mail)
         {
+            //Send Mail
+            
+           
             try
             {
-                //Send Mail
-                MKMail.SendMail(
-                    mail.From, 
-                    mail.To, "", "", 
-                    mail.Subject, 
-                    mail.Body);
-
+                mail.To = "admin@moneypafic.com";
+                mail.From = "storemanager@moneypacific.com"; // lấy từ thông tin đăng nhập                
+                MPMail.Send(mail);                
                 return RedirectToAction("/");
             }
             catch
-            {   
+            {
+                ViewData["Message"] = "Error!...";
                 return View(mail);
             }
         }

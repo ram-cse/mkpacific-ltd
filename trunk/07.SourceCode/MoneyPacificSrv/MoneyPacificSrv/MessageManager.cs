@@ -45,7 +45,9 @@ namespace MoneyPacificSrv
 
             new MPMessageDTO("NOT_EXIST_STORE", "MoneyPacific: Yeu cau bi tu choi."),
 
-            new MPMessageDTO("LOCKED_CUSTOMER", "KH nay da bi khoa! ")
+            new MPMessageDTO("LOCKED_CUSTOMER", "KH nay da bi khoa! "),
+            new MPMessageDTO("MAKE_PAYMENT_UNSUCCESS", "Thanh toan khong thanh cong"),
+            new MPMessageDTO("MAKE_PAYMENT_SUCCESS", "Thanh toan thanh cong")
     
         };
 

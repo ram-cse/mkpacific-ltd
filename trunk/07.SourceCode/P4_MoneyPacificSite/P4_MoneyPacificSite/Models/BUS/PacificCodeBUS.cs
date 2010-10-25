@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using P4_MoneyPacificSite.Models.DAO;
+using GeneratorPacificCode;
 
 
 
@@ -35,17 +36,24 @@ namespace P4_MoneyPacificSite.Models.BUS
                 {
                     newPacificCode = new PacificCode();
 
-                    newPacificCode.CodeNumber = "1111222233334444"; // Thay bằng GenerateCode
+                    //newPacificCode.CodeNumber = "1111222233334444"; // Thay bằng GenerateCode
+                    bool bExist02;
+                    do
+                    {
+                        newPacificCode.CodeNumber = Generator.getNewCode();
+                        bExist02 = db.PacificCodes.Where
+                            (p => p.CodeNumber.Trim() == newPacificCode.CodeNumber.Trim()).Any();
+                    }while(bExist02);
 
                     pacificCode.ActualAmount -= (int)Amount;
                     newPacificCode.InitialAmount = (int)Amount;
                     newPacificCode.ActualAmount = (int)Amount;
 
-                    newPacificCode.ExpireDate = new DateTime(
-                        DateTime.Now.Year + 1,
-                        DateTime.Now.Month,
-                        DateTime.Now.Day
-                        );
+                    //newPacificCode.ExpireDate = new DateTime(
+                    //    DateTime.Now.Year + 1,
+                    //    DateTime.Now.Month,
+                    //    DateTime.Now.Day
+                    //    );
 
                     Customer receiverCustomer = CustomerBUS.getCustomerOrCreateNotYetBuy(Phone);
                     newPacificCode.CustomerID = receiverCustomer.ID;

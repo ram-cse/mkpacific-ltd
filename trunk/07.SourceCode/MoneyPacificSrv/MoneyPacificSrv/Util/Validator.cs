@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MoneyPacificSrv.BUS;
 using MoneyPacificSrv.XAO;
+using GeneratorPacificCode;
 
 internal enum PHONE_NUMBER
 { 
@@ -52,7 +53,8 @@ namespace MoneyPacificSrv.Util
         {
             if (isPacificCode(sCodeNumber))
             {
-                return PacificCodeXAO.isPossibleCode(sCodeNumber);
+                //return PacificCodeXAO.isPossibleCode(sCodeNumber);
+                return Generator.isPossibleCode(sCodeNumber);
             }
             return false;
         }

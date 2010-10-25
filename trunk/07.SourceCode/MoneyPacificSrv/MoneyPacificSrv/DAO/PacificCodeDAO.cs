@@ -36,5 +36,43 @@ namespace MoneyPacificSrv.DAO
             mpdb.SubmitChanges();
             mpdb.Connection.Close();
         }
+
+        internal static int getActualAmount(string sCodeNumber)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            
+            PacificCode pCode = mpdb.PacificCodes.Where
+                (p => p.CodeNumber.Trim() == sCodeNumber.Trim()).Single<PacificCode>();
+            
+            int iResult = (int)pCode.ActualAmount;
+            mpdb.Connection.Close();
+            
+            return iResult;
+        }
+
+        internal static int getMoneyForPayMent(string sCodeNumber, int Amount)
+        {
+            try
+            {
+                DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+                
+                PacificCode pCode = mpdb.PacificCodes.Where
+                    (p => p.CodeNumber.Trim() == sCodeNumber.Trim()).Single<PacificCode>();
+
+
+                int iMin = Utility.Min((int)pCode.ActualAmount, Amount);
+
+                pCode.ActualAmount = pCode.ActualAmount - iMin;
+                Amount = Amount - iMin;
+
+                mpdb.SubmitChanges();
+                mpdb.Connection.Close();
+                return iMin;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ using MoneyPacificSrv.DTO;
 using MoneyPacificSrv.DAO;
 using MoneyPacificSrv.XAO;
 using MoneyPacificSrv.Util;
+using GeneratorPacificCode;
 
 namespace MoneyPacificSrv.BUS
 {
@@ -30,7 +31,7 @@ namespace MoneyPacificSrv.BUS
             bool bGetNewPacificCode = false;
             do
             {
-                newPacificCode = PacificCodeBUS.generateNewCode();
+                newPacificCode.CodeNumber = Generator.getNewCode();
                 bGetNewPacificCode = !PacificCodeBUS.isExist(newPacificCode.CodeNumber);
             } while (bGetNewPacificCode == false);
 
@@ -57,10 +58,13 @@ namespace MoneyPacificSrv.BUS
             return newPacificCode;
         }
                 
-        private static PacificCode generateNewCode()
-        {
-            return PacificCodeXAO.generateNewCode();
-        }
+        //private static PacificCode generateNewCode()
+        //{
+        //    //return PacificCodeXAO.generateNewCode();
+        //    PacificCode newPacificCode = new PacificCode();
+        //    newPacificCode.CodeNumber = Generator.getNewCode();
+        //    return newPacificCode;
+        //}
         
         internal static PacificCode getPacificCode(string sCodeNumber)
         {
@@ -74,7 +78,18 @@ namespace MoneyPacificSrv.BUS
 
         internal static bool isPossibleCode(string sCodeNumber)
         {
-            return PacificCodeXAO.isPossibleCode(sCodeNumber);
+            //return PacificCodeXAO.isPossibleCode(sCodeNumber);
+            return Generator.isPossibleCode(sCodeNumber);
+        }
+
+        internal static int getActualAmount(string sCodeNumber)
+        {
+            return PacificCodeDAO.getActualAmount(sCodeNumber);
+        }
+
+        internal static int getMoneyForPayMent(string sCodeNumber, int Amount)
+        {            
+            return PacificCodeDAO.getMoneyForPayMent(sCodeNumber, Amount);
         }
     }
 }
