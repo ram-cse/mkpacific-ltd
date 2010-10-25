@@ -1,7 +1,43 @@
 ﻿
-	17/19/2010:
+	25/10/2010:
+		- Thiet ke giao dien cho các module:
+			. Security
+			. Pacific Email
+			. Collection
+		- Kiểm tra nhập
+		- Xác định lại chứng năng
+		- Thiết kế database
+			. StoreMember
+			. StoreManager
+			
+		
+
+	22/10/2010:
+		- Thiết kế giao diện
+			. x Giao diện
+			. x Kiểm tra nhập (Validation)
+			
+		- Thiết kế database
+		- Thiết kế chức năng
+		
+
+	21/10/2010:
+		- Ra di loi con xa chi
+			int n = 19999;
+            string s = n.ToString("n0");
+
+	20/10/2010:
+		- EmployeeCollection : System.Collections.CollectionBase 
+		CollectionBase là lớp j? sử dụng ntn?
+
+	19/10/2010:
+		- G
+	17/10/2010:
 	
-	- Cài MS SQL 2008
+		- x Cài MS SQL 2008
+		...
+		
+		sếp đi ctác, cty vắng teo, chỉ còn 2 tên.  bxa sếp đi chơi  vài hôm về thấy trên sàn 1 cọng tóc dài: "đứa nào dắt g về đây..."
 	
 	-------------------------------------------------------------------------------
 
