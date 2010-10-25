@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.Models.Mail>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/StoreManager.Master" Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.Models.Mail>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	SendMail
@@ -10,7 +10,8 @@
 
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
-            <table border="0">
+       <%:ViewData["Message"] %><br /><br />
+       <table border="0">
                 <tr>
                     <td>
                         <%: Html.LabelFor(model => model.Subject) %>
@@ -20,20 +21,20 @@
                         <%: Html.ValidationMessageFor(model => model.Subject) %>
                     </td>
                 </tr>
-                <tr>
-                    <td><%: Html.LabelFor(model => model.To) %></td>
+                <!--tr>
+                    <td>< %: Html.LabelFor(model => model.To) %></td>
                     <td>
-                        <%: Html.TextBoxFor(model => model.To) %>
-                        <%: Html.ValidationMessageFor(model => model.To) %>
+                        < %: Html.TextBoxFor(model => model.To) %>
+                        < %: Html.ValidationMessageFor(model => model.To) %>
                     </td>
                 </tr>
                 <tr>
-                    <td><%: Html.LabelFor(model => model.From) %></td>
+                    <td>< %: Html.LabelFor(model => model.From) %></td>
                     <td>
-                        <%: Html.TextBoxFor(model => model.From) %>
-                        <%: Html.ValidationMessageFor(model => model.From) %>
+                        < %: Html.TextBoxFor(model => model.From) %>
+                        < %: Html.ValidationMessageFor(model => model.From) %>
                     </td>
-                </tr>
+                </tr-->
                 <tr>
                     <td colspan="2"><%: Html.LabelFor(model => model.Body) %></td>
                 </tr>
@@ -46,11 +47,10 @@
             <p>
                 <input type="submit" value="Send" />
             </p>
+
     <% } %>
 
-    <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
-    </div>
+   
 
 </asp:Content>
 

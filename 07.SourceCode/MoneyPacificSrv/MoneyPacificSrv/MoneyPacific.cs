@@ -8,11 +8,13 @@ using MoneyPacificSrv.Util;
 using MoneyPacificSrv.DTO;
 using MoneyPacificSrv.BUS;
 
+using GeneratorPacificCode;
+
 namespace MoneyPacificSrv
 {
     public class MoneyPacific
     {
-        internal static string getRequest(string smsContent)
+        internal static string SendMessage(string smsContent)
         {
             string smsResponse = "";
             string sCommand = "";
@@ -81,6 +83,60 @@ namespace MoneyPacificSrv
 
             smsResponse += mpCommand.Execute(arrArg);
             return smsResponse;
+        }
+
+        internal static PaymentModel MakePayment(List<string> LstCodeNumber, int Amount)
+        {
+            // TODO: 
+            /* Lst CodeNumber phải đúng hết mới cho phép thanh toán
+             * 
+             * */
+
+            // Kiểm tra
+            bool isPossible = (LstCodeNumber.Count() > 0); // Bắt buộc phải có CodeNumber
+            bool isExist = (LstCodeNumber.Count() > 0);
+            int iTotalAmount = 0;
+
+            foreach (string sCodeNumber in LstCodeNumber)
+            {
+                isPossible = isPossible && Generator.isPossibleCode(sCodeNumber);
+                isExist = isExist && PacificCodeBUS.isExist(sCodeNumber);
+
+                if (isPossible && isExist)
+                {
+                    iTotalAmount += PacificCodeBUS.getActualAmount(sCodeNumber);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            PaymentModel paymentModel = new PaymentModel();
+            
+            // Thanh Toán & Trả ra kết quả
+            // *** Giả sử đã thanh toán hết (qua web), đã lưu xuống sau đó gửi lại 
+            // thông báo cho admin của trang web nhưng admin không nhận được
+            // => khách hàng bị mất tiền nhưng không nhận được hàng.. SAU NÀY SỬA
+            // getMoneyForPayment => trả ra giá trị đã lấy để thanh toán
+
+            if (isExist && isPossible && (iTotalAmount >= Amount))
+            {
+                for(int i = 0; i < LstCodeNumber.Count() && Amount > 0; i++)
+                {                       
+                    Amount = Amount - PacificCodeBUS.getMoneyForPayMent(LstCodeNumber[i], Amount);
+                }
+                
+                paymentModel.Success = true;
+                paymentModel.Message = MessageManager.getValue("MAKE_PAYMENT_SUCCESS");
+            }
+            else
+            {
+                paymentModel.Success = false;
+                paymentModel.Message = MessageManager.getValue("MAKE_PAYMENT_UNSUCCESS");
+            }
+
+            return paymentModel;
         }
     }
 }
