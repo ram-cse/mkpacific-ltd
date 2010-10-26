@@ -15,11 +15,11 @@
             <legend>Fields</legend>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.ID) %>
+                <%: Html.LabelFor(model => Model.Id) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.ID) %>
-                <%: Html.ValidationMessageFor(model => model.ID) %>
+                <%: Html.TextBoxFor(model => Model.Id) %>
+                <%: Html.ValidationMessageFor(model => Model.Id) %>
             </div>
             
             <div class="editor-label">
@@ -111,11 +111,11 @@
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.StatusID) %>
+                <%: Html.LabelFor(model => Model.StatusId) %>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.StatusID) %>
-                <%: Html.ValidationMessageFor(model => model.StatusID) %>
+                <%: Html.TextBoxFor(model => Model.StatusId) %>
+                <%: Html.ValidationMessageFor(model => Model.StatusId) %>
             </div>
             
             <p>

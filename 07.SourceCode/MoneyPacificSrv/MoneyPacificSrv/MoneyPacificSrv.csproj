@@ -76,9 +76,9 @@
   <ItemGroup>
     <Compile Include="BUS\CategoriesBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
-    <Compile Include="BUS\CustomerStatusBUS.cs" />
+    <Compile Include="BUS\CustomerStateBUS.cs" />
     <Compile Include="BUS\PacificCodeBUS.cs" />
-    <Compile Include="BUS\StoreBUS.cs" />
+    <Compile Include="BUS\StoreUserBUS.cs" />
     <Compile Include="BUS\TransactionBUS.cs" />
     <Compile Include="Cmd\BuyPacificCodeCmd.cs" />
     <Compile Include="Cmd\IMPComand.cs" />
@@ -86,9 +86,9 @@
     <Compile Include="Cmd\ValueDetailCmd.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
-    <Compile Include="DAO\CustomerStatusDAO.cs" />
+    <Compile Include="DAO\CustomerStateDAO.cs" />
     <Compile Include="DAO\PacificCodeDAO.cs" />
-    <Compile Include="DAO\StoreDAO.cs" />
+    <Compile Include="DAO\StoreUserDAO.cs" />
     <Compile Include="DAO\TransactionDAO.cs" />
     <Compile Include="DTO\DBMoneyPacific.designer.cs">
       <AutoGen>True</AutoGen>

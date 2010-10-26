@@ -35,7 +35,7 @@ namespace P4_MoneyPacificSite.Models.DAO
             newCustomer.Phone = sPhone;
             // Default: Customer.status = "001" (normal customer & not yet buy)
 
-            newCustomer.StatusID = CustomerStatusBUS.getId("001");
+            newCustomer.StatusID = CustomerStateBUS.getId("001");
 
             mpdb.Customers.AddObject(newCustomer);
             mpdb.SaveChanges();

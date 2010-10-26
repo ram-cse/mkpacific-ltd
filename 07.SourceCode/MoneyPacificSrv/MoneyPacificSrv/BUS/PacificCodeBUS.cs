@@ -17,7 +17,7 @@ namespace MoneyPacificSrv.BUS
         
         private static void addNew(PacificCode newPacificCode)
         {
-            StoreDAO.updateAfterInsertNewCode(newPacificCode);
+            StoreUserDAO.updateAfterInsertNewCode(newPacificCode);
             CustomerDAO.updateAfterInsertNewCode(newPacificCode);
             PacificCodeDAO.addNew(newPacificCode);
         }

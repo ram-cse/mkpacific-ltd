@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/StoreManager.Master" Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.Models.Store>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/StoreManager.Master" Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.Models.StoreUser>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Information
@@ -11,7 +11,7 @@
     <table>
         <tr>
             <th>ID</th>
-            <td><%: Model.ID %></td>
+            <td><%: Model.Id %></td>
         </tr>
         <tr>
             <th>Phone</th>
@@ -59,13 +59,13 @@
         </tr>
         <tr>
             <th>Status ID</th>
-            <td><%: Model.StatusID %></td>
+            <td><%: Model.StatusId %></td>
         </tr>
 
     </table>
     <p>
 
-        <%: Html.ActionLink("Edit", "Edit", new { id=Model.ID }) %> |
+        <%: Html.ActionLink("Edit", "Edit", new { id=Model.Id }) %> |
         <%: Html.ActionLink("Back to List", "Index") %>
     </p>
 </asp:Content>

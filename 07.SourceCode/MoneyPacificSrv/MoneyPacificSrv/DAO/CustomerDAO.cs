@@ -16,7 +16,7 @@ namespace MoneyPacificSrv.DAO
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             // GET
-            Customer existCustomer = mpdb.Customers.Where(c => c.ID == newPacificCode.CustomerID).Single<Customer>();
+            Customer existCustomer = mpdb.Customers.Where(c => c.Id == newPacificCode.CustomerID).Single<Customer>();
             
             // EXEC
             if (existCustomer != null)
@@ -73,7 +73,7 @@ namespace MoneyPacificSrv.DAO
             newCustomer.Phone = sPhone;
             // Default: Customer.status = "001" (normal customer & not yet buy)
             
-            newCustomer.StatusID = CustomerStatusBUS.getId("001");
+            newCustomer.StatusID = CustomerStateBUS.getId("001");
 
             mpdb.Customers.InsertOnSubmit(newCustomer);
             mpdb.SubmitChanges();
@@ -93,7 +93,7 @@ namespace MoneyPacificSrv.DAO
                 Customer newCustomer = new Customer();
                 
                 newCustomer.Phone = sPhone;
-                newCustomer.StatusID = CustomerStatusBUS.getId("101");
+                newCustomer.StatusID = CustomerStateBUS.getId("101");
                 
                 mpdb.Customers.InsertOnSubmit(newCustomer);
                 mpdb.SubmitChanges();
@@ -112,7 +112,7 @@ namespace MoneyPacificSrv.DAO
         internal static Customer getCustomer(int customerId)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
-            Customer oCustomer = mpdb.Customers.Where(c => c.ID == customerId).Single<Customer>();
+            Customer oCustomer = mpdb.Customers.Where(c => c.Id == customerId).Single<Customer>();
             mpdb.Connection.Close();
             return oCustomer;
         }
@@ -121,7 +121,7 @@ namespace MoneyPacificSrv.DAO
         {
             
             Customer existCustomer = CustomerDAO.getCustomer(sPhoneNumber);
-            setStatus(existCustomer.ID, sStatus);
+            setStatus(existCustomer.Id, sStatus);
             
         }
 
@@ -130,15 +130,15 @@ namespace MoneyPacificSrv.DAO
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
             // Customer existCustomer = CustomerDAO.getCustomer(customerId); // LAY từ mpdb khác sẽ ko có tác dụng nếu có xử lý
-            Customer existCustomer = mpdb.Customers.Where(c => c.ID == customerId).Single<Customer>();
+            Customer existCustomer = mpdb.Customers.Where(c => c.Id == customerId).Single<Customer>();
             
-            string oldStatus = CustomerStatusDAO.getValue(existCustomer.StatusID);
+            string oldStatus = CustomerStateDAO.getCode(existCustomer.StatusID);
             
             // VD: set Status = x32, x33...
             if (sStatus[0] == 'x')
                 sStatus = oldStatus[0] + sStatus.Substring(1, sStatus.Length - 1);
 
-            existCustomer.StatusID = CustomerStatusDAO.getId(sStatus);
+            existCustomer.StatusID = CustomerStateDAO.getId(sStatus);
             mpdb.SubmitChanges();
 
             mpdb.Connection.Close();

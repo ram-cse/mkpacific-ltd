@@ -12,12 +12,12 @@ namespace P4_MoneyPacificSite.Models.DAO
             MoneyPacificEntities db = new MoneyPacificEntities();
             PacificCode lastPacificCode = null;
             
-            bool bExist = db.PacificCodes.Where(p => p.CustomerID == customerId).Any();
+            bool bExist = db.PacificCodes.Where(p => p.CustomerId == customerId).Any();
             if (bExist)
             {
                 
                 lastPacificCode = db.PacificCodes
-                    .Where(p => p.CustomerID == customerId)
+                    .Where(p => p.CustomerId == customerId)
                     .OrderByDescending(p => p.Date)
                     .First<PacificCode>();
             }

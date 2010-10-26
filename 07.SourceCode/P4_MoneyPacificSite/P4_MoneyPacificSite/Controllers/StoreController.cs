@@ -43,10 +43,11 @@ namespace P4_MoneyPacificSite.Controllers
             
             return View(viewModel);
         }
+        
 
         public ActionResult Information()
         {
-            var viewModel = StoreDAO.getTestStore();
+            var viewModel = StoreUserDAO.getTestStoreUser();
             return View(viewModel);
         }
         public ActionResult Security()

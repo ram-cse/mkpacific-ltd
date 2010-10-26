@@ -88,7 +88,7 @@ namespace P4_MoneyPacificSite.ViewModels
     {
         // For Manager of Store
 
-        public Store StoreInfo { get; set; }
+        public StoreUser StoreInfo { get; set; }
 
         [DisplayName("Initial PIN Store phone")]
         public string InitPinStorePhone { get; set; }

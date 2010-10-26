@@ -4,20 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MoneyPacificModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="MoneyPacificModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="MoneyPacificModelStoreContainer">
           <EntitySet Name="Categories" EntityType="MoneyPacificModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Customer" EntityType="MoneyPacificModel.Store.Customer" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CustomerStatus" EntityType="MoneyPacificModel.Store.CustomerStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerState" EntityType="MoneyPacificModel.Store.CustomerState" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PacificCode" EntityType="MoneyPacificModel.Store.PacificCode" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PacificCodeStatus" EntityType="MoneyPacificModel.Store.PacificCodeStatus" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Store" EntityType="MoneyPacificModel.Store.Store" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="StoreStatus" EntityType="MoneyPacificModel.Store.StoreStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PacificCodeState" EntityType="MoneyPacificModel.Store.PacificCodeState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreManager" EntityType="MoneyPacificModel.Store.StoreManager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreManagerState" EntityType="MoneyPacificModel.Store.StoreManagerState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreUser" EntityType="MoneyPacificModel.Store.StoreUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreUserState" EntityType="MoneyPacificModel.Store.StoreUserState" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="MoneyPacificModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Transaction" EntityType="MoneyPacificModel.Store.Transaction" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TransactionStatus" EntityType="MoneyPacificModel.Store.TransactionStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TransactionCate" EntityType="MoneyPacificModel.Store.TransactionCate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TransactionFee" EntityType="MoneyPacificModel.Store.TransactionFee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TransactionState" EntityType="MoneyPacificModel.Store.TransactionState" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Customer_CustomerStatus" Association="MoneyPacificModel.Store.FK_Customer_CustomerStatus">
-            <End Role="CustomerStatus" EntitySet="CustomerStatus" />
+            <End Role="CustomerState" EntitySet="CustomerState" />
             <End Role="Customer" EntitySet="Customer" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_Categories" Association="MoneyPacificModel.Store.FK_PacificCode_Categories">
@@ -29,20 +33,40 @@
             <End Role="PacificCode" EntitySet="PacificCode" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_PacificCodeStatus" Association="MoneyPacificModel.Store.FK_PacificCode_PacificCodeStatus">
-            <End Role="PacificCodeStatus" EntitySet="PacificCodeStatus" />
+            <End Role="PacificCodeState" EntitySet="PacificCodeState" />
             <End Role="PacificCode" EntitySet="PacificCode" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_Store" Association="MoneyPacificModel.Store.FK_PacificCode_Store">
-            <End Role="Store" EntitySet="Store" />
+            <End Role="StoreUser" EntitySet="StoreUser" />
             <End Role="PacificCode" EntitySet="PacificCode" />
           </AssociationSet>
           <AssociationSet Name="FK_Store_StoreStatus" Association="MoneyPacificModel.Store.FK_Store_StoreStatus">
-            <End Role="StoreStatus" EntitySet="StoreStatus" />
-            <End Role="Store" EntitySet="Store" />
+            <End Role="StoreUserState" EntitySet="StoreUserState" />
+            <End Role="StoreUser" EntitySet="StoreUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreManager_StoreManagerState" Association="MoneyPacificModel.Store.FK_StoreManager_StoreManagerState">
+            <End Role="StoreManagerState" EntitySet="StoreManagerState" />
+            <End Role="StoreManager" EntitySet="StoreManager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreUser_StoreManager" Association="MoneyPacificModel.Store.FK_StoreUser_StoreManager">
+            <End Role="StoreManager" EntitySet="StoreManager" />
+            <End Role="StoreUser" EntitySet="StoreUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_PacificCode" Association="MoneyPacificModel.Store.FK_Transaction_PacificCode">
+            <End Role="PacificCode" EntitySet="PacificCode" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_TransactionCate" Association="MoneyPacificModel.Store.FK_Transaction_TransactionCate">
+            <End Role="TransactionCate" EntitySet="TransactionCate" />
+            <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
           <AssociationSet Name="FK_Transaction_TransactionStatus" Association="MoneyPacificModel.Store.FK_Transaction_TransactionStatus">
-            <End Role="TransactionStatus" EntitySet="TransactionStatus" />
+            <End Role="TransactionState" EntitySet="TransactionState" />
             <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionFee_TransactionCate" Association="MoneyPacificModel.Store.FK_TransactionFee_TransactionCate">
+            <End Role="TransactionCate" EntitySet="TransactionCate" />
+            <End Role="TransactionFee" EntitySet="TransactionFee" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Categories">
@@ -56,9 +80,9 @@
         </EntityType>
         <EntityType Name="Customer">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Phone" Type="nchar" MaxLength="20" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
@@ -76,46 +100,74 @@
           <Property Name="Pincode" Type="nvarchar" MaxLength="50" />
           <Property Name="StatusID" Type="int" />
         </EntityType>
-        <EntityType Name="CustomerStatus">
+        <EntityType Name="CustomerState">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="nchar" MaxLength="10" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="IsLocked" Type="bit" />
         </EntityType>
         <EntityType Name="PacificCode">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CodeNumber" Type="nchar" MaxLength="20" />
           <Property Name="LastTransaction" Type="int" />
-          <Property Name="CustomerID" Type="int" />
-          <Property Name="StoreID" Type="int" />
-          <Property Name="CateID" Type="int" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="StoreId" Type="int" />
+          <Property Name="CateId" Type="int" />
           <Property Name="InitialAmount" Type="int" />
           <Property Name="ActualAmount" Type="int" />
           <Property Name="Date" Type="datetime" />
           <Property Name="LastDate" Type="datetime" />
           <Property Name="ExpireDate" Type="datetime" />
           <Property Name="Comment" Type="nvarchar" MaxLength="255" />
-          <Property Name="StatusID" Type="int" />
         </EntityType>
-        <EntityType Name="PacificCodeStatus">
+        <EntityType Name="PacificCodeState">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="nchar" MaxLength="10" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="Store">
+        <EntityType Name="StoreManager">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="20" />
+          <Property Name="NameOfStore" Type="nchar" MaxLength="20" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="Address" Type="nchar" MaxLength="255" />
+          <Property Name="Address2" Type="nchar" MaxLength="255" />
+          <Property Name="Phone" Type="nchar" MaxLength="20" />
+          <Property Name="Phone2" Type="nchar" MaxLength="20" />
+          <Property Name="Email" Type="nchar" MaxLength="255" />
+          <Property Name="WebSite" Type="nchar" MaxLength="255" />
+          <Property Name="Zip" Type="nchar" MaxLength="10" />
+          <Property Name="Town" Type="nchar" MaxLength="50" />
+          <Property Name="Country" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StoreManagerState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="StoreUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ManagerId" Type="int" />
+          <Property Name="StatusId" Type="int" />
           <Property Name="Phone" Type="nchar" MaxLength="20" />
           <Property Name="PassStore" Type="nvarchar" MaxLength="50" />
           <Property Name="CreateDate" Type="date" />
@@ -127,14 +179,13 @@
           <Property Name="Address" Type="nvarchar" MaxLength="255" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="StatusID" Type="int" />
         </EntityType>
-        <EntityType Name="StoreStatus">
+        <EntityType Name="StoreUserState">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="nchar" MaxLength="10" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -149,38 +200,55 @@
         </EntityType>
         <EntityType Name="Transaction">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RelateId" Type="int" />
+          <Property Name="CateId" Type="int" />
           <Property Name="CreateDate" Type="datetime" />
-          <Property Name="IDTransaction" Type="nchar" MaxLength="10" />
           <Property Name="Origine" Type="nchar" MaxLength="10" />
           <Property Name="Amount" Type="int" />
-          <Property Name="StoreID" Type="int" />
-          <Property Name="StorePhone" Type="nchar" MaxLength="20" />
-          <Property Name="CustomerID" Type="int" />
-          <Property Name="CustomerPhone" Type="nchar" MaxLength="20" />
-          <Property Name="PacificCodeID" Type="int" />
-          <Property Name="PacificCode" Type="nchar" MaxLength="20" />
-          <Property Name="Comment" Type="nvarchar" MaxLength="255" />
+          <Property Name="StoreId" Type="int" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="PacificCodeId" Type="int" />
           <Property Name="IPTime" Type="datetime" />
           <Property Name="SMS" Type="nchar" MaxLength="10" />
-          <Property Name="StatusID" Type="int" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="TransactionStatus">
+        <EntityType Name="TransactionCate">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="nchar" MaxLength="20" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nchar" MaxLength="20" />
+          <Property Name="Code" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TransactionFee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CateId" Type="int" />
+          <Property Name="DateBegin" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+          <Property Name="Fee" Type="int" />
+        </EntityType>
+        <EntityType Name="TransactionState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nchar" MaxLength="20" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <Association Name="FK_Customer_CustomerStatus">
-          <End Role="CustomerStatus" Type="MoneyPacificModel.Store.CustomerStatus" Multiplicity="0..1" />
+          <End Role="CustomerState" Type="MoneyPacificModel.Store.CustomerState" Multiplicity="0..1" />
           <End Role="Customer" Type="MoneyPacificModel.Store.Customer" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CustomerStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="CustomerState">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Customer">
               <PropertyRef Name="StatusID" />
@@ -195,7 +263,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="CateID" />
+              <PropertyRef Name="CateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -204,83 +272,146 @@
           <End Role="PacificCode" Type="MoneyPacificModel.Store.PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="CustomerID" />
+              <PropertyRef Name="CustomerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PacificCode_PacificCodeStatus">
-          <End Role="PacificCodeStatus" Type="MoneyPacificModel.Store.PacificCodeStatus" Multiplicity="0..1" />
+          <End Role="PacificCodeState" Type="MoneyPacificModel.Store.PacificCodeState" Multiplicity="0..1" />
           <End Role="PacificCode" Type="MoneyPacificModel.Store.PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PacificCodeStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="PacificCodeState">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="StatusID" />
+              <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PacificCode_Store">
-          <End Role="Store" Type="MoneyPacificModel.Store.Store" Multiplicity="0..1" />
+          <End Role="StoreUser" Type="MoneyPacificModel.Store.StoreUser" Multiplicity="0..1" />
           <End Role="PacificCode" Type="MoneyPacificModel.Store.PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Store">
-              <PropertyRef Name="ID" />
+            <Principal Role="StoreUser">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="StatusID" />
+              <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_StoreStatus">
-          <End Role="StoreStatus" Type="MoneyPacificModel.Store.StoreStatus" Multiplicity="0..1" />
-          <End Role="Store" Type="MoneyPacificModel.Store.Store" Multiplicity="*" />
+          <End Role="StoreUserState" Type="MoneyPacificModel.Store.StoreUserState" Multiplicity="0..1" />
+          <End Role="StoreUser" Type="MoneyPacificModel.Store.StoreUser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="StoreStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="StoreUserState">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Store">
-              <PropertyRef Name="StatusID" />
+            <Dependent Role="StoreUser">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreManager_StoreManagerState">
+          <End Role="StoreManagerState" Type="MoneyPacificModel.Store.StoreManagerState" Multiplicity="0..1" />
+          <End Role="StoreManager" Type="MoneyPacificModel.Store.StoreManager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreManagerState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StoreManager">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreUser_StoreManager">
+          <End Role="StoreManager" Type="MoneyPacificModel.Store.StoreManager" Multiplicity="0..1" />
+          <End Role="StoreUser" Type="MoneyPacificModel.Store.StoreUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreManager">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StoreUser">
+              <PropertyRef Name="ManagerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_PacificCode">
+          <End Role="PacificCode" Type="MoneyPacificModel.Store.PacificCode" Multiplicity="0..1" />
+          <End Role="Transaction" Type="MoneyPacificModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PacificCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="PacificCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_TransactionCate">
+          <End Role="TransactionCate" Type="MoneyPacificModel.Store.TransactionCate" Multiplicity="0..1" />
+          <End Role="Transaction" Type="MoneyPacificModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionCate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="CateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Transaction_TransactionStatus">
-          <End Role="TransactionStatus" Type="MoneyPacificModel.Store.TransactionStatus" Multiplicity="0..1" />
+          <End Role="TransactionState" Type="MoneyPacificModel.Store.TransactionState" Multiplicity="0..1" />
           <End Role="Transaction" Type="MoneyPacificModel.Store.Transaction" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TransactionStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="TransactionState">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Transaction">
-              <PropertyRef Name="StatusID" />
+              <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <Association Name="FK_TransactionFee_TransactionCate">
+          <End Role="TransactionCate" Type="MoneyPacificModel.Store.TransactionCate" Multiplicity="0..1" />
+          <End Role="TransactionFee" Type="MoneyPacificModel.Store.TransactionFee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionCate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TransactionFee">
+              <PropertyRef Name="CateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MoneyPacificModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="MoneyPacificEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="MoneyPacificModel.Category" />
           <EntitySet Name="Customers" EntityType="MoneyPacificModel.Customer" />
-          <EntitySet Name="CustomerStatuses" EntityType="MoneyPacificModel.CustomerStatus" />
+          <EntitySet Name="CustomerStates" EntityType="MoneyPacificModel.CustomerState" />
           <EntitySet Name="PacificCodes" EntityType="MoneyPacificModel.PacificCode" />
-          <EntitySet Name="PacificCodeStatuses" EntityType="MoneyPacificModel.PacificCodeStatus" />
-          <EntitySet Name="Stores" EntityType="MoneyPacificModel.Store" />
-          <EntitySet Name="StoreStatus" EntityType="MoneyPacificModel.StoreStatu" />
+          <EntitySet Name="PacificCodeStates" EntityType="MoneyPacificModel.PacificCodeState" />
+          <EntitySet Name="StoreManagers" EntityType="MoneyPacificModel.StoreManager" />
+          <EntitySet Name="StoreManagerStates" EntityType="MoneyPacificModel.StoreManagerState" />
+          <EntitySet Name="StoreUsers" EntityType="MoneyPacificModel.StoreUser" />
+          <EntitySet Name="StoreUserStates" EntityType="MoneyPacificModel.StoreUserState" />
           <EntitySet Name="sysdiagrams" EntityType="MoneyPacificModel.sysdiagram" />
           <EntitySet Name="Transactions" EntityType="MoneyPacificModel.Transaction" />
-          <EntitySet Name="TransactionStatuses" EntityType="MoneyPacificModel.TransactionStatus" />
+          <EntitySet Name="TransactionCates" EntityType="MoneyPacificModel.TransactionCate" />
+          <EntitySet Name="TransactionFees" EntityType="MoneyPacificModel.TransactionFee" />
+          <EntitySet Name="TransactionStates" EntityType="MoneyPacificModel.TransactionState" />
           <AssociationSet Name="FK_PacificCode_Categories" Association="MoneyPacificModel.FK_PacificCode_Categories">
-            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Category" EntitySet="Categories" />
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_Customer_CustomerStatus" Association="MoneyPacificModel.FK_Customer_CustomerStatus">
-            <End Role="CustomerStatus" EntitySet="CustomerStatuses" />
+            <End Role="CustomerState" EntitySet="CustomerStates" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_Customer" Association="MoneyPacificModel.FK_PacificCode_Customer">
@@ -288,184 +419,258 @@
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_PacificCodeStatus" Association="MoneyPacificModel.FK_PacificCode_PacificCodeStatus">
-            <End Role="PacificCodeStatus" EntitySet="PacificCodeStatuses" />
+            <End Role="PacificCodeState" EntitySet="PacificCodeStates" />
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_PacificCode_Store" Association="MoneyPacificModel.FK_PacificCode_Store">
-            <End Role="Store" EntitySet="Stores" />
+            <End Role="StoreUser" EntitySet="StoreUsers" />
             <End Role="PacificCode" EntitySet="PacificCodes" />
           </AssociationSet>
+          <AssociationSet Name="FK_Transaction_PacificCode" Association="MoneyPacificModel.FK_Transaction_PacificCode">
+            <End Role="PacificCode" EntitySet="PacificCodes" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreManager_StoreManagerState" Association="MoneyPacificModel.FK_StoreManager_StoreManagerState">
+            <End Role="StoreManagerState" EntitySet="StoreManagerStates" />
+            <End Role="StoreManager" EntitySet="StoreManagers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreUser_StoreManager" Association="MoneyPacificModel.FK_StoreUser_StoreManager">
+            <End Role="StoreManager" EntitySet="StoreManagers" />
+            <End Role="StoreUser" EntitySet="StoreUsers" />
+          </AssociationSet>
           <AssociationSet Name="FK_Store_StoreStatus" Association="MoneyPacificModel.FK_Store_StoreStatus">
-            <End Role="StoreStatus" EntitySet="StoreStatus" />
-            <End Role="Store" EntitySet="Stores" />
+            <End Role="StoreUserState" EntitySet="StoreUserStates" />
+            <End Role="StoreUser" EntitySet="StoreUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_TransactionCate" Association="MoneyPacificModel.FK_Transaction_TransactionCate">
+            <End Role="TransactionCate" EntitySet="TransactionCates" />
+            <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
           <AssociationSet Name="FK_Transaction_TransactionStatus" Association="MoneyPacificModel.FK_Transaction_TransactionStatus">
-            <End Role="TransactionStatus" EntitySet="TransactionStatuses" />
+            <End Role="TransactionState" EntitySet="TransactionStates" />
             <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionFee_TransactionCate" Association="MoneyPacificModel.FK_TransactionFee_TransactionCate">
+            <End Role="TransactionCate" EntitySet="TransactionCates" />
+            <End Role="TransactionFee" EntitySet="TransactionFees" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="Int32" />
-          <Property Name="Active" Type="Boolean" />
-          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_Categories" FromRole="Categories" ToRole="PacificCode" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Value" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_Categories" FromRole="Category" ToRole="PacificCode" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Phone" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="CreateDate" Type="DateTime" />
-          <Property Name="LastDate" Type="DateTime" />
-          <Property Name="CurrentPacificCoded" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="TotalAmount" Type="Int32" />
-          <Property Name="NumberTransaction" Type="Int32" />
-          <Property Name="BadTransaction" Type="Int32" />
-          <Property Name="SecurCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Pincode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="StatusID" Type="Int32" />
-          <NavigationProperty Name="CustomerStatu" Relationship="MoneyPacificModel.FK_Customer_CustomerStatus" FromRole="Customer" ToRole="CustomerStatus" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Username" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="DateTime" Name="LastDate" />
+          <Property Type="String" Name="CurrentPacificCoded" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="TotalAmount" />
+          <Property Type="Int32" Name="NumberTransaction" />
+          <Property Type="Int32" Name="BadTransaction" />
+          <Property Type="String" Name="SecurCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pincode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StatusID" />
+          <NavigationProperty Name="CustomerState" Relationship="MoneyPacificModel.FK_Customer_CustomerStatus" FromRole="Customer" ToRole="CustomerState" />
           <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_Customer" FromRole="Customer" ToRole="PacificCode" />
         </EntityType>
-        <EntityType Name="CustomerStatus">
+        <EntityType Name="CustomerState">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="IsLocked" Type="Boolean" />
-          <NavigationProperty Name="Customers" Relationship="MoneyPacificModel.FK_Customer_CustomerStatus" FromRole="CustomerStatus" ToRole="Customer" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsLocked" />
+          <NavigationProperty Name="Customers" Relationship="MoneyPacificModel.FK_Customer_CustomerStatus" FromRole="CustomerState" ToRole="Customer" />
         </EntityType>
         <EntityType Name="PacificCode">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CodeNumber" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="LastTransaction" Type="Int32" />
-          <Property Name="CustomerID" Type="Int32" />
-          <Property Name="StoreID" Type="Int32" />
-          <Property Name="CateID" Type="Int32" />
-          <Property Name="InitialAmount" Type="Int32" />
-          <Property Name="ActualAmount" Type="Int32" />
-          <Property Name="Date" Type="DateTime" />
-          <Property Name="LastDate" Type="DateTime" />
-          <Property Name="ExpireDate" Type="DateTime" />
-          <Property Name="Comment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="StatusID" Type="Int32" />
-          <NavigationProperty Name="Category" Relationship="MoneyPacificModel.FK_PacificCode_Categories" FromRole="PacificCode" ToRole="Categories" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CodeNumber" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="LastTransaction" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="Int32" Name="CustomerId" />
+          <Property Type="Int32" Name="StoreId" />
+          <Property Type="Int32" Name="CateId" />
+          <Property Type="Int32" Name="InitialAmount" />
+          <Property Type="Int32" Name="ActualAmount" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="DateTime" Name="LastDate" />
+          <Property Type="DateTime" Name="ExpireDate" />
+          <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="MoneyPacificModel.FK_PacificCode_Categories" FromRole="PacificCode" ToRole="Category" />
           <NavigationProperty Name="Customer" Relationship="MoneyPacificModel.FK_PacificCode_Customer" FromRole="PacificCode" ToRole="Customer" />
-          <NavigationProperty Name="PacificCodeStatu" Relationship="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" FromRole="PacificCode" ToRole="PacificCodeStatus" />
-          <NavigationProperty Name="Store" Relationship="MoneyPacificModel.FK_PacificCode_Store" FromRole="PacificCode" ToRole="Store" />
+          <NavigationProperty Name="PacificCodeState" Relationship="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" FromRole="PacificCode" ToRole="PacificCodeState" />
+          <NavigationProperty Name="StoreUser" Relationship="MoneyPacificModel.FK_PacificCode_Store" FromRole="PacificCode" ToRole="StoreUser" />
+          <NavigationProperty Name="Transactions" Relationship="MoneyPacificModel.FK_Transaction_PacificCode" FromRole="PacificCode" ToRole="Transaction" />
         </EntityType>
-        <EntityType Name="PacificCodeStatus">
+        <EntityType Name="PacificCodeState">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" FromRole="PacificCodeStatus" ToRole="PacificCode" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" FromRole="PacificCodeState" ToRole="PacificCode" />
         </EntityType>
-        <EntityType Name="Store">
+        <EntityType Name="StoreManager">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Phone" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="PassStore" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreateDate" Type="DateTime" />
-          <Property Name="LastDate" Type="DateTime" />
-          <Property Name="LastTransaction" Type="Int32" />
-          <Property Name="NumberSales" Type="Int32" />
-          <Property Name="TotalSales" Type="Double" />
-          <Property Name="Comment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="StatusID" Type="Int32" />
-          <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_Store" FromRole="Store" ToRole="PacificCode" />
-          <NavigationProperty Name="StoreStatu" Relationship="MoneyPacificModel.FK_Store_StoreStatus" FromRole="Store" ToRole="StoreStatus" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="NameOfStore" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="String" Name="Address" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Phone2" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="WebSite" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Zip" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Town" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="StoreManagerState" Relationship="MoneyPacificModel.FK_StoreManager_StoreManagerState" FromRole="StoreManager" ToRole="StoreManagerState" />
+          <NavigationProperty Name="StoreUsers" Relationship="MoneyPacificModel.FK_StoreUser_StoreManager" FromRole="StoreManager" ToRole="StoreUser" />
         </EntityType>
-        <EntityType Name="StoreStatu">
+        <EntityType Name="StoreManagerState">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Stores" Relationship="MoneyPacificModel.FK_Store_StoreStatus" FromRole="StoreStatus" ToRole="Store" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="StoreManagers" Relationship="MoneyPacificModel.FK_StoreManager_StoreManagerState" FromRole="StoreManagerState" ToRole="StoreManager" />
+        </EntityType>
+        <EntityType Name="StoreUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ManagerId" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="PassStore" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="DateTime" Name="LastDate" />
+          <Property Type="Int32" Name="LastTransaction" />
+          <Property Type="Int32" Name="NumberSales" />
+          <Property Type="Double" Name="TotalSales" />
+          <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PacificCodes" Relationship="MoneyPacificModel.FK_PacificCode_Store" FromRole="StoreUser" ToRole="PacificCode" />
+          <NavigationProperty Name="StoreManager" Relationship="MoneyPacificModel.FK_StoreUser_StoreManager" FromRole="StoreUser" ToRole="StoreManager" />
+          <NavigationProperty Name="StoreUserState" Relationship="MoneyPacificModel.FK_Store_StoreStatus" FromRole="StoreUser" ToRole="StoreUserState" />
+        </EntityType>
+        <EntityType Name="StoreUserState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="StoreUsers" Relationship="MoneyPacificModel.FK_Store_StoreStatus" FromRole="StoreUserState" ToRole="StoreUser" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Transaction">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreateDate" Type="DateTime" />
-          <Property Name="IDTransaction" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Origine" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Amount" Type="Int32" />
-          <Property Name="StoreID" Type="Int32" />
-          <Property Name="StorePhone" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="CustomerID" Type="Int32" />
-          <Property Name="CustomerPhone" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="PacificCodeID" Type="Int32" />
-          <Property Name="PacificCode" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="Comment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="IPTime" Type="DateTime" />
-          <Property Name="SMS" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="StatusID" Type="Int32" />
-          <NavigationProperty Name="TransactionStatu" Relationship="MoneyPacificModel.FK_Transaction_TransactionStatus" FromRole="Transaction" ToRole="TransactionStatus" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RelateId" />
+          <Property Type="Int32" Name="CateId" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="Origine" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="Amount" />
+          <Property Type="Int32" Name="StoreId" />
+          <Property Type="Int32" Name="CustomerId" />
+          <Property Type="Int32" Name="PacificCodeId" />
+          <Property Type="DateTime" Name="IPTime" />
+          <Property Type="String" Name="SMS" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PacificCode" Relationship="MoneyPacificModel.FK_Transaction_PacificCode" FromRole="Transaction" ToRole="PacificCode" />
+          <NavigationProperty Name="TransactionCate" Relationship="MoneyPacificModel.FK_Transaction_TransactionCate" FromRole="Transaction" ToRole="TransactionCate" />
+          <NavigationProperty Name="TransactionState" Relationship="MoneyPacificModel.FK_Transaction_TransactionStatus" FromRole="Transaction" ToRole="TransactionState" />
         </EntityType>
-        <EntityType Name="TransactionStatus">
+        <EntityType Name="TransactionCate">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Value" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Transactions" Relationship="MoneyPacificModel.FK_Transaction_TransactionStatus" FromRole="TransactionStatus" ToRole="Transaction" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Transactions" Relationship="MoneyPacificModel.FK_Transaction_TransactionCate" FromRole="TransactionCate" ToRole="Transaction" />
+          <NavigationProperty Name="TransactionFees" Relationship="MoneyPacificModel.FK_TransactionFee_TransactionCate" FromRole="TransactionCate" ToRole="TransactionFee" />
+        </EntityType>
+        <EntityType Name="TransactionFee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="CateId" />
+          <Property Type="DateTime" Name="DateBegin" />
+          <Property Type="DateTime" Name="DateEnd" />
+          <Property Type="Int32" Name="Fee" />
+          <NavigationProperty Name="TransactionCate" Relationship="MoneyPacificModel.FK_TransactionFee_TransactionCate" FromRole="TransactionFee" ToRole="TransactionCate" />
+        </EntityType>
+        <EntityType Name="TransactionState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Transactions" Relationship="MoneyPacificModel.FK_Transaction_TransactionStatus" FromRole="TransactionState" ToRole="Transaction" />
         </EntityType>
         <Association Name="FK_PacificCode_Categories">
-          <End Role="Categories" Type="MoneyPacificModel.Category" Multiplicity="0..1" />
-          <End Role="PacificCode" Type="MoneyPacificModel.PacificCode" Multiplicity="*" />
+          <End Type="MoneyPacificModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.PacificCode" Role="PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Categories">
+            <Principal Role="Category">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="CateID" />
+              <PropertyRef Name="CateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Customer_CustomerStatus">
-          <End Role="CustomerStatus" Type="MoneyPacificModel.CustomerStatus" Multiplicity="0..1" />
-          <End Role="Customer" Type="MoneyPacificModel.Customer" Multiplicity="*" />
+          <End Type="MoneyPacificModel.CustomerState" Role="CustomerState" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.Customer" Role="Customer" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CustomerStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="CustomerState">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Customer">
               <PropertyRef Name="StatusID" />
@@ -473,171 +678,319 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PacificCode_Customer">
-          <End Role="Customer" Type="MoneyPacificModel.Customer" Multiplicity="0..1" />
-          <End Role="PacificCode" Type="MoneyPacificModel.PacificCode" Multiplicity="*" />
+          <End Type="MoneyPacificModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.PacificCode" Role="PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="CustomerID" />
+              <PropertyRef Name="CustomerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PacificCode_PacificCodeStatus">
-          <End Role="PacificCodeStatus" Type="MoneyPacificModel.PacificCodeStatus" Multiplicity="0..1" />
-          <End Role="PacificCode" Type="MoneyPacificModel.PacificCode" Multiplicity="*" />
+          <End Type="MoneyPacificModel.PacificCodeState" Role="PacificCodeState" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.PacificCode" Role="PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PacificCodeStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="PacificCodeState">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="StatusID" />
+              <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PacificCode_Store">
-          <End Role="Store" Type="MoneyPacificModel.Store" Multiplicity="0..1" />
-          <End Role="PacificCode" Type="MoneyPacificModel.PacificCode" Multiplicity="*" />
+          <End Type="MoneyPacificModel.StoreUser" Role="StoreUser" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.PacificCode" Role="PacificCode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Store">
-              <PropertyRef Name="ID" />
+            <Principal Role="StoreUser">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PacificCode">
-              <PropertyRef Name="StatusID" />
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_PacificCode">
+          <End Type="MoneyPacificModel.PacificCode" Role="PacificCode" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PacificCode">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="PacificCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreManager_StoreManagerState">
+          <End Type="MoneyPacificModel.StoreManagerState" Role="StoreManagerState" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.StoreManager" Role="StoreManager" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreManagerState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StoreManager">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreUser_StoreManager">
+          <End Type="MoneyPacificModel.StoreManager" Role="StoreManager" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.StoreUser" Role="StoreUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreManager">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StoreUser">
+              <PropertyRef Name="ManagerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Store_StoreStatus">
-          <End Role="StoreStatus" Type="MoneyPacificModel.StoreStatu" Multiplicity="0..1" />
-          <End Role="Store" Type="MoneyPacificModel.Store" Multiplicity="*" />
+          <End Type="MoneyPacificModel.StoreUserState" Role="StoreUserState" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.StoreUser" Role="StoreUser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="StoreStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="StoreUserState">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Store">
-              <PropertyRef Name="StatusID" />
+            <Dependent Role="StoreUser">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_TransactionCate">
+          <End Type="MoneyPacificModel.TransactionCate" Role="TransactionCate" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionCate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="CateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Transaction_TransactionStatus">
-          <End Role="TransactionStatus" Type="MoneyPacificModel.TransactionStatus" Multiplicity="0..1" />
-          <End Role="Transaction" Type="MoneyPacificModel.Transaction" Multiplicity="*" />
+          <End Type="MoneyPacificModel.TransactionState" Role="TransactionState" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.Transaction" Role="Transaction" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TransactionStatus">
-              <PropertyRef Name="ID" />
+            <Principal Role="TransactionState">
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Transaction">
-              <PropertyRef Name="StatusID" />
+              <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_TransactionFee_TransactionCate">
+          <End Type="MoneyPacificModel.TransactionCate" Role="TransactionCate" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.TransactionFee" Role="TransactionFee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionCate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TransactionFee">
+              <PropertyRef Name="CateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MoneyPacificModelStoreContainer" CdmEntityContainer="MoneyPacificEntities">
-          <EntitySetMapping Name="Categories"><EntityTypeMapping TypeName="MoneyPacificModel.Category"><MappingFragment StoreEntitySet="Categories">
-            <ScalarProperty Name="Id" ColumnName="Id" />
-            <ScalarProperty Name="Value" ColumnName="Value" />
-            <ScalarProperty Name="Active" ColumnName="Active" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Customers"><EntityTypeMapping TypeName="MoneyPacificModel.Customer"><MappingFragment StoreEntitySet="Customer">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Phone" ColumnName="Phone" />
-            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-            <ScalarProperty Name="LastName" ColumnName="LastName" />
-            <ScalarProperty Name="Username" ColumnName="Username" />
-            <ScalarProperty Name="Password" ColumnName="Password" />
-            <ScalarProperty Name="Email" ColumnName="Email" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-            <ScalarProperty Name="LastDate" ColumnName="LastDate" />
-            <ScalarProperty Name="CurrentPacificCoded" ColumnName="CurrentPacificCoded" />
-            <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-            <ScalarProperty Name="NumberTransaction" ColumnName="NumberTransaction" />
-            <ScalarProperty Name="BadTransaction" ColumnName="BadTransaction" />
-            <ScalarProperty Name="SecurCode" ColumnName="SecurCode" />
-            <ScalarProperty Name="Pincode" ColumnName="Pincode" />
-            <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="CustomerStatuses"><EntityTypeMapping TypeName="MoneyPacificModel.CustomerStatus"><MappingFragment StoreEntitySet="CustomerStatus">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Value" ColumnName="Value" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-            <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="PacificCodes"><EntityTypeMapping TypeName="MoneyPacificModel.PacificCode"><MappingFragment StoreEntitySet="PacificCode">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="CodeNumber" ColumnName="CodeNumber" />
-            <ScalarProperty Name="LastTransaction" ColumnName="LastTransaction" />
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-            <ScalarProperty Name="CateID" ColumnName="CateID" />
-            <ScalarProperty Name="InitialAmount" ColumnName="InitialAmount" />
-            <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
-            <ScalarProperty Name="Date" ColumnName="Date" />
-            <ScalarProperty Name="LastDate" ColumnName="LastDate" />
-            <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
-            <ScalarProperty Name="Comment" ColumnName="Comment" />
-            <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="PacificCodeStatuses"><EntityTypeMapping TypeName="MoneyPacificModel.PacificCodeStatus"><MappingFragment StoreEntitySet="PacificCodeStatus">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Value" ColumnName="Value" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Stores"><EntityTypeMapping TypeName="MoneyPacificModel.Store"><MappingFragment StoreEntitySet="Store">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Phone" ColumnName="Phone" />
-            <ScalarProperty Name="PassStore" ColumnName="PassStore" />
-            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-            <ScalarProperty Name="LastDate" ColumnName="LastDate" />
-            <ScalarProperty Name="LastTransaction" ColumnName="LastTransaction" />
-            <ScalarProperty Name="NumberSales" ColumnName="NumberSales" />
-            <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
-            <ScalarProperty Name="Comment" ColumnName="Comment" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="Name" ColumnName="Name" />
-            <ScalarProperty Name="Email" ColumnName="Email" />
-            <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="StoreStatus"><EntityTypeMapping TypeName="MoneyPacificModel.StoreStatu"><MappingFragment StoreEntitySet="StoreStatus">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Value" ColumnName="Value" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="MoneyPacificModel.sysdiagram"><MappingFragment StoreEntitySet="sysdiagrams">
-            <ScalarProperty Name="name" ColumnName="name" />
-            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-            <ScalarProperty Name="version" ColumnName="version" />
-            <ScalarProperty Name="definition" ColumnName="definition" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Transactions"><EntityTypeMapping TypeName="MoneyPacificModel.Transaction"><MappingFragment StoreEntitySet="Transaction">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-            <ScalarProperty Name="IDTransaction" ColumnName="IDTransaction" />
-            <ScalarProperty Name="Origine" ColumnName="Origine" />
-            <ScalarProperty Name="Amount" ColumnName="Amount" />
-            <ScalarProperty Name="StoreID" ColumnName="StoreID" />
-            <ScalarProperty Name="StorePhone" ColumnName="StorePhone" />
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
-            <ScalarProperty Name="PacificCodeID" ColumnName="PacificCodeID" />
-            <ScalarProperty Name="PacificCode" ColumnName="PacificCode" />
-            <ScalarProperty Name="Comment" ColumnName="Comment" />
-            <ScalarProperty Name="IPTime" ColumnName="IPTime" />
-            <ScalarProperty Name="SMS" ColumnName="SMS" />
-            <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="TransactionStatuses"><EntityTypeMapping TypeName="MoneyPacificModel.TransactionStatus"><MappingFragment StoreEntitySet="TransactionStatus">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Value" ColumnName="Value" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="MoneyPacificModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="MoneyPacificModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="SecurCode" ColumnName="SecurCode" />
+                <ScalarProperty Name="BadTransaction" ColumnName="BadTransaction" />
+                <ScalarProperty Name="NumberTransaction" ColumnName="NumberTransaction" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CurrentPacificCoded" ColumnName="CurrentPacificCoded" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerStates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.CustomerState">
+              <MappingFragment StoreEntitySet="CustomerState">
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PacificCodes">
+            <EntityTypeMapping TypeName="MoneyPacificModel.PacificCode">
+              <MappingFragment StoreEntitySet="PacificCode">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ActualAmount" ColumnName="ActualAmount" />
+                <ScalarProperty Name="InitialAmount" ColumnName="InitialAmount" />
+                <ScalarProperty Name="CateId" ColumnName="CateId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="LastTransaction" ColumnName="LastTransaction" />
+                <ScalarProperty Name="CodeNumber" ColumnName="CodeNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PacificCodeStates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.PacificCodeState">
+              <MappingFragment StoreEntitySet="PacificCodeState">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreManagers">
+            <EntityTypeMapping TypeName="MoneyPacificModel.StoreManager">
+              <MappingFragment StoreEntitySet="StoreManager">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="NameOfStore" ColumnName="NameOfStore" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreManagerStates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.StoreManagerState">
+              <MappingFragment StoreEntitySet="StoreManagerState">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreUsers">
+            <EntityTypeMapping TypeName="MoneyPacificModel.StoreUser">
+              <MappingFragment StoreEntitySet="StoreUser">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+                <ScalarProperty Name="NumberSales" ColumnName="NumberSales" />
+                <ScalarProperty Name="LastTransaction" ColumnName="LastTransaction" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PassStore" ColumnName="PassStore" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreUserStates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.StoreUserState">
+              <MappingFragment StoreEntitySet="StoreUserState">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MoneyPacificModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="MoneyPacificModel.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="SMS" ColumnName="SMS" />
+                <ScalarProperty Name="IPTime" ColumnName="IPTime" />
+                <ScalarProperty Name="PacificCodeId" ColumnName="PacificCodeId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Origine" ColumnName="Origine" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CateId" ColumnName="CateId" />
+                <ScalarProperty Name="RelateId" ColumnName="RelateId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionCates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.TransactionCate">
+              <MappingFragment StoreEntitySet="TransactionCate">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionFees">
+            <EntityTypeMapping TypeName="MoneyPacificModel.TransactionFee">
+              <MappingFragment StoreEntitySet="TransactionFee">
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+                <ScalarProperty Name="CateId" ColumnName="CateId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionStates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.TransactionState">
+              <MappingFragment StoreEntitySet="TransactionState">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -658,49 +1011,92 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="MoneyPacific">
-        <EntityTypeShape EntityType="MoneyPacificModel.Category" Width="1.5" PointX="3" PointY="7.125" Height="1.9802864583333326" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.Customer" Width="1.5" PointX="3" PointY="1" Height="4.6725065104166656" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.CustomerStatus" Width="1.5" PointX="0.75" PointY="2.375" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.PacificCode" Width="1.5" PointX="5.25" PointY="1.25" Height="4.2879036458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.PacificCodeStatus" Width="1.5" PointX="3" PointY="9.875" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.Store" Width="1.5" PointX="3" PointY="12.375" Height="3.9033007812499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.StoreStatu" Width="1.5" PointX="0.75" PointY="13.5" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.Transaction" Width="1.5" PointX="8" PointY="7" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoneyPacificModel.TransactionStatus" Width="1.5" PointX="5.75" PointY="8.125" Height="1.7879850260416674" IsExpanded="true" />
-        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Categories" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="7.59375" />
-          <ConnectorPoint PointX="5.2447891666666671" PointY="7.5937499999999991" />
-          <ConnectorPoint PointX="5.4114558333333331" PointY="7.59375" />
-          <ConnectorPoint PointX="5.46875" PointY="7.59375" />
-          <ConnectorPoint PointX="5.46875" PointY="5.5379036458333317" />
+      <Diagram Name="MoneyPacific" ZoomLevel="88">
+        <EntityTypeShape EntityType="MoneyPacificModel.Category" Width="1.5" PointX="5.25" PointY="7" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.Customer" Width="1.5" PointX="5.25" PointY="10.75" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.CustomerState" Width="1.5" PointX="3" PointY="12.125" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.PacificCode" Width="1.5" PointX="7.5" PointY="1" Height="4.4802050781249818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.PacificCodeState" Width="1.5" PointX="5.25" PointY="16.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreManager" Width="1.5" PointX="3" PointY="1.375" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreManagerState" Width="1.5" PointX="0.75" PointY="2.375" Height="1.7879850260416679" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreUser" Width="1.5" PointX="5.25" PointY="1.125" Height="4.2879036458333246" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreUserState" Width="1.5" PointX="3" PointY="7.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.sysdiagram" Width="1.5" PointX="9.75" PointY="10.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="MoneyPacificModel.Transaction" Width="1.5" PointX="9.75" PointY="1.25" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionCate" Width="1.5" PointX="7.5" PointY="6.875" Height="2.1725878906249818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionFee" Width="1.5" PointX="9.75" PointY="6.875" Height="2.1725878906249818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionState" Width="1.5" PointX="7.5" PointY="9.875" Height="1.7879850260416674" />
+        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Categories" >
+          <ConnectorPoint PointX="6.75" PointY="7" />
+          <ConnectorPoint PointX="7.125" PointY="6.625" />
+          <ConnectorPoint PointX="7.125" PointY="3.2401025390624909" />
+          <ConnectorPoint PointX="7.5" PointY="3.2401025390624909" />
         </AssociationConnector>
-        <AssociationConnector Association="MoneyPacificModel.FK_Customer_CustomerStatus" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="3.3651432291666667" />
-          <ConnectorPoint PointX="3" PointY="3.3651432291666667" />
+        <AssociationConnector Association="MoneyPacificModel.FK_Customer_CustomerStatus" >
+          <ConnectorPoint PointX="4.5" PointY="13.115143229166677" />
+          <ConnectorPoint PointX="5.25" PointY="13.115143229166677" />
         </AssociationConnector>
-        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Customer" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="3.3939518229166659" />
-          <ConnectorPoint PointX="5.25" PointY="3.3939518229166659" />
+        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Customer" >
+          <ConnectorPoint PointX="6.75" PointY="10.813460538461539" />
+          <ConnectorPoint PointX="7.1285744349011209" PointY="10.43488610356042" />
+          <ConnectorPoint PointX="7.2464255650988791" PointY="10.317034973362663" />
+          <ConnectorPoint PointX="7.3125" PointY="10.250960538461541" />
+          <ConnectorPoint PointX="7.3125" PointY="4.3914058085937295" />
+          <ConnectorPoint PointX="7.5" PointY="4.3914058085937295" />
         </AssociationConnector>
-        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="10.819235026041667" />
-          <ConnectorPoint PointX="5.3281225" PointY="10.819235026041667" />
-          <ConnectorPoint PointX="5.3281225" PointY="5.5379036458333317" />
+        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" >
+          <ConnectorPoint PointX="6.75" PointY="16.188460538461534" />
+          <ConnectorPoint PointX="7.1875" PointY="15.750960538461534" />
+          <ConnectorPoint PointX="7.1875" PointY="2.0887992695312514" />
+          <ConnectorPoint PointX="7.5" PointY="2.0887992695312514" />
         </AssociationConnector>
-        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Store" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="14.326650390625" />
-          <ConnectorPoint PointX="5.6093775" PointY="14.326650390625" />
-          <ConnectorPoint PointX="5.6093775" PointY="5.5379036458333317" />
+        <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Store" >
+          <ConnectorPoint PointX="6.75" PointY="3.81575417382811" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="3.8157541738281093" />
+          <ConnectorPoint PointX="7.270833333333333" PointY="3.81575417382811" />
+          <ConnectorPoint PointX="7.5" PointY="3.81575417382811" />
         </AssociationConnector>
-        <AssociationConnector Association="MoneyPacificModel.FK_Store_StoreStatus" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="14.393992513020834" />
-          <ConnectorPoint PointX="3" PointY="14.393992513020834" />
+        <AssociationConnector Association="MoneyPacificModel.FK_Transaction_PacificCode" >
+          <ConnectorPoint PointX="9" PointY="3.2978011067708337" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="3.2978011067708333" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="3.2978011067708337" />
+          <ConnectorPoint PointX="9.75" PointY="3.2978011067708337" />
         </AssociationConnector>
-        <AssociationConnector Association="MoneyPacificModel.FK_Transaction_TransactionStatus" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.25" PointY="9.0189925130208337" />
-          <ConnectorPoint PointX="8" PointY="9.0189925130208337" />
+        <AssociationConnector Association="MoneyPacificModel.FK_StoreManager_StoreManagerState" >
+          <ConnectorPoint PointX="2.25" PointY="3.2689925130208337" />
+          <ConnectorPoint PointX="3" PointY="3.2689925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="MoneyPacificModel.FK_StoreUser_StoreManager" >
+          <ConnectorPoint PointX="4.5" PointY="3.3266503906249909" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="3.3266503906249905" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="3.3266503906249909" />
+          <ConnectorPoint PointX="5.25" PointY="3.3266503906249909" />
+        </AssociationConnector>
+        <AssociationConnector Association="MoneyPacificModel.FK_Store_StoreStatus" >
+          <ConnectorPoint PointX="4.5" PointY="7.375" />
+          <ConnectorPoint PointX="4.875" PointY="7" />
+          <ConnectorPoint PointX="4.875" PointY="2.1945731953125014" />
+          <ConnectorPoint PointX="5.25" PointY="2.1945731953125014" />
+        </AssociationConnector>
+        <AssociationConnector Association="MoneyPacificModel.FK_Transaction_TransactionCate" >
+          <ConnectorPoint PointX="9" PointY="6.875" />
+          <ConnectorPoint PointX="9.375" PointY="6.5" />
+          <ConnectorPoint PointX="9.375" PointY="4.3529536601562437" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="4.3529536601562429" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="4.3529536601562437" />
+          <ConnectorPoint PointX="9.75" PointY="4.3529536601562437" />
+        </AssociationConnector>
+        <AssociationConnector Association="MoneyPacificModel.FK_Transaction_TransactionStatus" >
+          <ConnectorPoint PointX="9" PointY="9.9373066923076916" />
+          <ConnectorPoint PointX="9.5625" PointY="9.3748066923076934" />
+          <ConnectorPoint PointX="9.5625" PointY="2.2426485533854232" />
+          <ConnectorPoint PointX="9.75" PointY="2.2426485533854232" />
+        </AssociationConnector>
+        <AssociationConnector Association="MoneyPacificModel.FK_TransactionFee_TransactionCate" >
+          <ConnectorPoint PointX="9" PointY="7.9925464453124846" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="7.9925464453124837" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="7.9925464453124846" />
+          <ConnectorPoint PointX="9.75" PointY="7.9925464453124846" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

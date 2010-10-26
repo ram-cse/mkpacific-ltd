@@ -42,7 +42,7 @@ namespace P4_MoneyPacificSite.Controllers
                 pCode = db.PacificCodes.Where
                     (p => p.CodeNumber.Trim() == obj.CodeNumber.Trim()).SingleOrDefault<PacificCode>();
                 db.Connection.Close();
-                return RedirectToAction("ChiTiet", new { id = pCode.ID});
+                return RedirectToAction("ChiTiet", new { id = pCode.Id});
             }
             else
             {
@@ -121,7 +121,7 @@ namespace P4_MoneyPacificSite.Controllers
             string sMessage = "";
             if (existCustomer != null)
             {
-                PacificCode lastPacifiCode = PacificCodeBUS.getLastPacificCode(existCustomer.ID);
+                PacificCode lastPacifiCode = PacificCodeBUS.getLastPacificCode(existCustomer.Id);
 
                 DateTime createTime = (DateTime)lastPacifiCode.Date;
                 if (createTime.AddHours(24) > DateTime.Now)
@@ -230,7 +230,7 @@ namespace P4_MoneyPacificSite.Controllers
         public ActionResult ChiTiet(int id)
         {
             MoneyPacificEntities db = new MoneyPacificEntities();
-            var viewModel = db.PacificCodes.Where(p => p.ID == id).Single<PacificCode>();
+            var viewModel = db.PacificCodes.Where(p => p.Id == id).Single<PacificCode>();
             return View(viewModel);
         }
      
@@ -238,7 +238,7 @@ namespace P4_MoneyPacificSite.Controllers
         {
             MoneyPacificEntities db = new MoneyPacificEntities();
             var viewModel = db.PacificCodes
-                .Include("Customer").Include("Store")
+                .Include("Customer").Include("StoreUser")
                 .ToList<PacificCode>();
 
             foreach (PacificCode item in viewModel)
@@ -248,9 +248,9 @@ namespace P4_MoneyPacificSite.Controllers
                     item.Customer = new Customer {Phone = "NO PHONE" };
                 }
 
-                if (item.Store == null)
+                if (item.StoreUser == null)
                 {
-                    item.Store = new Store { Phone = "NO PHONE" };
+                    item.StoreUser = new StoreUser { Phone = "NO PHONE" };
                 }
             }
 

@@ -72,13 +72,13 @@
     </Compile>
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Models\BUS\CustomerBUS.cs" />
-    <Compile Include="Models\BUS\CustomerStatusBUS.cs" />
+    <Compile Include="Models\BUS\CustomerStateBUS.cs" />
     <Compile Include="Models\BUS\PacificCodeBUS.cs" />
     <Compile Include="Models\BUS\TransactionBUS.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
-    <Compile Include="Models\DAO\CustomerStatusDAO.cs" />
+    <Compile Include="Models\DAO\CustomerStateDAO.cs" />
     <Compile Include="Models\DAO\PacificCodeDAO.cs" />
-    <Compile Include="Models\DAO\StoreDAO.cs" />
+    <Compile Include="Models\DAO\StoreUserDAO.cs" />
     <Compile Include="Models\DAO\TransactionDAO.cs" />
     <Compile Include="Models\Mail.cs" />
     <Compile Include="Models\MoneyPacific.Designer.cs">
@@ -158,12 +158,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\MoneyPacific.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MoneyPacific.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\GeneratorPacificCode\GeneratorPacificCode\GeneratorPacificCode.csproj">
       <Project>{F9F1DDC8-4897-477F-9C9A-FDB6E0D580FE}</Project>
       <Name>GeneratorPacificCode</Name>
@@ -171,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\StoreManager.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\MoneyPacific.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MoneyPacific.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

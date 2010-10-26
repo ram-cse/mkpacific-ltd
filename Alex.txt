@@ -1,4 +1,14 @@
-﻿
+﻿	26/20/2010:
+		- odoa
+		- JQuery -> Popup Menu
+		- odow
+		- Design Database
+			+ Nhóm Table Transaction: Them bảng TransactionCate, TransactionFee
+				. Transa
+			+ Nhóm Table Store: -> StoreMember, StoreManager
+			
+			
+
 	25/10/2010:
 		- Thiet ke giao dien cho các module:
 			. Security
