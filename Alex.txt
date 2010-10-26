@@ -1,13 +1,24 @@
 ﻿	26/20/2010:
 		- odoa
 		- JQuery -> Popup Menu
+		
+		+ Đăng nhập StoreManager -> có phân quyền
+		[Authorize(Roles = "Admin")]
+		=> Làm sao viết dc lớp Authorize???
+		
 		- odow
 		- Design Database
-			+ Nhóm Table Transaction: Them bảng TransactionCate, TransactionFee
+			+ x Nhóm Table Transaction: Them bảng TransactionCate, TransactionFee
 				. Transa
-			+ Nhóm Table Store: -> StoreMember, StoreManager
+			+ x Nhóm Table Store: -> StoreMember, StoreManager
+				(tạm ổn, có thể thiếu vài trường)
+		
+		Không biết năm ngoái có ai đi không, năm nay nghe nói hội chợ hoành tráng lắm. Có nhiều khuyến mãi, hơi phiền là phải đăng ký mới được tham gia. K biết có gì không mà làm thấy ghê. He he. Anh chị em nào đi hú đi cùng cho vui, hơi xa. (Triển lãm Quốc tế về Internet & CNTT tại VN) http://vietnam-internet-it.com/fun/default.aspx?ref=5475
+		
 			
-			
+		Không biết năm ngoái có ai đi không, năm nay nghe nói hội chợ hoành tráng lắm. Có nhiều khuyến mãi, hơi phiền là phải đăng ký mới được tham gia. K biết có gì không mà làm thấy ghê. He he. Anh chị em nào đi hú đi cùng cho vui, hơi xa. (Triển lãm Quốc tế về Internet & CNTT tại VN) http://vietnam-internet-it.com/fun/default.aspx?ref=5475
+		thanhdungit@gmail.com
+		v}#9/:h
 
 	25/10/2010:
 		- Thiet ke giao dien cho các module:
