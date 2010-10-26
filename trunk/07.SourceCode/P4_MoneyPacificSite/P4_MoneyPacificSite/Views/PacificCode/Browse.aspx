@@ -41,11 +41,11 @@
                                     Html.insertSeparateChar(item.CodeNumber, '-', 4)
                                     ,"ChiTiet"
                                     ,"PacificCode"
-                                    , new {id =  item.ID}
+                                    , new {id =  item.Id}
                                     ,null) %>
             </td>
             <td><%: item.Customer.Phone %></td>
-            <td><%: item.Store.Phone %></td>
+            <td><%: item.StoreUser.Phone %></td>
             <td><%: item.InitialAmount %></td>
             <td><%: item.ActualAmount %></td>
             <td><%: String.Format("{0:dd-MMM-yyyy}", item.Date) %></td>

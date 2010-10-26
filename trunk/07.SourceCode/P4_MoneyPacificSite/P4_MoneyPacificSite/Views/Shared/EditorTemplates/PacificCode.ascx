@@ -8,7 +8,7 @@
     </tr>
     <tr>
         <td>ID</td>
-        <td><%: Model.ID %></td>
+        <td><%: Model.Id %></td>
     </tr>
     <tr>
         <td>CodeNumber</td>
@@ -20,15 +20,15 @@
     </tr>
     <tr>
         <td>CustomerID</td>
-        <td><%: Model.CustomerID %></td>
+        <td><%: Model.CustomerId %></td>
     </tr>
     <tr>
         <td>StoreID</td>
-        <td><%: Model.StoreID %></td>
+        <td><%: Model.StoreId %></td>
     </tr>
     <tr>
         <td>CateID</td>
-        <td><%: Model.CateID %></td>
+        <td><%: Model.CateId %></td>
     </tr>
     <tr>
         <td>InitialAmount</td>
@@ -56,7 +56,7 @@
     </tr>
     <tr>
         <td>StatusID</td>
-        <td><%: Model.StatusID %></td>
+        <td><%: Model.StatusId %></td>
     </tr>
 </table>
 

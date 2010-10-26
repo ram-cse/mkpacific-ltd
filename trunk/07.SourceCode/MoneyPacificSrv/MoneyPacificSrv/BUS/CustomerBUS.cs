@@ -24,7 +24,7 @@ namespace MoneyPacificSrv.BUS
             else
             {
                 Customer existCustomer = CustomerDAO.getCustomer(sPhone);
-                string sStatus = CustomerStatusDAO.getValue(existCustomer.StatusID).Trim();
+                string sStatus = CustomerStateDAO.getCode(existCustomer.StatusID).Trim();
                 if (sStatus.Substring(1, 2) == "98")
                 {
                     return true;
@@ -45,7 +45,7 @@ namespace MoneyPacificSrv.BUS
             else
             {
                 Customer existCustomer = CustomerDAO.getCustomer(sPhone);
-                string sStatus = CustomerStatusDAO.getValue(existCustomer.StatusID).Trim();
+                string sStatus = CustomerStateDAO.getCode(existCustomer.StatusID).Trim();
                 if (sStatus.Substring(1, 2) == "93")
                 {
                     return true;
@@ -94,7 +94,7 @@ namespace MoneyPacificSrv.BUS
 
             string sWarning="0*NOT_EXIST_STATUS";
 
-            string customerStatus = CustomerStatusBUS.getValue(existCustomer.StatusID);
+            string customerStatus = CustomerStateBUS.getCode(existCustomer.StatusID);
             
             string yz = customerStatus.Substring(1, 2); // XYZ => get YZ)
             char x = customerStatus[0];
@@ -103,15 +103,15 @@ namespace MoneyPacificSrv.BUS
             switch (yz)
             {   
                 case "31":
-                    CustomerDAO.setStatus(existCustomer.ID, "x32");
+                    CustomerDAO.setStatus(existCustomer.Id, "x32");
                     sWarning = sPhone + "*" + MessageManager.getValue("NOT_EXIST_PACIFICCODE");
                     break;
                 case "32":
-                    CustomerDAO.setStatus(existCustomer.ID, "x33");
+                    CustomerDAO.setStatus(existCustomer.Id, "x33");
                     sWarning = sPhone + "*" + MessageManager.getValue("WILL_BE_LOCKED");
                     break;
                 case "33":
-                    CustomerDAO.setStatus(existCustomer.ID, "x93");
+                    CustomerDAO.setStatus(existCustomer.Id, "x93");
                     sWarning = sPhone + "*" + MessageManager.getValue("BE_LOCKED");
                     break;
             }
@@ -120,7 +120,7 @@ namespace MoneyPacificSrv.BUS
             // 0 - 30
             if (int.Parse(yz) < 31 && int.Parse(yz) >= 0)
             {
-                CustomerDAO.setStatus(existCustomer.ID, "x31");
+                CustomerDAO.setStatus(existCustomer.Id, "x31");
                 sWarning = existCustomer.Phone + "*" + MessageManager.getValue("NOT_EXIST_PACIFICCODE");
             }
 
@@ -131,7 +131,7 @@ namespace MoneyPacificSrv.BUS
         {
             Customer existCustomer = CustomerDAO.getCustomer(sPhoneNumber);
 
-            string sStatus = CustomerStatusBUS.getValue(existCustomer.StatusID);
+            string sStatus = CustomerStateBUS.getCode(existCustomer.StatusID);
             sStatus = sStatus[0] + "98";
 
             CustomerDAO.setStatus(sPhoneNumber,sStatus);

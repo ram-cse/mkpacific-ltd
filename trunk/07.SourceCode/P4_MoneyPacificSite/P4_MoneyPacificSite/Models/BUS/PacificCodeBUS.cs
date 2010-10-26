@@ -56,7 +56,7 @@ namespace P4_MoneyPacificSite.Models.BUS
                     //    );
 
                     Customer receiverCustomer = CustomerBUS.getCustomerOrCreateNotYetBuy(Phone);
-                    newPacificCode.CustomerID = receiverCustomer.ID;
+                    newPacificCode.CustomerId = receiverCustomer.Id;
                     // Không có storeId
 
                     db.PacificCodes.AddObject(newPacificCode);

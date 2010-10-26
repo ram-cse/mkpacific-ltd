@@ -18,13 +18,18 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Category), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.CustomerStatus), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Customer), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Category), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.CustomerState), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Customer), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Customer), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCodeStatus), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Store", "Store", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.Store), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreStatu), "Store", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Store), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionStatus", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionStatus), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCodeState), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Store", "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreUser), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_PacificCode", "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCode), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManagerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreManagerState), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreManager), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreManager), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreUser), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreUserState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreUserState), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreUser), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionCate", "TransactionCate", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionCate), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionState), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_TransactionFee_TransactionCate", "TransactionCate", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionCate), "TransactionFee", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.TransactionFee), true)]
 
 #endregion
 
@@ -111,18 +116,18 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<CustomerStatus> CustomerStatuses
+        public ObjectSet<CustomerState> CustomerStates
         {
             get
             {
-                if ((_CustomerStatuses == null))
+                if ((_CustomerStates == null))
                 {
-                    _CustomerStatuses = base.CreateObjectSet<CustomerStatus>("CustomerStatuses");
+                    _CustomerStates = base.CreateObjectSet<CustomerState>("CustomerStates");
                 }
-                return _CustomerStatuses;
+                return _CustomerStates;
             }
         }
-        private ObjectSet<CustomerStatus> _CustomerStatuses;
+        private ObjectSet<CustomerState> _CustomerStates;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -143,50 +148,82 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PacificCodeStatus> PacificCodeStatuses
+        public ObjectSet<PacificCodeState> PacificCodeStates
         {
             get
             {
-                if ((_PacificCodeStatuses == null))
+                if ((_PacificCodeStates == null))
                 {
-                    _PacificCodeStatuses = base.CreateObjectSet<PacificCodeStatus>("PacificCodeStatuses");
+                    _PacificCodeStates = base.CreateObjectSet<PacificCodeState>("PacificCodeStates");
                 }
-                return _PacificCodeStatuses;
+                return _PacificCodeStates;
             }
         }
-        private ObjectSet<PacificCodeStatus> _PacificCodeStatuses;
+        private ObjectSet<PacificCodeState> _PacificCodeStates;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Store> Stores
+        public ObjectSet<StoreManager> StoreManagers
         {
             get
             {
-                if ((_Stores == null))
+                if ((_StoreManagers == null))
                 {
-                    _Stores = base.CreateObjectSet<Store>("Stores");
+                    _StoreManagers = base.CreateObjectSet<StoreManager>("StoreManagers");
                 }
-                return _Stores;
+                return _StoreManagers;
             }
         }
-        private ObjectSet<Store> _Stores;
+        private ObjectSet<StoreManager> _StoreManagers;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<StoreStatu> StoreStatus
+        public ObjectSet<StoreManagerState> StoreManagerStates
         {
             get
             {
-                if ((_StoreStatus == null))
+                if ((_StoreManagerStates == null))
                 {
-                    _StoreStatus = base.CreateObjectSet<StoreStatu>("StoreStatus");
+                    _StoreManagerStates = base.CreateObjectSet<StoreManagerState>("StoreManagerStates");
                 }
-                return _StoreStatus;
+                return _StoreManagerStates;
             }
         }
-        private ObjectSet<StoreStatu> _StoreStatus;
+        private ObjectSet<StoreManagerState> _StoreManagerStates;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<StoreUser> StoreUsers
+        {
+            get
+            {
+                if ((_StoreUsers == null))
+                {
+                    _StoreUsers = base.CreateObjectSet<StoreUser>("StoreUsers");
+                }
+                return _StoreUsers;
+            }
+        }
+        private ObjectSet<StoreUser> _StoreUsers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<StoreUserState> StoreUserStates
+        {
+            get
+            {
+                if ((_StoreUserStates == null))
+                {
+                    _StoreUserStates = base.CreateObjectSet<StoreUserState>("StoreUserStates");
+                }
+                return _StoreUserStates;
+            }
+        }
+        private ObjectSet<StoreUserState> _StoreUserStates;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -223,18 +260,50 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<TransactionStatus> TransactionStatuses
+        public ObjectSet<TransactionCate> TransactionCates
         {
             get
             {
-                if ((_TransactionStatuses == null))
+                if ((_TransactionCates == null))
                 {
-                    _TransactionStatuses = base.CreateObjectSet<TransactionStatus>("TransactionStatuses");
+                    _TransactionCates = base.CreateObjectSet<TransactionCate>("TransactionCates");
                 }
-                return _TransactionStatuses;
+                return _TransactionCates;
             }
         }
-        private ObjectSet<TransactionStatus> _TransactionStatuses;
+        private ObjectSet<TransactionCate> _TransactionCates;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TransactionFee> TransactionFees
+        {
+            get
+            {
+                if ((_TransactionFees == null))
+                {
+                    _TransactionFees = base.CreateObjectSet<TransactionFee>("TransactionFees");
+                }
+                return _TransactionFees;
+            }
+        }
+        private ObjectSet<TransactionFee> _TransactionFees;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TransactionState> TransactionStates
+        {
+            get
+            {
+                if ((_TransactionStates == null))
+                {
+                    _TransactionStates = base.CreateObjectSet<TransactionState>("TransactionStates");
+                }
+                return _TransactionStates;
+            }
+        }
+        private ObjectSet<TransactionState> _TransactionStates;
 
         #endregion
         #region AddTo Methods
@@ -256,11 +325,11 @@ namespace P4_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the CustomerStatuses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the CustomerStates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToCustomerStatuses(CustomerStatus customerStatus)
+        public void AddToCustomerStates(CustomerState customerState)
         {
-            base.AddObject("CustomerStatuses", customerStatus);
+            base.AddObject("CustomerStates", customerState);
         }
     
         /// <summary>
@@ -272,27 +341,43 @@ namespace P4_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PacificCodeStatuses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the PacificCodeStates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPacificCodeStatuses(PacificCodeStatus pacificCodeStatus)
+        public void AddToPacificCodeStates(PacificCodeState pacificCodeState)
         {
-            base.AddObject("PacificCodeStatuses", pacificCodeStatus);
+            base.AddObject("PacificCodeStates", pacificCodeState);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Stores EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the StoreManagers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToStores(Store store)
+        public void AddToStoreManagers(StoreManager storeManager)
         {
-            base.AddObject("Stores", store);
+            base.AddObject("StoreManagers", storeManager);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the StoreStatus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the StoreManagerStates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToStoreStatus(StoreStatu storeStatu)
+        public void AddToStoreManagerStates(StoreManagerState storeManagerState)
         {
-            base.AddObject("StoreStatus", storeStatu);
+            base.AddObject("StoreManagerStates", storeManagerState);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the StoreUsers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToStoreUsers(StoreUser storeUser)
+        {
+            base.AddObject("StoreUsers", storeUser);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the StoreUserStates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToStoreUserStates(StoreUserState storeUserState)
+        {
+            base.AddObject("StoreUserStates", storeUserState);
         }
     
         /// <summary>
@@ -312,11 +397,27 @@ namespace P4_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the TransactionStatuses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the TransactionCates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToTransactionStatuses(TransactionStatus transactionStatus)
+        public void AddToTransactionCates(TransactionCate transactionCate)
         {
-            base.AddObject("TransactionStatuses", transactionStatus);
+            base.AddObject("TransactionCates", transactionCate);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TransactionFees EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTransactionFees(TransactionFee transactionFee)
+        {
+            base.AddObject("TransactionFees", transactionFee);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TransactionStates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTransactionStates(TransactionState transactionState)
+        {
+            base.AddObject("TransactionStates", transactionState);
         }
 
         #endregion
@@ -492,11 +593,11 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// Create a new Customer object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="id">Initial value of the Id property.</param>
         public static Customer CreateCustomer(global::System.Int32 id)
         {
             Customer customer = new Customer();
-            customer.ID = id;
+            customer.Id = id;
             return customer;
         }
 
@@ -508,27 +609,27 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -924,16 +1025,16 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerStatus")]
-        public CustomerStatus CustomerStatu
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerState")]
+        public CustomerState CustomerState
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerState>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerState").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerState>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerState").Value = value;
             }
         }
         /// <summary>
@@ -941,17 +1042,17 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<CustomerStatus> CustomerStatuReference
+        public EntityReference<CustomerState> CustomerStateReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerState>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerState");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CustomerStatus>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CustomerState>("MoneyPacificModel.FK_Customer_CustomerStatus", "CustomerState", value);
                 }
             }
         }
@@ -984,22 +1085,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="CustomerStatus")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="CustomerState")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class CustomerStatus : EntityObject
+    public partial class CustomerState : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new CustomerStatus object.
+        /// Create a new CustomerState object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
-        public static CustomerStatus CreateCustomerStatus(global::System.Int32 id)
+        /// <param name="id">Initial value of the Id property.</param>
+        public static CustomerState CreateCustomerState(global::System.Int32 id)
         {
-            CustomerStatus customerStatus = new CustomerStatus();
-            customerStatus.ID = id;
-            return customerStatus;
+            CustomerState customerState = new CustomerState();
+            customerState.Id = id;
+            return customerState;
         }
 
         #endregion
@@ -1010,51 +1111,51 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Value
+        public global::System.String Code
         {
             get
             {
-                return _Value;
+                return _Code;
             }
             set
             {
-                OnValueChanging(value);
-                ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Value");
-                OnValueChanged();
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
             }
         }
-        private global::System.String _Value;
-        partial void OnValueChanging(global::System.String value);
-        partial void OnValueChanged();
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1146,11 +1247,11 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// Create a new PacificCode object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="id">Initial value of the Id property.</param>
         public static PacificCode CreatePacificCode(global::System.Int32 id)
         {
             PacificCode pacificCode = new PacificCode();
-            pacificCode.ID = id;
+            pacificCode.Id = id;
             return pacificCode;
         }
 
@@ -1162,27 +1263,27 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1237,72 +1338,96 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> CustomerID
+        public Nullable<global::System.Int32> StatusId
         {
             get
             {
-                return _CustomerID;
+                return _StatusId;
             }
             set
             {
-                OnCustomerIDChanging(value);
-                ReportPropertyChanging("CustomerID");
-                _CustomerID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CustomerID");
-                OnCustomerIDChanged();
+                OnStatusIdChanging(value);
+                ReportPropertyChanging("StatusId");
+                _StatusId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StatusId");
+                OnStatusIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _CustomerID;
-        partial void OnCustomerIDChanging(Nullable<global::System.Int32> value);
-        partial void OnCustomerIDChanged();
+        private Nullable<global::System.Int32> _StatusId;
+        partial void OnStatusIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> StoreID
+        public Nullable<global::System.Int32> CustomerId
         {
             get
             {
-                return _StoreID;
+                return _CustomerId;
             }
             set
             {
-                OnStoreIDChanging(value);
-                ReportPropertyChanging("StoreID");
-                _StoreID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("StoreID");
-                OnStoreIDChanged();
+                OnCustomerIdChanging(value);
+                ReportPropertyChanging("CustomerId");
+                _CustomerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CustomerId");
+                OnCustomerIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _StoreID;
-        partial void OnStoreIDChanging(Nullable<global::System.Int32> value);
-        partial void OnStoreIDChanged();
+        private Nullable<global::System.Int32> _CustomerId;
+        partial void OnCustomerIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCustomerIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> CateID
+        public Nullable<global::System.Int32> StoreId
         {
             get
             {
-                return _CateID;
+                return _StoreId;
             }
             set
             {
-                OnCateIDChanging(value);
-                ReportPropertyChanging("CateID");
-                _CateID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CateID");
-                OnCateIDChanged();
+                OnStoreIdChanging(value);
+                ReportPropertyChanging("StoreId");
+                _StoreId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StoreId");
+                OnStoreIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _CateID;
-        partial void OnCateIDChanging(Nullable<global::System.Int32> value);
-        partial void OnCateIDChanged();
+        private Nullable<global::System.Int32> _StoreId;
+        partial void OnStoreIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStoreIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> CateId
+        {
+            get
+            {
+                return _CateId;
+            }
+            set
+            {
+                OnCateIdChanging(value);
+                ReportPropertyChanging("CateId");
+                _CateId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CateId");
+                OnCateIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _CateId;
+        partial void OnCateIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCateIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1447,30 +1572,6 @@ namespace P4_MoneyPacificSite.Models
         private global::System.String _Comment;
         partial void OnCommentChanging(global::System.String value);
         partial void OnCommentChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> StatusID
-        {
-            get
-            {
-                return _StatusID;
-            }
-            set
-            {
-                OnStatusIDChanging(value);
-                ReportPropertyChanging("StatusID");
-                _StatusID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("StatusID");
-                OnStatusIDChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _StatusID;
-        partial void OnStatusIDChanging(Nullable<global::System.Int32> value);
-        partial void OnStatusIDChanged();
 
         #endregion
     
@@ -1482,16 +1583,16 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Categories")]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Category")]
         public Category Category
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category").Value = value;
             }
         }
         /// <summary>
@@ -1503,13 +1604,13 @@ namespace P4_MoneyPacificSite.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category", value);
                 }
             }
         }
@@ -1558,16 +1659,16 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeStatus")]
-        public PacificCodeStatus PacificCodeStatu
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeState")]
+        public PacificCodeState PacificCodeState
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeState>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeState").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeState>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeState").Value = value;
             }
         }
         /// <summary>
@@ -1575,17 +1676,17 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<PacificCodeStatus> PacificCodeStatuReference
+        public EntityReference<PacificCodeState> PacificCodeStateReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCodeState>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeState");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacificCodeStatus>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacificCodeState>("MoneyPacificModel.FK_PacificCode_PacificCodeStatus", "PacificCodeState", value);
                 }
             }
         }
@@ -1596,16 +1697,16 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_Store", "Store")]
-        public Store Store
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_Store", "StoreUser")]
+        public StoreUser StoreUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Store>("MoneyPacificModel.FK_PacificCode_Store", "Store").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreUser>("MoneyPacificModel.FK_PacificCode_Store", "StoreUser").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Store>("MoneyPacificModel.FK_PacificCode_Store", "Store").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreUser>("MoneyPacificModel.FK_PacificCode_Store", "StoreUser").Value = value;
             }
         }
         /// <summary>
@@ -1613,17 +1714,39 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Store> StoreReference
+        public EntityReference<StoreUser> StoreUserReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Store>("MoneyPacificModel.FK_PacificCode_Store", "Store");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreUser>("MoneyPacificModel.FK_PacificCode_Store", "StoreUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Store>("MoneyPacificModel.FK_PacificCode_Store", "Store", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreUser>("MoneyPacificModel.FK_PacificCode_Store", "StoreUser", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_PacificCode", "Transaction")]
+        public EntityCollection<Transaction> Transactions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Transaction>("MoneyPacificModel.FK_Transaction_PacificCode", "Transaction");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Transaction>("MoneyPacificModel.FK_Transaction_PacificCode", "Transaction", value);
                 }
             }
         }
@@ -1634,22 +1757,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="PacificCodeStatus")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="PacificCodeState")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class PacificCodeStatus : EntityObject
+    public partial class PacificCodeState : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new PacificCodeStatus object.
+        /// Create a new PacificCodeState object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
-        public static PacificCodeStatus CreatePacificCodeStatus(global::System.Int32 id)
+        /// <param name="id">Initial value of the Id property.</param>
+        public static PacificCodeState CreatePacificCodeState(global::System.Int32 id)
         {
-            PacificCodeStatus pacificCodeStatus = new PacificCodeStatus();
-            pacificCodeStatus.ID = id;
-            return pacificCodeStatus;
+            PacificCodeState pacificCodeState = new PacificCodeState();
+            pacificCodeState.Id = id;
+            return pacificCodeState;
         }
 
         #endregion
@@ -1660,51 +1783,51 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Value
+        public global::System.String Code
         {
             get
             {
-                return _Value;
+                return _Code;
             }
             set
             {
-                OnValueChanging(value);
-                ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Value");
-                OnValueChanged();
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
             }
         }
-        private global::System.String _Value;
-        partial void OnValueChanging(global::System.String value);
-        partial void OnValueChanged();
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1762,22 +1885,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="Store")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="StoreManager")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Store : EntityObject
+    public partial class StoreManager : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Store object.
+        /// Create a new StoreManager object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
-        public static Store CreateStore(global::System.Int32 id)
+        /// <param name="id">Initial value of the Id property.</param>
+        public static StoreManager CreateStoreManager(global::System.Int32 id)
         {
-            Store store = new Store();
-            store.ID = id;
-            return store;
+            StoreManager storeManager = new StoreManager();
+            storeManager.Id = id;
+            return storeManager;
         }
 
         #endregion
@@ -1788,27 +1911,609 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String NameOfStore
+        {
+            get
+            {
+                return _NameOfStore;
+            }
+            set
+            {
+                OnNameOfStoreChanging(value);
+                ReportPropertyChanging("NameOfStore");
+                _NameOfStore = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("NameOfStore");
+                OnNameOfStoreChanged();
+            }
+        }
+        private global::System.String _NameOfStore;
+        partial void OnNameOfStoreChanging(global::System.String value);
+        partial void OnNameOfStoreChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> StatusId
+        {
+            get
+            {
+                return _StatusId;
+            }
+            set
+            {
+                OnStatusIdChanging(value);
+                ReportPropertyChanging("StatusId");
+                _StatusId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StatusId");
+                OnStatusIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _StatusId;
+        partial void OnStatusIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Address
+        {
+            get
+            {
+                return _Address;
+            }
+            set
+            {
+                OnAddressChanging(value);
+                ReportPropertyChanging("Address");
+                _Address = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Address");
+                OnAddressChanged();
+            }
+        }
+        private global::System.String _Address;
+        partial void OnAddressChanging(global::System.String value);
+        partial void OnAddressChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Address2
+        {
+            get
+            {
+                return _Address2;
+            }
+            set
+            {
+                OnAddress2Changing(value);
+                ReportPropertyChanging("Address2");
+                _Address2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Address2");
+                OnAddress2Changed();
+            }
+        }
+        private global::System.String _Address2;
+        partial void OnAddress2Changing(global::System.String value);
+        partial void OnAddress2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Phone
+        {
+            get
+            {
+                return _Phone;
+            }
+            set
+            {
+                OnPhoneChanging(value);
+                ReportPropertyChanging("Phone");
+                _Phone = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Phone");
+                OnPhoneChanged();
+            }
+        }
+        private global::System.String _Phone;
+        partial void OnPhoneChanging(global::System.String value);
+        partial void OnPhoneChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Phone2
+        {
+            get
+            {
+                return _Phone2;
+            }
+            set
+            {
+                OnPhone2Changing(value);
+                ReportPropertyChanging("Phone2");
+                _Phone2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Phone2");
+                OnPhone2Changed();
+            }
+        }
+        private global::System.String _Phone2;
+        partial void OnPhone2Changing(global::System.String value);
+        partial void OnPhone2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String WebSite
+        {
+            get
+            {
+                return _WebSite;
+            }
+            set
+            {
+                OnWebSiteChanging(value);
+                ReportPropertyChanging("WebSite");
+                _WebSite = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("WebSite");
+                OnWebSiteChanged();
+            }
+        }
+        private global::System.String _WebSite;
+        partial void OnWebSiteChanging(global::System.String value);
+        partial void OnWebSiteChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Zip
+        {
+            get
+            {
+                return _Zip;
+            }
+            set
+            {
+                OnZipChanging(value);
+                ReportPropertyChanging("Zip");
+                _Zip = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Zip");
+                OnZipChanged();
+            }
+        }
+        private global::System.String _Zip;
+        partial void OnZipChanging(global::System.String value);
+        partial void OnZipChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Town
+        {
+            get
+            {
+                return _Town;
+            }
+            set
+            {
+                OnTownChanging(value);
+                ReportPropertyChanging("Town");
+                _Town = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Town");
+                OnTownChanged();
+            }
+        }
+        private global::System.String _Town;
+        partial void OnTownChanging(global::System.String value);
+        partial void OnTownChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Country
+        {
+            get
+            {
+                return _Country;
+            }
+            set
+            {
+                OnCountryChanging(value);
+                ReportPropertyChanging("Country");
+                _Country = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Country");
+                OnCountryChanged();
+            }
+        }
+        private global::System.String _Country;
+        partial void OnCountryChanging(global::System.String value);
+        partial void OnCountryChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManagerState")]
+        public StoreManagerState StoreManagerState
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManagerState>("MoneyPacificModel.FK_StoreManager_StoreManagerState", "StoreManagerState").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManagerState>("MoneyPacificModel.FK_StoreManager_StoreManagerState", "StoreManagerState").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<StoreManagerState> StoreManagerStateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManagerState>("MoneyPacificModel.FK_StoreManager_StoreManagerState", "StoreManagerState");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreManagerState>("MoneyPacificModel.FK_StoreManager_StoreManagerState", "StoreManagerState", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreUser")]
+        public EntityCollection<StoreUser> StoreUsers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StoreUser>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreUser");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StoreUser>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreUser", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="StoreManagerState")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class StoreManagerState : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new StoreManagerState object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static StoreManagerState CreateStoreManagerState(global::System.Int32 id)
+        {
+            StoreManagerState storeManagerState = new StoreManagerState();
+            storeManagerState.Id = id;
+            return storeManagerState;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Code
+        {
+            get
+            {
+                return _Code;
+            }
+            set
+            {
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
+            }
+        }
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManager")]
+        public EntityCollection<StoreManager> StoreManagers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StoreManager>("MoneyPacificModel.FK_StoreManager_StoreManagerState", "StoreManager");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StoreManager>("MoneyPacificModel.FK_StoreManager_StoreManagerState", "StoreManager", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="StoreUser")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class StoreUser : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new StoreUser object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static StoreUser CreateStoreUser(global::System.Int32 id)
+        {
+            StoreUser storeUser = new StoreUser();
+            storeUser.Id = id;
+            return storeUser;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ManagerId
+        {
+            get
+            {
+                return _ManagerId;
+            }
+            set
+            {
+                OnManagerIdChanging(value);
+                ReportPropertyChanging("ManagerId");
+                _ManagerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ManagerId");
+                OnManagerIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ManagerId;
+        partial void OnManagerIdChanging(Nullable<global::System.Int32> value);
+        partial void OnManagerIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> StatusId
+        {
+            get
+            {
+                return _StatusId;
+            }
+            set
+            {
+                OnStatusIdChanging(value);
+                ReportPropertyChanging("StatusId");
+                _StatusId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StatusId");
+                OnStatusIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _StatusId;
+        partial void OnStatusIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2073,30 +2778,6 @@ namespace P4_MoneyPacificSite.Models
         private global::System.String _Email;
         partial void OnEmailChanging(global::System.String value);
         partial void OnEmailChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> StatusID
-        {
-            get
-            {
-                return _StatusID;
-            }
-            set
-            {
-                OnStatusIDChanging(value);
-                ReportPropertyChanging("StatusID");
-                _StatusID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("StatusID");
-                OnStatusIDChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _StatusID;
-        partial void OnStatusIDChanging(Nullable<global::System.Int32> value);
-        partial void OnStatusIDChanged();
 
         #endregion
     
@@ -2130,16 +2811,16 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreStatus")]
-        public StoreStatu StoreStatu
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager")]
+        public StoreManager StoreManager
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreStatu>("MoneyPacificModel.FK_Store_StoreStatus", "StoreStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreStatu>("MoneyPacificModel.FK_Store_StoreStatus", "StoreStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager").Value = value;
             }
         }
         /// <summary>
@@ -2147,17 +2828,55 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<StoreStatu> StoreStatuReference
+        public EntityReference<StoreManager> StoreManagerReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreStatu>("MoneyPacificModel.FK_Store_StoreStatus", "StoreStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreStatu>("MoneyPacificModel.FK_Store_StoreStatus", "StoreStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreUserState")]
+        public StoreUserState StoreUserState
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreUserState>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUserState").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreUserState>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUserState").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<StoreUserState> StoreUserStateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreUserState>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUserState");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreUserState>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUserState", value);
                 }
             }
         }
@@ -2168,22 +2887,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="StoreStatu")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="StoreUserState")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class StoreStatu : EntityObject
+    public partial class StoreUserState : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new StoreStatu object.
+        /// Create a new StoreUserState object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
-        public static StoreStatu CreateStoreStatu(global::System.Int32 id)
+        /// <param name="id">Initial value of the Id property.</param>
+        public static StoreUserState CreateStoreUserState(global::System.Int32 id)
         {
-            StoreStatu storeStatu = new StoreStatu();
-            storeStatu.ID = id;
-            return storeStatu;
+            StoreUserState storeUserState = new StoreUserState();
+            storeUserState.Id = id;
+            return storeUserState;
         }
 
         #endregion
@@ -2194,51 +2913,51 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Value
+        public global::System.String Code
         {
             get
             {
-                return _Value;
+                return _Code;
             }
             set
             {
-                OnValueChanging(value);
-                ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Value");
-                OnValueChanged();
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
             }
         }
-        private global::System.String _Value;
-        partial void OnValueChanging(global::System.String value);
-        partial void OnValueChanged();
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2274,18 +2993,18 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "Store")]
-        public EntityCollection<Store> Stores
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreUser")]
+        public EntityCollection<StoreUser> StoreUsers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Store>("MoneyPacificModel.FK_Store_StoreStatus", "Store");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StoreUser>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Store>("MoneyPacificModel.FK_Store_StoreStatus", "Store", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StoreUser>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUser", value);
                 }
             }
         }
@@ -2461,11 +3180,11 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// Create a new Transaction object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="id">Initial value of the Id property.</param>
         public static Transaction CreateTransaction(global::System.Int32 id)
         {
             Transaction transaction = new Transaction();
-            transaction.ID = id;
+            transaction.Id = id;
             return transaction;
         }
 
@@ -2477,27 +3196,75 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> RelateId
+        {
+            get
+            {
+                return _RelateId;
+            }
+            set
+            {
+                OnRelateIdChanging(value);
+                ReportPropertyChanging("RelateId");
+                _RelateId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("RelateId");
+                OnRelateIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _RelateId;
+        partial void OnRelateIdChanging(Nullable<global::System.Int32> value);
+        partial void OnRelateIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> CateId
+        {
+            get
+            {
+                return _CateId;
+            }
+            set
+            {
+                OnCateIdChanging(value);
+                ReportPropertyChanging("CateId");
+                _CateId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CateId");
+                OnCateIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _CateId;
+        partial void OnCateIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCateIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2522,30 +3289,6 @@ namespace P4_MoneyPacificSite.Models
         private Nullable<global::System.DateTime> _CreateDate;
         partial void OnCreateDateChanging(Nullable<global::System.DateTime> value);
         partial void OnCreateDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String IDTransaction
-        {
-            get
-            {
-                return _IDTransaction;
-            }
-            set
-            {
-                OnIDTransactionChanging(value);
-                ReportPropertyChanging("IDTransaction");
-                _IDTransaction = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("IDTransaction");
-                OnIDTransactionChanged();
-            }
-        }
-        private global::System.String _IDTransaction;
-        partial void OnIDTransactionChanging(global::System.String value);
-        partial void OnIDTransactionChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2600,168 +3343,72 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> StoreID
+        public Nullable<global::System.Int32> StoreId
         {
             get
             {
-                return _StoreID;
+                return _StoreId;
             }
             set
             {
-                OnStoreIDChanging(value);
-                ReportPropertyChanging("StoreID");
-                _StoreID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("StoreID");
-                OnStoreIDChanged();
+                OnStoreIdChanging(value);
+                ReportPropertyChanging("StoreId");
+                _StoreId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StoreId");
+                OnStoreIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _StoreID;
-        partial void OnStoreIDChanging(Nullable<global::System.Int32> value);
-        partial void OnStoreIDChanged();
+        private Nullable<global::System.Int32> _StoreId;
+        partial void OnStoreIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStoreIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String StorePhone
+        public Nullable<global::System.Int32> CustomerId
         {
             get
             {
-                return _StorePhone;
+                return _CustomerId;
             }
             set
             {
-                OnStorePhoneChanging(value);
-                ReportPropertyChanging("StorePhone");
-                _StorePhone = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("StorePhone");
-                OnStorePhoneChanged();
+                OnCustomerIdChanging(value);
+                ReportPropertyChanging("CustomerId");
+                _CustomerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CustomerId");
+                OnCustomerIdChanged();
             }
         }
-        private global::System.String _StorePhone;
-        partial void OnStorePhoneChanging(global::System.String value);
-        partial void OnStorePhoneChanged();
+        private Nullable<global::System.Int32> _CustomerId;
+        partial void OnCustomerIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCustomerIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> CustomerID
+        public Nullable<global::System.Int32> PacificCodeId
         {
             get
             {
-                return _CustomerID;
+                return _PacificCodeId;
             }
             set
             {
-                OnCustomerIDChanging(value);
-                ReportPropertyChanging("CustomerID");
-                _CustomerID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("CustomerID");
-                OnCustomerIDChanged();
+                OnPacificCodeIdChanging(value);
+                ReportPropertyChanging("PacificCodeId");
+                _PacificCodeId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PacificCodeId");
+                OnPacificCodeIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _CustomerID;
-        partial void OnCustomerIDChanging(Nullable<global::System.Int32> value);
-        partial void OnCustomerIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String CustomerPhone
-        {
-            get
-            {
-                return _CustomerPhone;
-            }
-            set
-            {
-                OnCustomerPhoneChanging(value);
-                ReportPropertyChanging("CustomerPhone");
-                _CustomerPhone = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("CustomerPhone");
-                OnCustomerPhoneChanged();
-            }
-        }
-        private global::System.String _CustomerPhone;
-        partial void OnCustomerPhoneChanging(global::System.String value);
-        partial void OnCustomerPhoneChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> PacificCodeID
-        {
-            get
-            {
-                return _PacificCodeID;
-            }
-            set
-            {
-                OnPacificCodeIDChanging(value);
-                ReportPropertyChanging("PacificCodeID");
-                _PacificCodeID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PacificCodeID");
-                OnPacificCodeIDChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _PacificCodeID;
-        partial void OnPacificCodeIDChanging(Nullable<global::System.Int32> value);
-        partial void OnPacificCodeIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String PacificCode
-        {
-            get
-            {
-                return _PacificCode;
-            }
-            set
-            {
-                OnPacificCodeChanging(value);
-                ReportPropertyChanging("PacificCode");
-                _PacificCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("PacificCode");
-                OnPacificCodeChanged();
-            }
-        }
-        private global::System.String _PacificCode;
-        partial void OnPacificCodeChanging(global::System.String value);
-        partial void OnPacificCodeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Comment
-        {
-            get
-            {
-                return _Comment;
-            }
-            set
-            {
-                OnCommentChanging(value);
-                ReportPropertyChanging("Comment");
-                _Comment = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Comment");
-                OnCommentChanged();
-            }
-        }
-        private global::System.String _Comment;
-        partial void OnCommentChanging(global::System.String value);
-        partial void OnCommentChanged();
+        private Nullable<global::System.Int32> _PacificCodeId;
+        partial void OnPacificCodeIdChanging(Nullable<global::System.Int32> value);
+        partial void OnPacificCodeIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2816,24 +3463,48 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> StatusID
+        public Nullable<global::System.Int32> StatusId
         {
             get
             {
-                return _StatusID;
+                return _StatusId;
             }
             set
             {
-                OnStatusIDChanging(value);
-                ReportPropertyChanging("StatusID");
-                _StatusID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("StatusID");
-                OnStatusIDChanged();
+                OnStatusIdChanging(value);
+                ReportPropertyChanging("StatusId");
+                _StatusId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StatusId");
+                OnStatusIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _StatusID;
-        partial void OnStatusIDChanging(Nullable<global::System.Int32> value);
-        partial void OnStatusIDChanged();
+        private Nullable<global::System.Int32> _StatusId;
+        partial void OnStatusIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Comment
+        {
+            get
+            {
+                return _Comment;
+            }
+            set
+            {
+                OnCommentChanging(value);
+                ReportPropertyChanging("Comment");
+                _Comment = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Comment");
+                OnCommentChanged();
+            }
+        }
+        private global::System.String _Comment;
+        partial void OnCommentChanging(global::System.String value);
+        partial void OnCommentChanged();
 
         #endregion
     
@@ -2845,16 +3516,16 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionStatus")]
-        public TransactionStatus TransactionStatu
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_PacificCode", "PacificCode")]
+        public PacificCode PacificCode
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCode>("MoneyPacificModel.FK_Transaction_PacificCode", "PacificCode").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCode>("MoneyPacificModel.FK_Transaction_PacificCode", "PacificCode").Value = value;
             }
         }
         /// <summary>
@@ -2862,17 +3533,93 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<TransactionStatus> TransactionStatuReference
+        public EntityReference<PacificCode> PacificCodeReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCode>("MoneyPacificModel.FK_Transaction_PacificCode", "PacificCode");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TransactionStatus>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionStatus", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacificCode>("MoneyPacificModel.FK_Transaction_PacificCode", "PacificCode", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_TransactionCate", "TransactionCate")]
+        public TransactionCate TransactionCate
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionCate>("MoneyPacificModel.FK_Transaction_TransactionCate", "TransactionCate").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionCate>("MoneyPacificModel.FK_Transaction_TransactionCate", "TransactionCate").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TransactionCate> TransactionCateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionCate>("MoneyPacificModel.FK_Transaction_TransactionCate", "TransactionCate");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TransactionCate>("MoneyPacificModel.FK_Transaction_TransactionCate", "TransactionCate", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionState")]
+        public TransactionState TransactionState
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionState>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionState").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionState>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionState").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TransactionState> TransactionStateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionState>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionState");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TransactionState>("MoneyPacificModel.FK_Transaction_TransactionStatus", "TransactionState", value);
                 }
             }
         }
@@ -2883,22 +3630,22 @@ namespace P4_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TransactionStatus")]
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TransactionCate")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class TransactionStatus : EntityObject
+    public partial class TransactionCate : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new TransactionStatus object.
+        /// Create a new TransactionCate object.
         /// </summary>
-        /// <param name="id">Initial value of the ID property.</param>
-        public static TransactionStatus CreateTransactionStatus(global::System.Int32 id)
+        /// <param name="id">Initial value of the Id property.</param>
+        public static TransactionCate CreateTransactionCate(global::System.Int32 id)
         {
-            TransactionStatus transactionStatus = new TransactionStatus();
-            transactionStatus.ID = id;
-            return transactionStatus;
+            TransactionCate transactionCate = new TransactionCate();
+            transactionCate.Id = id;
+            return transactionCate;
         }
 
         #endregion
@@ -2909,51 +3656,417 @@ namespace P4_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID
+        public global::System.Int32 Id
         {
             get
             {
-                return _ID;
+                return _Id;
             }
             set
             {
-                if (_ID != value)
+                if (_Id != value)
                 {
-                    OnIDChanging(value);
-                    ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID");
-                    OnIDChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _ID;
-        partial void OnIDChanging(global::System.Int32 value);
-        partial void OnIDChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Value
+        public global::System.String Name
         {
             get
             {
-                return _Value;
+                return _Name;
             }
             set
             {
-                OnValueChanging(value);
-                ReportPropertyChanging("Value");
-                _Value = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Value");
-                OnValueChanged();
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
-        private global::System.String _Value;
-        partial void OnValueChanging(global::System.String value);
-        partial void OnValueChanged();
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Code
+        {
+            get
+            {
+                return _Code;
+            }
+            set
+            {
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
+            }
+        }
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Transaction_TransactionCate", "Transaction")]
+        public EntityCollection<Transaction> Transactions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Transaction>("MoneyPacificModel.FK_Transaction_TransactionCate", "Transaction");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Transaction>("MoneyPacificModel.FK_Transaction_TransactionCate", "Transaction", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_TransactionFee_TransactionCate", "TransactionFee")]
+        public EntityCollection<TransactionFee> TransactionFees
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TransactionFee>("MoneyPacificModel.FK_TransactionFee_TransactionCate", "TransactionFee");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TransactionFee>("MoneyPacificModel.FK_TransactionFee_TransactionCate", "TransactionFee", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TransactionFee")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TransactionFee : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TransactionFee object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static TransactionFee CreateTransactionFee(global::System.Int32 id)
+        {
+            TransactionFee transactionFee = new TransactionFee();
+            transactionFee.Id = id;
+            return transactionFee;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> CateId
+        {
+            get
+            {
+                return _CateId;
+            }
+            set
+            {
+                OnCateIdChanging(value);
+                ReportPropertyChanging("CateId");
+                _CateId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CateId");
+                OnCateIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _CateId;
+        partial void OnCateIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCateIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> DateBegin
+        {
+            get
+            {
+                return _DateBegin;
+            }
+            set
+            {
+                OnDateBeginChanging(value);
+                ReportPropertyChanging("DateBegin");
+                _DateBegin = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DateBegin");
+                OnDateBeginChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _DateBegin;
+        partial void OnDateBeginChanging(Nullable<global::System.DateTime> value);
+        partial void OnDateBeginChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> DateEnd
+        {
+            get
+            {
+                return _DateEnd;
+            }
+            set
+            {
+                OnDateEndChanging(value);
+                ReportPropertyChanging("DateEnd");
+                _DateEnd = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DateEnd");
+                OnDateEndChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _DateEnd;
+        partial void OnDateEndChanging(Nullable<global::System.DateTime> value);
+        partial void OnDateEndChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> Fee
+        {
+            get
+            {
+                return _Fee;
+            }
+            set
+            {
+                OnFeeChanging(value);
+                ReportPropertyChanging("Fee");
+                _Fee = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fee");
+                OnFeeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _Fee;
+        partial void OnFeeChanging(Nullable<global::System.Int32> value);
+        partial void OnFeeChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_TransactionFee_TransactionCate", "TransactionCate")]
+        public TransactionCate TransactionCate
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionCate>("MoneyPacificModel.FK_TransactionFee_TransactionCate", "TransactionCate").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionCate>("MoneyPacificModel.FK_TransactionFee_TransactionCate", "TransactionCate").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TransactionCate> TransactionCateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TransactionCate>("MoneyPacificModel.FK_TransactionFee_TransactionCate", "TransactionCate");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TransactionCate>("MoneyPacificModel.FK_TransactionFee_TransactionCate", "TransactionCate", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TransactionState")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TransactionState : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TransactionState object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static TransactionState CreateTransactionState(global::System.Int32 id)
+        {
+            TransactionState transactionState = new TransactionState();
+            transactionState.Id = id;
+            return transactionState;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Code
+        {
+            get
+            {
+                return _Code;
+            }
+            set
+            {
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
+            }
+        }
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

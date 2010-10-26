@@ -62,7 +62,7 @@ namespace MoneyPacificSrv.Cmd
                 
                 // Amoung > 0
 
-                string customerStatus = CustomerBUS.makeSuspicion(existCustomer.ID);
+                string customerStatus = CustomerBUS.makeSuspicion(existCustomer.Id);
                 // Amount > 0 : Charge Fee 
 
                 sMessage = existCustomer.Phone.Trim() + "*"
@@ -81,7 +81,7 @@ namespace MoneyPacificSrv.Cmd
                 }
                 else
                 {
-                    sMessage = CustomerBUS.makeSuspicion(existCustomer.ID);
+                    sMessage = CustomerBUS.makeSuspicion(existCustomer.Id);
                 }
             }
 

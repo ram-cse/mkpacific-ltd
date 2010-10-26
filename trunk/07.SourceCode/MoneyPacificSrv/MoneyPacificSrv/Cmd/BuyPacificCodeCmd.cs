@@ -20,7 +20,7 @@ namespace MoneyPacificSrv.Cmd
 
             // Get information :-----------------------
             
-            Store senderStore = new Store();
+            StoreUser senderStore = new StoreUser();
             senderStore.Phone = args[0];
             senderStore.PassStore = args[1];
 
@@ -33,16 +33,16 @@ namespace MoneyPacificSrv.Cmd
             // Check Information:-----------------------            
 
             // 01. check STORE
-            bool bSenderExists = StoreBUS.checkExist(senderStore);
+            bool bSenderExists = StoreUserBUS.checkExist(senderStore);
             if (!bSenderExists)
             {   
                 smsRespones = senderStore.Phone + "*" + MessageManager.getValue("NOT_EXIST_STORE");
                 return smsRespones;
             }
 
-            // 02. check STORE (password & status)
+            // 02. check StoreUser (password & status)
             bool bValidPassword = false;
-            bValidPassword = StoreBUS.checkPassword(senderStore);
+            bValidPassword = StoreUserBUS.checkPassword(senderStore);
 
             if (!bValidPassword)
             {   
@@ -50,7 +50,7 @@ namespace MoneyPacificSrv.Cmd
             }
             else
             {
-                senderStore = StoreBUS.getStore(senderStore.Phone, senderStore.PassStore);
+                senderStore = StoreUserBUS.getStoreUser(senderStore.Phone, senderStore.PassStore);
             }
 
             // *** KIEM TRA KH BLACK LIST sau khi Kiem tra STORE
@@ -96,7 +96,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (bBuyPCodeSuccess)
             {
-                PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.ID, buyerCustomer.ID, amountBuy);
+                PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.Id, buyerCustomer.Id, amountBuy);
 
                 smsRespones = buyerCustomer.Phone.Trim();
                 
