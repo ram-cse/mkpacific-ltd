@@ -5,12 +5,12 @@ using System.Web;
 
 namespace P4_MoneyPacificSite.Models.DAO
 {
-    public class StoreDAO
+    public class StoreUserDAO
     {
-        public static Store getTestStore()
+        public static StoreUser getTestStoreUser()
         {
             MoneyPacificEntities mpdb = new MoneyPacificEntities();
-            Store store = mpdb.Stores.First<Store>();
+            StoreUser store = mpdb.StoreUsers.First<StoreUser>();
             mpdb.Connection.Close();
             return store;
         }
