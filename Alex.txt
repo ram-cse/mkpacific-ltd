@@ -1,4 +1,59 @@
-﻿	26/20/2010:
+﻿
+	http://www.java2s.com/Code/CSharp/Language-Basics/DemonstratetheConditionalattribute.htm
+	
+	COOL CSHARP
+	http://www.csharp-station.com/Tutorials/Lesson09.aspx
+	
+
+	27/10/2010:
+		- Đăng nhập và phân quyền khi đăng nhập:
+		- Attributes
+		http://www.csharp-station.com/Tutorials/Lesson16.aspx
+		=> công dụng thứ nhất: cảnh báo khi biên dịch (không có tác dụng lắm cho người dùng)
+		chưa có tác dụng khi kiểm tra.
+		
+		[STAThread] 
+		It is generally safe to use this attribute all the time because you never know when a 3rd party library you're using is going to be communicating with COM. 
+		=> giúp ngăn chặn khi có 1 chương trình khác sử dụng để giao tiếp với COM (?) (hack)
+		
+		Type of parameted is use on attribute: positional and named
+		+ positional parameter, ex: [MyAttribuite("this is an message")]
+		+ named parameter, ex: [MyAttribuite(EntryPoint="MessageBox")]
+		
+		------------------------------------------------------------
+		Attribute Target 	:	Can be Applied To
+			all			 	-> everything
+			assembly 		-> entire assembly
+			class 			-> classes
+			constructor 	-> constructors
+			delegate 		-> delegates
+			enum 			-> enums
+			event 			-> events
+			field 			-> fields
+			interface 		-> interfaces
+			method 			-> methods
+			module 			-> modules (compiled code that can be part of an assembly)
+			parameter 		-> parameters
+			property 		-> properties
+			returnvalue 	-> return values
+			struct 			-> structures 
+		------------------------------------------------------------
+		
+		
+		- Từ 11h00 - 16h: tìm & chọn template cho sếp <3
+		
+		Why Attributes?
+
+Attributes are elements that allow you to add declarative information to your programs. This declarative information is used for various purposes during runtime and can be used at design time by application development tools. For example, there are attributes such as DllImportAttribute that allow a program to communicate with the Win32 libraries. Another attribute, ObsoleteAttribute, causes a compile-time warning to appear, letting the developer know that a method should no longer be used. When building Windows forms applications, there are several attributes that allow visual components to be drag-n-dropped onto a visual form builder and have their information appear in the properties grid. Attributes are also used extensively in securing .NET assemblies, forcing calling code to be evaluated against pre-defined security constraints. These are just a few descriptions of how attributes are used in C# programs.
+
+The reason attributes are necessary is because many of the services they provide would be very difficult to accomplish with normal code. You see, attributes add what is called metadata to your programs. When your C# program is compiled, it creates a file called an assembly, which is normally an executable or DLL library. Assemblies are self-describing because they have metadata written to them when they are compiled. Via a process known as reflection, a program's attributes can be retrieved from its assembly metadata. Attributes are classes that can be written in C# and used to decorate your code with declarative information. This is a very powerful concept because it means that you can extend your language by creating customized declarative syntax with attributes.
+
+This tutorial will show how to use pre-existing attributes in C# programs. Understanding the concepts and how to use a few attributes, will help in finding the multitude of other pre-existing attributes in the .NET class libraries and use them also. 
+
+		- Templates:
+		http://www.joomlart.com/demo/#templates.joomlart.com/ja_community_plus
+
+	26/10/2010:
 		- odoa
 		- JQuery -> Popup Menu
 		
