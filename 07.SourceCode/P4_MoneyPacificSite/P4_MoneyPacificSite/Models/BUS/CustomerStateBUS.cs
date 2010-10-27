@@ -7,16 +7,16 @@ using P4_MoneyPacificSite.Models.DAO;
 
 namespace P4_MoneyPacificSite.Models.BUS
 {
-    public class CustomerStatusBUS
+    public class CustomerStateBUS
     {
         internal static int getId(string customerStatus)
         {
-            return CustomerStatusDAO.getId(customerStatus);
+            return CustomerStateDAO.getId(customerStatus);
         }
 
         internal static string getValue(int? iNullableID)
         {
-            return CustomerStatusDAO.getValue(iNullableID);
+            return CustomerStateDAO.getCode(iNullableID);
         }
     }
 }
