@@ -8,16 +8,16 @@ using MoneyPacificSrv.DTO;
 
 namespace MoneyPacificSrv.BUS
 {
-    public class CustomerStatusBUS
+    public class CustomerStateBUS
     {
         internal static int getId(string customerStatus)
         {
-            return CustomerStatusDAO.getId(customerStatus);
+            return CustomerStateDAO.getId(customerStatus);
         }
 
-        internal static string getValue(int? iNullableID)
+        internal static string getCode(int? iNullableID)
         {
-            return CustomerStatusDAO.getValue(iNullableID);
+            return CustomerStateDAO.getCode(iNullableID);
         }
     }
 }
