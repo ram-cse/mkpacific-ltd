@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Conditional", "01_Conditional\01_Conditional\01_Conditional.csproj", "{52BBFE59-70DC-486D-A0BC-1F87014FA38A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_SubClass", "02_SubClass\02_SubClass.csproj", "{D2F85A0A-AE59-4613-B468-0A34F53E4343}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52BBFE59-70DC-486D-A0BC-1F87014FA38A}.Debug|x86.ActiveCfg = Debug|x86
+		{52BBFE59-70DC-486D-A0BC-1F87014FA38A}.Debug|x86.Build.0 = Debug|x86
+		{52BBFE59-70DC-486D-A0BC-1F87014FA38A}.Release|x86.ActiveCfg = Release|x86
+		{52BBFE59-70DC-486D-A0BC-1F87014FA38A}.Release|x86.Build.0 = Release|x86
+		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Debug|x86.ActiveCfg = Debug|x86
+		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Debug|x86.Build.0 = Debug|x86
+		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Release|x86.ActiveCfg = Release|x86
+		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

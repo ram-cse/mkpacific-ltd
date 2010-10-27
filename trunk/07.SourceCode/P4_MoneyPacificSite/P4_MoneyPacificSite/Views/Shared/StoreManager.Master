@@ -20,7 +20,7 @@
             </div>
               
             <div id="logindisplay">
-                   [ <a href="#">Log On</a> ]
+                   [ <a href="/Account/Login">Log On</a> ]
             </div>             
                 <div class="menucontainer">
                     <div style="float:right;">                                                                                      <asp:Menu ID="mainMenu" runat="server" BackColor="#F7F6F3" 
@@ -39,6 +39,7 @@
                                 <asp:MenuItem Text="Information" Value="Information" NavigateUrl="~/Store/Information"></asp:MenuItem>
                                 <asp:MenuItem Text="Security" Value="Security" NavigateUrl="~/Store/Security"></asp:MenuItem>
                                 <asp:MenuItem Text="Pacific Email" Value="Pacific Email" NavigateUrl="~/Mail/SendMail"></asp:MenuItem>
+                                <asp:MenuItem Text="Ask to be a Partner Store" Value="Register" NavigateUrl="~/Store/Register/"></asp:MenuItem>
                             </Items>
                             <StaticHoverStyle BackColor="#0099CC" ForeColor="White" />
                             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
