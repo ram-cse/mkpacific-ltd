@@ -1,4 +1,64 @@
-﻿
+﻿	
+	28/10/2010:
+
+		http://www.youtube.com/watch?v=l9PkgsZWf9U
+		http://www.worldvision.org.vn/worldvision/index.php
+		http://www.tin247.com/ky_la_giac_quan_thu_sau-12-49829.html
+		
+		<% 
+		if (HttpContext.Current.User.IsInRole("Administrator"))
+		{
+		%>
+		  <li><%=Html.ActionLink("Admin", "admin")%></li>
+		<%
+		}
+		else if (HttpContext.Current.User.IsInRole("managers"))
+		{%>
+		    <li><%=Html.ActionLink("Managers", "manager")%></li>
+		<%}%>
+
+		http://schotime.net/blog/index.php/2009/02/17/custom-authorization-with-aspnet-mvc/
+		
+		bài hay về role, có dùng toán cơ bản ->
+		http://www.webdevbros.net/2009/12/16/role-based-access-control-in-asp-net-mvc/
+		
+		
+		- Nếu dt bị lock:
+			thì vẫn nhận dc tiền
+			nhưng không thể thanh toán hay các dịch vụ khác
+		- Attribute:
+			// lấy tên class
+			Type t = typeof(t)
+			nameofClass = t.name
+			
+			? không sử dụng cùng lúc 2 thuộc tính cùng loại cho một lớp
+
+			NamedAttribute // chính là 1 thuoc tính của 1 lớp Attribute
+			ví dụ:
+				public string supplement;
+				
+			Obsolete("Message", true)
+			-> được áp dụng khi nào
+			
+			[Obsolete("Dead!", true)]
+			public static void DoNoCallMeAsError()
+			{
+			}
+			=> dùng để comment, thay những hàm cũ, khi chưa chính thức thay  & ngườidùng muốn để lại để test
+			Obsolete attribute được sử dụng mà không bỏ cái hàm đó đi là nhằm tương thích phiên bản. Khi bạn update phiên bản assembly của mình lên, có phương thức tốt hơn phương thức cũ, bạn không muốn nhưng người từ nay về sau sử dụng cái phương thức cũ nữa, nhưng nhưng assembly khác đã reference đến assembly của mình trước đây có thể đã sử dụng phương thức cũ, nếu giờ bỏ nó đi thì các assembly khác đó đều không dùng được nữa => cần phải update hết :((
+			
+			[Obsolete("Method2 has been replaced by NewMethod2", true)]
+			-> replace bằng NewMethod2
+			
+		- Vai Attribute duoc dn truoc: STAThread, DLLImport, Conditional, Obsolete
+
+		- Test 2 class Moderator & Admin .. đều kế thừa từ Interface User
+		trong đó
+		class Admin {} (từ ModelLINQ) 
+		và partial  Admin: User
+		{}
+		- 
+	-----------------------------------------------------------------------------------------
 	http://www.java2s.com/Code/CSharp/Language-Basics/DemonstratetheConditionalattribute.htm
 	
 	COOL CSHARP
