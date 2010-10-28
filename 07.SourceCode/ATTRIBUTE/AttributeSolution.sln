@@ -5,6 +5,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Conditional", "01_Condit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_SubClass", "02_SubClass\02_SubClass.csproj", "{D2F85A0A-AE59-4613-B468-0A34F53E4343}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_SimpleAttribute", "03_SimpleAttribute\03_SimpleAttribute.csproj", "{9E16FBA5-6259-4837-B48A-4929933A0537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_ACreatorAttr", "04_ACreatorAttr\04_ACreatorAttr.csproj", "{2A7FAA87-9FFF-4D72-919A-F9D730CB699A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_NamedAttribute", "NamedAttribute\05_NamedAttribute.csproj", "{835627CE-9199-4813-A5D7-551848C9D3ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_AttributeInClassInher", "AttributeInClassInher\06_AttributeInClassInher.csproj", "{F3C6C0DC-34EE-4392-9C0A-082821C0EE19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_FastTest", "00_FastTest\00_FastTest.csproj", "{D90A1BFD-D2BF-4B86-9D76-43F6758F11A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{F83C8146-CC1C-4911-9A4C-EAC1AC7FCB3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +33,34 @@ Global
 		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Debug|x86.Build.0 = Debug|x86
 		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Release|x86.ActiveCfg = Release|x86
 		{D2F85A0A-AE59-4613-B468-0A34F53E4343}.Release|x86.Build.0 = Release|x86
+		{9E16FBA5-6259-4837-B48A-4929933A0537}.Debug|x86.ActiveCfg = Debug|x86
+		{9E16FBA5-6259-4837-B48A-4929933A0537}.Debug|x86.Build.0 = Debug|x86
+		{9E16FBA5-6259-4837-B48A-4929933A0537}.Release|x86.ActiveCfg = Release|x86
+		{9E16FBA5-6259-4837-B48A-4929933A0537}.Release|x86.Build.0 = Release|x86
+		{2A7FAA87-9FFF-4D72-919A-F9D730CB699A}.Debug|x86.ActiveCfg = Debug|x86
+		{2A7FAA87-9FFF-4D72-919A-F9D730CB699A}.Debug|x86.Build.0 = Debug|x86
+		{2A7FAA87-9FFF-4D72-919A-F9D730CB699A}.Release|x86.ActiveCfg = Release|x86
+		{2A7FAA87-9FFF-4D72-919A-F9D730CB699A}.Release|x86.Build.0 = Release|x86
+		{835627CE-9199-4813-A5D7-551848C9D3ED}.Debug|x86.ActiveCfg = Debug|x86
+		{835627CE-9199-4813-A5D7-551848C9D3ED}.Debug|x86.Build.0 = Debug|x86
+		{835627CE-9199-4813-A5D7-551848C9D3ED}.Release|x86.ActiveCfg = Release|x86
+		{835627CE-9199-4813-A5D7-551848C9D3ED}.Release|x86.Build.0 = Release|x86
+		{F3C6C0DC-34EE-4392-9C0A-082821C0EE19}.Debug|x86.ActiveCfg = Debug|x86
+		{F3C6C0DC-34EE-4392-9C0A-082821C0EE19}.Debug|x86.Build.0 = Debug|x86
+		{F3C6C0DC-34EE-4392-9C0A-082821C0EE19}.Release|x86.ActiveCfg = Release|x86
+		{F3C6C0DC-34EE-4392-9C0A-082821C0EE19}.Release|x86.Build.0 = Release|x86
+		{D90A1BFD-D2BF-4B86-9D76-43F6758F11A5}.Debug|x86.ActiveCfg = Debug|x86
+		{D90A1BFD-D2BF-4B86-9D76-43F6758F11A5}.Debug|x86.Build.0 = Debug|x86
+		{D90A1BFD-D2BF-4B86-9D76-43F6758F11A5}.Release|x86.ActiveCfg = Release|x86
+		{D90A1BFD-D2BF-4B86-9D76-43F6758F11A5}.Release|x86.Build.0 = Release|x86
+		{F83C8146-CC1C-4911-9A4C-EAC1AC7FCB3B}.Debug|x86.ActiveCfg = Debug|x86
+		{F83C8146-CC1C-4911-9A4C-EAC1AC7FCB3B}.Debug|x86.Build.0 = Debug|x86
+		{F83C8146-CC1C-4911-9A4C-EAC1AC7FCB3B}.Release|x86.ActiveCfg = Release|x86
+		{F83C8146-CC1C-4911-9A4C-EAC1AC7FCB3B}.Release|x86.Build.0 = Release|x86
+		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Debug|x86.ActiveCfg = Debug|x86
+		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Debug|x86.Build.0 = Debug|x86
+		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Release|x86.ActiveCfg = Release|x86
+		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
