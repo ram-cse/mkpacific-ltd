@@ -11,7 +11,6 @@ namespace P4_MoneyPacificSite.Models.BUS
         {
             // TODO: sẽ làm sau khi thiet ke xong bang Transaction
             // mac dinh la chua co transaction nao het
-
             return false;
         }
     }
