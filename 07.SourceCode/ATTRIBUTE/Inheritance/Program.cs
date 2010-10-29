@@ -16,6 +16,11 @@ public class Program
 
     partial class Admin
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// 
+        // Không sử dụng 2 biến này
         public string username;
         public string password;
 
@@ -34,9 +39,7 @@ public class Program
     {
         public Manager(string username, string password)
             : base("newuser", "abc")
-        {
-
-        }
+        {}
     }
 
     public abstract class user
