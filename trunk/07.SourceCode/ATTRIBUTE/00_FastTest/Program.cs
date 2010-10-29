@@ -107,6 +107,12 @@ class MainClass
 
     public static void Main()
     {
+
+        string s1 = "abc def";
+        string s2 = null;
+        
+        Console.WriteLine("so sanh chuoi: " + s1.Equals(s2));
+
         // display attributes for Account class
         DumpAttributes(typeof(Account));
 
