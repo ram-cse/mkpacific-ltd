@@ -1,4 +1,76 @@
-﻿	
+﻿
+	29/10/2010:
+	
+		Customer membership & roleProvider
+		http://stackoverflow.com/questions/2771094/asp-net-mvc2-custom-membership
+		
+		- Tạo các lớp Customer, StoreUser, StoreManager, Administrator
+		cùng kế thừa từ lớp User
+		
+		abstract class User
+		{
+			username;
+			password;
+			public abstract string GetRole();
+		}
+		
+		Customer
+		{
+			public string abstract string GetRole()
+			{
+				return "Customer";
+			}
+		}
+		...
+		
+	
+		- Sửa thư viện RolesProvider mặc định bằng cách cấu hình trong tập tin config
+		
+		
+		- CSharp
+			+ Inheritance
+			public class DumpTruck: IEngine, IBody
+			1 bài viêt về KẾ THỪA, rõ ràng, chi tiết
+			http://www.codeproject.com/KB/architecture/smip.aspx
+			
+		- WCF
+			***
+			WCF Authentication Service:
+			http://msdn.microsoft.com/en-us/library/bb398990.aspx[^]
+			
+			***
+			WCF Role 
+			http://msdn.microsoft.com/en-us/library/bb398911.aspx[^]
+			
+			***
+			WCF Profile 
+			http://msdn.microsoft.com/en-us/library/bb514968.aspx[^]
+		
+			+ Tạo Diagram cho các class trong solution
+			
+		- Hỗ trợ đăng nhập:
+			+ Provider
+		
+		- Ứng dụng MVC 
+		
+		
+		
+		- Tìm hiểu MVC:
+			+ Các mã nguồn sử dụng MVC
+			http://code.msdn.microsoft.com/aspnetmvcsamples
+			+ Cách đăng nhập sử dung database customize 
+			
+			+ Cài đặt TownHall để tìm hiểu Ứng dụng MVC vào web site:
+			
+			
+			+ MOCK Object: what is it??? (yêu cầu thứ 4 trong TownHall)
+			Sample ví dụ về MOCK Object
+			http://code.google.com/p/moq/ 
+				1 BLOGER có nhiều bài hay về lập trình: vd: mock object
+				http://my.opera.com/yenhong4/archive/monthly/?startidx=306
+		- KZU.Net 's  Project
+		http://code.google.com/u/kzu.net/
+	
 	28/10/2010:
 
 		http://www.youtube.com/watch?v=l9PkgsZWf9U
