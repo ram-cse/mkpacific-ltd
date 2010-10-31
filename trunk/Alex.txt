@@ -1,4 +1,60 @@
-﻿
+﻿	31/10/2010:
+	
+		- Change DNS:
+			TipTutorial.Net => cứ sử dụng tiếp, chưa cần thiết thay
+			x TimKiemNhaDat.Net
+			
+			*** Sau khi làm ổn định sẽ mua domain: timkiemnhadat.vn
+		
+		- Upload: 
+			+   WordPress -> tiptutorial.net => chưa cần
+			+ x Tạo FTP Upload
+			+ x Joomla -> timkiemnhadat.net
+			
+			
+		- Change template: timkiemnhadat.net
+		  change template: tiptutorial.net
+		- Thiết kế giao diện chức năng cho TIMKIEMNHADAT.NET
+		- Đăng ký 1 project trên FREELANCER.COM
+		- MCV: Login, Register with difference Role
+			
+			+ 1 bài viết về: custom membership provider, trong đó có overide hàm ValidateAccount(), sử dụng biến session
+			http://developingmycloudapp.wordpress.com/2010/06/20/using-a-custom-membership-provider-in-an-mvc-application/
+		
+		- Tìm và mua một domain về sức khoẻ:
+			+
+		
+/=======================================================================================
+						- thanhdungit:
+						username:thanhdungit@gmail.com
+						password:GkF9BJrP_ktc
+						CPANEL:https://panel.dreamhost.com/index.cgi?
+								
+								
+						FTP:
+						---
+						ftp.timkiemnhadat.net
+						------
+
+						user: lethanhdung
+						pass: kt
+
+						user: timkiemnhadat -> BỎ
+						pass: ??
+
+						user: thanhdungit -> BỎ
+						pass: ??
+
+						MYSQL:
+						---
+						host: mysql.timkiemnhadat.net
+						-------
+						db: timkiemnhadat_main
+						user: timkiemnhadat
+						pass: tìmkiếmnhàđất
+
+/=======================================================================================
+		
 	29/10/2010:
 	
 		Customer membership & roleProvider
