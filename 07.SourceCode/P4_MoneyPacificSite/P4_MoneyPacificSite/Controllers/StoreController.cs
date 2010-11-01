@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using P4_MoneyPacificSite.ViewModels;
 using P4_MoneyPacificSite.Models;
 using P4_MoneyPacificSite.Models.DAO;
+using P4_MoneyPacificSite.Models.BUS;
 
 namespace P4_MoneyPacificSite.Controllers
 {
@@ -22,12 +23,29 @@ namespace P4_MoneyPacificSite.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            StoreViewModel testObj = new StoreViewModel();
+            testObj.Name = "thanhdungit";
+            testObj.NameOfCompany = "Tim Kiem Nha Dat . Ltd";
+            testObj.Email = "thanhdungit@gmail.com";
+            testObj.NumberOfShop = 10;
+            testObj.Phone = "0932130483";
+            testObj.Address = "Quận 12";
+
+
+            return View(testObj);
         }
         [HttpPost]
         public ActionResult Register(StoreViewModel model )
         {
-            ViewData["Message"] = "Đăng ký thành công";
+            try
+            {
+                bool result = StoreManagerBUS.AskTobeParnerStore(model);
+                ViewData["Message"] = "Successful..";
+            }
+            catch
+            {
+                ViewData["Message"] = "Error!..";
+            }
             return View();
         }
 
