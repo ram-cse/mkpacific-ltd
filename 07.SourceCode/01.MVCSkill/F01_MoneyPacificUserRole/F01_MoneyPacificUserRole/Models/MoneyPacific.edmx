@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ASPNETDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="ASPNETDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="ASPNETDBModelStoreContainer">
           <EntitySet Name="aspnet_Applications" EntityType="ASPNETDBModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_Membership" EntityType="ASPNETDBModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
@@ -26,6 +26,7 @@
           <EntitySet Name="aspnet_UsersInRoles" EntityType="ASPNETDBModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_WebEvent_Events" EntityType="ASPNETDBModel.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="ASPNETDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Test" EntityType="ASPNETDBModel.Store.Test" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK__aspnet_Me__Appli__21B6055D" Association="ASPNETDBModel.Store.FK__aspnet_Me__Appli__21B6055D">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -224,6 +225,13 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <Association Name="FK__aspnet_Me__Appli__21B6055D">
           <End Role="aspnet_Applications" Type="ASPNETDBModel.Store.aspnet_Applications" Multiplicity="1" />
           <End Role="aspnet_Membership" Type="ASPNETDBModel.Store.aspnet_Membership" Multiplicity="*" />
@@ -356,8 +364,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ASPNETDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -414,6 +421,7 @@
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
+          <EntitySet Name="Tests" EntityType="ASPNETDBModel.Test" />
         </EntityContainer>
         <EntityType Name="aspnet_Applications">
           <Key>
@@ -689,6 +697,13 @@
           <End Role="aspnet_Roles" Type="ASPNETDBModel.aspnet_Roles" Multiplicity="*" />
           <End Role="aspnet_Users" Type="ASPNETDBModel.aspnet_Users" Multiplicity="*" />
         </Association>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -808,6 +823,14 @@
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="ASPNETDBModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -894,6 +917,7 @@
           <ConnectorPoint PointX="9" PointY="16.932444661458334" />
           <ConnectorPoint PointX="9" PointY="14.701396484375" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="ASPNETDBModel.Test" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4033821614583388" />
       </Diagram>
     </Diagrams>
   </Designer>

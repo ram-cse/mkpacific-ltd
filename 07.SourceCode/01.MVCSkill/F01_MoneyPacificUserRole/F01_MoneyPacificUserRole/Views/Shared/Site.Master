@@ -22,6 +22,7 @@
             <div id="menucontainer">
             
                 <ul id="menu">              
+                    <li><%= Html.ActionLink("Load HTML", "LoadHtmlFromDB", "Account")%></li>
                     <li><%= Html.ActionLink("Create", "Create", "Role")%></li>
                     <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
                     <li><%= Html.ActionLink("About", "About", "Home")%></li>

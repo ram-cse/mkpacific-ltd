@@ -30,7 +30,21 @@ namespace F01_MoneyPacificUserRole.Controllers
         // **************************************
         // URL: /Account/LogOn
         // **************************************
-         
+
+        public ActionResult LoadHtmlFromDB()
+        {
+            ASPNETDBEntities1 db = new ASPNETDBEntities1();
+            string message;
+            Test testObj = db.Tests.First<Test>();
+            message = testObj.Description;
+            TestViewModel model = new TestViewModel();
+            model.message = message;
+
+            //ViewData["message"] = message;
+            return View(model);
+            
+        }
+
         public ActionResult LogOn()
         {
             return View();
