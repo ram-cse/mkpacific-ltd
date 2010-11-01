@@ -23,7 +23,8 @@
                    [ <a href="/Account/Login">Log On</a> ]
             </div>             
                 <div class="menucontainer">
-                    <div style="float:right;">                                                                                      <asp:Menu ID="mainMenu" runat="server" BackColor="#F7F6F3" 
+                    <div style="float:right;">                                                                                      
+                    <asp:Menu ID="mainMenu" runat="server" BackColor="#F7F6F3" 
                             DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" 
                             ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px">
                             <DynamicHoverStyle BackColor="#0099CC" ForeColor="White" />
@@ -36,14 +37,18 @@
                             <Items>
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home"></asp:MenuItem>
                                 <asp:MenuItem Text="Pacific Code" Value="Pacific Code" NavigateUrl="~/PacificCode"></asp:MenuItem>                                
-                                    <asp:MenuItem Text="Detail" Value="Detail" NavigateUrl="~/PacificCode/ViewDetail"></asp:MenuItem>
-                                    <asp:MenuItem Text="Change Code" Value="Change Code" NavigateUrl="~/PacificCode/ChangeCode"></asp:MenuItem>
-                                    <asp:MenuItem Text="Send Money" Value="Send Money" NavigateUrl="~/PacificCode/SendMoney"></asp:MenuItem>
-                                    <asp:MenuItem Text="ReSend SMS" Value="Re Send SMS" NavigateUrl="~/PacificCode/SendSMS"></asp:MenuItem>
-                                    <asp:MenuItem Text="Browse" Value="Browse" NavigateUrl="~/PacificCode/Browse"></asp:MenuItem>
-                                <asp:MenuItem Text="Contact" Value="Contact"></asp:MenuItem>
-                                <asp:MenuItem Text="About" Value="About"></asp:MenuItem>
-                                <asp:MenuItem Text="Store Manager" Value="Store" NavigateUrl="~/Account/Login/"></asp:MenuItem>
+                                    
+                                <asp:MenuItem Text="Detail" Value="Detail" NavigateUrl="~/PacificCode/ViewDetail"></asp:MenuItem>
+                                <asp:MenuItem Text="Change Code" Value="Change Code" NavigateUrl="~/PacificCode/ChangeCode"></asp:MenuItem>
+                                <asp:MenuItem Text="Send Money" Value="Send Money" NavigateUrl="~/PacificCode/SendMoney"></asp:MenuItem>
+                                <asp:MenuItem Text="ReSend SMS" Value="Re Send SMS" NavigateUrl="~/PacificCode/SendSMS"></asp:MenuItem>
+                                <asp:MenuItem Text="Browse" Value="Browse" NavigateUrl="~/PacificCode/Browse"></asp:MenuItem>
+                                
+<%--                                <asp:MenuItem Text="Contact" Value="Contact"></asp:MenuItem>
+                                <asp:MenuItem Text="About" Value="About"></asp:MenuItem>--%>
+
+                                <asp:MenuItem Text="Store Site" Value="Store" NavigateUrl="~/Account/Login/"></asp:MenuItem>
+                                <asp:MenuItem Text="Admin Site" Value="Store" NavigateUrl="~/Admin/"></asp:MenuItem>
                             </Items>
                             <StaticHoverStyle BackColor="#0099CC" ForeColor="White" />
                             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

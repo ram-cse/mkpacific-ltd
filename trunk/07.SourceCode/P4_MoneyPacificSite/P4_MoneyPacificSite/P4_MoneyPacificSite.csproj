@@ -75,10 +75,13 @@
     <Compile Include="Models\BUS\CustomerBUS.cs" />
     <Compile Include="Models\BUS\CustomerStateBUS.cs" />
     <Compile Include="Models\BUS\PacificCodeBUS.cs" />
+    <Compile Include="Models\BUS\StoreManagerBUS.cs" />
     <Compile Include="Models\BUS\TransactionBUS.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
     <Compile Include="Models\DAO\CustomerStateDAO.cs" />
     <Compile Include="Models\DAO\PacificCodeDAO.cs" />
+    <Compile Include="Models\DAO\StoreManagerDAO.cs" />
+    <Compile Include="Models\DAO\StoreManagerStateDAO.cs" />
     <Compile Include="Models\DAO\StoreUserDAO.cs" />
     <Compile Include="Models\DAO\TransactionDAO.cs" />
     <Compile Include="Models\Mail.cs" />
@@ -111,6 +114,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Admin\BrowseStores.aspx" />
+    <Content Include="Views\Admin\DetailStore.aspx" />
+    <Content Include="Views\Admin\EditStore.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Mail\Index.aspx" />
     <Content Include="Views\Mail\SendMail.aspx" />
@@ -124,6 +131,7 @@
     <Content Include="Views\PacificCode\SendSMS.aspx" />
     <Content Include="Views\PacificCode\ViewDetail.aspx" />
     <Content Include="Views\Shared\EditorTemplates\PacificCode.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\StoreManager.ascx" />
     <Content Include="Views\Store\Dashboard.aspx" />
     <Content Include="Views\Store\Index.aspx" />
     <Content Include="Views\Store\Information.aspx" />
@@ -172,6 +180,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MoneyPacific.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\AdminSite.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

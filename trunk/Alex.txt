@@ -1,4 +1,40 @@
-﻿	31/10/2010:
+﻿
+	truongdinhanhkc@gmail.com
+
+Hi, thank you very match for your response. 
+This 2 small project it is start (pilot projects) for very big project "Mobil Access to SharePoint system". 
+
+I am looking for developer for this project. This project it is final project for Bachelor Web developer education so, it should include ~60 pages of report. 
+
+If you interesting we can talk about in Skype? 
+If you have paypal account and you ready to complete second small project now i can pay you 20$ for you job. 
+
+The web site should be for mobil browsers and should compile as soon as possible. 
+
+If you interesting in big project we can talk about Wednesday 3.10.2010 after 17 00 in Skype (my time zone (UTC+01:00) Brussels, Copenhagen, Madrid, Paris). waiting for your answer to jomautocatalog AT gmail DOT com 
+
+Regards
+
+
+	
+	
+	1/11/2010:
+		- Freelancer:
+			http://www.freelancer.com/projects/Data-Entry/DATA-ENTRY-captcha.840235.html
+			
+		- Music:
+			Tiếng Đàn
+			http://www.nhaccuatui.com/nghe?L=4gxiRtV8pqY7
+			
+		- Money Pacific:
+			+ Chức năng: Ask to be partner with form
+				=> tạo StoreManager có storemanager có status.Code = '09' & StoreInternetAccess = 0
+			+ Đăng nhập với admin: -> Edit: 
+				Choose "Study - Active - Denied" , click "Button"
+				StoreManager = 02 & internet access = 0
+			+ 
+	
+	31/10/2010:
 	
 		- Change DNS:
 			TipTutorial.Net => cứ sử dụng tiếp, chưa cần thiết thay
