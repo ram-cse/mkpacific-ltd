@@ -270,6 +270,22 @@ namespace F01_MoneyPacificUserRole.Models
             }
         }
         private ObjectSet<sysdiagram> _sysdiagrams;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Test> Tests
+        {
+            get
+            {
+                if ((_Tests == null))
+                {
+                    _Tests = base.CreateObjectSet<Test>("Tests");
+                }
+                return _Tests;
+            }
+        }
+        private ObjectSet<Test> _Tests;
 
         #endregion
         #region AddTo Methods
@@ -368,6 +384,14 @@ namespace F01_MoneyPacificUserRole.Models
         public void AddTosysdiagrams(sysdiagram sysdiagram)
         {
             base.AddObject("sysdiagrams", sysdiagram);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Tests EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTests(Test test)
+        {
+            base.AddObject("Tests", test);
         }
 
         #endregion
@@ -3442,6 +3466,85 @@ namespace F01_MoneyPacificUserRole.Models
         private global::System.Byte[] _definition;
         partial void OndefinitionChanging(global::System.Byte[] value);
         partial void OndefinitionChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="Test")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Test : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Test object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        public static Test CreateTest(global::System.Int32 id)
+        {
+            Test test = new Test();
+            test.ID = id;
+            return test;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
 
         #endregion
     
