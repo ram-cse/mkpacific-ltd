@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="9b6f65a4-8f28-40f7-8cb9-8c2a4261f629" name="AccountProvider_ToString" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="8f3ba1fb-b7f9-40aa-bee9-fc01a13cc680" name="AccountProvider_ToString" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification Id="0d50041d-5cfc-4f13-84c6-8ce71eddb50f" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="02740d8d-f300-4f6c-b386-ebaafcc09856" LastKnownName="this : AccountProvider" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="aa62f496-84b5-43d2-bde2-1046c855f99b" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="c380dbfd-76ec-4ec8-91af-381113487d83" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="57bc3c30-db41-468e-acbe-1931e4d29ac0" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="c380dbfd-76ec-4ec8-91af-381113487d83" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="a63a8a6c-a7bf-49a9-9b4e-d40d218a3755" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="02740d8d-f300-4f6c-b386-ebaafcc09856" LastKnownName="this : AccountProvider" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="57bc3c30-db41-468e-acbe-1931e4d29ac0" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="02740d8d-f300-4f6c-b386-ebaafcc09856" LastKnownName="this : AccountProvider" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget Id="8a729174-f83b-4148-9593-e369b7d0c9af" name="LostFoundTarget" />
+          <executionOccurrenceSpecification Id="aa62f496-84b5-43d2-bde2-1046c855f99b" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="33c45f0a-ba96-4628-8666-d4d4ecc01ac5" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="02740d8d-f300-4f6c-b386-ebaafcc09856" LastKnownName="this : AccountProvider" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="02740d8d-f300-4f6c-b386-ebaafcc09856" name="this : AccountProvider" isActor="false" lifelineDisplayName="this : AccountProvider" referencedInstance="(Assembly=$(b353f74c-aead-43b8-b49c-38ac91ce1316.OutputPathUri) Namespace=F01_MoneyPacificUserRole.Providers Type=AccountProvider ObjectInstance=&quot;Object instance 1&quot;)" referencedType="F01_MoneyPacificUserRole.Providers.AccountProvider">
+            <referencesInternal>
+              <reference Id="11a01f56-191b-417f-baf6-f1e904053390" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=F01_MoneyPacificUserRole.Providers)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(b353f74c-aead-43b8-b49c-38ac91ce1316.OutputPathUri)&amp;quot; Namespace=F01_MoneyPacificUserRole.Providers Type=AccountProvider)&quot;)" tag="DGQL" />
+              <reference Id="c88c01a0-8b06-445d-ada0-49f482679cd2" handle="(Assembly=&quot;$(b353f74c-aead-43b8-b49c-38ac91ce1316.OutputPathUri)&quot; Namespace=F01_MoneyPacificUserRole.Providers Type=AccountProvider)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="c380dbfd-76ec-4ec8-91af-381113487d83" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="aa62f496-84b5-43d2-bde2-1046c855f99b" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="2818acf1-1c67-430c-968f-c9afa14af665" name="ToString" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="aa05cff9-fb64-486c-80ef-d49bcf00243d" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=F01_MoneyPacificUserRole.Providers)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(b353f74c-aead-43b8-b49c-38ac91ce1316.OutputPathUri)&amp;quot; Namespace=F01_MoneyPacificUserRole.Providers Type=AccountProvider)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(b353f74c-aead-43b8-b49c-38ac91ce1316.OutputPathUri)&amp;quot; Namespace=F01_MoneyPacificUserRole.Providers Type=AccountProvider Member=ToString)&quot;)" tag="DGQL" />
+              <reference Id="292d87b9-ff02-4e84-9775-5925af2d847f" handle="(Assembly=&quot;$(b353f74c-aead-43b8-b49c-38ac91ce1316.OutputPathUri)&quot; Namespace=F01_MoneyPacificUserRole.Providers Type=AccountProvider Member=ToString)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <lostFoundTargetMoniker Id="8a729174-f83b-4148-9593-e369b7d0c9af" LastKnownName="LostFoundTarget" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="57bc3c30-db41-468e-acbe-1931e4d29ac0" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="a63a8a6c-a7bf-49a9-9b4e-d40d218a3755" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="33c45f0a-ba96-4628-8666-d4d4ecc01ac5" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>
