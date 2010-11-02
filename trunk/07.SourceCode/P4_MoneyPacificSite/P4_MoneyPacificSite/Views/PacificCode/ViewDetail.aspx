@@ -1,9 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" 
 Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.ViewModels.PacificCodeViewDetailViewModel>" %>
 
+<script runat="server">
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	ViewDetail
-</asp:Content>
+	ViewDetail</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 

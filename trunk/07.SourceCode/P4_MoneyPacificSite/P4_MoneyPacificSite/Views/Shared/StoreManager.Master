@@ -35,7 +35,10 @@
                             </DynamicItemTemplate>
                             <Items>
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home"></asp:MenuItem>
-                                <asp:MenuItem Text="Dashboard" Value="Dashboard" NavigateUrl="~/Store/Dashboard"></asp:MenuItem>
+                                <asp:MenuItem Text="Dashboard" Value="Dashboard" NavigateUrl="~/Store/Dashboard">
+                                    <asp:MenuItem Text="Store Manager" Value="Store Manager" NavigateUrl="~/StoreManager/Interface"></asp:MenuItem>
+                                    <asp:MenuItem Text="Shop Web" Value="Shop Web" NavigateUrl="~/StoreUser/Interface"></asp:MenuItem>
+                                </asp:MenuItem>
                                 <asp:MenuItem Text="Information" Value="Information" NavigateUrl="~/Store/Information"></asp:MenuItem>
                                 <asp:MenuItem Text="Security" Value="Security" NavigateUrl="~/Store/Security"></asp:MenuItem>
                                 <asp:MenuItem Text="Pacific Email" Value="Pacific Email" NavigateUrl="~/Mail/SendMail"></asp:MenuItem>

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/StoreManager.Master" Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.ViewModels.StoreDashboarshViewModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/StoreManager.Master"
+ Inherits="System.Web.Mvc.ViewPage<P4_MoneyPacificSite.ViewModels.StoreDashboarshViewModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Dashboard

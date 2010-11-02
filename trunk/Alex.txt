@@ -1,19 +1,42 @@
-﻿
-	truongdinhanhkc@gmail.com
+﻿	2/11/2010:
+		- CSharp:
+			List AspNet OpenSource
+			http://wiki.asp.net/page.aspx/388/aspnet-open-source-projects/
+			
+		- Money Pacific: cần hoàn thành các chức năng sau
+			+ 
+			+..
+			- Hỏi: 
+				TotalLast30day: -> last month or last 30days???
+				Amount from customer: -> from Last Pacific Collect? IT MUST BE FROM LAST DATE
+				-> Nếu tính ngày thu cuối cùng: bằng ngày hiện tại - 1. vì ngày hiện tại chưa hết, 
+				nếu tính vào ngày hiện tại có thể bị xót những giao dịch cuối ngày
+			
+			* Sửa table PacificCode->StoreId thành StoreUserId
+				
+			
+		- ASP.Net:
+			+ 1 trang quản lý bán hàng
+		- PHP: bài tập quản lý user
+		- JQuery:
+	
+	------------------------------------------------------------
 
-Hi, thank you very match for your response. 
-This 2 small project it is start (pilot projects) for very big project "Mobil Access to SharePoint system". 
+		truongdinhanhkc@gmail.com
 
-I am looking for developer for this project. This project it is final project for Bachelor Web developer education so, it should include ~60 pages of report. 
+		Hi, thank you very match for your response. 
+		This 2 small project it is start (pilot projects) for very big project "Mobil Access to SharePoint system". 
 
-If you interesting we can talk about in Skype? 
-If you have paypal account and you ready to complete second small project now i can pay you 20$ for you job. 
+		I am looking for developer for this project. This project it is final project for Bachelor Web developer education so, it should include ~60 pages of report. 
 
-The web site should be for mobil browsers and should compile as soon as possible. 
+		If you interesting we can talk about in Skype? 
+		If you have paypal account and you ready to complete second small project now i can pay you 20$ for you job. 
 
-If you interesting in big project we can talk about Wednesday 3.10.2010 after 17 00 in Skype (my time zone (UTC+01:00) Brussels, Copenhagen, Madrid, Paris). waiting for your answer to jomautocatalog AT gmail DOT com 
+		The web site should be for mobil browsers and should compile as soon as possible. 
 
-Regards
+		If you interesting in big project we can talk about Wednesday 3.10.2010 after 17 00 in Skype (my time zone (UTC+01:00) Brussels, Copenhagen, Madrid, Paris). waiting for your answer to jomautocatalog AT gmail DOT com 
+
+		Regards
 
 
 	

@@ -24,12 +24,12 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCodeState), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Store", "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreUser), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_PacificCode", "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.PacificCode), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManagerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreManagerState), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreManager), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreManager), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreUser), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreUserState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreUserState), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreUser), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionCate", "TransactionCate", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionCate), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionState), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.Transaction), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_TransactionFee_TransactionCate", "TransactionCate", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.TransactionCate), "TransactionFee", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.TransactionFee), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManagerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreManagerState), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreManager), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(P4_MoneyPacificSite.Models.StoreManager), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(P4_MoneyPacificSite.Models.StoreUser), true)]
 
 #endregion
 
@@ -164,22 +164,6 @@ namespace P4_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<StoreManager> StoreManagers
-        {
-            get
-            {
-                if ((_StoreManagers == null))
-                {
-                    _StoreManagers = base.CreateObjectSet<StoreManager>("StoreManagers");
-                }
-                return _StoreManagers;
-            }
-        }
-        private ObjectSet<StoreManager> _StoreManagers;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<StoreManagerState> StoreManagerStates
         {
             get
@@ -304,6 +288,22 @@ namespace P4_MoneyPacificSite.Models
             }
         }
         private ObjectSet<TransactionState> _TransactionStates;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<StoreManager> StoreManagers
+        {
+            get
+            {
+                if ((_StoreManagers == null))
+                {
+                    _StoreManagers = base.CreateObjectSet<StoreManager>("StoreManagers");
+                }
+                return _StoreManagers;
+            }
+        }
+        private ObjectSet<StoreManager> _StoreManagers;
 
         #endregion
         #region AddTo Methods
@@ -346,14 +346,6 @@ namespace P4_MoneyPacificSite.Models
         public void AddToPacificCodeStates(PacificCodeState pacificCodeState)
         {
             base.AddObject("PacificCodeStates", pacificCodeState);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the StoreManagers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToStoreManagers(StoreManager storeManager)
-        {
-            base.AddObject("StoreManagers", storeManager);
         }
     
         /// <summary>
@@ -418,6 +410,14 @@ namespace P4_MoneyPacificSite.Models
         public void AddToTransactionStates(TransactionState transactionState)
         {
             base.AddObject("TransactionStates", transactionState);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the StoreManagers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToStoreManagers(StoreManager storeManager)
+        {
+            base.AddObject("StoreManagers", storeManager);
         }
 
         #endregion
@@ -2460,6 +2460,54 @@ namespace P4_MoneyPacificSite.Models
         private Nullable<global::System.Int32> _StoreInternetAccess;
         partial void OnStoreInternetAccessChanging(Nullable<global::System.Int32> value);
         partial void OnStoreInternetAccessChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> LastCollectDate
+        {
+            get
+            {
+                return _LastCollectDate;
+            }
+            set
+            {
+                OnLastCollectDateChanging(value);
+                ReportPropertyChanging("LastCollectDate");
+                _LastCollectDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastCollectDate");
+                OnLastCollectDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _LastCollectDate;
+        partial void OnLastCollectDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnLastCollectDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> IsLocked
+        {
+            get
+            {
+                return _IsLocked;
+            }
+            set
+            {
+                OnIsLockedChanging(value);
+                ReportPropertyChanging("IsLocked");
+                _IsLocked = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsLocked");
+                OnIsLockedChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _IsLocked;
+        partial void OnIsLockedChanging(Nullable<global::System.Boolean> value);
+        partial void OnIsLockedChanged();
 
         #endregion
     
@@ -3051,44 +3099,6 @@ namespace P4_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager")]
-        public StoreManager StoreManager
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<StoreManager> StoreManagerReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreUserState")]
         public StoreUserState StoreUserState
         {
@@ -3117,6 +3127,44 @@ namespace P4_MoneyPacificSite.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreUserState>("MoneyPacificModel.FK_Store_StoreStatus", "StoreUserState", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager")]
+        public StoreManager StoreManager
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<StoreManager> StoreManagerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreManager>("MoneyPacificModel.FK_StoreUser_StoreManager", "StoreManager", value);
                 }
             }
         }
