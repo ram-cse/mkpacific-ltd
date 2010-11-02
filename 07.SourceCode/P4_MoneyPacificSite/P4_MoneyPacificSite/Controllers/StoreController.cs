@@ -65,7 +65,7 @@ namespace P4_MoneyPacificSite.Controllers
 
         public ActionResult Information()
         {
-            var viewModel = StoreUserDAO.getTestStoreUser();
+            var viewModel = StoreUserDAO._GetTestStoreUser();
             return View(viewModel);
         }
         public ActionResult Security()

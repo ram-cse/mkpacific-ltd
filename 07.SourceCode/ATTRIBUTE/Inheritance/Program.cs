@@ -19,7 +19,7 @@ public class Program
         /// <summary>
         /// 
         /// </summary>
-        /// 
+        
         // Không sử dụng 2 biến này
         public string username;
         public string password;

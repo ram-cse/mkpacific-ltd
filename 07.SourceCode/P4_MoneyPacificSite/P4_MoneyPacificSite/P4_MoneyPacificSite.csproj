@@ -68,6 +68,8 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\PacificCodeController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
+    <Compile Include="Controllers\StoreUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -76,6 +78,8 @@
     <Compile Include="Models\BUS\CustomerStateBUS.cs" />
     <Compile Include="Models\BUS\PacificCodeBUS.cs" />
     <Compile Include="Models\BUS\StoreManagerBUS.cs" />
+    <Compile Include="Models\BUS\StoreManagerStateBUS.cs" />
+    <Compile Include="Models\BUS\StoreUserBUS.cs" />
     <Compile Include="Models\BUS\TransactionBUS.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
     <Compile Include="Models\DAO\CustomerStateDAO.cs" />
@@ -108,6 +112,8 @@
     <Compile Include="ViewModels\PacificCodeViewDetailViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\StoreMangerViewModels.cs" />
+    <Compile Include="ViewModels\StoreUserViewModel.cs" />
     <Compile Include="ViewModels\StoreViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +138,9 @@
     <Content Include="Views\PacificCode\ViewDetail.aspx" />
     <Content Include="Views\Shared\EditorTemplates\PacificCode.ascx" />
     <Content Include="Views\Shared\EditorTemplates\StoreManager.ascx" />
+    <Content Include="Views\StoreManager\Index.aspx" />
+    <Content Include="Views\StoreManager\Interface.aspx" />
+    <Content Include="Views\StoreUser\Interface.aspx" />
     <Content Include="Views\Store\Dashboard.aspx" />
     <Content Include="Views\Store\Index.aspx" />
     <Content Include="Views\Store\Information.aspx" />

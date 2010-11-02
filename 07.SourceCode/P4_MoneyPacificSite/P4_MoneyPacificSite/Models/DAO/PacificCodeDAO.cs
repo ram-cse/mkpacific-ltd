@@ -7,7 +7,7 @@ namespace P4_MoneyPacificSite.Models.DAO
 {
     public class PacificCodeDAO
     {
-        internal static PacificCode getLastPacificCode(int customerId)
+        internal static PacificCode GetLastPacificCode(int customerId)
         {
             MoneyPacificEntities db = new MoneyPacificEntities();
             PacificCode lastPacificCode = null;
@@ -22,7 +22,16 @@ namespace P4_MoneyPacificSite.Models.DAO
                     .First<PacificCode>();
             }
 
+            db.Connection.Close();
             return lastPacificCode;
+        }
+
+        internal static PacificCode[] GetList(int storeUserId)
+        {
+            MoneyPacificEntities db = new MoneyPacificEntities();
+            PacificCode[] arrResult = db.PacificCodes.Where(p => p.StoreId == storeUserId).ToArray();
+            db.Connection.Close();
+            return arrResult;
         }
     }
 }

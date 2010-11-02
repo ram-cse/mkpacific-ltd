@@ -70,7 +70,7 @@ namespace P4_MoneyPacificSite.Models.BUS
 
         internal static PacificCode getLastPacificCode(int customerId)
         {
-            return PacificCodeDAO.getLastPacificCode(customerId);
+            return PacificCodeDAO.GetLastPacificCode(customerId);
         }
     }
 }
