@@ -8,8 +8,9 @@ using MoneyPacificSrv.Util;
 
 namespace MoneyPacificSrv.Cmd
 {
-    public class BuyPacificCodeCmd : IMPCommand
+    public class BuyPacificCodeCommand : IMPCommand
     {
+        
         public string Execute(string[] args)
         {
             // Cú pháp SMS:
@@ -36,7 +37,7 @@ namespace MoneyPacificSrv.Cmd
             bool bSenderExists = StoreUserBUS.checkExist(senderStore);
             if (!bSenderExists)
             {   
-                smsRespones = senderStore.Phone + "*" + MessageManager.getValue("NOT_EXIST_STORE");
+                smsRespones = senderStore.Phone + "*" + MessageManager.GetValue("NOT_EXIST_STORE");
                 return smsRespones;
             }
 
@@ -46,7 +47,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidPassword)
             {   
-                sErrorMessage += MessageManager.getValue("WRONG_PASSWORD");
+                sErrorMessage += MessageManager.GetValue("WRONG_PASSWORD");
             }
             else
             {
@@ -55,7 +56,7 @@ namespace MoneyPacificSrv.Cmd
 
             // *** KIEM TRA KH BLACK LIST sau khi Kiem tra STORE
             if (CustomerBUS.isInBlackList(buyerCustomer.Phone))
-                return senderStore.Phone.Trim() + "*" + MessageManager.getValue("CUSTOMER_IN_BLACK_LIST");
+                return senderStore.Phone.Trim() + "*" + MessageManager.GetValue("CUSTOMER_IN_BLACK_LIST");
 
             // 03. check PACIFIC CODE Categories
             bool bValidAmount = false;
@@ -63,7 +64,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidAmount)
             {
-                sErrorMessage += MessageManager.getValue("INVALID_AMOUNT_MESSAGE", amountBuy.ToString());                
+                sErrorMessage += MessageManager.GetValue("INVALID_AMOUNT_MESSAGE", amountBuy.ToString());                
             }
 
             // 04. check CONFIRM AMOUNT
@@ -71,7 +72,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidConfirm)
             {
-                sErrorMessage += MessageManager.getValue("INVALID_AMOUNT_CONFIRM");                
+                sErrorMessage += MessageManager.GetValue("INVALID_AMOUNT_CONFIRM");                
             }
 
             // 05. check PHONE (valid and status)
@@ -79,7 +80,7 @@ namespace MoneyPacificSrv.Cmd
 
             if (!bValidPhone)
             {
-                sErrorMessage = MessageManager.getValue("INVALID_PHONE");                
+                sErrorMessage = MessageManager.GetValue("INVALID_PHONE");                
             }
 
             // 06. check CUSTOMER (exist and status)
@@ -101,7 +102,7 @@ namespace MoneyPacificSrv.Cmd
                 smsRespones = buyerCustomer.Phone.Trim();
                 
                 
-                smsRespones += "*" + MessageManager.getValue("GENERATE_SUCCESSFUL", 
+                smsRespones += "*" + MessageManager.GetValue("GENERATE_SUCCESSFUL", 
                     Utility.insertSeparateChar(newPacificCode.CodeNumber.Trim(),' ',4),
                     newPacificCode.ActualAmount.ToString(),
                     ((DateTime)newPacificCode.ExpireDate).ToShortDateString());

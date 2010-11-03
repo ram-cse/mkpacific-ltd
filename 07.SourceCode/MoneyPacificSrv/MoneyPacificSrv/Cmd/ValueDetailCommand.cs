@@ -9,7 +9,7 @@ using MoneyPacificSrv.BUS;
 
 namespace MoneyPacificSrv.Cmd
 {
-    public class ValueDetailCmd : IMPCommand
+    public class ValueDetailCommand : IMPCommand
     {
         #region IMPCommand Members
 
@@ -66,7 +66,7 @@ namespace MoneyPacificSrv.Cmd
                 // Amount > 0 : Charge Fee 
 
                 sMessage = existCustomer.Phone.Trim() + "*"
-                    + MessageManager.getValue("CHECK_VALUE_DETAIL_SUCCESSFUL",
+                    + MessageManager.GetValue("CHECK_VALUE_DETAIL_SUCCESSFUL",
                         Utility.insertSeparateChar(existPacificCode.CodeNumber, ' '),
                         existPacificCode.ActualAmount.ToString(),
                         ((DateTime)existPacificCode.ExpireDate).ToShortDateString());                
@@ -77,7 +77,7 @@ namespace MoneyPacificSrv.Cmd
                 {
                     // Add to Black List
                     CustomerBUS.moveToBlackList(existCustomer.Phone);
-                    sMessage = "0*" + MessageManager.getValue("BE_BLACK_LIST");
+                    sMessage = "0*" + MessageManager.GetValue("BE_BLACK_LIST");
                 }
                 else
                 {
