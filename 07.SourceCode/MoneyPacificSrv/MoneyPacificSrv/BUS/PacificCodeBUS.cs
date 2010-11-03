@@ -37,8 +37,8 @@ namespace MoneyPacificSrv.BUS
 
             // Add information
 
-            newPacificCode.StoreID = storeId;
-            newPacificCode.CustomerID = customerId;
+            newPacificCode.StoreId = storeId;
+            newPacificCode.CustomerId = customerId;
             newPacificCode.InitialAmount = amountBuy;
             newPacificCode.ActualAmount = amountBuy;
             newPacificCode.Date = DateTime.Now;

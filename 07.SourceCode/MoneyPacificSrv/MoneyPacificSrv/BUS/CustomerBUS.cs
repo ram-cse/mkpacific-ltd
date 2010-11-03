@@ -104,15 +104,15 @@ namespace MoneyPacificSrv.BUS
             {   
                 case "31":
                     CustomerDAO.setStatus(existCustomer.Id, "x32");
-                    sWarning = sPhone + "*" + MessageManager.getValue("NOT_EXIST_PACIFICCODE");
+                    sWarning = sPhone + "*" + MessageManager.GetValue("NOT_EXIST_PACIFICCODE");
                     break;
                 case "32":
                     CustomerDAO.setStatus(existCustomer.Id, "x33");
-                    sWarning = sPhone + "*" + MessageManager.getValue("WILL_BE_LOCKED");
+                    sWarning = sPhone + "*" + MessageManager.GetValue("WILL_BE_LOCKED");
                     break;
                 case "33":
                     CustomerDAO.setStatus(existCustomer.Id, "x93");
-                    sWarning = sPhone + "*" + MessageManager.getValue("BE_LOCKED");
+                    sWarning = sPhone + "*" + MessageManager.GetValue("BE_LOCKED");
                     break;
             }
 
@@ -121,7 +121,7 @@ namespace MoneyPacificSrv.BUS
             if (int.Parse(yz) < 31 && int.Parse(yz) >= 0)
             {
                 CustomerDAO.setStatus(existCustomer.Id, "x31");
-                sWarning = existCustomer.Phone + "*" + MessageManager.getValue("NOT_EXIST_PACIFICCODE");
+                sWarning = existCustomer.Phone + "*" + MessageManager.GetValue("NOT_EXIST_PACIFICCODE");
             }
 
             return sWarning;

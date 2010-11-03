@@ -17,8 +17,8 @@ namespace MoneyPacificSrv.DAO
             Transaction newTransaction = new Transaction();
 
             newTransaction.CreateDate = newSuccessPacificCode.Date;
-            newTransaction.CustomerId = newSuccessPacificCode.CustomerID;
-            newTransaction.StoreId = newSuccessPacificCode.StoreID;
+            newTransaction.CustomerId = newSuccessPacificCode.CustomerId;
+            newTransaction.StoreId = newSuccessPacificCode.StoreId;
             newTransaction.Amount = newSuccessPacificCode.InitialAmount;
             newTransaction.Origine = "Buy MP";
             //newTranSaction.StatusID = 1; // StatusID = 1 : Status = '11'

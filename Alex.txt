@@ -1,4 +1,52 @@
-﻿	2/11/2010:
+﻿	3/11/2010:
+		- Money Pacific:
+			+ Chức năng Phone Request:				
+				
+				SMS: MBBAL + PinStore
+				-> Amount avaiable collected from the customer 
+				(from the phone of the shop or the manager)
+				(Trnsaction code: 341)
+				
+				SMS: MPDAY + PinStore
+				-> Number of transactin of the day
+				(from phone of the shop or the manager)
+				(Transaction code: 342)
+				
+				SMS: MPDIS + PinStore
+				-> Disable phone shop
+				(From phone of the manager ONLY)
+				(Transaction code: 343)
+				
+				SMS: MPENA + PinStore
+				-> Enable the phone phop
+				(From phone of the manager ONLY)
+				(Transaction code: 344)
+				
+				SMS: MPLAS + PinStore
+				-> detail of the last MP collect
+				(from the shop or the manager)
+				(Transaction code: 345)
+			
+			=> Tạo class thuộc tính "Authorize"
+			
+			+ Làm sao lấy được tên lớp của một đối tượng
+			obj.GetType();
+			+ Làm sao lấy được 1 instance của Type thông qua tên của một lớp
+			
+			1 bài viết khá tốt về attribute của method			
+			http://www.brainbell.com/tutors/C_Sharp/Method_Attributes.htm
+			
+			http://www.brainbell.com/tutors/C_Sharp/
+			
+			C# Tutorial - Using Reflection to Get Object Information 
+			http://www.switchonthecode.com/tutorials/csharp-tutorial-using-reflection-to-get-object-information
+			
+		- FLC:
+			+ Dịch các yêu cầu về Post Project trên mạng
+			có tốn chi phí khi giao dịch hay không?
+			
+			
+	2/11/2010:
 		- CSharp:
 			List AspNet OpenSource
 			http://wiki.asp.net/page.aspx/388/aspnet-open-source-projects/

@@ -41,7 +41,7 @@ namespace MoneyPacificSrv.DAO
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             // GET
-            StoreUser existStore = mpdb.StoreUsers.Where(s => s.Id == newPacificCode.StoreID).Single<StoreUser>();
+            StoreUser existStore = mpdb.StoreUsers.Where(s => s.Id == newPacificCode.StoreId).Single<StoreUser>();
 
             // EXEC
             if (existStore != null)

@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MoneyPacific" Class="DBMoneyPacificDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=Alex-PC;Initial Catalog=MoneyPacific;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MoneyPacificConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Categories" Member="Categories">
-    <Type Name="Category">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="Category_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="CateID" Type="PacificCode" />
+  <Table Name="dbo.Administrator" Member="Administrators">
+    <Type Name="Administrator">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NChar(256)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(256)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NChar(256)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TransactionState" Member="TransactionStates">
@@ -15,6 +14,15 @@
       <Column Name="Code" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="TransactionState_Transaction" Member="Transactions" ThisKey="Id" OtherKey="StatusId" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Category_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="CateId" Type="PacificCode" />
     </Type>
   </Table>
   <Table Name="dbo.Customer" Member="Customers">
@@ -36,7 +44,7 @@
       <Column Name="SecurCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Pincode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="StatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Customer_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="CustomerID" Type="PacificCode" />
+      <Association Name="Customer_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="CustomerId" Type="PacificCode" />
       <Association Name="CustomerState_Customer" Member="CustomerState" ThisKey="StatusID" OtherKey="Id" Type="CustomerState" IsForeignKey="true" />
     </Type>
   </Table>
@@ -54,10 +62,10 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CodeNumber" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="LastTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StoreID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="InitialAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ActualAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -65,10 +73,10 @@
       <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="PacificCode_Transaction" Member="Transactions" ThisKey="Id" OtherKey="PacificCodeId" Type="Transaction" />
-      <Association Name="Category_PacificCode" Member="Category" ThisKey="CateID" OtherKey="Id" Type="Category" IsForeignKey="true" />
-      <Association Name="Customer_PacificCode" Member="Customer" ThisKey="CustomerID" OtherKey="Id" Type="Customer" IsForeignKey="true" />
-      <Association Name="PacificCodeState_PacificCode" Member="PacificCodeState" ThisKey="StatusID" OtherKey="Id" Type="PacificCodeState" IsForeignKey="true" />
-      <Association Name="StoreUser_PacificCode" Member="StoreUser" ThisKey="StatusID" OtherKey="Id" Type="StoreUser" IsForeignKey="true" />
+      <Association Name="Category_PacificCode" Member="Category" ThisKey="CateId" OtherKey="Id" Type="Category" IsForeignKey="true" />
+      <Association Name="Customer_PacificCode" Member="Customer" ThisKey="CustomerId" OtherKey="Id" Type="Customer" IsForeignKey="true" />
+      <Association Name="PacificCodeState_PacificCode" Member="PacificCodeState" ThisKey="StatusId" OtherKey="Id" Type="PacificCodeState" IsForeignKey="true" />
+      <Association Name="StoreUser_PacificCode" Member="StoreUser" ThisKey="StatusId" OtherKey="Id" Type="StoreUser" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PacificCodeState" Member="PacificCodeStates">
@@ -76,31 +84,43 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Code" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="PacificCodeState_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="StatusID" Type="PacificCode" />
+      <Association Name="PacificCodeState_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="StatusId" Type="PacificCode" />
     </Type>
   </Table>
   <Table Name="dbo.StoreManager" Member="StoreManagers">
     <Type Name="StoreManager">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="NameOfStore" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NameOfStore" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
-      <Column Name="Address2" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Phone" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="Phone2" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
-      <Column Name="WebSite" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
+      <Column Name="EmailAlert" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EmailBill" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WebSite" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Zip" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Town" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="Country" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="LegalStructure" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NameOfCompany" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VATNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ShopSize" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="NumberOfShop" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreInternetAccess" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastCollectDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsLocked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="StoreManager_StoreUser" Member="StoreUsers" ThisKey="Id" OtherKey="ManagerId" Type="StoreUser" />
       <Association Name="StoreManagerState_StoreManager" Member="StoreManagerState" ThisKey="StatusId" OtherKey="Id" Type="StoreManagerState" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.StoreManagerState" Member="StoreManagerStates">
     <Type Name="StoreManagerState">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Code" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
       <Association Name="StoreManagerState_StoreManager" Member="StoreManagers" ThisKey="Id" OtherKey="StatusId" Type="StoreManager" />
@@ -122,7 +142,7 @@
       <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="StoreUser_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="StatusID" Type="PacificCode" />
+      <Association Name="StoreUser_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="StatusId" Type="PacificCode" />
       <Association Name="StoreManager_StoreUser" Member="StoreManager" ThisKey="ManagerId" OtherKey="Id" Type="StoreManager" IsForeignKey="true" />
       <Association Name="StoreUserState_StoreUser" Member="StoreUserState" ThisKey="StatusId" OtherKey="Id" Type="StoreUserState" IsForeignKey="true" />
     </Type>

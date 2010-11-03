@@ -7,7 +7,7 @@ namespace PhanQuyenDemo
 {
     public class BuyCommand : ICommand
     {
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Guest")]
         public void Execute()
         {
             Console.WriteLine("Lenh BUY, moi user deu co the truy xuat");
@@ -16,7 +16,7 @@ namespace PhanQuyenDemo
 
     public class LockedCommand : ICommand
     {
-        [Authorize(Roles="Administrator, Guest")]
+        [Authorize(Roles="Administrator")]
         public void Execute()
         {
             Console.WriteLine("Lenh LOCKED, chi co admin moi co the truy xuat");

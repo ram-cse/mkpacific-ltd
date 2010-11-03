@@ -80,10 +80,16 @@
     <Compile Include="BUS\PacificCodeBUS.cs" />
     <Compile Include="BUS\StoreUserBUS.cs" />
     <Compile Include="BUS\TransactionBUS.cs" />
-    <Compile Include="Cmd\BuyPacificCodeCmd.cs" />
+    <Compile Include="General\Authorize.cs" />
+    <Compile Include="Cmd\BuyPacificCodeCommand.cs" />
     <Compile Include="Cmd\IMPComand.cs" />
-    <Compile Include="Cmd\UnderContructionCmd.cs" />
-    <Compile Include="Cmd\ValueDetailCmd.cs" />
+    <Compile Include="Cmd\MPBALCommand.cs" />
+    <Compile Include="Cmd\MPDAYCommand.cs" />
+    <Compile Include="Cmd\MPDISCommand.cs" />
+    <Compile Include="Cmd\MPENACommand.cs" />
+    <Compile Include="Cmd\MPLASCommand.cs" />
+    <Compile Include="Cmd\UnderContructionCommand.cs" />
+    <Compile Include="Cmd\ValueDetailCommand.cs" />
     <Compile Include="DAO\CategoriesDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\CustomerStateDAO.cs" />
@@ -95,9 +101,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMoneyPacific.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTO\IUser.cs" />
     <Compile Include="DTO\MPMessageDTO.cs" />
     <Compile Include="DTO\PacificCode.cs" />
     <Compile Include="DTO\PaymentModel.cs" />
+    <Compile Include="DTO\UserDTOs.cs" />
     <Compile Include="IMain.cs" />
     <Compile Include="Main.svc.cs">
       <DependentUpon>Main.svc</DependentUpon>
