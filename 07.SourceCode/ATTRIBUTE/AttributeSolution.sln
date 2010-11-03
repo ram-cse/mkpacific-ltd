@@ -19,6 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorize", "Authorize\Authorize.csproj", "{A9AED646-67A6-4AFE-8A18-494BB70C0538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_MethodAttribute", "07_MethodAttribute\07_MethodAttribute.csproj", "{817E982F-EEFB-4A2A-9989-C072BEE96992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorize_02", "Authorize_02\Authorize_02.csproj", "{07754B77-3042-446F-8384-1D2263A99EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceAbstract", "InheritanceAbstract\InheritanceAbstract.csproj", "{BF2DA99D-A877-47A2-A01B-B024D8635D93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -61,6 +69,22 @@ Global
 		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Debug|x86.Build.0 = Debug|x86
 		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Release|x86.ActiveCfg = Release|x86
 		{43A93E52-E461-4413-B10A-9AE4E4B3D5EE}.Release|x86.Build.0 = Release|x86
+		{A9AED646-67A6-4AFE-8A18-494BB70C0538}.Debug|x86.ActiveCfg = Debug|x86
+		{A9AED646-67A6-4AFE-8A18-494BB70C0538}.Debug|x86.Build.0 = Debug|x86
+		{A9AED646-67A6-4AFE-8A18-494BB70C0538}.Release|x86.ActiveCfg = Release|x86
+		{A9AED646-67A6-4AFE-8A18-494BB70C0538}.Release|x86.Build.0 = Release|x86
+		{817E982F-EEFB-4A2A-9989-C072BEE96992}.Debug|x86.ActiveCfg = Debug|x86
+		{817E982F-EEFB-4A2A-9989-C072BEE96992}.Debug|x86.Build.0 = Debug|x86
+		{817E982F-EEFB-4A2A-9989-C072BEE96992}.Release|x86.ActiveCfg = Release|x86
+		{817E982F-EEFB-4A2A-9989-C072BEE96992}.Release|x86.Build.0 = Release|x86
+		{07754B77-3042-446F-8384-1D2263A99EC7}.Debug|x86.ActiveCfg = Debug|x86
+		{07754B77-3042-446F-8384-1D2263A99EC7}.Debug|x86.Build.0 = Debug|x86
+		{07754B77-3042-446F-8384-1D2263A99EC7}.Release|x86.ActiveCfg = Release|x86
+		{07754B77-3042-446F-8384-1D2263A99EC7}.Release|x86.Build.0 = Release|x86
+		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Debug|x86.ActiveCfg = Debug|x86
+		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Debug|x86.Build.0 = Debug|x86
+		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Release|x86.ActiveCfg = Release|x86
+		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

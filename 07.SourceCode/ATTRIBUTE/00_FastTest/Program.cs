@@ -1,4 +1,78 @@
-﻿using System;
+﻿
+using System;
+
+using System.Reflection;
+
+namespace testnamespace
+{
+    public class application
+    {
+        public static void Main()
+        {
+            //TestClass obj = new TestClass();
+            //RuntimeMethodHandle handle = (handle)obj.GetHashCode();
+            //MethodInfo method = MethodInfo.GetMethodFromHandle(handle); ;// obj.ThucThi()
+            //Type type = typeof(TestClass);
+            //Console.WriteLine(type);
+        }
+    }
+
+    public class TestClass
+    {
+        public void ThucThi()
+        { }
+    }
+
+}
+
+/*
+using System;
+using System.Reflection;
+
+public class TransactionableAttribute : Attribute
+{
+    public TransactionableAttribute()
+    {
+    }
+}
+
+class TestClass
+{
+    [Transactionable]
+    public void Foo()
+    { }
+
+    public void Bar()
+    { }
+
+    [Transactionable]
+    public void Baz()
+    { }
+}
+
+class MethodAttrApp
+{
+    public static void Main()
+    {
+        Type type = Type.GetType("TestClass");
+        foreach (MethodInfo method in type.GetMethods())
+        {
+            Attribute[] arr = (Attribute[])method.GetCustomAttributes(true);
+            foreach (Attribute attr in arr)
+            {
+                if (attr is TransactionableAttribute)
+                {
+                    Console.WriteLine("{0} is transactionable.",
+                                      method.Name);
+                }
+            }
+        }
+    }
+}
+//*/
+
+/*
+using System;
 using System.Reflection;
 using System.Collections;
 
@@ -148,7 +222,7 @@ class MainClass
         Console.WriteLine();
     }
 }
-
+//*/
 
 
 /*
