@@ -5,13 +5,13 @@ using System.Web;
 
 namespace MoneyPacificSrv.Cmd
 {
-    public class UnderContructionCmd : IMPCommand
+    public class MPDAYCommand : IMPCommand
     {
         #region IMPCommand Members
 
         public string Execute(string[] args)
         {
-            return "0*This function is under construction!..";
+            throw new NotImplementedException();
         }
 
         #endregion
