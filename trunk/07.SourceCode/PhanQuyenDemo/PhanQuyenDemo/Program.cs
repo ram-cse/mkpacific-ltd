@@ -23,6 +23,10 @@ namespace PhanQuyenDemo
                 string uRole = u.GetRoles();
 
                 MethodInfo curMethod = curCmd.GetType().GetMethod("Execute");
+                
+                //Type t = typeof(IUser);
+                //MethodInfo curMethod = t.GetMethod("Execute");
+                
                 foreach(Attribute attr in curMethod.GetCustomAttributes(true))
                 {
                     AuthorizeAttribute thuoctinh = (AuthorizeAttribute) attr;

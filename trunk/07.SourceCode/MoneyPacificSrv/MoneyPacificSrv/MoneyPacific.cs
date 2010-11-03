@@ -34,13 +34,13 @@ namespace MoneyPacificSrv
             {
                 if (CustomerBUS.isInBlackList(senderPhone))
                 {
-                    return "0*" + MessageManager.getValue("BLACK_LIST");                 
+                    return "0*" + MessageManager.GetValue("BLACK_LIST");                 
                 }
 
                 bLocked = CustomerBUS.isLockedCustomer(senderPhone);
                 if (bLocked)
                 {
-                    smsResponse = "0*" + MessageManager.getValue("LOCKED_CUSTOMER");
+                    smsResponse = "0*" + MessageManager.GetValue("LOCKED_CUSTOMER");
                 }
 
             }
@@ -65,21 +65,21 @@ namespace MoneyPacificSrv
             // Create Command and Execute            
             if (sCommand == "BUY")
             {   
-                mpCommand = new BuyPacificCodeCmd();
+                mpCommand = new BuyPacificCodeCommand();
             }
             else if (sCommand == "VALUE")
             {
-                mpCommand = new ValueDetailCmd();                
+                mpCommand = new ValueDetailCommand();                
             }            
             else
             {
-                mpCommand = new UnderContructionCmd();
+                mpCommand = new UnderContructionCommand();
                 smsResponse = sCommand + " - ";
             }
 
-            //DTO.DBMoneyPacificDataContext storedb = new DTO.DBMoneyPacificDataContext();
-            //List<Store> pCode = storedb.Stores.ToList<Store>();
-            //return "finished!.. test..12..";
+            // DTO.DBMoneyPacificDataContext storedb = new DTO.DBMoneyPacificDataContext();
+            // List<Store> pCode = storedb.Stores.ToList<Store>();
+            // return "finished!.. test..12..";
 
             smsResponse += mpCommand.Execute(arrArg);
             return smsResponse;
@@ -93,6 +93,7 @@ namespace MoneyPacificSrv
              * */
 
             // Kiểm tra
+
             bool isPossible = (LstCodeNumber.Count() > 0); // Bắt buộc phải có CodeNumber
             bool isExist = (LstCodeNumber.Count() > 0);
             int iTotalAmount = 0;
@@ -128,12 +129,12 @@ namespace MoneyPacificSrv
                 }
                 
                 paymentModel.Success = true;
-                paymentModel.Message = MessageManager.getValue("MAKE_PAYMENT_SUCCESS");
+                paymentModel.Message = MessageManager.GetValue("MAKE_PAYMENT_SUCCESS");
             }
             else
             {
                 paymentModel.Success = false;
-                paymentModel.Message = MessageManager.getValue("MAKE_PAYMENT_UNSUCCESS");
+                paymentModel.Message = MessageManager.GetValue("MAKE_PAYMENT_UNSUCCESS");
             }
 
             return paymentModel;

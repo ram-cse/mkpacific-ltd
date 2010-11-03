@@ -16,7 +16,7 @@ namespace MoneyPacificSrv.DAO
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             // GET
-            Customer existCustomer = mpdb.Customers.Where(c => c.Id == newPacificCode.CustomerID).Single<Customer>();
+            Customer existCustomer = mpdb.Customers.Where(c => c.Id == newPacificCode.CustomerId).Single<Customer>();
             
             // EXEC
             if (existCustomer != null)

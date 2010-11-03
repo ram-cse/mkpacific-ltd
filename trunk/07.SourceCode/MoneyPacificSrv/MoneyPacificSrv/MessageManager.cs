@@ -51,48 +51,7 @@ namespace MoneyPacificSrv
     
         };
 
-        /*
-        internal static string genNotExistStoreMessage()
-        {
-            return ("Yêu cầu bị từ chối!");
-        }
-
-        internal static string genWrongPasswordMessage()
-        {
-            return "Sai mật khẩu. ";
-        }
-
-        internal static string genInvalidAmountMessage(int amountBuy)
-        {
-            return ("Không có tài khoản loại: " + amountBuy + " VND. ");
-        }
-
-        internal static string genInvalidAmountConfirmMessage()
-        {
-            return ("Số tiền và Xác nhận số tiền phải trùng khớp. ");
-        }
-
-        internal static string genInvalidPhoneMessage()
-        {
-            return ("Số điện thoại này không có thật. ");
-        }
-
-        internal static string genSuccessCreatePacificCodeMessage(PacificCode newPacificCode)
-        {
-            string sCodeNumber = newPacificCode.CodeNumber;
-
-            string sFormatCodeNumber = sCodeNumber.Substring(0, 4) + "-" + sCodeNumber.Substring(4, 4)
-                + "-" + sCodeNumber.Substring(8, 4) + "-" + sCodeNumber.Substring(12, 4);
-            
-            string sResult = "Bạn đã mua thành công một PacificCode: " + sFormatCodeNumber
-                + " có giá trị  " + newPacificCode.InitialAmount + " VND." 
-                + " Tài khoản này có giá trị đến ngày " 
-                + ((DateTime) newPacificCode.ExpireDate).ToShortDateString();
-            
-            return sResult;
-        }
-        // */
-        internal static string getValue(string sName, string[] args)
+        internal static string GetValue(string sName, string[] args)
         {
             string sResult = "Error message!...";
             
@@ -107,11 +66,11 @@ namespace MoneyPacificSrv
             }
 
             // Replace the arguments by values in args
+            // Ex: your moneypc is {0}
+            // -> your moneypc is abcd efgh...
+
             for (int i = 0; i < args.Count(); i++)
             {
-                // Ex: your moneypc is {0}
-                // -> your moneypc is abcd efgh...
-
                 string sOldString = "{" + i + "}";
                 sResult = sResult.Replace(sOldString, args[i]);
             }
@@ -119,24 +78,24 @@ namespace MoneyPacificSrv
             return sResult;
         }
         
-        internal static string getValue(string sName)
+        internal static string GetValue(string sName)
         {
-            return getValue(sName, new string[]{});
+            return GetValue(sName, new string[]{});
         }
 
-        internal static string getValue(string sName, string arg0)
+        internal static string GetValue(string sName, string arg0)
         {
-            return getValue(sName, new string[] { arg0 });
+            return GetValue(sName, new string[] { arg0 });
         }
 
-        internal static string getValue(string sName, string arg0, string arg1)
+        internal static string GetValue(string sName, string arg0, string arg1)
         {
-            return getValue(sName, new string[] { arg0, arg1 });
+            return GetValue(sName, new string[] { arg0, arg1 });
         }
 
-        internal static string getValue(string sName, string arg0, string arg1, string arg2)
+        internal static string GetValue(string sName, string arg0, string arg1, string arg2)
         {
-            return getValue(sName, new string[] { arg0, arg1, arg2 });
+            return GetValue(sName, new string[] { arg0, arg1, arg2 });
         }
 
     }
