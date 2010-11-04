@@ -1,4 +1,16 @@
-﻿	3/11/2010:
+﻿	4/11/2010:
+		- Hoàn chỉnh 3 phần chức năng của MP
+			+ Chức năng Command: MPCOL, MPDAY, MPDIS, MPENA, MPLAS
+		- Viết thư
+		- Hẹn 2 cuộc hẹn
+		- FL
+		- Nhạc:
+			"anh đi kiem tien di xay mai nha thiet dep cho em"
+		- Đăng ký lớp Quyền Anh..
+		- Bài hay về Design Pattern
+		http://www.dofactory.com/Patterns/PatternTemplate.aspx#_self2
+
+	3/11/2010:
 		- Money Pacific:
 			+ Chức năng Phone Request:				
 				
@@ -44,7 +56,6 @@
 		- FLC:
 			+ Dịch các yêu cầu về Post Project trên mạng
 			có tốn chi phí khi giao dịch hay không?
-			
 			
 	2/11/2010:
 		- CSharp:
