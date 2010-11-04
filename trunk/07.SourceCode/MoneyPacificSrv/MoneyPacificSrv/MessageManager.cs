@@ -47,8 +47,9 @@ namespace MoneyPacificSrv
 
             new MPMessageDTO("LOCKED_CUSTOMER", "KH nay da bi khoa! "),
             new MPMessageDTO("MAKE_PAYMENT_UNSUCCESS", "Thanh toan khong thanh cong"),
-            new MPMessageDTO("MAKE_PAYMENT_SUCCESS", "Thanh toan thanh cong")
-    
+            new MPMessageDTO("MAKE_PAYMENT_SUCCESS", "Thanh toan thanh cong"),
+            new MPMessageDTO("MPCOL_GET_COLLECT_CODE_ERROR", "PINSTORE sai hoac ban khong co quyen")            
+
         };
 
         internal static string GetValue(string sName, string[] args)

@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorize_02", "Authorize_0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceAbstract", "InheritanceAbstract\InheritanceAbstract.csproj", "{BF2DA99D-A877-47A2-A01B-B024D8635D93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorize_03", "Authorize_03\Authorize_03.csproj", "{62BF1166-9424-440F-9825-98083BD63C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhanQuyenHoanTat", "PhanQuyenHoanTat\PhanQuyenHoanTat.csproj", "{D37BAF1C-4806-433E-88EB-22E8E62D330D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -85,6 +89,14 @@ Global
 		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Debug|x86.Build.0 = Debug|x86
 		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Release|x86.ActiveCfg = Release|x86
 		{BF2DA99D-A877-47A2-A01B-B024D8635D93}.Release|x86.Build.0 = Release|x86
+		{62BF1166-9424-440F-9825-98083BD63C38}.Debug|x86.ActiveCfg = Debug|x86
+		{62BF1166-9424-440F-9825-98083BD63C38}.Debug|x86.Build.0 = Debug|x86
+		{62BF1166-9424-440F-9825-98083BD63C38}.Release|x86.ActiveCfg = Release|x86
+		{62BF1166-9424-440F-9825-98083BD63C38}.Release|x86.Build.0 = Release|x86
+		{D37BAF1C-4806-433E-88EB-22E8E62D330D}.Debug|x86.ActiveCfg = Debug|x86
+		{D37BAF1C-4806-433E-88EB-22E8E62D330D}.Debug|x86.Build.0 = Debug|x86
+		{D37BAF1C-4806-433E-88EB-22E8E62D330D}.Release|x86.ActiveCfg = Release|x86
+		{D37BAF1C-4806-433E-88EB-22E8E62D330D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

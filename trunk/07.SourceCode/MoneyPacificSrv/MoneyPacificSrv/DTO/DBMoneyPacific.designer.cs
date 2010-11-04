@@ -1970,6 +1970,8 @@ namespace MoneyPacificSrv.DTO
 		
 		private string _Address2;
 		
+		private string _ManagerPhone;
+		
 		private string _Phone;
 		
 		private string _Phone2;
@@ -2028,6 +2030,8 @@ namespace MoneyPacificSrv.DTO
     partial void OnAddressChanged();
     partial void OnAddress2Changing(string value);
     partial void OnAddress2Changed();
+    partial void OnManagerPhoneChanging(string value);
+    partial void OnManagerPhoneChanged();
     partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
     partial void OnPhone2Changing(string value);
@@ -2231,6 +2235,26 @@ namespace MoneyPacificSrv.DTO
 					this._Address2 = value;
 					this.SendPropertyChanged("Address2");
 					this.OnAddress2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerPhone", DbType="NChar(20)")]
+		public string ManagerPhone
+		{
+			get
+			{
+				return this._ManagerPhone;
+			}
+			set
+			{
+				if ((this._ManagerPhone != value))
+				{
+					this.OnManagerPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._ManagerPhone = value;
+					this.SendPropertyChanged("ManagerPhone");
+					this.OnManagerPhoneChanged();
 				}
 			}
 		}
@@ -2801,13 +2825,15 @@ namespace MoneyPacificSrv.DTO
 		
 		private int _Id;
 		
+		private string _Phone;
+		
+		private string _Password;
+		
+		private string _PINStore;
+		
 		private System.Nullable<int> _ManagerId;
 		
 		private System.Nullable<int> _StatusId;
-		
-		private string _Phone;
-		
-		private string _PassStore;
 		
 		private System.Nullable<System.DateTime> _CreateDate;
 		
@@ -2839,14 +2865,16 @@ namespace MoneyPacificSrv.DTO
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnPINStoreChanging(string value);
+    partial void OnPINStoreChanged();
     partial void OnManagerIdChanging(System.Nullable<int> value);
     partial void OnManagerIdChanged();
     partial void OnStatusIdChanging(System.Nullable<int> value);
     partial void OnStatusIdChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    partial void OnPassStoreChanging(string value);
-    partial void OnPassStoreChanged();
     partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
     partial void OnCreateDateChanged();
     partial void OnLastDateChanging(System.Nullable<System.DateTime> value);
@@ -2895,6 +2923,66 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(20)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PINStore", DbType="NVarChar(50)")]
+		public string PINStore
+		{
+			get
+			{
+				return this._PINStore;
+			}
+			set
+			{
+				if ((this._PINStore != value))
+				{
+					this.OnPINStoreChanging(value);
+					this.SendPropertyChanging();
+					this._PINStore = value;
+					this.SendPropertyChanged("PINStore");
+					this.OnPINStoreChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ManagerId", DbType="Int")]
 		public System.Nullable<int> ManagerId
 		{
@@ -2939,46 +3027,6 @@ namespace MoneyPacificSrv.DTO
 					this._StatusId = value;
 					this.SendPropertyChanged("StatusId");
 					this.OnStatusIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(20)")]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PassStore", DbType="NVarChar(50)")]
-		public string PassStore
-		{
-			get
-			{
-				return this._PassStore;
-			}
-			set
-			{
-				if ((this._PassStore != value))
-				{
-					this.OnPassStoreChanging(value);
-					this.SendPropertyChanging();
-					this._PassStore = value;
-					this.SendPropertyChanged("PassStore");
-					this.OnPassStoreChanged();
 				}
 			}
 		}

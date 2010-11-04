@@ -50,7 +50,7 @@ namespace MoneyPacificSrv
 
             IMPCommand mpCommand;
             
-            if (Validator.iPassStore(sCommand) && (arrArg.Length == 5))
+            if (Validator.isPINStore(sCommand) && (arrArg.Length == 5))
             {
                 sCommand = "BUY";
                 bLocked = false; // cho phép mua
@@ -69,8 +69,16 @@ namespace MoneyPacificSrv
             }
             else if (sCommand == "VALUE")
             {
-                mpCommand = new ValueDetailCommand();                
-            }            
+                mpCommand = new ValueDetailCommand();
+            }
+            else if (sCommand == "MPCOL")
+            {
+                mpCommand = new MPCOLCommand();
+            }
+            else if (sCommand == "MPDAY")
+            {
+                mpCommand = new MPDAYCommand();
+            }
             else
             {
                 mpCommand = new UnderContructionCommand();
