@@ -74,5 +74,21 @@ namespace MoneyPacificSrv.DAO
                 return 0;
             }
         }
+
+        public static List<PacificCode> GetList(int storeId)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            List<PacificCode> lstPacificCode = mpdb.PacificCodes.Where(p => p.StoreId == storeId).ToList<PacificCode>();
+            mpdb.Connection.Close();
+            return lstPacificCode;
+        }
+
+        internal static int CountTransaction(int storeId)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            int iCount = mpdb.PacificCodes.Where(p => p.StoreId == storeId).Count();
+            mpdb.Connection.Close();
+            return iCount;
+        }
     }
 }

@@ -42,8 +42,9 @@ namespace Authorize_02
 
         static string GetRoles(string methodName)
         {
-            //Program a = new Program();            
+            Program a = new Program();            
             //MethodInfo method = a.GetType().GetMethod(methodName);            
+            MethodInfo me = a.GetType().GetMethod(methodName);
 
             MethodInfo[] arrMethod = typeof(Program).GetMethods();
             MethodInfo method = null;
@@ -51,7 +52,8 @@ namespace Authorize_02
             {
                 if (m.Name == methodName) method = m;
             }
-          
+
+            method = me;
             AuthorizeAttribute[] arrAttr = (AuthorizeAttribute[])method
                 .GetCustomAttributes(typeof(AuthorizeAttribute),true);
 

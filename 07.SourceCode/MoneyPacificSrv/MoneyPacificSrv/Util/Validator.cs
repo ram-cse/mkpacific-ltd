@@ -82,7 +82,7 @@ namespace MoneyPacificSrv.Util
         }
 
 
-        internal static bool iPassStore(string sCommand)
+        internal static bool isPINStore(string sCommand)
         {
             sCommand = sCommand.Trim();
 

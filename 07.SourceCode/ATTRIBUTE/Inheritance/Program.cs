@@ -6,6 +6,8 @@ public class Program
         Console.WriteLine("aaa");
         user adm = new Admin("admin", "123");
 
+        Type t = adm.GetType();
+
         bool bLogin = adm.Validate("aaa", "123");
         Console.WriteLine("Login: " + bLogin.ToString());
 

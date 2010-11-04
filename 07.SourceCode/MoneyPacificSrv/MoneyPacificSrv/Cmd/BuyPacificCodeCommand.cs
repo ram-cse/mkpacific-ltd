@@ -14,7 +14,7 @@ namespace MoneyPacificSrv.Cmd
         public string Execute(string[] args)
         {
             // Cú pháp SMS:
-            // <StorePhone>*<PassStore>*<Amount>*<CustomerPhone>*<AmountConfirm>
+            // <StorePhone>*<PINStore>*<Amount>*<CustomerPhone>*<AmountConfirm>
 
             string smsRespones = "";
             string sErrorMessage = "";
@@ -23,7 +23,7 @@ namespace MoneyPacificSrv.Cmd
             
             StoreUser senderStore = new StoreUser();
             senderStore.Phone = args[0];
-            senderStore.PassStore = args[1];
+            senderStore.PINStore = args[1];
 
             int amountBuy = int.Parse(args[2]);
             int amountBuyConfirm = int.Parse(args[4]);
@@ -34,7 +34,7 @@ namespace MoneyPacificSrv.Cmd
             // Check Information:-----------------------            
 
             // 01. check STORE
-            bool bSenderExists = StoreUserBUS.checkExist(senderStore);
+            bool bSenderExists = StoreUserBUS.IsExist(senderStore);
             if (!bSenderExists)
             {   
                 smsRespones = senderStore.Phone + "*" + MessageManager.GetValue("NOT_EXIST_STORE");
@@ -51,7 +51,7 @@ namespace MoneyPacificSrv.Cmd
             }
             else
             {
-                senderStore = StoreUserBUS.getStoreUser(senderStore.Phone, senderStore.PassStore);
+                senderStore = StoreUserBUS.getStoreUser(senderStore.Phone, senderStore.PINStore);
             }
 
             // *** KIEM TRA KH BLACK LIST sau khi Kiem tra STORE

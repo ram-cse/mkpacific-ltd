@@ -57,10 +57,6 @@
     <Content Include="App_Data\Language.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\MoneyPacific.mdf" />
-    <Content Include="App_Data\MoneyPacific_log.ldf">
-      <DependentUpon>MoneyPacific.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\PacificCodeR.xml" />
     <Content Include="Main.svc" />
     <Content Include="Web.config">
@@ -78,12 +74,14 @@
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\CustomerStateBUS.cs" />
     <Compile Include="BUS\PacificCodeBUS.cs" />
+    <Compile Include="BUS\StoreManagerBUS.cs" />
     <Compile Include="BUS\StoreUserBUS.cs" />
     <Compile Include="BUS\TransactionBUS.cs" />
+    <Compile Include="DAO\StoreManagerDAO.cs" />
     <Compile Include="General\Authorize.cs" />
     <Compile Include="Cmd\BuyPacificCodeCommand.cs" />
     <Compile Include="Cmd\IMPComand.cs" />
-    <Compile Include="Cmd\MPBALCommand.cs" />
+    <Compile Include="Cmd\MPCOLCommand.cs" />
     <Compile Include="Cmd\MPDAYCommand.cs" />
     <Compile Include="Cmd\MPDISCommand.cs" />
     <Compile Include="Cmd\MPENACommand.cs" />
@@ -106,6 +104,7 @@
     <Compile Include="DTO\PacificCode.cs" />
     <Compile Include="DTO\PaymentModel.cs" />
     <Compile Include="DTO\UserDTOs.cs" />
+    <Compile Include="General\General.cs" />
     <Compile Include="IMain.cs" />
     <Compile Include="Main.svc.cs">
       <DependentUpon>Main.svc</DependentUpon>

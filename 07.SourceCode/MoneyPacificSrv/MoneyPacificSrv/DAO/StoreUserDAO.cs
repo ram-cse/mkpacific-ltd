@@ -11,17 +11,17 @@ namespace MoneyPacificSrv.DAO
     {
         // private static DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
 
-        internal static bool checkPassword(StoreUser senderStore)
+        internal static bool CheckPassword(StoreUser senderStore)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             bool bResult = mpdb.StoreUsers.Where(l => (l.Phone == senderStore.Phone
-                 && l.PassStore == senderStore.PassStore)).Any();
+                 && l.PINStore == senderStore.PINStore)).Any();
             mpdb.Connection.Close();
             return bResult;
 
         }
 
-        internal static bool checkExist(StoreUser senderStore)
+        internal static bool IsExist(StoreUser senderStore)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
             bool bResult = mpdb.StoreUsers.Any(l => l.Phone == senderStore.Phone);
@@ -29,10 +29,10 @@ namespace MoneyPacificSrv.DAO
             return bResult;
         }
 
-        internal static StoreUser getStoreUser(string storePhone, string passStore)
+        internal static StoreUser GetStoreUser(string storePhone, string PINStore)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
-            StoreUser existStore = mpdb.StoreUsers.Where(s => s.Phone == storePhone && s.PassStore == passStore).FirstOrDefault();
+            StoreUser existStore = mpdb.StoreUsers.Where(s => s.Phone.Trim() == storePhone.Trim() && s.PINStore == PINStore).FirstOrDefault();
             mpdb.Connection.Close();
             return existStore;
         }
@@ -68,6 +68,33 @@ namespace MoneyPacificSrv.DAO
             }
 
             mpdb.Connection.Close();
+        }
+
+        internal static List<StoreUser> GetList(int managerId)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            List<StoreUser> lstUser = mpdb.StoreUsers.Where(s => s.ManagerId == managerId).ToList<StoreUser>();
+            mpdb.Connection.Close();
+            return lstUser;
+        }
+
+        internal static bool IsExist(string sPhone)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            bool bResult = mpdb.StoreUsers.Any(l => l.Phone.Trim() == sPhone.Trim());
+            mpdb.Connection.Close();
+            return bResult;
+        }
+
+        internal static StoreUser GetItem(string sPhone)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            StoreUser result = mpdb.StoreUsers
+                .Where(l => l.Phone.Trim() == sPhone.Trim())
+                .Single<StoreUser>();
+
+            mpdb.Connection.Close();
+            return result;
         }
     }
 }

@@ -97,6 +97,7 @@
       <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Address2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ManagerPhone" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="Phone" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="Phone2" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="EmailAlert" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -129,10 +130,11 @@
   <Table Name="dbo.StoreUser" Member="StoreUsers">
     <Type Name="StoreUser">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PINStore" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ManagerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Phone" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="PassStore" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="LastDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="LastTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
