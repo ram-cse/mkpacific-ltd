@@ -96,5 +96,47 @@ namespace MoneyPacificSrv.DAO
             mpdb.Connection.Close();
             return result;
         }
+
+        internal static bool Lock(int storeId)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            StoreUser exitStore = mpdb.StoreUsers
+                .Where(l => l.Id == storeId)
+                .Single<StoreUser>();
+            
+            /// LOCK
+            exitStore.Enable = false;
+            /// 
+
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;            
+        }
+
+        internal static StoreUser GetItem(int storeId)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            StoreUser exitStore = mpdb.StoreUsers
+                .Where(l => l.Id == storeId)
+                .Single<StoreUser>();
+            mpdb.Connection.Close();
+            return exitStore;            
+        }
+
+        internal static bool UnLock(int storeId)
+        {
+            DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
+            StoreUser exitStore = mpdb.StoreUsers
+                .Where(l => l.Id == storeId)
+                .Single<StoreUser>();
+
+            /// UNLOCK
+            exitStore.Enable = true;
+            ///
+
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;
+        }
     }
 }

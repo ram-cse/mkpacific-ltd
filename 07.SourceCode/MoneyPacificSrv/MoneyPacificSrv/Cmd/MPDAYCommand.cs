@@ -5,6 +5,7 @@ using System.Web;
 
 using MoneyPacificSrv.BUS;
 using MoneyPacificSrv.DTO;
+using MoneyPacificSrv.General;
 
 namespace MoneyPacificSrv.Cmd
 {
@@ -18,6 +19,7 @@ namespace MoneyPacificSrv.Cmd
         /// args[1]: MPDAY
         /// args[2]: PINStore
         /// </summary>
+        [Authorize(Roles = "StoreManager, StoreUser")]
         public string Execute(string[] args)
         {
             string sPhone = args[0].Trim();

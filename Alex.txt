@@ -1,4 +1,43 @@
-﻿	4/11/2010:
+﻿	5/11/2010:
+		- Hoàn chỉnh 3 phần chức năng của MP
+			+ x MPBAL
+				=> họp với sếp chuyển lại status thành
+				=> viết sơ đồ mô tả qui trình Collecting
+				chuyển command PPCOL thành MPBAL
+				
+				- Thiết kế Database để lưu 
+				
+			+ x MPDAY
+			+ x MPDIS 
+			+ x MPENA
+			+ MPLAS
+			
+			thêm lệnh kiểm tra Validate(sphone,pincode)
+			=> BUY Command: them trường ENABLE & kiểm tra enable (LOCK hay UNLOCK) trước khi mua PacificCode
+			
+		- Học AJAX
+			on MVC
+			on Independent
+		- Học JQuery
+		
+		- x Tính đa hình trong tạo đối tượng 
+		[ví dụ truyền vào "MPCommand" -> biet dc tên lớp là "MPCommandClass" -> Activator->CreateObject(name)];
+			=> x Viết Plugin
+		
+		- Tìm hiểu skeleton
+		
+		- Tiếng Anh
+			=> viết sơ đồ về CollectCode
+		- Plugin cho Firefox
+		
+		http://roachfiend.com/archives/2004/12/08/how-to-create-firefox-extensions/
+		http://forums.congdongcviet.com/showthread.php?t=16375
+			
+		
+
+		http://forums.congdongcviet.com/showthread.php?t=16375
+
+	4/11/2010:
 		- Hoàn chỉnh 3 phần chức năng của MP
 			+ Chức năng Command: MPCOL, MPDAY, MPDIS, MPENA, MPLAS
 		- Viết thư

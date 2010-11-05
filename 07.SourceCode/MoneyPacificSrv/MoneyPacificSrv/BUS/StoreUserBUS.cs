@@ -36,10 +36,17 @@ namespace MoneyPacificSrv.BUS
 
         internal static bool Validate(string sPhone, string sPINStore)
         {
+            /// TODO
+            /// CHƯA kiểm tra cả ENABLE & STATUS             
+
+            bool bResult = true;
             if(StoreUserDAO.IsExist(sPhone))
             {
                 StoreUser existStore = StoreUserDAO.GetItem(sPhone);
-                return (existStore.PINStore == sPINStore);
+                bResult = bResult & (existStore.PINStore == sPINStore);
+                bResult = bResult & (bool)existStore.Enable;
+
+                return bResult;
             }
             else
             {
@@ -55,6 +62,19 @@ namespace MoneyPacificSrv.BUS
         internal static int GetTotalTransaction(int storeId)
         {            
             return PacificCodeDAO.CountTransaction(storeId);            
+        }
+
+        internal static bool IsEnable(int storeId)
+        {
+            StoreUser existStore = StoreUserDAO.GetItem(storeId);
+            if (existStore.Enable == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

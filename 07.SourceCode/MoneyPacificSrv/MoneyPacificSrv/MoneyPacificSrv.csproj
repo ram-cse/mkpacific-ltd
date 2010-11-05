@@ -81,7 +81,7 @@
     <Compile Include="General\Authorize.cs" />
     <Compile Include="Cmd\BuyPacificCodeCommand.cs" />
     <Compile Include="Cmd\IMPComand.cs" />
-    <Compile Include="Cmd\MPCOLCommand.cs" />
+    <Compile Include="Cmd\MPBALCommand.cs" />
     <Compile Include="Cmd\MPDAYCommand.cs" />
     <Compile Include="Cmd\MPDISCommand.cs" />
     <Compile Include="Cmd\MPENACommand.cs" />
