@@ -17,7 +17,9 @@
 			
 		- Học AJAX
 			on MVC
+			
 			on Independent
+			http://www.asp.net/ajaxlibrary/act_tutorials.ashx
 		- Học JQuery
 		
 		- x Tính đa hình trong tạo đối tượng 
