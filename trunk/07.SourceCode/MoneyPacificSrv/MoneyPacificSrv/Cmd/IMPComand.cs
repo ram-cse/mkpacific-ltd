@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 
 namespace MoneyPacificSrv.Cmd
-{
+{   
     public interface IMPCommand
     {
-        string Execute(string[] args);
-        //virtual 
+        string Execute(string[] args);        
     }
+
+    public enum Command
+    { }
 }

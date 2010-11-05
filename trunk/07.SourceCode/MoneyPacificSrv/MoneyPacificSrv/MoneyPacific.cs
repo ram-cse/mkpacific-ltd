@@ -71,13 +71,21 @@ namespace MoneyPacificSrv
             {
                 mpCommand = new ValueDetailCommand();
             }
-            else if (sCommand == "MPCOL")
+            else if (sCommand == "MPBAL")
             {
-                mpCommand = new MPCOLCommand();
+                mpCommand = new MPBALCommand();
             }
             else if (sCommand == "MPDAY")
             {
                 mpCommand = new MPDAYCommand();
+            }
+            else if (sCommand == "MPDIS")
+            {
+                mpCommand = new MPDISCommand();
+            }
+            else if (sCommand == "MPENA")
+            {
+                mpCommand = new MPENACommand();
             }
             else
             {

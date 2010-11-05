@@ -48,8 +48,17 @@ namespace MoneyPacificSrv
             new MPMessageDTO("LOCKED_CUSTOMER", "KH nay da bi khoa! "),
             new MPMessageDTO("MAKE_PAYMENT_UNSUCCESS", "Thanh toan khong thanh cong"),
             new MPMessageDTO("MAKE_PAYMENT_SUCCESS", "Thanh toan thanh cong"),
-            new MPMessageDTO("MPCOL_GET_COLLECT_CODE_ERROR", "PINSTORE sai hoac ban khong co quyen")            
 
+            new MPMessageDTO("MPBAL_GET_COLLECT_CODE_ERROR", "MPBAL-PINSTORE sai hoac ban khong co quyen"),
+            
+            new MPMessageDTO("MPDIS_DISABLE_ERROR", "MPDIS-PINSTORE sai hoac ban khong co quyen."),
+            new MPMessageDTO("MPDIS_DISABLE_SUCCESSFULL", "MPDIS-Disable thanh cong."),            
+
+            new MPMessageDTO("MPENA_ENABLE_ERROR", "MPENA-PINSTORE sai hoac ban khong co quyen."),
+            new MPMessageDTO("MPENA_ENABLE_SUCCESSFULL", "MPENA-Enable thanh cong."),
+            
+            
+            new MPMessageDTO("STORE_IS_DISABLE", "STORE nang trong tinh trang DISABLE.")
         };
 
         internal static string GetValue(string sName, string[] args)

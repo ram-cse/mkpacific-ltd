@@ -18,6 +18,8 @@ namespace MoneyPacificSrv.Cmd
 
             string smsRespones = "";
             string sErrorMessage = "";
+            string sReceiverPhone = "";
+            string sContentSMS = "";
 
             // Get information :-----------------------
             
@@ -36,8 +38,10 @@ namespace MoneyPacificSrv.Cmd
             // 01. check STORE
             bool bSenderExists = StoreUserBUS.IsExist(senderStore);
             if (!bSenderExists)
-            {   
-                smsRespones = senderStore.Phone + "*" + MessageManager.GetValue("NOT_EXIST_STORE");
+            {
+                sReceiverPhone = senderStore.Phone.Trim();
+                sContentSMS = MessageManager.GetValue("NOT_EXIST_STORE");
+                smsRespones = sReceiverPhone + "*" + sContentSMS;
                 return smsRespones;
             }
 
@@ -97,26 +101,36 @@ namespace MoneyPacificSrv.Cmd
 
             if (bBuyPCodeSuccess)
             {
-                PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.Id, buyerCustomer.Id, amountBuy);
+                if (StoreUserBUS.IsEnable(senderStore.Id))
+                {
+                    PacificCode newPacificCode = PacificCodeBUS.getNewPacificCode(senderStore.Id, buyerCustomer.Id, amountBuy);
 
-                smsRespones = buyerCustomer.Phone.Trim();
-                
-                
-                smsRespones += "*" + MessageManager.GetValue("GENERATE_SUCCESSFUL", 
-                    Utility.insertSeparateChar(newPacificCode.CodeNumber.Trim(),' ',4),
-                    newPacificCode.ActualAmount.ToString(),
-                    ((DateTime)newPacificCode.ExpireDate).ToShortDateString());
-                
-                // Mua thanh cong thi CustomerSTATUS = "x01"
-                CustomerBUS.setStatus(buyerCustomer.Phone, "x01");
+                    sReceiverPhone = buyerCustomer.Phone.Trim();
+                    sContentSMS = MessageManager.GetValue("GENERATE_SUCCESSFUL",
+                        Utility.insertSeparateChar(newPacificCode.CodeNumber.Trim(), ' ', 4),
+                        newPacificCode.ActualAmount.ToString(),
+                        ((DateTime)newPacificCode.ExpireDate).ToShortDateString());                   
+                    
+                    smsRespones = sReceiverPhone + "*" + sContentSMS;
 
-                // Log Transaction info
-                TransactionBUS.addNew(newPacificCode);
+                    // Mua thanh cong thi CustomerSTATUS = "x01"
+                    CustomerBUS.setStatus(buyerCustomer.Phone, "x01");
+
+                    // Log Transaction info
+                    TransactionBUS.addNew(newPacificCode);
+                }
+                else // DISABLE
+                {
+                    sReceiverPhone = senderStore.Phone.Trim();
+                    sContentSMS = MessageManager.GetValue("STORE_IS_DISABLE");
+                    smsRespones = sReceiverPhone + "*" + sContentSMS;
+                }
             }
-            else
+            else //ERROR:
             {
-                smsRespones = senderStore.Phone.Trim(' ');
-                smsRespones += "*" + sErrorMessage;
+                sReceiverPhone = senderStore.Phone.Trim(' ');
+                sContentSMS = sErrorMessage;                
+                smsRespones = sReceiverPhone + "*" + sContentSMS;
                 
                 // Log Transaction info
                 // ...
