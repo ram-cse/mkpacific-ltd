@@ -1,4 +1,86 @@
-﻿	5/11/2010:
+﻿	7/11/2010:
+		- Đọc sách: 
+			Tại sao chúng tôi muốn bạn giàu
+			Dạy con làm giàu
+				Tìm hiểu KTQM là gì?
+			Những kẻ xuất chúng
+		- Tìm dự án Data Entry
+		- Tìm hiều PHP
+		- Tìm hiểu JQuery
+		- Tìm hiểu AJAX
+
+	6/11/2010:
+		=> Viết ứng dụng quản lý kỹ năng cá nhân: up lên website
+		
+		
+		*** Các mục tiêu chính trong kế hoạch 3 năm lần I:
+		- CNTT:
+			Là nghề chính thức, là niềm đam mê, là phương tiện để cập nhật, liên lạc với thế giới bên ngoài
+			+ Ứng dụng phần mềm chung
+				. Kiến trúc phần mềm: 
+					Tự viết Plugin
+					Plugin cho FireFox
+					Plugin cho IE
+					Plugin cho Chrome
+					Mô hình 3 Tầng: Tách CSDL : Access, MS SQL, XML, MySQL					
+				. Design Patern: 7 mô hình
+				. Ngôn ngữ hướng đối tượng:
+					Java
+					PHP
+					C#
+					C++
+					So sánh sự khác nhau giữa các ngôn ngữ này
+			+ WEB:
+				. PHP: 
+					Kết nối CSDL
+					Thêm xoá sửa 1 đối tượng
+					Thêm xoá sửa 1 danh sách
+					Upload 1 tập tin
+					DownLoad 1 tập tin
+				. JQuery:
+					Javascript cơ bản: ngôn ngữ
+				. Kỹ thuật Ajax
+				. CSS
+				. Cắt Template
+			+ WEB - MVC (chủ yếu để kiếm tiền ổn định)
+				. ASP.Net Thuần
+				. Áp dụng Ajax
+				. Áp dụng JQuery
+				. Menu thả
+		- Kinh Doanh:
+			+ KD theo mạng:
+				. Tìm hiểu KDTM
+				. Tìm hiểu sự thành công
+				. Tìm hiểu sản phẩm
+				. Học cách thuyết phục, thuyết trình, sử dụng sp & bán hàng
+			+ KD chủ đầu tư:
+				. Dựa trên FreeLancer tìm đầu ra
+				. Nhận dự án, lấy uy tín
+				. Nhận dự án DataEntry
+				=> phân cho sinh viên làm
+		- Kỹ năng hỗ trợ:
+			+ Tiếng Anh:
+				. Đọc
+				. Nói
+				. Viết Article
+				(nghe sẽ tự khắc được khi hoàn thành 3 phần trên)
+			+ Tham gia Tính Nguyện
+				. HTX
+				. Hoạt động chùa PT
+				. TNV Quốc Tế				
+		- Đam mê:
+			. CNK
+			. Judo
+			. Nhào Lộn
+			. Bơi Lội
+			. Vẽ đầu tượng
+			. Khiêu Vũ
+			. Thuyết trình
+			. Truyện 
+		- Kiến Trúc (khi đã có tiền & thời gian)
+		
+
+	5/11/2010:
 		- Hoàn chỉnh 3 phần chức năng của MP
 			+ x MPBAL
 				=> họp với sếp chuyển lại status thành
