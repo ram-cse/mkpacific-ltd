@@ -1,4 +1,27 @@
-﻿	7/11/2010:
+﻿	8/11/2010:
+		- FL:
+		- Money Pacific:
+			Thiết kế Database:
+				Tables AGENT: lưu tất cả thông tìn về Money Pacific Agent
+				Tables CollectMoney: lưu thông tin về các collect Money 
+			Thiết kế Admin Site:
+				Hiển thị danh sách StoreManager: với Số tiền Amount
+				Click Create Collect Code & Send SMS
+			MPBAL: Xem thông tin Money Cần trả
+			MPCOL: Thanh toán (nhận CodeNumber từ Agent mới có thể thanh toán)
+			Admin Site:
+				No: Hiển thị danh sách với số tiền chưa được thu
+				
+		
+		* Hỏi sếp lại về Store Manager 
+		One Shop have one Store Manager, 
+		- Tìm hiểu GIT
+		- Làm VB6 TreeView
+		
+		qbao.nguyen: http://git-scm.com/
+------------------------------------------------------
+
+	7/11/2010:
 		- Đọc sách: 
 			Tại sao chúng tôi muốn bạn giàu
 			Dạy con làm giàu

@@ -42,7 +42,7 @@ namespace P4_MoneyPacificSite.Models.BUS
             return StoreManagerDAO.AddNew(newStoreManager);
         }
 
-        internal static object GetList()
+        internal static StoreManager[] GetList()
         {
             return StoreManagerDAO.GetList();
         }

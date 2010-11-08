@@ -38,6 +38,7 @@
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home"></asp:MenuItem>
                                 <asp:MenuItem Text="Store Browse" Value="Store Browse" NavigateUrl="~/Admin/BrowseStores/"></asp:MenuItem>
                                 <asp:MenuItem Text="Store Detail" Value="Store Detail" NavigateUrl="~/Admin/DetailStore/1"></asp:MenuItem>
+                                <asp:MenuItem Text="Create CodeNumer"  Value="Create CodeNumer" NavigateUrl="~/Admin/CodeNumber/"></asp:MenuItem>
                             </Items>
                             <StaticHoverStyle BackColor="#0099CC" ForeColor="White" />
                             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

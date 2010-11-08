@@ -13,5 +13,10 @@ namespace P4_MoneyPacificSite.Models.BUS
         {
             return StoreUserDAO.GetItem(Id);
         }
+
+        internal static StoreUser[] GetList(int managerId)
+        {
+            return StoreUserDAO.GetList(managerId);
+        }
     }
 }
