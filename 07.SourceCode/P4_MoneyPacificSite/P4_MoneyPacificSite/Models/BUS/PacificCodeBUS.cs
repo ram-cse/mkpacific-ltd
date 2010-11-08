@@ -72,5 +72,19 @@ namespace P4_MoneyPacificSite.Models.BUS
         {
             return PacificCodeDAO.GetLastPacificCode(customerId);
         }
+
+        internal static int GetTotalAmount(int storeId)
+        {
+            int result=0;
+
+            List<PacificCode> lstPacificCode = PacificCodeDAO.GetList(storeId).ToList();
+            foreach (PacificCode p in lstPacificCode)
+            {
+                result += (int)p.ActualAmount;
+            }
+
+            return result;
+
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace P4_MoneyPacificSite.Models.DAO
             return true;
         }
 
-        internal static object GetList()
+        internal static StoreManager[] GetList()
         {
             MoneyPacificEntities db = new MoneyPacificEntities();
             StoreManager[] result = db.StoreManagers.ToArray();

@@ -74,6 +74,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Models\BUS\AgentBUS.cs" />
     <Compile Include="Models\BUS\CustomerBUS.cs" />
     <Compile Include="Models\BUS\CustomerStateBUS.cs" />
     <Compile Include="Models\BUS\PacificCodeBUS.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Models\BUS\StoreManagerStateBUS.cs" />
     <Compile Include="Models\BUS\StoreUserBUS.cs" />
     <Compile Include="Models\BUS\TransactionBUS.cs" />
+    <Compile Include="Models\DAO\AgentDAO.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
     <Compile Include="Models\DAO\CustomerStateDAO.cs" />
     <Compile Include="Models\DAO\PacificCodeDAO.cs" />
@@ -121,6 +123,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Admin\BrowseStores.aspx" />
+    <Content Include="Views\Admin\CollectNumber.aspx" />
     <Content Include="Views\Admin\DetailStore.aspx" />
     <Content Include="Views\Admin\EditStore.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
