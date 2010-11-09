@@ -1,4 +1,14 @@
-﻿	8/11/2010:
+﻿	9/11/2010
+		- Money Pacific Site:
+			+ Viết lại Site thành F5_MoneyPacificSite
+			+ 
+		- Tìm hiểu GIT: cách tạo project
+		
+		- AJAX:
+		...
+		
+
+	8/11/2010:
 		- FL:
 		- Money Pacific:
 			Thiết kế Database:
