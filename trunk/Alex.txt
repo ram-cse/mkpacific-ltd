@@ -1,3 +1,4 @@
+
 ﻿	9/11/2010
 		- Money Pacific Site:
 			+ Viết lại Site thành F5_MoneyPacificSite
@@ -9,6 +10,12 @@
 		
 
 	8/11/2010:
+...
+	Last Updated: 8/11/2010
+	
+	The table definition to extradata from
+	The sample Table
+...
 		- FL:
 		- Money Pacific:
 			Thiết kế Database:
@@ -29,7 +36,7 @@
 		- Làm VB6 TreeView
 		
 		qbao.nguyen: http://git-scm.com/
-------------------------------------------------------
+	------------------------------------------------------
 
 	7/11/2010:
 		- Đọc sách: 
