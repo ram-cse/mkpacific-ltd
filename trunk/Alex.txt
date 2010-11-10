@@ -1,4 +1,9 @@
 
+	11/11/2010
+		- 
+		- 
+	------------------------
+
 	10/11/2010:
 		- Nhập entry:
 			thanhdungvn: meganfox7070 8 hours ago 
@@ -45,6 +50,61 @@
 		- AJAX:
 		...
 		
+
+		----------------------------------
+
+
+		Write Article:
+		
+		Eat to fight hair loss 
+		
+		Worried about hair care despite being thoroughly with shampoo, balm, but still fall a lot? The cause may be due to nutritional imbalance. Please add the following foods for healthy hair and prevent hair loss is always offline.
+
+		
+		1. Whole grains
+
+		Iron and silicon found in wheat, whole grains help the body absorb more minerals and vitamins from other foods. When the body of essential vitamins and minerals are abundant hair loss is no longer an issue for you anymore.
+
+		2. Fish
+		
+		The essential fatty acids found in fish have not only hair but also developing quickly give you a smooth skin and healthier nails. Eat fresh fish instead of frozen, canned of you.
+
+	9/11/2010
+		Về nhà:
+			
+			Đọc Sách: 	"Đắc Nhân Tâm"
+						"Tại sao chúng tôi muốn bạn giàu"
+			Học tiếng Anh
+		
+		Lập danh sách người quen:
+		Tìm hiểu GIT:
+			http://namheo.com/blog/share/ph%e1%ba%a7n-i-git-h%e1%bb%87-th%e1%bb%91ng-qu%e1%ba%a3n-ly-source-phan-tan/
+			
+			link server: githup.com
+			username:
+				thanhdungit
+				lnmthanh
+			pass:
+				k1t2
+			
+			x create project
+			
+			x lnmthanhTest: Source
+				https://github.com/lnmthanh/lnmthanhTest
+			
+			x downloading project
+				Drupal
+			
+			x commit, push project: ??
+				how does it work
+			
+			
+		Tìm Project Freelancer
+		Tìm hiểu MVC AJax
+		Tìm hiểu Pure PHP
+
+
+
 		
 
 	8/11/2010:
