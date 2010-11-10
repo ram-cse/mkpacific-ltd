@@ -36,7 +36,7 @@ namespace P4_MoneyPacificSite.Models.BUS
             
             // Status
 
-            newStoreManager.StatusId = StoreManagerStateDAO.getId("09");
+            newStoreManager.StatusId = StoreManagerStateDAO.GetId("09");
             newStoreManager.StoreInternetAccess = 9;
 
             return StoreManagerDAO.AddNew(newStoreManager);

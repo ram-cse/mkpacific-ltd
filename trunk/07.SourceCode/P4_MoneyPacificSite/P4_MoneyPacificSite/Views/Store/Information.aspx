@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <th>Pass Store</th>
-            <td><%: Model.PassStore %></td>
+            <td><%: Model.PINStore %></td>
         </tr>
         <tr>
             <th>Create Date</th>

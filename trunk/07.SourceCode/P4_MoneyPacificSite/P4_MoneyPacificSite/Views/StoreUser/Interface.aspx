@@ -35,16 +35,6 @@
                 </td>
             </tr>
             <tr>
-                <th></th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <th></th>
-                <td>
-                </td>
-            </tr>
-            <tr>
                 <th><%: Html.LabelFor(model => model.TotalLastMonthAmount) %></th>
                 <td>
                     <%: Html.TextBoxFor(model => model.TotalLastMonthAmount) %>

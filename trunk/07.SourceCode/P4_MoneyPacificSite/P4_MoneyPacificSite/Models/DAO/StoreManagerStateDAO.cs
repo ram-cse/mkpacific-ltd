@@ -7,7 +7,7 @@ namespace P4_MoneyPacificSite.Models.DAO
 {
     public class StoreManagerStateDAO
     {
-        public static int getId(string codeState)
+        public static int GetId(string codeState)
         {
             MoneyPacificEntities db = new MoneyPacificEntities();
             StoreManagerState state = db.StoreManagerStates.Where

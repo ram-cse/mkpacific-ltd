@@ -67,7 +67,13 @@ namespace MoneyPacificSrv.BUS
         internal static bool IsEnable(int storeId)
         {
             StoreUser existStore = StoreUserDAO.GetItem(storeId);
-            if (existStore.Enable == true)
+            
+            StoreManager existStoreManager = StoreManagerBUS.GetItem((int)existStore.ManagerId);
+
+            if (existStoreManager.IsLocked == null) existStoreManager.IsLocked = true;
+            bool bManagerIsLocked = (bool)existStoreManager.IsLocked;
+            
+            if (existStore.Enable == true && bManagerIsLocked == false)
             {
                 return true;
             }

@@ -20,6 +20,8 @@ namespace P4_MoneyPacificSite.Controllers
             return View();
         }
 
+        
+
         public ActionResult Interface()
         {
             var model = new StoreManagerInterfaceViewModel();
