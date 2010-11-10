@@ -114,7 +114,7 @@
     <Compile Include="ViewModels\PacificCodeViewDetailViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\StoreMangerViewModels.cs" />
+    <Compile Include="ViewModels\StoreManagerViewModels.cs" />
     <Compile Include="ViewModels\StoreUserViewModel.cs" />
     <Compile Include="ViewModels\StoreViewModels.cs" />
   </ItemGroup>

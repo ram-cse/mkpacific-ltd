@@ -9,6 +9,7 @@
     <h2>SendMoney</h2>
 
     <%: Html.Encode(ViewData["ErrorMessage"]) %>
+
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
