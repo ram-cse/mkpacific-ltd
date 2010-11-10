@@ -16,7 +16,7 @@
 
         <div id="header">
             <div id="title">
-                <h1>Funtions Of Customer</h1>
+                <h1>Store Manager</h1>
             </div>
               
             <div id="logindisplay">
@@ -36,6 +36,7 @@
                             </DynamicItemTemplate>
                             <Items>
 	                            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home"></asp:MenuItem>
+                                <asp:MenuItem Text="Be Partner" Value="Be Partner" NavigateUrl="~/StoreManager/AskToBePartner"></asp:MenuItem>
 	                            <asp:MenuItem Text="DashBoard(Phone)" Value="DashBoard (Shop Phone)" NavigateUrl="~/StoreUser/Dashboard"></asp:MenuItem>
 	                            <asp:MenuItem Text="DashBoard(Manager)" Value="DashBoard (Store Manager)" NavigateUrl="~/StoreManager/Dashboard"></asp:MenuItem>
 	                            <asp:MenuItem Text="Information" Value="Information" NavigateUrl="~/StoreManager/Information"></asp:MenuItem>

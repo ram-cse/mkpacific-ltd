@@ -65,23 +65,37 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PacificCodeController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
+    <Compile Include="Controllers\StoreUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Models\BUS\CustomerBUS.cs" />
     <Compile Include="Models\BUS\CustomerStateBUS.cs" />
     <Compile Include="Models\BUS\PacificCodeBUS.cs" />
+    <Compile Include="Models\BUS\StoreManagerBUS.cs" />
+    <Compile Include="Models\BUS\StoreManagerStateBUS.cs" />
+    <Compile Include="Models\BUS\StoreUserBUS.cs" />
+    <Compile Include="Models\BUS\TransactionBUS.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
     <Compile Include="Models\DAO\CustomerStateDAO.cs" />
     <Compile Include="Models\DAO\PacificCodeDAO.cs" />
+    <Compile Include="Models\DAO\StoreManagerDAO.cs" />
+    <Compile Include="Models\DAO\StoreManagerStateDAO.cs" />
+    <Compile Include="Models\DAO\StoreUserDAO.cs" />
+    <Compile Include="Models\Mail.cs" />
     <Compile Include="Models\MoneyPacific.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MoneyPacific.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilators\MPMail.cs" />
     <Compile Include="ViewModels\PacificCodeCheckDetailViewModel.cs" />
     <Compile Include="ViewModels\PacificCodeViewModels.cs" />
+    <Compile Include="ViewModels\StoreManagerViewModels.cs" />
+    <Compile Include="ViewModels\StoreUserViewModels.cs" />
     <Compile Include="Views\Shared\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,10 +131,17 @@
     <Content Include="Views\Admin\Index.aspx" />
     <Content Include="Views\Customer\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\PacificCode\Browse.aspx" />
+    <Content Include="Views\PacificCode\ChangeCode.aspx" />
     <Content Include="Views\PacificCode\CheckDetail.aspx" />
     <Content Include="Views\PacificCode\Detail.aspx" />
+    <Content Include="Views\PacificCode\SendMoney.aspx" />
+    <Content Include="Views\PacificCode\SendSMS.aspx" />
     <Content Include="Views\Shared\EditorTemplates\PacificCodeDetailViewModel.ascx" />
-    <Content Include="Views\PacificCode\_del_Detail.aspx" />
+    <Content Include="Views\StoreManager\AskToBePartner.aspx" />
+    <Content Include="Views\StoreManager\Dashboard.aspx" />
+    <Content Include="Views\StoreManager\Information.aspx" />
+    <Content Include="Views\StoreUser\DashBoard.aspx" />
     <Content Include="Views\Store\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -143,7 +164,12 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\GeneratorPacificCode\GeneratorPacificCode\GeneratorPacificCode.csproj">
+      <Project>{F9F1DDC8-4897-477F-9C9A-FDB6E0D580FE}</Project>
+      <Name>GeneratorPacificCode</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
