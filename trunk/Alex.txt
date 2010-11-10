@@ -1,5 +1,42 @@
 
-﻿	9/11/2010
+	10/11/2010:
+		- Nhập entry:
+			thanhdungvn: meganfox7070 8 hours ago 
+			..................1k/1000 ENTRIES=$3USD
+			============== https://www.qlinkgroup.com/op-entry-test ===============
+			https://www.qlinkgroup.com/op-entry-test
+			(payment every finish 4k/4000 entries)1k=1000)
+		
+		- Money Pacific:
+			SendMoney => sửa chức năng sang mô hỉnh 3Layer
+		
+		--------------
+		
+		- Write 3,4 Article:
+			...
+			
+			150.overactive bladder women   
+			151.overactive bladder women  
+			152.urinary tract infection women   
+			153.frequent urination pregnancy
+			154.excessive urination    
+
+			350 word articles.
+			keyword must appear 5 - 7 times.
+			Just once in the 1st paragraph and then repeat it in the article body.
+			Make unique titles. Save the document with the number and name of the 
+			keyword example: 150.overactive bladder women 
+			KEEP IN MIND, KEYWORD MUST BE EXACT, BE CREATIVE AND WRITE GENERAL ARTICLES.
+
+			Articles must be unique and 100% original, because if they dont pass copyscape and
+			if they are not plagiarism free, then you wont get paid for your articles.
+			THANKS!!!
+
+			EMAIL IT : tanydelmar@live.com
+
+
+	9/11/2010
+
 		- Money Pacific Site:
 			+ Viết lại Site thành F5_MoneyPacificSite
 			+ 
@@ -8,14 +45,15 @@
 		- AJAX:
 		...
 		
+		
 
 	8/11/2010:
-...
+	...
 	Last Updated: 8/11/2010
 	
 	The table definition to extradata from
 	The sample Table
-...
+	...
 		- FL:
 		- Money Pacific:
 			Thiết kế Database:
