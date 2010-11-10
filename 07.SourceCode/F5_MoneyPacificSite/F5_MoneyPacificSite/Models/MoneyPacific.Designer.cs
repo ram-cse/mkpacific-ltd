@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_CollectMoney_Agent", "Agent", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Agent), "CollectMoney", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.CollectMoney), true)]
-[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Category), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Category), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.City), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreManager), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_CollectMoney_CollectState", "CollectState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.CollectState), "CollectMoney", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.CollectMoney), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_CollectMoney_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreManager), "CollectMoney", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.CollectMoney), true)]
@@ -27,6 +27,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Customer), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.PacificCodeState), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Store", "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreUser), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_PacificCode", "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.PacificCode), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreUser), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_PacificCode", "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.PacificCode), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.Transaction), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManagerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreManagerState), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreManager), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreManager), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreUser), true)]
@@ -2431,16 +2432,16 @@ namespace F5_MoneyPacificSite.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Categories")]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Category")]
         public Category Category
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category").Value = value;
             }
         }
         /// <summary>
@@ -2452,13 +2453,13 @@ namespace F5_MoneyPacificSite.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Categories", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("MoneyPacificModel.FK_PacificCode_Categories", "Category", value);
                 }
             }
         }
@@ -2573,6 +2574,28 @@ namespace F5_MoneyPacificSite.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreUser>("MoneyPacificModel.FK_PacificCode_Store", "StoreUser", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreUser_PacificCode", "StoreUser")]
+        public EntityCollection<StoreUser> StoreUsers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StoreUser>("MoneyPacificModel.FK_StoreUser_PacificCode", "StoreUser");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StoreUser>("MoneyPacificModel.FK_StoreUser_PacificCode", "StoreUser", value);
                 }
             }
         }
@@ -4117,6 +4140,44 @@ namespace F5_MoneyPacificSite.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PacificCode>("MoneyPacificModel.FK_PacificCode_Store", "PacificCode", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreUser_PacificCode", "PacificCode")]
+        public PacificCode PacificCode
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCode>("MoneyPacificModel.FK_StoreUser_PacificCode", "PacificCode").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCode>("MoneyPacificModel.FK_StoreUser_PacificCode", "PacificCode").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PacificCode> PacificCodeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PacificCode>("MoneyPacificModel.FK_StoreUser_PacificCode", "PacificCode");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PacificCode>("MoneyPacificModel.FK_StoreUser_PacificCode", "PacificCode", value);
                 }
             }
         }
