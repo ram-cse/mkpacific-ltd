@@ -13,7 +13,7 @@
 		- moneyorhealth.net
 		
 		- fitnessandlife.net
-		- carehealthfitness.com .net
+		- carehealthfitness.com .net .org
 		- carefitness.net
 		lifeandhealth
 		=> bài viết về ung thư:
@@ -474,11 +474,21 @@
 			+
 		
 /=======================================================================================
+						new domain: familyandhealth.org
+						mysql: mysql.familyandhealth.org
+							user: familyandhealth
+							pass: k1t2
+						ftp: ftp.myfamilyandhealth.org
+							user: lethanhdung
+							pass: (xem ở dưới)
+						(sẽ dùng wordpress)
+						
 						- thanhdungit:
 						username:thanhdungit@gmail.com
 						password:GkF9BJrP_ktc
 						CPANEL:https://panel.dreamhost.com/index.cgi?
 								
+						
 								
 						FTP:
 						---
