@@ -1,4 +1,7 @@
 	12/11/2010:
+		- 
+		------------------------------------------------------ 
+		
 		- careyourhealth.net
 		- doctorforeveryone.com
 		- happylifeonline.net
@@ -22,6 +25,45 @@
 		search engine optimization
 
 	11/11/2010
+		MONEY PACIFIC:
+		SITE:
+			. Hiển thị danh sách StoreManager với tổng số tiền chưa collect
+			LIST NO
+			=> tạo Collect Code tương ứng với các StoreManager được chọn & Agent sẽ thu tiền
+			LIST PROCESSING
+			=> List CollectCode có 2 trường: AmountWillCollect - được tính ra
+			AmountCollect: mặc dịnh là 0
+			LIST COLLECTED
+			=> Sau thi Collect status sẽ được chuyển từ "PROCESSING" thành "COLLECTED" và AmountCollect = AmountWillCollect
+			Amount Collected <= Amount Will Collect
+			
+			
+			. Dong y Ask to be partner
+			hướng dẫn tạo select list với Value = multi fields
+			http://stackoverflow.com/questions/2319691/can-i-customise-my-data-text-field-in-an-mvc-selectlist-for-use-with-the-htmlhelp
+		SERVICE:
+			. MPLAS
+			. MPBAL => chuyển từ MPCOL ra
+			. MPCOL => (từ store manager hay store phone): MPCOL
+		
+		Học Pluggin
+			. Tạo Plugin cho Command
+			. Tạo Plugin cho FireFox, Chrome, IE
+		AJax
+		
+		Gửi mail cho Oanh Đà nẵng những tấm hình trên fb
+		
+		PDA:
+		phamdangan@gmail.com
+		Chào a An
+		Người hôm nay D~ mời là một người bạn thân từ nhỏ. Tên Trần Tuấn Anh - 1982. Đã có gia đình & một con 3 tuổi. Đã học xong trung cấp điện, đi làm về điện được khoảng 1,2 năm thì nghỉ. Hiện tại chưa có việc làm (hinh như chỉ làm gì đó ở nhà, TA ko nói cho D~ biết). Bố TA sức khỏe thấy cũng tốt. Mẹ TA thì D~ quên chưa hỏi. Hiện nay TA cũng rất muốn tìm một việc gì đó để làm. Theo D~ biết tính TA thì là một người không dễ tin người khác, có ham muốn tìm hiểu một vấn đề mới hay ko thì D~ cũng chưa biết.
+		D~ đã giới thiệu về a An như sao: "tao có quen một người bạn, anh này trẻ. đã rất thành công, hiện đang cả 3 công ty, vừa là chủ quán Trà Việt ở đường Út Tịch, vừa làm trong một công ty xuất nhập khẩu, và anh An còn tham gia một dự án kinh doanh có liên kết với tổ chức y tế thế giới.., anh này cũng rất sẵn sàng chia sẽ kinh nghiem kinh doanh, tao cũng muốn đi tìm hiểu, mày có muốn đi cùng tao ko... để tao hẹn xin a đó một ngày hẹn.. " & TA đã đồng ý, giờ giấc thì luôn sẵn sàng vì hiện tại chưa có việc
+		D~ hôm qua cũng đã thông báo địa điểm & thời gian cho TA rồi: 79Bis Điện Biên Phủ, StarCoffee 20h 11/11/2010
+		Hi, D~ mới chỉ chuẩn bị vậy thôi
+	
+	
+		
+	------------------------
 		- overactive bladder women
 		- urinary tract infection women 
 			phụ nữ nhiễm trùng đường tiết niệu
@@ -67,6 +109,7 @@
 			EMAIL IT : tanydelmar@live.com
 
 
+			so I wroted 2 difference articles with the same key words
 	9/11/2010
 
 		- Money Pacific Site:
