@@ -36,11 +36,11 @@
                             </DynamicItemTemplate>
                             <Items>
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home"></asp:MenuItem>
-                                <asp:MenuItem Text="Request Stored" Value="Request Stored" NavigateUrl="~/Admin/Request"></asp:MenuItem>
-                                <asp:MenuItem Text="List Store" Value="List Store" NavigateUrl="~/Admin/ListStore"></asp:MenuItem>
-                                <asp:MenuItem Text="Collect No" Value="Admin" NavigateUrl="~/Admin/CollectNo"></asp:MenuItem>                                
+                                <asp:MenuItem Text="Request Stored" Value="Request Stored" NavigateUrl="~/Admin/RequestList"></asp:MenuItem>
+                                <asp:MenuItem Text="Browse Stores" Value="Browse Stores" NavigateUrl="~/Admin/BrowseStoreManager"></asp:MenuItem>
+                                <asp:MenuItem Text="Collect No" Value="Admin" NavigateUrl="~/Admin/ListAmount"></asp:MenuItem>                                
                                 <asp:MenuItem Text="Collect Processing" Value="Admin" NavigateUrl="~/Admin/CollectProcessing"></asp:MenuItem>
-                                <asp:MenuItem Text="Collected" Value="Admin" NavigateUrl="~/Admin/Collected"></asp:MenuItem>
+                                <asp:MenuItem Text="Collected" Value="Admin" NavigateUrl="~/Admin/CollectedList"></asp:MenuItem>
                             </Items>
                             <StaticHoverStyle BackColor="#0099CC" ForeColor="White" />
                             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

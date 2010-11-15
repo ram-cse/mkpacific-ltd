@@ -87,6 +87,10 @@ namespace MoneyPacificSrv
             {
                 mpCommand = new MPENACommand();
             }
+            else if (sCommand == "MPCOL")
+            {
+                mpCommand = new MPCOLCommand();
+            }
             else
             {
                 mpCommand = new UnderContructionCommand();

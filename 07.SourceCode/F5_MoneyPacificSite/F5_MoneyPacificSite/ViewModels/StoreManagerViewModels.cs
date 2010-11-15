@@ -5,10 +5,11 @@ using System.Web;
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using F5_MoneyPacificSite.Models;
 
 namespace F5_MoneyPacificSite.ViewModels
 {
-
+    #region MODELS    
     public class StoreManagerAskToBePartnerViewModel
     {   
         /// Main information
@@ -77,9 +78,66 @@ namespace F5_MoneyPacificSite.ViewModels
     {
         public UserInformation[] ArrUser { get; set; }
         public ManagerInformation Manager { get; set; }
-        
+
     }
 
+    public class StoreManagerBaseViewModel
+    {
+
+        public int Id { get; set; }
+
+        [DisplayName("Shop ID")]
+        public string IdShop { get; set; }
+
+
+        [DisplayName("Name")]
+        public string Name { get; set; }
+
+
+        [DisplayName("Username")]
+        public string Username { get; set; }
+        [DisplayName("Password")]
+        public string Password { get; set; }
+        
+        [DisplayName("Name Of Store")]
+        public string NameOfStore { get; set; }
+        [DisplayName("Address")]
+        public string Address { get; set; }
+        [DisplayName("Town")]
+        public string Town { get; set; }
+        [DisplayName("Contact Phone")]
+        public string Phone { get; set; }
+        [DisplayName("Manager Phone")]
+        public string ManagerPhone { get; set; }
+        [DisplayName("Email")]
+        public string Email { get; set; }
+        [DisplayName("Site")]
+        public string WebSite { get; set; }
+        [DisplayName("Status")]
+        public string Status { get; set; }
+
+        [DisplayName("Status")]
+        public int StatusId { get; set; }
+
+        [DisplayName("Internet Access")]
+        public int StoreInternetAccessId { get; set; }
+
+        [DisplayName("Create Date")]
+        public DateTime CreateDate { get; set; }
+
+
+    }
+
+    public class StoreManagerViewModel
+    { 
+        public StoreManagerBaseViewModel storeManager{get;set;}
+        public List<object> storeManagerStates { get; set; }
+        public List<object> internetAccessRoles { get; set; }
+    }
+
+    #endregion MODELS
+
+    #region SERVICES
     public class ManagerInformation
     {
 
@@ -120,4 +178,5 @@ namespace F5_MoneyPacificSite.ViewModels
         public string Status { get; set; }
         public string LastTransaction { get; set; }
     }    
+    #endregion SERVICES
 }

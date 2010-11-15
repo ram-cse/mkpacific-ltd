@@ -92,5 +92,15 @@ namespace F5_MoneyPacificSite.Models.DAO
             db.Connection.Close();
             return result;
         }
+
+        internal static PacificCode[] GetArray(int storeUserId)
+        {
+            MoneyPacificEntities db = new MoneyPacificEntities();
+            PacificCode[] result = db.PacificCodes
+                .Where(p => p.StoreId == storeUserId)
+                .ToArray(); ;
+            db.Connection.Close();
+            return result;
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace F5_MoneyPacificSite.Models.BUS
         {
             return StoreManagerStateDAO.GetCode(Id);
         }
+
+        internal static StoreManagerState[] GetArray()
+        {
+            return StoreManagerStateDAO.GetArray();
+        }
     }
 }
