@@ -71,15 +71,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Models\BUS\AgentBUS.cs" />
+    <Compile Include="Models\BUS\CollectMoneyBUS.cs" />
+    <Compile Include="Models\BUS\CollectStateBUS.cs" />
     <Compile Include="Models\BUS\CustomerBUS.cs" />
     <Compile Include="Models\BUS\CustomerStateBUS.cs" />
+    <Compile Include="Models\BUS\InternetAccessRoleBUS.cs" />
     <Compile Include="Models\BUS\PacificCodeBUS.cs" />
     <Compile Include="Models\BUS\StoreManagerBUS.cs" />
     <Compile Include="Models\BUS\StoreManagerStateBUS.cs" />
     <Compile Include="Models\BUS\StoreUserBUS.cs" />
     <Compile Include="Models\BUS\TransactionBUS.cs" />
+    <Compile Include="Models\DAO\AgentDAO.cs" />
+    <Compile Include="Models\DAO\CollectMoneyDAO.cs" />
+    <Compile Include="Models\DAO\CollectStateDAO.cs" />
     <Compile Include="Models\DAO\CustomerDAO.cs" />
     <Compile Include="Models\DAO\CustomerStateDAO.cs" />
+    <Compile Include="Models\DAO\InternetAccessRoleDAO.cs" />
     <Compile Include="Models\DAO\PacificCodeDAO.cs" />
     <Compile Include="Models\DAO\StoreManagerDAO.cs" />
     <Compile Include="Models\DAO\StoreManagerStateDAO.cs" />
@@ -92,6 +100,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilators\MPMail.cs" />
+    <Compile Include="ViewModels\AdminViewModels.cs" />
     <Compile Include="ViewModels\PacificCodeCheckDetailViewModel.cs" />
     <Compile Include="ViewModels\PacificCodeViewModels.cs" />
     <Compile Include="ViewModels\StoreManagerViewModels.cs" />
@@ -128,7 +137,13 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Admin\BrowseStoreManager.aspx" />
+    <Content Include="Views\Admin\CollectedList.aspx" />
+    <Content Include="Views\Admin\CollectProcessing.aspx" />
+    <Content Include="Views\Admin\EditStoreManager.aspx" />
     <Content Include="Views\Admin\Index.aspx" />
+    <Content Include="Views\Admin\ListAmount.aspx" />
+    <Content Include="Views\Admin\RequestList.aspx" />
     <Content Include="Views\Customer\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\PacificCode\Browse.aspx" />
@@ -137,7 +152,9 @@
     <Content Include="Views\PacificCode\Detail.aspx" />
     <Content Include="Views\PacificCode\SendMoney.aspx" />
     <Content Include="Views\PacificCode\SendSMS.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\StoreManagerBaseViewModel.ascx" />
     <Content Include="Views\Shared\EditorTemplates\PacificCodeDetailViewModel.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\StoreManager.ascx" />
     <Content Include="Views\StoreManager\AskToBePartner.aspx" />
     <Content Include="Views\StoreManager\Dashboard.aspx" />
     <Content Include="Views\StoreManager\Information.aspx" />

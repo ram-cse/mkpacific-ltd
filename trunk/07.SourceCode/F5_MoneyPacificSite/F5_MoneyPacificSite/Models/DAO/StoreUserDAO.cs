@@ -15,7 +15,7 @@ namespace F5_MoneyPacificSite.Models.DAO
             return storeUser;
         }
 
-        internal static StoreUser[] GetList(int ManagerId)
+        internal static StoreUser[] GetArray(int ManagerId)
         {
             MoneyPacificEntities mpdb = new MoneyPacificEntities();
             StoreUser[] lstUser = mpdb.StoreUsers

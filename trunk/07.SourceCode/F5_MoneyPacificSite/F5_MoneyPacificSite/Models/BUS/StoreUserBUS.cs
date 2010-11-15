@@ -16,7 +16,7 @@ namespace F5_MoneyPacificSite.Models.BUS
 
         internal static StoreUser[] GetList(int managerId)
         {
-            return StoreUserDAO.GetList(managerId);
+            return StoreUserDAO.GetArray(managerId);
         }
     }
 }

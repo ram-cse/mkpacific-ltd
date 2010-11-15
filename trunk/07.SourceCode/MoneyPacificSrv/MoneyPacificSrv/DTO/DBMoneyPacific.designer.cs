@@ -45,12 +45,18 @@ namespace MoneyPacificSrv.DTO
     partial void InsertCollectMoney(CollectMoney instance);
     partial void UpdateCollectMoney(CollectMoney instance);
     partial void DeleteCollectMoney(CollectMoney instance);
+    partial void InsertCollectState(CollectState instance);
+    partial void UpdateCollectState(CollectState instance);
+    partial void DeleteCollectState(CollectState instance);
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
     partial void InsertCustomerState(CustomerState instance);
     partial void UpdateCustomerState(CustomerState instance);
     partial void DeleteCustomerState(CustomerState instance);
+    partial void InsertInternetAccessRole(InternetAccessRole instance);
+    partial void UpdateInternetAccessRole(InternetAccessRole instance);
+    partial void DeleteInternetAccessRole(InternetAccessRole instance);
     partial void InsertPacificCode(PacificCode instance);
     partial void UpdatePacificCode(PacificCode instance);
     partial void DeletePacificCode(PacificCode instance);
@@ -158,6 +164,14 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<CollectState> CollectStates
+		{
+			get
+			{
+				return this.GetTable<CollectState>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Customer> Customers
 		{
 			get
@@ -171,6 +185,14 @@ namespace MoneyPacificSrv.DTO
 			get
 			{
 				return this.GetTable<CustomerState>();
+			}
+		}
+		
+		public System.Data.Linq.Table<InternetAccessRole> InternetAccessRoles
+		{
+			get
+			{
+				return this.GetTable<InternetAccessRole>();
 			}
 		}
 		
@@ -954,6 +976,8 @@ namespace MoneyPacificSrv.DTO
 		
 		private EntityRef<Agent> _Agent;
 		
+		private EntityRef<CollectState> _CollectState;
+		
 		private EntityRef<StoreManager> _StoreManager;
 		
     #region Extensibility Method Definitions
@@ -983,11 +1007,12 @@ namespace MoneyPacificSrv.DTO
 		public CollectMoney()
 		{
 			this._Agent = default(EntityRef<Agent>);
+			this._CollectState = default(EntityRef<CollectState>);
 			this._StoreManager = default(EntityRef<StoreManager>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -1042,6 +1067,10 @@ namespace MoneyPacificSrv.DTO
 			{
 				if ((this._StatusId != value))
 				{
+					if (this._CollectState.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStatusIdChanging(value);
 					this.SendPropertyChanging();
 					this._StatusId = value;
@@ -1209,6 +1238,40 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CollectState_CollectMoney", Storage="_CollectState", ThisKey="StatusId", OtherKey="Id", IsForeignKey=true)]
+		public CollectState CollectState
+		{
+			get
+			{
+				return this._CollectState.Entity;
+			}
+			set
+			{
+				CollectState previousValue = this._CollectState.Entity;
+				if (((previousValue != value) 
+							|| (this._CollectState.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CollectState.Entity = null;
+						previousValue.CollectMoneys.Remove(this);
+					}
+					this._CollectState.Entity = value;
+					if ((value != null))
+					{
+						value.CollectMoneys.Add(this);
+						this._StatusId = value.Id;
+					}
+					else
+					{
+						this._StatusId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("CollectState");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StoreManager_CollectMoney", Storage="_StoreManager", ThisKey="StoreManagerId", OtherKey="Id", IsForeignKey=true)]
 		public StoreManager StoreManager
 		{
@@ -1261,6 +1324,120 @@ namespace MoneyPacificSrv.DTO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CollectState")]
+	public partial class CollectState : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private EntitySet<CollectMoney> _CollectMoneys;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public CollectState()
+		{
+			this._CollectMoneys = new EntitySet<CollectMoney>(new Action<CollectMoney>(this.attach_CollectMoneys), new Action<CollectMoney>(this.detach_CollectMoneys));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CollectState_CollectMoney", Storage="_CollectMoneys", ThisKey="Id", OtherKey="StatusId")]
+		public EntitySet<CollectMoney> CollectMoneys
+		{
+			get
+			{
+				return this._CollectMoneys;
+			}
+			set
+			{
+				this._CollectMoneys.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CollectMoneys(CollectMoney entity)
+		{
+			this.SendPropertyChanging();
+			entity.CollectState = this;
+		}
+		
+		private void detach_CollectMoneys(CollectMoney entity)
+		{
+			this.SendPropertyChanging();
+			entity.CollectState = null;
 		}
 	}
 	
@@ -1941,6 +2118,168 @@ namespace MoneyPacificSrv.DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InternetAccessRole")]
+	public partial class InternetAccessRole : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Code;
+		
+		private string _Name;
+		
+		private string _Description;
+		
+		private EntitySet<StoreManager> _StoreManagers;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCodeChanging(string value);
+    partial void OnCodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public InternetAccessRole()
+		{
+			this._StoreManagers = new EntitySet<StoreManager>(new Action<StoreManager>(this.attach_StoreManagers), new Action<StoreManager>(this.detach_StoreManagers));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NChar(10)")]
+		public string Code
+		{
+			get
+			{
+				return this._Code;
+			}
+			set
+			{
+				if ((this._Code != value))
+				{
+					this.OnCodeChanging(value);
+					this.SendPropertyChanging();
+					this._Code = value;
+					this.SendPropertyChanged("Code");
+					this.OnCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(255)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="InternetAccessRole_StoreManager", Storage="_StoreManagers", ThisKey="Id", OtherKey="StoreInternetAccessId")]
+		public EntitySet<StoreManager> StoreManagers
+		{
+			get
+			{
+				return this._StoreManagers;
+			}
+			set
+			{
+				this._StoreManagers.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_StoreManagers(StoreManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.InternetAccessRole = this;
+		}
+		
+		private void detach_StoreManagers(StoreManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.InternetAccessRole = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PacificCode")]
 	public partial class PacificCode : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1972,6 +2311,8 @@ namespace MoneyPacificSrv.DTO
 		private System.Nullable<System.DateTime> _ExpireDate;
 		
 		private string _Comment;
+		
+		private EntitySet<StoreUser> _StoreUsers;
 		
 		private EntitySet<Transaction> _Transactions;
 		
@@ -2017,6 +2358,7 @@ namespace MoneyPacificSrv.DTO
 		
 		public PacificCode()
 		{
+			this._StoreUsers = new EntitySet<StoreUser>(new Action<StoreUser>(this.attach_StoreUsers), new Action<StoreUser>(this.detach_StoreUsers));
 			this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
 			this._Category = default(EntityRef<Category>);
 			this._Customer = default(EntityRef<Customer>);
@@ -2297,6 +2639,19 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PacificCode_StoreUser", Storage="_StoreUsers", ThisKey="Id", OtherKey="LastTransaction")]
+		public EntitySet<StoreUser> StoreUsers
+		{
+			get
+			{
+				return this._StoreUsers;
+			}
+			set
+			{
+				this._StoreUsers.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PacificCode_Transaction", Storage="_Transactions", ThisKey="Id", OtherKey="PacificCodeId")]
 		public EntitySet<Transaction> Transactions
 		{
@@ -2466,6 +2821,18 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
+		private void attach_StoreUsers(StoreUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.PacificCode = this;
+		}
+		
+		private void detach_StoreUsers(StoreUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.PacificCode = null;
+		}
+		
 		private void attach_Transactions(Transaction entity)
 		{
 			this.SendPropertyChanging();
@@ -2625,6 +2992,8 @@ namespace MoneyPacificSrv.DTO
 		
 		private int _Id;
 		
+		private string _IdShop;
+		
 		private string _Username;
 		
 		private string _Password;
@@ -2671,17 +3040,21 @@ namespace MoneyPacificSrv.DTO
 		
 		private System.Nullable<int> _NumberOfShop;
 		
-		private System.Nullable<int> _StoreInternetAccess;
+		private System.Nullable<int> _StoreInternetAccessId;
 		
 		private System.Nullable<System.DateTime> _LastCollectDate;
 		
 		private System.Nullable<bool> _IsLocked;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
 		
 		private EntitySet<CollectMoney> _CollectMoneys;
 		
 		private EntitySet<StoreUser> _StoreUsers;
 		
 		private EntityRef<City> _City;
+		
+		private EntityRef<InternetAccessRole> _InternetAccessRole;
 		
 		private EntityRef<StoreManagerState> _StoreManagerState;
 		
@@ -2691,6 +3064,8 @@ namespace MoneyPacificSrv.DTO
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
+    partial void OnIdShopChanging(string value);
+    partial void OnIdShopChanged();
     partial void OnUsernameChanging(string value);
     partial void OnUsernameChanged();
     partial void OnPasswordChanging(string value);
@@ -2737,12 +3112,14 @@ namespace MoneyPacificSrv.DTO
     partial void OnShopSizeChanged();
     partial void OnNumberOfShopChanging(System.Nullable<int> value);
     partial void OnNumberOfShopChanged();
-    partial void OnStoreInternetAccessChanging(System.Nullable<int> value);
-    partial void OnStoreInternetAccessChanged();
+    partial void OnStoreInternetAccessIdChanging(System.Nullable<int> value);
+    partial void OnStoreInternetAccessIdChanged();
     partial void OnLastCollectDateChanging(System.Nullable<System.DateTime> value);
     partial void OnLastCollectDateChanged();
     partial void OnIsLockedChanging(System.Nullable<bool> value);
     partial void OnIsLockedChanged();
+    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreateDateChanged();
     #endregion
 		
 		public StoreManager()
@@ -2750,11 +3127,12 @@ namespace MoneyPacificSrv.DTO
 			this._CollectMoneys = new EntitySet<CollectMoney>(new Action<CollectMoney>(this.attach_CollectMoneys), new Action<CollectMoney>(this.detach_CollectMoneys));
 			this._StoreUsers = new EntitySet<StoreUser>(new Action<StoreUser>(this.attach_StoreUsers), new Action<StoreUser>(this.detach_StoreUsers));
 			this._City = default(EntityRef<City>);
+			this._InternetAccessRole = default(EntityRef<InternetAccessRole>);
 			this._StoreManagerState = default(EntityRef<StoreManagerState>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Id
 		{
 			get
@@ -2770,6 +3148,26 @@ namespace MoneyPacificSrv.DTO
 					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdShop", DbType="NChar(10)")]
+		public string IdShop
+		{
+			get
+			{
+				return this._IdShop;
+			}
+			set
+			{
+				if ((this._IdShop != value))
+				{
+					this.OnIdShopChanging(value);
+					this.SendPropertyChanging();
+					this._IdShop = value;
+					this.SendPropertyChanged("IdShop");
+					this.OnIdShopChanged();
 				}
 			}
 		}
@@ -3242,22 +3640,26 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StoreInternetAccess", DbType="Int")]
-		public System.Nullable<int> StoreInternetAccess
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StoreInternetAccessId", DbType="Int")]
+		public System.Nullable<int> StoreInternetAccessId
 		{
 			get
 			{
-				return this._StoreInternetAccess;
+				return this._StoreInternetAccessId;
 			}
 			set
 			{
-				if ((this._StoreInternetAccess != value))
+				if ((this._StoreInternetAccessId != value))
 				{
-					this.OnStoreInternetAccessChanging(value);
+					if (this._InternetAccessRole.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStoreInternetAccessIdChanging(value);
 					this.SendPropertyChanging();
-					this._StoreInternetAccess = value;
-					this.SendPropertyChanged("StoreInternetAccess");
-					this.OnStoreInternetAccessChanged();
+					this._StoreInternetAccessId = value;
+					this.SendPropertyChanged("StoreInternetAccessId");
+					this.OnStoreInternetAccessIdChanged();
 				}
 			}
 		}
@@ -3298,6 +3700,26 @@ namespace MoneyPacificSrv.DTO
 					this._IsLocked = value;
 					this.SendPropertyChanged("IsLocked");
 					this.OnIsLockedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="Date")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
 				}
 			}
 		}
@@ -3358,6 +3780,40 @@ namespace MoneyPacificSrv.DTO
 						this._CityId = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("City");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="InternetAccessRole_StoreManager", Storage="_InternetAccessRole", ThisKey="StoreInternetAccessId", OtherKey="Id", IsForeignKey=true)]
+		public InternetAccessRole InternetAccessRole
+		{
+			get
+			{
+				return this._InternetAccessRole.Entity;
+			}
+			set
+			{
+				InternetAccessRole previousValue = this._InternetAccessRole.Entity;
+				if (((previousValue != value) 
+							|| (this._InternetAccessRole.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._InternetAccessRole.Entity = null;
+						previousValue.StoreManagers.Remove(this);
+					}
+					this._InternetAccessRole.Entity = value;
+					if ((value != null))
+					{
+						value.StoreManagers.Add(this);
+						this._StoreInternetAccessId = value.Id;
+					}
+					else
+					{
+						this._StoreInternetAccessId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("InternetAccessRole");
 				}
 			}
 		}
@@ -3451,6 +3907,8 @@ namespace MoneyPacificSrv.DTO
 		
 		private string _Code;
 		
+		private string _Name;
+		
 		private string _Description;
 		
 		private EntitySet<StoreManager> _StoreManagers;
@@ -3463,6 +3921,8 @@ namespace MoneyPacificSrv.DTO
     partial void OnIdChanged();
     partial void OnCodeChanging(string value);
     partial void OnCodeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
     #endregion
@@ -3509,6 +3969,26 @@ namespace MoneyPacificSrv.DTO
 					this._Code = value;
 					this.SendPropertyChanged("Code");
 					this.OnCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
@@ -3619,6 +4099,8 @@ namespace MoneyPacificSrv.DTO
 		
 		private EntitySet<PacificCode> _PacificCodes;
 		
+		private EntityRef<PacificCode> _PacificCode;
+		
 		private EntityRef<StoreManager> _StoreManager;
 		
 		private EntityRef<StoreUserState> _StoreUserState;
@@ -3664,6 +4146,7 @@ namespace MoneyPacificSrv.DTO
 		public StoreUser()
 		{
 			this._PacificCodes = new EntitySet<PacificCode>(new Action<PacificCode>(this.attach_PacificCodes), new Action<PacificCode>(this.detach_PacificCodes));
+			this._PacificCode = default(EntityRef<PacificCode>);
 			this._StoreManager = default(EntityRef<StoreManager>);
 			this._StoreUserState = default(EntityRef<StoreUserState>);
 			OnCreated();
@@ -3848,6 +4331,10 @@ namespace MoneyPacificSrv.DTO
 			{
 				if ((this._LastTransaction != value))
 				{
+					if (this._PacificCode.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnLastTransactionChanging(value);
 					this.SendPropertyChanging();
 					this._LastTransaction = value;
@@ -4007,6 +4494,40 @@ namespace MoneyPacificSrv.DTO
 			set
 			{
 				this._PacificCodes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PacificCode_StoreUser", Storage="_PacificCode", ThisKey="LastTransaction", OtherKey="Id", IsForeignKey=true)]
+		public PacificCode PacificCode
+		{
+			get
+			{
+				return this._PacificCode.Entity;
+			}
+			set
+			{
+				PacificCode previousValue = this._PacificCode.Entity;
+				if (((previousValue != value) 
+							|| (this._PacificCode.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PacificCode.Entity = null;
+						previousValue.StoreUsers.Remove(this);
+					}
+					this._PacificCode.Entity = value;
+					if ((value != null))
+					{
+						value.StoreUsers.Add(this);
+						this._LastTransaction = value.Id;
+					}
+					else
+					{
+						this._LastTransaction = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PacificCode");
+				}
 			}
 		}
 		

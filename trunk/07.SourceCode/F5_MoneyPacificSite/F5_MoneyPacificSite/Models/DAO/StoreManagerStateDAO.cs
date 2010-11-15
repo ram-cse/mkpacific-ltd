@@ -23,5 +23,13 @@ namespace F5_MoneyPacificSite.Models.DAO
             db.Connection.Close();
             return result;
         }
+
+        internal static StoreManagerState[] GetArray()
+        {
+            MoneyPacificEntities db = new MoneyPacificEntities();
+            StoreManagerState[] result = db.StoreManagerStates.ToArray();
+            db.Connection.Close();
+            return result;
+        }
     }
 }

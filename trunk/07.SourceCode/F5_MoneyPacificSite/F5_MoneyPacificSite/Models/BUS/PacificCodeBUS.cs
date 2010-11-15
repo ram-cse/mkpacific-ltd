@@ -70,5 +70,29 @@ namespace F5_MoneyPacificSite.Models.BUS
         {
             return PacificCodeDAO.GetList();
         }
+
+        internal static int GetTotalAmountOfStoreManager(int smId)
+        {
+            List<StoreUser> lstStoreUser = StoreUserDAO.GetArray(smId).ToList();
+            int iAmount = 0;
+            foreach (StoreUser su in lstStoreUser)
+            { 
+                iAmount += GetTotalAmountOfStoreUser(su.Id);
+            }
+            return iAmount;
+        }
+
+        private static int GetTotalAmountOfStoreUser(int storeUserId)
+        {
+            List<PacificCode> lstPC = PacificCodeDAO.GetArray(storeUserId).ToList();
+            int iInitAmount = 0;
+            foreach (PacificCode p in lstPC)
+            {
+                if (p.InitialAmount == null) p.InitialAmount = 0;
+                iInitAmount += (int)p.InitialAmount;
+            }
+            return iInitAmount;
+
+        }
     }
 }

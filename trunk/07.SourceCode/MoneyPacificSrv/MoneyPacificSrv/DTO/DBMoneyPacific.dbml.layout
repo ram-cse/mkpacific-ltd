@@ -2,211 +2,244 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17, 16.75" name="DBMoneyPacific">
   <DataContextMoniker Name="/DBMoneyPacificDataContext" />
   <nestedChildShapes>
-    <classShape Id="2538b9d9-7ffa-4373-9896-308ae1153286" absoluteBounds="11.75, 10.75, 2, 1.5785953776041666">
+    <classShape Id="300a2462-cbe1-4ae1-b7b1-c3998bc9572f" absoluteBounds="11.75, 10.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/Administrator" />
       <nestedChildShapes>
-        <elementListCompartment Id="0187fee0-2c4f-40f7-8964-1d7521167ac7" absoluteBounds="11.765, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ee4f5f9c-2ba4-4638-8690-55818d23e8ae" absoluteBounds="11.765, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c831f2ec-cbb0-43fc-9ae3-891550f45749" absoluteBounds="12, 0.875, 2, 1.3862939453125003">
+    <classShape Id="0bcb3161-58d5-409f-8af8-129673e5c8f8" absoluteBounds="12, 0.875, 2, 1.3862939453125003">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/TransactionState" />
       <nestedChildShapes>
-        <elementListCompartment Id="d49f8a0d-aed3-42b5-8dab-df9f95e46d3a" absoluteBounds="12.015, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d484fe7f-36d4-4558-8ea6-cd0dcde7e2ed" absoluteBounds="12.015, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a9cd0ced-08e9-4084-a986-274f70fb4b13" absoluteBounds="3.5, 9.875, 2, 1.7708968098958344">
+    <classShape Id="9e705646-7303-4e6c-b82e-e7d58d0d760a" absoluteBounds="3.5, 11.875, 2, 1.7708968098958344">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/Agent" />
       <nestedChildShapes>
-        <elementListCompartment Id="84317d2a-6430-42f4-ae40-c3f23efe8893" absoluteBounds="3.515, 10.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d62abb07-ed3c-458b-ad22-e8cc6197235c" absoluteBounds="3.515, 12.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0e447b17-3a26-46c2-8389-f79ff6abc46a" absoluteBounds="9.25, 10, 2, 1.5785953776041666">
+    <classShape Id="566daee8-2401-4459-8a02-fc007cd22986" absoluteBounds="9.25, 10, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/Category" />
       <nestedChildShapes>
-        <elementListCompartment Id="454bf133-74e8-4131-a7de-84ed314be9c0" absoluteBounds="9.265, 10.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="32f51d4b-240f-4926-996c-7a03b8a00a55" absoluteBounds="9.265, 10.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="34fee5ad-6697-4410-a283-5d2c7956135e" absoluteBounds="0.75, 4.125, 2, 1.1939925130208327">
+    <classShape Id="4b54c239-8cd2-4216-a6f5-8e9dfabe9398" absoluteBounds="0.75, 4.125, 2, 1.1939925130208327">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/City" />
       <nestedChildShapes>
-        <elementListCompartment Id="2e5a9998-c698-4431-b49a-b6d1f5ea15c8" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0152badf-58ff-42e9-bc33-131a3ffead1b" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a0a006a8-3070-465b-9b86-4377db3ab440" absoluteBounds="6.25, 3.5, 2, 2.5401025390625005">
+    <classShape Id="b579c014-c444-4aa2-8796-9b5ec4f3ddec" absoluteBounds="6.25, 3.5, 2, 2.5401025390625005">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/CollectMoney" />
       <nestedChildShapes>
-        <elementListCompartment Id="80892c2d-a219-4e2f-b78c-45456d098c80" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4f0c5464-07f3-477e-ae26-0ddacc2b6ffa" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c1a85693-d32a-4f60-a5bf-112fa0464a0d" absoluteBounds="9.25, 12.375, 2, 4.0785139973958309">
+    <classShape Id="bb22d9b7-991c-4310-9120-51a99726e63d" absoluteBounds="3.5, 8.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DBMoneyPacificDataContext/CollectState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11d825d0-7a41-4ead-8b4c-89f5227198fe" absoluteBounds="3.515, 9.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22907fa7-d9ce-4e48-9fc8-4884fe862a1b" absoluteBounds="9.25, 12.375, 2, 4.0785139973958309">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/Customer" />
       <nestedChildShapes>
-        <elementListCompartment Id="7fb6844b-08b4-4d14-a065-03528ef71208" absoluteBounds="9.265, 12.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="01bfac3e-0cc2-403d-95cf-4d34493388d7" absoluteBounds="9.265, 12.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="caa9eca7-fdad-4f78-9ee0-e3d14b444e18" absoluteBounds="6.5, 13.625, 2, 1.5785953776041666">
+    <classShape Id="2f5e796f-5c1f-471d-bed7-9f8384df5b23" absoluteBounds="6.5, 13.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/CustomerState" />
       <nestedChildShapes>
-        <elementListCompartment Id="7f3d50f6-7a26-433f-86ef-7701e4f533f0" absoluteBounds="6.515, 14.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6f0955a2-30a9-4147-9c63-6fff7637286b" absoluteBounds="6.515, 14.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7d3cb5a8-f526-4a5d-852e-a2a999a8f440" absoluteBounds="12, 3.125, 2, 3.3093082682291666">
+    <classShape Id="313303a3-daec-4ec9-b459-b901284d6df6" absoluteBounds="0.75, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBMoneyPacificDataContext/InternetAccessRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c49c9954-a5c1-409f-83ae-f778f221ded3" absoluteBounds="0.765, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" absoluteBounds="12, 3.125, 2, 3.3093082682291666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/PacificCode" />
       <nestedChildShapes>
-        <elementListCompartment Id="257fab22-86c3-4a05-b0e7-4056abf3e4b0" absoluteBounds="12.015, 3.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="841a5354-15e2-4488-9b93-19d703b3fe62" absoluteBounds="12.015, 3.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a0bf34e8-0496-4dd6-a22b-b437e91e52d4" absoluteBounds="9.25, 7.875, 2, 1.3862939453124996">
+    <classShape Id="32f1fbc2-8b70-4717-8633-e075d9cedcdb" absoluteBounds="9.25, 7.875, 2, 1.3862939453124996">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/PacificCodeState" />
       <nestedChildShapes>
-        <elementListCompartment Id="fcdedc43-4b97-4783-bc1b-e4e148d73add" absoluteBounds="9.265, 8.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7eeab874-4968-4b20-abf0-c7d5e4612479" absoluteBounds="9.265, 8.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="562a5a52-0ab0-40ee-82f5-60c3384acae4" absoluteBounds="3.5, 1.75, 2, 6.0015283203125005">
+    <classShape Id="7008ef17-dbe9-46b5-9d02-a37a4b9bf005" absoluteBounds="3.5, 1.625, 2, 6.3861311848958326">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/StoreManager" />
       <nestedChildShapes>
-        <elementListCompartment Id="18dbf0e2-4d1e-4700-9f58-ddef832aec36" absoluteBounds="3.515, 2.21, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="01779dd9-b8db-45f3-8350-ba8d362a9215" absoluteBounds="3.515, 2.085, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="92b8a551-804e-4348-acaf-55c09d20e400" absoluteBounds="0.75, 1.125, 2, 1.3862939453125003">
+    <classShape Id="973515f8-8ad1-4779-9ec2-23ad61dcce9b" absoluteBounds="0.75, 6.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/StoreManagerState" />
       <nestedChildShapes>
-        <elementListCompartment Id="088116f0-634e-4f18-b485-fc24fdab6298" absoluteBounds="0.765, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d5c2a15f-b2f1-45e2-82ca-25b07fb90811" absoluteBounds="0.765, 6.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4d8ccf24-67c7-44ea-822e-0ec1ae6320ee" absoluteBounds="9.25, 2.875, 2, 3.8862125651041666">
+    <classShape Id="b79dee72-d394-4ec2-80bd-9f6282b99821" absoluteBounds="9.25, 2.875, 2, 3.8862125651041666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/StoreUser" />
       <nestedChildShapes>
-        <elementListCompartment Id="df01b043-caf3-457f-bf9a-9469f88bb270" absoluteBounds="9.265, 3.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a77323ae-6d9c-4542-8b7a-ec5569af3caf" absoluteBounds="9.265, 3.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="975c1541-6f5a-4e40-b244-ea24617fb41e" absoluteBounds="6.5, 1.125, 2, 1.3862939453125003">
+    <classShape Id="a403b5af-85a9-4fd6-b909-e99f4ea84c39" absoluteBounds="6.5, 6.875, 2, 1.3862939453125005">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/StoreUserState" />
       <nestedChildShapes>
-        <elementListCompartment Id="7941c43d-8459-4a0e-b640-64d01658e5f4" absoluteBounds="6.515, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="15ee90c8-4fbc-41b1-b556-dff6c89ca71f" absoluteBounds="6.515, 7.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f4075f29-d06b-4d2c-bb53-bf0b477f6372" absoluteBounds="14.75, 3.125, 2, 3.3093082682291666">
+    <classShape Id="09c313f2-8ce5-4ee2-a116-921d7ad104bb" absoluteBounds="14.75, 3.125, 2, 3.3093082682291666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/Transaction" />
       <nestedChildShapes>
-        <elementListCompartment Id="8e03b777-2b82-443a-a933-bea4547b6c36" absoluteBounds="14.765, 3.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bb0311ea-af77-413d-a629-182778c7a324" absoluteBounds="14.765, 3.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="93d840ce-2feb-4e1a-a11c-66d69aeaddad" absoluteBounds="12, 8, 2, 1.5785953776041666">
+    <classShape Id="813b27dd-64ad-459a-9f78-a716fa0e0a22" absoluteBounds="12, 8, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/TransactionCate" />
       <nestedChildShapes>
-        <elementListCompartment Id="880aa1f8-cdad-435b-a4b2-5730f3a4e37c" absoluteBounds="12.015, 8.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0d89ab79-2b18-4d00-9930-a5ce224e8613" absoluteBounds="12.015, 8.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d24f545d-efe0-4de6-ac5f-127c93423267" absoluteBounds="14.75, 8, 2, 1.7708968098958335">
+    <classShape Id="3dab5e10-5280-4815-9a99-297e7e1518e0" absoluteBounds="14.75, 8, 2, 1.7708968098958335">
       <DataClassMoniker Name="/DBMoneyPacificDataContext/TransactionFee" />
       <nestedChildShapes>
-        <elementListCompartment Id="4aea1ad8-8f23-46f7-90c1-422ebaf54ea9" absoluteBounds="14.765, 8.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f36bbb6a-678c-4daf-85d5-df54d85795a7" absoluteBounds="14.765, 8.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 10.7604484049479); (7.25 : 10.7604484049479); (7.25 : 6.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 12.71875); (6.34375 : 12.71875); (6.34375 : 6.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/Agent/Agent_CollectMoney" />
       <nodes>
-        <classShapeMoniker Id="a9cd0ced-08e9-4084-a986-274f70fb4b13" />
-        <classShapeMoniker Id="a0a006a8-3070-465b-9b86-4377db3ab440" />
+        <classShapeMoniker Id="9e705646-7303-4e6c-b82e-e7d58d0d760a" />
+        <classShapeMoniker Id="b579c014-c444-4aa2-8796-9b5ec4f3ddec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.47199625651042); (6.3124975 : 9.47199625651042); (6.3124975 : 6.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBMoneyPacificDataContext/CollectState/CollectState_CollectMoney" />
+      <nodes>
+        <classShapeMoniker Id="bb22d9b7-991c-4310-9120-51a99726e63d" />
+        <classShapeMoniker Id="b579c014-c444-4aa2-8796-9b5ec4f3ddec" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 14.4142976888021); (9.25 : 14.4142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/CustomerState/CustomerState_Customer" />
       <nodes>
-        <classShapeMoniker Id="caa9eca7-fdad-4f78-9ee0-e3d14b444e18" />
-        <classShapeMoniker Id="c1a85693-d32a-4f60-a5bf-112fa0464a0d" />
+        <classShapeMoniker Id="2f5e796f-5c1f-471d-bed7-9f8384df5b23" />
+        <classShapeMoniker Id="22907fa7-d9ce-4e48-9fc8-4884fe862a1b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.25 : 10); (11.4410744349011 : 9.80892556509888 : JumpStart); (11.5589255650989 : 9.69107443490112 : JumpEnd); (11.625 : 9.625); (11.625 : 4.77965413411458); (11.7291666666667 : 4.77965413411458 : JumpStart); (11.8958333333333 : 4.77965413411458 : JumpEnd); (12 : 4.77965413411458)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/Category/Category_PacificCode" />
       <nodes>
-        <classShapeMoniker Id="0e447b17-3a26-46c2-8389-f79ff6abc46a" />
-        <classShapeMoniker Id="7d3cb5a8-f526-4a5d-852e-a2a999a8f440" />
+        <classShapeMoniker Id="566daee8-2401-4459-8a02-fc007cd22986" />
+        <classShapeMoniker Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(10.25 : 12.375); (10.25 : 11.8285953776042); (11.5 : 11.8285953776042); (11.5 : 5.63823320117188); (11.5416666666667 : 5.63823320117187 : JumpStart); (11.7083333333333 : 5.63823320117188 : JumpEnd); (11.7291666666667 : 5.63823320117187 : JumpStart); (11.8958333333333 : 5.63823320117188 : JumpEnd); (12 : 5.63823320117188)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/Customer/Customer_PacificCode" />
       <nodes>
-        <classShapeMoniker Id="c1a85693-d32a-4f60-a5bf-112fa0464a0d" />
-        <classShapeMoniker Id="7d3cb5a8-f526-4a5d-852e-a2a999a8f440" />
+        <classShapeMoniker Id="22907fa7-d9ce-4e48-9fc8-4884fe862a1b" />
+        <classShapeMoniker Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.25 : 7.9368490375601); (11.4410744349011 : 7.74577460265897 : JumpStart); (11.5589255650989 : 7.62792347246122 : JumpEnd); (11.5660744349011 : 7.62077460265897 : JumpStart); (11.6839255650989 : 7.50292347246122 : JumpEnd); (11.8125 : 7.37434903756009); (11.8125 : 3.92107506705729); (12 : 3.92107506705729)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/PacificCodeState/PacificCodeState_PacificCode" />
       <nodes>
-        <classShapeMoniker Id="a0bf34e8-0496-4dd6-a22b-b437e91e52d4" />
-        <classShapeMoniker Id="7d3cb5a8-f526-4a5d-852e-a2a999a8f440" />
+        <classShapeMoniker Id="32f1fbc2-8b70-4717-8633-e075d9cedcdb" />
+        <classShapeMoniker Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 4.77005126953125); (6.25 : 4.77005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/StoreManager/StoreManager_CollectMoney" />
       <nodes>
-        <classShapeMoniker Id="562a5a52-0ab0-40ee-82f5-60c3384acae4" />
-        <classShapeMoniker Id="a0a006a8-3070-465b-9b86-4377db3ab440" />
+        <classShapeMoniker Id="7008ef17-dbe9-46b5-9d02-a37a4b9bf005" />
+        <classShapeMoniker Id="b579c014-c444-4aa2-8796-9b5ec4f3ddec" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/City/City_StoreManager" />
       <nodes>
-        <classShapeMoniker Id="34fee5ad-6697-4410-a283-5d2c7956135e" />
-        <classShapeMoniker Id="562a5a52-0ab0-40ee-82f5-60c3384acae4" />
+        <classShapeMoniker Id="4b54c239-8cd2-4216-a6f5-8e9dfabe9398" />
+        <classShapeMoniker Id="7008ef17-dbe9-46b5-9d02-a37a4b9bf005" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.13064697265625); (3.5 : 2.13064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.66429768880208); (3.5 : 2.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBMoneyPacificDataContext/InternetAccessRole/InternetAccessRole_StoreManager" />
+      <nodes>
+        <classShapeMoniker Id="313303a3-daec-4ec9-b459-b901284d6df6" />
+        <classShapeMoniker Id="7008ef17-dbe9-46b5-9d02-a37a4b9bf005" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.91429768880208); (3.5 : 6.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/StoreManagerState/StoreManagerState_StoreManager" />
       <nodes>
-        <classShapeMoniker Id="92b8a551-804e-4348-acaf-55c09d20e400" />
-        <classShapeMoniker Id="562a5a52-0ab0-40ee-82f5-60c3384acae4" />
+        <classShapeMoniker Id="973515f8-8ad1-4779-9ec2-23ad61dcce9b" />
+        <classShapeMoniker Id="7008ef17-dbe9-46b5-9d02-a37a4b9bf005" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.25 : 3.46053753352865); (12 : 3.46053753352865)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/StoreUser/StoreUser_PacificCode" />
       <nodes>
-        <classShapeMoniker Id="4d8ccf24-67c7-44ea-822e-0ec1ae6320ee" />
-        <classShapeMoniker Id="7d3cb5a8-f526-4a5d-852e-a2a999a8f440" />
+        <classShapeMoniker Id="b79dee72-d394-4ec2-80bd-9f6282b99821" />
+        <classShapeMoniker Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.43190755208333); (7.16666666666667 : 6.43190755208333 : JumpStart); (7.33333333333333 : 6.43190755208333 : JumpEnd); (9.25 : 6.43190755208333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12 : 6.09877073470052); (11.8958333333333 : 6.09877073470052 : JumpStart); (11.7291666666667 : 6.09877073470052 : JumpEnd); (11.7083333333333 : 6.09877073470052 : JumpStart); (11.4166666666667 : 6.09877073470052 : JumpEnd); (11.25 : 6.09877073470052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBMoneyPacificDataContext/PacificCode/PacificCode_StoreUser" />
+      <nodes>
+        <classShapeMoniker Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" />
+        <classShapeMoniker Id="b79dee72-d394-4ec2-80bd-9f6282b99821" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.43190755208333); (6.22916416666667 : 6.43190755208333 : JumpStart); (6.42708333333333 : 6.43190755208333 : JumpEnd); (8.32291666666667 : 6.43190755208333 : JumpStart); (8.48958333333333 : 6.43190755208333 : JumpEnd); (9.25 : 6.43190755208333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/StoreManager/StoreManager_StoreUser" />
       <nodes>
-        <classShapeMoniker Id="562a5a52-0ab0-40ee-82f5-60c3384acae4" />
-        <classShapeMoniker Id="4d8ccf24-67c7-44ea-822e-0ec1ae6320ee" />
+        <classShapeMoniker Id="7008ef17-dbe9-46b5-9d02-a37a4b9bf005" />
+        <classShapeMoniker Id="b79dee72-d394-4ec2-80bd-9f6282b99821" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 1.81814697265625); (10.25 : 1.81814697265625); (10.25 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.40625 : 6.875); (8.40625 : 3.15625); (9.25 : 3.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/StoreUserState/StoreUserState_StoreUser" />
       <nodes>
-        <classShapeMoniker Id="975c1541-6f5a-4e40-b244-ea24617fb41e" />
-        <classShapeMoniker Id="4d8ccf24-67c7-44ea-822e-0ec1ae6320ee" />
+        <classShapeMoniker Id="a403b5af-85a9-4fd6-b909-e99f4ea84c39" />
+        <classShapeMoniker Id="b79dee72-d394-4ec2-80bd-9f6282b99821" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14 : 4.77965413411458); (14.75 : 4.77965413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/PacificCode/PacificCode_Transaction" />
       <nodes>
-        <classShapeMoniker Id="7d3cb5a8-f526-4a5d-852e-a2a999a8f440" />
-        <classShapeMoniker Id="f4075f29-d06b-4d2c-bb53-bf0b477f6372" />
+        <classShapeMoniker Id="4fbd1c45-0a49-4ffc-ac5e-7f1f98a770e3" />
+        <classShapeMoniker Id="09c313f2-8ce5-4ee2-a116-921d7ad104bb" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14 : 1.56814697265625); (15.75 : 1.56814697265625); (15.75 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/TransactionState/TransactionState_Transaction" />
       <nodes>
-        <classShapeMoniker Id="c831f2ec-cbb0-43fc-9ae3-891550f45749" />
-        <classShapeMoniker Id="f4075f29-d06b-4d2c-bb53-bf0b477f6372" />
+        <classShapeMoniker Id="0bcb3161-58d5-409f-8af8-129673e5c8f8" />
+        <classShapeMoniker Id="09c313f2-8ce5-4ee2-a116-921d7ad104bb" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14 : 8); (14.375 : 7.625); (14.375 : 5.63823320117188); (14.75 : 5.63823320117188)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/TransactionCate/TransactionCate_Transaction" />
       <nodes>
-        <classShapeMoniker Id="93d840ce-2feb-4e1a-a11c-66d69aeaddad" />
-        <classShapeMoniker Id="f4075f29-d06b-4d2c-bb53-bf0b477f6372" />
+        <classShapeMoniker Id="813b27dd-64ad-459a-9f78-a716fa0e0a22" />
+        <classShapeMoniker Id="09c313f2-8ce5-4ee2-a116-921d7ad104bb" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14 : 8.82055018880208); (14.75 : 8.82055018880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBMoneyPacificDataContext/TransactionCate/TransactionCate_TransactionFee" />
       <nodes>
-        <classShapeMoniker Id="93d840ce-2feb-4e1a-a11c-66d69aeaddad" />
-        <classShapeMoniker Id="d24f545d-efe0-4de6-ac5f-127c93423267" />
+        <classShapeMoniker Id="813b27dd-64ad-459a-9f78-a716fa0e0a22" />
+        <classShapeMoniker Id="3dab5e10-5280-4815-9a99-297e7e1518e0" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

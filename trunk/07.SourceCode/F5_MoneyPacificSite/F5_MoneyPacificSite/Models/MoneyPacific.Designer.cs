@@ -25,6 +25,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_CollectMoney_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreManager), "CollectMoney", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.CollectMoney), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Customer_CustomerStatus", "CustomerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.CustomerState), "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.Customer), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Customer", "Customer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Customer), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_InternetAccessRole", "InternetAccessRole", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.InternetAccessRole), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreManager), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_PacificCodeStatus", "PacificCodeState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.PacificCodeState), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Store", "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreUser), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_PacificCode", "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.PacificCode), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreUser), true)]
@@ -197,6 +198,22 @@ namespace F5_MoneyPacificSite.Models
             }
         }
         private ObjectSet<CustomerState> _CustomerStates;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<InternetAccessRole> InternetAccessRoles
+        {
+            get
+            {
+                if ((_InternetAccessRoles == null))
+                {
+                    _InternetAccessRoles = base.CreateObjectSet<InternetAccessRole>("InternetAccessRoles");
+                }
+                return _InternetAccessRoles;
+            }
+        }
+        private ObjectSet<InternetAccessRole> _InternetAccessRoles;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -431,6 +448,14 @@ namespace F5_MoneyPacificSite.Models
         public void AddToCustomerStates(CustomerState customerState)
         {
             base.AddObject("CustomerStates", customerState);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the InternetAccessRoles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToInternetAccessRoles(InternetAccessRole internetAccessRole)
+        {
+            base.AddObject("InternetAccessRoles", internetAccessRole);
         }
     
         /// <summary>
@@ -2086,6 +2111,158 @@ namespace F5_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="InternetAccessRole")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class InternetAccessRole : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new InternetAccessRole object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static InternetAccessRole CreateInternetAccessRole(global::System.Int32 id)
+        {
+            InternetAccessRole internetAccessRole = new InternetAccessRole();
+            internetAccessRole.Id = id;
+            return internetAccessRole;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Code
+        {
+            get
+            {
+                return _Code;
+            }
+            set
+            {
+                OnCodeChanging(value);
+                ReportPropertyChanging("Code");
+                _Code = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Code");
+                OnCodeChanged();
+            }
+        }
+        private global::System.String _Code;
+        partial void OnCodeChanging(global::System.String value);
+        partial void OnCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreManager_InternetAccessRole", "StoreManager")]
+        public EntityCollection<StoreManager> StoreManagers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StoreManager>("MoneyPacificModel.FK_StoreManager_InternetAccessRole", "StoreManager");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StoreManager>("MoneyPacificModel.FK_StoreManager_InternetAccessRole", "StoreManager", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="PacificCode")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2809,7 +2986,7 @@ namespace F5_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> IdShop
+        public global::System.String IdShop
         {
             get
             {
@@ -2819,13 +2996,13 @@ namespace F5_MoneyPacificSite.Models
             {
                 OnIdShopChanging(value);
                 ReportPropertyChanging("IdShop");
-                _IdShop = StructuralObject.SetValidValue(value);
+                _IdShop = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("IdShop");
                 OnIdShopChanged();
             }
         }
-        private Nullable<global::System.Int32> _IdShop;
-        partial void OnIdShopChanging(Nullable<global::System.Int32> value);
+        private global::System.String _IdShop;
+        partial void OnIdShopChanging(global::System.String value);
         partial void OnIdShopChanged();
     
         /// <summary>
@@ -3385,24 +3562,24 @@ namespace F5_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> StoreInternetAccess
+        public Nullable<global::System.Int32> StoreInternetAccessId
         {
             get
             {
-                return _StoreInternetAccess;
+                return _StoreInternetAccessId;
             }
             set
             {
-                OnStoreInternetAccessChanging(value);
-                ReportPropertyChanging("StoreInternetAccess");
-                _StoreInternetAccess = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("StoreInternetAccess");
-                OnStoreInternetAccessChanged();
+                OnStoreInternetAccessIdChanging(value);
+                ReportPropertyChanging("StoreInternetAccessId");
+                _StoreInternetAccessId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StoreInternetAccessId");
+                OnStoreInternetAccessIdChanged();
             }
         }
-        private Nullable<global::System.Int32> _StoreInternetAccess;
-        partial void OnStoreInternetAccessChanging(Nullable<global::System.Int32> value);
-        partial void OnStoreInternetAccessChanged();
+        private Nullable<global::System.Int32> _StoreInternetAccessId;
+        partial void OnStoreInternetAccessIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStoreInternetAccessIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3451,6 +3628,30 @@ namespace F5_MoneyPacificSite.Models
         private Nullable<global::System.Boolean> _IsLocked;
         partial void OnIsLockedChanging(Nullable<global::System.Boolean> value);
         partial void OnIsLockedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> CreateDate
+        {
+            get
+            {
+                return _CreateDate;
+            }
+            set
+            {
+                OnCreateDateChanging(value);
+                ReportPropertyChanging("CreateDate");
+                _CreateDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreateDate");
+                OnCreateDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _CreateDate;
+        partial void OnCreateDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreateDateChanged();
 
         #endregion
     
@@ -3512,6 +3713,44 @@ namespace F5_MoneyPacificSite.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CollectMoney>("MoneyPacificModel.FK_CollectMoney_StoreManager", "CollectMoney", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_StoreManager_InternetAccessRole", "InternetAccessRole")]
+        public InternetAccessRole InternetAccessRole
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InternetAccessRole>("MoneyPacificModel.FK_StoreManager_InternetAccessRole", "InternetAccessRole").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InternetAccessRole>("MoneyPacificModel.FK_StoreManager_InternetAccessRole", "InternetAccessRole").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<InternetAccessRole> InternetAccessRoleReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<InternetAccessRole>("MoneyPacificModel.FK_StoreManager_InternetAccessRole", "InternetAccessRole");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<InternetAccessRole>("MoneyPacificModel.FK_StoreManager_InternetAccessRole", "InternetAccessRole", value);
                 }
             }
         }
@@ -3653,6 +3892,30 @@ namespace F5_MoneyPacificSite.Models
         private global::System.String _Code;
         partial void OnCodeChanging(global::System.String value);
         partial void OnCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
