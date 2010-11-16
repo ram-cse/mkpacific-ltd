@@ -16,16 +16,6 @@
       <Association Name="TransactionState_Transaction" Member="Transactions" ThisKey="Id" OtherKey="StatusId" Type="Transaction" />
     </Type>
   </Table>
-  <Table Name="dbo.Agent" Member="Agents">
-    <Type Name="Agent">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="FistName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Agent_CollectMoney" Member="CollectMoneys" ThisKey="Id" OtherKey="AgentId" Type="CollectMoney" />
-    </Type>
-  </Table>
   <Table Name="dbo.Categories" Member="Categories">
     <Type Name="Category">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -53,9 +43,9 @@
       <Column Name="ExpireDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="CollecteDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Agent_CollectMoney" Member="Agent" ThisKey="AgentId" OtherKey="Id" Type="Agent" IsForeignKey="true" />
       <Association Name="CollectState_CollectMoney" Member="CollectState" ThisKey="StatusId" OtherKey="Id" Type="CollectState" IsForeignKey="true" />
       <Association Name="StoreManager_CollectMoney" Member="StoreManager" ThisKey="StoreManagerId" OtherKey="Id" Type="StoreManager" IsForeignKey="true" />
+      <Association Name="Agent_CollectMoney" Member="Agent" ThisKey="AgentId" OtherKey="Id" Type="Agent" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CollectState" Member="CollectStates">
@@ -254,6 +244,16 @@
       <Column Name="DateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Fee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TransactionCate_TransactionFee" Member="TransactionCate" ThisKey="CateId" OtherKey="Id" Type="TransactionCate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Agent" Member="Agents">
+    <Type Name="Agent">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="FistName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Agent_CollectMoney" Member="CollectMoneys" ThisKey="Id" OtherKey="AgentId" Type="CollectMoney" />
     </Type>
   </Table>
 </Database>

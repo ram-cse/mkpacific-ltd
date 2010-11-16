@@ -11,6 +11,13 @@
     <table>
         <tr>
             <th>
+                Manager Name
+            </th>
+            <th>
+                Manager Phone
+            </th>
+
+            <th>
                 Collect Number
             </th>
             <th>
@@ -21,6 +28,9 @@
             </th>
             <th>
                 Amount
+            </th>
+            <th>
+                Agent
             </th>
             <th>
                 Status
@@ -37,6 +47,13 @@
     
         <tr>
             <td>
+                <%: item.ManagerName %>
+            </td>
+            <td>
+                <%: item.ManagerPhone %>
+            </td>
+
+            <td>
                 <%: item.CollectNumber %>
             </td>
             <td>
@@ -47,6 +64,9 @@
             </td>
             <td>
                 <%: item.Amount %>
+            </td>
+            <td>
+                <%: item.Agent %>
             </td>
             <td>
                 <%: item.Status %>

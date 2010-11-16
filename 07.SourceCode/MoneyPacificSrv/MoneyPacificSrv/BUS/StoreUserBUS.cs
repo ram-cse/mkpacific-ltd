@@ -24,9 +24,9 @@ namespace MoneyPacificSrv.BUS
             return StoreUserDAO.GetStoreUser(storePhone, pinStore);
         }
 
-        internal static List<StoreUser> GetList(int managerId)
+        internal static StoreUser[] GetArray(int managerId)
         {
-            return StoreUserDAO.GetList(managerId);
+            return StoreUserDAO.GetArray(managerId);
         }
 
         internal static bool IsExist(string sPhone)

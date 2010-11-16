@@ -41,7 +41,7 @@ namespace MoneyPacificSrv.Cmd
             if (StoreManagerBUS.IsExist(sPhone))
             {
                 StoreManager existStoreManager = StoreManagerBUS.GetItem(sPhone);
-                List<StoreUser> lstUser = StoreUserBUS.GetList(existStoreManager.Id);
+                List<StoreUser> lstUser = StoreUserBUS.GetArray(existStoreManager.Id).ToList<StoreUser>();
                 foreach (StoreUser u in lstUser)
                 {
                     if (u.PINStore == sPINStore)

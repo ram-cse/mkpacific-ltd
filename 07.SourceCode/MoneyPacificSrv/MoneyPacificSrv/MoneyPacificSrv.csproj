@@ -70,7 +70,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AgentBUS.cs" />
     <Compile Include="BUS\CategoriesBUS.cs" />
+    <Compile Include="BUS\CollectMoneyBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\CustomerStateBUS.cs" />
     <Compile Include="BUS\PacificCodeBUS.cs" />
@@ -78,6 +80,9 @@
     <Compile Include="BUS\StoreUserBUS.cs" />
     <Compile Include="BUS\TransactionBUS.cs" />
     <Compile Include="Cmd\MPCOLCommand.cs" />
+    <Compile Include="DAO\AgentDAO.cs" />
+    <Compile Include="DAO\CollectMoneyDAO.cs" />
+    <Compile Include="DAO\CollectStateDAO.cs" />
     <Compile Include="DAO\StoreManagerDAO.cs" />
     <Compile Include="General\Authorize.cs" />
     <Compile Include="Cmd\BuyPacificCodeCommand.cs" />

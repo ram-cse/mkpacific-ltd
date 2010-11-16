@@ -26,6 +26,12 @@ namespace F5_MoneyPacificSite.ViewModels
 
         public int Id { get; set; }
 
+        [DisplayName("Store Manager Phone")]
+        public string ManagerPhone { get; set; }
+
+        [DisplayName("Store Manager Name")]
+        public string ManagerName { get; set; }
+        
         [DisplayName("Collect Number")]
         public string CollectNumber { get; set; }
         
@@ -37,6 +43,10 @@ namespace F5_MoneyPacificSite.ViewModels
         
         [DisplayName("Amount")]
         public string Amount { get; set; }
+
+        [DisplayName("Agent")]
+        public String Agent { get; set; }
+
         
         [DisplayName("Status")]
         public string Status { get; set; }
@@ -46,6 +56,9 @@ namespace F5_MoneyPacificSite.ViewModels
         
         [DisplayName("Expire Date")]
         public DateTime ExprireDate { get; set; }
+        
+        [DisplayName("Collected Date")]
+        public DateTime CollectedDate { get; set; }
     }
 
 
@@ -55,6 +68,9 @@ namespace F5_MoneyPacificSite.ViewModels
 
     public class StoreManagerBalanceSelect
     {
+        public string ManagerName{ get; set; }
+        public string ManagerPhone { get; set; }
+
         public int Id { get; set; }
         public string Area { get; set; }
         public string IdShop { get; set; }

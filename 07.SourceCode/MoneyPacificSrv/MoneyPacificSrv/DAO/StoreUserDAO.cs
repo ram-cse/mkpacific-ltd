@@ -24,7 +24,7 @@ namespace MoneyPacificSrv.DAO
         internal static bool IsExist(StoreUser senderStore)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
-            bool bResult = mpdb.StoreUsers.Any(l => l.Phone == senderStore.Phone);
+            bool bResult = mpdb.StoreUsers.Any(l => l.Phone.Trim() == senderStore.Phone.Trim());
             mpdb.Connection.Close();
             return bResult;
         }
@@ -70,10 +70,10 @@ namespace MoneyPacificSrv.DAO
             mpdb.Connection.Close();
         }
 
-        internal static List<StoreUser> GetList(int managerId)
+        internal static StoreUser[] GetArray(int managerId)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
-            List<StoreUser> lstUser = mpdb.StoreUsers.Where(s => s.ManagerId == managerId).ToList<StoreUser>();
+            StoreUser[] lstUser = mpdb.StoreUsers.Where(s => s.ManagerId == managerId).ToArray();
             mpdb.Connection.Close();
             return lstUser;
         }
@@ -137,6 +137,30 @@ namespace MoneyPacificSrv.DAO
             mpdb.SubmitChanges();
             mpdb.Connection.Close();
             return true;
+        }
+
+        /// <summary>
+        /// Lấy tất cả các PacificCode được mua bởi StoreUser này, 
+        /// ở trong tháng. Tính tổng tất cả InitialAmount 
+        /// </summary>        
+        internal static int GetTotalLastMonthAmount(int storeId)
+        {
+            DBMoneyPacificDataContext db = new DBMoneyPacificDataContext();
+            int iTotalAmount = 0;
+
+            //iTotalAmount = (from p in db.PacificCodes
+            //                where p.StoreId == storeId
+            //                select (int)p.InitialAmount).DefaultIfEmpty().Sum();
+
+            List<PacificCode> lstPacificCode = PacificCodeDAO.GetList(storeId);
+            foreach (PacificCode p in lstPacificCode)
+            {
+                if (p.InitialAmount == null) p.InitialAmount = 0;
+                iTotalAmount += (int)p.InitialAmount;
+            }
+
+            db.Connection.Close();
+            return iTotalAmount;
         }
     }
 }
