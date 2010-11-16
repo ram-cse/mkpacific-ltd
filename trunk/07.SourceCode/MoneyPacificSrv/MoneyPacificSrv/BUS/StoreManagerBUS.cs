@@ -32,7 +32,7 @@ namespace MoneyPacificSrv.BUS
             if (StoreManagerDAO.IsExist(phoneManager))
             {
                 StoreManager existManager = StoreManagerDAO.GetItem(phoneManager);
-                List<StoreUser> lstUser = StoreUserDAO.GetList(existManager.Id);
+                List<StoreUser> lstUser = StoreUserDAO.GetArray(existManager.Id).ToList<StoreUser>();
                 foreach (StoreUser u in lstUser)
                 {
                     bResult = bResult || (u.PINStore.Trim() == pinstore.Trim());
@@ -47,7 +47,7 @@ namespace MoneyPacificSrv.BUS
             if (StoreManagerDAO.IsExist(phoneManager))
             {
                 StoreManager existManager = StoreManagerDAO.GetItem(phoneManager);
-                List<StoreUser> lstUser = StoreUserDAO.GetList(existManager.Id);
+                List<StoreUser> lstUser = StoreUserDAO.GetArray(existManager.Id).ToList<StoreUser>();
                 foreach (StoreUser u in lstUser)
                 {
                     if (u.PINStore == pintore)
@@ -66,7 +66,7 @@ namespace MoneyPacificSrv.BUS
             if (StoreManagerDAO.IsExist(phoneManager))
             {
                 StoreManager existManager = StoreManagerDAO.GetItem(phoneManager);
-                List<StoreUser> lstUser = StoreUserDAO.GetList(existManager.Id);
+                List<StoreUser> lstUser = StoreUserDAO.GetArray(existManager.Id).ToList<StoreUser>();
                 foreach (StoreUser u in lstUser)
                 {
                     if (u.PINStore == pintore)
@@ -79,6 +79,33 @@ namespace MoneyPacificSrv.BUS
             return bResult;
         }
 
-        
+        /// <summary>
+        /// Giong ben MoneyPacificSite
+        /// </summary>
+        internal static int GetTotalLastMonthAmount(int ManagerId)
+        {
+            StoreUser[] lstStoreUser = StoreUserDAO.GetArray(ManagerId);
+            int iTotal = 0;
+
+            foreach (StoreUser u in lstStoreUser)
+            {
+                iTotal += StoreUserDAO.GetTotalLastMonthAmount(u.Id);
+            }
+            return iTotal;
+
+        }
+
+        internal static int GetTotalCollectedAmount(int storeManagerId)
+        {
+            int iStatusId = CollectStateDAO.GetId("Collected");
+            List<CollectMoney> lstCollectMoney = CollectMoneyDAO.GetList(storeManagerId,iStatusId).ToList<CollectMoney>();
+            int iResult = 0;
+            foreach (CollectMoney cm in lstCollectMoney)
+            {
+                if (cm.Amount == null) cm.Amount = 0;
+                iResult += (int)cm.Amount;
+            }
+            return iResult;
+        }
     }
 }

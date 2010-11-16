@@ -30,14 +30,18 @@ namespace F5_MoneyPacificSite.Controllers
             {
                 model.Add(new CollectMoneyView
                 {
+                    ManagerName = cm.StoreManager.Name,
+                    ManagerPhone = cm.StoreManager.ManagerPhone,
+
                     Id = cm.Id,
                     CollectNumber = cm.CollectNumber,
                     IdShop = cm.StoreManager.IdShop,
                     Address = cm.StoreManager.Address,
                     Amount = cm.Amount.ToString(),
+                    Agent = cm.Agent.Id + " - " + cm.Agent.FistName + cm.Agent.LastName,
                     Status = cm.CollectState.Name,
                     CreateDate = (DateTime)cm.CreateDate,
-                    ExprireDate = (DateTime)cm.ExpireDate
+                    ExprireDate = (DateTime)cm.ExpireDate                    
                 });
             }
             
@@ -54,14 +58,19 @@ namespace F5_MoneyPacificSite.Controllers
             {
                 model.Add(new CollectMoneyView
                 {
+                    ManagerName = cm.StoreManager.Name,
+                    ManagerPhone = cm.StoreManager.ManagerPhone,
+
                     Id = cm.Id,
                     CollectNumber = cm.CollectNumber,
                     IdShop = cm.StoreManager.IdShop,
                     Address = cm.StoreManager.Address,
                     Amount = cm.Amount.ToString(),
+                    Agent = cm.Agent.Id + " - " + cm.Agent.FistName + cm.Agent.LastName,
                     Status = cm.CollectState.Name,
                     CreateDate = (DateTime)cm.CreateDate,
-                    ExprireDate = (DateTime)cm.ExpireDate
+                    ExprireDate = (DateTime)cm.ExpireDate,
+                    CollectedDate = (DateTime)cm.CollecteDate
                 });
             }
 
@@ -76,6 +85,9 @@ namespace F5_MoneyPacificSite.Controllers
             {
                 lstObj.Add(new StoreManagerBalanceSelect
                 {
+                    ManagerName = sm.Name,
+                    ManagerPhone = sm.ManagerPhone,
+
                     Id = sm.Id,
                     Area = sm.City.Name,
                     IdShop = sm.IdShop,
@@ -122,7 +134,7 @@ namespace F5_MoneyPacificSite.Controllers
                 }
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("CollectProcessing");
             
 
             /// ------------------------------

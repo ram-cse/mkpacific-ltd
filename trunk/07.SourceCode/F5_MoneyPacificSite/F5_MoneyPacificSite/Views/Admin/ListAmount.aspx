@@ -18,6 +18,8 @@
             <tr>
                 <th>AREA</th>
                 <th>Shop ID</th>
+                <th>Store Manager Name</th>
+                <th>Store Manager Phone</th>
                 <th>Address</th>
                 <th>BAL</th>
                 <th>Selected</th>
@@ -36,6 +38,8 @@
 
                 <td align="center"><%:item.Area%></td>
                 <td align="center"><%:item.IdShop %></td>
+                <td align="center"><%:item.ManagerName %></td>
+                <td align="center"><%:item.ManagerPhone %></td>
                 <td><%:item.Address %></td>
                 <td><%:item.Balance %></td>
                 <td align="center"><%:Html.CheckBoxFor(model => model.StoreManagers[i].Selected)%></td>

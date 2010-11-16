@@ -54,7 +54,7 @@ namespace MoneyPacificSrv.Cmd
             /// Tính tổng
             if (isValidate)
             {
-                List<StoreUser> lstUser = StoreUserBUS.GetList(existStoreManager.Id);
+                List<StoreUser> lstUser = StoreUserBUS.GetArray(existStoreManager.Id).ToList<StoreUser>();
                 foreach (StoreUser u in lstUser)
                 {
                     iTotal += StoreUserBUS.GetTotalTransaction(u.Id);

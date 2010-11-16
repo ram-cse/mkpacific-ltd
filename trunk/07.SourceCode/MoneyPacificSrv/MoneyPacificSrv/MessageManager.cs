@@ -58,7 +58,10 @@ namespace MoneyPacificSrv
             new MPMessageDTO("MPENA_ENABLE_SUCCESSFULL", "MPENA-Enable thanh cong."),
             
             
-            new MPMessageDTO("STORE_IS_DISABLE", "STORE nang trong tinh trang DISABLE.")
+            new MPMessageDTO("STORE_IS_DISABLE", "STORE nang trong tinh trang DISABLE."),
+
+            new MPMessageDTO("MPCOL_GET_COLLECT_CODE_ERROR", "MPCOL - Ban khong co quyen truy cap vao lenh nay hoac la bi sai ma CollectCode. Neu tiep tuc so phone ban se bi khoa."),
+            new MPMessageDTO("MPCOL_SUCCESSFULL", "MPCOL - Thuc hien thanh cong! Vui dua so tien {0}VND cho Ong: {1} co IdNumber {2}. Kiem tra so IdNumber cua nguoi nhan.")
         };
 
         internal static string GetValue(string sName, string[] args)

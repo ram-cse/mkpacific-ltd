@@ -19,17 +19,21 @@ namespace F5_MoneyPacificSite.Models.BUS
             return StoreManagerDAO.GetItem(Id);
         }
 
-        internal static int GetTotalLastMonthAmount(int ManagerId)
+        internal static int GetTotalLastMonthAmount(int managerId)
         {
-            StoreUser[] lstStoreUser = StoreUserDAO.GetArray(ManagerId);
+            StoreUser[] lstStoreUser = StoreUserDAO.GetArray(managerId);
             int iTotal = 0;
 
             foreach (StoreUser u in lstStoreUser)
             {
                 iTotal += StoreUserDAO.GetTotalLastMonthAmount(u.Id);
             }
-            return iTotal;
 
+            int iTotalCollected = CollectMoneyBUS.GetCollectedAmount(managerId);
+
+            iTotal = iTotal - iTotalCollected;
+
+            return iTotal;
         }
 
         internal static int GetTotalLastMonthTransaction(int ManagerId)
@@ -48,8 +52,6 @@ namespace F5_MoneyPacificSite.Models.BUS
         {
             return StoreManagerDAO.ChangeLocked(Id);
         }
-
-
 
         internal static StoreManager[] GetList(string statusCode)
         {

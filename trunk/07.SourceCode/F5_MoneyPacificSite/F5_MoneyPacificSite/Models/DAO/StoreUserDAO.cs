@@ -34,9 +34,11 @@ namespace F5_MoneyPacificSite.Models.DAO
             MoneyPacificEntities db = new MoneyPacificEntities();
             int iTotalAmount = 0;
 
+            /// TODO: Sua theo ben MoneyPacificSrv cho chính xác
             iTotalAmount = (from p in db.PacificCodes
-                            where p.Id == storeId
-                            select (int)p.InitialAmount).Sum();
+                            where p.StoreId == storeId
+                            select (int)p.InitialAmount).DefaultIfEmpty().Sum();
+
             db.Connection.Close();
             return iTotalAmount;
         }
