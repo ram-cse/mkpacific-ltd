@@ -1,3 +1,41 @@
+	THÔNG TIN LIÊN LẠC
+Tên
+Địa chỉ
+Điện thoại
+Di động
+Email 
+
+THÔNG TIN CÁ NHÂN
+Ngày sinh
+Nơi sinh
+Quốc tịch
+GiớI tính
+
+Có thể thêm những thông tin cá nhân khác:
+Tình trạng hôn nhân
+Tên vợ hoặc chồng
+Con cái
+
+KINH NGHIỆM LÀM VIỆC
+Liệt kê theo thứ tự thờI gian (thờI gian gần đây nhất trỏ về trước) bao gồm chi tiết về thờI gian và vị trí công việc
+ThờI gian công tác
+Vị trí công việc
+Đào tạo và Nghiên cứu
+
+TRÌNH ĐỘ HỌC VẤN 
+Bao gồm thờI gian học, chuyên ngành, bằng cấp, các khoá đào tạo và chứng chỉ 
+Trung học
+ĐạI học
+Đào tạo sau đạI học
+
+BẰNG CẤP CHUYÊN MÔN
+Chứng chỉ và Bằng cấp
+Kỹ năng vi tính
+GIẢI THƯỞNG
+SỞ THÍCH
+
+
+	
 	16/11/2010:
 		- Money Pacific:
 			+ MPCOL
