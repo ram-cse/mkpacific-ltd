@@ -1,3 +1,23 @@
+
+	22/11/2010:
+		- Money Pacific:
+			JQuery
+			AJax 
+				
+			Tạo Agent ...
+			Viết Security
+			
+		- Tìm hiểu PHP:
+		- Viết CV
+		
+		LT:
+			int? count = (from cartItems in storeDB.Carts
+                          where cartItems.CartId == shoppingCartId
+                          select (int?)cartItems.Count).Sum();
+			<em></em>
+			=>>> ??
+	
+	------------------------------------
 	THÔNG TIN LIÊN LẠC
 Tên
 Địa chỉ
@@ -35,7 +55,50 @@ GIẢI THƯỞNG
 SỞ THÍCH
 
 
-	
+	18/11/2010:
+		- Sửa lỗi +84 => lưu tất cả sdt bằng +84 đâu tiên
+		- Not yet amount: -> nếu đã có CollectMoney đang ở trạng thái Processing => disable (ko cho sửa)
+		+ trường hợp cho phép sửa lại CollectMoney đang ở trạng thái Processing mà ExpireDate chưa qua ngày
+		
+
+		Cách cài đặt SubDomain:
+			B1. cấu  hình trỏ dns: sample.mydomain.com  vào server (localhost)
+			B2. Tại IIS => chọn Web application cần edit => Edit Binding => nhập sample.mydomaincom
+			
+			Test: C:\Windows\System32\driver\etc\host
+				- Thêm dòng : 
+				127.0.0.1     sample.localhost
+				- Cài đặt B2
+				- IE: http://sample.localhost/
+		- Mò AJax, JQuery
+		- Agent
+		- Security
+			
+		
+	17/11/2010:
+		- AJax
+		- Fix lỗi -> nếu Collect Code tồn tại rồi thì đưa ra thông báo:
+		Collecd Code này đã được thanh toán với giá trị {0}VND vào ngày 
+		- In 5 tờ giấy địa chỉ ra:
+		- Chủ 
+		- Send tin nhan free:
+		
+		--------------------------------------
+		Ky niem xua nay mong manh nhu ngay
+		va nguoi yeu hoi ..
+		xin troi thoi dung ban tuyet trong tim toi
+		Gio heo hat nhu khoi noi sau
+		tung hat tuyet, nhu phu kin trong tam hon toi
+		ngan vi sao hay noi nho nhu ai van uvong
+		niem hanh phuc sao wa mong den ai nao ngo
+		oi cuoc doi day gian doi
+		tinh yeu da chet theo thoi gian
+		ngoi troi bao uyet van cu roi hoai
+		Ki niem xua nay mong manh nhu 
+		va nguoi yeu hoi co biet trai 
+		do dau con nhieu gian doi
+		xin troi thoi dung ban tuyet trong tim toi
+
 	16/11/2010:
 		- Money Pacific:
 			+ MPCOL
