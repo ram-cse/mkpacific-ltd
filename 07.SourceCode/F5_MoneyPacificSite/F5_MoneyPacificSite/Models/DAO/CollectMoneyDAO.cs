@@ -47,5 +47,61 @@ namespace F5_MoneyPacificSite.Models.DAO
             db.Connection.Close();
             return arrResult;
         }
+
+        internal static CollectMoney GetItem(int storeManagerId, int iStatusId, DateTime expireDate)
+        {
+            MoneyPacificEntities db = new MoneyPacificEntities();
+            CollectMoney result = null;
+
+            CollectMoney[] arrCM = db.CollectMoneys
+                .Include("StoreManager")
+                .Include("Agent")
+                .Include("CollectState")
+                .Where(c => c.StoreManagerId == storeManagerId
+                && c.StatusId == iStatusId)
+                .DefaultIfEmpty<CollectMoney>().ToArray();
+            db.Connection.Close();
+
+            //if (arrCM == null) arrCM = new CollectMoney[0];
+
+            foreach (CollectMoney cm in arrCM)
+            {
+                if (cm != null)
+                {
+                    if (cm.ExpireDate == null)
+                    {
+                        cm.ExpireDate = DateTime.MinValue;
+                    }
+
+                    if (cm.ExpireDate.Value > expireDate)
+                    {
+                        result = cm;
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
+        internal static bool Update(CollectMoney updateCollectMoney, int agentId)
+        {
+            MoneyPacificEntities db = new MoneyPacificEntities();
+            
+            CollectMoney existCollectMoney = db.CollectMoneys
+                .Where(c => c.Id == updateCollectMoney.Id)
+                .Single<CollectMoney>();
+
+            existCollectMoney.CollectNumber = updateCollectMoney.CollectNumber;
+            existCollectMoney.AgentId = agentId;
+
+            existCollectMoney.CreateDate = DateTime.Now;
+            existCollectMoney.ExpireDate = DateTime.Now.AddDays(1);
+
+
+            db.SaveChanges();
+            db.Connection.Close();
+            
+            return true;
+        }
     }
 }

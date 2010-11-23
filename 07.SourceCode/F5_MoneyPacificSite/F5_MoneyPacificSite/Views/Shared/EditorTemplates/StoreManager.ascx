@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<F5_MoneyPacificSite.Models.StoreManager>" %>
+﻿<%@ Control Language="C#" 
+Inherits="System.Web.Mvc.ViewUserControl<F5_MoneyPacificSite.Models.StoreManager>" %>
     <%: Html.HiddenFor(model => model.Id) %>
           
 <table>

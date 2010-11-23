@@ -143,7 +143,7 @@ namespace MoneyPacificSrv.DAO
         /// Lấy tất cả các PacificCode được mua bởi StoreUser này, 
         /// ở trong tháng. Tính tổng tất cả InitialAmount 
         /// </summary>        
-        internal static int GetTotalLastMonthAmount(int storeId)
+        internal static int GetTotalAmount(int storeId)
         {
             DBMoneyPacificDataContext db = new DBMoneyPacificDataContext();
             int iTotalAmount = 0;

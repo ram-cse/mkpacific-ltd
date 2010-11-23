@@ -35,6 +35,21 @@ namespace MoneyPacificSrv.Util
             return insertSeparateChar(sCodeNumber, c, 4);
         }
 
+        internal static string formatMoney(int amount)
+        {
+            string sAmount = amount.ToString();
+            string sResult ="";
+            for (int i = sAmount.Length - 1; i >= 0; i--)
+            {
+                sResult = sAmount[i] + sResult;
+                int j = sAmount.Length - i;
+                if ((j % 3 == 0) & i != 0)
+                {
+                    sResult = ',' + sResult;
+                }
+            }
+            return sResult;
+        }
         internal static string insertSeparateChar(string sCodeNumber, char c, int l)
         {
             string sResult = "";
@@ -50,6 +65,16 @@ namespace MoneyPacificSrv.Util
                 }
             }
             return sResult;
+        }
+
+        internal static string formatPhone(string sPhone)
+        {
+            sPhone = sPhone.Trim();
+            if (sPhone[0] == '0')
+            {
+                sPhone = "+84" + sPhone.Substring(1);
+            }
+            return sPhone;
         }
 
         internal static int Min(int a, int b)

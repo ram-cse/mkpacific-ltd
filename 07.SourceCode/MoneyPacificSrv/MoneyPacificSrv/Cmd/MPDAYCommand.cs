@@ -67,9 +67,7 @@ namespace MoneyPacificSrv.Cmd
                 sContentSMS = MessageManager.GetValue("MPDAY_GET_COLLECT_CODE_ERROR");
             }
                 
-            return sReceivePhone + "*" + sContentSMS;
-
-            
+            return sReceivePhone + "*" + sContentSMS;            
         }
 
         #endregion

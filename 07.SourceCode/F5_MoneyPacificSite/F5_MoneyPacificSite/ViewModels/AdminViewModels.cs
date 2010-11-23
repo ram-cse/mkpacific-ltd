@@ -13,7 +13,7 @@ namespace F5_MoneyPacificSite.ViewModels
     {
         public List<StoreManagerBalanceSelect> StoreManagers { get; set; }        
         public List<Agent> Agents { get; set; }
-        public int IdSelected { get; set; }
+        public int AgentIdSelected { get; set; }
     }
 
     //public class AdminCollectProcessingListViewModel

@@ -18,6 +18,7 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Agent_AgentState", "AgentState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.AgentState), "Agent", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.Agent), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_CollectMoney_Agent", "Agent", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Agent), "CollectMoney", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.CollectMoney), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_PacificCode_Categories", "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.Category), "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.PacificCode), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_City", "City", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.City), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreManager), true)]
@@ -102,6 +103,22 @@ namespace F5_MoneyPacificSite.Models
             }
         }
         private ObjectSet<Agent> _Agents;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<AgentState> AgentStates
+        {
+            get
+            {
+                if ((_AgentStates == null))
+                {
+                    _AgentStates = base.CreateObjectSet<AgentState>("AgentStates");
+                }
+                return _AgentStates;
+            }
+        }
+        private ObjectSet<AgentState> _AgentStates;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -403,6 +420,14 @@ namespace F5_MoneyPacificSite.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the AgentStates EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAgentStates(AgentState agentState)
+        {
+            base.AddObject("AgentStates", agentState);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Categories EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToCategories(Category category)
@@ -658,6 +683,30 @@ namespace F5_MoneyPacificSite.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public Nullable<global::System.Int32> StatusId
+        {
+            get
+            {
+                return _StatusId;
+            }
+            set
+            {
+                OnStatusIdChanging(value);
+                ReportPropertyChanging("StatusId");
+                _StatusId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StatusId");
+                OnStatusIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _StatusId;
+        partial void OnStatusIdChanging(Nullable<global::System.Int32> value);
+        partial void OnStatusIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String FistName
         {
             get
@@ -700,10 +749,144 @@ namespace F5_MoneyPacificSite.Models
         private global::System.String _LastName;
         partial void OnLastNameChanging(global::System.String value);
         partial void OnLastNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Address
+        {
+            get
+            {
+                return _Address;
+            }
+            set
+            {
+                OnAddressChanging(value);
+                ReportPropertyChanging("Address");
+                _Address = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Address");
+                OnAddressChanged();
+            }
+        }
+        private global::System.String _Address;
+        partial void OnAddressChanging(global::System.String value);
+        partial void OnAddressChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Phone
+        {
+            get
+            {
+                return _Phone;
+            }
+            set
+            {
+                OnPhoneChanging(value);
+                ReportPropertyChanging("Phone");
+                _Phone = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Phone");
+                OnPhoneChanged();
+            }
+        }
+        private global::System.String _Phone;
+        partial void OnPhoneChanging(global::System.String value);
+        partial void OnPhoneChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Comment
+        {
+            get
+            {
+                return _Comment;
+            }
+            set
+            {
+                OnCommentChanging(value);
+                ReportPropertyChanging("Comment");
+                _Comment = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Comment");
+                OnCommentChanged();
+            }
+        }
+        private global::System.String _Comment;
+        partial void OnCommentChanging(global::System.String value);
+        partial void OnCommentChanged();
 
         #endregion
     
         #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Agent_AgentState", "AgentState")]
+        public AgentState AgentState
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AgentState>("MoneyPacificModel.FK_Agent_AgentState", "AgentState").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AgentState>("MoneyPacificModel.FK_Agent_AgentState", "AgentState").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<AgentState> AgentStateReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AgentState>("MoneyPacificModel.FK_Agent_AgentState", "AgentState");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AgentState>("MoneyPacificModel.FK_Agent_AgentState", "AgentState", value);
+                }
+            }
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -723,6 +906,134 @@ namespace F5_MoneyPacificSite.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CollectMoney>("MoneyPacificModel.FK_CollectMoney_Agent", "CollectMoney", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="AgentState")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class AgentState : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new AgentState object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static AgentState CreateAgentState(global::System.Int32 id)
+        {
+            AgentState agentState = new AgentState();
+            agentState.Id = id;
+            return agentState;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_Agent_AgentState", "Agent")]
+        public EntityCollection<Agent> Agents
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Agent>("MoneyPacificModel.FK_Agent_AgentState", "Agent");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Agent>("MoneyPacificModel.FK_Agent_AgentState", "Agent", value);
                 }
             }
         }

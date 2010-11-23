@@ -93,5 +93,21 @@ namespace F5_MoneyPacificSite.Models.BUS
         {
             return CollectMoneyDAO.GetListStatusId(statusId).ToList();
         }
+
+        internal static CollectMoney GetItem(int storeManagerId, int iStatusId, DateTime expireDate)
+        {
+            return CollectMoneyDAO.GetItem(storeManagerId, iStatusId, expireDate);
+        }
+
+        internal static bool Update(CollectMoney existCollectMoney, int agentId)
+        {
+            // Cap nhat lai code moi
+            existCollectMoney.CollectNumber = GenerateCollectNumber();
+            
+            existCollectMoney.CreateDate = DateTime.Now;
+            existCollectMoney.ExpireDate = DateTime.Now.AddDays(1);
+
+            return CollectMoneyDAO.Update(existCollectMoney, agentId);
+        }
     }
 }

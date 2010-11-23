@@ -82,14 +82,14 @@ namespace MoneyPacificSrv.BUS
         /// <summary>
         /// Giong ben MoneyPacificSite
         /// </summary>
-        internal static int GetTotalLastMonthAmount(int ManagerId)
+        internal static int GetTotalAmount(int ManagerId)
         {
             StoreUser[] lstStoreUser = StoreUserDAO.GetArray(ManagerId);
             int iTotal = 0;
 
             foreach (StoreUser u in lstStoreUser)
             {
-                iTotal += StoreUserDAO.GetTotalLastMonthAmount(u.Id);
+                iTotal += StoreUserDAO.GetTotalAmount(u.Id);
             }
             return iTotal;
 

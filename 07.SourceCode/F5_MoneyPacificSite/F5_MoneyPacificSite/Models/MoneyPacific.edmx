@@ -7,6 +7,7 @@
     <Schema Namespace="MoneyPacificModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="MoneyPacificModelStoreContainer">
           <EntitySet Name="Agent" EntityType="MoneyPacificModel.Store.Agent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AgentState" EntityType="MoneyPacificModel.Store.AgentState" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Categories" EntityType="MoneyPacificModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="City" EntityType="MoneyPacificModel.Store.City" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CollectMoney" EntityType="MoneyPacificModel.Store.CollectMoney" store:Type="Tables" Schema="dbo" />
@@ -25,6 +26,10 @@
           <EntitySet Name="TransactionCate" EntityType="MoneyPacificModel.Store.TransactionCate" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TransactionFee" EntityType="MoneyPacificModel.Store.TransactionFee" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TransactionState" EntityType="MoneyPacificModel.Store.TransactionState" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Agent_AgentState" Association="MoneyPacificModel.Store.FK_Agent_AgentState">
+            <End Role="AgentState" EntitySet="AgentState" />
+            <End Role="Agent" EntitySet="Agent" />
+          </AssociationSet>
           <AssociationSet Name="FK_CollectMoney_Agent" Association="MoneyPacificModel.Store.FK_CollectMoney_Agent">
             <End Role="Agent" EntitySet="Agent" />
             <End Role="CollectMoney" EntitySet="CollectMoney" />
@@ -105,8 +110,21 @@
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="nchar" MaxLength="50" />
           <Property Name="Password" Type="nchar" MaxLength="50" />
+          <Property Name="StatusId" Type="int" />
           <Property Name="FistName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nchar" MaxLength="50" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="AgentState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Categories">
           <Key>
@@ -142,7 +160,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Customer">
@@ -338,6 +356,18 @@
           <Property Name="Code" Type="nchar" MaxLength="20" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <Association Name="FK_Agent_AgentState">
+          <End Role="AgentState" Type="MoneyPacificModel.Store.AgentState" Multiplicity="0..1" />
+          <End Role="Agent" Type="MoneyPacificModel.Store.Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agent">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CollectMoney_Agent">
           <End Role="Agent" Type="MoneyPacificModel.Store.Agent" Multiplicity="0..1" />
           <End Role="CollectMoney" Type="MoneyPacificModel.Store.CollectMoney" Multiplicity="*" />
@@ -569,6 +599,7 @@
       <Schema Namespace="MoneyPacificModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="MoneyPacificEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Agents" EntityType="MoneyPacificModel.Agent" />
+          <EntitySet Name="AgentStates" EntityType="MoneyPacificModel.AgentState" />
           <EntitySet Name="Categories" EntityType="MoneyPacificModel.Category" />
           <EntitySet Name="Cities" EntityType="MoneyPacificModel.City" />
           <EntitySet Name="CollectMoneys" EntityType="MoneyPacificModel.CollectMoney" />
@@ -587,6 +618,10 @@
           <EntitySet Name="TransactionCates" EntityType="MoneyPacificModel.TransactionCate" />
           <EntitySet Name="TransactionFees" EntityType="MoneyPacificModel.TransactionFee" />
           <EntitySet Name="TransactionStates" EntityType="MoneyPacificModel.TransactionState" />
+          <AssociationSet Name="FK_Agent_AgentState" Association="MoneyPacificModel.FK_Agent_AgentState">
+            <End Role="AgentState" EntitySet="AgentStates" />
+            <End Role="Agent" EntitySet="Agents" />
+          </AssociationSet>
           <AssociationSet Name="FK_CollectMoney_Agent" Association="MoneyPacificModel.FK_CollectMoney_Agent">
             <End Role="Agent" EntitySet="Agents" />
             <End Role="CollectMoney" EntitySet="CollectMoneys" />
@@ -667,9 +702,24 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Username" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Type="String" Name="Password" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="StatusId" />
           <Property Type="String" Name="FistName" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Comment" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AgentState" Relationship="MoneyPacificModel.FK_Agent_AgentState" FromRole="Agent" ToRole="AgentState" />
           <NavigationProperty Name="CollectMoneys" Relationship="MoneyPacificModel.FK_CollectMoney_Agent" FromRole="Agent" ToRole="CollectMoney" />
+        </EntityType>
+        <EntityType Name="AgentState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Agents" Relationship="MoneyPacificModel.FK_Agent_AgentState" FromRole="AgentState" ToRole="Agent" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -693,7 +743,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="AgentId" />
           <Property Type="Int32" Name="StatusId" />
           <Property Type="Int32" Name="StoreManagerId" />
@@ -710,7 +760,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CollectMoneys" Relationship="MoneyPacificModel.FK_CollectMoney_CollectState" FromRole="CollectState" ToRole="CollectMoney" />
         </EntityType>
@@ -936,6 +986,18 @@
           <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Transactions" Relationship="MoneyPacificModel.FK_Transaction_TransactionStatus" FromRole="TransactionState" ToRole="Transaction" />
         </EntityType>
+        <Association Name="FK_Agent_AgentState">
+          <End Type="MoneyPacificModel.AgentState" Role="AgentState" Multiplicity="0..1" />
+          <End Type="MoneyPacificModel.Agent" Role="Agent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agent">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CollectMoney_Agent">
           <End Type="MoneyPacificModel.Agent" Role="Agent" Multiplicity="0..1" />
           <End Type="MoneyPacificModel.CollectMoney" Role="CollectMoney" Multiplicity="*" />
@@ -1161,10 +1223,24 @@
           <EntitySetMapping Name="Agents">
             <EntityTypeMapping TypeName="MoneyPacificModel.Agent">
               <MappingFragment StoreEntitySet="Agent">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FistName" ColumnName="FistName" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentStates">
+            <EntityTypeMapping TypeName="MoneyPacificModel.AgentState">
+              <MappingFragment StoreEntitySet="AgentState">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1438,121 +1514,130 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="MoneyPacific">
-        <EntityTypeShape EntityType="MoneyPacificModel.Agent" Width="1.5" PointX="3" PointY="11.875" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="MoneyPacificModel.Category" Width="1.5" PointX="8.25" PointY="1.125" Height="1.9802864583333388" />
-        <EntityTypeShape EntityType="MoneyPacificModel.City" Width="1.5" PointX="0.75" PointY="6.25" Height="1.595683593749996" />
-        <EntityTypeShape EntityType="MoneyPacificModel.CollectMoney" Width="1.5" PointX="5.25" PointY="5.375" Height="3.3263964843750102" />
-        <EntityTypeShape EntityType="MoneyPacificModel.CollectState" Width="1.5" PointX="3" PointY="0.75" Height="1.595683593749996" />
-        <EntityTypeShape EntityType="MoneyPacificModel.Customer" Width="1.5" PointX="8.25" PointY="11.875" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="MoneyPacificModel.CustomerState" Width="1.5" PointX="6" PointY="13.25" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="MoneyPacificModel.InternetAccessRole" Width="1.5" PointX="0.75" PointY="2.75" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="MoneyPacificModel.PacificCode" Width="1.5" PointX="10.5" PointY="4.75" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="MoneyPacificModel.PacificCodeState" Width="1.5" PointX="8.25" PointY="17.25" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="MoneyPacificModel.StoreManager" Width="1.5" PointX="3" PointY="3.25" Height="7.5570279947916665" />
-        <EntityTypeShape EntityType="MoneyPacificModel.StoreManagerState" Width="1.5" PointX="0.75" PointY="9.5" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="MoneyPacificModel.StoreUser" Width="1.5" PointX="8.25" PointY="4.625" Height="4.8648079427083246" />
-        <EntityTypeShape EntityType="MoneyPacificModel.StoreUserState" Width="1.5" PointX="6" PointY="10.5" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="MoneyPacificModel.sysdiagram" Width="1.5" PointX="12.75" PointY="10.125" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="MoneyPacificModel.Transaction" Width="1.5" PointX="12.75" PointY="5" Height="4.0956022135416674" />
-        <EntityTypeShape EntityType="MoneyPacificModel.TransactionCate" Width="1.5" PointX="10.5" PointY="1.75" Height="2.1725878906250102" />
-        <EntityTypeShape EntityType="MoneyPacificModel.TransactionFee" Width="1.5" PointX="12.75" PointY="1.75" Height="2.172587890624996" />
-        <EntityTypeShape EntityType="MoneyPacificModel.TransactionState" Width="1.5" PointX="10.5" PointY="10.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.Agent" Width="1.5" PointX="3" PointY="11.875" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.AgentState" Width="1.5" PointX="0.75" PointY="12.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.Category" Width="1.5" PointX="8.25" PointY="0.75" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.City" Width="1.5" PointX="0.75" PointY="5.875" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.CollectMoney" Width="1.5" PointX="5.25" PointY="5" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.CollectState" Width="1.5" PointX="3" PointY="17" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.Customer" Width="1.5" PointX="8.25" PointY="11.5" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.CustomerState" Width="1.5" PointX="6" PointY="12.875" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.InternetAccessRole" Width="1.5" PointX="0.75" PointY="2.375" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.PacificCode" Width="1.5" PointX="10.5" PointY="4.375" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.PacificCodeState" Width="1.5" PointX="8.25" PointY="16.875" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreManager" Width="1.5" PointX="3" PointY="3" Height="7.5570279947916665" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreManagerState" Width="1.5" PointX="0.75" PointY="9.125" Height="1.980286458333353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreUser" Width="1.5" PointX="8.25" PointY="4.25" Height="4.864807942708353" />
+        <EntityTypeShape EntityType="MoneyPacificModel.StoreUserState" Width="1.5" PointX="6" PointY="10.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.sysdiagram" Width="1.5" PointX="12.75" PointY="9.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="MoneyPacificModel.Transaction" Width="1.5" PointX="12.75" PointY="4.625" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionCate" Width="1.5" PointX="10.5" PointY="1.375" Height="2.1725878906249818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionFee" Width="1.5" PointX="12.75" PointY="1.375" Height="2.1725878906249818" />
+        <EntityTypeShape EntityType="MoneyPacificModel.TransactionState" Width="1.5" PointX="10.5" PointY="10.25" Height="1.7879850260416674" />
+        <AssociationConnector Association="MoneyPacificModel.FK_Agent_AgentState" >
+          <ConnectorPoint PointX="2.25" PointY="13.518992513020834" />
+          <ConnectorPoint PointX="3" PointY="13.518992513020834" />
+        </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_CollectMoney_Agent" >
-          <ConnectorPoint PointX="4.5" PointY="12.768992513020834" />
-          <ConnectorPoint PointX="5.59375" PointY="12.768992513020834" />
-          <ConnectorPoint PointX="5.59375" PointY="8.70139648437501" />
+          <ConnectorPoint PointX="4.5" PointY="12.393992513020834" />
+          <ConnectorPoint PointX="5.3072891666666671" PointY="12.393992513020834" />
+          <ConnectorPoint PointX="5.4739558333333331" PointY="12.393992513020834" />
+          <ConnectorPoint PointX="5.59375" PointY="12.393992513020834" />
+          <ConnectorPoint PointX="5.59375" PointY="8.3263964843749818" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Categories" >
-          <ConnectorPoint PointX="9.75" PointY="3.1041316121794926" />
-          <ConnectorPoint PointX="10.125" PointY="3.4791316121794926" />
-          <ConnectorPoint PointX="10.125" PointY="7.0862532552083337" />
-          <ConnectorPoint PointX="10.197916666666666" PointY="7.0862532552083328" />
-          <ConnectorPoint PointX="10.364583333333334" PointY="7.0862532552083337" />
-          <ConnectorPoint PointX="10.5" PointY="7.0862532552083337" />
+          <ConnectorPoint PointX="9.75" PointY="2.7291316121795068" />
+          <ConnectorPoint PointX="10.125" PointY="3.1041316121795068" />
+          <ConnectorPoint PointX="10.125" PointY="6.7112532552083337" />
+          <ConnectorPoint PointX="10.197916666666666" PointY="6.7112532552083328" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="6.7112532552083337" />
+          <ConnectorPoint PointX="10.5" PointY="6.7112532552083337" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_StoreManager_City" >
-          <ConnectorPoint PointX="2.25" PointY="7.047841796874998" />
-          <ConnectorPoint PointX="3" PointY="7.047841796874998" />
+          <ConnectorPoint PointX="2.25" PointY="6.6728417968749909" />
+          <ConnectorPoint PointX="3" PointY="6.6728417968749909" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_CollectMoney_CollectState" >
-          <ConnectorPoint PointX="4.5" PointY="1.547841796874998" />
-          <ConnectorPoint PointX="6" PointY="1.547841796874998" />
-          <ConnectorPoint PointX="6" PointY="5.375" />
+          <ConnectorPoint PointX="4.5" PointY="17.797841796874991" />
+          <ConnectorPoint PointX="5.3906225" PointY="17.797841796874991" />
+          <ConnectorPoint PointX="5.3906225" PointY="8.3263964843749818" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_CollectMoney_StoreManager" >
-          <ConnectorPoint PointX="4.5" PointY="7.0381982421875051" />
-          <ConnectorPoint PointX="5.25" PointY="7.0381982421875051" />
+          <ConnectorPoint PointX="4.5" PointY="6.6631982421874909" />
+          <ConnectorPoint PointX="5.25" PointY="6.6631982421874909" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_Customer_CustomerStatus" >
-          <ConnectorPoint PointX="7.5" PointY="14.240143229166662" />
-          <ConnectorPoint PointX="8.25" PointY="14.240143229166662" />
+          <ConnectorPoint PointX="7.5" PointY="13.865143229166677" />
+          <ConnectorPoint PointX="8.25" PointY="13.865143229166677" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Customer" >
-          <ConnectorPoint PointX="9.75" PointY="11.937306692307692" />
-          <ConnectorPoint PointX="10.1875" PointY="11.499806692307693" />
-          <ConnectorPoint PointX="10.1875" PointY="8.2856318828124955" />
-          <ConnectorPoint PointX="10.197916666666666" PointY="8.2856318828124955" />
-          <ConnectorPoint PointX="10.364583333333334" PointY="8.2856318828124955" />
-          <ConnectorPoint PointX="10.5" PointY="8.2856318828124955" />
+          <ConnectorPoint PointX="9.75" PointY="11.562306692307692" />
+          <ConnectorPoint PointX="10.1875" PointY="11.124806692307693" />
+          <ConnectorPoint PointX="10.1875" PointY="7.9106318828125515" />
+          <ConnectorPoint PointX="10.197916666666666" PointY="7.9106318828125506" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="7.9106318828125515" />
+          <ConnectorPoint PointX="10.5" PointY="7.9106318828125515" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_StoreManager_InternetAccessRole" >
-          <ConnectorPoint PointX="2.25" PointY="3.9901432291666623" />
-          <ConnectorPoint PointX="3" PointY="3.9901432291666623" />
+          <ConnectorPoint PointX="2.25" PointY="3.6776432291666765" />
+          <ConnectorPoint PointX="3" PointY="3.6776432291666765" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_PacificCodeStatus" >
-          <ConnectorPoint PointX="9.75" PointY="17.281152846153844" />
-          <ConnectorPoint PointX="10.28125" PointY="16.749902846153844" />
-          <ConnectorPoint PointX="10.28125" PointY="5.8868746276041737" />
-          <ConnectorPoint PointX="10.5" PointY="5.8868746276041737" />
+          <ConnectorPoint PointX="9.75" PointY="16.906152846153844" />
+          <ConnectorPoint PointX="10.28125" PointY="16.374902846153844" />
+          <ConnectorPoint PointX="10.28125" PointY="5.5118746276041168" />
+          <ConnectorPoint PointX="10.5" PointY="5.5118746276041168" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_PacificCode_Store" >
-          <ConnectorPoint PointX="9.75" PointY="5.2559373138020868" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="5.255937313802086" />
-          <ConnectorPoint PointX="10.208333333333334" PointY="5.2559373138020868" />
-          <ConnectorPoint PointX="10.5" PointY="5.2559373138020868" />
+          <ConnectorPoint PointX="9.75" PointY="4.8809373138020584" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="4.8809373138020575" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="4.8809373138020584" />
+          <ConnectorPoint PointX="10.5" PointY="4.8809373138020584" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_StoreUser_PacificCode" >
-          <ConnectorPoint PointX="10.5" PointY="8.9165691966145815" />
-          <ConnectorPoint PointX="10.364583333333334" PointY="8.91656919661458" />
-          <ConnectorPoint PointX="10.104166666666666" PointY="8.9165691966145815" />
-          <ConnectorPoint PointX="9.75" PointY="8.9165691966145815" />
+          <ConnectorPoint PointX="10.5" PointY="8.54156919661461" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="8.5415691966146081" />
+          <ConnectorPoint PointX="10.104166666666666" PointY="8.54156919661461" />
+          <ConnectorPoint PointX="9.75" PointY="8.54156919661461" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_Transaction_PacificCode" >
-          <ConnectorPoint PointX="12" PointY="7.0478011067708337" />
-          <ConnectorPoint PointX="12.75" PointY="7.0478011067708337" />
+          <ConnectorPoint PointX="12" PointY="6.6728011067708337" />
+          <ConnectorPoint PointX="12.75" PointY="6.6728011067708337" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_StoreManager_StoreManagerState" >
-          <ConnectorPoint PointX="2.25" PointY="10.153513997395834" />
-          <ConnectorPoint PointX="3" PointY="10.153513997395834" />
+          <ConnectorPoint PointX="2.25" PointY="9.8410139973958337" />
+          <ConnectorPoint PointX="3" PointY="9.8410139973958337" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_StoreUser_StoreManager" >
-          <ConnectorPoint PointX="4.5" PointY="9.1268522135416674" />
-          <ConnectorPoint PointX="5.510416666666667" PointY="9.1268522135416674" />
-          <ConnectorPoint PointX="5.677083333333333" PointY="9.1268522135416674" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="9.1268522135416674" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="9.1268522135416674" />
-          <ConnectorPoint PointX="8.25" PointY="9.1268522135416674" />
+          <ConnectorPoint PointX="4.5" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="5.3072891666666671" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="5.4739558333333331" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="8.7518522135416674" />
+          <ConnectorPoint PointX="8.25" PointY="8.7518522135416674" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_Store_StoreStatus" >
-          <ConnectorPoint PointX="7.15625" PointY="10.5" />
-          <ConnectorPoint PointX="7.15625" PointY="4.96875" />
-          <ConnectorPoint PointX="8.25" PointY="4.96875" />
+          <ConnectorPoint PointX="7.15625" PointY="10.125" />
+          <ConnectorPoint PointX="7.15625" PointY="4.59375" />
+          <ConnectorPoint PointX="8.25" PointY="4.59375" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_Transaction_TransactionCate" >
-          <ConnectorPoint PointX="12" PointY="3.921433044471164" />
-          <ConnectorPoint PointX="12.375" PointY="4.2964330444711649" />
-          <ConnectorPoint PointX="12.375" PointY="5.9926485533854237" />
-          <ConnectorPoint PointX="12.75" PointY="5.9926485533854237" />
+          <ConnectorPoint PointX="12" PointY="3.5464330444711356" />
+          <ConnectorPoint PointX="12.375" PointY="3.9214330444711365" />
+          <ConnectorPoint PointX="12.375" PointY="5.6176485533853668" />
+          <ConnectorPoint PointX="12.75" PointY="5.6176485533853668" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_Transaction_TransactionStatus" >
-          <ConnectorPoint PointX="12" PointY="10.625" />
-          <ConnectorPoint PointX="12.375" PointY="10.25" />
-          <ConnectorPoint PointX="12.375" PointY="8.1029536601562455" />
-          <ConnectorPoint PointX="12.75" PointY="8.1029536601562455" />
+          <ConnectorPoint PointX="12" PointY="10.25" />
+          <ConnectorPoint PointX="12.375" PointY="9.875" />
+          <ConnectorPoint PointX="12.375" PointY="7.7279536601563015" />
+          <ConnectorPoint PointX="12.75" PointY="7.7279536601563015" />
         </AssociationConnector>
         <AssociationConnector Association="MoneyPacificModel.FK_TransactionFee_TransactionCate" >
-          <ConnectorPoint PointX="12" PointY="2.8044640222355883" />
-          <ConnectorPoint PointX="12.75" PointY="2.8044640222355883" />
+          <ConnectorPoint PointX="12" PointY="2.4294640222355741" />
+          <ConnectorPoint PointX="12.75" PointY="2.4294640222355741" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

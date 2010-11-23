@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Admin.Master" Inherits="System.Web.Mvc.ViewPage<F5_MoneyPacificSite.ViewModels.AdminListAmountViewModel>" %>
 <%@ Import Namespace="F5_MoneyPacificSite.ViewModels" %>
+<%@ Import Namespace = "F5_MoneyPacificSite.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	ListAmount
 </asp:Content>
@@ -41,7 +42,7 @@
                 <td align="center"><%:item.ManagerName %></td>
                 <td align="center"><%:item.ManagerPhone %></td>
                 <td><%:item.Address %></td>
-                <td><%:item.Balance %></td>
+                <td><%:Html.formatMoney(item.Balance) %></td>
                 <td align="center"><%:Html.CheckBoxFor(model => model.StoreManagers[i].Selected)%></td>
             </tr>
                 <%} %>
@@ -50,7 +51,7 @@
 
     <fieldset>
         <legend>Agents</legend>
-        <%: Html.DropDownList("IdSelected", new SelectList(Model.Agents, "Id","Username","0"))%>
+        <%: Html.DropDownList("AgentIdSelected", new SelectList(Model.Agents, "Id","Username","0"))%>
     </fieldset>    
 
     <p>
