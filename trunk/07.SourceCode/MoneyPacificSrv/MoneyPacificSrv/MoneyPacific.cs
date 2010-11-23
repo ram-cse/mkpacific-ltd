@@ -14,6 +14,9 @@ namespace MoneyPacificSrv
 {
     public class MoneyPacific
     {
+        
+
+
         internal static string SendMessage(string smsContent)
         {
             string smsResponse = "";
@@ -22,12 +25,19 @@ namespace MoneyPacificSrv
 
             // Phân tích để lấy command & arguments            
             smsContent = smsContent.Trim(' ');
+            
+            //
             string[] arrArg = smsContent.Split('*');
 
             if (arrArg.Count() <= 1) return "Invalid Command";
 
             // Check BLACK LIST
+            /// FORMAT PHONENUMBER // TODO: Có loi j lien wan +84
+            arrArg[0] = Utility.formatPhone(arrArg[0]);
+
             string senderPhone = arrArg[0];
+            
+
             bool bLocked = false;
 
             if (Validator.isPhoneNumber(senderPhone))

@@ -94,7 +94,7 @@ namespace P9_CallMoneyPacificSrv
 
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
-            txtContent.Text = "+84932130483*12345*500000*0939146267*500000";
+            txtContent.Text = "0932130483*12345*500000*0939146267*500000";
         }
 
         private void btnValue_Click(object sender, RoutedEventArgs e)
@@ -121,8 +121,82 @@ namespace P9_CallMoneyPacificSrv
             
         }
 
-      
+        private void btnInputPhone_Click(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = replacePhone(txtContent.Text, txtPhone.Text);
+        }
 
-       
+        private string replacePhone(string sContent, string newPhone)
+        {
+            string sResult = "";
+            int p = 0;
+            for (int i = 0; i < sContent.Length; i++)
+            {
+                if (sContent[i] == '*')
+                {
+                    p = i;
+                    break;
+                }
+            }
+            sResult = sContent.Remove(0, p);
+            sResult = newPhone + sResult;
+
+            return sResult;
+        }       
+
+        private string insertCommand(string sContent, string sCommand)
+        {
+            string sResult = "";
+            int p1 = 0;
+            int p2 = 0;
+            
+            for (int i = 0; i < sContent.Length; i++)
+            {
+                if (sContent[i] == '*')
+                {
+                    if (p1 == 0)
+                    {
+                        p1 = i;
+                    }
+                    else if(p2 == 0)
+                    {
+                        p2 = i;
+                        break;
+                    }
+                }                
+            }
+            sResult = sContent.Substring(0, p1+1) + sCommand + sContent.Substring(p2);                
+            return sResult;
+        }
+
+        private void rdoMplas_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = insertCommand(txtContent.Text, "MPLAS");
+        }
+
+        private void rdoMpcol_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = insertCommand(txtContent.Text, "MPCOL");
+        }
+
+        private void rdoMpday_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = insertCommand(txtContent.Text, "MPDAY");
+        }
+
+        private void rdoMpbal_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = insertCommand(txtContent.Text, "MPBAL");
+        }
+
+        private void rdoMpdis_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = insertCommand(txtContent.Text, "MPDIS");
+        }
+
+        private void rdoMpena_Checked(object sender, RoutedEventArgs e)
+        {
+            txtContent.Text = insertCommand(txtContent.Text, "MPENA");
+        }
     }
 }

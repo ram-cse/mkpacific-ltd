@@ -73,6 +73,7 @@
     <Compile Include="BUS\AgentBUS.cs" />
     <Compile Include="BUS\CategoriesBUS.cs" />
     <Compile Include="BUS\CollectMoneyBUS.cs" />
+    <Compile Include="BUS\CollectStateBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\CustomerStateBUS.cs" />
     <Compile Include="BUS\PacificCodeBUS.cs" />

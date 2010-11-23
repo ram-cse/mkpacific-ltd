@@ -1,7 +1,49 @@
 
+
+	thanhdung dungit
+	qbao.nguyen: username thanhdung
+	qbao.nguyen: password dungit
+	qbao.nguyen: SVN: http://istar.nqbao.com/svn/burnsideproject/
+
+	qbao.nguyen is typing...
+	qbao.nguyen: http://httpd.apache.org/docs/2.0/vhosts/
+	 http://en.wikipedia.org/wiki/Hosts_%28file%29
+	qbao.nguyen: ong chu y cai nay
+	qbao.nguyen: fai chay domain
+
+	return simpleString ?? "it is null";
+	
+	23/11/2010:
+		Phạm Thị Kim Hoàng 0908 
+		Sinh ngày 9/8/1989
+		
+		- Money Pacific:
+			=> Lỗi ví dụ: 
+			Hide explanations
+			Demonstrates how to hide parts of text.
+			=> Sửa sau
+			
+			+ Agent: thiết kế giao diện thêm xóa sửa
+		
+		- Không thể làm 100%
+			Giữ lại cái core ...
+			
+		- JQuery: -> học Ajax:
+			Làm ví dụ Create New tại trang Browse...
+			(tham khảo "live" AJax, hay là search tren mvc)
+		
+		- Sửa lại moneyPacific  tránh lỗi luôn mở rồi đóng kết nối
+		 
+
 	22/11/2010:
 		- Money Pacific:
 			JQuery
+				Gõ hết tất cả ví dụ về JQuery trên w3schools
+				1. $(this).hide(); // hide current
+				2. $("p").hide();
+				3. $(".test").hide()
+				4. $("#test").hide();
+
 			AJax 
 				
 			Tạo Agent ...

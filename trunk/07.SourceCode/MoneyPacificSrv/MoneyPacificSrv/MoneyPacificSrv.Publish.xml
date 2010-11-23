@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
   <publishProfile publishUrl="C:\inetpub\wwwroot\moneypacific" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="bin/GeneratorPacificCode.dll" publishTime="11/12/2010 17:34:43" />
-    <file relUrl="bin/MoneyPacificSrv.pdb" publishTime="11/16/2010 16:35:11" />
+    <file relUrl="bin/GeneratorPacificCode.dll" publishTime="11/17/2010 14:15:06" />
+    <file relUrl="bin/MoneyPacificSrv.pdb" publishTime="11/18/2010 14:28:50" />
     <file relUrl="XAO/PacificCodeXAO.cs.txt" publishTime="10/14/2010 18:54:28" />
     <file relUrl="App_Data/Language.xml" publishTime="10/01/2010 16:44:09" />
-    <file relUrl="bin/MoneyPacificSrv.dll" publishTime="11/16/2010 16:35:11" />
-    <file relUrl="Web.config" publishTime="11/16/2010 10:56:05" />
+    <file relUrl="bin/MoneyPacificSrv.dll" publishTime="11/18/2010 14:28:50" />
+    <file relUrl="Web.config" publishTime="11/18/2010 14:22:49" />
     <file relUrl="Main.svc" publishTime="09/27/2010 10:40:35" />
     <file relUrl="App_Data/PacificCodeR.xml" publishTime="10/01/2010 11:14:48" />
-    <file relUrl="bin/GeneratorPacificCode.pdb" publishTime="11/12/2010 17:34:43" />
+    <file relUrl="bin/GeneratorPacificCode.pdb" publishTime="11/17/2010 14:15:06" />
   </publishProfile>
 </publishData>

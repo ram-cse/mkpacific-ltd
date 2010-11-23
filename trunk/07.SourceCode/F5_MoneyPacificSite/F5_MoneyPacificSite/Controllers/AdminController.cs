@@ -128,9 +128,25 @@ namespace F5_MoneyPacificSite.Controllers
             bool bSuccess = true;
             foreach(StoreManagerBalanceSelect sm in obj.StoreManagers)
             {
-                if (sm.Selected == true)
+                if (sm.Selected == true && (StoreManagerBUS.GetTotalLastMonthAmount(sm.Id)>0))
                 {
-                    bSuccess = bSuccess & CollectMoneyBUS.CreateNew(sm.Id, obj.IdSelected);
+                    int iStatusId = CollectStateBUS.GetId("Processing");
+                    CollectMoney existCollectMoney  = 
+                        CollectMoneyBUS.GetItem(sm.Id, iStatusId, DateTime.Today.Date);
+                    
+                    // Neu chua ton tai thi tao mới
+                    if (existCollectMoney == null)
+                    {
+                        bSuccess = bSuccess & CollectMoneyBUS.CreateNew(sm.Id, obj.AgentIdSelected);
+                    }
+                    // Neu da ton tai: Processing & ExpireDate > DateTime.Now 
+                    // => Edit, update
+                    // Vì chỉ cho phép duy nhất 1 thành viên tạo
+                    else
+                    {
+                        bSuccess = bSuccess & CollectMoneyBUS.Update(existCollectMoney, obj.AgentIdSelected);
+                    }
+                    
                 }
             }
 

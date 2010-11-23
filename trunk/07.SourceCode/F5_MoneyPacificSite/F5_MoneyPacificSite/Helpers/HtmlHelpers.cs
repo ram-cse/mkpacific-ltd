@@ -21,22 +21,54 @@ namespace F5_MoneyPacificSite.Helpers
             }
         }
 
-        public static string insertSeparateChar(this HtmlHelper helper, string sCodeNumber, char c, int l)
+        public static string insertSeparateChar(this HtmlHelper helper, string sOrginal, char c, int l)
         {
             string sResult = "";
-            sCodeNumber = sCodeNumber.Trim();
-            for (int i = 0; i * l < sCodeNumber.Length; i++)
+            sOrginal = sOrginal.Trim();
+            for (int i = 0; i * l < sOrginal.Length; i++)
             {
-                if ((i + 1) * l >= sCodeNumber.Length)
+                if ((i + 1) * l >= sOrginal.Length)
                 {
-                    sResult += sCodeNumber.Substring(i * l, sCodeNumber.Length - i * l);
+                    sResult += sOrginal.Substring(i * l, sOrginal.Length - i * l);
                 }
                 else
                 {
-                    sResult += sCodeNumber.Substring(i * l, l) + c;
+                    sResult += sOrginal.Substring(i * l, l) + c;
                 }
             }
             return sResult;
         }
+
+        public static string formatMoney(this HtmlHelper helper, int amount, char c)
+        {
+            string sResult = amount.ToString();
+            for (int i = sResult.Length - 1; i >= 0; i--)
+            {
+                sResult = sResult[i] + sResult;
+                int j = sResult.Length - i;
+                if ((j % 3 == 0) & i != 0)
+                {
+                    sResult = ',' + sResult;
+                }
+            }
+            return sResult;
+        }
+        public static string formatMoney(this HtmlHelper helper, int amount)
+        {
+            char c = ',';
+            string sAmount = amount.ToString();
+            string sResult = "";
+            for (int i = sAmount.Length - 1; i >= 0; i--)
+            {
+                sResult = sAmount[i] + sResult;
+                int j = sAmount.Length - i;
+                if ((j % 3 == 0) & i != 0)
+                {
+                    sResult = c + sResult;
+                }
+            }
+            return sResult;
+        }
+
     }
 }

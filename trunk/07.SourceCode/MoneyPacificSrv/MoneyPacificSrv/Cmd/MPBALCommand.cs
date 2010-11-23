@@ -6,6 +6,7 @@ using System.Web;
 using MoneyPacificSrv.General;
 using MoneyPacificSrv.DTO;
 using MoneyPacificSrv.BUS;
+using MoneyPacificSrv.Util;
 
 namespace MoneyPacificSrv.Cmd
 {
@@ -34,19 +35,23 @@ namespace MoneyPacificSrv.Cmd
             string sPhone = args[0].Trim();
             string sPINStore = args[2].Trim();
             string sReceivePhone = sPhone;
-            string sContentSMS = "";
-            string sCollectCode = "";
+            string sContentSMS = "";            
+
+            StoreManager existStoreManager = null;
+            
             
             /// Is StoreManager
             if (StoreManagerBUS.IsExist(sPhone))
             {
-                StoreManager existStoreManager = StoreManagerBUS.GetItem(sPhone);
+                existStoreManager = StoreManagerBUS.GetItem(sPhone);
                 List<StoreUser> lstUser = StoreUserBUS.GetArray(existStoreManager.Id).ToList<StoreUser>();
                 foreach (StoreUser u in lstUser)
                 {
                     if (u.PINStore == sPINStore)
                     {
-                        sCollectCode = GenerateCollectCode();
+                        sContentSMS = "Total: " 
+                            + Utility.formatMoney((StoreManagerBUS.GetTotalAmount(existStoreManager.Id)
+                            - StoreManagerBUS.GetTotalCollectedAmount(existStoreManager.Id)));
                     }
                 }
             }
@@ -54,28 +59,24 @@ namespace MoneyPacificSrv.Cmd
             {
                 /// Is StoreUser
                 if (StoreUserBUS.Validate(sPhone, sPINStore))
-                {
-                    sCollectCode = GenerateCollectCode();
+                {   
+                    StoreUser existStoreUser = StoreUserBUS.GetItem(sPhone);
+                    existStoreManager = StoreManagerBUS.GetItem((int)existStoreUser.ManagerId);                    
                 }
                 else
-                {
-                    sCollectCode = "";
-                }
+                {}
             }
 
             /// EXPORT
-            if (sCollectCode != "")
+            if (existStoreManager != null)            
             {
-                sContentSMS = "CollectCode: " + sCollectCode;
-            }
-            else
-            {
+                sContentSMS = "Total: "
+                            + Utility.formatMoney((StoreManagerBUS.GetTotalAmount(existStoreManager.Id)
+                            - StoreManagerBUS.GetTotalCollectedAmount(existStoreManager.Id)));
                 sContentSMS = MessageManager.GetValue("MPBAL_GET_COLLECT_CODE_ERROR");
-            }
-            
+            }            
             return sReceivePhone + "*" + sContentSMS;
-        }
-
+        } 
         #endregion
 
         #region Service

@@ -61,7 +61,12 @@ namespace MoneyPacificSrv
             new MPMessageDTO("STORE_IS_DISABLE", "STORE nang trong tinh trang DISABLE."),
 
             new MPMessageDTO("MPCOL_GET_COLLECT_CODE_ERROR", "MPCOL - Ban khong co quyen truy cap vao lenh nay hoac la bi sai ma CollectCode. Neu tiep tuc so phone ban se bi khoa."),
-            new MPMessageDTO("MPCOL_SUCCESSFULL", "MPCOL - Thuc hien thanh cong! Vui dua so tien {0}VND cho Ong: {1} co IdNumber {2}. Kiem tra so IdNumber cua nguoi nhan.")
+            new MPMessageDTO("MPCOL_SUCCESSFULL", "MPCOL - Thuc hien thanh cong! Vui dua so tien {0} VND cho ong/ba {1} co IdNumber {2}. Kiem tra so IdNumber cua nguoi nhan."),
+            new MPMessageDTO("MPCOL_NO_PERMISSION", "MPCOL - Ban khong co quyen! Neu tiep tuc, so dien thoai ban se bi khoa!"),
+            new MPMessageDTO("MPCOL_WRONG_COLLECT_NUMBER", "MPCOL - Sai Collect Code!. Neu sai lien tiep 3 lan SDT cua ban se bi khoa."),
+            new MPMessageDTO("MPCOL_COLLECTED", "MPCOL - CollectCode {0}: Da duoc thanh toan co gia tri {1} VND vao ngay {2}, nguoi thu la ong/ba: {3} co IdNumber la: {4}!")
+            //new MPMessageDTO("MPCOL_EXPIRE", "MPCOL - CollectCode nay da het han ") // Khong su dung-> dung chung MPCOL_WRONG_COLLECT_NUMBER
+            
         };
 
         internal static string GetValue(string sName, string[] args)
@@ -77,10 +82,6 @@ namespace MoneyPacificSrv
                     break;
                 }
             }
-
-            // Replace the arguments by values in args
-            // Ex: your moneypc is {0}
-            // -> your moneypc is abcd efgh...
 
             for (int i = 0; i < args.Count(); i++)
             {
@@ -110,6 +111,17 @@ namespace MoneyPacificSrv
         {
             return GetValue(sName, new string[] { arg0, arg1, arg2 });
         }
+
+        internal static string GetValue(string sName, string arg0, string arg1, string arg2, string arg3)
+        {
+            return GetValue(sName, new string[] { arg0, arg1, arg2, arg3 });
+        }
+
+        internal static string GetValue(string sName, string arg0, string arg1, string arg2, string arg3, string arg4)
+        {
+            return GetValue(sName, new string[] { arg0, arg1, arg2, arg3, arg4 });
+        }
+
 
     }
 }

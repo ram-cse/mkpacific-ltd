@@ -13,5 +13,20 @@ namespace F5_MoneyPacificSite.Models.BUS
         {
             return AgentDAO.GetList();
         }
+
+        internal static bool AdđItem(Agent newAgent)
+        {
+            return AgentDAO.AddItem(newAgent);
+        }
+
+        internal static Agent GetItem(int id)
+        {
+            return AgentDAO.GetItem(id);
+        }
+
+        internal static bool Update(Agent agent)
+        {
+            return AgentDAO.Update(agent);            
+        }
     }
 }
