@@ -1,4 +1,17 @@
 
+	24/11/2010
+	
+	1:03 AM
+		x Setup Virtual Host (file: host)
+		x Setup Apache Config (httpd.conf)
+		x Restore Database
+		x Change Config Project File
+		x Access to Database
+
+	x Tracking:
+		http://redmine.nqbao.com/
+		user:thanhdung
+		pass:dungit
 
 	thanhdung dungit
 	qbao.nguyen: username thanhdung
