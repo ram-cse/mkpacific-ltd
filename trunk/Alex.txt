@@ -1,6 +1,63 @@
 
-	24/11/2010
+	25/11/2010:
 	
+		79 Bis Điện Biên Phủ, StarCoffee 20h 11/11/2010
+	
+		- Money Pacific
+			+ Security
+		- BB
+			+ elgg
+			+ meetup
+			=> 1 mạng xã hội thu nhỏ
+		
+		
+
+		AJAX:
+			Message: Sys.ArgumentException: Cannot deserialize. The data does not correspond to valid JSON.
+			Parameter name: data
+			Line: 5
+			Char: 95225
+			Code: 0
+			URI: http://localhost:2810/Scripts/MicrosoftAjax.js
+
+			
+			MVC Music Store
+				<add namespace="MvcMusicStore.Helpers"/>  
+				
+			Import sẽ cho phép tạo trang Create chạy AJAX (không bị giựt hình nữa)
+			
+				<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+				<script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+				<script src="/Scripts/MicrosoftMvcValidation.js" type="text/javascript"></script>
+ 
+		
+		We'll allow users to place albums in their cart without registering, but they'll need to register as guests to complete checkout. 
+		The shopping and checkout process will be separated into two controllers: 
+			- a ShoppingCart Controller which allows anonymously adding items to a cart, 
+			- a Checkout Controller which handles the checkout process. 
+		We'll start with the Shopping Cart in this section, then build the Checkout process in the following section.
+
+Message: 'data' is undefined
+Line: 77
+Char: 13
+Code: 0
+URI: http://localhost:2810/Agent/Browse
+
+
+
+		
+	24/11/2010:
+	
+		- Xin giờ a An hẹn gặp chị Vy ...
+		- Xin giờ a An gặp Trang ...
+	
+	AJax...
+	http://stackoverflow.com/questions/1200960/asp-net-mvc-ajaxoptions-onsuccess-fires-too-early
+	
+	first_love4564[
+	
+	mất 1 ngày mò AJAX, không làm được gì hết
+		
 	1:03 AM
 		x Setup Virtual Host (file: host)
 		x Setup Apache Config (httpd.conf)
@@ -8,10 +65,17 @@
 		x Change Config Project File
 		x Access to Database
 
+	Message: 'context' is undefined
+	Line: 118
+	Char: 13
+	Code: 0
+	URI: http://localhost:2810/Agent/Browse
+
 	x Tracking:
 		http://redmine.nqbao.com/
 		user:thanhdung
 		pass:dungit
+
 
 	thanhdung dungit
 	qbao.nguyen: username thanhdung
