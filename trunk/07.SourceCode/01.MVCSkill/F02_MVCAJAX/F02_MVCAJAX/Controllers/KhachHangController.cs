@@ -91,18 +91,7 @@ namespace F02_MVCAJAX.Controllers
  
         public ActionResult Delete(int id)
         {
-            KhachHang existKH = storeDB.KhachHangs
-                .Where(k => k.Id == id)
-                .SingleOrDefault();
-            storeDB.KhachHangs.DeleteObject(existKH);
-            storeDB.SaveChanges();
-
-            var result = new KhachHangViewModel
-            {
-                KhachHangs = storeDB.KhachHangs.ToList<KhachHang>(),
-                SoLuong = storeDB.KhachHangs.Count()
-            };
-            return Json(result);
+            return View();
         }
 
         //
@@ -111,16 +100,20 @@ namespace F02_MVCAJAX.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            KhachHang existKH = storeDB.KhachHangs
+                .Where(k => k.Id == id)
+                .SingleOrDefault();
+            storeDB.KhachHangs.DeleteObject(existKH);
+            storeDB.SaveChanges();
+
+
+            var result = new KhachHangViewModel
             {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                KhachHangs = storeDB.KhachHangs.ToList<KhachHang>(),
+                SoLuong = storeDB.KhachHangs.Count(),
+                DeleteId = id
+            };
+            return Json(result);
         }
     }
 }
