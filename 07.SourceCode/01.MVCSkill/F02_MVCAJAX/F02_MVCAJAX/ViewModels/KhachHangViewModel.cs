@@ -11,5 +11,6 @@ namespace F02_MVCAJAX.ViewModels
     {
         public List<KhachHang> KhachHangs { get; set; }
         public int SoLuong { get; set; }
+        public int DeleteId { get; set; }
     }
 }

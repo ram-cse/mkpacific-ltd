@@ -13,12 +13,15 @@
     <script type="text/javascript">
         function handleUpdate(context) {
             // Load and deserialize the returned JSON data
+            alert("hello");
+
             var json = context.get_data();
+            alert(json.toString());
             var data = Sys.Serialization.JavaScriptSerializer.deserialize(json);
 
             // Update the page elements
             $('#row-' + data.DeleteId).fadeOut('slow');
-            $('#update-message').text(data.Message);
+            $('#update-message').text("xong roi !...");
         }
     </script>
 
