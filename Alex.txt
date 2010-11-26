@@ -1,4 +1,14 @@
+	26/11/2010:
+		- AMP Server:
+		- Down BurnSideProject về làm:..
 
+		- AJAX:
+		http://weblogs.asp.net/rajbk/archive/2010/04/18/code-snippets-for-asp-net-mvc2-in-vs-2010.aspx
+		
+		http://davidhayden.com/blog/dave/archive/2009/05/19/ASPNETMVCAjaxBeginForm.aspx
+		
+		kết hợp với usercontrol
+		http://jvance.com/blog/2010/02/20/MakingAnAjaxFormWithJQueryInASPdotNETMVC.xhtml
 	25/11/2010:
 	
 		79 Bis Điện Biên Phủ, StarCoffee 20h 11/11/2010
