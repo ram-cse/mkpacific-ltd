@@ -16,7 +16,7 @@ namespace F5_MoneyPacificSite.Controllers
         // GET: /Agent/
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Browse");
         }
         //
         // GET: /Agent/Browse
@@ -25,9 +25,28 @@ namespace F5_MoneyPacificSite.Controllers
             var model = new AgentListViewModel
             {
                 agents = AgentBUS.GetList(),
-                agentStates = AgentStateBUS.GetList()
+                agentStates = AgentStateBUS.GetList(),
+                DeleteId = 0
             };
             return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }        
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            bool bSuccess = AgentBUS.Remove(id);
+            var model = new AgentListViewModel
+            {
+                agents = AgentBUS.GetList(),
+                agentStates = AgentStateBUS.GetList(),
+                DeleteId = id
+            };
+
+            return Json(model);
         }
 
         //

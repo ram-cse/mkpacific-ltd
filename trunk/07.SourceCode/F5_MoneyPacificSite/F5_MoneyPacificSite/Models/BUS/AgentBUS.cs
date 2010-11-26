@@ -28,5 +28,10 @@ namespace F5_MoneyPacificSite.Models.BUS
         {
             return AgentDAO.Update(agent);            
         }
+
+        internal static bool Remove(int id)
+        {
+            return AgentDAO.Remove(id);
+        }
     }
 }
