@@ -19,10 +19,7 @@
             <div id="title">
                 <h1>Functions Of Admin </h1>
             </div>
-              
-            <div id="logindisplay">
-                   [ <a href="/Account/Login">Log On</a> ]
-            </div>             
+               
                 <div class="menucontainer">
                     <div style="float:right;">                                                                                      
                     <asp:Menu ID="mainMenu" runat="server" BackColor="#F7F6F3" 

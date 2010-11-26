@@ -8,6 +8,7 @@
 		http://davidhayden.com/blog/dave/archive/2009/05/19/ASPNETMVCAjaxBeginForm.aspx
 		
 		kết hợp với usercontrol
+		
 		http://jvance.com/blog/2010/02/20/MakingAnAjaxFormWithJQueryInASPdotNETMVC.xhtml
 	25/11/2010:
 	
