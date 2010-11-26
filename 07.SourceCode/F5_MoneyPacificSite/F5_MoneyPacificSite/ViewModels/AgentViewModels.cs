@@ -11,6 +11,7 @@ namespace F5_MoneyPacificSite.ViewModels
     {
         public List<Agent> agents { get; set; }
         public List<AgentState> agentStates { get; set; }
+        public int DeleteId { get; set; }
     }
 
     public class AgentCreateViewModel

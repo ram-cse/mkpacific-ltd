@@ -58,5 +58,15 @@ namespace F5_MoneyPacificSite.Models.DAO
             db.Connection.Close();
             return true;
         }
+
+        internal static bool Remove(int id)
+        {
+            MoneyPacificEntities db = new MoneyPacificEntities();
+            Agent existAgent = db.Agents.Where(a => a.Id == id).SingleOrDefault();
+            db.Agents.DeleteObject(existAgent);
+            db.SaveChanges();
+            db.Connection.Close();
+            return true;
+        }
     }
 }
