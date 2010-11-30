@@ -62,6 +62,34 @@ namespace F5_MoneyPacificSite.Controllers
             return View(model);
         }
 
+        public ActionResult Security()
+        {
+            List<TimeTableItem> lstTimeTableItem = new List<TimeTableItem>();
+            for (int i = 0; i < 7; i++ )
+            {
+                TimeTableItem newItem = new TimeTableItem();
+                
+                newItem.dateName = "Day " + i;
+                newItem.hourItem = new List<int>();
+                newItem.enable = new List<bool>();
+                
+                for (int j = 0; j < 24; j++)
+                {
+                    newItem.hourItem.Add(j);
+                    newItem.enable.Add(j % 2 == 0);
+                }
+
+                lstTimeTableItem.Add(newItem);
+            }
+
+            var model = new SecurityViewModel()
+            {
+                storeManagerName = "LTDung",
+                securityTimeTable = lstTimeTableItem
+            };
+            return View(model);
+        }
+
         #region PRIVATE
 
         private StoreManagerDashboardViewModel SetDashBoardModel(StoreManager curSM)

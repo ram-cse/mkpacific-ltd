@@ -108,6 +108,7 @@
     <Compile Include="ViewModels\AgentViewModels.cs" />
     <Compile Include="ViewModels\PacificCodeCheckDetailViewModel.cs" />
     <Compile Include="ViewModels\PacificCodeViewModels.cs" />
+    <Compile Include="ViewModels\SecurityViewModel.cs" />
     <Compile Include="ViewModels\StoreManagerViewModels.cs" />
     <Compile Include="ViewModels\StoreUserViewModels.cs" />
     <Compile Include="Views\Shared\Admin.Master.cs">
@@ -144,6 +145,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery.thickbox.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.selectable.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
     <Content Include="Views\Admin\BrowseStoreManager.aspx" />
     <Content Include="Views\Admin\CollectedList.aspx" />
     <Content Include="Views\Admin\CollectProcessing.aspx" />
@@ -174,6 +179,7 @@
     <Content Include="Views\StoreManager\AskToBePartner.aspx" />
     <Content Include="Views\StoreManager\Dashboard.aspx" />
     <Content Include="Views\StoreManager\Information.aspx" />
+    <Content Include="Views\StoreManager\Security.aspx" />
     <Content Include="Views\StoreUser\DashBoard.aspx" />
     <Content Include="Views\Store\Index.aspx" />
     <Content Include="Web.config" />

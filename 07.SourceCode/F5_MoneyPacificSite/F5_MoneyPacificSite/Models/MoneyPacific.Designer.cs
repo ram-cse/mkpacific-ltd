@@ -235,6 +235,22 @@ namespace F5_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<KhachHang> KhachHangs
+        {
+            get
+            {
+                if ((_KhachHangs == null))
+                {
+                    _KhachHangs = base.CreateObjectSet<KhachHang>("KhachHangs");
+                }
+                return _KhachHangs;
+            }
+        }
+        private ObjectSet<KhachHang> _KhachHangs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<PacificCode> PacificCodes
         {
             get
@@ -481,6 +497,14 @@ namespace F5_MoneyPacificSite.Models
         public void AddToInternetAccessRoles(InternetAccessRole internetAccessRole)
         {
             base.AddObject("InternetAccessRoles", internetAccessRole);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the KhachHangs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToKhachHangs(KhachHang khachHang)
+        {
+            base.AddObject("KhachHangs", khachHang);
         }
     
         /// <summary>
@@ -2569,6 +2593,157 @@ namespace F5_MoneyPacificSite.Models
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="KhachHang")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class KhachHang : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new KhachHang object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static KhachHang CreateKhachHang(global::System.Int32 id)
+        {
+            KhachHang khachHang = new KhachHang();
+            khachHang.Id = id;
+            return khachHang;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Username
+        {
+            get
+            {
+                return _Username;
+            }
+            set
+            {
+                OnUsernameChanging(value);
+                ReportPropertyChanging("Username");
+                _Username = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Username");
+                OnUsernameChanged();
+            }
+        }
+        private global::System.String _Username;
+        partial void OnUsernameChanging(global::System.String value);
+        partial void OnUsernameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Password
+        {
+            get
+            {
+                return _Password;
+            }
+            set
+            {
+                OnPasswordChanging(value);
+                ReportPropertyChanging("Password");
+                _Password = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Password");
+                OnPasswordChanged();
+            }
+        }
+        private global::System.String _Password;
+        partial void OnPasswordChanging(global::System.String value);
+        partial void OnPasswordChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Email
+        {
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
+            }
+        }
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+
+        #endregion
+    
     }
     
     /// <summary>
