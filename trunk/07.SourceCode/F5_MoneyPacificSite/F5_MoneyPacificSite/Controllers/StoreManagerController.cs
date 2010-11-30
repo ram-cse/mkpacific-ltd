@@ -62,8 +62,15 @@ namespace F5_MoneyPacificSite.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Giải thuật: Lưu 
+        /// </summary>
+        /// <returns></returns>
+
         public ActionResult Security()
         {
+           
+
             List<TimeTableItem> lstTimeTableItem = new List<TimeTableItem>();
             for (int i = 0; i < 7; i++ )
             {
