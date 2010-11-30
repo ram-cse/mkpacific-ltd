@@ -7,8 +7,7 @@ using System.Web.Mvc;
 namespace F5_MoneyPacificSite.Controllers
 {
     public class CustomerController : Controller
-    {
-        //
+    {        
         // GET: /Customer/
 
         public ActionResult Index()
