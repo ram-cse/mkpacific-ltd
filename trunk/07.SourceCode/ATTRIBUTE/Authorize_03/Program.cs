@@ -40,13 +40,13 @@ namespace Authorize_03
     #endregion 
 
     #region CLASS
-
     public static class Abc
     {        
         public static void call()
         {
             Console.WriteLine("aaa");
         }
+
         public static string[] GetRoles(object obj, string methodName)
         {
             string[] result = null;
@@ -87,13 +87,13 @@ namespace Authorize_03
         [Authorize(Roles = "Administrator")]
         public void AutoExecuting()
         {
-            Console.WriteLine("auto executing...");
+            Console.WriteLine("[admin] auto executing...");
         }
 
         [Authorize(Roles = "Manager")]
         public static void Executing()
         {
-            Console.WriteLine("This function is executing...");
+            Console.WriteLine("[manager] This function is executing...");
         }
     }
     #endregion

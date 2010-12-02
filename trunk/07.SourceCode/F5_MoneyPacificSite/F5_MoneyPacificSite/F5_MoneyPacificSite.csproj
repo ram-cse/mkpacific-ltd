@@ -84,6 +84,8 @@
     <Compile Include="Models\BUS\StoreManagerBUS.cs" />
     <Compile Include="Models\BUS\StoreManagerStateBUS.cs" />
     <Compile Include="Models\BUS\StoreUserBUS.cs" />
+    <Compile Include="Models\BUS\TimeItemBUS.cs" />
+    <Compile Include="Models\BUS\TimeTableBUS.cs" />
     <Compile Include="Models\BUS\TransactionBUS.cs" />
     <Compile Include="Models\BUS\_SecurityBUS.cs" />
     <Compile Include="Models\DAO\AgentDAO.cs" />
@@ -97,6 +99,8 @@
     <Compile Include="Models\DAO\StoreManagerDAO.cs" />
     <Compile Include="Models\DAO\StoreManagerStateDAO.cs" />
     <Compile Include="Models\DAO\StoreUserDAO.cs" />
+    <Compile Include="Models\DAO\TimeItemDAO.cs" />
+    <Compile Include="Models\DAO\TimeTableDAO.cs" />
     <Compile Include="Models\DAO\_SecurityDAO.cs" />
     <Compile Include="Models\Mail.cs" />
     <Compile Include="Models\MoneyPacific.Designer.cs">

@@ -77,7 +77,7 @@
                 <%: item.Status %>
             </td>
             <td>
-                <%: String.Format("{0:dd-mmm-yyyy}", item.CreateDate) %>
+                <%: String.Format("{0:dd-MMM-yyyy}", item.CreateDate) %>
             </td>
         </tr>
     

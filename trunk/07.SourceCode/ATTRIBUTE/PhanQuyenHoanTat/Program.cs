@@ -11,6 +11,7 @@ namespace PhanQuyenHoanTat
         {
         }
     }
+
     class LopKiemTra
     {
         public static void ThucThi()
@@ -23,7 +24,27 @@ namespace PhanQuyenHoanTat
 
     }
 
+
     class Quyen : Attribute
+    {
+        public string VaiTro { get; set; }
+        public string[] GetArrayVaiTro()
+        {
+            string[] result;
+
+            /// Lay tat ca thong tin vai tro duoc dinh nghia
+            result = VaiTro.Split(',');
+
+            /// Chinh sua, cat khoang trang
+            for (int i = 0; i < result.Count(); i++)
+            {
+                result[i] = result[i].Trim();
+            }
+            
+            return result;
+        }
+    }
+    class _Quyen : Attribute
     {
         public string VaiTro { get; set; }
         public string[] GetArrayVaiTro()

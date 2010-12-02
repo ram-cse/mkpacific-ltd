@@ -70,5 +70,34 @@ namespace F5_MoneyPacificSite.Helpers
             return sResult;
         }
 
+        public static string GetDay(int id)
+        {
+            string result = "";
+            switch(id){
+                case 1:
+                    result = "Sunday";
+                    break;
+                case 2:
+                    result = "Monday";
+                    break;
+                case 3:
+                    result = "Tueday";
+                    break;
+                case 4:
+                    result = "Wednesday";
+                    break;
+                case 5:
+                    result = "Thursday";
+                    break;
+                case 6:
+                    result = "Friday";
+                    break;                    
+                case 7:
+                    result = "Saturday";
+                    break;
+            }            
+            return result;
+        }
+
     }
 }

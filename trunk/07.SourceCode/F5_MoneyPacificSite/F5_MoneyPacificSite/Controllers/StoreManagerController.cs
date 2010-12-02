@@ -69,35 +69,111 @@ namespace F5_MoneyPacificSite.Controllers
 
         public ActionResult Security()
         {
-           
-
-            List<TimeTableItem> lstTimeTableItem = new List<TimeTableItem>();
-            for (int i = 0; i < 7; i++ )
+            // Lấy thông tin StoreManager đăng nhập
+            int storeManagerId = 5;            
+            try
             {
-                TimeTableItem newItem = new TimeTableItem();
-                
-                newItem.dateName = "Day " + i;
-                newItem.hourItem = new List<int>();
-                newItem.enable = new List<bool>();
-                
-                for (int j = 0; j < 24; j++)
+                // Load tất cả thông tin lên
+                List<TimeDayView> lstTimeDay = new List<TimeDayView>();
+                for (int i = 0; i < 7; i++)
                 {
-                    newItem.hourItem.Add(j);
-                    newItem.enable.Add(j % 2 == 0);
+                    // Lay thong tin từng ngày
+                    TimeDayView newItem = new TimeDayView();
+
+                    // Lay ra 24giờ trong ngày
+                    newItem.dateName = GetDay(i + 1);
+                    newItem.lstTimeTable = TimeTableBUS.GetArray(GetDay(i + 1), storeManagerId);
+
+                    if (newItem.lstTimeTable.Count != 24)
+                    {
+                        throw (new Exception());
+                    }
+
+                    lstTimeDay.Add(newItem);
                 }
 
-                lstTimeTableItem.Add(newItem);
+                foreach (TimeDayView dayItem in lstTimeDay)
+                {
+                    dayItem.lstTimeTable.Sort(
+                        delegate(TimeTable itemTable01, TimeTable timeTable02)
+                        {
+                            return Comparer<int>.Default.Compare
+                               (itemTable01.TimeItem.Hour, timeTable02.TimeItem.Hour);
+                        }
+                    );
+                }
+
+                var model = new SecurityViewModel()
+                {
+                    managerId = storeManagerId,
+                    storeManagerName = StoreManagerBUS.GetItem(storeManagerId).Name,
+                    lstSecurityTimeDay = lstTimeDay
+                };
+                return View(model);
+            }
+            catch(Exception ex)
+            {
+                /// --------------------------------------------
+                /// Chi goi khi chua co du lieu, tránh lỗi do 
+                /// chưa có dữ liệu
+                TimeItemBUS.AddIfNotExists(storeManagerId);
+                ViewData["message"] = "Lỗi: " + ex.Message;
+                return RedirectToAction("Index", "Store");
+                /// --------------------------------------------
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Security(SecurityViewModel obj)
+        {
+            ViewData["message"] = "Lưu thành công!...";
+            int managerId = obj.managerId;
+            List<TimeTable> lstTimeTable = new List<TimeTable>();
+
+            foreach (TimeDayView timeDayView in obj.lstSecurityTimeDay)
+            {
+                foreach (TimeTable item in timeDayView.lstTimeTable)
+                {
+                    lstTimeTable.Add(item);
+                }
             }
 
-            var model = new SecurityViewModel()
-            {
-                storeManagerName = "LTDung",
-                securityTimeTable = lstTimeTableItem
-            };
-            return View(model);
+            TimeTableBUS.Update(managerId, lstTimeTable);
+
+            // Lấy thông tin dữ liệu
+            return View(obj);
         }
 
         #region PRIVATE
+        private static string GetDay(int id)
+        {
+            string result = "";
+            switch (id)
+            {
+                case 1:
+                    result = "Sunday";
+                    break;
+                case 2:
+                    result = "Monday";
+                    break;
+                case 3:
+                    result = "Tueday";
+                    break;
+                case 4:
+                    result = "Wednesday";
+                    break;
+                case 5:
+                    result = "Thursday";
+                    break;
+                case 6:
+                    result = "Friday";
+                    break;
+                case 7:
+                    result = "Saturday";
+                    break;
+            }
+            return result;
+        }
 
         private StoreManagerDashboardViewModel SetDashBoardModel(StoreManager curSM)
         {
