@@ -33,7 +33,9 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_PacificCode", "PacificCode", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.PacificCode), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.Transaction), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreManager_StoreManagerState", "StoreManagerState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreManagerState), "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreManager), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_StoreUser_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreManager), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreUser), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_TimeTable_StoreManager", "StoreManager", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(F5_MoneyPacificSite.Models.StoreManager), "TimeTable", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.TimeTable), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Store_StoreStatus", "StoreUserState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.StoreUserState), "StoreUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.StoreUser), true)]
+[assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_TimeTable_TimeItem", "TimeItem", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(F5_MoneyPacificSite.Models.TimeItem), "TimeTable", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.TimeTable), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionCate", "TransactionCate", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.TransactionCate), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.Transaction), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_Transaction_TransactionStatus", "TransactionState", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.TransactionState), "Transaction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.Transaction), true)]
 [assembly: EdmRelationshipAttribute("MoneyPacificModel", "FK_TransactionFee_TransactionCate", "TransactionCate", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(F5_MoneyPacificSite.Models.TransactionCate), "TransactionFee", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(F5_MoneyPacificSite.Models.TransactionFee), true)]
@@ -235,22 +237,6 @@ namespace F5_MoneyPacificSite.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<KhachHang> KhachHangs
-        {
-            get
-            {
-                if ((_KhachHangs == null))
-                {
-                    _KhachHangs = base.CreateObjectSet<KhachHang>("KhachHangs");
-                }
-                return _KhachHangs;
-            }
-        }
-        private ObjectSet<KhachHang> _KhachHangs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<PacificCode> PacificCodes
         {
             get
@@ -359,6 +345,38 @@ namespace F5_MoneyPacificSite.Models
             }
         }
         private ObjectSet<sysdiagram> _sysdiagrams;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TimeItem> TimeItems
+        {
+            get
+            {
+                if ((_TimeItems == null))
+                {
+                    _TimeItems = base.CreateObjectSet<TimeItem>("TimeItems");
+                }
+                return _TimeItems;
+            }
+        }
+        private ObjectSet<TimeItem> _TimeItems;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TimeTable> TimeTables
+        {
+            get
+            {
+                if ((_TimeTables == null))
+                {
+                    _TimeTables = base.CreateObjectSet<TimeTable>("TimeTables");
+                }
+                return _TimeTables;
+            }
+        }
+        private ObjectSet<TimeTable> _TimeTables;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -500,14 +518,6 @@ namespace F5_MoneyPacificSite.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the KhachHangs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToKhachHangs(KhachHang khachHang)
-        {
-            base.AddObject("KhachHangs", khachHang);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the PacificCodes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToPacificCodes(PacificCode pacificCode)
@@ -561,6 +571,22 @@ namespace F5_MoneyPacificSite.Models
         public void AddTosysdiagrams(sysdiagram sysdiagram)
         {
             base.AddObject("sysdiagrams", sysdiagram);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TimeItems EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTimeItems(TimeItem timeItem)
+        {
+            base.AddObject("TimeItems", timeItem);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TimeTables EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTimeTables(TimeTable timeTable)
+        {
+            base.AddObject("TimeTables", timeTable);
         }
     
         /// <summary>
@@ -2598,157 +2624,6 @@ namespace F5_MoneyPacificSite.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="KhachHang")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class KhachHang : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new KhachHang object.
-        /// </summary>
-        /// <param name="id">Initial value of the Id property.</param>
-        public static KhachHang CreateKhachHang(global::System.Int32 id)
-        {
-            KhachHang khachHang = new KhachHang();
-            khachHang.Id = id;
-            return khachHang;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Username
-        {
-            get
-            {
-                return _Username;
-            }
-            set
-            {
-                OnUsernameChanging(value);
-                ReportPropertyChanging("Username");
-                _Username = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Username");
-                OnUsernameChanged();
-            }
-        }
-        private global::System.String _Username;
-        partial void OnUsernameChanging(global::System.String value);
-        partial void OnUsernameChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Password
-        {
-            get
-            {
-                return _Password;
-            }
-            set
-            {
-                OnPasswordChanging(value);
-                ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Password");
-                OnPasswordChanged();
-            }
-        }
-        private global::System.String _Password;
-        partial void OnPasswordChanging(global::System.String value);
-        partial void OnPasswordChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Email
-        {
-            get
-            {
-                return _Email;
-            }
-            set
-            {
-                OnEmailChanging(value);
-                ReportPropertyChanging("Email");
-                _Email = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Email");
-                OnEmailChanged();
-            }
-        }
-        private global::System.String _Email;
-        partial void OnEmailChanging(global::System.String value);
-        partial void OnEmailChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Description
-        {
-            get
-            {
-                return _Description;
-            }
-            set
-            {
-                OnDescriptionChanging(value);
-                ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Description");
-                OnDescriptionChanged();
-            }
-        }
-        private global::System.String _Description;
-        partial void OnDescriptionChanging(global::System.String value);
-        partial void OnDescriptionChanged();
-
-        #endregion
-    
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="PacificCode")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -4300,6 +4175,28 @@ namespace F5_MoneyPacificSite.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_TimeTable_StoreManager", "TimeTable")]
+        public EntityCollection<TimeTable> TimeTables
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TimeTable>("MoneyPacificModel.FK_TimeTable_StoreManager", "TimeTable");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TimeTable>("MoneyPacificModel.FK_TimeTable_StoreManager", "TimeTable", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -5291,6 +5188,351 @@ namespace F5_MoneyPacificSite.Models
 
         #endregion
     
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TimeItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TimeItem : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TimeItem object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="day">Initial value of the Day property.</param>
+        /// <param name="hour">Initial value of the Hour property.</param>
+        public static TimeItem CreateTimeItem(global::System.Int32 id, global::System.String day, global::System.Int32 hour)
+        {
+            TimeItem timeItem = new TimeItem();
+            timeItem.Id = id;
+            timeItem.Day = day;
+            timeItem.Hour = hour;
+            return timeItem;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Day
+        {
+            get
+            {
+                return _Day;
+            }
+            set
+            {
+                OnDayChanging(value);
+                ReportPropertyChanging("Day");
+                _Day = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Day");
+                OnDayChanged();
+            }
+        }
+        private global::System.String _Day;
+        partial void OnDayChanging(global::System.String value);
+        partial void OnDayChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Hour
+        {
+            get
+            {
+                return _Hour;
+            }
+            set
+            {
+                OnHourChanging(value);
+                ReportPropertyChanging("Hour");
+                _Hour = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Hour");
+                OnHourChanged();
+            }
+        }
+        private global::System.Int32 _Hour;
+        partial void OnHourChanging(global::System.Int32 value);
+        partial void OnHourChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_TimeTable_TimeItem", "TimeTable")]
+        public EntityCollection<TimeTable> TimeTables
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TimeTable>("MoneyPacificModel.FK_TimeTable_TimeItem", "TimeTable");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TimeTable>("MoneyPacificModel.FK_TimeTable_TimeItem", "TimeTable", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MoneyPacificModel", Name="TimeTable")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TimeTable : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TimeTable object.
+        /// </summary>
+        /// <param name="managerId">Initial value of the ManagerId property.</param>
+        /// <param name="timeItemId">Initial value of the TimeItemId property.</param>
+        /// <param name="enabled">Initial value of the Enabled property.</param>
+        public static TimeTable CreateTimeTable(global::System.Int32 managerId, global::System.Int32 timeItemId, global::System.Boolean enabled)
+        {
+            TimeTable timeTable = new TimeTable();
+            timeTable.ManagerId = managerId;
+            timeTable.TimeItemId = timeItemId;
+            timeTable.Enabled = enabled;
+            return timeTable;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ManagerId
+        {
+            get
+            {
+                return _ManagerId;
+            }
+            set
+            {
+                if (_ManagerId != value)
+                {
+                    OnManagerIdChanging(value);
+                    ReportPropertyChanging("ManagerId");
+                    _ManagerId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ManagerId");
+                    OnManagerIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ManagerId;
+        partial void OnManagerIdChanging(global::System.Int32 value);
+        partial void OnManagerIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 TimeItemId
+        {
+            get
+            {
+                return _TimeItemId;
+            }
+            set
+            {
+                if (_TimeItemId != value)
+                {
+                    OnTimeItemIdChanging(value);
+                    ReportPropertyChanging("TimeItemId");
+                    _TimeItemId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("TimeItemId");
+                    OnTimeItemIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _TimeItemId;
+        partial void OnTimeItemIdChanging(global::System.Int32 value);
+        partial void OnTimeItemIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Enabled
+        {
+            get
+            {
+                return _Enabled;
+            }
+            set
+            {
+                OnEnabledChanging(value);
+                ReportPropertyChanging("Enabled");
+                _Enabled = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Enabled");
+                OnEnabledChanged();
+            }
+        }
+        private global::System.Boolean _Enabled;
+        partial void OnEnabledChanging(global::System.Boolean value);
+        partial void OnEnabledChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_TimeTable_StoreManager", "StoreManager")]
+        public StoreManager StoreManager
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_TimeTable_StoreManager", "StoreManager").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_TimeTable_StoreManager", "StoreManager").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<StoreManager> StoreManagerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<StoreManager>("MoneyPacificModel.FK_TimeTable_StoreManager", "StoreManager");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<StoreManager>("MoneyPacificModel.FK_TimeTable_StoreManager", "StoreManager", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MoneyPacificModel", "FK_TimeTable_TimeItem", "TimeItem")]
+        public TimeItem TimeItem
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TimeItem>("MoneyPacificModel.FK_TimeTable_TimeItem", "TimeItem").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TimeItem>("MoneyPacificModel.FK_TimeTable_TimeItem", "TimeItem").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TimeItem> TimeItemReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TimeItem>("MoneyPacificModel.FK_TimeTable_TimeItem", "TimeItem");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TimeItem>("MoneyPacificModel.FK_TimeTable_TimeItem", "TimeItem", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>

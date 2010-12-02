@@ -97,7 +97,7 @@ Inherits="System.Web.Mvc.ViewUserControl<F5_MoneyPacificSite.Models.StoreManager
             <%: Html.LabelFor(model => model.CreateDate) %>
         </th>
         <td>
-            <%: Html.TextBoxFor(model => model.CreateDate, String.Format("{0:dd-mmm-yyyy}", Model.CreateDate)) %>
+            <%: Html.TextBoxFor(model => model.CreateDate, String.Format("{0:dd-MMM-yyyy}", Model.CreateDate)) %>
             <%: Html.ValidationMessageFor(model => model.CreateDate) %>
         </td>
     </tr>

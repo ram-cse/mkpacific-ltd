@@ -1,3 +1,149 @@
+	2/12/2010:
+
+	=> phải loại bỏ tiêu cực bằng 1 điều tích cực
+	
+	liệt kê tiêu cực => viết lời động viên
+	
+	liên tục tiep thu động viên tích cực 
+	
+	Viết lời động viên => ...cách hữu hiệu 
+	
+	http://mp3.zing.vn/mp3/nghe-album/Gio-Ty-Canh-3-Nguyen-Vu-amp-Phi-Nhung.2068153.1.html
+	
+	newItem.lstTimeTable.Sort(
+		delegate (TimeTable itemTable01, TimeTable timeTable02)
+		{
+			return Comparer<int>.Default.Compare
+			   (itemTable01.TimeItem.Hour, timeTable02.TimeItem.Hour);
+		});
+	
+		- MoneyPacific:
+			. Security Page
+			. Transaction
+			. Test Các mục quản lý: Customer, Agent, Store, StoreManager => Tạo StoreManger
+			. Tích hợp
+			. Dịch trang... 		
+		- JQuery Template
+		- BurnSideProject...
+		- Plugin General
+		- Plugin Firefox
+		- CodeIgniter
+			1. Skeleton
+			2. File Structure
+			3. Creating Layout Code
+			4. Creating Menu Library
+			5. Putting Text at Header and Footer
+			6. Centralizing $data
+			7. Adding CSS
+			8. Creating Form HTML
+			9. Creating Beautiful Form Code
+			10. CodeIgniter HTML Style
+			11. Preparing Table at Database
+			12. Creating Insert Data
+			13. Creating List Data Use Table Library
+			14. Creating Table List Without Table Library
+			15. Using URL Helper
+			16. Showing Single Data for Form Edit
+			17. Something Happen With Form Parameters
+			18. Updating Data
+			19. Deleting Data
+			
+			
+		- x Gửi email về Phác đồ cho Phạm Đăng An:
+			+ Hoàng Thị Nhị - 1953 - 1m5 - 55kg
+				. Mắt: Viễn Lão
+				. Bướu cổ: trứ đau, có hạch cổ
+				. Lưng cột sống: loãng độ 3
+				. Đường ruột: hệ tiêu hóa kém 
+				. Khớp: thấp khớp
+				. Hệ TK: viêm TK Tọa
+				
+				Thuốc: 
+					Antiox+ / 3
+					Pax+forte / 1
+					Sveltform+ / 1
+					Lifepac Seniour+ / 2
+					Medisoya / 1
+					Nartia / 1
+					
+					Tong cong: 7 cơ sở + 2 chuyên sâu
+					
+			+ Lê Thành Dũng - 1983 - 1m63 - 65kg
+				. Họng: Viêm Họng mãn
+				. Mắt: 2.5 độ cận + loạn (trong tờ giấy a An ghi nhầm thành viễn + loạn)
+				. Răng: uống đá buốt, thỉnh thoảng chảy máu
+				. Tim: thỉnh thoảng ép tim
+				. Lưng: ngồi nhiều, đứng dễ mỏi
+				. Hệ TK: hay quên
+				. Mệt mỏi, xuống sức: làm việc nhiều mệt
+				
+				Thuốc:
+					Detox+ / 1
+					Antiox+ / 2
+					Nutrimex+ / 1
+					Chomevital+ / 1
+					Lifepac Junior / 1
+					
+					Tổng cộng: 6 cơ sở / tháng
+			
+			Tự kiểm tra kết quả hẹn gặp: Trần Tuấn Anh & Phạm Kim Hoàng
+				- Hoàng quan tâm về vấn đề sk của bà nội, chịu khó lắng nghe
+				- Tuấn Anh đã có gia đình, tuy chưa được tư vấn về kinh doanh nhưng có vẻ rất chú ý và quan tâm 
+			Sau hội thảo ngày chủ nhật:
+				- Hoàng tuy không được mời đi hội thảo, nhưng do có quan tâm và tò mò về vấn đề kd nên xin được đi cùng
+				- Hoàng có mời 1 bạn là Thông Mỹ Tú đi theo
+				- Trong buổi hội thảo: 
+					. Tuấn Anh chăm chú, hay có nhiều câu hỏi về kinh doanh
+					. Hoàng: phần đầu có nghe tìm hiều về sp, về phần thuyết trình của a Duy Linh thì Hoàng ngủ gật
+					Tới phần thuyết trình của a Vũ Hữu Lợi thì lắng nghe nhiều hơn
+					. Tú: phần đầu nói về sp & phan thuyet trih của a Duy Linh thì Tú chủ yếu.. ngủ, và bảo ko thich
+					nhưng phần sau của a VHLợi thì Tú lắng nghe nhiều, tuy chưa có nhiều câu hỏi nhưng có vẻ thật sự quan 
+					tâm về vd kinh doanh
+				- Cả 3 bạn: Tuấn Anh, Mỹ Hoàng & Mỹ Tú đều thich, muốn xem tiếp & tự nguyện buổi chiều xin ở lại tiep tuc
+				xem chị Nên & 1 a làm trong Quân đội thuyết trình. Cả 3 thich buổi thuyết trình buổi chiều hơn là buổi sáng.
+				
+			
+
+	pdhung88: Dung tìm cuốn của Gang of Four
+	http://www.dofactory.com/Patterns/Patterns.aspx
+	
+	1/12/2010:
+	
+		- Money Pacific:
+			+ Security
+				. x Tách 1 ngày thành 4 múi giờ
+				. x Design các checkbox
+				. Load thông tin từ csdl lên 
+				. x Tạo ModelFor
+				. Thực thi chức năng Submit
+			+ Design Securtity
+				. Thiết kế dùng màu sắc chọn không cần nhấn Ctrl
+				. Thông qua JQuery Tạo giá trị để submit tương ứng
+		-   Dùng JQuery design các giao diện phổ thông
+		-   Authentication
+		- 0 Plugin General
+		- 0 Plugin Firefox
+		-   CodeIgniter
+			1. Skeleton
+			2. File Structure
+			3. Creating Layout Code
+			4. Creating Menu Library
+			5. Putting Text at Header and Footer
+			6. Centralizing $data
+			7. Adding CSS
+			8. Creating Form HTML
+			9. Creating Beautiful Form Code
+			10. CodeIgniter HTML Style
+			11. Preparing Table at Database
+			12. Creating Insert Data
+			13. Creating List Data Use Table Library
+			14. Creating Table List Without Table Library
+			15. Using URL Helper
+			16. Showing Single Data for Form Edit
+			17. Something Happen With Form Parameters
+			18. Updating Data
+			19. Deleting Data
+
 	30/10/2010:
 		- CodeIgniter:
 			=> Add css vào project

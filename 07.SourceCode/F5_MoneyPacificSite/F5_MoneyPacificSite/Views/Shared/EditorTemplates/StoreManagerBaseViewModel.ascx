@@ -77,8 +77,9 @@
             <%: Html.LabelFor(model => model.CreateDate) %>
         </th>
         <td>
-            <%: Html.TextBoxFor(model => model.CreateDate, String.Format("{0:dd-mmm-yyyy}", Model.CreateDate)) %>
-            <%: Html.ValidationMessageFor(model => model.CreateDate) %>
+            <%--<%: Html.TextBoxFor(model => model.CreateDate, String.Format("{0:dd-MMM-yyyy}", Model.CreateDate)) %>--%>
+            <%: Html.Label(String.Format("{0:dd-MMM-yyyy}", Model.CreateDate)) %>
+            <%--<%: Html.ValidationMessageFor(model => model.CreateDate) %>--%>
         </td>
             
 <%--        <th>
