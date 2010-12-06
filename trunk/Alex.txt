@@ -1,13 +1,29 @@
 
-- Sao tui chỉnh tập tin: application/controllers/welcome.php & application/views/wellcomes.php ...
-mà nó chẳng hiển thị thay đổi gì hết, đổi tên nó (xoá đi) nó cũng ko xi nhê luôn :|
-hiển thị trang có phần chính là dòng này hoài: Hi, bao! You are logged in now. Logout
-View Profile 
-- Viết thử 1 cái controller hello .. sau đó gọi lên mà nó báo: 404 Page Not Found
-The page you requested was not found. Mà tui viết trên source CI chạy bình thường mà
-- Cái thư mục webroot để làm gì vậy, 
+	3/12/2010:
 
-=> tất cả là sai thu mục, khỏi hỏi :((
+		- Money Pacific
+		- Code Igniter
+			+ $this->load->database();
+			anchor("books/input","Input Book") 
+			= <a href="http://localhost/CodeIgniter/index.php/books/input">Input Book</a>
+	 
+			$data = $this->books_model->general();
+			-> 	gọi trực tiếp đối tượng model, & cần hàm load thu vien giong import trong csharp
+				$this->load->model('books_model');
+				
+			Load thong tin thư viện:
+			$this->load->library('MyMenu');
+	 
+	- Sao tui chỉnh tập tin: application/controllers/welcome.php & application/views/wellcomes.php ...
+	mà nó chẳng hiển thị thay đổi gì hết, đổi tên nó (xoá đi) nó cũng ko xi nhê luôn :|
+	hiển thị trang có phần chính là dòng này hoài: Hi, bao! You are logged in now. Logout
+	View Profile 
+	- Viết thử 1 cái controller hello .. sau đó gọi lên mà nó báo: 404 Page Not Found
+	The page you requested was not found. Mà tui viết trên source CI chạy bình thường mà
+	- Cái thư mục webroot để làm gì vậy, 
+
+	=> tất cả là sai thu mục, khỏi hỏi :((
+
 
 
 	2/12/2010:
