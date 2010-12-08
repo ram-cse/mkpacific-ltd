@@ -1,3 +1,44 @@
+	7/12/2010:
+		- Money Pacific:
+			+ x Add giao diện màu cam vào
+			+ Lập lịch tách phần Black Box ra riêng 1 project
+		- 
+		- CodeIgniter
+		- AJax
+		- Java Script
+		- JQuery
+		- JQuery UI
+		- Vision:
+			+ Lập danh sách 20 người cần sức khỏe & 2 người kinh doanh
+			+ Lập danh sách 200 người quen
+			
+			http://powerup.vn/Microsite/tuyet_ky_training_page3.html
+			http://www.youtube.com/watch?v=DrFopodt8A0 
+
+	6/12/2010:
+		- http://www.phpeveryday.com/articles/CodeIgniter-Framework-Basic-Tutorial-P841.html
+			+ Học những Tut cuối cùng
+		- JQuery + giao diện:
+			+ http://www.phpeveryday.com/articles/TOC-Tutorial-JQuery-User-Interface-P1030.html
+			+ Chọn theme JQuery:
+			+ http://www.phpeveryday.com/articles/jQuery-My-First-Code-P374.html
+		- JQuery + Menu:
+			+ Menu dọc + submenu:
+			http://blog.jqueryui.com/2010/06/jquery-ui-19m2-menu/
+			+ Menu ngang + submenu:
+			
+			+ Tabs
+			+ Message Dialog (dont need to confirm)
+			+ Create Dialog (need to confirm)
+			+ DatePicker
+			+ Slide bar
+			
+		- Ajax:
+			
+		- Money Pacific:
+			+ Tích hợp giao diện
+		- 
+
 
 	3/12/2010:
 
