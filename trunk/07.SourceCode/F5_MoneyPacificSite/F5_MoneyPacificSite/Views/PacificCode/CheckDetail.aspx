@@ -19,11 +19,7 @@
             <%: Html.TextBoxFor(model => model.CodeNumber) %>
             <%: Html.ValidationMessageFor(model => model.CodeNumber) %>
         </div>
-            
-        <p>
-            <input type="submit" value="View" />
-        </p>
-
+        <input type="submit" value="View" />
     <% } %>
 
 </asp:Content>
