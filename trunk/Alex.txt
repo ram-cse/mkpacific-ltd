@@ -1,23 +1,81 @@
-nmqanh: anh phải thấy 1 điều 
-nmqanh: là bây giờ các vị tướng lớn
-nmqanh: đang dc mời về đây
-nmqanh: để chuẩn bị quân cho trận đánh lớn ở VN
-thanhdungit: ...
-nmqanh: nó diễn ra trong 2012
-nmqanh: anh chỉ có đúng 1 năm để rèn bản thân mình và vừa rèn luyện vừa chiêu tướng
-nmqanh: đó là 2011
-nmqanh: tới 2012, các tướng đánh nhau đủ kiểu rồi
-nmqanh: mà mình ko có tướng, hoac tướng ko đủ trình
-nmqanh: hoac quân mình yếu
-nmqanh: thì đánh sẽ khó
-nmqanh: dễ chết
-nmqanh: Cơ hội nó đang diễn ra đúng vào thời khắc này
-nmqanh: qua 1 cái là qua luôn
-thanhdungit: ....
-nmqanh: nên thời khắc này mình ko cố gắng và chuyên tâm hơn chút, sẽ khó đó anh
-nmqanh: cố lên!
-nmqanh: 
-thanhdungit: ...
+	13/12/2010:
+		Tam Nguyên, Cửu Vận 
+		http://nghenhac.info/ListenPlayList.html	
+		
+		http://www.freshthemes.com/demo/bigfoot/
+		http://wordpressthemesbase.com/view/456.html
+		
+		
+		- Money Pacific:
+			+ Test UniqueIdentify
+			+ Thiết kế Database
+			
+		- Burn Side:
+		
+		www.english.vipgroup.com/certificate/project.php
+	
+
+	10/12/2010:
+		- LINQ voi mo hinh 3 tang
+		Đang liên hệ với anh Namdh để đăng những tuts của anh dịch từ Scott về LinQ
+		http://weblogs.asp.net/scottgu/
+		
+		http://krisvandermotten.wordpress.com/2006/11/19/creating-a-data-access-layer-with-linq-to-sql-part-1/
+		
+		Vâng, SQLMetal, công cụ LINQ to SQL tạo ra một mô hình thực thể dựa trên một lược đồ cơ sở dữ liệu
+
+		http://weblogs.asp.net/scottgu/archive/2007/09/07/linq-to-sql-part-9-using-a-custom-linq-expression-with-the-lt-asp-linqdatasource-gt-control.aspx
+
+	9/12/2010:
+		"hỡi người yêu ơi quên sao kỷ niệm ngày nao bên nhau.."
+		- Money Pacific:
+			+ Đọc lại yêu cầu
+			+ Sửa database cho tối ưu:
+				=> chỉnh sửa các thông tin....
+			+ 
+		- 4h làm:
+		- 2h tim ky thuat, ứng dụng vào dự án...
+		- 2h tu quan ly thoi gian		
+		- VISION:
+			+ Bạn Hoa Sen
+			+ 12A9
+			+ Hàng Xóm
+			+ Nguyễn Hữu Cầu
+			+ DICentral
+			+ Lotus Solution
+			+ Asian One Hosting
+			+ lyr1
+	
+		- Lên kế hoạch cho mục tiêu VIP 2sao trong năm 2010:
+			+ Ghi lại các lời warmup hàng ngày
+			+ Lên danh sách 300 người
+			+ Warm up moi nguoi trong danh sách:
+			+ Kế hoạch trong tháng
+			+ Kế hoạch trong tuần
+			
+		http://www.youtube.com/watch?v=x2hmaSe4gig&feature=player_embedded#!
+		
+
+	nmqanh: anh phải thấy 1 điều 
+	nmqanh: là bây giờ các vị tướng lớn
+	nmqanh: đang dc mời về đây
+	nmqanh: để chuẩn bị quân cho trận đánh lớn ở VN
+	thanhdungit: ...
+	nmqanh: nó diễn ra trong 2012
+	nmqanh: anh chỉ có đúng 1 năm để rèn bản thân mình và vừa rèn luyện vừa chiêu tướng
+	nmqanh: đó là 2011
+	nmqanh: tới 2012, các tướng đánh nhau đủ kiểu rồi
+	nmqanh: mà mình ko có tướng, hoac tướng ko đủ trình
+	nmqanh: hoac quân mình yếu
+	nmqanh: thì đánh sẽ khó
+	nmqanh: dễ chết
+	nmqanh: Cơ hội nó đang diễn ra đúng vào thời khắc này
+	nmqanh: qua 1 cái là qua luôn
+	thanhdungit: ....
+	nmqanh: nên thời khắc này mình ko cố gắng và chuyên tâm hơn chút, sẽ khó đó anh
+	nmqanh: cố lên!
+	nmqanh: 
+	thanhdungit: ...
 
 	8/12/2010:
 		Dot_Com_Secrets.part01.rar 
