@@ -1,98 +1,69 @@
 ﻿using System;
-namespace DoFactory.GangOfFour.Abstract.Structural
+
+namespace DoFactory.GangOfFour.Singleton.Structural
 {
+    /// <summary>
+    /// MainApp startup class for Structural
+    /// Singleton Design Pattern.
+    /// </summary>
     class MainApp
     {
-        public static void Main()
+        /// <summary>
+        /// Entry point into console application.
+        /// </summary>
+
+        static void Main()
         {
-            AbstractFactory factory1 = new ConcreteFactory1();
-            Client client1 = new Client(factory1);
-            client1.Run();
-            // Abstract factory #2
-            AbstractFactory factory2 = new ConcreteFactory2();
-            Client client2 = new Client(factory2);
-            client2.Run();
-            // Wait for user input
+            // Constructor is protected -- cannot use new
+            Singleton s1 = Singleton.Instance();
+            Singleton s2 = Singleton.Instance();
+
+            // Test for same instance
+            if (s1 == s2)
+            {
+                Console.WriteLine("Objects are the same instance");
+            }
+            // Wait for user
             Console.ReadKey();
         }
     }
-    #region FACTORY
-    abstract class AbstractFactory
+    /// <summary>
+    /// The 'Singleton' class
+    /// </summary>
+
+    class Singleton
     {
-        public abstract AbstractProductA CreateProductA();
-        public abstract AbstractProductB CreateProductB();
+        private static Singleton _instance;
+        // Constructor is 'protected'
+
+        protected Singleton()
+        {
+
+        }
+
+
+
+        public static Singleton Instance()
+        {
+
+            // Uses lazy initialization.
+
+            // Note: this is not thread safe.
+
+            if (_instance == null)
+            {
+
+                _instance = new Singleton();
+
+            }
+
+
+
+            return _instance;
+
+        }
+
     }
-    class ConcreteFactory1 : AbstractFactory
-    {
-        public override AbstractProductA CreateProductA()
-        {
-            return new ProductA1();
-        }
-        public override AbstractProductB CreateProductB()
-        {
-            return new ProductB1();
-        }
-    }
-    /// The 'ConcreteFactory2' class
-    class ConcreteFactory2 : AbstractFactory
-    {
-        public override AbstractProductA CreateProductA()
-        {
-            return new ProductA2();
-        }
-        public override AbstractProductB CreateProductB()
-        {
-            return new ProductB2();
-        }
-    }
-
-    #endregion FACTORY
-
-    #region CLIENT
-    /// The 'Client' class. Interaction environment for the products.
-    class Client
-    {
-        private AbstractProductA _abstractProductA;
-        private AbstractProductB _abstractProductB;
-
-        public Client(AbstractFactory factory)
-        {
-            _abstractProductB = factory.CreateProductB();
-            _abstractProductA = factory.CreateProductA();
-        }
-        public void Run()
-        {
-            _abstractProductB.Interact(_abstractProductA);
-        }
-    }
-    #endregion CLIENT
-
-    #region PRODUCT
-    abstract class AbstractProductA { }
-    abstract class AbstractProductB
-    { public abstract void Interact(AbstractProductA a);}
-
-    class ProductA1 : AbstractProductA { }
-    class ProductB1 : AbstractProductB
-    {
-        public override void Interact(AbstractProductA a)
-        {
-            Console.WriteLine(this.GetType().Name 
-                + " interacts with " + a.GetType().Name);
-        }
-    }
-
-    class ProductA2 : AbstractProductA { }
-    class ProductB2 : AbstractProductB
-    {
-        public override void Interact(AbstractProductA a)
-        {
-            Console.WriteLine(this.GetType().Name 
-                + " interacts with " + a.GetType().Name);
-        }
-    }
-
-    #endregion PRODUCT
 
 }
 
