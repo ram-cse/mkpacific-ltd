@@ -125,261 +125,118 @@ namespace MoneyPacificSrv.DTO
 			OnCreated();
 		}
 		
+        /// <summary>
+        /// BEGIN Define Tables
+        /// </summary>
+
 		public System.Data.Linq.Table<Administrator> Administrators
-		{
-			get
-			{
-				return this.GetTable<Administrator>();
-			}
-		}
+        { get { return this.GetTable<Administrator>(); } }
 		
 		public System.Data.Linq.Table<TransactionState> TransactionStates
-		{
-			get
-			{
-				return this.GetTable<TransactionState>();
-			}
-		}
+        { get { return this.GetTable<TransactionState>(); } }
 		
 		public System.Data.Linq.Table<Agent> Agents
-		{
-			get
-			{
-				return this.GetTable<Agent>();
-			}
-		}
+        { get { return this.GetTable<Agent>(); } }
 		
 		public System.Data.Linq.Table<AgentState> AgentStates
-		{
-			get
-			{
-				return this.GetTable<AgentState>();
-			}
-		}
+        { get { return this.GetTable<AgentState>(); } }
 		
 		public System.Data.Linq.Table<Category> Categories
-		{
-			get
-			{
-				return this.GetTable<Category>();
-			}
-		}
+        { get { return this.GetTable<Category>(); } }
 		
 		public System.Data.Linq.Table<City> Cities
-		{
-			get
-			{
-				return this.GetTable<City>();
-			}
-		}
+        { get { return this.GetTable<City>(); } }
 		
 		public System.Data.Linq.Table<CollectMoney> CollectMoneys
-		{
-			get
-			{
-				return this.GetTable<CollectMoney>();
-			}
-		}
+        { get { return this.GetTable<CollectMoney>(); } }
 		
 		public System.Data.Linq.Table<CollectState> CollectStates
-		{
-			get
-			{
-				return this.GetTable<CollectState>();
-			}
-		}
+        { get { return this.GetTable<CollectState>(); } }
 		
 		public System.Data.Linq.Table<Customer> Customers
-		{
-			get
-			{
-				return this.GetTable<Customer>();
-			}
-		}
+        { get { return this.GetTable<Customer>(); } }
 		
 		public System.Data.Linq.Table<CustomerState> CustomerStates
-		{
-			get
-			{
-				return this.GetTable<CustomerState>();
-			}
-		}
+        { get { return this.GetTable<CustomerState>(); } }
 		
 		public System.Data.Linq.Table<InternetAccessRole> InternetAccessRoles
-		{
-			get
-			{
-				return this.GetTable<InternetAccessRole>();
-			}
-		}
+        { get { return this.GetTable<InternetAccessRole>(); } }
 		
 		public System.Data.Linq.Table<PacificCode> PacificCodes
-		{
-			get
-			{
-				return this.GetTable<PacificCode>();
-			}
-		}
+        { get { return this.GetTable<PacificCode>(); } }
 		
 		public System.Data.Linq.Table<PacificCodeState> PacificCodeStates
-		{
-			get
-			{
-				return this.GetTable<PacificCodeState>();
-			}
-		}
+        { get { return this.GetTable<PacificCodeState>(); } }
 		
 		public System.Data.Linq.Table<StoreManager> StoreManagers
-		{
-			get
-			{
-				return this.GetTable<StoreManager>();
-			}
-		}
+        { get { return this.GetTable<StoreManager>(); } }
 		
 		public System.Data.Linq.Table<StoreManagerState> StoreManagerStates
-		{
-			get
-			{
-				return this.GetTable<StoreManagerState>();
-			}
-		}
+        { get { return this.GetTable<StoreManagerState>(); } }
 		
 		public System.Data.Linq.Table<StoreUser> StoreUsers
-		{
-			get
-			{
-				return this.GetTable<StoreUser>();
-			}
-		}
+        { get { return this.GetTable<StoreUser>(); } }
 		
 		public System.Data.Linq.Table<StoreUserState> StoreUserStates
-		{
-			get
-			{
-				return this.GetTable<StoreUserState>();
-			}
-		}
+        { get { return this.GetTable<StoreUserState>(); } }
 		
 		public System.Data.Linq.Table<TimeItem> TimeItems
-		{
-			get
-			{
-				return this.GetTable<TimeItem>();
-			}
-		}
+        { get { return this.GetTable<TimeItem>(); } }
 		
 		public System.Data.Linq.Table<TimeTable> TimeTables
-		{
-			get
-			{
-				return this.GetTable<TimeTable>();
-			}
-		}
+        { get { return this.GetTable<TimeTable>(); } }
 		
 		public System.Data.Linq.Table<Transaction> Transactions
-		{
-			get
-			{
-				return this.GetTable<Transaction>();
-			}
-		}
+        { get { return this.GetTable<Transaction>(); } }
 		
 		public System.Data.Linq.Table<TransactionCate> TransactionCates
-		{
-			get
-			{
-				return this.GetTable<TransactionCate>();
-			}
-		}
+        { get { return this.GetTable<TransactionCate>(); } }
 		
 		public System.Data.Linq.Table<TransactionFee> TransactionFees
-		{
-			get
-			{
-				return this.GetTable<TransactionFee>();
-			}
-		}
+        { get { return this.GetTable<TransactionFee>(); } }
 	}
-	
+
+    /// <summary>
+    /// END Define Tables
+    /// </summary>
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Administrator")]
 	public partial class Administrator
 	{
 		
-		private System.Nullable<System.Guid> _Id;
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _Description;
-		
+		private System.Nullable<System.Guid> _Id;		
+		private string _Username;		
+		private string _Password;		
+		private string _Description;		
 		public Administrator()
-		{
-		}
+		{}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="UniqueIdentifier")]
 		public System.Nullable<System.Guid> Id
 		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this._Id = value;
-				}
-			}
+            get { return this._Id; }
+            set { if ((this._Id != value)) { this._Id = value; } }
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="NVarChar(256)")]
 		public string Username
 		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
+            get { return this._Username; }
+            set { if ((this._Username != value)) { this._Username = value; } }
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(256)")]
 		public string Password
 		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
+            get { return this._Password; }
+            set { if ((this._Password != value)) { this._Password = value; } }
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(256)")]
 		public string Description
 		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this._Description = value;
-				}
-			}
+            get { return this._Description; }
+            set { if ((this._Description != value)) { this._Description = value; } }
 		}
 	}
 	
@@ -387,14 +244,10 @@ namespace MoneyPacificSrv.DTO
 	public partial class TransactionState : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Code;
-		
-		private string _Description;
-		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);		
+		private int _Id;		
+		private string _Code;		
+		private string _Description;		
 		private EntitySet<Transaction> _Transactions;
 		
     #region Extensibility Method Definitions
@@ -418,14 +271,11 @@ namespace MoneyPacificSrv.DTO
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
+            get { return this._Id; }
+            set
+            {
+                if ((this._Id != value))
+                {
 					this.OnIdChanging(value);
 					this.SendPropertyChanging();
 					this._Id = value;
@@ -6190,21 +6040,18 @@ namespace MoneyPacificSrv.DTO
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Id
 		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
+            get { return this._Id; }
+            set
+            {
+                if ((this._Id != value))
+                {
+                    this.OnIdChanging(value); 
+                    this.SendPropertyChanging(); 
+                    this._Id = value; 
+                    this.SendPropertyChanged("Id"); 
+                    this.OnIdChanged();
+                }
+            }
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CateId", DbType="Int")]
@@ -6325,8 +6172,7 @@ namespace MoneyPacificSrv.DTO
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
+		public event PropertyChangingEventHandler PropertyChanging;		
 		public event PropertyChangedEventHandler PropertyChanged;
 		
 		protected virtual void SendPropertyChanging()
