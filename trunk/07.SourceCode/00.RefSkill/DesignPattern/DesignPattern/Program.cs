@@ -1,69 +1,53 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
 
-namespace DoFactory.GangOfFour.Singleton.Structural
+class Employee
 {
-    /// <summary>
-    /// MainApp startup class for Structural
-    /// Singleton Design Pattern.
-    /// </summary>
-    class MainApp
+    int _id;
+    int _idRole;
+    string _lastName;
+    string _firstName;
+
+    public int ID
     {
-        /// <summary>
-        /// Entry point into console application.
-        /// </summary>
-
-        static void Main()
-        {
-            // Constructor is protected -- cannot use new
-            Singleton s1 = Singleton.Instance();
-            Singleton s2 = Singleton.Instance();
-
-            // Test for same instance
-            if (s1 == s2)
-            {
-                Console.WriteLine("Objects are the same instance");
-            }
-            // Wait for user
-            Console.ReadKey();
-        }
-    }
-    /// <summary>
-    /// The 'Singleton' class
-    /// </summary>
-
-    class Singleton
-    {
-        private static Singleton _instance;
-        // Constructor is 'protected'
-
-        protected Singleton()
-        {
-
-        }
-
-
-
-        public static Singleton Instance()
-        {
-
-            // Uses lazy initialization.
-
-            // Note: this is not thread safe.
-
-            if (_instance == null)
-            {
-
-                _instance = new Singleton();
-
-            }
-
-
-
-            return _instance;
-
-        }
-
+        get { return _id; }
+        set { _id = value; }
     }
 
+    public int IDRole
+    {
+        get { return _idRole; }
+        set { _idRole = value; }
+    }
+
+    public string LastName
+    {
+        get { return _lastName; }
+        set { _lastName = value; }
+    }
+
+    public string FirstName
+    {
+        get { return _firstName; }
+        set { _firstName = value; }
+    }
 }
+public class MainClass
+{
+    public static void Main()
+    {
+        List<Employee> people = new List<Employee> {
+              new Employee  { ID = 1, IDRole = 1, LastName = "A", FirstName = "B"},
+              new Employee  { ID = 2, IDRole = 2, LastName = "G", FirstName = "T"}
+            };
+        var query = from p in people
+                    where p.LastName.Length == 4
+                    select p.LastName;
 
+        List<string> names = query.ToList<string>();
+        Console.Write(names);
+    }
+}
