@@ -1,3 +1,38 @@
+	15/12/2010:
+		- DIAGRAM MySQL
+		Export your database SQL structure, then paste it into this tool: http://code.google.com/p/database-diagram/ this will show you
+		
+		- Lên danh sách diễn dàn:
+			+ Tạo nick hỏi
+			+ Tạo nick trả lời
+			+ tham gia
+		
+	14/12/2010:
+		- Thu gọn các hàm cho 2 lớp BUS & DAO
+		- Service dùng BUS khác BUS của WebSite
+		- Wan Ly PC
+		- Quan Lý Phan Quyền
+		- CLR Trigger...?
+		- Viet LINQ bằng "nodepad++"
+		- TIPS http://channel9.msdn.com/Blogs/NicFill/Sara-Fords-101-Visual-Studio-Tips-in-55-Minutes-Challenge
+		=>http://saraford.net/2010/03/30/speaking-at-devdays-2010-in-the-netherlands-and-techdays-in-belgium-visual-studio-tips-2/
+		
+		http://visualstudiotips.wordpress.com/
+		
+		http://www.vnecon.vn/showthread.php?t=60056
+		http://www.vnecon.vn/showthread.php?t=59880
+		
+		Sửa Database:
+			Tách: PacificCode -> PacificCode trong BlackBox & PartPacificCode trong Security
+			PacificCodeState => chuyển sang BlackBox
+			Tách: Transaction -> 
+				+ Transaction trong BlackBox: Chỉ lưu thông tin thay đổi của pacific code
+				+ Transaction trong Sercurity: Lưu thông tin hoạt động của Customer, StoreUser, StoreManager(Store)
+			CollectMoney => Collection 
+			CollectState => CollectionState
+			
+		
+
 	13/12/2010:
 		Tam Nguyên, Cửu Vận 
 		http://nghenhac.info/ListenPlayList.html	
