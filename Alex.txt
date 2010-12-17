@@ -1,3 +1,111 @@
+	
+
+	17/12/2010:
+	
+	4214 9435 1342 3587 : acb nguyen anh truong
+	x x 1309 5989
+	
+	http://my.opera.com/nguyend/blog/qui-trinh-phan-tich-he-thong-quan-ly-diem-thi-trong-khoa-cua-mot-truong-dai-hoc
+	
+	
+		- Danh sách forum:
+			+
+		- Danh sách tài khoản hỏi: 
+			+ username - password
+			hoangngan1990
+		- Danh sách tài khoản trả lời: 
+			+ lechinam
+		http://ddth.com/showthread.php?p=2426857#post2426857
+			+ thanhungit
+		
+		http://www.nhatcuong.com.vn/showthread.php?t=16465
+	
+		- Thế mạnh của FB? theo phân tích cá nhân:
+			+ Zuckerberg từ chối bán quảng cáo banner nhưng một lãnh đạo của Facebook là Sheryl Sandberg biết cách câu kéo những thương hiệu lớn như Nike, Vitaminwater và Louis Vuitton. Chẳng hạn, Nike muốn mặt hàng của họ chỉ xuất hiện trong tài khoản của những người từ 19 đến 26 tuổi ở Arizona (Mỹ), Facebook sẵn sàng làm hài lòng họ nhờ khả năng phân nhóm thành viên và mạng xã hội này thực hiện điều đó tốt hơn bất cứ dịch vụ nào, kể cả Google. 
+			+ Tag trên ảnh
+			+ Wall => chia sẻ thông tin trong cộng đồng, thông tin trang cá nhân của 1 người luôn dc cập nhật. => sự "động" trong cộng đồng đã lôi kéo dc mọi  người
+			+ Web chạy khá nhanh
+			=> đúng tâm lý, nhu cầu của mọi người mà trước fb chưa có trang nào làm được...
+		- “Khi Mark đặt câu hỏi, ‘đúng’ có nghĩa là ‘đúng’, còn nếu muốn trả lời ‘không’, bạn phải chuẩn bị sẵn sàng cho một cuộc tranh luận với đầy đủ các con số, lý luận, kinh nghiệm và dẫn chứng. Chúng tôi tưởng sau này nó sẽ trở thành luật sư với khả năng thuyết phục bồi thẩm đoàn thành công gần như 100%”, Ed Zuckerberg, bố của CEO Facebook, nhận xét.
+		
+		- Và trên Facebook, con người chỉ duy trì một mối quan hệ duy nhất là quan hệ bạn bè, dù người họ kết nối là bố mẹ, sếp hay đồng nghiệp.
+		
+		
+		Creational Patterns 
+		Abstract Factory  	Creates an instance of several families of classes 
+		Builder				Separates object construction from its representation 
+		Factory Method		Creates an instance of several derived classes 
+		Prototype   		A fully initialized instance to be copied or cloned 
+		Singleton   		A class of which only a single instance can exist 
+
+		Structural Patterns 
+		Adapter   			Match interfaces of different classes 
+		Bridge   			Separates an object’s interface from its implementation 
+		Composite   		A tree structure of simple and composite objects 
+		Decorator   		Add responsibilities to objects dynamically 
+		Facade   			A single class that represents an entire subsystem 
+		Flyweight   		A fine-grained instance used for efficient sharing 
+		Proxy   			An object representing another object 
+
+		Behavioral Patterns 
+		Chain of Resp.	A way of passing a request between a chain of objects 
+		Command   		Encapsulate a command request as an object 
+		Interpreter   	A way to include language elements in a program 
+		Iterator   		Sequentially access the elements of a collection 
+		Mediator   		Defines simplified communication between classes 
+		Memento   		Capture and restore an object's internal state 
+		Observer   		A way of notifying change to a number of classes 
+		State   		Alter an object's behavior when its state changes 
+		Strategy   		Encapsulates an algorithm inside a class 
+		Template Method	Defer the exact steps of an algorithm to a subclass 
+		Visitor			Defines a new operation to a class without change 
+
+  => tìm hiểu Proxy & Command Pattern
+  
+  http://tuanvinh.wordpress.com/2007/11/03/creational-patterns/
+  http://my.opera.com/nguyend/blog/
+
+	Việc phân Design Pattern thành các nhóm khác nhau chủ yếu là dựa trên tiêu chí mục đích sử dụng
+	
+	Creation: mục đích là trừu tượng hóa quá trình khởi tạo đối tượng
+	Structural: mục đích đề cập đến việc các đối tượng kết hợp với nhau để tạo thành các cấu trúc hữu dụng hơn
+	Behavioral: mục đích mô tả sự tương tác giữa các đối tượng
+	
+	Factory Pattern: giúp quản lý đối tượng tốt hơn
+	Proxy Pattern: có nhiệm vụ bảo vệ việc truy cập một đối tượng thông qua Proxy, hay còn gọi là truy cập gián tiếp.
+	Singleton Pattern: đảm bảo một lớp chỉ có một thực thể (instance) duy nhất được tạo ra và đồng thời cung cấp một truy cập toàn cục đến đối tượng được tạo ra.
+  
+	16/12/2010:
+		- Các hàm sử dụng chung:
+		
+		Thời gian của các bạn là có hạn, vì thế đứng lãng phí để sống cho một cuộc đời ai đó. Đừng nhốt mình trong những tín điều nào đó, sống như vậy là sống bằng suy nghĩ của những người khác. Đừng để quan điểm của những người khác làm mờ nhạt đi quan điểm của chính bản thân bạn.
+		
+		Hãy luôn khao khát. Hãy cứ dại khờ.
+		
+		- Tìm bài viết hướng dẫn cắt template...
+		=> Design Pattern với PHP
+		- Chapter 2, Part 1, Advance PHP Programming.
+		
+		- "ít chữ và nhiều hình ảnh" ..
+		- http://facebookviet.com/2009/08/20-meo-facebook-co-the-ban-khong-biet/
+
+			// Truy xuat
+			GetObject(id)
+
+			// Thao tac co ban
+			AddNew(entity)
+			Update(entity)
+			Remove(id)
+			
+			// Chuc nang ho tro
+			IsExist(entity)
+			IsExist(nameofattribute)
+			GetList()
+			GetList(condition)
+			GetArray()
+			GetArray(condition)
+
+
 	15/12/2010:
 		- DIAGRAM MySQL
 		Export your database SQL structure, then paste it into this tool: http://code.google.com/p/database-diagram/ this will show you
