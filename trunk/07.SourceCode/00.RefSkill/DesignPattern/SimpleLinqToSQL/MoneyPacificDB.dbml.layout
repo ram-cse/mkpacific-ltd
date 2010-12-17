@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MoneyPacificDB">
+  <DataContextMoniker Name="/MoneyPacificDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fff564f0-33d1-42f0-a540-f58d61eb0e6e" absoluteBounds="1.5, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MoneyPacificDBDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a6532e7-311e-4c04-829f-53f55b37c5f3" absoluteBounds="1.5150000000000001, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
