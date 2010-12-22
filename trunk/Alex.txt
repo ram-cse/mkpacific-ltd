@@ -1,3 +1,102 @@
+﻿
+	22/12/2010:
+	
+		FAH:
+	
+		buzita.com
+		bazuze.net
+		vinasop.com
+		
+		guuble.com
+		elgog.net
+		omeely.net
+		
+		omely.com
+			Expiration Date: 25-jan-2011
+		omely.net
+			Expiration Date: 26-jul-2011
+
+
+		- Money Pacific:
+		- KDTM:
+		- EN:
+		
+		- DP:
+		Việc Extend application thì có thể dùng Registry Pattern + Reflection hay IoC pattern(DI) + IoC Container như NInject chẳng hạn. 
+
+		http://www.asp.net/visual-studio-team-system/videos/how-do-i-enforce-coding-standards-with-code-analysis
+	
+	21/12/2010:
+		- 
+		http://www.nhaccuatui.com/nghe?L=PtTVTUTgstvG
+		http://www.nhaccuatui.com/nghe?L=ZMBeUYZTvhMT
+	
+		http://vi.wikipedia.org/wiki/Kinh_doanh_%C4%91a_c%E1%BA%A5p
+	20/12/2010:
+		POST bài trên diễn đàn:
+			javavietnam:
+			http://www.javavietnam.org/javavn/mvnforum/viewthread_thread,29528_lastpage,yes#117805
+			user: muabanonline
+			pass: khacthanh
+			
+			
+			Em đang làm một trang web bán hàng ở việt nam, cần có thanh toán trực tuyến.
+			Các bác có biết dịch vụ nào đơn giản, dễ sử dụng, phổ biến hoặc là có khả năng sẽ rất phổ biến trong thời gian tới tại việt nam hay không
+			Nếu có thì chỉ giúp em với nhé... Và đừng chỉ em qua paypal hay visa card... mấy cài này chắc ở việt nam em nghĩ chưa tới lúc dùng đâu
+
+			muabanonline
+	
+		http://ddth.com/showthread.php?p=2433847#post2433847
+
+		http://www.vatgia.com/hoidap/5264/111665/chien-tranh-the-gioi-thu-3-vao-nam-2010.html	
+		
+		http://laptrinhvien.vn/diendan/showthread.php/104-WordPress-CMS-cuc-tot-cho-SEO
+		
+		Bí ẩn 60 hoa giáp. Văn hiến Lạc Việt. Vietlyso.com. Trong đó tôi sẽ chỉ ra nguyên lý nạp âm ngũ hành (Bạn gọi là Mạng).
+		
+		Ví dụ Design Pattern trên dofactory rất khó hiểu => nên viết lại các ví dụ áp dụng thực tế hơn
+		- Money Pacific:
+			+ Design Pattern
+				Creational Pattern: 20p x 5 = 100p = 12h -> 13h30 + ăn trua = 14h00
+					Abstract Factory
+					Builder Design
+					Factory Method
+					Prototype Design
+					Singleton
+				Struture Pattern: 20 x 7 = 140p => 16h20
+					Adapter Pattern
+					Bridge 
+					Composite
+					Decorator
+					Facase
+					Flyweight
+					Proxy
+				---> Thiết kế pattern cho Commands Layers
+					Trong đó có thể hiện Guard, kiểm tra quyền trước khi thực thi...
+				Behavioral Pattern (ngày mai)
+					Chain of Resp
+					Command
+					Interpreter
+					Iterator
+					Mediator
+					Mementor
+					Observer
+					State
+					Strategy
+					Template Method
+					Visitor
+					
+			+ ...
+		- Xác định Target: 
+			B1. Tìm nguồn đam mê
+				+ Mong muốn cá nhân
+				+ Mong muốn từ người xung quanh				
+			B2. Mục tiêu (12 trang)
+				+ Chi tiết theo tuần, ngày...
+			B3. Thiết lập ban tư vấn riêng:
+				+ Danh sach nguoi muon gặp
+				+ Kế hoạch liên lạc..
+		- 
 	
 
 	17/12/2010:

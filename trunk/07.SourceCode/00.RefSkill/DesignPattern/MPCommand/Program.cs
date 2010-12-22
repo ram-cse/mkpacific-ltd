@@ -17,7 +17,7 @@ namespace MPCommand
     abstract class ICommand
     {
         public string Name;
-        public abstract void Execute();        
+        public abstract void Execute();                
     }
 
     class BUYCommand : ICommand
@@ -31,6 +31,8 @@ namespace MPCommand
         {
             Console.WriteLine("Executing BUY command...");
         }
+
+        
     }
 
     class MPCOLCommand : ICommand
@@ -44,11 +46,14 @@ namespace MPCommand
         {
             Console.WriteLine("Executing MPCOL command...");
         }
+
+        
     }
 
     class Proxy : ICommand
     {
-        private BUYCommand _buycommand;
+        private BUYCommand _buycommand;        
+
         public override void Execute()
         {
             if (_buycommand == null)
@@ -56,6 +61,6 @@ namespace MPCommand
                 _buycommand = new BUYCommand();
             }
             _buycommand.Execute();
-        }
+        }       
     }
 }

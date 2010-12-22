@@ -1,53 +1,47 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-
-class Employee
+namespace DoFactory.GangOfFour.Factory.Structural
 {
-    int _id;
-    int _idRole;
-    string _lastName;
-    string _firstName;
-
-    public int ID
+    class MainApp
     {
-        get { return _id; }
-        set { _id = value; }
+        static void Main()
+        {
+            Creator[] creators = new Creator[2];
+            creators[0] = new ConcreteCreatorA();
+            creators[1] = new ConcreteCreatorB();
+
+            foreach (Creator creator in creators)
+            {
+                Product product = creator.FactoryMethod();
+                Console.WriteLine("Created {0}",
+                  product.GetType().Name);
+            }
+            Console.ReadKey();
+        }
     }
 
-    public int IDRole
+    abstract class Product { }
+
+    class ConcreteProductA : Product { }
+    class ConcreteProductB : Product
     {
-        get { return _idRole; }
-        set { _idRole = value; }
+    }
+    abstract class Creator
+    {
+        public abstract Product FactoryMethod();
     }
 
-    public string LastName
+    class ConcreteCreatorA : Creator
     {
-        get { return _lastName; }
-        set { _lastName = value; }
+        public override Product FactoryMethod()
+        {
+            return new ConcreteProductA();
+        }
     }
-
-    public string FirstName
+    class ConcreteCreatorB : Creator
     {
-        get { return _firstName; }
-        set { _firstName = value; }
-    }
-}
-public class MainClass
-{
-    public static void Main()
-    {
-        List<Employee> people = new List<Employee> {
-              new Employee  { ID = 1, IDRole = 1, LastName = "A", FirstName = "B"},
-              new Employee  { ID = 2, IDRole = 2, LastName = "G", FirstName = "T"}
-            };
-        var query = from p in people
-                    where p.LastName.Length == 4
-                    select p.LastName;
-
-        List<string> names = query.ToList<string>();
-        Console.Write(names);
+        public override Product FactoryMethod()
+        {
+            return new ConcreteProductB();
+        }
     }
 }
