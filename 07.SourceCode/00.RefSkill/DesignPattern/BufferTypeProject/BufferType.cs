@@ -1,56 +1,39 @@
 ﻿using System;
-namespace DoFactory.GangOfFour.Command.Structural
+
+namespace DoFactory.GangOfFour.Adapter.Structural
 {
     class MainApp
     {
         static void Main()
         {
-            Receiver receiver = new Receiver();
-            Command command = new ConcreteCommand(receiver);
-            Invoker invoker = new Invoker();
-            invoker.SetCommand(command);
-            invoker.ExecuteCommand();
+            Target target = new Adapter();
+            target.Request();
             Console.ReadKey();
         }
     }
-    abstract class Command
-    {
-        protected Receiver receiver;
-        public Command(Receiver receiver)
-        {
-            this.receiver = receiver;
-        }
-        public abstract void Execute();
-    }
-    class ConcreteCommand : Command
-    {
-        public ConcreteCommand(Receiver receiver) :
-            base(receiver)
-        {
-        }
 
-        public override void Execute()
+    class Target
+    {
+        public virtual void Request()
         {
-            receiver.Action();
+            Console.WriteLine("Called Target Request()");
         }
     }
-    class Receiver
+
+    class Adapter : Target
     {
-        public void Action()
+        private Adaptee _adaptee = new Adaptee();
+        public override void Request()
         {
-            Console.WriteLine("Called Receiver.Action()");
+            _adaptee.SpecificRequest();
         }
     }
-    class Invoker
+
+    class Adaptee
     {
-        private Command _command;
-        public void SetCommand(Command command)
+        public void SpecificRequest()
         {
-            this._command = command;
-        }
-        public void ExecuteCommand()
-        {
-            _command.Execute();
+            Console.WriteLine("Called SpecificRequest()");
         }
     }
 }
