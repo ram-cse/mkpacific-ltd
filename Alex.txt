@@ -1,6 +1,9 @@
-﻿
+
+	http://vipviet.net/raovat-detail/194-Khai-giang-lop-hoc/5484-KHAI-GIANG-KHOA-HOC-KY-NANG-THUYET-TRINH-TAI-TP-HCM.aspx
+
 	22/12/2010:
 	
+
 		FAH:
 	
 		buzita.com
@@ -16,6 +19,26 @@
 		omely.net
 			Expiration Date: 26-jul-2011
 
+	http://www.ceopower.vn/ => mạng xã hội danh nhân
+	18/12/2010:
+	- Mục tiêu trong ngày:
+		+ Lên mục danh sách cho 200 thành viên trong sổ tay: (chỉ việc ghi chép)
+		+ Làm Logo cho TipTutorial.Net: chỉ cần logo chữ, bằng photoshop
+		+ Tạo mục menu: 
+			Basic CSharp: Ngôn ngữ + Hướng đối tượng + Design Pattern hữu dụng (Proxy, Command)
+			PHP: 
+				+ Cài đặt AMPServer
+				+ Cài đặt Virtual Host
+				+ Cài đặt Joomla
+				+ Cài đặt Drupal
+				+ Cài đặt CodeIgniter
+				+ Cài đặt 1 shop
+			LINQ:
+			..
+		+ BurnSideProject: 
+			. Thiết kế xong giao diện cho BB                                                                                                                                                                                             	
+		* template giống WiKiPedia, hoặc giống file pdf
+=======
 
 		- Money Pacific:
 		- KDTM:
@@ -99,6 +122,7 @@
 		- 
 	
 
+>>>>>>> .r140
 	17/12/2010:
 	
 	4214 9435 1342 3587 : acb nguyen anh truong
@@ -240,6 +264,7 @@
 			
 		
 
+>>>>>>> .r139
 	13/12/2010:
 		Tam Nguyên, Cửu Vận 
 		http://nghenhac.info/ListenPlayList.html	
@@ -255,8 +280,77 @@
 		- Burn Side:
 		
 		www.english.vipgroup.com/certificate/project.php
+
+	13/12/2010:
+		Welcome to visit FamilyAndHealth.org a website to provide readers as well as the best health article, easy to understand, easy to read. The answers for free health advice of the doctor involved, in addition to numerous articles answering questions on various medical journals, professors, doctors who are working in many diseases different institutes of the organization.
+		This is a health site for community activities, a non-profit site. Therefore, need the support page for more on development and meet the desires of your beliefs.
+		Operational objectives of FAMILYandHEALTH.ORG: 
+		"Listen to your health, give you and your family much health information is extremely useful."
+		- Thêm 10 bài viết
+		- Sửa cấu trúc website
+		-
+	11/12/2010:
+		- Đọc xong sách DNT
+			=> Tổng hợp các kỹ năng cần thiết
+			+ Lê Tô Diệu Thảo => hẹn 1 cuộc hẹn vào buổi tối để gặp a An
+			+ Chị Vũ Lệ Giang => sau khi a An đi hà nội về, hẹn gặp 1 cuộc hẹn
+			+ Lập danh sách người quen
+		- Làm việc cho BB
+		- Viết mail cho a An
+		- Hỏi thăm Nguyễn Văn Thiện: ...
+		
+
+nmqanh: anh phải thấy 1 điều 
+nmqanh: là bây giờ các vị tướng lớn
+nmqanh: đang dc mời về đây
+nmqanh: để chuẩn bị quân cho trận đánh lớn ở VN
+thanhdungit: ...
+nmqanh: nó diễn ra trong 2012
+nmqanh: anh chỉ có đúng 1 năm để rèn bản thân mình và vừa rèn luyện vừa chiêu tướng
+nmqanh: đó là 2011
+nmqanh: tới 2012, các tướng đánh nhau đủ kiểu rồi
+nmqanh: mà mình ko có tướng, hoac tướng ko đủ trình
+nmqanh: hoac quân mình yếu
+nmqanh: thì đánh sẽ khó
+nmqanh: dễ chết
+nmqanh: Cơ hội nó đang diễn ra đúng vào thời khắc này
+nmqanh: qua 1 cái là qua luôn
+thanhdungit: ....
+nmqanh: nên thời khắc này mình ko cố gắng và chuyên tâm hơn chút, sẽ khó đó anh
+nmqanh: cố lên!
+nmqanh: 
+thanhdungit: ...
+
 	
 
+nmqanh: ko sao anh
+nmqanh: anh cứ promotion là
+nmqanh: nguoi ta chuyên gia WHO, còn phải giup cho rat nhieu nguoi
+nmqanh: nen ko tiện đi lại
+nmqanh: nếu anh có muốn CHỮA CHO EM TRAI MÌNH
+nmqanh: thì em SẴN LÒNG HẸN GIÚP ANH ẤY
+nmqanh: anh ấy tuy bận nhưng sẽ dành 45 phút để tư vấn cho ANH/BẠN
+nmqanh: anh nhớ anh Vũ giảng gì ko
+nmqanh: LẶP ĐI LẶP LẠI VỀ NHU CẦU 4-5 LẦN
+nmqanh: giờ em trai nhiều bệnh
+nmqanh: một là ổng chả quan tam ve van de đó
+nmqanh: nen thoi
+nmqanh: hai là tại ổng ko nhớ van đề đó
+nmqanh: anh promotion đến vậy rồi
+nmqanh: mà ko đi nữa
+nmqanh: thì anh sang nguoi khac đi
+nmqanh: đừng tiếc người
+thanhdungit: àh, có lẽ là  1 phan ổng ko wan tam lắm, có để ý  nhưng lại nói cau này: "gia nhu em nói sớm hơn, chu thang em anh nó về dồng thap roi" 
+nmqanh: vậy là ổng ko quan tam roi
+nmqanh: nguoi ta ko có NHU CẦU
+nmqanh: thì ok thoi 
+nmqanh is typing...
+nmqanh: chuyển sang nguoi khac
+thanhdungit: vay a noi nhưng ng khac trc
+thanhdungit: còn anh này thì để sau vậy
+
+
+=======
 	10/12/2010:
 		- LINQ voi mo hinh 3 tang
 		Đang liên hệ với anh Namdh để đăng những tuts của anh dịch từ Scott về LinQ
@@ -319,6 +413,7 @@
 	nmqanh: 
 	thanhdungit: ...
 
+>>>>>>> .r136
 	8/12/2010:
 		Dot_Com_Secrets.part01.rar 
 		Dot_Com_Secrets.part02.rar
