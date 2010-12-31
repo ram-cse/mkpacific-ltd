@@ -11,5 +11,7 @@ namespace MoneyPacificSrv.Cmd
     }
 
     public enum Command
-    { }
+    { 
+
+    }
 }

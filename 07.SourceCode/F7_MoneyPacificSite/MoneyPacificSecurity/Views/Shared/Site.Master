@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MoneyPacificSite.Views.Shared.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <%--<link href="../../Content/Site.css" rel="stylesheet" type="text/css" />--%>
+    <link href="../../Content/css.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+
+<body class="mppacific">
+    
+    <div id="container">
+        <div id="header">
+            <div id="header-left">
+                <div id="logo">
+                    <img src="../../Content/Images/logo.gif"/>
+                </div>
+                <div id="webmerchant">
+                    <p>
+                        Customer Site <br/>
+                        Master
+                    </p>
+                </div>      
+            </div>
+            <div id="header-right">
+                <div id="login">
+                	[ Log On ]
+                </div>
+                <div id="box">
+                    <p> Customer Site Master </p>
+                </div>
+                <div id="headerRinfo">
+                    <span style="font-size:16px;">YES, YOU CAN NOW BUY ON INTERNET WITH CASH !!!</span><br/>
+                    NO CARD  |  NO ACCOUNT  |  NO ENROLMENT  |   100% SECURE 
+                </div>
+            </div>
+            <div class="nav-container-outer">
+                <ul id="nav-container" class="nav-container">
+                    <li><a href="/Home">HOME</a></li>                                                            
+                    <li><a class="item-primary" >CUSTOMER</a>
+                        <ul style="width:150px;">
+                            <li><a href="/PacificCode/CheckDetail">Detail</a></li>
+                            <li><span class="divider divider-horiz" ></span></li>
+                            <li><a href="/PacificCode/ChangeCode">Change Code</a></li>
+                            <li><a href="/PacificCode/SendMoney">Send Money</a></li>
+                            <li><a href="/PacificCode/SendSMS">Receive SMS</a></li>
+                            <li><span class="divider divider-horiz" ></span></li>
+                            <li><a href="/PacificCode/Browse">Browse (Test)</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="item-primary" >STORE</a>
+                        <ul style="width:150px;">
+                            <li><a href="/StoreManager/AsktoBePartner">Be Partner</a></li>
+                            <li><span class="divider divider-horiz" ></span></li>
+                            <li><a href="/StoreUser/Dashboard">Dashboard(Phone)</a></li>
+                            <li><a href="/StoreManager/Dashboard">Dashboard(Manager)</a></li>
+                            <li><a href="/StoreManager/Information">Information</a></li>
+                            <li><a href="/StoreManager/Security">Security</a></li>
+                            <li><span class="divider divider-horiz" ></span></li>                            
+                            <li><a href="#">Chat</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="item-primary" >ADMIN PANEL</a>
+                        <ul style="width:150px;">
+                            <li><a href="/Admin/RequestList">Request Store</a></li>
+                            <li><span class="divider divider-horiz" ></span></li>
+                            <li><a href="/Admin/BrowseStoreManager">Browse Stores</a></li>
+                            <li><a href="/Admin/ListAmount">Collect NO</a></li>
+                            <li><a href="/Admin/CollectProcessing">Collect Processing</a></li>
+                            <li><a href="/Admin/CollectedList">Collected </a></li>
+                            <li><span class="divider divider-horiz" ></span></li>
+                            <li><a href="/Agent/Browse">Agent</a></li>
+                            <li><a href="/Menu/Index">Test</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="item-primary">ABOUT</a></li>
+                    <li><a class="item-primary">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="bar"></div>
+        </div>
+        <div id="sidebar1">
+            <h3>sidebar1 Content</h3>
+            <p>The background color on this div will only show for the length of the content. If you'd like a dividing line instead, place a border on the right side of the #mainContent div if the #mainContent div will always contain more content than the #sidebar1 div. </p>
+            <p>Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque  eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend  sollicitudin, molestie id, varius et, nibh. Donec nec libero.</p>
+        </div>
+        
+        <div id="Content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+            </asp:ContentPlaceHolder>
+            <br /><br /><br />
+        </div>
+        <br class="clearfloat" />
+        <div id="footer">
+            <div class="footerinfo">
+                <ul>
+                <li>All rights reserved</li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Licence for Other Country</a></li>
+                </ul><br />
+                <span style="color:#F37032">Copyright &copy; 2010 Money - Pacific.Com</span>
+            </div>
+            <div class="footerbox">
+                <img alt="" height="54" src="../../Content/Images/verisign-logo.gif"/>
+                <img alt="" height="54" src="../../Content/Images/solasian.gif"/>
+            </div>    	
+        </div>
+
+    </div>
+    
+</body>
+</html>

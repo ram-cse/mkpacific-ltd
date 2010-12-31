@@ -12,7 +12,6 @@ namespace MoneyPacificSrv.Cmd
     public class MPCOLCommand : IMPCommand
     {
         #region IMPCommand Members
-
         
         /// Giải thuật:
         /// B1. Kiểm tra là SU hoặc SM 
@@ -89,8 +88,6 @@ namespace MoneyPacificSrv.Cmd
                                 ,existCollectMoney.CollecteDate.Value.ToShortDateString()
                                 ,existCollectMoney.Agent.FistName.Trim() + "." + existCollectMoney.Agent.LastName.Trim()
                                 ,existCollectMoney.Agent.Id.ToString());
-
-
                         }
                         else if (existCollectMoney.StatusId == CollectStateBUS.GetId("Processing")
                             && existCollectMoney.ExpireDate.Value.Date <= DateTime.Today.Date)
@@ -126,8 +123,7 @@ namespace MoneyPacificSrv.Cmd
                     }
                 }
             }
-            
-            
+                        
             // B4: Tra ra ket qua
             return sReceivePhone + "*" + sContentSMS;
         }
@@ -146,8 +142,7 @@ namespace MoneyPacificSrv.Cmd
             }            
             return existStoreManager;
         }
-
-
+        
         /// <summary>
         /// MPCOL: Thanh toán TOÀN BỘ số tiền chưa trả cho Money PacificCode
         /// Cú Pháp: args[0]*MPCOL*args[2]
@@ -256,8 +251,6 @@ namespace MoneyPacificSrv.Cmd
             return sReceivePhone + "*" + sContentSMS;
         }
         //*/
-        #endregion
-
-        
+        #endregion        
     }
 }
