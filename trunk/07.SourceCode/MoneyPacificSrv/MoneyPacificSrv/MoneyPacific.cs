@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
 using MoneyPacificSrv.Cmd;
 using MoneyPacificSrv.Util;
 using MoneyPacificSrv.DTO;
@@ -14,9 +13,6 @@ namespace MoneyPacificSrv
 {
     public class MoneyPacific
     {
-        
-
-
         internal static string SendMessage(string smsContent)
         {
             string smsResponse = "";
@@ -24,9 +20,7 @@ namespace MoneyPacificSrv
 
 
             // Phân tích để lấy command & arguments            
-            smsContent = smsContent.Trim(' ');
-            
-            //
+            smsContent = smsContent.Trim(' ');            
             string[] arrArg = smsContent.Split('*');
 
             if (arrArg.Count() <= 1) return "Invalid Command";

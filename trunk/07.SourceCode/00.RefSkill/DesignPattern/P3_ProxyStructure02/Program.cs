@@ -35,9 +35,7 @@ namespace ProxyStructure
                 _realObject = new RealSubject();
             }
             _realObject.Reqest();
-        }
-
-        
+        }      
         
 
     } 

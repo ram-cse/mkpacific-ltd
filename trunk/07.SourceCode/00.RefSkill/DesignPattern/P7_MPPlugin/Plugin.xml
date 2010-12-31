@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MPPlugins>
+  <Plugin name ="BuyPlugin" filename="BuyPlugin.dll"/>
+  <Plugin name ="SellPlugin" filename="SellPlugin.dll"/>
+</MPPlugins>
