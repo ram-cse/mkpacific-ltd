@@ -9,9 +9,9 @@ namespace UnitTest
     {
         static void Main(string[] args)
         {
-            string codenumber = GeneratorPacificCode.Generator.getNewCode();
-            codenumber = insertSeparateChar(codenumber, '-', 4);
-            Console.WriteLine(codenumber);
+            //string codenumber = GeneratorPacificCode.Generator.getNewCode();
+            //codenumber = insertSeparateChar(codenumber, '-', 4);
+            //Console.WriteLine(codenumber);
         }
 
         public static string insertSeparateChar(string sOrginal, char c, int l)

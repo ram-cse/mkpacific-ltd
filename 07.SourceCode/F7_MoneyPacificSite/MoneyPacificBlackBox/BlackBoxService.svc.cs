@@ -15,9 +15,9 @@ namespace MoneyPacificBlackBox
     {
         private SecurityGuard _guard = new SecurityGuard();
 
-        public PacificCode NewPacificCode(int amount)
+        public string NewPacificCode(int amount)
         {
-            return this._guard.GetNewPacificCode(amount);
+            return this._guard.GetNewPacificCode(amount).CodeNumber;
         }
 
         public bool IsPossible(string codeNumber)
@@ -30,14 +30,17 @@ namespace MoneyPacificBlackBox
             return this._guard.ChangeCode(codeNumber);
         }
 
-        public PacificCode GetValue(string partCodeNumber)
+        public int GetValue(string partCodeNumber)
         {
-            return this._guard.GetValue(partCodeNumber);
+            return (int)this._guard.GetValue(partCodeNumber).ActualAmount;
         }
 
-        public PacificCode MakePayment(string codeNumber, int amount)
+        /// <summary>
+        /// Trả ra new CodeNumber có giá trị bằng giá trị đã thanh toán...
+        /// </summary>
+        public string MakePayment(string codeNumber, int amount)
         {
-            return this._guard.MakePayment(codeNumber, amount);
+            return this._guard.MakePayment(codeNumber, amount).CodeNumber;
         }
 
         public bool MakePaymentTo(string codeNumber, string partCodeNumber, int amount)
@@ -45,9 +48,9 @@ namespace MoneyPacificBlackBox
             return this._guard.Tranfer(codeNumber, partCodeNumber,amount);
         }
 
-        public PacificCode Merge(string[] arrCodeNumber)
+        public string Merge(string[] arrCodeNumber)
         {
-            return this._guard.Merge(arrCodeNumber);
+            return this._guard.Merge(arrCodeNumber).CodeNumber;
         }        
     }
 }

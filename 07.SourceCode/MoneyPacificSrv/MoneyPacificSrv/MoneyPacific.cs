@@ -26,7 +26,7 @@ namespace MoneyPacificSrv
             if (arrArg.Count() <= 1) return "Invalid Command";
 
             // Check BLACK LIST
-            /// FORMAT PHONENUMBER // TODO: Có loi j lien wan +84
+            // FORMAT PHONENUMBER // TODO: Có loi j lien wan +84
             arrArg[0] = Utility.formatPhone(arrArg[0]);
 
             string senderPhone = arrArg[0];
@@ -38,7 +38,7 @@ namespace MoneyPacificSrv
             {
                 if (CustomerBUS.isInBlackList(senderPhone))
                 {
-                    return "0*" + MessageManager.GetValue("BLACK_LIST");                 
+                    return "0*" + MessageManager.GetValue("BLACK_LIST");
                 }
 
                 bLocked = CustomerBUS.isLockedCustomer(senderPhone);
@@ -46,7 +46,6 @@ namespace MoneyPacificSrv
                 {
                     smsResponse = "0*" + MessageManager.GetValue("LOCKED_CUSTOMER");
                 }
-
             }
 
             // The first argument alway is the phonenumber

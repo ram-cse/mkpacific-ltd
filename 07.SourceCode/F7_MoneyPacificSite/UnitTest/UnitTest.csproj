@@ -48,12 +48,6 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GeneratorPacificCode\GeneratorPacificCode.csproj">
-      <Project>{850FC2F3-7135-4937-B1B0-2E0014FB6653}</Project>
-      <Name>GeneratorPacificCode</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

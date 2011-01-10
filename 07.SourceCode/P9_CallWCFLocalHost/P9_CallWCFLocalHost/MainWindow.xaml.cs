@@ -63,6 +63,10 @@ namespace P9_CallMoneyPacificSrv
             }
         }
 
+        /*
+         
+         
+        /*/
         private void btnMakePayment_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -117,8 +121,7 @@ namespace P9_CallMoneyPacificSrv
         
 
         private void ChangeAddressService(string sNewAddress)
-        { 
-            
+        {            
         }
 
         private void btnInputPhone_Click(object sender, RoutedEventArgs e)

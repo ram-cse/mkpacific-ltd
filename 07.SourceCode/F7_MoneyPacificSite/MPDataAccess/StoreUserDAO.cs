@@ -5,14 +5,16 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class StoreUserDAO
+    public class StoreUserDAO
     {
-        public static StoreUser GetObject(Guid id)
+        public static StoreUser GetObject(Guid userId)
         {
-            throw new NotImplementedException();
+            return DataAccessLayer.mpdb.StoreUsers
+                .Where(s => s.UserId.Equals(userId))
+                .Single<StoreUser>();
         }
 
-        public static StoreUser GetObject(string partCodeNumber)
+        public static StoreUser GetObject(string phoneNumber)
         {
             throw new NotImplementedException();
         }
@@ -50,6 +52,13 @@ namespace MPDataAccess
         public static StoreUser[] GetArray(bool condition)
         {
             throw new NotImplementedException();
+        }
+
+        public static bool IsExist(string phoneNumber)
+        {
+            return DataAccessLayer.mpdb.StoreUsers
+                .Any(s => s.Phone.Trim() == phoneNumber.Trim());                
+            
         }
     }
 }

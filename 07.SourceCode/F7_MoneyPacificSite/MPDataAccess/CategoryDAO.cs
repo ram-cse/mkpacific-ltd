@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class CategoryDAO
+    public class CategoryDAO
     {
         public static Category GetObject(int id)
         {
@@ -45,6 +45,14 @@ namespace MPDataAccess
         public static Category[] GetArray(bool condition)
         {
             throw new NotImplementedException();
+        }
+        
+        /// <summary>
+        /// Kiểm tra tồn tại 
+        /// </summary>        
+        public static bool IsExist(int amountBuy)
+        {
+            return DataAccessLayer.mpdb.Categories.Any(c => c.Value == amountBuy && c.Active == true);
         }
     }
 }

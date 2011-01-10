@@ -7,10 +7,11 @@ using MPDataAccess;
 namespace MoneyPacificService.BUS
 {
     class AgentBUS
-    {
-        internal static bool GetObject(Guid id)
-        { 
-            throw new NotImplementedException();
+    {               
+
+        internal static Agent GetObject(int id)
+        {
+            return AgentDAO.GetObject(id);
         }
 
         internal static bool AddNew(Agent entity)

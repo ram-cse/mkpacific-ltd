@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class TransactionStateDAO
+    public class TransactionStateDAO
     {
         public static TransactionState GetObject(Guid id)
         {
