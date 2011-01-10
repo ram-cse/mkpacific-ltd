@@ -14,7 +14,7 @@ namespace MoneyPacificBlackBox
     public interface IBlackBoxService
     {
         [OperationContract]
-        PacificCode NewPacificCode(int amount);
+        string NewPacificCode(int amount);
 
         [OperationContract]
         bool IsPossible(string codeNumber);
@@ -23,16 +23,16 @@ namespace MoneyPacificBlackBox
         string ChangeCode(int codeNumber);
 
         [OperationContract]
-        PacificCode GetValue(string partCodeNumber);
+        int GetValue(string partCodeNumber);
 
         [OperationContract]
-        PacificCode MakePayment(string codeNumber, int amount);
+        string MakePayment(string codeNumber, int amount);
 
         [OperationContract]
         bool MakePaymentTo(string codeNumber, string partCodeNumber, int amount);
 
         [OperationContract]
-        PacificCode Merge(string[] arrCodeNumber);
+        string Merge(string[] arrCodeNumber);
     }
 
 

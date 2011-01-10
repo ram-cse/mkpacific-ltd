@@ -5,14 +5,14 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class StoreManagerDAO
+    public class StoreManagerDAO
     {
-        public static StoreManager GetObject(Guid id)
+        public static StoreManager GetObject(Guid userId)
         {
             throw new NotImplementedException();
         }
 
-        public static StoreManager GetObject(string partCodeNumber)
+        public static StoreManager GetObject(string phoneNumber)
         {
             throw new NotImplementedException();
         }

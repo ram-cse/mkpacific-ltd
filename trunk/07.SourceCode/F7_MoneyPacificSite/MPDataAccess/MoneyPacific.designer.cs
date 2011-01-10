@@ -2968,6 +2968,18 @@ namespace MPDataAccess
 		
 		private string _VATNumber;
 		
+		private string _Product;
+		
+		private string _ShopSize;
+		
+		private System.Nullable<int> _NumberOfShop;
+		
+		private System.Nullable<int> _StoreInternetAccessId;
+		
+		private System.Nullable<System.DateTime> _LastCollectDate;
+		
+		private System.Nullable<bool> _IsLocked;
+		
 		private EntitySet<Collection> _Collections;
 		
 		private EntitySet<PartPacificCode> _PartPacificCodes;
@@ -3022,6 +3034,18 @@ namespace MPDataAccess
     partial void OnNameOfCompanyChanged();
     partial void OnVATNumberChanging(string value);
     partial void OnVATNumberChanged();
+    partial void OnProductChanging(string value);
+    partial void OnProductChanged();
+    partial void OnShopSizeChanging(string value);
+    partial void OnShopSizeChanged();
+    partial void OnNumberOfShopChanging(System.Nullable<int> value);
+    partial void OnNumberOfShopChanged();
+    partial void OnStoreInternetAccessIdChanging(System.Nullable<int> value);
+    partial void OnStoreInternetAccessIdChanged();
+    partial void OnLastCollectDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastCollectDateChanged();
+    partial void OnIsLockedChanging(System.Nullable<bool> value);
+    partial void OnIsLockedChanged();
     #endregion
 		
 		public StoreManager()
@@ -3404,6 +3428,126 @@ namespace MPDataAccess
 					this._VATNumber = value;
 					this.SendPropertyChanged("VATNumber");
 					this.OnVATNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product", DbType="NVarChar(255)")]
+		public string Product
+		{
+			get
+			{
+				return this._Product;
+			}
+			set
+			{
+				if ((this._Product != value))
+				{
+					this.OnProductChanging(value);
+					this.SendPropertyChanging();
+					this._Product = value;
+					this.SendPropertyChanged("Product");
+					this.OnProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShopSize", DbType="NVarChar(255)")]
+		public string ShopSize
+		{
+			get
+			{
+				return this._ShopSize;
+			}
+			set
+			{
+				if ((this._ShopSize != value))
+				{
+					this.OnShopSizeChanging(value);
+					this.SendPropertyChanging();
+					this._ShopSize = value;
+					this.SendPropertyChanged("ShopSize");
+					this.OnShopSizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfShop", DbType="Int")]
+		public System.Nullable<int> NumberOfShop
+		{
+			get
+			{
+				return this._NumberOfShop;
+			}
+			set
+			{
+				if ((this._NumberOfShop != value))
+				{
+					this.OnNumberOfShopChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfShop = value;
+					this.SendPropertyChanged("NumberOfShop");
+					this.OnNumberOfShopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StoreInternetAccessId", DbType="Int")]
+		public System.Nullable<int> StoreInternetAccessId
+		{
+			get
+			{
+				return this._StoreInternetAccessId;
+			}
+			set
+			{
+				if ((this._StoreInternetAccessId != value))
+				{
+					this.OnStoreInternetAccessIdChanging(value);
+					this.SendPropertyChanging();
+					this._StoreInternetAccessId = value;
+					this.SendPropertyChanged("StoreInternetAccessId");
+					this.OnStoreInternetAccessIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastCollectDate", DbType="Date")]
+		public System.Nullable<System.DateTime> LastCollectDate
+		{
+			get
+			{
+				return this._LastCollectDate;
+			}
+			set
+			{
+				if ((this._LastCollectDate != value))
+				{
+					this.OnLastCollectDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastCollectDate = value;
+					this.SendPropertyChanged("LastCollectDate");
+					this.OnLastCollectDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsLocked", DbType="Bit")]
+		public System.Nullable<bool> IsLocked
+		{
+			get
+			{
+				return this._IsLocked;
+			}
+			set
+			{
+				if ((this._IsLocked != value))
+				{
+					this.OnIsLockedChanging(value);
+					this.SendPropertyChanging();
+					this._IsLocked = value;
+					this.SendPropertyChanged("IsLocked");
+					this.OnIsLockedChanged();
 				}
 			}
 		}

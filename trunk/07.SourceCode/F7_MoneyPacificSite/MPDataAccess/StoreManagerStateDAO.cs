@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class StoreManagerStateDAO
+    public class StoreManagerStateDAO
     {
         public static StoreManagerState GetObject(Guid id)
         {

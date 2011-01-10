@@ -7,17 +7,19 @@ namespace MPDataAccess
 {
     public class AgentDAO
     {
-        public static Agent GetObject(int Id)
+        public static Agent GetObject(int userId)
         {
             // TODO:
             return (new Agent());
         }
+
         public static bool AddNew(Agent entity)
         {
             DataAccessLayer.mpdb.Agents.InsertOnSubmit(entity);
             DataAccessLayer.mpdb.SubmitChanges();
             return true;
         }
+
         public static bool Update(Agent entity)
         {            
             Agent existAgent = DataAccessLayer.mpdb.Agents

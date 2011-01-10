@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class CustomerStateDAO
+    public class CustomerStateDAO
     {
         public static CustomerState GetObject(int id)
         {
@@ -43,6 +43,11 @@ namespace MPDataAccess
         }
 
         public static CustomerState[] GetArray(bool condition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static CustomerState GetObject(string code)
         {
             throw new NotImplementedException();
         }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class CollectionStateDAO
+    public class CollectionStateDAO
     {
         public static CollectionState GetObject(int id)
         {

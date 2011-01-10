@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class TimeItemDAO
+    public class TimeItemDAO
     {
         public static TimeItem GetObject(Guid id)
         {

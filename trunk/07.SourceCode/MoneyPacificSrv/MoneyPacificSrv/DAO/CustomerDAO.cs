@@ -118,11 +118,9 @@ namespace MoneyPacificSrv.DAO
         }
 
         internal static void setStatus(string sPhoneNumber, string sStatus)
-        {
-            
+        {            
             Customer existCustomer = CustomerDAO.getCustomer(sPhoneNumber);
-            setStatus(existCustomer.Id, sStatus);
-            
+            setStatus(existCustomer.Id, sStatus);            
         }
 
         internal static void setStatus(int customerId, string sStatus)

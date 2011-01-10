@@ -32,7 +32,9 @@ namespace MoneyPacificSrv.DAO
         internal static StoreUser GetStoreUser(string storePhone, string PINStore)
         {
             DBMoneyPacificDataContext mpdb = new DBMoneyPacificDataContext();
-            StoreUser existStore = mpdb.StoreUsers.Where(s => s.Phone.Trim() == storePhone.Trim() && s.PINStore == PINStore).FirstOrDefault();
+            StoreUser existStore = mpdb.StoreUsers
+                .Where(s => s.Phone.Trim() == storePhone.Trim() && s.PINStore == PINStore)
+                .FirstOrDefault();
             mpdb.Connection.Close();
             return existStore;
         }

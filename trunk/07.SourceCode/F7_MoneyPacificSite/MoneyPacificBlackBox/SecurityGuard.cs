@@ -43,7 +43,8 @@ namespace MoneyPacificBlackBox
             newTransaction.Origine = "BuyMP";
             newTransaction.PacificCodeId = pacificCode.Id;            
             newTransaction.Comment = string.Format("Buy: {0}", pacificCode.ActualAmount);
-            newTransaction.IsSuccessful = true; // Luôn luôn cho phép tạo thành công...
+            newTransaction.IsSuccessful = true; 
+            // Luôn luôn cho phép tạo thành công...
 
             // Lưu
             this._transactionBUS.AddNew(newTransaction);
@@ -95,7 +96,6 @@ namespace MoneyPacificBlackBox
                 , partCodeNumber
                 , amount);
             newTransaction.IsSuccessful = result;
-
             this._transactionBUS.AddNew(newTransaction);
             
             return result;

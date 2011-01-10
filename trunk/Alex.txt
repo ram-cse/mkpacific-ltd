@@ -1,4 +1,110 @@
 
+	7/1/2010:
+		- 
+
+
+	6/1/2010:
+		- Lịch:
+			. Lên danh sách người quen: toàn bộ list trong mail
+			. Warm up 10 người:			
+			. Kiểm tra thông tin hẹn với a An - Huyền
+			. Làm thẻ name card
+		- Gymlish
+		- Lên cuộc hẹn với chị Lan Anh - Mobifone		
+		nguyenphuongvms@gmail.com
+		- Money Pacific: 
+			+ 
+
+[THÔNG TIN NGƯỜI MỚI]
+Nguyễn Thị Thanh Huyền - 1983
+Hiện đang làm Lập trình viên cho Logear 
+Mức lương 600 usd
+Năm 2007 - 2008 (khoảng hơn 1 năm): đã làm cho Lô hội
+Lý do bỏ công ty Lô hội:
+	+ Không kham nổi doanh số bán hàng
+	+ 1 Thủ lĩnh cấp trên bỏ nhánh khiến nhánh của Huyền bị bơ vơ và dần 
+	dần rơi rụng hết
+	+ .. hình như còn 1 vài lý do khác thì D~ chưa tìm ra
+Dũng đã promotion anh An như sau (bạn này thân & cũng biết kdtm rồi):
+Dũng đã từng đi tới các hội thảo của các công ty Sinh Lợi, Hưng Thời Đại, Lô Hội (trước đó D~ đã hỏi H về bán hàng đa cấp)... Nhưng chưa bao giờ
+tham gia các công ty đó, vì ở đó Dũng chưa thấy có niềm tin (thông tin thêm: lần thứ 2 D~ tham gia hội thảo của cty Lô Hội là do 
+Huyền mời đi), D~ chưa bị thuyết phục và chưa có lòng tin. Nhưng lần này thì khác, một anh bạn trẻ, tuy còn rất trẻ, nhưng D~ cảm thấy ng này có sức lôi cuốn mạnh mẽ... Anh này đã thành công ở những lĩnh vực khác, là chủ quán Trà Việt hôm trước D~ nói cho Huyền, giờ đây a này chọn con đường làm đối tác của tổ chức y tế thế giới. Đã được tổ chức y tế thế giới WHO trao chứng nhận đính đích danh. Thật là đáng tiếc nếu chúng ta bỏ qua cơ hội gặp  với những người như thế này. 
+
+Hãy đi tìm hiều cùng Dũng, Huyền sẽ tự cảm nhận được nhiều hơn là những gì Dũng nói
+
+	http://localhost:2010/BlackBoxService.svc?wsdl
+
+	Mobifone 090, 093, 0122, 0126, 0121, 0128, 0120
+
+	5/1/2010:
+		* Lên kế hoạch trong ngày
+		- Ham nong: (bang dien thoai chính)
+			+ Dũng Đen KHTN 05
+			+ Chánh
+			+ Huyền
+			+ Linh
+			+ Dung Khìn
+			+ Phong + Quyên
+			+ Anh Hải
+			+ Anh Kha
+			+ Chí Hiếu
+		=> hẹn gặp cho Chí Hiếu
+		- Money Pacific:
+			+
+			
+
+	4/1/2010:
+		- Thuyết phục a LTN:
+			BUL
+				+ AgentBUS => Business Object
+			DAL
+				+ AgentDAO => DataAccessObject
+			DTO
+				+ Agent
+				hoặc AgentInfo
+				
+			LINQ:
+				+ ElementAt(index)
+				
+				+ InsertOnSubmit
+				+ InsertAllOnSubmit
+				+ DeleteAllOnSubmit
+				+ DeleteOnSubmit
+		=> Update: sửa trực tiếp từ đối tượng, rồi SubmitChange();
+		
+		Gửi anh Vũ:
+		Ngày hôm qua sau cuộc hẹn giữa anh  & anh Nam, em có đi chung anh Nam 1 đoạn và được nghe anh nói vào điều sau đây:
+		
+		- sao em nói anh Vũ là giám đốc nhân sự của ngân hàng An Bình?		
+		- anh Vũ bán hàng đa cấp đó em...		
+		- "kinh doanh và từ thiện không thể đi chung với nhau, ng kd luôn nghĩ cái lợi trược khi làm từ thiện"
+			. "hình như ngân hàng AB sắp phá sản" -> thông tin này em chưa được nghe
+		- bán hàng đa cấp bán những sp tuy là độc quyền nhưng chất lượng không hơn sp khác ngoài thị trường nhưng giá thì nó cao
+		gấp nhiều để chia lợi nhuận cho những người kinh doanh
+		- nhưng hôm nay biết thêm a Vũ, biết thêm người bạn cũng là một điều tốt
+		
+		- Gửi mail ghi cảm nhận của mình cho a Vũ về a Nam:
+			+ Nói lên những suy nghĩ của a Nam về a Vũ:
+				. "Tại sao em bảo anh đó là giám đốc nhân sự của ngân hàng An Bình?"
+				. "Anh gặp rất nhiều người kinh doanh đa cấp rồi, còn nhiều hơn là kinh doanh truyền thống
+				nên anh cảm nhận được anh này làm về kddc"
+				. "hình như ngân hàng An Bình sắp phá sản?" => thông tin này em chưa được nghe nữa				
+				. "nhưng có thêm một người bạn cũng tốt"
+				. "làm kinh doanh thì chỉ nghĩ đến tiền" và "nghĩ đến tiền thì không thể làm từ thiện"
+				. "công tac xã hội" & kinh doanh không thể đi với nhau
+				. a Nam xem bác Hồ như là một tấm gương lớn: -> 
+				nêu gương bác hồ cũng là nhà báo, xông pha vào từng mặt trận 
+							
+			=> em ko đề cập đến vấn đề đi gặp mặt vào chủ nhật ngày 9/1. sợ a Nam từ chối lúc này thì khó dẫn theo được lần nữa...
+			
+			+ Đề xuất giải pháp:
+				. nêu những lý do:
+					- Nếu a muốn 
+		- Sơ đồ tư duy:
+		- Money Pacific:
+			+ 50%
+
+
 	31/20/2010:
 		http://vipviet.net/raovat-detail/194-Khai-giang-lop-hoc/5484-KHAI-GIANG-KHOA-HOC-KY-NANG-THUYET-TRINH-TAI-TP-HCM.aspx
 		- vuong.phamnhat@gmail.com
@@ -9,7 +115,6 @@
 		Logged in as thanhdungit (Log-out)
 		Account ID: 2899609
 		
-
 		http://guuxle.com/
 
 	30/10/2010: 1699638373
