@@ -15,14 +15,20 @@ namespace MPDataAccess
 
         public static bool AddNew(Agent entity)
         {
-            DataAccessLayer.mpdb.Agents.InsertOnSubmit(entity);
-            DataAccessLayer.mpdb.SubmitChanges();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+
+            mpdb.Agents.InsertOnSubmit(entity);
+            mpdb.SubmitChanges();
+
+            mpdb.Connection.Close();
             return true;
         }
 
         public static bool Update(Agent entity)
-        {            
-            Agent existAgent = DataAccessLayer.mpdb.Agents
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+
+            Agent existAgent = DataAccessLayer.GetConnection.Agents
                 .Where(p => p.UserId.Equals(entity.UserId))
                 .SingleOrDefault();
 
@@ -38,16 +44,18 @@ namespace MPDataAccess
             existAgent.StatusId         = entity.StatusId;
             existAgent.Username         = entity.Username;
 
-            DataAccessLayer.mpdb.SubmitChanges();
+            DataAccessLayer.GetConnection.SubmitChanges();
             return true;
         }
 
         public static bool Remove(Guid id)
-        {   
-            Agent existAgent = DataAccessLayer.mpdb.Agents
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+
+            Agent existAgent = DataAccessLayer.GetConnection.Agents
                 .Where(a => a.UserId.Equals(id)).Single<Agent>();
-            DataAccessLayer.mpdb.Agents.DeleteOnSubmit(existAgent);
-            DataAccessLayer.mpdb.SubmitChanges();
+            DataAccessLayer.GetConnection.Agents.DeleteOnSubmit(existAgent);
+            DataAccessLayer.GetConnection.SubmitChanges();
             return true;
         }
 

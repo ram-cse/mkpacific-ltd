@@ -10,7 +10,17 @@ namespace MoneyPacificBlackBox.DAO
         private static MoneyPacificBlackBoxDataContext _connection = new MoneyPacificBlackBoxDataContext();
         internal static MoneyPacificBlackBoxDataContext Instance
         {
-            get { return _connection; }
+            get
+            {
+                // Test refesh bang cach nay                
+                ///
+                /// Hay gặp lỗi Connection bị đóng giữa chừng...
+                /// => không sử dụng
+                //_connection.Connection.Close();
+                //_connection.Connection.Close();
+                _connection = new MoneyPacificBlackBoxDataContext();
+                return _connection;
+            }
         }
     }
 }

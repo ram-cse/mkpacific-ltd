@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MoneyPacificBlackBox.DAO;
 using MoneyPacificBlackBox.BUS;
+using MoneyPacificBlackBox.DTO;
 
 namespace MoneyPacificBlackBox
 {
@@ -120,11 +121,11 @@ namespace MoneyPacificBlackBox
             return pacificCode;
         }
 
-        internal PacificCode GetValue(string partCodeNumber)
+        internal double GetValue(string partCodeNumber)
         {
             Transaction newTransaction = new Transaction();
             
-            PacificCode pacificCode = this._pacificCodeBUS.GetValue(partCodeNumber);
+            double result = this._pacificCodeBUS.GetValue(partCodeNumber);
             
             // BEGIN --            
             newTransaction.Origine = "GetValue";
@@ -132,8 +133,26 @@ namespace MoneyPacificBlackBox
             // END --
 
             this._transactionBUS.AddNew(newTransaction); 
-            return pacificCode;
+            return result;
         }
+
+        internal DateTime GetExpireDate(string partCodeNumber)
+        {
+            Transaction newTransaction = new Transaction();
+
+            DateTime result = this._pacificCodeBUS.GetExpireDate(partCodeNumber);
+
+            // Không nên lưu transaction loại này...
+            // BEGIN --            
+            newTransaction.Origine = "GetExpireDate";
+            newTransaction.Comment = "Get ExpireDate(HeThong su dung): " + partCodeNumber;
+            // END --
+
+            this._transactionBUS.AddNew(newTransaction);
+            return result;
+        }
+
+
 
         internal string ChangeCode(int codeNumber)
         {
@@ -147,8 +166,45 @@ namespace MoneyPacificBlackBox
                 , newCodeNumber);
             // END --
 
-            this._transactionBUS.AddNew(newTransaction);
+            // Hien tai chưa can luu Transaction loại này
+            // this._transactionBUS.AddNew(newTransaction);
             return newCodeNumber;
+        }
+
+        internal bool CheckIsExist(string codeNumber)
+        {
+            Transaction newTransaction = new Transaction();
+            bool result = PacificCodeBUS.IsExist(codeNumber);
+
+            // BEGIN --            
+            newTransaction.Origine = "Check Exist";
+            newTransaction.Comment = string.Format("Check Exist: {0}"
+                , codeNumber);
+            // END --
+
+            // Hien tai chưa can luu Transaction loại này
+            // this._transactionBUS.AddNew(newTransaction);
+
+            return result;
+        }
+
+        internal PacificCodeViewModel GetPacificCodeViewModel(string partCodeNumber)
+        {
+            Transaction newTransaction = new Transaction();
+            PacificCodeViewModel model = new PacificCodeViewModel();
+            PacificCode pacificCode = PacificCodeBUS.GetObject(partCodeNumber);
+            model.SetPacificCode(pacificCode);
+
+            // BEGIN --            
+            newTransaction.Origine = "GetPacificCodeViewModel";
+            newTransaction.Comment = string.Format("Get PacificCodeViewModel: {0}"
+                , partCodeNumber);
+            // END --
+
+            // Hien tai chưa can luu Transaction loại này
+            // this._transactionBUS.AddNew(newTransaction);
+
+            return model;
         }
     }
 }

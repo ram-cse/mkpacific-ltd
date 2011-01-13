@@ -52,7 +52,10 @@ namespace MPDataAccess
         /// </summary>        
         public static bool IsExist(int amountBuy)
         {
-            return DataAccessLayer.mpdb.Categories.Any(c => c.Value == amountBuy && c.Active == true);
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            bool result = mpdb.Categories.Any(c => c.Value == amountBuy && c.Active == true);
+            mpdb.Connection.Close();
+            return result;
         }
     }
 }

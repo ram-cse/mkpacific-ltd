@@ -9,19 +9,26 @@ namespace MPDataAccess
     {
         public static StoreUser GetObject(Guid userId)
         {
-            return DataAccessLayer.mpdb.StoreUsers
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            return DataAccessLayer.GetConnection.StoreUsers
                 .Where(s => s.UserId.Equals(userId))
                 .Single<StoreUser>();
         }
 
         public static StoreUser GetObject(string phoneNumber)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            return DataAccessLayer.GetConnection.StoreUsers
+                .Where(s => s.Phone.Trim().Equals(phoneNumber.Trim()))
+                .Single<StoreUser>();
         }
 
         public static bool AddNew(StoreUser entity)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            DataAccessLayer.GetConnection.StoreUsers.InsertOnSubmit(entity);
+            DataAccessLayer.GetConnection.SubmitChanges();
+            return true;
         }
 
         public static bool Update(StoreUser entity)
@@ -56,9 +63,55 @@ namespace MPDataAccess
 
         public static bool IsExist(string phoneNumber)
         {
-            return DataAccessLayer.mpdb.StoreUsers
-                .Any(s => s.Phone.Trim() == phoneNumber.Trim());                
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            bool result = mpdb.StoreUsers
+                .Any(s => s.Phone.Trim() == phoneNumber.Trim());
+            mpdb.Connection.Close();
+            return result;
             
+        }
+
+        public static StoreUser[] GetArray(Guid managerUserId)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreUser[] result = mpdb.StoreUsers
+                .Where(s => s.ManagerId.Equals(managerUserId)).ToArray<StoreUser>();
+            mpdb.Connection.Close();
+            return result;
+        }
+
+        public static bool UnLock(Guid storeUserId)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreUser exitStore = mpdb.StoreUsers
+                .Where(l => l.UserId == storeUserId)
+                .Single<StoreUser>();
+
+            /// UNLOCK
+            exitStore.Enable = true;
+            ///
+
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;
+
+        }
+
+        public static bool Lock(Guid storeGuid)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreUser exitStore = mpdb.StoreUsers
+                .Where(l => l.UserId == storeGuid)
+                .Single<StoreUser>();
+
+            /// LOCK
+            exitStore.Enable = false;
+            /// 
+
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;            
+
         }
     }
 }

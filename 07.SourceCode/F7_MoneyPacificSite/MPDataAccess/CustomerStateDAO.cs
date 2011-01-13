@@ -9,7 +9,12 @@ namespace MPDataAccess
     {
         public static CustomerState GetObject(int id)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            CustomerState obj = mpdb.CustomerStates
+                .Where(c => c.Id == id)
+                .Single<CustomerState>();
+            mpdb.Connection.Close();
+            return obj;
         }
 
         public static bool AddNew(CustomerState entiry)
@@ -49,7 +54,12 @@ namespace MPDataAccess
 
         public static CustomerState GetObject(string code)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            CustomerState obj = mpdb.CustomerStates
+                .Where(c => c.Code.Trim().Equals(code.Trim()))
+                .Single<CustomerState>();
+            mpdb.Connection.Close();
+            return obj;
         }
     }
 }

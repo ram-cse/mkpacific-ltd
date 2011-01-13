@@ -7,15 +7,22 @@ namespace MPDataAccess
 {
     public class CustomerDAO
     {
-        public static Customer GetObject(Guid id)
+        public static Customer GetObject(Guid customerUserId)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            Customer existCustomer = mpdb.Customers
+                .Where(c => c.UserId.Equals(customerUserId))
+                .Single<Customer>();
+            mpdb.Connection.Close();
+            return existCustomer;
         }
 
         public static bool AddNew(Customer entity)
         {
-            DataAccessLayer.mpdb.Customers.InsertOnSubmit(entity);
-            DataAccessLayer.mpdb.SubmitChanges();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            mpdb.Customers.InsertOnSubmit(entity);
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
             return true;
         }
 
@@ -52,14 +59,42 @@ namespace MPDataAccess
         //
         public static bool IsExist(string phoneNumber)
         {
-            return DataAccessLayer.mpdb.Customers.Any(c => c.PhoneNumber.Trim() == phoneNumber.Trim());
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            bool result = mpdb.Customers.Any(c => c.PhoneNumber.Trim() == phoneNumber.Trim());
+            mpdb.Connection.Close();
+            return result;
         }
 
         public static Customer GetObject(string phoneNumber)
         {
-            return DataAccessLayer.mpdb.Customers
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            Customer existCustomer = mpdb.Customers
                 .Where(c => c.PhoneNumber.Trim().Equals(phoneNumber.Trim()))
                 .Single<Customer>();
+            mpdb.Connection.Close();
+            return existCustomer;
+        }
+
+        public static void SetStatus(Guid customerUserId, string status)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+
+            // Customer existCustomer = CustomerDAO.getCustomer(customerId); // LAY từ mpdb khác sẽ ko có tác dụng nếu có xử lý
+            Customer existCustomer = mpdb.Customers
+                .Where(c => c.UserId.Equals(customerUserId))
+                .Single<Customer>();
+
+            string oldStatus = CustomerStateDAO.GetObject((int)existCustomer.StatusId).Code;
+
+            // VD: set Status = x32, x33...
+            if (status[0] == 'x')
+                status = oldStatus[0] + status.Substring(1, status.Length - 1);
+
+            existCustomer.StatusId = CustomerStateDAO.GetObject(status).Id;
+            mpdb.SubmitChanges();
+
+            mpdb.Connection.Close();
+
         }
     }
 }
