@@ -82,6 +82,7 @@
     <Compile Include="DAO\PacificCodeDAO.cs" />
     <Compile Include="DAO\PacificCode.cs" />
     <Compile Include="DAO\TransactionDAO.cs" />
+    <Compile Include="DTO\PacificCodeViewModel.cs" />
     <Compile Include="IBlackBoxService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityGuard.cs" />

@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using MoneyPacificBlackBox.DAO;
 using MoneyPacificBlackBox.BUS;
+using MoneyPacificBlackBox.DTO;
 
 namespace MoneyPacificBlackBox
 {
@@ -17,12 +18,22 @@ namespace MoneyPacificBlackBox
 
         public string NewPacificCode(int amount)
         {
-            return this._guard.GetNewPacificCode(amount).CodeNumber;
+            return this._guard.GetNewPacificCode(amount).CodeNumber;            
         }
 
         public bool IsPossible(string codeNumber)
         {
             return this._guard.CheckIsPossible(codeNumber);
+        }
+
+        public PacificCodeViewModel GetPacificCodeViewModel(string partCodeNumber)
+        { 
+            return this._guard.GetPacificCodeViewModel(partCodeNumber);
+        }
+
+        public bool IsExist(string codeNumber)
+        {
+            return this._guard.CheckIsExist(codeNumber);
         }
 
         public string ChangeCode(int codeNumber)
@@ -32,7 +43,12 @@ namespace MoneyPacificBlackBox
 
         public int GetValue(string partCodeNumber)
         {
-            return (int)this._guard.GetValue(partCodeNumber).ActualAmount;
+            return (int)this._guard.GetValue(partCodeNumber);
+        }
+
+        public DateTime GetExpireDate(string partCodeNumber)
+        {
+            return this._guard.GetExpireDate(partCodeNumber);
         }
 
         /// <summary>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot\service" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/MPSecurityDataAccess.dll" publishTime="01/11/2011 18:35:33" />
+    <file relUrl="bin/MPSecurityDataAccess.pdb" publishTime="01/11/2011 18:35:33" />
+    <file relUrl="Web.config" publishTime="01/12/2011 11:33:14" />
+    <file relUrl="bin/MoneyPacificService.pdb" publishTime="01/11/2011 18:35:34" />
+    <file relUrl="Main.svc" publishTime="01/10/2011 17:17:07" />
+    <file relUrl="bin/MoneyPacificService.dll" publishTime="01/11/2011 18:35:34" />
+  </publishProfile>
+</publishData>

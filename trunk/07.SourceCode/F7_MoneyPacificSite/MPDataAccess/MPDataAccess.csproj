@@ -69,6 +69,7 @@
     <Compile Include="TimeTableDAO.cs" />
     <Compile Include="TransactionDAO.cs" />
     <Compile Include="TransactionStateDAO.cs" />
+    <Compile Include="UserDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -9,12 +9,22 @@ namespace MPDataAccess
     {
         public static StoreManager GetObject(Guid userId)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreManager obj= mpdb.StoreManagers
+                .Where(s => s.UserId == userId)
+                .Single<StoreManager>();
+            mpdb.Connection.Close();
+            return obj;
         }
 
         public static StoreManager GetObject(string phoneNumber)
         {
-            throw new NotImplementedException();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreManager obj = mpdb.StoreManagers
+                .Where(s => s.ManagerPhone.Trim().Equals(phoneNumber.Trim()))
+                .Single<StoreManager>();
+            mpdb.Connection.Close();
+            return obj;
         }
 
         public static bool AddNew(StoreManager entity)
@@ -50,6 +60,15 @@ namespace MPDataAccess
         public static StoreManager[] GetArray(bool condition)
         {
             throw new NotImplementedException();
+        }
+
+        public static bool IsExist(string phoneNumber)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            bool result = mpdb.StoreManagers
+                .Any(s => s.ManagerPhone.Trim() == phoneNumber.Trim());
+            mpdb.Connection.Close();
+            return result;
         }
     }
 }

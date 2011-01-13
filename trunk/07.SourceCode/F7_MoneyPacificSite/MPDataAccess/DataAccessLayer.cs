@@ -7,6 +7,17 @@ namespace MPDataAccess
 {    
     public class DataAccessLayer
     {
-        public static MoneyPacificDataContext mpdb = new MoneyPacificDataContext();        
+        private static MoneyPacificDataContext _connection = new MoneyPacificDataContext();
+
+        public static MoneyPacificDataContext GetConnection
+        {
+            get 
+            {
+                //_connection.Connection.Close();
+                _connection.Connection.Open();
+                _connection = new MoneyPacificDataContext();
+                return _connection;
+            }
+        }
     }
 }

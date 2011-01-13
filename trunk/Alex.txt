@@ -1,9 +1,85 @@
+	13/1/2011:
+	
+	Làm namecard hinh google
+	
+		http://www.minhthanh.com/home/thong-tin/bai-viet-hay/155-nhung-mau-thiet-ke-name-card-an-tuong-va-doc-dao-p4.html
+		http://www.mgi.vn/ => mạng cộng đồng môi giới bất động sản
+		
+		send object qua WCF
+		http://stackoverflow.com/questions/710856/how-do-you-send-complex-objects-using-wcf-does-it-work-is-it-good
+		
+		theme co sẵn cho trang web suc khoe
+		http://boygj.com/delicatenews-july-2010-elegantthemes-theme
+		x http://freewpthemes.name/be-nice-to-skin-free-wordpress-theme/
+		http://freewpthemes.name/take-relax-free-wordpress-themes/
 
-	7/1/2010:
+	12/1/2011:
+	0612420 (thạch thảo)
+	090788
+	
+		Tattoo: xam nghe thuat
+
+		153.16.15.71     facebook.com
+		153.16.15.71     www.facebook.com
+		153.16.15.71     apps.facebook.com
+		153.16.15.71     login.facebook.com
+		153.16.15.71     graph.facebook.com
+		153.16.15.71     static.ak.connect.facebook.com
+		153.16.15.71     developers.facebook.com
+		153.16.15.71     error.facebook.com
+		153.16.15.71    static.ak.facebook.com
+		153.16.15.71    pixel.facebook.com
+		153.16.15.71    upload.facebook.com
+		153.16.15.71    secure.facebook.com
+
+
+	11/1/2011:
+	
+		"vi khuẩn có lợi trong miệng"
+		
+		- Làm 1 trang web để tìm thông tin người bệnh...
+		http://www.suckhoecongdong.com/
+		=>
+		Trang web về sức khoe=> đăng các bài viết hay, tìm thông tin người bệnh
+		-> từ người bệnh sẽ hình thành mạng lưới 
+		=> trang web sẽ mất thời gian tìm người kinh doanh, nhưng khi được tin tưởng 
+		thì sẽ họat động rất tốt
+		
+		http://tuvansuckhoe.vn/ giá 23.3$
+		=> làm trang web về sức khỏe, 
+	
+		- Lâm Phát Hoàng Tài: 
+			=> từ 2005 đến nay chưa gặp
+			Vừa liên lạc lại, hiện Tài ở khu Tân Kỳ - Tân Quý, làm cho www.tls.com, công ty gần Thảo cầm viên...
+			Đã có con 5 tuổi...
+		
+		
+		- Cảm nhận người mới: 
+		+ Huyền: sau khi gặp, Huyền đồng ý đi hội thảo vì lời hứa (H có nói vậy)
+		& do Huyền đã thất bại ở Lô Hội, gần 2 năm không làm thành công (có thể do Huyền làm khác pp bên nhóm Đồng Hành)
+		nên sau khi đi hội thảo H vẫn chưa cảm thấy có hứng thú và niềm tin để làm công việc này. Huyền có đồng ý đi học 1 tuần 1 buổi trước
+		+ Chánh: đã chấp nhận sắp xếp thời gian đi học sau khi đi hội thảo.. 
+		+ 
+
+	10/1/2011:
+		http://mp3.zing.vn/mp3/nghe-album/Lua-Chon-Mot-Vi-Sao-Ngoc-Linh.1878412.html
+		- WCF:
+			Build chọn Release để thực thi giống webservice
+			Chọn Debug để thực thi dựa trên WCF Test Client
+
+		- Đã cấu hình:
+			http://moneypacific.dev:3000/BlackBoxService.svc
+			=> Phan BlackBox
+		
+			http://moneypacific.dev:3001/Main.svc
+			=> Phan service cau hinh dua ra ngoai
+			
+
+	7/1/2011:
 		- 
 
 
-	6/1/2010:
+	6/1/2011:
 		- Lịch:
 			. Lên danh sách người quen: toàn bộ list trong mail
 			. Warm up 10 người:			

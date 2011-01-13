@@ -2042,8 +2042,6 @@ namespace MPDataAccess
 		
 		private string _PhoneNumber;
 		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
 		private System.Nullable<System.DateTime> _LastDate;
 		
 		private System.Nullable<int> _TotalAmount;
@@ -2068,8 +2066,6 @@ namespace MPDataAccess
     partial void OnStatusIdChanged();
     partial void OnPhoneNumberChanging(string value);
     partial void OnPhoneNumberChanged();
-    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreateDateChanged();
     partial void OnLastDateChanging(System.Nullable<System.DateTime> value);
     partial void OnLastDateChanged();
     partial void OnTotalAmountChanging(System.Nullable<int> value);
@@ -2152,26 +2148,6 @@ namespace MPDataAccess
 					this._PhoneNumber = value;
 					this.SendPropertyChanged("PhoneNumber");
 					this.OnPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
 				}
 			}
 		}

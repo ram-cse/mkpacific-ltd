@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using MoneyPacificBlackBox.DAO;
+using MoneyPacificBlackBox.DTO;
 
 namespace MoneyPacificBlackBox
 {
@@ -18,12 +19,21 @@ namespace MoneyPacificBlackBox
 
         [OperationContract]
         bool IsPossible(string codeNumber);
-        
+
+        [OperationContract]
+        bool IsExist(string codeNumber);
+
+        [OperationContract]
+        PacificCodeViewModel GetPacificCodeViewModel(string partCodeNumber);
+
         [OperationContract]
         string ChangeCode(int codeNumber);
 
         [OperationContract]
         int GetValue(string partCodeNumber);
+
+        [OperationContract]
+        DateTime GetExpireDate(string partCodeNumber);
 
         [OperationContract]
         string MakePayment(string codeNumber, int amount);
