@@ -1,3 +1,9 @@
+	14/1/2011:
+		WCF Service Error: The server was unable to process the request due to an internal error.  For more information about the error, either turn on IncludeExceptionDetailInFaults (either from ServiceBehaviorAttribute or from the <serviceDebug> configuration behavior) on the server in order to send the exception information back to the client, or turn on tracing as per the Microsoft .NET Framework 3.0 SDK documentation and inspect the server trace logs.
+		=> bật serviceDebug = true:
+		<serviceDebug includeExceptionDetailInFaults="true"/>
+		=> để hiện thị chính xác lỗi
+	
 	13/1/2011:
 	
 	Làm namecard hinh google
