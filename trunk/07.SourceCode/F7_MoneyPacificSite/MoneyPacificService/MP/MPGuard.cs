@@ -42,29 +42,29 @@ namespace MoneyPacificService
 
         internal bool IsInBlackList()
         {
-            // TODO: throw new NotImplementedException();
+            // TODO: throw new Exception("chua lam!...");
             return false;
         }
 
         internal bool IsLockedCustomer()
         {
-            // TODO:throw new NotImplementedException();
+            // TODO:throw new Exception("chua lam!...");
             return false;
         }
 
         internal bool IsStoreUser()
         {
-            // TODO: throw new NotImplementedException();
+            // TODO: throw new Exception("chua lam!...");
             return true;
         }
         internal bool IsStoreManager()
         {
-            // TODO: throw new NotImplementedException();
+            // TODO: throw new Exception("chua lam!...");
             return true;
         }
         internal bool IsCustomer()
         {
-            // TODO: throw new NotImplementedException();
+            // TODO: throw new Exception("chua lam!...");
             return true;
         }
     }

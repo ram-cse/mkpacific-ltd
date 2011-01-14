@@ -5,24 +5,23 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class TransactionDAO
+    public class UserDAO
     {
-        public static Transaction GetObject(Guid id)
+        public static User GetObject(Guid userId)
         {
             throw new Exception("chua lam!...");
         }
 
-        public static Transaction GetObject(string partCodeNumber)
+        public static bool AddNew(User entity)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            mpdb.Users.InsertOnSubmit(entity);
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;
         }
 
-        public static bool AddNew(Transaction entity)
-        {
-            throw new Exception("chua lam!...");
-        }
-
-        public static bool Update(Transaction entity)
+        public static bool Update(User entity)
         {
             throw new Exception("chua lam!...");
         }
@@ -32,24 +31,25 @@ namespace MPDataAccess
             throw new Exception("chua lam!...");
         }
 
-        public static List<Transaction> GetList()
+        public static List<User> GetList()
         {
             throw new Exception("chua lam!...");
         }
 
-        public static List<Transaction> GetList(bool condition)
+        public static List<User> GetList(bool condition)
         {
             throw new Exception("chua lam!...");
         }
 
-        public static Transaction[] GetArray()
+        public static User[] GetArray()
         {
             throw new Exception("chua lam!...");
         }
 
-        public static Transaction[] GetArray(bool condition)
+        public static User[] GetArray(bool condition)
         {
             throw new Exception("chua lam!...");
         }
     }
+
 }

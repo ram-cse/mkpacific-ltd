@@ -61,7 +61,7 @@ namespace MoneyPacificService.Util
         // check is PacificCode or NOT, but may be the CodeNumber is not keep to the RuleCode
         internal static bool isPacificCode(string sCodeNumber)
         {
-            //throw new NotImplementedException();
+            //throw new Exception("chua lam!...");
             bool bResult = true;
 
             // remove the space char
