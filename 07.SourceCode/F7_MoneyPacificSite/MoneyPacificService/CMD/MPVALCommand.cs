@@ -61,7 +61,7 @@ namespace MoneyPacificService.CMD
 
                 // Amoung > 0
 
-                // ? ko nhớ đã dùng để làm gì :-s
+                // ? ko nhớ đã dùng để làm gì :-s => dùng để lưu trang thái mac định của customer
                 string customerStatus = CustomerBUS.makeSuspicion(existCustomer.UserId);
                 // Amount > 0 : Charge Fee 
 

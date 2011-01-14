@@ -33,32 +33,32 @@ namespace MPDataAccess
 
         public static bool Update(StoreUser entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool Remove(Guid id)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<StoreUser> GetList()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<StoreUser> GetList(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static StoreUser[] GetArray()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static StoreUser[] GetArray(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool IsExist(string phoneNumber)

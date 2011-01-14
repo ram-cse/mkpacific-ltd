@@ -103,7 +103,7 @@ namespace MoneyPacificService
 
         internal static PaymentModel MakePayment(List<string> LstCodeNumber, int Amount)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
     }
 }

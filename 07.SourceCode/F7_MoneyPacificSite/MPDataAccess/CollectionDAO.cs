@@ -9,42 +9,42 @@ namespace MPDataAccess
     {
         public static Collection GetObject()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool AddNew(Collection entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool Update(Collection entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
                 
         public static bool Remove(Collection entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<Collection> GetList()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<Collection> GetList(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static Collection[] GetArray()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static Collection[] GetArray(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
     }
 }

@@ -9,47 +9,47 @@ namespace MPDataAccess
     {
         public static StoreManagerState GetObject(Guid id)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static StoreManagerState GetObject(string partCodeNumber)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool AddNew(StoreManagerState entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool Update(StoreManagerState entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool Remove(Guid id)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<StoreManagerState> GetList()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<StoreManagerState> GetList(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static StoreManagerState[] GetArray()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static StoreManagerState[] GetArray(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
     }
 }

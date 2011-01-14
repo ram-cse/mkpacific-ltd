@@ -9,47 +9,47 @@ namespace MPDataAccess
     {
         public static TransactionState GetObject(Guid id)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static TransactionState GetObject(string partCodeNumber)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool AddNew(TransactionState entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool Update(TransactionState entity)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static bool Remove(Guid id)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<TransactionState> GetList()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static List<TransactionState> GetList(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static TransactionState[] GetArray()
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
 
         public static TransactionState[] GetArray(bool condition)
         {
-            throw new NotImplementedException();
+            throw new Exception("chua lam!...");
         }
     }
 }
