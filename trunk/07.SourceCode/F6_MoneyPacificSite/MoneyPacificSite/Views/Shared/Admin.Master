@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/thickbox.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <h1>Functions Of Admin </h1>
+            </div>
+               
+                <div class="menucontainer">
+                    <div style="float:right;">                                                                                      
+                    <asp:Menu ID="mainMenu" runat="server" BackColor="#F7F6F3" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" 
+                            ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                            <DynamicHoverStyle BackColor="#0099CC" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#F7F6F3" />
+                            <DynamicSelectedStyle BackColor="#5D7B9D" />
+                            <DynamicItemTemplate>
+                                <%# Eval("Text") %>
+                            </DynamicItemTemplate>
+                            <Items>
+                                <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home"></asp:MenuItem>
+                                <asp:MenuItem Text="Request Stored" Value="Request Stored" NavigateUrl="~/Admin/RequestList"></asp:MenuItem>
+                                <asp:MenuItem Text="Browse Stores" Value="Browse Stores" NavigateUrl="~/Admin/BrowseStoreManager"></asp:MenuItem>
+                                <asp:MenuItem Text="Collect No" Value="Admin" NavigateUrl="~/Admin/ListAmount"></asp:MenuItem>                                
+                                <asp:MenuItem Text="Collect Processing" Value="Admin" NavigateUrl="~/Admin/CollectProcessing"></asp:MenuItem>
+                                <asp:MenuItem Text="Collected" Value="Admin" NavigateUrl="~/Admin/CollectedList"></asp:MenuItem>
+                                <asp:MenuItem Text="Agent" Value="Browse" NavigateUrl="~/Agent/Browse"></asp:MenuItem>
+                                <asp:MenuItem Text="Test" Value="Test" NavigateUrl="~/Menu/Index"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#0099CC" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#5D7B9D" />
+                        </asp:Menu> 
+                        
+            
+                    </div>
+                </div>
+            
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
