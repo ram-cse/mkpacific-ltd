@@ -9,7 +9,12 @@ namespace MPDataAccess
     {
         public static PartPacificCode GetObject(Guid id)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            PartPacificCode result = mpdb.PartPacificCodes
+                .Where(p => p.Id.Equals(id))
+                .Single<PartPacificCode>();
+            mpdb.Connection.Close();
+            return result;
         }
 
         public static PartPacificCode GetObject(string partCodeNumber)
@@ -19,7 +24,11 @@ namespace MPDataAccess
 
         public static bool AddNew(PartPacificCode entity)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            mpdb.PartPacificCodes.InsertOnSubmit(entity);
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;
         }
 
         public static bool Update(PartPacificCode entity)
@@ -34,7 +43,10 @@ namespace MPDataAccess
 
         public static List<PartPacificCode> GetList()
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            List<PartPacificCode> lstResult = mpdb.PartPacificCodes.ToList<PartPacificCode>();
+            mpdb.Connection.Close();
+            return lstResult;            
         }
 
         public static List<PartPacificCode> GetList(bool condition)

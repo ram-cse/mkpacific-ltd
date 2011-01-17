@@ -119,7 +119,6 @@
       <Association Name="PartPacificCode_Transaction" Member="Transactions" ThisKey="Id" OtherKey="PartPacificCodeId" Type="Transaction" />
       <Association Name="Category_PartPacificCode" Member="Category" ThisKey="CateId" OtherKey="Id" Type="Category" IsForeignKey="true" />
       <Association Name="Customer_PartPacificCode" Member="Customer" ThisKey="CustomerId" OtherKey="UserId" Type="Customer" IsForeignKey="true" />
-      <Association Name="StoreManager_PartPacificCode" Member="StoreManager" ThisKey="StoreUserId" OtherKey="UserId" Type="StoreManager" IsForeignKey="true" />
       <Association Name="StoreUser_PartPacificCode" Member="StoreUser" ThisKey="StoreUserId" OtherKey="UserId" Type="StoreUser" IsForeignKey="true" />
     </Type>
   </Table>
@@ -150,7 +149,6 @@
       <Column Name="LastCollectDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="IsLocked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="StoreManager_Collection" Member="Collections" ThisKey="UserId" OtherKey="StoreManagerId" Type="Collection" />
-      <Association Name="StoreManager_PartPacificCode" Member="PartPacificCodes" ThisKey="UserId" OtherKey="StoreUserId" Type="PartPacificCode" />
       <Association Name="StoreManager_StoreUser" Member="StoreUsers" ThisKey="UserId" OtherKey="ManagerId" Type="StoreUser" />
       <Association Name="StoreManager_TimeTable" Member="TimeTables" ThisKey="UserId" OtherKey="ManagerId" Type="TimeTable" />
       <Association Name="Area_StoreManager" Member="Area" ThisKey="AreaId" OtherKey="Id" Type="Area" IsForeignKey="true" />

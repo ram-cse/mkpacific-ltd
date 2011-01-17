@@ -2534,8 +2534,6 @@ namespace MPDataAccess
 		
 		private EntityRef<Customer> _Customer;
 		
-		private EntityRef<StoreManager> _StoreManager;
-		
 		private EntityRef<StoreUser> _StoreUser;
 		
     #region Extensibility Method Definitions
@@ -2563,7 +2561,6 @@ namespace MPDataAccess
 			this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
 			this._Category = default(EntityRef<Category>);
 			this._Customer = default(EntityRef<Customer>);
-			this._StoreManager = default(EntityRef<StoreManager>);
 			this._StoreUser = default(EntityRef<StoreUser>);
 			OnCreated();
 		}
@@ -2663,7 +2660,7 @@ namespace MPDataAccess
 			{
 				if ((this._StoreUserId != value))
 				{
-					if ((this._StoreManager.HasLoadedOrAssignedValue || this._StoreUser.HasLoadedOrAssignedValue))
+					if (this._StoreUser.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -2801,40 +2798,6 @@ namespace MPDataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StoreManager_PartPacificCode", Storage="_StoreManager", ThisKey="StoreUserId", OtherKey="UserId", IsForeignKey=true)]
-		public StoreManager StoreManager
-		{
-			get
-			{
-				return this._StoreManager.Entity;
-			}
-			set
-			{
-				StoreManager previousValue = this._StoreManager.Entity;
-				if (((previousValue != value) 
-							|| (this._StoreManager.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._StoreManager.Entity = null;
-						previousValue.PartPacificCodes.Remove(this);
-					}
-					this._StoreManager.Entity = value;
-					if ((value != null))
-					{
-						value.PartPacificCodes.Add(this);
-						this._StoreUserId = value.UserId;
-					}
-					else
-					{
-						this._StoreUserId = default(Nullable<System.Guid>);
-					}
-					this.SendPropertyChanged("StoreManager");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StoreUser_PartPacificCode", Storage="_StoreUser", ThisKey="StoreUserId", OtherKey="UserId", IsForeignKey=true)]
 		public StoreUser StoreUser
 		{
@@ -2958,8 +2921,6 @@ namespace MPDataAccess
 		
 		private EntitySet<Collection> _Collections;
 		
-		private EntitySet<PartPacificCode> _PartPacificCodes;
-		
 		private EntitySet<StoreUser> _StoreUsers;
 		
 		private EntitySet<TimeTable> _TimeTables;
@@ -3027,7 +2988,6 @@ namespace MPDataAccess
 		public StoreManager()
 		{
 			this._Collections = new EntitySet<Collection>(new Action<Collection>(this.attach_Collections), new Action<Collection>(this.detach_Collections));
-			this._PartPacificCodes = new EntitySet<PartPacificCode>(new Action<PartPacificCode>(this.attach_PartPacificCodes), new Action<PartPacificCode>(this.detach_PartPacificCodes));
 			this._StoreUsers = new EntitySet<StoreUser>(new Action<StoreUser>(this.attach_StoreUsers), new Action<StoreUser>(this.detach_StoreUsers));
 			this._TimeTables = new EntitySet<TimeTable>(new Action<TimeTable>(this.attach_TimeTables), new Action<TimeTable>(this.detach_TimeTables));
 			this._Area = default(EntityRef<Area>);
@@ -3541,19 +3501,6 @@ namespace MPDataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StoreManager_PartPacificCode", Storage="_PartPacificCodes", ThisKey="UserId", OtherKey="StoreUserId")]
-		public EntitySet<PartPacificCode> PartPacificCodes
-		{
-			get
-			{
-				return this._PartPacificCodes;
-			}
-			set
-			{
-				this._PartPacificCodes.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="StoreManager_StoreUser", Storage="_StoreUsers", ThisKey="UserId", OtherKey="ManagerId")]
 		public EntitySet<StoreUser> StoreUsers
 		{
@@ -3709,18 +3656,6 @@ namespace MPDataAccess
 		}
 		
 		private void detach_Collections(Collection entity)
-		{
-			this.SendPropertyChanging();
-			entity.StoreManager = null;
-		}
-		
-		private void attach_PartPacificCodes(PartPacificCode entity)
-		{
-			this.SendPropertyChanging();
-			entity.StoreManager = this;
-		}
-		
-		private void detach_PartPacificCodes(PartPacificCode entity)
 		{
 			this.SendPropertyChanging();
 			entity.StoreManager = null;

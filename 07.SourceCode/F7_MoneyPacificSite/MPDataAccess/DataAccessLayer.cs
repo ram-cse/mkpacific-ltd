@@ -14,8 +14,8 @@ namespace MPDataAccess
             get 
             {
                 //_connection.Connection.Close();
-                _connection.Connection.Open();
-                _connection = new MoneyPacificDataContext();
+                //_connection.Connection.Open();
+                //_connection = new MoneyPacificDataContext();
                 return _connection;
             }
         }

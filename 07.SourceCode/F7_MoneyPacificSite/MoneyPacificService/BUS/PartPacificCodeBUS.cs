@@ -24,6 +24,8 @@ namespace MoneyPacificService.BUS
             newPartPacificCode.StoreUserId = storeGuid;
             newPartPacificCode.CustomerId = customerGuid;
 
+            PartPacificCodeDAO.AddNew(newPartPacificCode);
+
             ///clientService.Close(); // Lỗi khi đang gọi bị đóng seviceClient
             return newPartPacificCode;            
         }
