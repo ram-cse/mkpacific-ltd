@@ -104,8 +104,12 @@ namespace MoneyPacificService.CMD
             {
                 if (StoreUserBUS.IsEnable(senderStore.UserId))
                 {
-                    PartPacificCode newPartPacificCode = PartPacificCodeBUS.GetNewPacificCode(senderStore.UserId, buyerCustomer.UserId, amountBuy);
+                    // Thuc hien mua va luu xuong database
+                    PartPacificCode newPartPacificCode = PartPacificCodeBUS.GetNewPacificCode
+                        (senderStore.UserId, buyerCustomer.UserId, amountBuy);
                     
+                    
+                    // Lay thong tin xuat ra cho khach hang
                     PacificCodeViewModel pacificCode = PartPacificCodeBUS.GetPacificCodeViewModel(
                         newPartPacificCode.PartCodeNumber);
 

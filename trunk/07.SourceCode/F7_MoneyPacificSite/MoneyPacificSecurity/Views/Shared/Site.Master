@@ -43,7 +43,7 @@
                     <li><a class="item-primary" >CUSTOMER</a>
                         <ul style="width:150px;">
                             <li><a href="/PacificCode/CheckDetail">Detail</a></li>
-                            <li><span class="divider divider-horiz" ></span></li>
+                            <li><span class="divider divider-horiz"></span></li>
                             <li><a href="/PacificCode/ChangeCode">Change Code</a></li>
                             <li><a href="/PacificCode/SendMoney">Send Money</a></li>
                             <li><a href="/PacificCode/SendSMS">Receive SMS</a></li>

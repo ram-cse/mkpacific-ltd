@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPDataAccess", "MPDataAccess\MPDataAccess.csproj", "{9E132A3D-4F8D-43B9-91C4-2733D046B8CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyPacificSecurity", "MoneyPacificSecurity\MoneyPacificSecurity.csproj", "{0F8C18D4-1A4E-471A-9C07-AA1002520290}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E} = {A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{EBB790EC-95CE-4FAA-8128-4FDBC17111FC}"
 EndProject
