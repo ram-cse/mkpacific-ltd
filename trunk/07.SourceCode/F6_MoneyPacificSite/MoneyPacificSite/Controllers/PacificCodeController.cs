@@ -212,7 +212,6 @@ namespace MoneyPacificSite.Controllers
                             + "Ban vua mua mot PacificCode: " + lastPacifiCode.CodeNumber
                             + " co gia tri  " + lastPacifiCode.ActualAmount + " VND. "
                             + "va han su dung de ngay {2}";
-
                         MPMail.SendForEmail(newMail);
                     }
                 }

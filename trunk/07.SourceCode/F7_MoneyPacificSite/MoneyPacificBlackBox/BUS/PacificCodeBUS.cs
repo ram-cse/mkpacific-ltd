@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+
 using MoneyPacificBlackBox.DAO;
+using MoneyPacificBlackBox.DTO;
 
 namespace MoneyPacificBlackBox.BUS
 {
@@ -39,7 +41,12 @@ namespace MoneyPacificBlackBox.BUS
 
         internal static bool IsExist(string codeNumber)
         {
-            return PacificCodeDAO.IsExist(codeNumber);
+            return PacificCodeDAO.IsExist(codeNumber);            
+        }
+
+        internal static bool IsExistPartCodeNumber(string partCodeNumber)
+        {
+            return PacificCodeDAO.IsExistPartCodeNumber(partCodeNumber);            
         }
 
         /// <summary>
@@ -57,11 +64,33 @@ namespace MoneyPacificBlackBox.BUS
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        ///  
+        /// </summary>
+        /// Giải thuật:
+        /// - Kiểm tra số tiền trong codeNumber
+        /// - Nếu không đủ tiền, trả về null
+        /// - Nếu đủ tiền: 
+        ///     + Trừ số tiền theo yêu cầu
+        ///     + Tạo một pacific code có giá trị bằng sô tiền đã trừ:
         internal PacificCode MakePayment(string codeNumber, int amount)
         {
-            if (!PacificCodeDAO.IsExist(codeNumber))
+            if (!PacificCodeDAO.IsExist(codeNumber))return null;
+
+            PacificCode existPacificCode = PacificCodeBUS.GetObject(codeNumber);
+            if (existPacificCode.ActualAmount < amount)
+            {
                 return null;
-            return (new PacificCode());
+            }
+            else
+            {
+                existPacificCode.ActualAmount = existPacificCode.ActualAmount - amount;
+                PacificCodeDAO.Update(existPacificCode);
+
+                PacificCode newPacificCode = GetNewPacificCode(amount);
+                return newPacificCode;            
+            }
+            
         }
 
         /// <summary>
@@ -113,6 +142,21 @@ namespace MoneyPacificBlackBox.BUS
         internal static PacificCode GetObject(string partCodeNumber)
         {
             return PacificCodeDAO.GetObject(partCodeNumber);
+        }        
+
+        internal static PacificCodeViewModel[] GetArray(string[] arrPartCodeNumber)
+        {   
+
+            PacificCode[] arrPC = PacificCodeDAO.GetArray(arrPartCodeNumber);
+            PacificCodeViewModel[] arrPCVM = new PacificCodeViewModel[arrPC.Count()];
+            
+            for (int i = 0; i < arrPC.Count(); i++)
+            {
+                arrPCVM[i] = new PacificCodeViewModel();
+                arrPCVM[i].SetAttritebuteValue(arrPC[i]);
+            }
+
+            return arrPCVM;
         }
     }
 }

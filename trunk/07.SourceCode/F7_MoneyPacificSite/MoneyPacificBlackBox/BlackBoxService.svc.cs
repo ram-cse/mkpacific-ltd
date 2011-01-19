@@ -31,9 +31,19 @@ namespace MoneyPacificBlackBox
             return this._guard.GetPacificCodeViewModel(partCodeNumber);
         }
 
+        public PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber)
+        {
+            return this._guard.GetArrayPacificCodeViewModel(arrPartCodeNumber);
+        }
+
         public bool IsExist(string codeNumber)
         {
             return this._guard.CheckIsExist(codeNumber);
+        }
+
+        public bool IsExistPart(string partCodeNumber)
+        {
+            return this._guard.CheckIsExistPartCodeNumber(partCodeNumber);
         }
 
         public string ChangeCode(int codeNumber)

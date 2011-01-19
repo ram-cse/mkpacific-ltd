@@ -4,15 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPDataAccess", "MPDataAccess\MPDataAccess.csproj", "{9E132A3D-4F8D-43B9-91C4-2733D046B8CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyPacificSecurity", "MoneyPacificSecurity\MoneyPacificSecurity.csproj", "{0F8C18D4-1A4E-471A-9C07-AA1002520290}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E} = {A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{EBB790EC-95CE-4FAA-8128-4FDBC17111FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyPacificService", "MoneyPacificService\MoneyPacificService.csproj", "{EF6C2114-7C68-4A16-A516-2B71E2DDD563}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyPacificBlackBox", "MoneyPacificBlackBox\MoneyPacificBlackBox.csproj", "{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorPacificCode", "GeneratorPacificCode\GeneratorPacificCode.csproj", "{850FC2F3-7135-4937-B1B0-2E0014FB6653}"
 EndProject
@@ -66,16 +61,6 @@ Global
 		{EF6C2114-7C68-4A16-A516-2B71E2DDD563}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EF6C2114-7C68-4A16-A516-2B71E2DDD563}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EF6C2114-7C68-4A16-A516-2B71E2DDD563}.Release|x86.ActiveCfg = Release|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A8417C1F-2B8A-4CB3-9192-E3DD4B0E6E3E}.Release|x86.ActiveCfg = Release|Any CPU
 		{850FC2F3-7135-4937-B1B0-2E0014FB6653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{850FC2F3-7135-4937-B1B0-2E0014FB6653}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850FC2F3-7135-4937-B1B0-2E0014FB6653}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
