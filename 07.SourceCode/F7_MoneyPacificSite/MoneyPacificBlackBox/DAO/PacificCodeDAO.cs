@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MoneyPacificBlackBox.DTO;
 
 namespace MoneyPacificBlackBox.DAO
 {
@@ -111,10 +112,43 @@ namespace MoneyPacificBlackBox.DAO
             //    }
             //}
             // End Test
+            bool bExist = db.PacificCodes
+                .Where(p => p.CodeNumber.Substring(0, 12) == partCodeNumber)
+                .Any();
+            
+            if (bExist)
+            {
 
-            PacificCode existPC =  db.PacificCodes.Where(p => p.CodeNumber.Substring(0, 12) == partCodeNumber).Single<PacificCode>();
-            db.Connection.Close();
-            return existPC;
+                PacificCode existPC = db.PacificCodes
+                    .Where(p => p.CodeNumber.Substring(0, 12) == partCodeNumber)
+                    .Single<PacificCode>();
+                db.Connection.Close();
+                return existPC;
+            }
+
+            return null;
+
+        }
+
+        internal static PacificCode[] GetArray(string[] arrPartCodeNumber)
+        {
+            //PacificCode[] arrPC = new PacificCode[arrPartCodeNumber.Count()];
+            //for (int i = 0; i < arrPartCodeNumber.Count(); i++)
+            //{                
+            //    arrPC[i]= PacificCodeDAO.GetObject(arrPartCodeNumber[i]);
+            //}            
+            //return arrPC;
+
+            List<PacificCode> lstPC = new List<PacificCode>();
+            foreach (string partCodeNumber in arrPartCodeNumber)
+            {
+                PacificCode item = PacificCodeDAO.GetObject(partCodeNumber);
+                if (item != null)
+                {
+                    lstPC.Add(item);
+                }
+            }
+            return lstPC.ToArray();
         }
     }
 }

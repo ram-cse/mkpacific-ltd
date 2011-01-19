@@ -64,6 +64,7 @@
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PartPacificCodeBUS.cs" />
     <Compile Include="BUS\StoreUserBUS.cs" />
+    <Compile Include="BUS\TransactionBUS.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PacificCodeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -71,12 +72,16 @@
     </Compile>
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="MP\BlackBoxService.cs" />
+    <Compile Include="Util\MPMail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WCF_Blackbox\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Util\Utilator.cs" />
+    <Compile Include="ViewModels\PacificCodeCheckDetailsViewModel.cs" />
+    <Compile Include="ViewModels\PacificCodeViewModels.cs" />
     <Compile Include="ViewModels\PartPacificCodeViewModel.cs" />
     <Compile Include="Views\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -125,6 +130,10 @@
     </None>
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\PacificCode\Browse.aspx" />
+    <Content Include="Views\PacificCode\CheckDetail.aspx" />
+    <Content Include="Views\PacificCode\Detail.aspx" />
+    <Content Include="Views\PacificCode\SendMoney.aspx" />
+    <Content Include="Views\PacificCode\SendSMS.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

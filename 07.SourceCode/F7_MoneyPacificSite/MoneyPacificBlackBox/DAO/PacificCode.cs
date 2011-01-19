@@ -9,13 +9,16 @@ namespace MoneyPacificBlackBox.DAO
     {
         internal void CopyFrom(PacificCode entity)
         {
-            this.ActualAmount = entity.ActualAmount;
             this.CodeNumber = entity.CodeNumber;
+            this.ActualAmount = entity.ActualAmount;                        
+            this.InitialAmount = entity.InitialAmount;
+            
             this.Comment = entity.Comment;
+            
             this.CreateDate = entity.CreateDate;
             this.ExpireDate = entity.ExpireDate;
-            this.InitialAmount = entity.InitialAmount;
             this.LastDate = entity.LastDate;
+            
             this.LastTransaction = entity.LastTransaction;
             this.StatusId = entity.StatusId;            
         }

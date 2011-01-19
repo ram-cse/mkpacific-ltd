@@ -30,11 +30,14 @@ namespace MoneyPacificBlackBox.DTO
         //[XmlElement("InitialAmount")] 
         public int InitialAmount;
 
+        //[XmlElement("CreateDate")] 
+        public DateTime CreateDate;
+
         //[XmlElement("ExpireDate")] 
         public DateTime ExpireDate;
 
 
-        internal void SetPacificCode(PacificCode pacificCode)
+        internal void SetAttritebuteValue(PacificCode pacificCode)
         {
             this._pacificCode = pacificCode;
 
@@ -43,6 +46,7 @@ namespace MoneyPacificBlackBox.DTO
             this.ActualAmount = (int)pacificCode.ActualAmount;
             this.InitialAmount = (int)pacificCode.InitialAmount;
             this.ExpireDate = (DateTime)pacificCode.ExpireDate;
+            this.CreateDate= (DateTime)pacificCode.CreateDate;
         }
     }
 }

@@ -173,13 +173,30 @@ namespace MoneyPacificBlackBox
 
         internal bool CheckIsExist(string codeNumber)
         {
-            Transaction newTransaction = new Transaction();
-            bool result = PacificCodeBUS.IsExist(codeNumber);
+            Transaction newTransaction = new Transaction();            
+            bool result = PacificCodeBUS.IsExistPartCodeNumber(codeNumber);
 
             // BEGIN --            
             newTransaction.Origine = "Check Exist";
             newTransaction.Comment = string.Format("Check Exist: {0}"
                 , codeNumber);
+            // END --
+
+            // Hien tai chưa can luu Transaction loại này
+            // this._transactionBUS.AddNew(newTransaction);
+
+            return result;
+        }
+        
+        internal bool CheckIsExistPartCodeNumber(string partCodeNumber)
+        {
+            Transaction newTransaction = new Transaction();
+            bool result = PacificCodeBUS.IsExistPartCodeNumber(partCodeNumber);
+
+            // BEGIN --            
+            newTransaction.Origine = "Check Exist Part";
+            newTransaction.Comment = string.Format("Check Exist Part: {0}"
+                , partCodeNumber);
             // END --
 
             // Hien tai chưa can luu Transaction loại này
@@ -193,7 +210,7 @@ namespace MoneyPacificBlackBox
             Transaction newTransaction = new Transaction();
             PacificCodeViewModel model = new PacificCodeViewModel();
             PacificCode pacificCode = PacificCodeBUS.GetObject(partCodeNumber);
-            model.SetPacificCode(pacificCode);
+            model.SetAttritebuteValue(pacificCode);
 
             // BEGIN --            
             newTransaction.Origine = "GetPacificCodeViewModel";
@@ -205,6 +222,25 @@ namespace MoneyPacificBlackBox
             // this._transactionBUS.AddNew(newTransaction);
 
             return model;
+        }
+
+        internal PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber)
+        {
+            PacificCodeViewModel[] arrResult;
+
+            arrResult = PacificCodeBUS.GetArray(arrPartCodeNumber);
+
+
+            Transaction newTransaction = new Transaction();
+            // BEGIN --            
+            newTransaction.Origine = "GetArrayPacificCodeViewModel";
+            newTransaction.Comment = string.Format("Get PacificCodeViewModel: array");
+            // END --
+
+            // this._transactionBUS.AddNew(newTransaction);
+
+            return arrResult;
+            
         }
     }
 }

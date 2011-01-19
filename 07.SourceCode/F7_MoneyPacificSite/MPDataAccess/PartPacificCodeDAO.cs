@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
 namespace MPDataAccess
 {
     public class PartPacificCodeDAO
@@ -19,7 +21,13 @@ namespace MPDataAccess
 
         public static PartPacificCode GetObject(string partCodeNumber)
         {
-            throw new Exception("chua lam!...");
+            partCodeNumber = partCodeNumber.Substring(0, 12);
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            PartPacificCode result = mpdb.PartPacificCodes
+                .Where(p => p.PartCodeNumber.Equals(partCodeNumber))
+                .Single<PartPacificCode>();
+            mpdb.Connection.Close();
+            return result;
         }
 
         public static bool AddNew(PartPacificCode entity)
@@ -62,6 +70,33 @@ namespace MPDataAccess
         public static PartPacificCode[] GetArray(bool condition)
         {
             throw new Exception("chua lam!...");
+        }
+
+        public static bool IsExist(string partCodeNumber)
+        {
+            partCodeNumber = partCodeNumber.Substring(0, 12);
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            bool result = mpdb.PartPacificCodes
+                .Where(p => p.PartCodeNumber.Substring(0, 12).Equals(partCodeNumber))
+                .Any();
+            mpdb.Connection.Close();
+            return result;            
+        }
+
+        public static string[] GetArray(Guid customerUserId)
+        {
+            List<string> lstResult = new List<string>();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            PartPacificCode[] arrPC = mpdb.PartPacificCodes
+                .Where(p => p.CustomerId.Equals(customerUserId)).ToArray();
+
+            for (int i = 0; i < arrPC.Count(); i++)
+            {
+                lstResult.Add(arrPC[i].PartCodeNumber);
+            }
+                
+            mpdb.Connection.Close();
+            return lstResult.ToArray();
         }
     }
 

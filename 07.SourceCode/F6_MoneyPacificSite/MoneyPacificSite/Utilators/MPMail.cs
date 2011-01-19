@@ -9,6 +9,23 @@ using System.Net.Mail;
 
 namespace MoneyPacificSite.Utilators
 {
+
+    //public class Mail
+    //{
+    //    public string Subject { get; set; }
+    //    public string To { get; set; }
+    //    public string From { get; set; }
+    //    public string Body { get; set; }
+
+    //    public Mail()
+    //    {
+    //        Subject = "";
+    //        To = "";
+    //        From = "";
+    //        Body = "";
+    //    }
+    //}
+
     public class MPMail
     {
         public static void SendForEmail(Mail mail)

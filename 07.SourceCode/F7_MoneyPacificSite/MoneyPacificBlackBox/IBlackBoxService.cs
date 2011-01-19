@@ -22,9 +22,15 @@ namespace MoneyPacificBlackBox
 
         [OperationContract]
         bool IsExist(string codeNumber);
+        
+        [OperationContract]
+        bool IsExistPart(string partCodeNumber);                
 
         [OperationContract]
         PacificCodeViewModel GetPacificCodeViewModel(string partCodeNumber);
+
+        [OperationContract]
+        PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber);
 
         [OperationContract]
         string ChangeCode(int codeNumber);
