@@ -23,7 +23,6 @@ namespace MoneyPacificSite.ViewModels
 
     public class CollectMoneyView
     {
-
         public int Id { get; set; }
 
         [DisplayName("Store Manager Phone")]
@@ -46,8 +45,7 @@ namespace MoneyPacificSite.ViewModels
 
         [DisplayName("Agent")]
         public String Agent { get; set; }
-
-        
+                
         [DisplayName("Status")]
         public string Status { get; set; }
         

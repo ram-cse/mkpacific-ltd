@@ -9,7 +9,22 @@ namespace MPDataAccess
     {
         public static User GetObject(Guid userId)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            User existUser = mpdb.Users
+                .Where(c => c.Id.Equals(userId))
+                .Single<User>();
+            mpdb.Connection.Close();
+            return existUser;
+        }
+
+        public static User GetObject(string username)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            User existUser = mpdb.Users
+                .Where(c => c.Username.Trim().Equals(username.Trim()))
+                .Single<User>();
+            mpdb.Connection.Close();
+            return existUser;
         }
 
         public static bool AddNew(User entity)

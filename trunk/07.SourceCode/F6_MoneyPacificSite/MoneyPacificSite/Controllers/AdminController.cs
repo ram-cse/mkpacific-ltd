@@ -47,7 +47,6 @@ namespace MoneyPacificSite.Controllers
             
             return View(model);
         }
-
         public ActionResult CollectedList()
         {
             int statusId = CollectStateBUS.GetId("Collected");
@@ -107,19 +106,7 @@ namespace MoneyPacificSite.Controllers
             return View(model);
         }
 
-        private AdminListAmountViewModel SetAgents(AdminListAmountViewModel obj)
-        {
-            List<Agent> agents = AgentBUS.GetList();
-            agents.Add(new Agent
-            {
-                Id = 0,
-                Username = "<not yet select>",
-                FistName = "",
-                LastName = ""
-            });
-            obj.Agents = agents;
-            return obj;
-        }
+        
         [HttpPost]
         public ActionResult ListAmount(AdminListAmountViewModel obj)
         {
@@ -343,6 +330,20 @@ namespace MoneyPacificSite.Controllers
             sm.StoreInternetAccessId = baseSM.StoreInternetAccessId;
 
             return sm;
+        }
+
+        private AdminListAmountViewModel SetAgents(AdminListAmountViewModel obj)
+        {
+            List<Agent> agents = AgentBUS.GetList();
+            agents.Add(new Agent
+            {
+                Id = 0,
+                Username = "<not yet select>",
+                FistName = "",
+                LastName = ""
+            });
+            obj.Agents = agents;
+            return obj;
         }
         #endregion SERVICES
 

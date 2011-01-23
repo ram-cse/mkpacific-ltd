@@ -4,16 +4,8 @@
     <Type Name="Agent">
       <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Address" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Block" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Agent_Collection" Member="Collections" ThisKey="UserId" OtherKey="AgentId" Type="Collection" />
       <Association Name="User_Agent" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
       <Association Name="AgentState_Agent" Member="AgentState" ThisKey="StatusId" OtherKey="Id" Type="AgentState" IsForeignKey="true" />
@@ -110,8 +102,8 @@
   <Table Name="dbo.PartPacificCode" Member="PartPacificCodes">
     <Type Name="PartPacificCode">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PartCodeNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="LastTransaction" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="PartCodeNumber" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="LastTransaction" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="CustomerId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="StoreUserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="CateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -159,6 +151,7 @@
   <Table Name="dbo.StoreManagerState" Member="StoreManagerStates">
     <Type Name="StoreManagerState">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="StoreManagerState_StoreManager" Member="StoreManagers" ThisKey="Id" OtherKey="StatusId" Type="StoreManager" />

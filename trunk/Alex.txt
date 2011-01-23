@@ -1,3 +1,99 @@
+	23/1/2011:
+	
+		Mobifone 090, 093, 0122, 0126, 0121, 0128, 0120 
+		Vinaphone 091, 094, 0123, 0125, 0127 
+		Viettel 097, 098, 0168, 0169, 0166, 0167, 0165 
+		EVN - Telecom 096, 
+		Cố định S-fone 095 
+		Vietnamobile 092 
+		Beeline 0199 
+		
+		Như vậy các mạng di động tại Việt Nam hiện nay đã có 6 đầu số của MobiFone (090, 093, 0122, 0126, 0121, 0128), 
+		7 đầu số của Viettel (097, 098, 0168, 0169, 0166, 0167, 0165), 
+		5 đầu số của Vinaphone (091, 094, 0123, 0125, 0127) 
+		và các đầu số 092, 095, 096, 0199 của các mạng còn lại.
+	
+		- Ngày cô Kiều Thu lên đường xuyên việt lần 6..
+		70 km rồi, chỉ mới bắt đầu, cô ráng giữ sk, tây nguyên, miền trung & miền bắc đang rất lạnh..
+		
+		
+		http://muabannhadat.com.vn/ban-do/ban-do-Xa-Nghia-Trung-Huyen-Bu-Dang-p4346-q78-t45/
+		http://bandonhadat.vn/?lat=11.644947&lng=107.1129415&lvdf=13&plg=w_4346
+		
+		Chuẩn bị dí theo:
+		Mua: 
+		1 Bơm
+		2 Ruột xe
+		2 Cây tháo vá ruột xe.
+		2 mỏ lết
+		1 đôi giày
+		
+		Ví đeo bụng: => đem đi sửa khóa
+		
+		
+		Money Pacific:
+		- Browse Agent
+		- Create
+			Database: Username => unique
+
+	22/1/2011:
+		nick thúy: contimdaikho_092002
+		- Money Pacific: các chức năng cần chạy 70% trong ngày
+			. List Amount:
+				Hiển thị đầy đủ thông tin của tất cả các StoreManager
+				Hiện thị thông tin Agent
+			. List Amount - Submit:
+				Lưu thông tin Agent xuống
+			. Agent:
+				+ Thêm
+				+ Sửa
+				+ Khóa
+			. 
+			
+			
+	
+	21/1/2011:
+	
+		Forum:
+		- Các diễn đàn: 
+			+ 
+	
+		So sanh voi bản gửi TTHan:
+		Security:
+		+ Thêm tập tin AgentBUS.cs
+		MPDataAcess:
+		
+		
+	
+	- Trong Tây Du Ký, khán giả luôn ấn tượng sâu sắc với “cặp mắt vàng” tinh tường có khả năng nhận biết yêu ma của Tôn Ngộ Không. Tuy nhiên, ít ai biết ngoài đời Lục Tiểu Linh Đồng bị cận thị khá nặng. Anh làm thế nào để khắc phục nhược điểm này khi vào vai?
+
+	- Vâng, trong phim, Tôn Ngộ Không sở hữu đôi mắt “hoả nhãn kim tinh” có thể nhìn thấy yêu ma. Và đúng như bạn nói, tôi bị cận rất nặng, tận 6 đi - ốp. Để có đôi mắt “sáng quắc” như khán giả vẫn thấy, tôi phải luyện tập gian khổ bằng 3 phương pháp.
+
+	Trước tiên, tôi tập nhìn mặt trời mọc không chớp mắt, từ lúc nhô khỏi chân trời cho tới lên cao. Thứ 2, rèn sự sắc sảo tinh nhanh bằng cách đưa con mắt dõi quả bóng lên xuống, sang trái phải lúc các vận động viên bóng bàn tập luyện, thi đấu. Cuối cùng, tôi luyện khả năng nhìn trong đêm bằng cách thắp 1 nén hương rồi chăm chú nhìn ánh khói từ hương bay lên. 
+	
+	http://thethaovanhoa.vn/473N20101226102618587T472/ton-ngo-khong-dai-nao-dai-hoc-van-hoa-ha-noi.htm
+	http://vnexpress.net/GL/Van-hoa/2010/12/3BA24ADC/
+
+	20/1/2011:
+	
+	mail: dunglethanh91@yahoo.com
+	pass: lethanh1234
+	
+	Money Pacific:
+		1. Agent:
+		2. Store Manager: 
+			+ Request
+			=> Admin: accept request
+			+ View
+			+ Infomation
+		3. Store:
+			+ Thêm xóa sửa Store
+		4. Collection
+			+ Collect No
+			+ Collect Processing
+				=> Make collection by service
+			+ Collected
+
 	19/1/2011:
 	
 	1. Mục lục

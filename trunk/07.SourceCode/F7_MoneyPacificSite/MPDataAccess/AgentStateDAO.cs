@@ -5,11 +5,16 @@ using System.Text;
 
 namespace MPDataAccess
 {
-    class AgentStateDAO
+    public class AgentStateDAO
     {
         public static AgentState GetObject(int id) 
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            AgentState existAgentState = mpdb.AgentStates
+                .Where(a => a.Id == id)
+                .Single<AgentState>();
+            mpdb.Connection.Close();
+            return existAgentState;
         }
 
         public static bool AddNew(AgentState entity)
@@ -39,7 +44,14 @@ namespace MPDataAccess
 
         public static List<AgentState> GetList()
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            List<AgentState> lstResult = new List<AgentState>();
+            if (mpdb.Agents.Any())
+            {
+                lstResult = mpdb.AgentStates.ToList();
+            }
+            mpdb.Connection.Close();
+            return lstResult;
         }
 
         public static AgentState[] GetArray()
@@ -47,5 +59,7 @@ namespace MPDataAccess
             throw new Exception("chua lam!...");
         }
 
+
+        
     }
 }

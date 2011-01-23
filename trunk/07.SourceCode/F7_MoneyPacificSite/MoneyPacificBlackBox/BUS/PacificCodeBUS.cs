@@ -148,15 +148,18 @@ namespace MoneyPacificBlackBox.BUS
         {   
 
             PacificCode[] arrPC = PacificCodeDAO.GetArray(arrPartCodeNumber);
-            PacificCodeViewModel[] arrPCVM = new PacificCodeViewModel[arrPC.Count()];
+            List<PacificCodeViewModel> lstPCVM = new List<PacificCodeViewModel>();
             
             for (int i = 0; i < arrPC.Count(); i++)
-            {
-                arrPCVM[i] = new PacificCodeViewModel();
-                arrPCVM[i].SetAttritebuteValue(arrPC[i]);
+            {                
+                if (arrPC[i] != null)
+                {
+                    PacificCodeViewModel newItem = new PacificCodeViewModel();
+                    newItem.SetAttritebuteValue(arrPC[i]);
+                }
             }
 
-            return arrPCVM;
+            return lstPCVM.ToArray();
         }
     }
 }

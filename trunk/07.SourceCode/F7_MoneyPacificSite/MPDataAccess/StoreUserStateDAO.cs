@@ -6,10 +6,15 @@ using System.Text;
 namespace MPDataAccess
 {
     public class StoreUserStateDAO
-    {
-        public static StoreUserState GetObject(Guid id)
+    {        
+        public static StoreUserState GetObject(int id)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreUserState result = mpdb.StoreUserStates
+                .Where(s => s.Id.Equals(id))
+                .Single<StoreUserState>();
+            mpdb.Connection.Close();
+            return result;
         }
 
         public static StoreUserState GetObject(string partCodeNumber)
@@ -51,5 +56,7 @@ namespace MPDataAccess
         {
             throw new Exception("chua lam!...");
         }
+
+        
     }
 }

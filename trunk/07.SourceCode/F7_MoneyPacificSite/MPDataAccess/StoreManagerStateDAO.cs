@@ -7,9 +7,14 @@ namespace MPDataAccess
 {
     public class StoreManagerStateDAO
     {
-        public static StoreManagerState GetObject(Guid id)
+        public static StoreManagerState GetObject(int id)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            StoreManagerState result = mpdb.StoreManagerStates
+                .Where(s => s.Id == id)
+                .Single<StoreManagerState>();
+            mpdb.Connection.Close();
+            return result;            
         }
 
         public static StoreManagerState GetObject(string partCodeNumber)
@@ -51,5 +56,6 @@ namespace MPDataAccess
         {
             throw new Exception("chua lam!...");
         }
+
     }
 }

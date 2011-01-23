@@ -10,9 +10,11 @@ namespace MPDataAccess
         public static StoreUser GetObject(Guid userId)
         {
             MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
-            return DataAccessLayer.GetConnection.StoreUsers
+            StoreUser existStore = mpdb.StoreUsers
                 .Where(s => s.UserId.Equals(userId))
                 .Single<StoreUser>();
+            mpdb.Connection.Close();
+            return existStore;
         }
 
         public static StoreUser GetObject(string phoneNumber)
