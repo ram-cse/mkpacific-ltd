@@ -210,18 +210,24 @@ namespace MoneyPacificBlackBox
             Transaction newTransaction = new Transaction();
             PacificCodeViewModel model = new PacificCodeViewModel();
             PacificCode pacificCode = PacificCodeBUS.GetObject(partCodeNumber);
-            model.SetAttritebuteValue(pacificCode);
 
-            // BEGIN --            
-            newTransaction.Origine = "GetPacificCodeViewModel";
-            newTransaction.Comment = string.Format("Get PacificCodeViewModel: {0}"
-                , partCodeNumber);
-            // END --
+            if (pacificCode != null)
+            {
+                model.SetAttritebuteValue(pacificCode);
 
-            // Hien tai chưa can luu Transaction loại này
-            // this._transactionBUS.AddNew(newTransaction);
+                // BEGIN --            
+                newTransaction.Origine = "GetPacificCodeViewModel";
+                newTransaction.Comment = string.Format("Get PacificCodeViewModel: {0}"
+                    , partCodeNumber);
+                // END --
 
-            return model;
+                // Hien tai chưa can luu Transaction loại này
+                // this._transactionBUS.AddNew(newTransaction);
+
+                return model;
+            }
+            
+            return null;
         }
 
         internal PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber)

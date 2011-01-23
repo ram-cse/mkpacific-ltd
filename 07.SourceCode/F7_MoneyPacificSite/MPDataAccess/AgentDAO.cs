@@ -7,10 +7,14 @@ namespace MPDataAccess
 {
     public class AgentDAO
     {
-        public static Agent GetObject(int userId)
+        
+        public static Agent GetObject(Guid userId)
         {
-            // TODO:
-            return (new Agent());
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            Agent existAgent = mpdb.Agents
+                .Where(a => a.UserId.Equals(userId))
+                .Single<Agent>();
+            return existAgent;            
         }
 
         public static bool AddNew(Agent entity)
@@ -33,16 +37,16 @@ namespace MPDataAccess
                 .SingleOrDefault();
 
             existAgent.Address          = entity.Address;
-            existAgent.Block            = entity.Block;
-            existAgent.CreateDate       = entity.CreateDate;
-            existAgent.Email            = entity.Email;
-            existAgent.FirstName        = entity.FirstName;
-            existAgent.LastName         = entity.LastName;
-            existAgent.LastVisitDate    = entity.LastVisitDate;
-            existAgent.Password         = entity.Password;
+            //existAgent.Block            = entity.Block;
+            //existAgent.CreateDate       = entity.CreateDate;
+            //existAgent.Email            = entity.Email;
+            //existAgent.FirstName        = entity.FirstName;
+            //existAgent.LastName         = entity.LastName;
+            //existAgent.LastVisitDate    = entity.LastVisitDate;
+            //existAgent.Password         = entity.Password;
             existAgent.Phone            = entity.Phone;
             existAgent.StatusId         = entity.StatusId;
-            existAgent.Username         = entity.Username;
+            //existAgent.Username         = entity.Username;
 
             DataAccessLayer.GetConnection.SubmitChanges();
             return true;
@@ -65,10 +69,19 @@ namespace MPDataAccess
             return true;
         }
 
-        public List<Agent> GetList()
+        public static List<Agent> GetList()
         {
             // TODO:
-            return new List<Agent>();
+            // return new List<Agent>();
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            List<Agent> result = new List<Agent>();
+            if (mpdb.Agents.Any())
+            {
+                result = mpdb.Agents.ToList<Agent>();
+            }            
+            mpdb.Connection.Close();
+            return result;
+
         }
 
         public List<Agent> GetList(bool dk)
@@ -89,6 +102,6 @@ namespace MPDataAccess
             // TODO:
             Agent[] arrResult = { new Agent() };
             return arrResult;
-        }
+        }       
     }
 }
