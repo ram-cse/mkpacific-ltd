@@ -107,9 +107,17 @@ namespace MoneyPacificBlackBox.BUS
             return 0;
         }
 
-        internal string ChangeCode(int codeNumber)
+        internal string ChangeCode(string codeNumber)
         {
-            throw new NotImplementedException();
+            PacificCode existPC = PacificCodeDAO.GetObject(codeNumber);            
+            if (codeNumber == existPC.CodeNumber)
+            {
+                string newCodeNumber = GeneratorPacificCode.Generator.getNewCode();
+                existPC.CodeNumber = newCodeNumber;
+                PacificCodeDAO.Update(existPC);
+                return newCodeNumber;
+            }
+            return null;
         }
 
         internal DateTime GetExpireDate(string partCodeNumber)

@@ -154,7 +154,7 @@ namespace MoneyPacificBlackBox
 
 
 
-        internal string ChangeCode(int codeNumber)
+        internal string ChangeCode(string codeNumber)
         {
             Transaction newTransaction = new Transaction();
             string newCodeNumber = this._pacificCodeBUS.ChangeCode(codeNumber);
@@ -167,7 +167,7 @@ namespace MoneyPacificBlackBox
             // END --
 
             // Hien tai chưa can luu Transaction loại này
-            // this._transactionBUS.AddNew(newTransaction);
+            this._transactionBUS.AddNew(newTransaction);
             return newCodeNumber;
         }
 
@@ -242,7 +242,6 @@ namespace MoneyPacificBlackBox
             newTransaction.Origine = "GetArrayPacificCodeViewModel";
             newTransaction.Comment = string.Format("Get PacificCodeViewModel: array");
             // END --
-
             // this._transactionBUS.AddNew(newTransaction);
 
             return arrResult;

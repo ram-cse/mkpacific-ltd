@@ -159,6 +159,7 @@
     <Content Include="Views\Agent\Edit.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\PacificCode\Browse.aspx" />
+    <Content Include="Views\PacificCode\ChangeCode.aspx" />
     <Content Include="Views\PacificCode\CheckDetail.aspx" />
     <Content Include="Views\PacificCode\Detail.aspx" />
     <Content Include="Views\PacificCode\SendMoney.aspx" />

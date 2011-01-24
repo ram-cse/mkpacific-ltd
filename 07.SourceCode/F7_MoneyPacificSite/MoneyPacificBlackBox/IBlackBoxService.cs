@@ -33,7 +33,7 @@ namespace MoneyPacificBlackBox
         PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber);
 
         [OperationContract]
-        string ChangeCode(int codeNumber);
+        string ChangeCode(string codeNumber);
 
         [OperationContract]
         int GetValue(string partCodeNumber);
