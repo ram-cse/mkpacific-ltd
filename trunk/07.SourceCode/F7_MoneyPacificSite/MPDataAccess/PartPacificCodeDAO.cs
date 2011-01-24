@@ -41,7 +41,14 @@ namespace MPDataAccess
 
         public static bool Update(PartPacificCode entity)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            PartPacificCode existPPC = mpdb.PartPacificCodes
+                .Where(p => p.Id.Equals(entity.Id))
+                .Single<PartPacificCode>();
+            existPPC.CopyFrom(entity);
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+            return true;
         }
 
         public static bool Remove(Guid id)

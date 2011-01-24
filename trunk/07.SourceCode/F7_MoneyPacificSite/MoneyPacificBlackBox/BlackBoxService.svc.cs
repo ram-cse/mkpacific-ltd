@@ -46,7 +46,7 @@ namespace MoneyPacificBlackBox
             return this._guard.CheckIsExistPartCodeNumber(partCodeNumber);
         }
 
-        public string ChangeCode(int codeNumber)
+        public string ChangeCode(string codeNumber)
         {
             return this._guard.ChangeCode(codeNumber);
         }

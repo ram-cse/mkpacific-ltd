@@ -38,7 +38,16 @@ namespace MPDataAccess
 
         public static bool Update(User entity)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            
+            User existUser = mpdb.Users
+                .Where(p => p.Id.Equals(entity.Id))
+                .Single<User>();
+            existUser.CopyFrom(entity);
+            mpdb.SubmitChanges();
+
+            mpdb.Connection.Close();
+            return true;
         }
 
         public static bool Remove(Guid id)

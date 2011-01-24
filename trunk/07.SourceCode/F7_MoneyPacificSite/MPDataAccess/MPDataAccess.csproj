@@ -51,6 +51,8 @@
     <Compile Include="CustomerStateDAO.cs" />
     <Compile Include="DataAccessLayer.cs" />
     <Compile Include="DTO\Agent.cs" />
+    <Compile Include="DTO\PartPacificCode.cs" />
+    <Compile Include="DTO\User.cs" />
     <Compile Include="MoneyPacific.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
