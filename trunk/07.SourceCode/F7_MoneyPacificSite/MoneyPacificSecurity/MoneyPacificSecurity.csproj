@@ -70,6 +70,8 @@
     <Compile Include="BUS\StoreManagerStateBUS.cs" />
     <Compile Include="BUS\StoreUserBUS.cs" />
     <Compile Include="BUS\StoreUserStateBUS.cs" />
+    <Compile Include="BUS\TimeItemBUS.cs" />
+    <Compile Include="BUS\TimeTableBUS.cs" />
     <Compile Include="BUS\TransactionBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="Controllers\AdminController.cs" />

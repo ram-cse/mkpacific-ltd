@@ -30,7 +30,6 @@ namespace MoneyPacificSite.Models.BUS
                     }
                 }
             }
-
         }
 
         private static string GetDay(int id)

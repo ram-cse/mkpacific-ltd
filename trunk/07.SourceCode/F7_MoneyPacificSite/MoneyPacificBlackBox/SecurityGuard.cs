@@ -108,6 +108,7 @@ namespace MoneyPacificBlackBox
             
             PacificCode pacificCode = this._pacificCodeBUS.MakePayment(codeNumber, amount);
             
+            
             // BEGIN --            
             newTransaction.Origine = "MakePayment";
             newTransaction.PacificCodeId = pacificCode.Id;

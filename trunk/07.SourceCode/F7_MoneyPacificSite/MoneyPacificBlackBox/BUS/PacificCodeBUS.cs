@@ -164,6 +164,7 @@ namespace MoneyPacificBlackBox.BUS
                 {
                     PacificCodeViewModel newItem = new PacificCodeViewModel();
                     newItem.SetAttritebuteValue(arrPC[i]);
+                    lstPCVM.Add(newItem);
                 }
             }
 

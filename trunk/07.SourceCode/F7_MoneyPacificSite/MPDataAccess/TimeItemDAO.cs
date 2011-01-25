@@ -51,5 +51,23 @@ namespace MPDataAccess
         {
             throw new Exception("chua lam!...");
         }
+
+        public static TimeItem GetObject(string day, int hour)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            TimeItem result = mpdb.TimeItems
+                .Where(t => (t.Day == day && t.Hour == hour))
+                .SingleOrDefault();
+            mpdb.Connection.Close();
+            return result;
+        }
+
+        public static void AddObject(TimeTable entity)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            mpdb.TimeTables.InsertOnSubmit(entity);
+            mpdb.SubmitChanges();
+            mpdb.Connection.Close();
+        }
     }
 }
