@@ -4397,7 +4397,7 @@ namespace MPDataAccess
 		
 		private string _Description;
 		
-		private System.Nullable<bool> _Enabled;
+		private bool _Enabled;
 		
 		private EntityRef<StoreManager> _StoreManager;
 		
@@ -4493,7 +4493,7 @@ namespace MPDataAccess
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enabled", DbType="Bit")]
-		public System.Nullable<bool> Enabled
+		public bool Enabled
 		{
 			get
 			{

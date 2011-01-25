@@ -24,7 +24,7 @@ namespace MoneyPacificBlackBox.DTO
         //[XmlElement("CodeNumber")] 
         public string CodeNumber;
 
-        //[XmlElement("ActualAmount")] 
+        ////[XmlElement("ActualAmount")] 
         public int ActualAmount;
 
         //[XmlElement("InitialAmount")] 
