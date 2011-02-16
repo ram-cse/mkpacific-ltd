@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="moneypacific_blackbox" Class="MoneyPacificBlackBoxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=alex-pc;Initial Catalog=moneypacific_blackbox;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="moneypacific_blackboxConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Transaction]" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RelateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacificCodeId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Origine" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsSuccessful" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PacificCode_Transaction" Member="PacificCode" ThisKey="PacificCodeId" OtherKey="Id" Type="PacificCode" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PacificCodeState" Member="PacificCodeStates">
+    <Type Name="PacificCodeState">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="PacificCodeState_PacificCode" Member="PacificCodes" ThisKey="Id" OtherKey="StatusId" Type="PacificCode" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PacificCode" Member="PacificCodes">
+    <Type Name="PacificCode">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LastTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InitialAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActualAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="PacificCode_Transaction" Member="Transactions" ThisKey="Id" OtherKey="PacificCodeId" Type="Transaction" />
+      <Association Name="PacificCodeState_PacificCode" Member="PacificCodeState" ThisKey="StatusId" OtherKey="Id" Type="PacificCodeState" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
