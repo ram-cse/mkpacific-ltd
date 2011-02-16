@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MoneyPacificBlackBox">
+  <DataContextMoniker Name="/MoneyPacificBlackBoxDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fbeb06c3-df47-41d9-b11e-b7f942443ffc" absoluteBounds="6.25, 1, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/MoneyPacificBlackBoxDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0aac7c4b-3726-4bca-89d6-89e840ff7e78" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a042db76-f8a6-4d6b-8658-872cec2b9429" absoluteBounds="0.75, 1.625, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/MoneyPacificBlackBoxDataContext/PacificCodeState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8027b387-bd12-4a84-9721-20d4d8445223" absoluteBounds="0.765, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e680dd86-bbc2-467e-8b18-a7884a203fbd" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MoneyPacificBlackBoxDataContext/PacificCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0eca8e26-8a9c-460d-8c2f-7def2ba9b781" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.27005126953125); (6.25 : 2.27005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MoneyPacificBlackBoxDataContext/PacificCode/PacificCode_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="e680dd86-bbc2-467e-8b18-a7884a203fbd" />
+        <classShapeMoniker Id="fbeb06c3-df47-41d9-b11e-b7f942443ffc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.31814697265625); (3.5 : 2.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MoneyPacificBlackBoxDataContext/PacificCodeState/PacificCodeState_PacificCode" />
+      <nodes>
+        <classShapeMoniker Id="a042db76-f8a6-4d6b-8658-872cec2b9429" />
+        <classShapeMoniker Id="e680dd86-bbc2-467e-8b18-a7884a203fbd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
