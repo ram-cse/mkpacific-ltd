@@ -1,7 +1,27 @@
+	16/02/2011:
+	- 
+
+	http://www.youtube.com/watch?v=rsEMySpndRk&feature=related
+
+
+	15/2/2011:
+	
+	Các việc còn lại:
+	Lỗi: 
+		1. MPDataAccess -> lấy chuỗi kết nối
+		2. 
+	
+	Học WCF: 
+	http://www.codeproject.com/KB/aspnet/WCF.aspx
+	http://www.codeproject.com/KB/aspnet/WCFPart2.aspx
+	http://www.codeproject.com/KB/WCF/HttpBinding.aspx
+
+
 	http://vhproject.hnsv.com/viewtopic.php?f=59&t=112
 
 	Bài hát: em yêu một người
 	con đường tôi đi
+
 
 	11/2/2011:
 
@@ -15,6 +35,7 @@
 	sieuthicanhan
 	muasanhdieu
 	hangsanhdieu
+	icre7+
 	
 	làm web site hỗ trợ bán hàng:
 	
