@@ -1,6 +1,26 @@
-	16/02/2011:
-	- 
 
+	17/02/2011:
+	- Xác định các chức năng chưa hoàn thành.
+	- Viết trong Security
+	=> sửa lại trong Merchant
+	- Sửa lỗi Link 
+	
+	Xin cảm ơn Quý khách đã đặt và mua hàng tại Website www.minhkhai.vn. Mã số đơn hàng Quý khách vừa đặt là MKY7795700000. Chúng tôi sẽ kiểm tra và gửi mail báo giá đến Quý khách trong thời gian sớm nhất 
+	
+
+	16/02/2011:
+	- học WCF
+	
+	http://www.youtube.com/watch?v=IfJ-WdjTQFE&NR=1
+
+	video inline skate:
+	http://www.youtube.com/watch?v=SfzNdBDEUSQ&feature=related
+	
+	downhill
+	http://www.youtube.com/watch?v=nGfYBFRPmO8&NR=1
+	
+	video về FNC
+	
 	http://www.youtube.com/watch?v=rsEMySpndRk&feature=related
 
 
