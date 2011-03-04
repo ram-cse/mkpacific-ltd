@@ -13,7 +13,7 @@ namespace MoneyPacificService.CMD
     {
         internal override string Execute()
         {
-     // Cú pháp SMS:
+            // Cú pháp SMS:
             // <StorePhone>*<PINStore>*<Amount>*<CustomerPhone>*<AmountConfirm>
 
             string smsRespones = "";

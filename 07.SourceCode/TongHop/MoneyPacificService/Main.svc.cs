@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using MoneyPacificService.Util;
+using MoneyPacificService.DTO;
 
 namespace MoneyPacificService
 {
@@ -20,9 +20,9 @@ namespace MoneyPacificService
             return MoneyPacific.SendMessage(smsContent);
         }
 
-        public PaymentModel MakePayment(List<string> LstCodeNumber, int Amount)
+        public PaymentModel MakePayment(List<string> lstCodeNumber, int amount)
         {
-            return (new PaymentModel());
+            return MoneyPacific.MakePayment(lstCodeNumber, amount);            
         }
     }
 }

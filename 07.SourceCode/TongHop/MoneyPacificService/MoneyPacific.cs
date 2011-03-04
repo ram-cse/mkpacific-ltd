@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MoneyPacificService.DTO;
 using MoneyPacificService.Util;
 using MoneyPacificService.CMD;
 
@@ -15,11 +16,9 @@ namespace MoneyPacificService
         /// </summary>
         internal static string SendMessage(string smsContent)
         {
-
             string smsResponse = "";
             string sCommand = "";
-
-
+            
             // Phân tích để lấy command & arguments            
             smsContent = smsContent.Trim(' ');
             string[] arrArg = smsContent.Split('*');
@@ -102,8 +101,9 @@ namespace MoneyPacificService
         }
 
         internal static PaymentModel MakePayment(List<string> LstCodeNumber, int Amount)
-        {
-            throw new Exception("chua lam!...");
+        {           
+
+            return _guard.MakePayment(LstCodeNumber, Amount);
         }
     }
 }
