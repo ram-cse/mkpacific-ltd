@@ -102,24 +102,32 @@ namespace MoneyPacificBlackBox
             return result;
         }
 
-        internal PacificCode MakePayment(string codeNumber, int amount)
+        internal string MakePayment(string codeNumber, int amount)
         {
             Transaction newTransaction = new Transaction();
             
             PacificCode pacificCode = this._pacificCodeBUS.MakePayment(codeNumber, amount);
-            
-            
-            // BEGIN --            
-            newTransaction.Origine = "MakePayment";
-            newTransaction.PacificCodeId = pacificCode.Id;
-            newTransaction.Comment = string.Format("Payment: {0} - {1}"
-                ,codeNumber
-                ,amount);
-            newTransaction.IsSuccessful = true;
-            // END --
-            
-            this._transactionBUS.AddNew(newTransaction);
-            return pacificCode;
+
+            if (pacificCode != null)
+            {
+
+                // BEGIN --            
+                newTransaction.Origine = "MakePayment";
+                newTransaction.PacificCodeId = pacificCode.Id;
+                newTransaction.Comment = string.Format("Payment: {0} - {1}"
+                    , codeNumber
+                    , amount);
+                newTransaction.IsSuccessful = true;
+                // END --
+
+                this._transactionBUS.AddNew(newTransaction);
+
+                return pacificCode.CodeNumber;
+            }
+            else
+            {
+                return "invalid pacific code";
+            }
         }
 
         internal double GetValue(string partCodeNumber)

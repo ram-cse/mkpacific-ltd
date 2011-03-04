@@ -58,8 +58,7 @@ namespace MoneyPacificSrv.DAO
                 
                 PacificCode pCode = mpdb.PacificCodes.Where
                     (p => p.CodeNumber.Trim() == sCodeNumber.Trim()).Single<PacificCode>();
-
-
+                
                 int iMin = Utility.Min((int)pCode.ActualAmount, Amount);
 
                 pCode.ActualAmount = pCode.ActualAmount - iMin;

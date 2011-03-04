@@ -66,7 +66,7 @@ namespace MoneyPacificBlackBox
         /// </summary>
         public string MakePayment(string codeNumber, int amount)
         {
-            return this._guard.MakePayment(codeNumber, amount).CodeNumber;
+            return this._guard.MakePayment(codeNumber, amount);
         }
 
         public bool MakePaymentTo(string codeNumber, string partCodeNumber, int amount)

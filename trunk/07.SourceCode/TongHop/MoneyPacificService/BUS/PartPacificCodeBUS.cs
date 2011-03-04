@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MPDataAccess;
 using MoneyPacificBlackBox.DTO;
+using MoneyPacificService.Util;
 
 namespace MoneyPacificService.BUS
 {
@@ -73,6 +74,26 @@ namespace MoneyPacificService.BUS
             PacificCodeViewModel model = clientService.GetPacificCodeViewModel(partCodeNumber);
             ///clientService.Close(); // Lỗi khi đang gọi bị đóng seviceClient
             return model;
+        }
+
+        internal static int GetMoneyForPayMent(string codeNumber, int amount)
+        {
+            try
+            {
+                /// Ví dụ: PacificCode có giá trị 5000, mà gia tri can thanh toan là 6000
+                /// => chỉ thanh toan 5000
+                int actualAmount = (int)GetActualAmount(codeNumber.Substring(1, 12));
+                int min = Utility.Min(actualAmount, amount);
+
+                BlackBoxServiceClient clientService = new BlackBoxServiceClient();
+                clientService.MakePayment(codeNumber, amount);
+
+                return min;
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }
