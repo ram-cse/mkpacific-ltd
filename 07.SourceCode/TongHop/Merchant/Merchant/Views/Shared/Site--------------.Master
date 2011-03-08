@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Merchant.Models" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+   <script type="text/javascript" src="http://www.mon-email-anonyme.com/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="http://www.mon-email-anonyme.com/js/generic/functions.js"></script>
+
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <h1>Money Pacific</h1>
+            </div>
+              
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                    <% MyRoleProvider role = new MyRoleProvider();
+                       bool checkit = false;
+                        string userlogin = Page.User.Identity.Name;
+                        if (role.IsUserInRole(userlogin, "Webmaster"))
+                        {
+                            checkit = true;
+                        }
+                        
+                         %>                   
+                    <% if (Request.IsAuthenticated && checkit)
+                       {%>
+                       
+                       <li><%: Html.ActionLink("DashBoard", "Index", "Account")%></li>
+                       <li>
+                          <a href="#" onclick="Show('Setting');">&nbsp;&nbsp;&nbsp;Setting&nbsp;&nbsp;&nbsp;</a>
+                          
+                          <div id="Setting" style="display:none;position:absolute; width:203px;height:145px;float:none;margin-left:588px;text-align:left;background-color:#E8EEF4;">
+                         <ul style="margin-left:-39px;"> 
+                         <li><a href="/Account/ChangePassword" onclick="Show('Setting');">Change Password</a></li>
+                         <li><a href="/Account/Profile" onclick="Show('Setting');">Personal Infomartion</a></li>
+                         <li><a href="/Account/SetPayment" onclick="Show('Setting');">Set Payment</a></li>
+                         <li><a href="/Account/notification" onclick="Show('Setting');">Notification </a></li>
+                         </ul>
+                          </div>
+                       </li>
+
+                       <li><a href="#" onclick="Show('website');">My Website</a>
+                       <div id="website" style="display:none;position:absolute; width:160px;height:145px;float:none;margin-left:703px;text-align:left;background-color:#E8EEF4;">
+                         <ul style="margin-left:-39px;"> 
+                         <li><a href="/website/add" onclick="Show('website');">Add New</a></li>
+                         <li><a href="/website/script" onclick="Show('website');">Get Script</a></li>
+                         <li><a href="/website/scriptmanager" onclick="Show('website');">Script Manager</a></li>
+                         </ul>
+                          </div>
+                       
+                       </li>
+
+
+                       <li><a href="#" onclick="Show('report')">Report</a>
+                        <div id="report" style="display:none;position:absolute; width:203px;height:145px;float:none;margin-left:824px;text-align:left;background-color:#E8EEF4;">
+                         <ul style="margin-left:-39px;"> 
+                         <li><a href="/report/moneyview" onclick="Show('report');">Earning Overview</a></li>
+                         <li><a href="/report/details" onclick="Show('report');">Report Details</a></li>
+                         </ul>
+                         
+                                                  
+                         
+                          </div>
+                       
+                       </li>
+                       
+
+                       <li><a href="#" onclick="Show('manage')">Manage Order</a>
+                        <div id="manage" style="display:none;position:absolute; width:178px;height:145px;float:none;margin-left:913px;text-align:left;background-color:#E8EEF4;">
+                         <ul style="margin-left:-39px;"> 
+                         <li><a href="/order/newview" onclick="Show('manage');">New Order 411</a></li>
+                         <li><a href="/order/Ondelivery" onclick="Show('manage');">Set Delivery 412</a></li>
+                         <li><a href="/order/endtran" onclick="Show('manage');">End Transaction 413</a></li>
+                         <% if (Request.IsAuthenticated && !checkit)
+                            {%>
+                            <li><a href="/problem/submit" onclick="Show('manage');">Submit Problems</a></li>
+                         <%} %>
+                         <%if (!Page.User.Identity.IsAuthenticated)
+                           { %>
+                         <li><a href="/problem/follow" onclick="Show('manage');">Follow Problems</a></li>
+                         <%} %>
+                         <li><a href="/problem" onclick="Show('manage');">Problems Manager</a></li>
+                         </ul>
+                          </div>
+                       </li>
+                       <li><a href="/messenger" >Pacific Messenger</a></li>
+                    <%} else if(Request.IsAuthenticated && !checkit){%>
+                    <li><a href="/customer">Customer Home</a></li>
+                    <li><a href="/problem/submit">Report Problem</a></li>
+                    <li><a href="/problem/follow/<%:userlogin %>">Follow The Order</a></li>
+                    <li><a href="/customer/vieworder">Order Details</a></li>
+
+                    <%} %>
+
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

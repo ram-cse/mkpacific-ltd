@@ -2,10 +2,10 @@
 <publishData>
   <publishProfile publishUrl="C:\inetpub\wwwroot\blackbox" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="False" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="bin/GeneratorPacificCode.dll" publishTime="01/18/2011 15:52:46" />
-    <file relUrl="bin/MoneyPacificBlackBox.pdb" publishTime="02/14/2011 14:13:48" />
     <file relUrl="Web.config" publishTime="02/14/2011 14:20:40" />
     <file relUrl="BlackBoxService.svc" publishTime="12/16/2010 12:32:32" />
-    <file relUrl="bin/MoneyPacificBlackBox.dll" publishTime="02/14/2011 14:13:49" />
+    <file relUrl="bin/MoneyPacificBlackBox.pdb" publishTime="02/24/2011 10:43:22" />
+    <file relUrl="bin/MoneyPacificBlackBox.dll" publishTime="02/24/2011 10:43:22" />
     <file relUrl="bin/GeneratorPacificCode.pdb" publishTime="01/18/2011 15:52:46" />
   </publishProfile>
 </publishData>

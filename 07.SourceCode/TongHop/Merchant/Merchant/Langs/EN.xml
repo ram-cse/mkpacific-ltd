@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EN>
+  <node name="DASHBOARD" value="DASHBOARD"/>
+  <node name="SETTING" value="SETTING"/>
+  <node name="MY_WEBSITE" value="MY WEBSITE"/>
+  <node name="REPORT" value="REPORT"/>
+  <node name="MANAGE_ORDER" value="ORDER MANAGER"/>
+  <node name="PACIFIC_MESSENGER" value="PACIFIC MESSENGER"/>
+  <node name="MY_PROFILE" value="My Profile"/>
+  <node name="PAYOUT_ACCOUNT" value="Payout Account"/>
+  <node name="NOTIFICATION" value="Notification"/>
+  <node name="NOTIFICATION_FOR" value="Notification For"/>
+  <node name="EMAIL_FOR_NEW_ORDER" value="Email For New Order"/>
+  <node name="EMAIL_FOR_NEW_MESSAGE" value="Email For New Message"/>
+  <node name="EMAIL_FOR_REPORT_PROBLEM" value="Email For Report Problem"/>
+
+  <node name="ADD_AND_EDIT_WEBSITE" value="Add and Edit"/>
+  <node name="GET_NEW_SCRIPT" value="Get new script"/>
+  <node name="SCRIPT_MANAGER" value="Script Manager"/>
+  <node name="EARNING_OVERVIEW" value="Earning Overview"/>
+  <node name="REPORT_DETAILS" value="Report Details"/>
+
+  <node name="NEW_ORDER_411" value="New Order 411"/>
+  <node name="ON_DELIVERY_412" value="On Delivery Order 412"/>
+  <node name="END_TRANSACTION_413" value="En Transaction Order 413"/>
+  <node name="PROBLEMS_MANAGER" value="Problem Manager"/>
+  <node name="ORDER_PROBLEM" value="Order Problem"/>
+
+  <node name="CUSTOMER_HOME" value="Customer Home"/>
+  <node name="ORDER_DETAILS" value="Order Details"/>
+
+  <node name="LOGIN" value="Login"/>
+  <node name="LOGOUT" value="Logout"/>
+  <node name="REGISTER" value="Register"/>
+  <node name="FOR_GOT_PASSWORD" value="Forgot Password"/>
+  <node name="MONEY_PACIFIC_ADMIN" value="Money Pacific Admin"/>
+  <node name="SUBMIT_PROBLEM" value="Submit Problem"/>
+  <node name="FOLLOW_PROBLEM" value="Follow Problem"/>
+
+  <node name="WELCOME_ACCOUNT_INDEX" value="Welome to Money Pacific!"/>
+  <node name="WELCOME" value="Welcome"/>
+
+  <node name="PLEASE_ENTER_YOUR_USERNAME_AND_PASSWORD" value="Please enter your usename and password "/>
+  <node name="IF_YOU_DONT_HAVE_AN_ACCOUNT" value=" if you don't have an account!."/>
+  <node name="ACCOUNT_INFORMATION" value="Account Information"/>
+  <node name="USERNAME" value="Username"/>
+  <node name="PASSWORD" value="Password"/>
+  <node name="REMEMBER_PASSWORD" value="Remember password"/>
+  <node name="LOGIN_WAS_UNSUCCESSFUL_PLEASE_CORRECT_THE_ERRORS_AND_TRY_AGAIN" value="Login was unsuccessful. Please check the error and try again."/>
+  <node name="USERNAME_ALREADY_EXISTS._PLEASE_ENTER_A_DIFFERENT_USER_NAME." value="Username already exists. Please enter a different username."/>
+  <node name="THE_USER_NAME_OR_PASSWORD_PROVIDED_IS_INCORRECT" value="Username or password provided is incorrect."/>
+  <node name="YOUR_ACCOUNT_IS_NOT_ACTIVE!_PLEASE_CHECK_EMAIL_TO_ACTIVE_ACCOUNT" value="Your account is not active! Please check the email to active the account"/>
+  <node name="YOUR_ACCOUNT_IS_DISABLED_BY_MONEY_PACIFIC_ADMIN" value="Your account is disabled by Money Pacific Admin!"/>
+  <node name="THE_CURRENT_PASSWORD_IS_INCORRECT_OR_THE_NEW_PASSWORD_IS_INVALID" value="The current password is incorrect or the new password is invalid."/>
+  <node name="ACTIVE_ACCOUNT_SUCCESSFULLY!" value="Active account successfully"/>
+  <node name="ACCOUNT_IS_ACTIVE_NOW!_CLICK_TO_LOGIN" value="Account is active now. Please click Login to access your account."/>
+  <node name="ACCOUNT_IS_ALREADY_ACTIVE_NOW!" value="Account is already active."/>
+  <node name="ACCOUNT_DOESNT_EXIST_NOW!_CHECK_AGAIN!" value="Account doesn't exisit. Check again."/>
+  <node name="BUSINESS_REGISTER" value="Bussiness Register"/>
+  <node name="CREATE_A_BUSSINESS_ACCOUNT" value="Create a Bussiness Account"/>
+  <node name="PASSWORDS_ARE_REQUIRED_TO_BE_A_MINIMUM_OF" value="Passwords are required to be a minimum of "/>
+  <node name="CHARACTERS_IN_LENGTH" value="characters in length."/>
+  <node name="ACCOUNT_CREATION_WAS_UNSUCCESSFUL._PLEASE_CORRECT_THE_ERRORS_AND_TRY_AGAIN" value="Account creation was unsucessful. Please correct the errors and try again."/>
+  <node name="ACCOUNT_INFORMATION" value="Account Information"/>
+  <node name="CONFIRM_PASSWORD" value="Confirm password"/>
+  <node name="COMPANY_INFORMATON" value="Company Information"/>
+  <node name="PERSONAL_REGISTER" value="Personal Register"/>
+  <node name="COMPANY_NAME" value="Company Name"/>
+  <node name="PHONE" value="Phone"/>
+  <node name="TAX_CODE" value="Tax Code"/>
+  <node name="NAME" value="Name"/>
+  <node name="FIRST_NAME" value="First Name"/>
+  <node name="LAST_NAME" value="Last Name"/>
+  <node name="REGISTER_A_NEW_ACCOUNT" value="Register a new account"/>
+  <node name="FOR_WEBMASTER_WHO_IS_PERSONAL" value="For webmaster who is personal"/>
+  <node name="FOR_WEBMASTER_WHO_IS_BUSINESS" value="For webmaster who is business"/>
+  <node name="GET_START_NOW" value="GET START NOW"/>
+  <node name="BROKENLINK" value="Link is broken!"/>
+  <node name="CHANGE_PASSWORD" value="Change password"/>
+  <node name="NEW_PASSWORDS_ARE_REQUIRED_TO_BE_A_MINIMUM_OF" value="New passwords are required to be a minimun of "/>
+  <node name="PASSWORD_CHANGE_WAS_UNSUCCESSFUL._PLEASE_CORRECT_THE_ERRORS_AND_TRY_AGAIN" value="Password change was unsucessful. Please correct the errors and try again."/>
+  <node name="CURRENT_PASSWORD" value="Current password"/>
+  <node name="NEW_PASSWORD" value="New password"/>
+  <node name="YOUR_PASSWORD_HAS_BEEN_CHANGED_SUCCESSFULLY" value="Your password has been changed sucessfully"/>
+  <node name="FORGOT_PASSWORD" value="Forgot password"/>
+  <node name="TO_RECOVERY_YOUR_PASSWORD,PLEASE_ENTER_YOUR_USERNAME_OR_THE_EMAIL_TO_RECOVERY_YOUR_PASSWORD.THE_LINK_WILL_BE_SENT_TO_YOU_BY_EMAIL_TO_GENERATE_THE_PASSWORD" value="To recovery your password,please enter your username or the email to recovery your password. The link will be sent to you by email to generate the password"/>
+  <node name="ENTER_YOUR_USERNAME" value="Enter your username"/>
+  <node name="ACCOUNT_TYPE" value="Account type"/>
+  <node name="PERSONAL" value="Personal"/>
+  <node name="BUSINESS" value="Business"/>
+  <node name="TOTAL_BALANCE" value="Total balance"/>
+  <node name="PENDING...(COMMING SOON)" value="Pending...(comming soon)"/>
+  <node name="MANAGE_YOUR_PROFILE_FROM_THIS_PAGE" value="Manage your profile from this page"/>
+  
+  <node name="PERSONAL_ACCOUNT_INFORMATION" value="Personal Account Information"/>
+  <node name="CONTACT_INFORMATION" value="Contact Information"/>
+  <node name="STREET" value="Street"/>
+  <node name="WARD" value="Ward"/>
+  <node name="CITY" value="City"/>
+  <node name="PAYMENT_INFORMATION" value="Payment Information"/>
+  <node name="BANK" value="Bank"/>
+  <node name="BUSINESS_ACCOUNT_INFORMATION" value="Business Account Information"/>
+  <node name="COMPANY_ADDRESS" value="Company Address"/>
+  <node name="SAVE" value="Save"/>
+  <node name="GO_BACK" value="Go Back"/>
+  <node name="RECOVERY_PASSWORD" value="Recovery password"/>
+  <node name="ENTER_NEW_PASSWORD" value="Enter new password"/>
+  <node name="YOU_REQUEST_TO_RECOVERY_THE_PASSWORD_SUCCESSFULLY._PLEASE_CHECK_YOUR_EMAIL_TO_GET_THE_LINK_FOR_GENERATE_THE_PASSWORD" value="You request to recovery the password successfully. Please check your email to get the link for generate the password."/>
+  <node name="RECOVERY_SUCCESSFULLY" value="Recovery sucessfully"/>
+  <node name="REGISTER_SUCCESSFULLY" value="Register successfully"/>
+  <node name="PLEASE_CHECK_EMAIL_TO_ACTIVE_ACCOUNT" value="Please check email to active account!"/>
+  <node name="SET_PAYMENT" value="Payout Account"/>
+  <node name="RECEIVER_INFORMATION" value="Receive Information"/>
+  <node name="ADDRESS" value="Address"/>
+  <node name="TYPE_PAYMENT" value="Type Payment"/>
+  <node name="USER_NOT_EXIST" value="User not exists"/>
+  <node name="WEBSITE" value="Website"/>
+  <node name="NAME_PRODUCT" value="Name Product"/>
+  <node name="DATE_ORDER" value="Date Order"/>
+  <node name="STATUS" value="Status"/>
+  <node name="AMOUNT" value="Amount"/>
+  <node name="BUYINGID" value="BuyingID"/>
+  <node name="REAL_PRODUCT" value="Real Product"/>
+  <node name="YOU_MUST_SELECT_THIS_CHECK_BOX_ONLY_IF_THE_PRODUCT_YOU_WILL_SELL_IS_NOT_DELIVERED_BY_MAIL._DOWNLOAD_PRODUCT:_MUSIC,_SOFTWARE,_ACCESS_CODE" value="You must select this check box ONLY if the product you will sell is not delivered by mail. Download product: Music, software, access code,..."/>
+  <node name="YOU_CAN_ALSO_SELECT_THIS_CHECK_BOX_IF_YOU_DON’T_WANT_MONEY_PACIFIC_HELP_YOU_TO_MANAGE_THE_DELIVERY_(EXPERT_MODE)" value="You can also select this check box if you don’t want Money Pacific help you to manage the delivery (expert mode)."/>
+  <node name="DELIVERY_INFORMATION" value="Delivery Information"/>
+  <node name="RECEIVER_ADDRESS" value="Receiver Address"/>
+  <node name="DELIVERY_COMPANY" value="Delivery Company"/>
+  <node name="DATE_SEND" value="Date Delivery"/>
+  <node name="NOTE" value="Note"/>
+  <node name="TRACKING_CODE" value="Tracking Code"/>
+  <node name="CREATE_MESSAGE" value="Create message"/>
+  <node name="TYPE_MESSAGE_TO" value="Type message to"/>
+  <node name="REPLY_TO" value="REPLY to"/>
+  <node name="ATTACH_FILE" value="Attach File"/>
+  <node name="POST_MESSAGE" value="Post Message"/>
+  <ndoe name="SENDER" value="Sender"/>
+  <node name="MESSAGE|ATTACH_FILE" value="Message|Attach File"/>
+  <node name="DATE|TIME" value="Date|Time"/>
+  <node name="AVAILABLE_FOR" value="Available"/>
+  <node name="ALL_YOUR_MESSAGES"  value="All messages"/>
+  <node name="SEND_MESSAGE_TO_MONEY_PACIFIC" value="SEND MESSAGE TO MONEY PACIFIC"/>
+  <node name="BETWEEN_YOU_AND_MONEY_PACIFIC" value="Between You and Money Pacific"/>
+  <node name="BETWEEN_YOU_AND_CUSTOMER" value="Between You and Customer"/>
+  <node name="YOUR_MESSAGE_IS_SENT_SUCCESSFULLY" value="Your message is sent successfully!"/>
+  <node name="SEND_MESSAGE_TO_CUSTOMER" value="Send message to Customer"/>
+  <node name="SEND_PRODUCT" value="Send Product"/>
+  <node name="LIST_OF_END_TRANSACTION_ORDERS" value="List of End Transaction Orders"/>
+  <node name="LIST_OF_NEW_ORDERS" value="List of New Orders"/>
+  <node name="LIST_OF_ON_TRANSACTION_ORDERS" value="List of On Transaction Orders"/>
+  <node name="PAYMENT_WITH_MONEY_PACIFIC" value="Payment with Money Pacific"/>
+  <node name="ENTER_MONEY_PACIFIC_CODE(LIMIT_5_CODES)" value="Enter Money Pacific Code( Limit 5 codes)"/>
+  <node name="ADD_MORE_CODE" value="Add more code"/>
+  <node name="PAY_NOW!" value="PAY NOW!"/>
+  <node name="NEXT" value="NEXT"/>
+  <node name="PAYMENT_IS_SUCCESSFULLY._SYSTEM_IS_REDIRECTING_IN_5_SECONDS..." value="Payment is successly. System is redirecting in 5 seconds..."/>
+  <node name="PAYMENT_ERROR" value="Payment errors!"/>
+  <node name="THE_FOLLOW_ORDER_IS_CLOSED_SUCCESSFULLY" value="The follow order is closed sucessfuly."/>
+  <node name="THE_PROOF_OF_THE_ORDER_IS_VALIDATED_AND_THE_MONEY_NOW_IS_AVAILABLE_FOR_WEBMASTER.NOW_YOU_CAN_CLOSE_THE_FOLLOW_ORDER" value="The proof of the order is validated and the money now is available for webmaster. Now you can close the follow order"/>
+  <node name="MONEY_PACIFIC_DONT_VALIDATE_THE_PROOF_OF_ORDER_THAT_WEBMASTER_SENT_TO_US.YOUR_TRANSACTION_IS_NOT_SUCCESSFUL_AND_WE_WILL_GENARATE_A_NEW_PACIFIC_CODE_FOR_THE_CUSTOMER" value="Money pacific dont validate the proof of order that webmaster sent to us. Your transaction is not successful and we will genarate a new pacific code for the customer."/>
+  <node name="MESSAGE" value="Message"/>
+  <node name="CLOSE_THE_FOLLOW_ORDER" value="Close the follow order"/>
+  <node name="VALIDATE_PROOF" value="Validate Proof"/>
+  <node name="DONT_VALIDATE_PROOF" value="Don't validate proof"/>
+  <node name="THIS_FOLLOW_IS_CLOSED_BY_MONEY_PACIFIC_ADMIN" value="The follow is closed by Money Pacific Admin!"/>
+  <node name="CUSTOMER" value="Customer"/>
+  <node name="MONEY_PACIFIC" value="Money Pacific"/>
+  <node name="WEBMASTER" value="Webmaster"/>
+  <node name="PROBLEM_MANAGER" value="Problem Manager"/>
+  <node name="LIST_OF_ORDERS_PROBLEMS" value="List of Orders Problems"/>
+  <node name="DELIVERY_WITH_LOW_QULITY" value="Delivery with low quality."/>
+  <node name="DELIVERY_BROKEN" value="Delivery broken"/>
+  <node name="NOT_DELIVERY" value="Not delivery"/>
+  <node name="CUSTOMER_REPORT_PROBLEM" value="Customer report problem"/>
+  <node name="INVALID_BUYINGCODE" value="Invalid BuyingID"/>
+  <node name="SUBMIT_PROBLEM_SUCCESSFLLY" value="Submit Problem successfully"/>
+  <node name="THANK_YOU" value="Thank you!"/>
+  <node name="FOR_MORE_INFORMATION,PLEASE_USE_PACIFIC_MESSENGER_TO_DISSCUS_WITH_WEBSITE_ADMIN" value="For more information, please use pacific messenger to disscus with website admin"/>
+  <node name="REASON" value="Reason"/>
+  <node name="SORRY!TIME_NOT_AVAILABLE_FOR_REPORT.YOUR_ORDER_MAYBE_ON_THE_WAY_TO_DELEVERY" value="Sorry! Time not available for report. Your order is maybe on the way to delevery."/>
+  <node name="REPORT_DETAILS" value="Report Details"/>
+  <node name="ALL_TIME" value="All time"/>
+  <node name="TODAY" value="Today"/>
+  <node name="YESTERDAY" value="Yesterday"/>
+  <node name="LAST_WEEK" value="Last week"/>
+  <node name="LAST_MONTH" value="Last month"/>
+  <node name="LAST_3_MONTH" value="Last 3 months"/>
+  <node name="ALL_WEBSITE" value="All websites"/>
+  <node name="DATE" value="Date"/>
+  <node name="AMOUNT" value="Amount"/>
+  <node name="VIEW_REPORT" value="View report"/>
+  <node name="REQUIRE_SET_PAYMENT" value="Require Set Payment"/>
+  <node name="TO_VIEW_THE_MONEY_OVERVIEW,_YOU_MUST_SET_THE_PAYMENT_IN_THE_SETTING_MENU" value="To view the money overview, you must Set Payment in the Setting Menu"/>
+  <node name="MONEY_OVERVIEW" value="Earning Details"/>
+  <node name="YOU_HAVE_JUST_SET_WITHDRAW_MONEY_SUCCESSFULLY" value="You have just set Withdraw money successfully."/>
+  <node name="EARNING" value="Earning"/>
+  <node name="TOTAL_AMOUNT" value="Total Amount"/>
+  <node name="KEEP_MONEY" value="Keep Money"/>
+  <node name="WITHDRAW_MONEY" value="Withdraw Money"/>
+  <node name="MINNIMUM_WITHDRAW" value="Minimum Withdraw"/>
+  <node name="WITHDRAW_NOW" value="WITHDRAW NOW"/>
+  <node name="WEBSITE_TITLE" value="Title"/>
+  <node name="EDIT" value="Edit"/>
+  <node name="DELETE" value="Delete"/>
+  <node name="WEBSITE_INFORMATION"   value="Website Information"/>
+  <node name="DESCRIPTION" value="Description"/>
+  <node name="ADD" value="Add"/>
+  <node name="EDIT_WEBSITE" value="Edit Website"/>
+  <node name="ADD_WEBSITE_DONE" value="Website is added successful."/>
+  <node name="YOUR WEBSITE_IS_ADDED_SUCCESSFULLY!_WE_WILL_REVIEW_YOUR_WEBSITE_AND_VALIDATE_IN_24_HOURS" value="Your website is added successfully! We will review your website and validate in 24 hours"/>
+  <node name="GET_SCRIPT" value="Get new script"/>
+  <node name="SELECT_WEBSITE" value="Select website"/>
+  <node name="VIRTUAL_PRODUCT" value="Virtual Product"/>
+  <node name="SCRIPT_NAME" value="Script name"/>
+  <node name="THIS_NAME_IS_JUST_FOR_YOU,_TO_REMEMBER_WHAT_THIS_BUTTON_FOR" value="This name is just for you, to remember what this button for."/>
+  <node name="INDICATE_HERE_THE_VALUE_OF_THE_BUTTON" value="Indicate here the value of the button"/>
+  <node name="ITEM_NAME" value="Item Name"/>
+  <node name="ITEM_ID" value="Item ID"/>
+  <node name="PRICE" value="Price"/>
+  <node name="BUTTON_STYLE" value="Button Style"/>
+  <node name="RETURN_URL_SUCCESS" value="Return URL success"/>
+  <node name="RETURN_URL_FAIL" value="Return URL fail"/>
+  <node name="RETURN_URL_SUCCESS_TEXT" value="We use this URL if transaction if successful"/>
+  <node name="RETURN_URL_FAIL_TEXT" value="We use this URL if transaction fail"/>
+  <node name="JUST_SELECT_WHAT_DISPLAY_YOU_PREFER_FOR_THE_MONEY_PACIFIC_BUTTON_IN_YOUR_WEBSITE" value="Just select what display you prefer for the Money Pacific button in your website"/>
+  <node name="EDIT_SCRIPT" value="Edit"/>
+  <node name="SCRIPT_MANAGER" value="Script Manager"/>
+  <node name="SET_PAYMENT_IS_DONE_SUCCESSFULLY" value="Your Payment Information saved successfully."/>
+  <node name="YOUR_NOTIFICATION_SAVED_SUCCESSFULLY" value="Your notification save successfully."/>
+  <node name="MESSAGEID" value="MessageID"/>
+  <node name="MESSAGE_CONTENT" value="Message Content"/>
+  <node name="SET_LANGUAGE" value="Set Language"/>
+  <node name="VIETNAMESE" value="Vietnamese"/>
+  <node name="ENGLISH" value="English"/>
+  <node name="SELECT_THE_LANGUAGE" value="Select the language"/>
+  <node name="SELECT_THE_LANGUAGE_TO_USE_FOR_DEFAULT" value="Select the language to use for default"/>
+  <node name="YOUR_LANGUAGE_SET_SUCCESSFULLY" value="Your language set successfully"/>
+  <node name="IN_THIS_PAGE_YOUR_CAN_EASILY_ADD_AND_EDIT_ALL_YOUR_WEBSITE_TO_USE_MONEY_PACIFIC_PAYMENT_SOLUTION" value="In this page your can easily add and edit all your website to use Money Pacific Payment solution."/>
+  <node name="DO_IT_NOW_:_YOU_JUST_NEED_5_MINUTES_TO_ADD_A_NEW_WEB_SITE" value="Do it now : You just need 5 minutes to add a new web site !!!"/>
+  <node name="ADD_NEW_WEBSITE" value="Add new website"/>
+  <node name="PACIFIC_CODE_TEST" value="Pacific Code Test"/>
+  <node name="THIS_PACIFIC_CODE_IS_USED_TO_MAKE_TEST" value="This Pacific Code is used to make test"/>
+  <node name="JUST_SELECT_YOUR_WEBSITE_AND_WE_WILL_GENERATE_A_NEW_SCRIPT_READY_TO_USE_FOR_YOUR_WEBSITE." value="Just select your website and we will generate a new script ready to use for  your website."/>
+  <node name="YOU_CAN_CREATE_AS_MANY_SCRIPTS_AS_YOU_WANT_FOR_EACH_WEB_SITE." value="You can create as many scripts as you want for each web site."/>
+  <node name="IF_YOU_DONT_SEE_ANY_WEBSITE_IN_THIS_SECTION_YOU_MUST_GO_FIRST_IN_THE_MENU_WEBSITE/ADD_AND_EDIT" value="If you don’t see any website in this section you must go first in the menu 'website/ add and edit'"/>
+  <node name="AND_JUST_CUT_AND_PASTE_THIS_SCRIPT_IN_YOUR_WEBSITE_TO_THE_PLACE_YOU_WANT_THE_BUTTON" value="And just cut and paste this crypt in your website to the place you want the button."/>
+  <node name="THIS_IS_THE_PAYOUT_AND_EARNING_DETAILS_PAGE" value="This is the payout and earning details page"/>
+  <node name="TOTAL" value="Total"/>
+  <node name="NO_DATA" value="No data found!"/>
+  <node name="CLAIN_NO_DELIVERY" value="Claim no delivery"/>
+  <node name="COUNTRY" value="Country"/>
+  <node name="FAQ" value="Money Pacific FAQ Center"/>
+  <node name="CUSTOMER_AREA" value="CUSTOMER AREA"/>
+  <node name="MINI_STORE" value="MINI STORE"/>
+  <node name="VIETNAM_CHILDREN" value="VIETNAM CHILDREN"/>
+  <node name="ABOUT_SECURITY" value="ABOUT SECURITY"/>
+  <node name="BEST_WEBSITE"  value="BEST WEBSITE"/>
+  <node name="HeaderText1" value="YES, YOU CAN NOW BUY ON INTERNET WITH CASH !!!"/>
+  <node name="HeaderText2" value="NO CARD | NO ACCOUNT | NO ENROLMENT | 100% SECURE "/>
+  <node name="ABOUT" value="ABOUT"/>
+  <node name="PRIVACY" value="Privacy Policy"/>
+  <node name="TOS" value="Terms Of Use"/>
+  <node name="CONTACT" value="CONTACT"/>
+  <node name="LICENCE" value="Licence for other country"/>
+  <node name="QUESTION" value="I have a problem"/>
+  <node name="MORE" value="I want to know more"/>
+  <node name="DEMO" value="Watch a demo video"/>
+  <node name="WORKING_WITH" value="Work with"/>
+  <node name="CONTRIBUTE_TO_SUPPORT" value="contribute to support"/>
+
+
+</EN>
+
+
+
+

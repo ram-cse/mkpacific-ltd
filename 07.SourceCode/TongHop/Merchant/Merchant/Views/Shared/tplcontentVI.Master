@@ -1,0 +1,189 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Merchant.Helper" %>
+<% LangText.LoadPortal("VI"); %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/Content/cssportal.css"/>
+    <link href="/Content/thickbox.css" rel="stylesheet" type="text/css" />
+     <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script> 
+    
+    <script src="/Scripts/jquery.thickbox.js" type="text/javascript"></script>
+
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20236705-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20237436-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</head>
+<body class="mppacific">
+<div id="container">
+  <div id="header">
+    
+    <div id="login">
+    <span style="padding-right:50px;">
+    <a href="/vi"><img src="/Content/Images/vi.png" border="0"/></a>&nbsp;&nbsp;
+     <a href="/en"><img src="/Content/Images/en.png" border="0"/></a>
+    </span>
+    <% Html.RenderPartial("LogOnUserControlVI"); %>
+   </div>
+
+      <div id="header-left">
+          <div id="logo">
+		    <a href="/vi"> <img src="/Content/Images/logo.gif"/></a>
+	      </div>
+           <div id="topinfo">
+      		    
+            	  <span style="font-size:18px;"><%: LangText.GetTextPortal("HeaderText1")%></span><br/>
+                     <%: LangText.GetTextPortal("HeaderText2")%>
+                
+           </div>      
+      </div>
+
+      <div id="header-right">
+			   
+                      
+
+                <div id="box">
+            	   <%-- <p><% Html.RenderAction("GetHeaderBox", "Home"); %></p>--%>
+                   Merry Christmas
+                </div>
+
+      </div>
+  		
+        <!-- menu -->
+      
+        <div class="nav-container-outer">
+  
+   <ul id="nav-container" class="nav-container">
+      
+       
+        <li><a class="item-primary" href="/vi/customer/"><%: LangText.GetTextPortal("CUSTOMER_AREA") %></a></li>
+     
+
+        <li><span class="divider divider-vert" ></span></li>
+     
+        <li><a class="item-primary" href="/vi/ministore"><%: LangText.GetTextPortal("MINI_STORE") %></a>  </li>
+        
+        <li><span class="divider divider-vert" ></span></li>
+        
+        <li><a class="item-primary" href="/vi/children"><%: LangText.GetTextPortal("VIETNAM_CHILDREN") %></a></li>
+   
+        <li><span class="divider divider-vert" ></span></li>
+                  
+        <li><a class="item-primary" href="/vi/security"><%: LangText.GetTextPortal("ABOUT_SECURITY") %></a></li>
+         
+         <li><span class="divider divider-vert" ></span></li>
+                      
+        <li><a class="item-primary" href="/vi/bestsite"><%: LangText.GetTextPortal("BEST_WEBSITE") %></a> 
+                       
+                        </li>
+                    <li class="clear">&nbsp;</li>
+        
+                    </ul>
+
+                    
+    </div>
+   <div class="barcontent"></div>
+ 
+  </div>
+
+
+
+               <div id="PageContent">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    
+                    </asp:ContentPlaceHolder>
+                    <br /><br /><br />
+               </div>
+
+   <div id="sidebar">
+
+              <div id="sidebar1">
+                    <asp:ContentPlaceHolder ID="Sidebar" runat="server">
+                           
+                    </asp:ContentPlaceHolder>
+              </div>
+
+             
+  
+    </div>
+
+    <br class="clearfloat" />
+	<div id="footer">
+        <div id="footerlink">
+            <div class="footerLinks1"><span class="titleHeader"><%: LangText.GetTextPortal("FAST_LINKS")%></span>
+                <ul>
+                     <li><a href="/PacificCode/CheckDetail?height=350&amp;width=450" class="thickbox"> <%: LangText.GetTextPortal("INFO_VALUE_OF_A_PACIFIC_CODE")%> </a></li>
+                     <li><a href="/PacificCode/SendMoney?height=350&amp;width=450" class="thickbox"> <%: LangText.GetTextPortal("SEND_MONEY_TO_A_FRIEND")%> </a></li>
+                    <li><a href="/Account/Login?height=350&amp;width=450" class="thickbox">  <%: LangText.GetTextPortal("FOLLOW_MY_ONLINE_ORDER")%> </a></li>
+                </ul>
+            
+            </div>
+            <div class="footerLinks2">
+                <span class="titleHeader"><%: LangText.GetTextPortal("TODAY")%>...</span>
+                
+                <ul>
+                   <li> <a href="/vi/recommend"><%: LangText.GetTextPortal("RECOMMEND_US_AND_RECEIVE_A_GIFT")%> </a></li>
+                    <li> <a href="/vi/createweb"> <%: LangText.GetTextPortal("I_WANT_TO_CREATE_A_WEB_SITE_AND_SELL_ONLINE")%> </a></li>
+                     <li> <a href="/vi/ministore"><%: LangText.GetTextPortal("BUY_PHONE_CARD_GAME_CARD_ONLINE")%> </a></li>
+                </ul>
+            
+            </div>
+            <div class="footerLinks3"><span class="titleHeader"><%: LangText.GetTextPortal("PARTNER") %></span>
+                 <ul>
+                    <li> <a href="/vi/licence"> <%: LangText.GetTextPortal("YOU_WANT_TO_DEVELOP_MONEY_PACIFIC_IN_YOUR_COUNTRY")%> </a></li>
+                    
+                </ul>
+            
+            </div>
+        </div>
+
+        <div class="footerinfo">
+	         <ul>
+             	<li>All rights reserved</li>
+                <li><a href="/vi/privacy">Privacy Policy</a></li>
+                <li><a href="/vi/tos">Terms of Use</a></li>
+                <li><a href="/vi/about">About</a></li>
+                <li><a href="/vi/contact">Contact</a></li>
+                <li><a href="/vi/blog">Blog</a></li>
+                <li><a href="/vi/licence">Licence for Other Country</a></li>
+             </ul><br />
+             <span style="color:#F37032">Copyright &copy; 2010 Money - Pacific.Com</span>
+        </div>
+	    <div class="footerbox">
+       		<img height="54" src="/Content/Images/verisign-logo.gif"/>
+       		<img height="54" src="/Content/Images/solasian.gif"/>
+        </div>
+    	
+  	</div>
+</div>
+</body>
+</html>

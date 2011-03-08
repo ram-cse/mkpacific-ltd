@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{766041E1-FA86-43E2-A7F6-706288BB9D95}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Merchant</RootNamespace>
+    <AssemblyName>Merchant</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\AreaBUS.cs" />
+    <Compile Include="BUS\CustomerBUS.cs" />
+    <Compile Include="BUS\PartPacificCodeBUS.cs" />
+    <Compile Include="BUS\StoreManagerBUS.cs" />
+    <Compile Include="BUS\StoreManagerStateBUS.cs" />
+    <Compile Include="BUS\StoreUserBUS.cs" />
+    <Compile Include="BUS\StoreUserStateBUS.cs" />
+    <Compile Include="BUS\TransactionBUS.cs" />
+    <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AgentController.cs" />
+    <Compile Include="Controllers\CaptureEmailController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\enController.cs" />
+    <Compile Include="Controllers\FAQCenterController.cs" />
+    <Compile Include="Controllers\PacificCodeController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
+    <Compile Include="Controllers\StoreUserController.cs" />
+    <Compile Include="Controllers\viController.cs" />
+    <Compile Include="Controllers\MessengerController.cs" />
+    <Compile Include="Controllers\orderController.cs" />
+    <Compile Include="Controllers\paymentController.cs" />
+    <Compile Include="Controllers\problemController.cs" />
+    <Compile Include="Controllers\reportController.cs" />
+    <Compile Include="Controllers\testController.cs" />
+    <Compile Include="Controllers\WebsiteController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\HtmlHelper.cs" />
+    <Compile Include="Helper\LangText.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Models\AccountIndexViewModel.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AdminIndexViewModel.cs" />
+    <Compile Include="Models\AdminOrderReportViewModel.cs" />
+    <Compile Include="Models\AdminPaymentReportViewModel.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\CreateMessageViewModel.cs" />
+    <Compile Include="Models\EarningViewModel.cs" />
+    <Compile Include="Models\MessageViewModel.cs" />
+    <Compile Include="Models\MessengerIndexViewModel.cs" />
+    <Compile Include="Models\MPAcess.cs" />
+    <Compile Include="Models\MPHash.cs" />
+    <Compile Include="Models\MPMail.cs" />
+    <Compile Include="Models\MyRoleProvider.cs" />
+    <Compile Include="Models\OrderDetailsViewModel.cs" />
+    <Compile Include="Models\OrderNewViewModel.cs" />
+    <Compile Include="Models\OrderPaymentViewModel.cs" />
+    <Compile Include="Models\PaymentInfoViewModel.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
+    <Compile Include="Models\ReportDetailsViewModels.cs" />
+    <Compile Include="Models\ScriptViewModel.cs" />
+    <Compile Include="Models\storedb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>storedb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TransactionLogViewModel.cs" />
+    <Compile Include="Models\WebmasterModel.cs" />
+    <Compile Include="Models\WebsiteViewModel.cs" />
+    <Compile Include="MP\BlackBoxService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WCF_Blackbox\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Util\MPMail.cs" />
+    <Compile Include="Util\Utilator.cs" />
+    <Compile Include="ViewModels\AdminViewModels.cs" />
+    <Compile Include="ViewModels\AgentViewModel.cs" />
+    <Compile Include="ViewModels\PacificCodeCheckDetailsViewModel.cs" />
+    <Compile Include="ViewModels\PacificCodeViewModels.cs" />
+    <Compile Include="ViewModels\PartPacificCodeViewModel.cs" />
+    <Compile Include="ViewModels\SecurityViewModel.cs" />
+    <Compile Include="ViewModels\StoreManagerViewModels.cs" />
+    <Compile Include="ViewModels\StoreUserViewModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css.css" />
+    <Content Include="Content\cssportal.css" />
+    <Content Include="Content\File\allopass_test_code.txt" />
+    <Content Include="Content\File\analitics.JPG" />
+    <Content Include="Content\File\ba-xa-toi-number-one.mp3" />
+    <Content Include="Content\File\d.txt" />
+    <Content Include="Content\File\email-list-gmail.txt" />
+    <Content Include="Content\File\email_list_-_confirm.txt" />
+    <Content Include="Content\File\han.html" />
+    <Content Include="Content\File\index.html" />
+    <Content Include="Content\File\info.txt" />
+    <Content Include="Content\File\script_chang_to_day_.txt" />
+    <Content Include="Content\File\style.css" />
+    <Content Include="Content\File\xml.xml" />
+    <Content Include="Content\header.swf" />
+    <Content Include="Content\headerVi.swf" />
+    <Content Include="Content\Images\30day.jpg" />
+    <Content Include="Content\Images\asian.png" />
+    <Content Include="Content\Images\bar.gif" />
+    <Content Include="Content\Images\bg.png" />
+    <Content Include="Content\Images\bgbox.png" />
+    <Content Include="Content\Images\bt1.jpg" />
+    <Content Include="Content\Images\bt2.jpg" />
+    <Content Include="Content\Images\bulltet.gif" />
+    <Content Include="Content\Images\bulltet.png" />
+    <Content Include="Content\Images\bulltet1.gif" />
+    <Content Include="Content\Images\children.png" />
+    <Content Include="Content\Images\en.png" />
+    <Content Include="Content\Images\flash.png" />
+    <Content Include="Content\Images\green.gif" />
+    <Content Include="Content\Images\header-bg.png" />
+    <Content Include="Content\Images\heart.jpg" />
+    <Content Include="Content\Images\item-primary-bg.gif" />
+    <Content Include="Content\Images\item-primary-bg.jpg" />
+    <Content Include="Content\Images\item-secondary-bg.jpg" />
+    <Content Include="Content\Images\item-secondary-container-bg.jpg" />
+    <Content Include="Content\Images\item-secondary-title-bg.gif" />
+    <Content Include="Content\Images\item-secondary-title-bg.jpg" />
+    <Content Include="Content\Images\key.jpg" />
+    <Content Include="Content\Images\logo.gif" />
+    <Content Include="Content\Images\mpleading.jpg" />
+    <Content Include="Content\Images\mpteam.jpg" />
+    <Content Include="Content\Images\nav-bg-l.jpg" />
+    <Content Include="Content\Images\nav-bg-r.jpg" />
+    <Content Include="Content\Images\nav-bg.jpg" />
+    <Content Include="Content\Images\new.jpg" />
+    <Content Include="Content\Images\ovh.jpg" />
+    <Content Include="Content\Images\satisfaction.jpg" />
+    <Content Include="Content\Images\sbox.png" />
+    <Content Include="Content\Images\security1.jpg" />
+    <Content Include="Content\Images\security2.jpg" />
+    <Content Include="Content\Images\shopping.jpg" />
+    <Content Include="Content\Images\shoppingsidebar.jpg" />
+    <Content Include="Content\Images\solasian.gif" />
+    <Content Include="Content\Images\sq.gif" />
+    <Content Include="Content\Images\sq.png" />
+    <Content Include="Content\Images\sqv.png" />
+    <Content Include="Content\Images\verisign-logo.gif" />
+    <Content Include="Content\Images\verisign.jpg" />
+    <Content Include="Content\Images\vi.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\new.jpg" />
+    <Content Include="Content\Sitehan.css" />
+    <Content Include="Content\thickbox.css" />
+    <None Include="Content\File\anonym-mail__RUSSIAN.docx" />
+    <None Include="Content\File\anonyme_emails_DE.docx" />
+    <None Include="Content\File\bang_luong_sao_ke_of_Han.doc" />
+    <None Include="Content\File\giayxacnhanluong.doc" />
+    <None Include="Content\File\Kem_translation.docx" />
+    <None Include="Content\File\Mon_email_ano_a_faire.doc" />
+    <None Include="Content\File\Plaquette.docx" />
+    <None Include="Content\File\SNO_635_2.doc" />
+    <None Include="Content\Images\bullter.psd" />
+    <None Include="Content\Images\bullter1.psd" />
+    <None Include="FAQ\FAQ.en" />
+    <Content Include="Content\Untitled-1.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Langs\EN.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Langs\VI.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\AC_RunActiveContent.js" />
+    <Content Include="Scripts\function.js" />
+    <None Include="FAQ\FAQ.vi" />
+    <None Include="Langs\EN\about.en" />
+    <None Include="Langs\EN\aboutPanel.en" />
+    <None Include="Langs\EN\bestsite.en" />
+    <None Include="Langs\EN\buycash.en" />
+    <None Include="Langs\EN\buycredit.en" />
+    <None Include="Langs\EN\children.en" />
+    <None Include="Langs\EN\contact.en" />
+    <None Include="Langs\EN\bestsitePanel.en" />
+    <None Include="Langs\EN\childrenPanel.en" />
+    <None Include="Langs\EN\contactPanel.en" />
+    <None Include="Langs\EN\createweb.en" />
+    <None Include="Langs\EN\install.en" />
+    <None Include="Langs\EN\recommend.en" />
+    <None Include="Langs\EN\sell.en" />
+    <None Include="Langs\EN\termofusePanel.en" />
+    <None Include="Langs\EN\securityPanel.en" />
+    <None Include="Langs\EN\questionPanel.en" />
+    <None Include="Langs\EN\privacyPanel.en" />
+    <None Include="Langs\EN\morePanel.en" />
+    <None Include="Langs\EN\ministorePanel.en" />
+    <None Include="Langs\EN\licencePanel.en" />
+    <None Include="Langs\EN\demoPanel.en" />
+    <None Include="Langs\EN\customerPanel.en" />
+    <None Include="Langs\EN\customer.en" />
+    <None Include="Langs\EN\demo.en" />
+    <None Include="Langs\EN\licence.en" />
+    <None Include="Langs\EN\ministore.en" />
+    <None Include="Langs\EN\more.en" />
+    <None Include="Langs\EN\privacy.en" />
+    <None Include="Langs\EN\question.en" />
+    <None Include="Langs\EN\security.en" />
+    <None Include="Langs\EN\termofuse.en" />
+    <None Include="Langs\VI\about.vi" />
+    <None Include="Langs\VI\bestsite.vi" />
+    <None Include="Langs\VI\buycash.vi" />
+    <None Include="Langs\VI\buycredit.vi" />
+    <None Include="Langs\VI\children.vi" />
+    <None Include="Langs\VI\contact.vi" />
+    <None Include="Langs\VI\createweb.vi" />
+    <None Include="Langs\VI\customer.vi" />
+    <None Include="Langs\VI\demo.vi" />
+    <None Include="Langs\VI\licence.vi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Langs\VI\ministore.vi" />
+    <None Include="Langs\VI\more.vi" />
+    <None Include="Langs\VI\privacy.vi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Langs\VI\question.vi" />
+    <None Include="Langs\VI\recommend.vi" />
+    <None Include="Langs\VI\security.vi" />
+    <None Include="Langs\VI\sell.vi" />
+    <None Include="Langs\VI\termofuse.vi" />
+    <Content Include="Scripts\jquery.loadingdotdotdot.js" />
+    <Content Include="Scripts\jquery.thickbox.js" />
+    <EntityDeploy Include="Models\storedb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>storedb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Service References\ServiceReference1\Main.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Merchant.ServiceReference1.PaymentModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WCF_Blackbox\BlackBoxService.disco" />
+    <None Include="Service References\WCF_Blackbox\configuration91.svcinfo" />
+    <None Include="Service References\WCF_Blackbox\configuration.svcinfo" />
+    <None Include="Service References\WCF_Blackbox\Merchant.WCF_Blackbox.PacificCodeViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF_Blackbox\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Account\Active.aspx" />
+    <Content Include="Views\Account\bRegister.aspx" />
+    <Content Include="Views\Account\brokenlink.aspx" />
+    <Content Include="Views\Account\ChangePassword.ascx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.ascx" />
+    <Content Include="Views\Account\forgotpw.ascx" />
+    <Content Include="Views\Account\Index----.aspx" />
+    <Content Include="Views\Account\Index.aspx" />
+    <Content Include="Views\Account\login.ascx" />
+    <Content Include="Views\Account\notification.ascx" />
+    <Content Include="Views\Account\notificationDone.ascx" />
+    <Content Include="Views\Account\pRegister.aspx" />
+    <Content Include="Views\Account\Profile.aspx" />
+    <Content Include="Views\Account\recover.aspx" />
+    <Content Include="Views\Account\recoverdone.aspx" />
+    <Content Include="Views\Account\recovery.ascx" />
+    <Content Include="Views\Account\redirectadmin.aspx" />
+    <Content Include="Views\Account\redirectCustomer.aspx" />
+    <Content Include="Views\Account\redirectWebmaster.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Account\RegisterSuccess.aspx" />
+    <Content Include="Views\Account\setlang.ascx" />
+    <Content Include="Views\Account\setLangdone.ascx" />
+    <Content Include="Views\Account\setPayment.ascx" />
+    <Content Include="Views\Account\SetPaymentDone.ascx" />
+    <Content Include="Views\Account\UserNotExist.ascx" />
+    <Content Include="Views\Admin\Index----.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
+    <Content Include="Views\Admin\login.aspx" />
+    <Content Include="Views\Admin\messenger.aspx" />
+    <Content Include="Views\Admin\notadmin.aspx" />
+    <Content Include="Views\Admin\order.aspx" />
+    <Content Include="Views\Admin\orderReport.aspx" />
+    <Content Include="Views\Admin\payment.aspx" />
+    <Content Include="Views\Admin\paymentinfo.aspx" />
+    <Content Include="Views\Admin\paymentReport.aspx" />
+    <Content Include="Views\Admin\setWithDraw.ascx" />
+    <Content Include="Views\Admin\setWithDraw9999.aspx" />
+    <Content Include="Views\Admin\setWithDrawDone.ascx" />
+    <Content Include="Views\Admin\userdetail.aspx" />
+    <Content Include="Views\Admin\webmasterManager.aspx" />
+    <Content Include="Views\Admin\websiteManager.aspx" />
+    <Content Include="Views\Agent\Browse.aspx" />
+    <Content Include="Views\Agent\Create.aspx" />
+    <Content Include="Views\Agent\Delete.aspx" />
+    <Content Include="Views\Agent\Details.aspx" />
+    <Content Include="Views\Agent\Edit.aspx" />
+    <Content Include="Views\Customer\Index.aspx" />
+    <Content Include="Views\Customer\vieworder.aspx" />
+    <Content Include="Views\en\About.aspx" />
+    <Content Include="Views\en\bestsite.aspx" />
+    <Content Include="Views\en\buycash.aspx" />
+    <Content Include="Views\en\buycredit.aspx" />
+    <Content Include="Views\en\children.aspx" />
+    <Content Include="Views\en\contact.aspx" />
+    <Content Include="Views\en\createweb.aspx" />
+    <Content Include="Views\en\customer.aspx" />
+    <Content Include="Views\en\demo.aspx" />
+    <Content Include="Views\en\Index.aspx" />
+    <Content Include="Views\en\install.aspx" />
+    <Content Include="Views\en\licence.aspx" />
+    <Content Include="Views\en\ministore.aspx" />
+    <Content Include="Views\en\more.aspx" />
+    <Content Include="Views\en\privacy.aspx" />
+    <Content Include="Views\en\question.aspx" />
+    <Content Include="Views\en\recommend.aspx" />
+    <Content Include="Views\en\security.aspx" />
+    <Content Include="Views\en\sell.aspx" />
+    <Content Include="Views\en\tos.aspx" />
+    <Content Include="Views\FAQCenter\Index.aspx" />
+    <Content Include="Views\PacificCode\Browse.aspx" />
+    <Content Include="Views\PacificCode\ChangeCode.aspx" />
+    <Content Include="Views\PacificCode\CheckDetail.aspx" />
+    <Content Include="Views\PacificCode\Detail.aspx" />
+    <Content Include="Views\PacificCode\SendMoney.aspx" />
+    <Content Include="Views\PacificCode\SendSMS.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl------------.ascx" />
+    <Content Include="Views\Shared\LogOnUserControlEN.ascx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\StoreManager\AskToBePartner.aspx" />
+    <Content Include="Views\StoreManager\Dashboard.aspx" />
+    <Content Include="Views\StoreManager\Information.aspx" />
+    <Content Include="Views\StoreManager\Security.aspx" />
+    <Content Include="Views\StoreUser\DashBoard.aspx" />
+    <Content Include="Views\vi\bestsite.aspx" />
+    <Content Include="Views\vi\buycash.aspx" />
+    <Content Include="Views\vi\buycredit.aspx" />
+    <Content Include="Views\vi\children.aspx" />
+    <Content Include="Views\vi\contact.aspx" />
+    <Content Include="Views\vi\createweb.aspx" />
+    <Content Include="Views\vi\customer.aspx" />
+    <Content Include="Views\vi\demo.aspx" />
+    <Content Include="Views\vi\GetHeaderBox.ascx" />
+    <Content Include="Views\vi\licence.aspx" />
+    <Content Include="Views\vi\ministore.aspx" />
+    <Content Include="Views\vi\more.aspx" />
+    <Content Include="Views\vi\privacy.aspx" />
+    <Content Include="Views\vi\question.aspx" />
+    <Content Include="Views\vi\recommend.aspx" />
+    <Content Include="Views\vi\security.aspx" />
+    <Content Include="Views\vi\sell.aspx" />
+    <Content Include="Views\vi\tos.aspx" />
+    <Content Include="Views\Messenger\create.aspx" />
+    <Content Include="Views\Messenger\Index.aspx" />
+    <Content Include="Views\Messenger\SendDone.aspx" />
+    <Content Include="Views\Messenger\sendWebmaster.aspx" />
+    <Content Include="Views\order\Details.aspx" />
+    <Content Include="Views\order\endtran.aspx" />
+    <Content Include="Views\order\endtranDetails.aspx" />
+    <Content Include="Views\order\newview.aspx" />
+    <Content Include="Views\order\Ondelivery.aspx" />
+    <Content Include="Views\payment\MPSecureValue.aspx" />
+    <Content Include="Views\payment\payerror.aspx" />
+    <Content Include="Views\problem\errorlogin.aspx" />
+    <Content Include="Views\problem\follow.aspx" />
+    <Content Include="Views\problem\Index.aspx" />
+    <Content Include="Views\problem\invalidBuyingCode.aspx" />
+    <Content Include="Views\problem\login.aspx" />
+    <Content Include="Views\problem\only423.aspx" />
+    <Content Include="Views\problem\ReportDone.aspx" />
+    <Content Include="Views\problem\submit.aspx" />
+    <Content Include="Views\problem\TimeNotAvailable.aspx" />
+    <Content Include="Views\report\details.aspx" />
+    <Content Include="Views\report\moneyview.aspx" />
+    <Content Include="Views\report\RequireSetPayment.aspx" />
+    <Content Include="Views\test\test.aspx" />
+    <Content Include="Views\Website\Add.aspx" />
+    <Content Include="Views\Website\AddDone.aspx" />
+    <Content Include="Views\Website\Edit.ascx" />
+    <Content Include="Views\Website\getScript-------------.aspx" />
+    <Content Include="Views\Website\getScript.aspx" />
+    <Content Include="Views\Website\Index.aspx" />
+    <Content Include="Views\Website\script-----------.aspx" />
+    <Content Include="Views\Website\script.aspx" />
+    <Content Include="Views\Website\scriptmanager--.aspx" />
+    <Content Include="Views\Website\scriptmanager.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\vi\About.aspx" />
+    <Content Include="Views\vi\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControlVI.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\admin.Master" />
+    <Content Include="Views\Shared\Customer.Master" />
+    <Content Include="Views\Shared\template.Master" />
+    <Content Include="Views\Shared\EN.Master" />
+    <Content Include="Views\Shared\EN2.Master" />
+    <Content Include="Views\Shared\tplcontentEN.Master" />
+    <Content Include="Views\Shared\tplcontentVI.Master" />
+    <Content Include="Views\Shared\VI.Master" />
+    <Content Include="Views\Shared\VI2.Master" />
+    <Content Include="Views\Shared\Site--------------.Master" />
+    <None Include="Service References\ServiceReference1\Main.wsdl" />
+    <None Include="Service References\ServiceReference1\Main.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Main1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Main2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Main3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Blackbox\BlackBoxService.wsdl" />
+    <None Include="Service References\WCF_Blackbox\BlackBoxService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Blackbox\BlackBoxService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Blackbox\BlackBoxService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF_Blackbox\BlackBoxService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+    <WCFMetadataStorage Include="Service References\WCF_Blackbox\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MPDataAccess\MPDataAccess.csproj">
+      <Project>{9E132A3D-4F8D-43B9-91C4-2733D046B8CD}</Project>
+      <Name>MPDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>50315</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

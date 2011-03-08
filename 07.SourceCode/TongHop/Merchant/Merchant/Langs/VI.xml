@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VI>
+  <node name="DASHBOARD" value="TRANG CHỦ"/>
+  <node name="SETTING" value="CẤU HÌNH"/>
+  <node name="MY_WEBSITE" value="WEBSITE CỦA TÔI"/>
+  <node name="REPORT" value="BÁO CÁO"/>
+  <node name="MANAGE_ORDER" value="QUẢN LÝ ĐƠN HÀNG"/>
+  <node name="PACIFIC_MESSENGER" value="PACIFIC MESSENGER"/>
+  <node name="PERSONAL_INFOMARTION" value="Thông tin cá nhân"/>
+  <node name="SET_PAYMENT" value="Thông tin Thanh Toán"/>
+  <node name="NOTIFICATION" value="Thông báo"/>
+  <node name="NOTIFICATION_FOR" value="Thông báo về"/>
+  <node name="EMAIL_FOR_NEW_ORDER" value="Email nhận thông báo khi có Đơn hàng mới"/>
+  <node name="EMAIL_FOR_NEW_MESSAGE" value="Email nhận thông báo khi có Tin nhắn mới"/>
+  <node name="EMAIL_FOR_REPORT_PROBLEM" value="Email nhận thông báo khi có báo cáo vấn đề"/>
+  
+  <node name="ADD_AND_EDIT_WEBSITE" value="Thêm và Sửa"/>
+  <node name="GET_NEW_SCRIPT" value="Lấy script mới"/>
+  <node name="SCRIPT_MANAGER" value="Quản lý script"/>
+  <node name="EARNING_OVERVIEW" value="Xem thu nhập"/>
+  <node name="REPORT_DETAILS" value="Báo cáo chi tiết"/>
+
+  <node name="NEW_ORDER_411" value="Đơn hàng mới 411"/>
+  <node name="ON_DELIVERY_412" value="Đơn hàng đang vận chuyển 412"/>
+  <node name="END_TRANSACTION_413" value="Đơn hàng đã giao 413"/>
+  <node name="PROBLEMS_MANAGER" value="Quản lý vấn đề"/>
+  <node name="ORDER_PROBLEM" value="Đơn hàng gặp vấn đề"/>
+
+  <node name="CUSTOMER_HOME" value="Trang chủ Khách Hàng"/>
+  <node name="ORDER_DETAILS" value="Chi tiết đơn hàng"/>
+  
+  <node name="LOGIN" value="Đăng nhập"/>
+  <node name="LOGOUT" value="Thoát"/>
+  <node name="REGISTER" value="Đăng ký"/>
+  <node name="FOR_GOT_PASSWORD" value="Quên mật khẩu"/>
+  <node name="MONEY_PACIFIC_ADMIN" value="Money Pacific Admin"/>
+  <node name="SUBMIT_PROBLEM" value="Gửi báo cáo sản phẩm có vấn đề"/>
+  <node name="FOLLOW_PROBLEM" value="Theo dõi vấn đề"/>
+ 
+  <node name="WELCOME_ACCOUNT_INDEX" value="Chào mừng bạn đến với Money Pacific!"/>
+  <node name="WELCOME" value="Chào mừng"/>
+  
+  <node name="PLEASE_ENTER_YOUR_USERNAME_AND_PASSWORD" value="Vui lòng điền Tên đăng nhập và mật khẩu. "/>
+  <node name="IF_YOU_DONT_HAVE_AN_ACCOUNT" value="nếu bạn không có tài khoản."/>
+  <node name="ACCOUNT_INFORMATION" value="Thông tin tài khoản"/>
+  <node name="USERNAME" value="Tên đăng nhập"/>
+  <node name="PASSWORD" value="Mật khẩu"/>
+  <node name="REMEMBER_PASSWORD" value="Ghi nhớ mật khẩu"/>
+  <node name="LOGIN_WAS_UNSUCCESSFUL_PLEASE_CORRECT_THE_ERRORS_AND_TRY_AGAIN" value="Đăng nhập không thành công! Vui lòng kiểm tra lỗi và sau đó thử lại!"/>
+  <node name="USERNAME_ALREADY_EXISTS._PLEASE_ENTER_A_DIFFERENT_USER_NAME." value="Tài khoản đã tồn tại. Vui lòng nhập tên tài khoản khác!"/>
+  <node name="THE_USER_NAME_OR_PASSWORD_PROVIDED_IS_INCORRECT" value="Tên đăng nhập và mật khẩu không đúng."/>
+  <node name="YOUR_ACCOUNT_IS_NOT_ACTIVE!_PLEASE_CHECK_EMAIL_TO_ACTIVE_ACCOUNT" value="Tài khoản của bạn chưa được kích hoạt! Vui lòng kiểm tra email để kích hoạt tài khoản!"/>
+  <node name="YOUR_ACCOUNT_IS_DISABLED_BY_MONEY_PACIFIC_ADMIN" value="Tài khoản của bạn đã bị khóa bởi Money Pacific Admin!"/>
+  <node name="THE_CURRENT_PASSWORD_IS_INCORRECT_OR_THE_NEW_PASSWORD_IS_INVALID" value="Mật khẩu hiện tại không đúng hoặc mật khẩu mới không giá trị!"/>
+  <node name="ACTIVE_ACCOUNT_SUCCESSFULLY!" value="Tài khoản đã được kích hoạt thành công!"/>
+  <node name="ACCOUNT_IS_ACTIVE_NOW!_CLICK_TO_LOGIN" value="Tài khoản của bạn đã được kích hoạt. Bây giờ bạn có thể Đăng Nhập"/>
+  <node name="ACCOUNT_IS_ALREADY_ACTIVE_NOW!" value="Tài khoản đã được kích hoạt!"/>
+  <node name="ACCOUNT_DOESNT_EXIST_NOW!_CHECK_AGAIN!" value="Tài khoản không tồn tại. Vui lòng kiểm tra lại!"/>
+  <node name="BUSINESS_REGISTER" value="Đăng ký Dành cho Doanh Nghiệp"/>
+  <node name="CREATE_A_BUSSINESS_ACCOUNT" value="Tạo tài khoản dành cho doanh nghiệp"/>
+  <node name="CREATE_A_PERSONAL_ACCOUNT" value="Tạo tài khoản dành cho cá nhân"/>
+  <node name="PASSWORDS_ARE_REQUIRED_TO_BE_A_MINIMUM_OF" value="Chiều dài mật khẩu yêu cầu tối thiểu "/>
+  <node name="CHARACTERS_IN_LENGTH" value="ký tự"/>
+  <node name="ACCOUNT_CREATION_WAS_UNSUCCESSFUL._PLEASE_CORRECT_THE_ERRORS_AND_TRY_AGAIN" value="Tạo tài khoản không thành công! Vui lòng kiểm tra lỗi và thử lại!"/>
+  <node name="ACCOUNT_INFORMATION" value="Thông tin tài khoản"/>
+  <node name="CONFIRM_PASSWORD" value="Xác nhận mật khẩu"/>
+  <node name="COMPANY_INFORMATON" value="Thông tin công ty"/>
+  <node name="PERSONAL_REGISTER" value="Đăng ký Dành cho Cá Nhân"/>
+  <node name="COMPANY_NAME" value="Tên công ty"/>
+  <node name="PHONE" value="Điện thoại"/>
+  <node name="TAX_CODE" value="Mã số thuế"/>
+  <node name="NAME" value="Họ Tên"/>
+  <node name="REGISTER_A_NEW_ACCOUNT" value="Đăng ký tài khoản mới"/>
+  <node name="FOR_WEBMASTER_WHO_IS_PERSONAL" value="Dành cho Webmaster là cá nhân"/>
+  <node name="FOR_WEBMASTER_WHO_IS_BUSINESS" value="Dành cho Webmaster là doanh nghiệp"/>
+  <node name="GET_START_NOW" value="THAM GIA NGAY"/>
+  <node name="BROKENLINK" value="Link đã hết hạn"/>
+  <node name="CHANGE_PASSWORD" value="Thay đổi mật khẩu"/>
+  <node name="NEW_PASSWORDS_ARE_REQUIRED_TO_BE_A_MINIMUM_OF" value="Mật khẩu mới phải ít nhất "/>
+  <node name="PASSWORD_CHANGE_WAS_UNSUCCESSFUL._PLEASE_CORRECT_THE_ERRORS_AND_TRY_AGAIN" value="Thay đổi mật khẩu không thành công! Vui lòng kiểm tra lỗi và thử lại!"/>
+  <node name="CURRENT_PASSWORD" value="Mật khẩu hiện tại"/>
+  <node name="NEW_PASSWORD" value="Mật khẩu mới"/>
+  <node name="YOUR_PASSWORD_HAS_BEEN_CHANGED_SUCCESSFULLY" value="Mật khẩu đã được thay đổi thành công!"/>
+  <node name="FORGOT_PASSWORD" value="Quên mật khẩu"/>
+  <node name="TO_RECOVERY_YOUR_PASSWORD,PLEASE_ENTER_YOUR_USERNAME_OR_THE_EMAIL_TO_RECOVERY_YOUR_PASSWORD.THE_LINK_WILL_BE_SENT_TO_YOU_BY_EMAIL_TO_GENERATE_THE_PASSWORD" value="Để khôi phục lại mật khẩu, vui lòng nhập Tên đăng nhập hoặc địa chỉ email để khôi phục. Chúng tôi sẽ gửi link đến địa chỉ email của bạn để tạo mật khẩu mới!"/>
+  <node name="ENTER_YOUR_USERNAME" value="Tên đăng nhập"/>
+  <node name="ACCOUNT_TYPE" value="Loại Tài Khoản"/>
+  <node name="PERSONAL" value="Cá nhân"/>
+  <node name="BUSINESS" value="Công ty/Doanh Nghiệp"/>
+  <node name="TOTAL_BALANCE" value="Tổng tiền"/>
+  <node name="PENDING...(COMMING SOON)" value="Đang chờ...(sớm cộng tiền cho bạn)"/>
+
+  <node name="MY_PROFILE" value="Hồ sơ cá nhân"/>
+  <node name="PERSONAL_ACCOUNT_INFORMATION" value="Thông tin tài khoản cá nhân"/>
+  <node name="CONTACT_INFORMATION" value="Thông tin liên hệ"/>
+  <node name="STREET" value="Số nhà, Đường"/>
+  <node name="WARD" value="Phường"/>
+  <node name="CITY" value="Thành Phố"/>
+  <node name="PAYMENT_INFORMATION" value="Thông tin thanh toán"/>
+  <node name="BANK" value="Ngân hàng"/>
+  <node name="BUSINESS_ACCOUNT_INFORMATION" value="Thông tin tài khoản dành cho doanh nghiệp"/>
+  <node name="COMPANY_ADDRESS" value="Địa chỉ công ty"/>
+  <node name="SAVE" value="Lưu"/>
+  <node name="GO_BACK" value="Quay lại"/>
+  <node name="RECOVERY_PASSWORD" value="Khôi phục mật khẩu"/>
+  <node name="ENTER_NEW_PASSWORD" value="Nhập mật khẩu mới"/>
+  <node name="YOU_REQUEST_TO_RECOVERY_THE_PASSWORD_SUCCESSFULLY._PLEASE_CHECK_YOUR_EMAIL_TO_GET_THE_LINK_FOR_GENERATE_THE_PASSWORD" value="Bạn vừa yêu cầu khôi phục mật khẩu. Vui lòng kiểm tra email để nhận link khôi phục mật khẩu!."/>
+  <node name="RECOVERY_SUCCESSFULLY" value="Khôi phục mật khẩu thành công!"/>
+  <node name="REGISTER_SUCCESSFULLY" value="Đăng ký thành công"/>
+  <node name="PLEASE_CHECK_EMAIL_TO_ACTIVE_ACCOUNT" value="Vui lòng kiểm tra email để kích hoạt tài khoản!"/>
+  <node name="PAYOUT_ACCOUNT" value="Tài khoản nhận tiền"/>
+  <node name="RECEIVER_INFORMATION" value="Thông tin người nhận"/>
+  <node name="ADDRESS" value="Địa chỉ"/>
+  <node name="TYPE_PAYMENT" value="Loại thanh toán"/>
+  <node name="USER_NOT_EXIST" value="Tài khoản không tồn tại!"/>
+  <node name="WEBSITE" value="Website"/>
+  <node name="NAME_PRODUCT" value="Tên sản phẩm"/>
+  <node name="DATE_ORDER" value="Ngày đặt hàng"/>
+  <node name="STATUS" value="Trạng thái"/>
+  <node name="AMOUNT" value="Số tiền"/>
+  <node name="BUYINGID" value="Số tham chiếu"/>
+  <node name="REAL_PRODUCT" value="Sản phẩm thực sự"/>
+  <node name="VIRTUAL_PRODUCT" value="Sản phẩm không vận chuyển"/>
+  <node name="DELIVERY_INFORMATION" value="Thông tin vận chuyển"/>
+  <node name="RECEIVER_ADDRESS" value="Địa chỉ người nhận"/>
+  <node name="DELIVERY_COMPANY" value="Công ty vận chuyển"/>
+  <node name="DATE_SEND" value="Ngày vận chuyển"/>
+  <node name="NOTE" value="Ghi chú"/>
+  <node name="TRACKING_CODE" value="Số tham chiếu trên hóa đơn"/>
+  <node name="CREATE_MESSAGE" value="Tạo tin nhắn mới"/>
+  <node name="TYPE_MESSAGE_TO" value="Nhập nội dung tin nhắn gửi đến"/>
+  <node name="REPLY_TO" value="Trả lời"/>
+  <node name="ATTACH_FILE" value="File đính kèm"/>
+  <node name="POST_MESSAGE" value="Gửi tin nhắn"/>
+  <ndoe name="SENDER" value="Người gửi"/>
+  <node name="MESSAGE|ATTACH_FILE" value="Tin nhắn|File đính kèm"/>
+  <node name="DATE|TIME" value="Ngày|Giờ"/>
+  <node name="AVAILABLE_FOR" value="Hiện thị cho"/>
+  <node name="ALL_YOUR_MESSAGES"  value="Tất cả tin nhắn"/>
+  <node name="SEND_MESSAGE_TO_MONEY_PACIFIC" value="GỬI TIN NHẮN TỚI MONEY PACIFIC"/>
+  <node name="BETWEEN_YOU_AND_MONEY_PACIFIC" value="Giữa bạn và Money Pacific"/>
+  <node name="BETWEEN_YOU_AND_CUSTOMER" value="Giữa bạn và khách hàng"/>
+  <node name="YOUR_MESSAGE_IS_SENT_SUCCESSFULLY" value="Tin nhắn của bạn đã được gửi!"/>
+  <node name="SEND_MESSAGE_TO_CUSTOMER" value="Gửi tin nhắn cho khách hàng"/>
+  <node name="SEND_PRODUCT" value="Gửi sản phẩm"/>
+  <node name="LIST_OF_END_TRANSACTION_ORDERS" value="Danh sách đơn hàng đã giao"/>
+  <node name="LIST_OF_NEW_ORDERS" value="Danh sách đơn hàng mới"/>
+  <node name="LIST_OF_ON_TRANSACTION_ORDERS" value="Danh sách đơn hàng đang vận chuyển"/>
+  <node name="PAYMENT_WITH_MONEY_PACIFIC" value="Thanh toán với Money Pacific"/>
+  <node name="ENTER_MONEY_PACIFIC_CODE(LIMIT_5_CODES)" value="Nhập Mã Pacific( tối đa 5 Mã)"/>
+  <node name="ADD_MORE_CODE" value="Thêm Mã"/>
+  <node name="PAY_NOW!" value="THANH TOÁN NGAY"/>
+  <node name="NEXT" value="TIẾP TỤC"/>
+  <node name="PAYMENT_IS_SUCCESSFULLY._SYSTEM_IS_REDIRECTING_IN_5_SECONDS..." value="Thanh toán thành công! Hệ thống sẽ chuyển hướng trong 5 giây..."/>
+  <node name="PAYMENT_ERROR" value="Thanh toán bị lỗi!"/>
+  <node name="THE_FOLLOW_ORDER_IS_CLOSED_SUCCESSFULLY" value="Theo dõi vấn đề này đã bị đóng!"/>
+  <node name="THE_PROOF_OF_THE_ORDER_IS_VALIDATED_AND_THE_MONEY_NOW_IS_AVAILABLE_FOR_WEBMASTER.NOW_YOU_CAN_CLOSE_THE_FOLLOW_ORDER" value="Bằng chứng về việc đã gửi hàng đã được xác nhận và tiền sẽ được cộng cho Webmaster. Bây giờ bạn có thể đóng Theo dõi đơn hàng này lại!"/>
+  <node name="MONEY_PACIFIC_DONT_VALIDATE_THE_PROOF_OF_ORDER_THAT_WEBMASTER_SENT_TO_US.YOUR_TRANSACTION_IS_NOT_SUCCESSFUL_AND_WE_WILL_GENARATE_A_NEW_PACIFIC_CODE_FOR_THE_CUSTOMER" value="Money Pacific không xác nhận bằng chứng của việc đã gửi hàng mà Webmaster đã gửi cho chúng tôi. Giao dịch của bạn không thành công và chúng tôi sẽ tạo Mã Pacific mới cho Khách Hàng."/>
+  <node name="MESSAGE" value="Tin nhắn"/>
+  <node name="CLOSE_THE_FOLLOW_ORDER" value="Đóng theo dõi vấn đề"/>
+  <node name="VALIDATE_PROOF" value="Xác nhận bằng chứng đã chuyển hàng hợp lệ"/>
+  <node name="DONT_VALIDATE_PROOF" value="Bằng chứ đã chuyển hàng không hợp lệ"/>
+  <node name="THIS_FOLLOW_IS_CLOSED_BY_MONEY_PACIFIC_ADMIN" value="Money Pacific đã đóng quá trình theo dõi này!"/>
+  <node name="CUSTOMER" value="Khách hàng"/>
+  <node name="MONEY_PACIFIC" value="Money Pacific"/>
+  <node name="WEBMASTER" value="Chủ website"/>
+  <node name="PROBLEM_MANAGER" value="Quản lý vấn đề"/>
+  <node name="LIST_OF_ORDERS_PROBLEMS" value="Danh sách tất cả vấn đề về đơn hàng"/>
+  <node name="DELIVERY_WITH_LOW_QULITY" value="Hàng chuyển với chất lượng quá kém"/>
+  <node name="DELIVERY_BROKEN" value="Chuyển hàng nhầm"/>
+  <node name="NOT_DELIVERY" value="Không chuyển hàng"/>
+  <node name="CUSTOMER_REPORT_PROBLEM" value="Khách hàng báo cáo vấn đề"/>
+  <node name="INVALID_BUYINGCODE" value="Số tham chiếu không có giá trị"/>
+  <node name="SUBMIT_PROBLEM_SUCCESSFLLY" value="Đã báo cáo đơn hàng có vấn đề thành công!"/>
+  <node name="THANK_YOU" value="Cảm ơn!"/>
+  <node name="FOR_MORE_INFORMATION,PLEASE_USE_PACIFIC_MESSENGER_TO_DISSCUS_WITH_WEBSITE_ADMIN" value="Để biết thêm thông tin, vui lòng sử dụng PACIFIC MESSENGER để trao đổi với Chủ Website bán hàng!"/>
+  <node name="REASON" value="Lý do"/>
+  <node name="SORRY!TIME_NOT_AVAILABLE_FOR_REPORT.YOUR_ORDER_MAYBE_ON_THE_WAY_TO_DELEVERY" value="Xin lỗi! Đơn hàng của bạn có thể đang được vận chuyển. Đây chưa phải thời gian để bạn Báo cáo lỗi!"/>
+  <node name="REPORT_DETAILS" value="Báo cáo chi tiết"/>
+  <node name="ALL_TIME" value="Tất cả thời gian"/>
+  <node name="TODAY" value="Hôm nay"/>
+  <node name="YESTERDAY" value="Hôm qua"/>
+  <node name="LAST_WEEK" value="Tuần trước"/>
+  <node name="LAST_MONTH" value="Tháng trước"/>
+  <node name="LAST_3_MONTH" value="3 tháng trước"/>
+  <node name="ALL_WEBSITE" value="Tất cả website"/>
+  <node name="DATE" value="Ngày"/>
+  <node name="AMOUNT" value="Số tiền"/>
+  <node name="VIEW_REPORT" value="Xem báo cáo"/>
+  <node name="REQUIRE_SET_PAYMENT" value="Yêu cầu thiết lập thanh toán"/>
+  <node name="TO_VIEW_THE_MONEY_OVERVIEW,_YOU_MUST_SET_THE_PAYMENT_IN_THE_SETTING_MENU" value="Để xem báo cáo thu nhập, bạn phải cấu hình Thiết lập thanh toán trong phần Menu Cấu Hình"/>
+  <node name="MONEY_OVERVIEW" value="Xem thu nhập"/>
+  <node name="YOU_HAVE_JUST_SET_WITHDRAW_MONEY_SUCCESSFULLY" value="Bạn vừa thiết lập Rút tiền!"/>
+  <node name="EARNING" value="Thu nhập"/>
+  <node name="TOTAL_AMOUNT" value="Tổng số tiền"/>
+  <node name="KEEP_MONEY" value="Giữ tiền"/>
+  <node name="WITHDRAW_MONEY" value="Rút tiền"/>
+  <node name="MINNIMUM_WITHDRAW" value="Số tiền rút tối thiếu"/>
+  <node name="WITHDRAW_NOW" value="Rút tiền ngay"/>
+  <node name="WEBSITE_TITLE" value="Tiêu đề"/>
+  <node name="EDIT" value="Sửa"/>
+  <node name="DELETE" value="Xóa"/>
+  <node name="WEBSITE_INFORMATION"   value="Thông tin Website"/>
+  <node name="DESCRIPTION" value="Miêu tả"/>
+  <node name="ADD" value="Thêm"/>
+  <node name="EDIT_WEBSITE" value="Sửa website"/>
+  <node name="ADD_WEBSITE_DONE" value="Website đã được thêm thành công"/>
+  <node name="YOUR WEBSITE_IS_ADDED_SUCCESSFULLY!_WE_WILL_REVIEW_YOUR_WEBSITE_AND_VALIDATE_IN_24_HOURS" value="Website của bạn đã được thêm thành công, chúng tôi sẽ kiểm duyệt trong vòng 24 giờ! "/>
+  <node name="GET_SCRIPT" value="Lấy Script"/>
+  <node name="SELECT_WEBSITE" value="Chọn website"/>
+  
+  <node name="SCRIPT_NAME" value="Tên Script"/>
+  <node name="ITEM_NAME" value="Tên item"/>
+  <node name="ITEM_ID" value="Item ID"/>
+  <node name="PRICE" value="Giá"/>
+  <node name="BUTTON_STYLE" value="Kiểu Nút"/>
+  <node name="RETURN_URL_SUCCESS" value="Thành công trả về URL"/>
+  <node name="RETURN_URL_FAIL" value="Thất bại trả về URL"/>
+  <node name="EDIT_SCRIPT" value="Chỉnh Sửa"/>
+  <node name="SCRIPT_MANAGER" value="Quản lý Script"/>
+  <node name="SET_PAYMENT_IS_DONE_SUCCESSFULLY" value="Thiết lập thanh toán thành công!"/>
+  <node name="YOUR_NOTIFICATION_SAVED_SUCCESSFULLY" value="Thông báo của bạn đã được lưu thành công!"/>
+  <node name="MESSAGEID" value="Mã tin nhắn"/>
+  <node name="MESSAGE_CONTENT" value="Nội dung tin nhắn"/>
+  <node name="SET_LANGUAGE" value="Thiết lập ngôn ngữ"/>
+  <node name="VIETNAMESE" value="Tiếng Việt"/>
+  <node name="ENGLISH" value="Tiếng Anh"/>
+  <node name="SELECT_THE_LANGUAGE" value="Chọn ngôn ngữ"/>
+  <node name="SELECT_THE_LANGUAGE_TO_USE_FOR_DEFAULT" value="Chọn ngôn ngữ mặc định bạn muốn sử dụng"/>
+  <node name="YOUR_LANGUAGE_SET_SUCCESSFULLY" value="Ngôn ngữ đã được thiết lập!"/>
+  <node name="FIRST_NAME" value="Họ,tên lót"/>
+  <node name="LAST_NAME" value="Tên"/>
+  <node name="PACIFIC_CODE_TEST" value="Pacific Code Test"/>
+  <node name="THIS_PACIFIC_CODE_IS_USED_TO_MAKE_TEST" value="This Pacific Code is used to make test"/>
+  <node name="JUST_SELECT_YOUR_WEBSITE_AND_WE_WILL_GENERATE_A_NEW_SCRIPT_READY_TO_USE_FOR_YOUR_WEBSITE." value="Just select your website and we will generate a new script ready to use for  your website."/>
+  <node name="YOU_CAN_CREATE_AS_MANY_SCRIPTS_AS_YOU_WANT_FOR_EACH_WEB_SITE." value="You can create as many scripts as you want for each web site."/>
+  <node name="TOTAL" value="Tổng cộng"/>
+  <node name="NO_DATA" value="Không có dữ liệu!"/>
+  <node name="CLAIN_NO_DELIVERY" value="Báo cáo không giao hàng"/>
+  <node name="FAQ" value="Money Pacific FAQ Center"/>
+
+
+
+
+  <node name="WELCOME_TO_MONEY_PACIFIC" value="Chào mừng bạn đến với Money Pacific"/>
+  <node name="HOW_DOES_IT_WORK" value="Cách thức hoạt động?"/>
+  <node name="INFORMATION_CENTER" value="Trung tâm thông tin"/>
+  <node name="ADVANCE_FUNCTION" value="CHỨC NĂNG NÂNG CAO"/>
+  <node name="BUY_A_PACIFIC_CODE_IN_OUR_PARTNER_STORE" value="Mua Mã Pacific tại cửa hàng của chúng tôi"/>
+  <node name="USE_YOUR_PACIFIC_CODE_TO_BUY_ONLINE" value="Dùng Mã Pacific để mua hàng trực tuyến"/>
+  <node name="YOU_DONT_RECEIVE_GOOD" value="Nếu không nhận được hàng... Money Pacific sẽ hoàn trả lại tiền"/>
+  <node name="I_HAVE_A_QUESTION" value="Tôi gặp thắc mắc"/>
+  <node name="I_WANT_TO_KNOW_MORE" value="Tôi muốn tìm hiểu thêm"/>
+  <node name="MAKE_MONEY_WITH_US" value="Kiếm tiền ngay"/>
+  <node name="SELL_PACIFIC_CODE_IN_MY_STORE" value="Bán Mã Pacific tại cửa hàng cửa mình"/>
+  <node name="SEE_THE_DEMO" value="Xem Minh hoạ"/>
+  <node name="WATCH_THE_DEMO_VIDEO" value="Xem Video minh họa"/>
+  <node name="FAST_LINKS" value="Liên kết nhanh"/>
+  <node name="INFO_VALUE_OF_A_PACIFIC_CODE" value="Xem thông tin và trị giá Mã Pacific"/>
+  <node name="SEND_MONEY_TO_A_FRIEND" value="Chuyển tiền cho bạn bè"/>
+  <node name="FOLLOW_MY_ONLINE_ORDER" value="Theo dõi đơn hàng"/>
+  <node name="CONNECT_TO_THE_TRY_WEBSITE" value="Kết nối Website minh họa"/>
+  <node name="INSTALL_PACIFIC_PAYMENT_ON_MY_WEBSITE" value="Cài đặt giải pháp Pacific trên website"/>
+  <node name="CUSTOMER_AREA" value="DÀNH CHO KHÁCH HÀNG"/>
+  <node name="MINI_STORE" value="CỬA HÀNG MINI"/>
+  <node name="VIETNAM_CHILDREN" value="TRẺ EM VIỆT NAM"/>
+  <node name="ABOUT_SECURITY" value="BẢO MẬT"/>
+  <node name="BEST_WEBSITE"  value="WEBSITE TỐT NHẤT"/>
+  <node name="HeaderText1" value="CHÀ! GIỜ BẠN CÓ THỂ MUA HÀNG INTERNET BẰNG TIỀN MẶT"/>
+  <node name="HeaderText2" value="KHÔNG CẦN THẺ | KHÔNG CẦN TÀI KHOẢN | KHÔNG CẦN ĐĂNG KÝ | BẢO MẬT 100%"/>
+  <node name="ABOUT" value="Về chúng tôi"/>
+  <node name="PRIVACY" value="Privacy Policy"/>
+  <node name="TOS" value="Terms Of Use"/>
+  <node name="CONTACT" value="Liên hệ"/>
+  <node name="LICENCE" value="Licence for other country"/>
+  <node name="QUESTION" value="Tôi gặp vấn đề"/>
+  <node name="MORE" value="Tôi muốn biết thêm"/>
+  <node name="DEMO" value="Xem Video minh họa"/>
+  <node name="TODAY" value="Hôm nay"/>
+  <node name="RECOMMEND_US_AND_RECEIVE_A_GIFT" value="Góp ý và nhận quà"/>
+  <node name="I_WANT_TO_CREATE_A_WEB_SITE_AND_SELL_ONLINE" value="Tôi muốn tạo website để bán Mã Pacific"/>
+  <node name="BUY_PHONE_CARD_GAME_CARD_ONLINE" value="Mua thẻ điện thoại và thẻ Game trực tuyến"/>
+  <node name="PARTNER" value="Đối tác"/>
+  <node name="YOU_WANT_TO_DEVELOP_MONEY_PACIFIC_IN_YOUR_COUNTRY" value="Bạn muốn phát triển Money Pacific ở đất nước của mình"/>
+  <node name="RECEIVE_AGAIN_MY_LAST_SMS" value="Gửi lại cho tôi tin nhắn gần nhất"/>
+  <node name="SUGGEST_US_A_NEW_STORE" value="Đề nghị mở Cửa Hàng"/>
+  <node name="SUGGEST_US_A_NEW_WEBSITE" value="Đề nghị một website"/>
+  <node name="DISCOVER_THE_MINI_STORE" value="KHÁM PHÁ CỬA HÀNG MINI"/>
+  <node name="DISCOVER_THE_MINI_STORE_TEXT1" value="Ngồi tại nhà! Bạn có thể mua ngay:"/>
+  <node name="DISCOVER_THE_MINI_STORE_TEXT2" value="Thẻ điện thoại, Thẻ Game và nhiều loại khác..."/>
+  <node name="VISIT_THE_MINI_SHOP_NOW" value="Vào Cửa hàng MINI ngay"/>
+  <node name="MONEY_PACIFIC_BY_PHONE" value="MONEY PACIFIC bằng Điện thoại"/>
+  <node name="LIST_OF_THE_FUNCTION_AVAILABLE_BY_PHONE" value="Danh sách chức năng hổ trợ bằng điện thoại"/>
+  <node name="MY PHONE_IS_LOCK_WHAT_IS_THE_SOLUTION" value="Điện thoại tôi bị KHÓA! Cách giải quyết ?"/>
+  <node name="OUR_MINI_STORE_WILL_OPEN_SOON" value="Cửa hàng MINI của chúng tôi sẽ được Khai Trương sớm"/>
+  
+  
+  
+  
+  
+</VI>
+
