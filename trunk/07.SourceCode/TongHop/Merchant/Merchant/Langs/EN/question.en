@@ -1,0 +1,208 @@
+﻿
+<script src="http://code.jquery.com/jquery-1.4.4.js"></script>
+<script>
+  function showit(id) {
+    $("#"+id).toggle("slow");
+  };
+
+</script>
+
+<span class="pageTitle">Welcome to the Information Center,</span>
+<br/><br/>
+In this section you can find all the information you need about Internet and Money Pacific.<br/>
+<ul>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('How-is-Money-Pacific-working')"> How is Money Pacific working?</a>
+   <div id="How-is-Money-Pacific-working" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+</ul>
+
+<span class="BigTitle">About Internet</span>
+<ul>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('how-to-buy-on-internet')">How to buy on internet?</a>
+  <div id="how-to-buy-on-internet" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('security-problem-on-internet')">Security problem on Internet?</a>
+  <div id="security-problem-on-internet" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('i-want-create-website-to-sell-pacific-code')">I want to create a website to sell online ?</a>
+  <div id="i-want-create-website-to-sell-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+</ul>
+
+<span class="BigTitle">My Money Pacific Code</span>
+<ul>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('what-is-pacific-code')"> What is a Pacific Code?</a>
+  <div id="what-is-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('I-lost-pacific-code')">I lost my Pacific Code ?</a>
+  <div id="I-lost-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('where-to-buy-pacific-code')">Where to buy a Pacific Code?</a>
+  <div id="where-to-buy-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('possible-to-refund')">Is it possible to be refund?</a>
+  <div id="possible-to-refund" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('how-to-buy-online-with-pacific-code')">How to buy online with a Pacific code?</a>
+  <div id="how-to-buy-online-with-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('keep-pacific-code-secure')">Keep my Pacific code secure?</a>
+  <div id="keep-pacific-code-secure" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('introduce-new-store')">Introduce a new store?</a>
+  <div id="introduce-new-store" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+</ul>
+
+<span class="BigTitle">My order and the website</span>
+<ul>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('can-i-trust-the-website')">Can I trust the website?</a>
+    <div id="can-i-trust-the-website" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('sure-to-be-delivery')">Is it sure to be delivered?</a>
+    <div id="sure-to-be-delivery" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('do-not-receive-order')">I don’t receive my order?</a>
+    <div id="do-not-receive-order" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('leave-comment-website')">Leave a comment about a website?</a>
+    <div id="leave-comment-website" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('my-website-use-money-pacific')">My usual website doesn’t use Money Pacific?</a>
+    <div id="my-website-use-money-pacific" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+
+</ul>
+
+<span class="BigTitle">Install Money Pacific Payment on my Web </span>
+<ul>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('can-i-install-money-pacific-solution')">Can I install Pacific payment solution on my website?</a>
+    <div id="can-i-install-money-pacific-solution" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('money-pacific-accept-virtual-product-and-real-products')">Do money Pacific accept virtual and real product?</a>
+    <div id="money-pacific-accept-virtual-product-and-real-products" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('how-to-install-money-pacific')">How to install Money Pacific Payment solution?</a>
+    <div id="how-to-install-money-pacific" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('money-pacific-help-manage-order')">How money pacific help me to manage my order?</a>
+    <div id="money-pacific-help-manage-order" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('receive-my-money')">How I will receive my Money?</a>
+    <div id="receive-my-money" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('install-payment-solution')">What the price to install this payment solution?</a>
+    <div id="install-payment-solution" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+
+</ul>
+
+
+<span class="BigTitle">About  stores (dealer of code)  </span>
+<ul>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('leave-comment-about-dealer-pacific-code')">Leave a comment about a dealer of Pacific code?</a>
+    <div id="leave-comment-about-dealer-pacific-code" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('can-i-sell-pacific-code')">Can I sell Pacific code in my store?</a>
+    <div id="can-i-sell-pacific-code" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('how-much-earning-sell-pacific')">What are the fees and how much I earn if I sell pacific code?</a>
+    <div id="how-much-earning-sell-pacific" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+</ul>
+
+<span class="BigTitle">Phone for Money Pacific </span>
+<ul>
+  <li class="question">
+    <a name="phonefunctionlist" href="javascript:void(0);" onclick="showit('phone-function-list')">List of the function available by phone?</a>
+    <div id="phone-function-list" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  
+  <li class="question">
+    <a name="myphoneislock" href="javascript:void(0);" onclick="showit('my-phone-is-lock')">My phone is lock, what is the solution?</a>
+      <div id="my-phone-is-lock" class="divanswer">
+        something heresomething heresomething heresomething heresomething heresomething here
+      </div>
+    </li>
+  
+  
+</ul>
+
+

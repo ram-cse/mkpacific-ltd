@@ -86,6 +86,9 @@ namespace MoneyPacificService.BUS
                 int min = Utility.Min(actualAmount, amount);
 
                 BlackBoxServiceClient clientService = new BlackBoxServiceClient();
+                
+                // Lỗi khi thanh toán bằng nhiều PacificCode => sửa sau
+                // clientService.MakePayment(codeNumber, min);
                 clientService.MakePayment(codeNumber, amount);
 
                 return min;

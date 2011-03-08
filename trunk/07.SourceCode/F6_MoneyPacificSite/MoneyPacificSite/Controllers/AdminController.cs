@@ -86,7 +86,6 @@ namespace MoneyPacificSite.Controllers
                 {
                     ManagerName = sm.Name,
                     ManagerPhone = sm.ManagerPhone,
-
                     Id = sm.Id,
                     Area = sm.City.Name,
                     IdShop = sm.IdShop,

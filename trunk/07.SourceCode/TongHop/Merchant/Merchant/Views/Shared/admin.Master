@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Merchant.Models" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/thickbox.css" rel="stylesheet" type="text/css" />
+
+  
+   <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script> 
+    
+    <script src="/Scripts/jquery.thickbox.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <h1>MP Pacific</h1>
+            </div>
+              
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                     
+                    <% MyRoleProvider role = new MyRoleProvider();
+                        if (role.IsUserInRole(Page.User.Identity.Name,"Admin"))
+                       {%>
+                       
+                        <li><%: Html.ActionLink("Admin Home", "Index", "Admin")%></li>
+                        <li><%: Html.ActionLink("Order Report", "orderReport", "Admin")%></li>
+                        <li><%: Html.ActionLink("Payment Report", "paymentReport", "Admin")%></li>
+                        <li><%: Html.ActionLink("Pacific Messenger", "messenger", "Admin")%></li>
+                        <li><%: Html.ActionLink("Webmaster Manager", "webmasterManager", "Admin")%></li>
+                        <li><%: Html.ActionLink("Website Manager", "websiteManager", "Admin")%></li>
+                        <li><%--<%:Html.ActionLink("Set Min Withdraw","setWithDraw","Admin") %>--%>
+                          <%=Html.ActionLink("Set Min Withdraw", "setWithDraw", "Admin", 
+                              new { height = 200, width = 600 }
+                            , new { @class = "thickbox" }) %>
+                        
+                        </li>
+
+                    <%} %>
+
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+www.mon-email-anonyme.com
+
+<!-- Begin Allopass Checkout-Button Code -->
+<script type="text/javascript" src="https://payment.allopass.com/buy/checkout.apu?ids=153847&idd=424593&lang=fr"></script>
+<noscript>
+ <a href="https://payment.allopass.com/buy/buy.apu?ids=153847&idd=424593" style="border:0">
+  <img src="https://payment.allopass.com/static/buy/button/fr/162x56.png" style="border:0" alt="Buy now!" />
+ </a>
+</noscript>
+<!-- End Allopass Checkout-Button Code -->
+
+
+
+https://payment.allopass.com/buy/buy.apu?ids=153847&idd=424593
+
+
+Purchase URL 		http://www.mon-email-anonyme.com/index.php#focus_input
+Product Access URL 	http://www.mon-email-anonyme.com/index.php?page=user_achetercredits
+Error URL 		http://www.mon-email-anonyme.com/index.php?page=user_achetercredits

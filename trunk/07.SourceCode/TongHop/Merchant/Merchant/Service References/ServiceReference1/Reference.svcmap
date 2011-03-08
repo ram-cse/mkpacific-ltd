@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7cdcb8a2-9699-4e26-8fec-7b1ef81e748f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2011/Main.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Main.xsd" MetadataType="Schema" ID="f2e1bae2-5704-434b-ade4-8dfae2807af1" SourceId="1" SourceUrl="http://localhost:2011/Main.svc?xsd=xsd1" />
+    <MetadataFile FileName="Main.disco" MetadataType="Disco" ID="f0b89416-36bb-40a6-9452-d25df3871088" SourceId="1" SourceUrl="http://localhost:2011/Main.svc?disco" />
+    <MetadataFile FileName="Main1.xsd" MetadataType="Schema" ID="dbff5480-b710-48db-aeb4-06f0b27e564d" SourceId="1" SourceUrl="http://localhost:2011/Main.svc?xsd=xsd0" />
+    <MetadataFile FileName="Main.wsdl" MetadataType="Wsdl" ID="44ed2690-30ef-4ab4-bb18-9018991eb25d" SourceId="1" SourceUrl="http://localhost:2011/Main.svc?wsdl" />
+    <MetadataFile FileName="Main2.xsd" MetadataType="Schema" ID="7b5359c1-3a84-4e5c-bb71-0c5347e5e5df" SourceId="1" SourceUrl="http://localhost:2011/Main.svc?xsd=xsd3" />
+    <MetadataFile FileName="Main3.xsd" MetadataType="Schema" ID="915ff67d-8ddc-474b-86a6-35b1bf583821" SourceId="1" SourceUrl="http://localhost:2011/Main.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="85474c01-dd74-45e1-9ac5-a132c20063c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://security0.moneypacific.com/BlackBoxService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BlackBoxService.wsdl" MetadataType="Wsdl" ID="2219d4ff-33a5-46d9-8b84-19190a30cc0f" SourceId="1" SourceUrl="http://security0.moneypacific.com/BlackBoxService.svc?wsdl" />
+    <MetadataFile FileName="BlackBoxService.xsd" MetadataType="Schema" ID="92939e32-c171-4af1-a075-9cccb795fc9a" SourceId="1" SourceUrl="http://security0.moneypacific.com/BlackBoxService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BlackBoxService1.xsd" MetadataType="Schema" ID="46768ee1-ac97-418d-b751-913e83929b58" SourceId="1" SourceUrl="http://security0.moneypacific.com/BlackBoxService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BlackBoxService2.xsd" MetadataType="Schema" ID="0555f7eb-4f60-41de-8754-4f7761097814" SourceId="1" SourceUrl="http://security0.moneypacific.com/BlackBoxService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BlackBoxService3.xsd" MetadataType="Schema" ID="b281f145-294a-485a-8372-f76bfa45e4b7" SourceId="1" SourceUrl="http://security0.moneypacific.com/BlackBoxService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BlackBoxService.disco" MetadataType="Disco" ID="469c4945-3bdb-4062-8bc8-dad9f357b257" SourceId="1" SourceUrl="http://security0.moneypacific.com/BlackBoxService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

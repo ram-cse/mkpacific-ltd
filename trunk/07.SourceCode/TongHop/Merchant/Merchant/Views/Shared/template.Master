@@ -1,0 +1,385 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Merchant.Models" %>
+<%@ Import Namespace="Merchant.Helper" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../Content/css.css"/>
+    <link href="../../Content/thickbox.css" rel="stylesheet" type="text/css" />
+     <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script> 
+    
+    <script src="/Scripts/jquery.thickbox.js" type="text/javascript"></script>
+
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20236705-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20237436-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</head>
+<body class="mppacific">
+<div id="container">
+  <div id="header">
+      <div id="header-left">
+          <div id="logo">
+		      <img src="../../Content/Images/logo.gif"/>
+	      </div>
+           <div id="webmerchant">
+      		    <p>
+            	    Web Merchant<br/>
+                    Manager
+                </p>
+           </div>      
+      </div>
+
+      <div id="header-right">
+			    <div id="login">
+                <span style="padding-right:50px;">
+                    <a href="/vi"><img src="/Content/Images/vi.png" border="0"/></a>&nbsp;&nbsp;
+                     <a href="/en"><img src="/Content/Images/en.png" border="0"/></a>
+                </span>
+
+                <% Html.RenderPartial("LogOnUserControl");
+                   LangText.Load(Page.User.Identity.Name);
+                %>
+                </div>
+                       <%
+                       MyRoleProvider role = new MyRoleProvider();
+                       bool IsWebmaster = false;
+                       bool IsAdmin=false;
+                       bool IsCustomer = false;
+                           
+                        string userlogin = Page.User.Identity.Name;
+
+                        if (role.IsUserInRole(userlogin, "Webmaster"))
+                        {
+                            IsWebmaster = true;
+                        }
+                        else if (role.IsUserInRole(userlogin, "Admin"))
+                        {
+                            IsAdmin = true;
+                        }
+                        else if (role.IsUserInRole(userlogin, "ProblemUser"))
+                            IsCustomer = true;
+                        
+                        %>
+
+
+                <div id="box">
+            	    <p><% Html.RenderAction("GetHeaderBox", "vi"); %></p>
+                </div>
+
+                <div id="headerRinfo">
+                    <span style="font-size:15px;">YES, YOU CAN NOW BUY ON INTERNET WITH CASH !!!</span><br/>
+                     NO CARD  |  NO ACCOUNT  |  NO ENROLMENT  |   100% SECURE 
+                </div>
+      </div>
+  		
+        <!-- menu -->
+      
+        <div class="nav-container-outer">
+  
+   <ul id="nav-container" class="nav-container">
+      
+      <!-- start Menu DashBoard -->
+
+      <%if (IsAdmin || IsWebmaster)
+        { %>  
+      <li><a class="item-primary" href="/account/"><%: LangText.GetText("DASHBOARD")%></a></li>
+      <%}
+        else if (IsCustomer) // la customer thi cho vo trang chu Customer
+        { %>
+          <li><a class="item-primary" href="/customer/"><%: LangText.GetText("DASHBOARD")%></a></li>
+       
+       <% }
+        else
+        { %>  
+        <li>
+        <%:Html.ActionLink(LangText.GetText("DASHBOARD"), "Login", "Account",
+                              new { height = 350, width = 650 }
+                            , new { @class = "thickbox" })%>
+        
+        </li>
+      <%} %>
+      <!-- end Menu Dashboard -->
+
+      <li><span class="divider divider-vert" ></span></li>
+      <%if(!IsCustomer) {%>
+                      <li><a class="item-primary" ><%:LangText.GetText("SETTING") %></a> 
+                             <ul style="width:150px;">
+                                         <!-- Start MENU MY PROFILE -->
+                                         <%if (IsWebmaster)
+                                           { %>
+                                         <li><a href="/Account/Profile"><%: LangText.GetText("MY_PROFILE")%></a></li>
+                                         <%}
+                                           else
+                                           { %>
+                                           <!-- yeu cau login -->
+                                         <li>
+                                         <%:Html.ActionLink(LangText.GetText("MY_PROFILE"), "Login", "Account", 
+                                                          new { height = 350, width = 650 }
+                                                        , new { @class = "thickbox" }) %>
+                                         </li>
+                
+                                         <%} %>
+                                        <!-- End MENU MY PROFILE -->
+                                         <li>
+                                            <%:Html.ActionLink(LangText.GetText("PAYOUT_ACCOUNT"), "SetPayment", "Account", 
+                                                      new { height = 350, width = 650 }
+                                                    , new { @class = "thickbox" }) %>
+                                         </li>
+                                         <li>
+                                                      <%:Html.ActionLink(LangText.GetText("NOTIFICATION"), "notification", "Account", 
+                                                      new { height = 350, width = 400 }
+                                                    , new { @class = "thickbox" }) %>
+                                        </li>
+
+                                         <li>                
+                                            <%:Html.ActionLink(LangText.GetText("CHANGE_PASSWORD"), "ChangePassword", "Account", 
+                                                      new { height = 360, width = 400 }
+                                                    , new { @class = "thickbox" }) %>
+                                         </li>
+
+                                         <li>
+                                             <%:Html.ActionLink(LangText.GetText("SET_LANGUAGE"), "setlang", "Account", 
+                                                      new { height = 250, width = 370 }
+                                                    , new { @class = "thickbox" }) %>
+                                         </li>
+                                </ul>
+                      </li>
+   
+                  <li><span class="divider divider-vert" ></span></li>
+                  <li><a class="item-primary"><%:LangText.GetText("MY_WEBSITE")%></a>
+                         <ul style="width:150px;">
+                 
+                             <% if (IsWebmaster)
+                              { %>
+                                    <li><a href="/website/add"><%:LangText.GetText("ADD_AND_EDIT_WEBSITE")%></a></li>
+                             <%}else
+                             { %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("ADD_AND_EDIT_WEBSITE"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+
+                             <%} %>
+
+                             <%if (IsWebmaster)
+                               {%>
+                                    <li><a href="/website/script"><%: LangText.GetText("GET_NEW_SCRIPT")%></a></li>
+                            <%} else
+                            {%>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("GET_NEW_SCRIPT"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                            <%} %>
+                
+                              <li><span class="divider divider-horiz" ></span></li>
+
+                              <%if (IsWebmaster)
+                                {%>
+                                     <li><a href="/website/scriptmanager"><%:LangText.GetText("SCRIPT_MANAGER")%></a></li>
+                              <%}
+                             else
+                                {%>
+                        
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("SCRIPT_MANAGER"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+
+                              <%} %>
+                         </ul>
+                  </li>
+   
+                  <li><span class="divider divider-vert" ></span></li>
+                  <li><a class="item-primary" href="#"> <%:LangText.GetText("REPORT") %> </a>
+                         <ul style="width:150px;">
+                    
+                              <%if (IsWebmaster)
+                                { %>  
+                                    <li><a href="/report/moneyview"><%:LangText.GetText("MONEY_OVERVIEW")%></a></li>
+                              <%}
+                                else
+                                { %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("MONEY_OVERVIEW"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                              <%} %>
+                 
+                             <%if (IsWebmaster)
+                               { %>
+                                  <li><a href="/report/details"><%:LangText.GetText("REPORT_DETAILS")%></a></li>
+                             <%}
+                               else
+                               { %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("REPORT_DETAILS"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                             <%} %>
+                         </ul>
+                   </li>
+   
+                  <li><span class="divider divider-vert" ></span></li>
+                  <li><a class="item-primary" href="#;"><%:LangText.GetText("MANAGE_ORDER")%></a>
+                        <ul style="width:200px;">
+
+                            <% if (IsWebmaster)
+                               {%>
+                                    <li><a href="/order/newview"><%:LangText.GetText("NEW_ORDER_411")%></a></li>
+                            <%}
+                               else
+                               { %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("NEW_ORDER_411"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                            <%} %>
+
+                            <%if (IsWebmaster)
+                              {%>
+                                    <li><a href="/order/Ondelivery"><%:LangText.GetText("ON_DELIVERY_412")%></a></li>
+                            <%}else{ %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("ON_DELIVERY_412"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                            <%} %>
+
+                            <li><span class="divider divider-horiz" ></span></li>
+
+                            <%if (IsWebmaster)
+                              { %>
+                                    <li><a href="/order/endtran"><%:LangText.GetText("END_TRANSACTION_413")%></a></li>
+                            <%}
+                              else
+                              { %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("END_TRANSACTION_413"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                            <%} %>
+
+                             <li><span class="divider divider-horiz" ></span></li>
+
+                             <%if(IsWebmaster)
+                            { %>
+                                    <li><a href="/problem"><%:LangText.GetText("PROBLEMS_MANAGER")%></a></li>
+                            <%}else
+                            { %>
+                                    <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("PROBLEMS_MANAGER"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                            <%} %>
+
+
+                        </ul>
+                  </li>
+         
+                   <li><span class="divider divider-vert" ></span></li>
+                       <% if (IsWebmaster)
+                          { %>
+                                <li><a class="item-primary" href="/messenger"><%:LangText.GetText("PACIFIC_MESSENGER")%></a> 
+                        <%}
+                          else
+                          { %>
+                                <li><!-- yeu cau login -->                        
+                                     <%:Html.ActionLink(LangText.GetText("PACIFIC_MESSENGER"), "Login", "Account", 
+                                          new { height = 350, width = 650 }
+                                        , new { @class = "thickbox" }) %>
+                                    </li>
+                        <%} %>
+                        </li>
+                    <li class="clear">&nbsp;</li>
+        <%} else if(IsCustomer){%>
+             
+             <li><span class="divider divider-vert" ></span></li>
+             <li><a class="item-primary" href="/problem/follow/<%: Page.User.Identity.Name %>"><%:LangText.GetText("FOLLOW_PROBLEM")%></a> </li>
+             <li><span class="divider divider-vert" ></span></li>
+             <li><a class="item-primary" href="/problem/submit"><%:LangText.GetText("SUBMIT_PROBLEM")%></a> </li>
+        
+        <%} %>
+                    </ul>
+
+                    
+    </div>
+   <div class="bar"></div>
+ 
+  </div>
+  <div id="sidebar1">
+        <asp:ContentPlaceHolder ID="SidebarInformation" runat="server">
+        
+        </asp:ContentPlaceHolder>
+  </div>
+  
+
+
+   <div id="Content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <br /><br /><br />
+   </div>
+
+    <br class="clearfloat" />
+	<div id="footer">
+        <div class="footerinfo">
+	         <ul>
+             	<li>All rights reserved</li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Licence for Other Country</a></li>
+             </ul><br />
+             <span style="color:#F37032">Copyright &copy; 2010 Money - Pacific.Com</span>
+        </div>
+	    <div class="footerbox">
+       		<img height="54" src="../../Content/Images/verisign-logo.gif"/>
+       		<img height="54" src="../../Content/Images/solasian.gif"/>
+        </div>
+    	
+  	</div>
+</div>
+</body>
+</html>

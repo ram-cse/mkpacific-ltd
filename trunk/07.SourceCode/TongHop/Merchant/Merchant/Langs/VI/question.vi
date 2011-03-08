@@ -1,0 +1,208 @@
+﻿
+<script src="http://code.jquery.com/jquery-1.4.4.js"></script>
+<script>
+  function showit(id) {
+    $("#"+id).toggle("slow");
+  };
+
+</script>
+
+<span class="pageTitle">Chào mừng bạn đến với Trung Tâm thông tin - Money Pacific!</span>
+<br/><br/>
+Tại đây, bạn có thể tìm thấy tất cả thông tin cần thiết về Internet và Money Pacific.<br/>
+<ul>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('How-is-Money-Pacific-working')"> Cách thức hoạt động như thế nào?</a>
+   <div id="How-is-Money-Pacific-working" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+</ul>
+
+<span class="BigTitle">Vấn đề Bảo mật</span>
+<ul>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('how-to-buy-on-internet')">Làm thế nào để mua hàng trên Internet?</a>
+  <div id="how-to-buy-on-internet" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('security-problem-on-internet')">Vấn đề bảo mật trên Internet?</a>
+  <div id="security-problem-on-internet" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('i-want-create-website-to-sell-pacific-code')">Tôi muốn tạo một website để bán hàng online?</a>
+  <div id="i-want-create-website-to-sell-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+</ul>
+
+<span class="BigTitle">Mã Pacific của tôi</span>
+<ul>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('what-is-pacific-code')"> Mã Pacific là gì?</a>
+  <div id="what-is-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('I-lost-pacific-code')">Tôi đánh mất mã Pacific?</a>
+  <div id="I-lost-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('where-to-buy-pacific-code')">Mua mã Pacific ở đâu?</a>
+  <div id="where-to-buy-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('possible-to-refund')">Tôi có thể lấy lại Tiền được không?</a>
+  <div id="possible-to-refund" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('how-to-buy-online-with-pacific-code')">Làm thế nào để mua hàng online bằng mã Pacific?</a>
+  <div id="how-to-buy-online-with-pacific-code" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('keep-pacific-code-secure')">Giữ mã Pacific bảo mật?</a>
+  <div id="keep-pacific-code-secure" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+<li class="question">
+  <a href="javascript:void(0);" onclick="showit('introduce-new-store')">Giới thiệu cửa hàng mới?</a>
+  <div id="introduce-new-store" class="divanswer">
+    something heresomething heresomething heresomething heresomething heresomething here
+  </div>
+</li>
+</ul>
+
+<span class="BigTitle">Đơn đặt hàng và website cửa tôi</span>
+<ul>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('can-i-trust-the-website')">Tôi có thể tin tưởng website hay không?</a>
+    <div id="can-i-trust-the-website" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('sure-to-be-delivery')">Có chắc chắn được chuyển hàng sau khi mua hay không?</a>
+    <div id="sure-to-be-delivery" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('do-not-receive-order')">Tôi không nhận được đơn đặt hàng của mình?</a>
+    <div id="do-not-receive-order" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('leave-comment-website')">Đóng góp ý kiến về website?</a>
+    <div id="leave-comment-website" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('my-website-use-money-pacific')">Website của tôi không sử dụng Money Pacific?</a>
+    <div id="my-website-use-money-pacific" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+
+</ul>
+
+<span class="BigTitle">Cài đặt MONEY PACIFIC trên website</span>
+<ul>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('can-i-install-money-pacific-solution')">Tôi có thể cài đặt giải pháp thanh toán Pacific trên website của tôi được hay không?</a>
+    <div id="can-i-install-money-pacific-solution" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('money-pacific-accept-virtual-product-and-real-products')">Money Pacific có chấp nhận sản phẩm ảo hay sảm phẩm thực sự?</a>
+    <div id="money-pacific-accept-virtual-product-and-real-products" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('how-to-install-money-pacific')">Làm thế nào để cài đặt giải pháp Money Pacific?</a>
+    <div id="how-to-install-money-pacific" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('money-pacific-help-manage-order')">Làm thế nào Money Pacific giúp tôi quản lý đơn đặt hàng?</a>
+    <div id="money-pacific-help-manage-order" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('receive-my-money')">Làm thế nào tôi có thể nhận tiền ?</a>
+    <div id="receive-my-money" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('install-payment-solution')">Chi phí cài đặt giải pháp thanh toán Money Pacific này như thế nào?</a>
+    <div id="install-payment-solution" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+
+</ul>
+
+
+<span class="BigTitle">Về Cửa Hàng (đại lý bán Mã Pacific)  </span>
+<ul>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('leave-comment-about-dealer-pacific-code')">Đóng góp ý kiến về đại lý bán Mã Pacific?</a>
+    <div id="leave-comment-about-dealer-pacific-code" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('can-i-sell-pacific-code')">Tôi có thể bán Mã Pacific tại cửa hàng của t</a>
+    <div id="can-i-sell-pacific-code" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  <li class="question">
+    <a href="javascript:void(0);" onclick="showit('how-much-earning-sell-pacific')">Chi phí và tiền mà tôi có thể kiếm được từ việc bán Mã Pacific?</a>
+    <div id="how-much-earning-sell-pacific" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+</ul>
+
+<span class="BigTitle">Money Pacific dành cho Điện thoại</span>
+<ul>
+  <li class="question">
+    <a name="phonefunctionlist" href="javascript:void(0);" onclick="showit('phone-function-list')">Danh sách chức năng Money Pacific dành cho điện thoại</a>
+    <div id="phone-function-list" class="divanswer">
+      something heresomething heresomething heresomething heresomething heresomething here
+    </div>
+  </li>
+  
+  <li class="question">
+    <a name="myphoneislock" href="javascript:void(0);" onclick="showit('my-phone-is-lock')">Điện thoại tôi bị khóa, Có cách nào khắc phục không?</a>
+      <div id="my-phone-is-lock" class="divanswer">
+        something heresomething heresomething heresomething heresomething heresomething here
+      </div>
+    </li>
+  
+  
+</ul>
+
+
