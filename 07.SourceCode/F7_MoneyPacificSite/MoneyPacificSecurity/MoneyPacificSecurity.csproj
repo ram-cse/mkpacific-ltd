@@ -64,6 +64,8 @@
     <Compile Include="BUS\AgentBUS.cs" />
     <Compile Include="BUS\AgentStateBUS.cs" />
     <Compile Include="BUS\AreaBUS.cs" />
+    <Compile Include="BUS\CollectionBUS.cs" />
+    <Compile Include="BUS\CollectionStateBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PartPacificCodeBUS.cs" />
     <Compile Include="BUS\StoreManagerBUS.cs" />

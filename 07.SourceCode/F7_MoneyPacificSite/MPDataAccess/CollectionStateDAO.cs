@@ -12,6 +12,17 @@ namespace MPDataAccess
             throw new Exception("chua lam!...");
         }
 
+        public static CollectionState GetObject(string nameState)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            CollectionState existObj = mpdb.CollectionStates
+                .Where(p => p.Name.Trim() == nameState.Trim())
+                .SingleOrDefault();
+                        
+            mpdb.Connection.Close();
+            return existObj; // neu la null thi tra ra null
+        }
+
         public static bool AddNew(CollectionState entity)
         {
             throw new Exception("chua lam!...");
@@ -46,5 +57,6 @@ namespace MPDataAccess
         {
             throw new Exception("chua lam!...");
         }
+        
     }
 }

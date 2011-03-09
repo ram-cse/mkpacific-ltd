@@ -6,14 +6,15 @@ using System.Text;
 namespace MPDataAccess
 {
     public class AgentDAO
-    {
-        
+    {   
         public static Agent GetObject(Guid userId)
         {
             MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
             Agent existAgent = mpdb.Agents
                 .Where(a => a.UserId.Equals(userId))
                 .Single<Agent>();
+
+            mpdb.Connection.Close();
             return existAgent;            
         }
 
@@ -49,6 +50,8 @@ namespace MPDataAccess
             //existAgent.Username         = entity.Username;
 
             DataAccessLayer.GetConnection.SubmitChanges();
+            
+            mpdb.Connection.Close();
             return true;
         }
 
@@ -60,6 +63,8 @@ namespace MPDataAccess
                 .Where(a => a.UserId.Equals(id)).Single<Agent>();
             DataAccessLayer.GetConnection.Agents.DeleteOnSubmit(existAgent);
             DataAccessLayer.GetConnection.SubmitChanges();
+            
+            mpdb.Connection.Close();
             return true;
         }
 
