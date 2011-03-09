@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" 
 Inherits="System.Web.Mvc.ViewPage<MoneyPacificSite.ViewModels.AdminListAmountViewModel>" %>
-<%@ Import Namespace="MoneyPacificSite.ViewModels" %>
+<%@ Import Namespace = "MoneyPacificSite.ViewModels" %>
 <%@ Import Namespace = "MoneyPacificSite.Helpers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	ListAmount
