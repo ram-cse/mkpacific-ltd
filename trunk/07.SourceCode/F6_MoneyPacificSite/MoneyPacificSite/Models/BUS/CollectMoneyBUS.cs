@@ -24,7 +24,7 @@ namespace MoneyPacificSite.Models.BUS
             newCollectMoney.CreateDate = DateTime.Now;
             newCollectMoney.ExpireDate = DateTime.Now.AddDays(1);
             newCollectMoney.StatusId = CollectStateDAO.GetId("Processing");
-
+                
             ///
             /// Xác định Amount
             ///

@@ -131,8 +131,7 @@ namespace MoneyPacificSite.Controllers
                     else
                     {
                         bSuccess = bSuccess & CollectMoneyBUS.Update(existCollectMoney, obj.AgentIdSelected);
-                    }
-                    
+                    }                    
                 }
             }
 
@@ -141,29 +140,29 @@ namespace MoneyPacificSite.Controllers
 
             /// ------------------------------
 
-            obj = SetAgents(obj);
+            //obj = SetAgents(obj);
 
-            List<StoreManager> storeManagers = StoreManagerBUS.GetList();
+            //List<StoreManager> storeManagers = StoreManagerBUS.GetList();
 
-            List<StoreManagerBalanceSelect> lstObj = new List<StoreManagerBalanceSelect>();
+            //List<StoreManagerBalanceSelect> lstObj = new List<StoreManagerBalanceSelect>();
 
-            for (int i = 0; i < storeManagers.Count; i++)
-            {
-                lstObj.Add(new StoreManagerBalanceSelect
-                {
-                    Id = storeManagers[i].Id,
-                    Area = storeManagers[i].City.Name,
-                    IdShop = storeManagers[i].IdShop,
-                    Address = storeManagers[i].Address,
-                    Balance = StoreManagerBUS.GetTotalLastMonthAmount(storeManagers[i].Id),
-                    // 
-                    Selected = obj.StoreManagers[i].Selected
-                });
-            }
+            //for (int i = 0; i < storeManagers.Count; i++)
+            //{
+            //    lstObj.Add(new StoreManagerBalanceSelect
+            //    {
+            //        Id = storeManagers[i].Id,
+            //        Area = storeManagers[i].City.Name,
+            //        IdShop = storeManagers[i].IdShop,
+            //        Address = storeManagers[i].Address,
+            //        Balance = StoreManagerBUS.GetTotalLastMonthAmount(storeManagers[i].Id),
+            //        // 
+            //        Selected = obj.StoreManagers[i].Selected
+            //    });
+            //}
 
-            obj.StoreManagers = lstObj;            
+            //obj.StoreManagers = lstObj;            
 
-            return View(obj);
+            //return View(obj);
         }
 
         /// <summary>
