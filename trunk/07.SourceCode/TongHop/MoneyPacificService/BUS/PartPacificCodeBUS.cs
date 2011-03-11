@@ -82,20 +82,24 @@ namespace MoneyPacificService.BUS
             {
                 /// Ví dụ: PacificCode có giá trị 5000, mà gia tri can thanh toan là 6000
                 /// => chỉ thanh toan 5000
-                int actualAmount = (int)GetActualAmount(codeNumber.Substring(1, 12));
+                //PartPacificCodeBUS.GetActualAmount
+                int actualAmount = (int)GetActualAmount(codeNumber.Substring(0, 12));
                 int min = Utility.Min(actualAmount, amount);
 
                 BlackBoxServiceClient clientService = new BlackBoxServiceClient();
                 
                 // Lỗi khi thanh toán bằng nhiều PacificCode => sửa sau
                 // clientService.MakePayment(codeNumber, min);
-                clientService.MakePayment(codeNumber, amount);
+                if (min > 0)
+                {
+                    clientService.MakePayment(codeNumber, min);
+                }
 
                 return min;
             }
             catch
             {
-                return 0;
+                throw new Exception("Money Pacific: Error payment service!..");
             }
         }
     }

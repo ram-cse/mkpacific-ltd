@@ -1,5 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="moneypacific_security" Class="MoneyPacificDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=alex-pc;Initial Catalog=moneypacific_security;Integrated Security=True" SettingsObjectName="MPDataAccess.Properties.Settings" SettingsPropertyName="moneypacific_securityConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="moneypacific_security_final" Class="MoneyPacificDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ALEX-PC;Initial Catalog=moneypacific_security_final;Persist Security Info=True;User ID=sa" SettingsObjectName="MPDataAccess.Properties.Settings" SettingsPropertyName="moneypacific_security_finalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AgentState" Member="AgentStates">
+    <Type Name="AgentState">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="AgentState_Agent" Member="Agents" ThisKey="Id" OtherKey="StatusId" Type="Agent" />
+    </Type>
+  </Table>
   <Table Name="dbo.Agent" Member="Agents">
     <Type Name="Agent">
       <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -7,33 +15,8 @@
       <Column Name="Address" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Agent_Collection" Member="Collections" ThisKey="UserId" OtherKey="AgentId" Type="Collection" />
-      <Association Name="User_Agent" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
       <Association Name="AgentState_Agent" Member="AgentState" ThisKey="StatusId" OtherKey="Id" Type="AgentState" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Block" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="User_Agent" Member="Agent" ThisKey="Id" OtherKey="UserId" Type="Agent" Cardinality="One" />
-      <Association Name="User_Customer" Member="Customer" ThisKey="Id" OtherKey="UserId" Type="Customer" Cardinality="One" />
-      <Association Name="User_StoreManager" Member="StoreManager" ThisKey="Id" OtherKey="UserId" Type="StoreManager" Cardinality="One" />
-      <Association Name="User_StoreUser" Member="StoreUser" ThisKey="Id" OtherKey="UserId" Type="StoreUser" Cardinality="One" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AgentState" Member="AgentStates">
-    <Type Name="AgentState">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="AgentState_Agent" Member="Agents" ThisKey="Id" OtherKey="StatusId" Type="Agent" />
+      <Association Name="User_Agent" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Area" Member="Areas">
@@ -86,8 +69,8 @@
       <Column Name="NumberTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="BadTransaction" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Customer_PartPacificCode" Member="PartPacificCodes" ThisKey="UserId" OtherKey="CustomerId" Type="PartPacificCode" />
-      <Association Name="User_Customer" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
       <Association Name="CustomerState_Customer" Member="CustomerState" ThisKey="StatusId" OtherKey="Id" Type="CustomerState" IsForeignKey="true" />
+      <Association Name="User_Customer" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CustomerState" Member="CustomerStates">
@@ -144,8 +127,8 @@
       <Association Name="StoreManager_StoreUser" Member="StoreUsers" ThisKey="UserId" OtherKey="ManagerId" Type="StoreUser" />
       <Association Name="StoreManager_TimeTable" Member="TimeTables" ThisKey="UserId" OtherKey="ManagerId" Type="TimeTable" />
       <Association Name="Area_StoreManager" Member="Area" ThisKey="AreaId" OtherKey="Id" Type="Area" IsForeignKey="true" />
-      <Association Name="User_StoreManager" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
       <Association Name="StoreManagerState_StoreManager" Member="StoreManagerState" ThisKey="StatusId" OtherKey="Id" Type="StoreManagerState" IsForeignKey="true" />
+      <Association Name="User_StoreManager" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.StoreManagerState" Member="StoreManagerStates">
@@ -172,8 +155,8 @@
       <Column Name="Enable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="StoreUser_PartPacificCode" Member="PartPacificCodes" ThisKey="UserId" OtherKey="StoreUserId" Type="PartPacificCode" />
       <Association Name="StoreManager_StoreUser" Member="StoreManager" ThisKey="ManagerId" OtherKey="UserId" Type="StoreManager" IsForeignKey="true" />
-      <Association Name="User_StoreUser" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
       <Association Name="StoreUserState_StoreUser" Member="StoreUserState" ThisKey="StatusId" OtherKey="Id" Type="StoreUserState" IsForeignKey="true" />
+      <Association Name="User_StoreUser" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.StoreUserState" Member="StoreUserStates">
@@ -247,6 +230,23 @@
       <Column Name="Code" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="TransactionState_Transaction" Member="Transactions" ThisKey="Id" OtherKey="StatusId" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Block" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_Agent" Member="Agent" ThisKey="Id" OtherKey="UserId" Type="Agent" Cardinality="One" />
+      <Association Name="User_Customer" Member="Customer" ThisKey="Id" OtherKey="UserId" Type="Customer" Cardinality="One" />
+      <Association Name="User_StoreManager" Member="StoreManager" ThisKey="Id" OtherKey="UserId" Type="StoreManager" Cardinality="One" />
+      <Association Name="User_StoreUser" Member="StoreUser" ThisKey="Id" OtherKey="UserId" Type="StoreUser" Cardinality="One" />
     </Type>
   </Table>
 </Database>
