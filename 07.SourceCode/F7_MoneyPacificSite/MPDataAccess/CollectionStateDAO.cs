@@ -18,7 +18,9 @@ namespace MPDataAccess
             CollectionState existObj = mpdb.CollectionStates
                 .Where(p => p.Name.Trim() == nameState.Trim())
                 .SingleOrDefault();
-                        
+
+            //Test: List<CollectionState> lstState = mpdb.CollectionStates.ToList();
+
             mpdb.Connection.Close();
             return existObj; // neu la null thi tra ra null
         }

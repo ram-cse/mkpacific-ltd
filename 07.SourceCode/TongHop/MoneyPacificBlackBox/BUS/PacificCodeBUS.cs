@@ -69,7 +69,7 @@ namespace MoneyPacificBlackBox.BUS
         /// </summary>
         /// Giải thuật:
         /// - Kiểm tra số tiền trong codeNumber
-        /// - Nếu không đủ tiền, trả về null
+        /// - Nếu không đủ tiền, trả về null => bắt buộc khi gọi hàm thanh toán fải biết mình có đủ tiền trả        /// 
         /// - Nếu đủ tiền: 
         ///     + Trừ số tiền theo yêu cầu
         ///     + Tạo một pacific code có giá trị bằng sô tiền đã trừ:

@@ -98,6 +98,7 @@
     <Compile Include="Util\Utilator.cs" />
     <Compile Include="ViewModels\AdminViewModels.cs" />
     <Compile Include="ViewModels\AgentViewModels.cs" />
+    <Compile Include="ViewModels\CollectionViewModels.cs" />
     <Compile Include="ViewModels\PacificCodeCheckDetailsViewModel.cs" />
     <Compile Include="ViewModels\PacificCodeViewModels.cs" />
     <Compile Include="ViewModels\PartPacificCodeViewModel.cs" />
