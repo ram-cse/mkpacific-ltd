@@ -142,7 +142,7 @@ namespace MPDataAccess
 		
 		public MoneyPacificDataContext() : 
 				base(global::MPDataAccess.Properties.Settings.Default.moneypacific_security_finalConnectionString, mappingSource)
-        //base("Data Source=KS306535;Initial Catalog=moneypacific_security_final;Persist Security Info=True;User ID=sa;Password=@dmin123", mappingSource)
+                //base("Data Source=KS306535;Initial Catalog=moneypacific_security_final;Persist Security Info=True;User ID=sa;Password=@dmin123", mappingSource)
 		{
 			OnCreated();
 		}
