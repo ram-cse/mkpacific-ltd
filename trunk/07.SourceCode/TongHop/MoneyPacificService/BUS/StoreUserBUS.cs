@@ -85,5 +85,10 @@ namespace MoneyPacificService.BUS
                 return false;
             }
         }
+
+        internal static int GetTotalTransaction(Guid userId)
+        {
+            return StoreUserDAO.GetTotalTransaction(userId);
+        }
     }
 }

@@ -126,10 +126,16 @@ namespace MPDataAccess
             mpdb.SubmitChanges();
             mpdb.Connection.Close();
             return true;            
-
         }
 
-
-        
+        public static int GetTotalTransaction(Guid userId)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            int iCount = mpdb.PartPacificCodes
+                .Where(p => p.StoreUserId == userId)
+                .Count();
+            mpdb.Connection.Close();
+            return iCount;
+        }
     }
 }

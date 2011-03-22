@@ -1,0 +1,124 @@
+﻿	Kiểm tra thanh toán trên web
+	V1 = giá trị của sản phẩm
+	V2 = giá trị của website
+	
+	%V3: được gán từ money pacific
+	V1 - %V3 = V2
+	???
+	
+	luon luon lưu ngày cho mỗi lần thay đổi
+	411: Thanh toán thành công - chờ giao hàng
+	     V2: ??
+		 Transaction:
+			gửi mail tới khách hàng
+			gửi mail tới nhà buôn bán trên mạng (tuân thủ nhà buôn bán trên mạng..)
+			PacificCode : -> V1
+	
+-------------------------
+
+011/0 Buy code by phone customer = 0 - Ok
+011/1 Buy code by phone customer 1 - 0K
+011/2 Buy Code by phone customer 2 - Ok
+
+5 By phone
+50: Value and detail by phone
+501/0 Value and details on Phone by M E - Good Code + Customer 0
+501/1 Value and details on PHone by M E - Good Code + Customer 1  fee50: 1000vnd
+502/0 Value and detail on phone by other - good code + customer 0
+502/1 Value and details on phone by other - good code + customer 1
+503/0 error Value and details on phone - wrong code + customer 0
+503/1 error Value and details on phone - wrong code + customer 1
+504/0 error Value and details on phone - Old Code + customer 0
+504/1 error Value and details on phone - Old Code + customer 1
+505/0 error Value and details on phone  - wrong POSSIBLE code + customer 0
+505/1 error Value and details on phone - wrong & POSSIBLE code + customer 1
+
+6 By Internet
+601		Values and details on PC: (500vnd) -> xem thong tin giá trị và chi tiết trên web tính phí 500vnd???
+602		error Values and details on PC - wrong code
+603		error Values and details on PC - Old code
+604		error Values and details on PC - wrong POSSIBLE code
+
+61 - Change code by Internet
+611 	Change code on PC OK
+612		error Value and details on PC - Wrong Code
+612		error Value and details on PC - Old Code
+613		error Value and details on PC - wrong POSSIBLE code
+
+800		Id store and Phone match but Store inactive (Buy code by phone)
+810/31 	Error 1 store password (Buy Code by phone)
+810/32  Error 1 store password (Buy Code by phone)
+810/33  Error 3 store password (Buy Code by Phone)
+810/93  Error store password (Buy code by phone) inactive Store
+
+890/38	try transaction with good phone but good PassW no link
+890/39	try transaction with wrong phone but wrong PassW
+890/79	try transaction with wrong phong but good PassW
+890/38  transaction with good phone but good PassW no link
+890/95  transaction with wrong phone but good PassW - Phone Lock
+819/94 	Phone store no identify (Buy code by phone)
+
+--------------------------------------------------
+2 FUNCTION ON PAPER
+
+FUCNTION 1:
+	Value and details on phone
+	Send SMS to MPacific: ABCD EFGH IJKL MNOP
+	
+	All the case: Only availble from Customer NO x9x (add new Transaction)
+	-> chỉ cho phép khách hàng có status là x9x thực hiện chức năng này, thêm một
+	transaction mới
+	
+	(Date time and IP for all transaction)
+	
+	1. Code NO exist: Mã Code chưa tồn tài
+		a) NO POSSIBLE CODE
+			a1) Sender no exist(if sender of the sms no exist): 
+				Status -> 31 -> (exist) 32 -> 33 -> 93 (4 time)
+				
+				Money Pacific: Sorry! this code don't exist
+				
+				CREATE TRANSACTION: 
+					new transaction : new customer Bal-MP-Phone
+				
+			a2) Sender already exist, update:
+				"Money Pacif: Srorry! This cod don't exist"
+				
+				status xyz: 31  -> 32 
+				-> 33
+				"Money Pacific: Sorry! This cod don't exist, last try, after your phone will be lock"
+				
+				4 time, status xyz: 33 -> 93
+				"Money Pacific: Your inquire are suspicion (thẩm tra của bạn bị nghi ngờ), your phone is lock,
+				for more infomation go to www.money-pacific.com"
+				
+				if( 80 <yz <94) => x93
+				hỏi tại sao lại trong khoảng [80 - 94] mà không là [80 - (x < 93)]
+				
+				
+				CREATE TRANSACTION: 
+					if(customer.status == 506) -> 503/0
+						503/0 error value and detail on phone - wrong code + customer 0
+						503/1 error value and detail on phone - wrong code + customer 1
+					Comment: pacific code "NO" + phoe from
+		
+		b) POSSIBLE CODE:
+			
+	2. Code exist & Value = 0: còn trường hợp đã hết hạn (out of Expire Date)
+	
+	3. Code MP exist & Value > 0 (in Expire Date):
+		(Customer) Status xyz: x01
+		Sms215 (what does it means???): to the phone number
+		Pacific Code: abcd efgh ijkl mnop, Actuall amount VND, Intial amount, use: last date using, expire
+		
+		Transaction:
+			if phone from owner of PC
+				
+				-> customer status change the value to 501/0 - 501/1 - 501/2 ..
+				501: value and details on phone by owner
+				
+			else (not from owner of PC)
+				-> customer status change the value to 502/0 - 502/1 - 502/2 ..
+				502: value and details on phone by other (not owner) ???
+							
+		
