@@ -14,7 +14,9 @@ namespace MPDataAccess
             Agent existAgent = mpdb.Agents
                 .Where(a => a.UserId.Equals(userId))
                 .Single<Agent>();
-            return existAgent;            
+
+            mpdb.Connection.Close();
+            return existAgent;           
         }
 
         public static bool AddNew(Agent entity)

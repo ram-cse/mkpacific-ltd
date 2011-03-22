@@ -87,15 +87,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Content Include="MP\BlackBoxService.cs.txt" />
     <Compile Include="MP\BlackBoxService.cs" />
-    <Compile Include="Util\MPMail.cs" />
+    <Compile Include="Scripts\Util\MPMail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WCF_Blackbox\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Util\Utilator.cs" />
+    <Compile Include="Scripts\Util\Utilator.cs" />
     <Compile Include="ViewModels\AdminViewModels.cs" />
     <Compile Include="ViewModels\AgentViewModels.cs" />
     <Compile Include="ViewModels\CollectionViewModels.cs" />
@@ -227,7 +228,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MPDataAccess\MPDataAccess.csproj">
+    <ProjectReference Include="..\..\TongHop\MPDataAccess\MPDataAccess.csproj">
       <Project>{9E132A3D-4F8D-43B9-91C4-2733D046B8CD}</Project>
       <Name>MPDataAccess</Name>
     </ProjectReference>

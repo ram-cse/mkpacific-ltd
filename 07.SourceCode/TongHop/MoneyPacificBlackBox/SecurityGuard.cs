@@ -130,6 +130,18 @@ namespace MoneyPacificBlackBox
             }
         }
 
+        internal double GetInitialAmount(string partCodeNumber)
+        {
+            Transaction newTransaction = new Transaction();
+            double result = this._pacificCodeBUS.GetInitialAmount(partCodeNumber);
+
+            newTransaction.Origine = "GetInitialAmount";
+            newTransaction.Comment = "Get Initial Amount: " + partCodeNumber;
+
+            this._transactionBUS.AddNew(newTransaction);
+            return result;
+        }
+
         internal double GetValue(string partCodeNumber)
         {
             Transaction newTransaction = new Transaction();
@@ -256,5 +268,7 @@ namespace MoneyPacificBlackBox
             return arrResult;
             
         }
+
+        
     }
 }

@@ -53,6 +53,16 @@ namespace MPDataAccess
             throw new Exception("chua lam!...");
         }
 
+        public static List<StoreUser> GetList(Guid managerId)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            List<StoreUser> lstResult = mpdb.StoreUsers
+                .Where(s => s.ManagerId == managerId)
+                .ToList<StoreUser>();
+            mpdb.Connection.Close();
+            return lstResult;
+        }
+
         public static StoreUser[] GetArray()
         {
             throw new Exception("chua lam!...");
@@ -66,6 +76,9 @@ namespace MPDataAccess
         public static bool IsExist(string phoneNumber)
         {
             MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+
+            //List<StoreUser> lstSU = mpdb.StoreUsers.ToList<StoreUser>();
+            
             bool result = mpdb.StoreUsers
                 .Any(s => s.Phone.Trim() == phoneNumber.Trim());
             mpdb.Connection.Close();
@@ -116,5 +129,7 @@ namespace MPDataAccess
 
         }
 
+
+        
     }
 }

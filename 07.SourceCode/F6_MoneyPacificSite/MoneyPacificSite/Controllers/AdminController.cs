@@ -51,7 +51,7 @@ namespace MoneyPacificSite.Controllers
         {
             int statusId = CollectStateBUS.GetId("Collected");
             var model = new List<CollectMoneyView>();
-
+            
             List<CollectMoney> lstCollectMoney = CollectMoneyBUS.GetListStatusId(statusId);
             foreach (CollectMoney cm in lstCollectMoney)
             {

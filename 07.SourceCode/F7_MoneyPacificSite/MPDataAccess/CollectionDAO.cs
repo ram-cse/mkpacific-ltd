@@ -28,8 +28,8 @@ namespace MPDataAccess
             Collection existObj = mpdb.Collections
                 .Where(p => (p.StoreManagerId == smId
                     && p.StatusId == iStatusId
-                    && p.ExpireDate == expireDate))
-                .SingleOrDefault();            
+                    && p.ExpireDate > expireDate))
+                .ToList().FirstOrDefault<Collection>();            
             mpdb.Connection.Close();
             return existObj;
         }

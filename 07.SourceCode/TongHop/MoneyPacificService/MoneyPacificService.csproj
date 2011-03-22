@@ -75,8 +75,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BlackBoxService.cs.02.txt" />
     <Compile Include="BlackBoxService.cs" />
     <Compile Include="BUS\CategoryBUS.cs" />
+    <Compile Include="BUS\CollectionBUS.cs" />
+    <Compile Include="BUS\CollectionStateBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PartPacificCodeBUS.cs" />
     <Compile Include="BUS\StoreManagerBUS.cs" />

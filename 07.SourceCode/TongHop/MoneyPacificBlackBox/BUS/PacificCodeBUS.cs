@@ -93,6 +93,17 @@ namespace MoneyPacificBlackBox.BUS
             
         }
 
+        internal double GetInitialAmount(string partCodeNumber)
+        {
+            bool bExist = PacificCodeDAO.IsExistPartCodeNumber(partCodeNumber);
+            if (bExist)
+            {
+                PacificCode existPacificCode = PacificCodeDAO.GetObject(partCodeNumber);
+                return (double)existPacificCode.ActualAmount;
+            }
+            return 0;
+        }
+
         /// <summary>
         /// Giống GetActualAmount
         /// </summary>        
@@ -170,5 +181,7 @@ namespace MoneyPacificBlackBox.BUS
 
             return lstPCVM.ToArray();
         }
+
+        
     }
 }
