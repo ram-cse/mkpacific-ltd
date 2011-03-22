@@ -1,0 +1,7 @@
+Way to send SMS by Email
+1 - Send to "phonenumber" <emailaddress>
+2 - Send to <emailaddress> with email content :
+GSM: phonenumber
+SMS content
+
+3 - Send to phonenumber@domain.com  with email is a catchall email.

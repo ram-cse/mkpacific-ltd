@@ -24,6 +24,8 @@ namespace MoneyPacificService.CMD
             string sReceivePhone = phoneNumber;
             string smsContent = "";
 
+            int iTotal = 0;
+
             StoreManager existStoreManager = null;
             bool isValidate = false;
 
@@ -47,8 +49,24 @@ namespace MoneyPacificService.CMD
                 isValidate = false;
             }
 
+            if (isValidate)
+            {
+                List<StoreUser> lstUser = StoreUserDAO.GetList(existStoreManager.UserId);
+                foreach (StoreUser u in lstUser)
+                {
+                    iTotal += StoreUserBUS.GetTotalTransaction((Guid)u.UserId);
+                }
 
-            return base.Execute();
+                smsContent = "TOTAL TRANSACTION:" + iTotal;
+            }
+            else
+            {
+                smsContent = MessageManager.GetValue("MPDAY_GET_COLLECT_CODE_ERROR");
+            }
+
+
+            //return base.Execute();
+            return smsContent;
         }
     }
 }
