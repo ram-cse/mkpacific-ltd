@@ -51,6 +51,11 @@ namespace MoneyPacificBlackBox
             return this._guard.ChangeCode(codeNumber);
         }
 
+        public double GetInitialAmount(string partCodeNumber)
+        {
+            return this._guard.GetInitialAmount(partCodeNumber);
+        }
+
         public int GetValue(string partCodeNumber)
         {
             return (int)this._guard.GetValue(partCodeNumber);

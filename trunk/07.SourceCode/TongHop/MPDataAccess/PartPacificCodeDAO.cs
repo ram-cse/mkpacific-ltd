@@ -105,6 +105,18 @@ namespace MPDataAccess
             mpdb.Connection.Close();
             return lstResult.ToArray();
         }
+
+        public static List<PartPacificCode> GetList(Guid storeUserId)
+        {
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+
+            // TODO: Sửa theo MoneyPacificSrv cho chính xác
+            List<PartPacificCode> lstPPC = mpdb.PartPacificCodes
+                .Where(p => p.StoreUserId.Equals(storeUserId))
+                .ToList<PartPacificCode>();
+
+            return lstPPC;
+        }
     }
 
 }

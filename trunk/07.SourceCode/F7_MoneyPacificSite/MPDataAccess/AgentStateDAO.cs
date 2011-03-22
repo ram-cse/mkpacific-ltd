@@ -25,6 +25,7 @@ namespace MPDataAccess
         public static bool Update(AgentState entity)
         {
             throw new Exception("chua lam!...");
+
         }
 
         public static bool Remove(int id)

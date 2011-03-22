@@ -11,26 +11,28 @@
 namespace MoneyPacificBlackBox.DTO
 {
     using System.Runtime.Serialization;
-
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "PacificCodeViewModel", Namespace = "http://schemas.datacontract.org/2004/07/MoneyPacificBlackBox.DTO")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PacificCodeViewModel", Namespace="http://schemas.datacontract.org/2004/07/MoneyPacificBlackBox.DTO")]
     public partial class PacificCodeViewModel : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-
+        
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-
+        
         private int ActualAmountField;
-
+        
         private string CodeNumberField;
-
+        
+        private System.DateTime CreateDateField;
+        
         private System.DateTime ExpireDateField;
-
+        
         private int InitialAmountField;
-
+        
         private string PartCodeNumberField;
-
+        
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -42,7 +44,7 @@ namespace MoneyPacificBlackBox.DTO
                 this.extensionDataField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ActualAmount
         {
@@ -55,7 +57,7 @@ namespace MoneyPacificBlackBox.DTO
                 this.ActualAmountField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CodeNumber
         {
@@ -68,7 +70,20 @@ namespace MoneyPacificBlackBox.DTO
                 this.CodeNumberField = value;
             }
         }
-
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateDate
+        {
+            get
+            {
+                return this.CreateDateField;
+            }
+            set
+            {
+                this.CreateDateField = value;
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime ExpireDate
         {
@@ -81,7 +96,7 @@ namespace MoneyPacificBlackBox.DTO
                 this.ExpireDateField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int InitialAmount
         {
@@ -94,7 +109,7 @@ namespace MoneyPacificBlackBox.DTO
                 this.InitialAmountField = value;
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string PartCodeNumber
         {
@@ -112,38 +127,47 @@ namespace MoneyPacificBlackBox.DTO
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IBlackBoxService")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName="IBlackBoxService")]
 public interface IBlackBoxService
 {
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/NewPacificCode", ReplyAction = "http://tempuri.org/IBlackBoxService/NewPacificCodeResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/NewPacificCode", ReplyAction="http://tempuri.org/IBlackBoxService/NewPacificCodeResponse")]
     string NewPacificCode(int amount);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/IsPossible", ReplyAction = "http://tempuri.org/IBlackBoxService/IsPossibleResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/IsPossible", ReplyAction="http://tempuri.org/IBlackBoxService/IsPossibleResponse")]
     bool IsPossible(string codeNumber);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/IsExist", ReplyAction = "http://tempuri.org/IBlackBoxService/IsExistResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/IsExist", ReplyAction="http://tempuri.org/IBlackBoxService/IsExistResponse")]
     bool IsExist(string codeNumber);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/GetPacificCodeViewModel", ReplyAction = "http://tempuri.org/IBlackBoxService/GetPacificCodeViewModelResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/IsExistPart", ReplyAction="http://tempuri.org/IBlackBoxService/IsExistPartResponse")]
+    bool IsExistPart(string partCodeNumber);
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/GetPacificCodeViewModel", ReplyAction="http://tempuri.org/IBlackBoxService/GetPacificCodeViewModelResponse")]
     MoneyPacificBlackBox.DTO.PacificCodeViewModel GetPacificCodeViewModel(string partCodeNumber);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/ChangeCode", ReplyAction = "http://tempuri.org/IBlackBoxService/ChangeCodeResponse")]
-    string ChangeCode(int codeNumber);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/GetValue", ReplyAction = "http://tempuri.org/IBlackBoxService/GetValueResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/GetArrayPacificCodeViewModel", ReplyAction="http://tempuri.org/IBlackBoxService/GetArrayPacificCodeViewModelResponse")]
+    MoneyPacificBlackBox.DTO.PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber);
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/ChangeCode", ReplyAction="http://tempuri.org/IBlackBoxService/ChangeCodeResponse")]
+    string ChangeCode(string codeNumber);
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/GetValue", ReplyAction="http://tempuri.org/IBlackBoxService/GetValueResponse")]
     int GetValue(string partCodeNumber);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/GetExpireDate", ReplyAction = "http://tempuri.org/IBlackBoxService/GetExpireDateResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/GetInitialAmount", ReplyAction="http://tempuri.org/IBlackBoxService/GetInitialAmountResponse")]
+    double GetInitialAmount(string partCodeNumber);
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/GetExpireDate", ReplyAction="http://tempuri.org/IBlackBoxService/GetExpireDateResponse")]
     System.DateTime GetExpireDate(string partCodeNumber);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/MakePayment", ReplyAction = "http://tempuri.org/IBlackBoxService/MakePaymentResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/MakePayment", ReplyAction="http://tempuri.org/IBlackBoxService/MakePaymentResponse")]
     string MakePayment(string codeNumber, int amount);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/MakePaymentTo", ReplyAction = "http://tempuri.org/IBlackBoxService/MakePaymentToResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/MakePaymentTo", ReplyAction="http://tempuri.org/IBlackBoxService/MakePaymentToResponse")]
     bool MakePaymentTo(string codeNumber, string partCodeNumber, int amount);
-
-    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IBlackBoxService/Merge", ReplyAction = "http://tempuri.org/IBlackBoxService/MergeResponse")]
+    
+    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlackBoxService/Merge", ReplyAction="http://tempuri.org/IBlackBoxService/MergeResponse")]
     string Merge(string[] arrCodeNumber);
 }
 
@@ -156,76 +180,91 @@ public interface IBlackBoxServiceChannel : IBlackBoxService, System.ServiceModel
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
 public partial class BlackBoxServiceClient : System.ServiceModel.ClientBase<IBlackBoxService>, IBlackBoxService
 {
-
+    
     public BlackBoxServiceClient()
     {
     }
-
-    public BlackBoxServiceClient(string endpointConfigurationName) :
-        base(endpointConfigurationName)
+    
+    public BlackBoxServiceClient(string endpointConfigurationName) : 
+            base(endpointConfigurationName)
     {
     }
-
-    public BlackBoxServiceClient(string endpointConfigurationName, string remoteAddress) :
-        base(endpointConfigurationName, remoteAddress)
+    
+    public BlackBoxServiceClient(string endpointConfigurationName, string remoteAddress) : 
+            base(endpointConfigurationName, remoteAddress)
     {
     }
-
-    public BlackBoxServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
-        base(endpointConfigurationName, remoteAddress)
+    
+    public BlackBoxServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+            base(endpointConfigurationName, remoteAddress)
     {
     }
-
-    public BlackBoxServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
-        base(binding, remoteAddress)
+    
+    public BlackBoxServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+            base(binding, remoteAddress)
     {
     }
-
+    
     public string NewPacificCode(int amount)
     {
         return base.Channel.NewPacificCode(amount);
     }
-
+    
     public bool IsPossible(string codeNumber)
     {
         return base.Channel.IsPossible(codeNumber);
     }
-
+    
     public bool IsExist(string codeNumber)
     {
         return base.Channel.IsExist(codeNumber);
     }
-
+    
+    public bool IsExistPart(string partCodeNumber)
+    {
+        return base.Channel.IsExistPart(partCodeNumber);
+    }
+    
     public MoneyPacificBlackBox.DTO.PacificCodeViewModel GetPacificCodeViewModel(string partCodeNumber)
     {
         return base.Channel.GetPacificCodeViewModel(partCodeNumber);
     }
-
-    public string ChangeCode(int codeNumber)
+    
+    public MoneyPacificBlackBox.DTO.PacificCodeViewModel[] GetArrayPacificCodeViewModel(string[] arrPartCodeNumber)
+    {
+        return base.Channel.GetArrayPacificCodeViewModel(arrPartCodeNumber);
+    }
+    
+    public string ChangeCode(string codeNumber)
     {
         return base.Channel.ChangeCode(codeNumber);
     }
-
+    
     public int GetValue(string partCodeNumber)
     {
         return base.Channel.GetValue(partCodeNumber);
     }
-
+    
+    public double GetInitialAmount(string partCodeNumber)
+    {
+        return base.Channel.GetInitialAmount(partCodeNumber);
+    }
+    
     public System.DateTime GetExpireDate(string partCodeNumber)
     {
         return base.Channel.GetExpireDate(partCodeNumber);
     }
-
+    
     public string MakePayment(string codeNumber, int amount)
     {
         return base.Channel.MakePayment(codeNumber, amount);
     }
-
+    
     public bool MakePaymentTo(string codeNumber, string partCodeNumber, int amount)
     {
         return base.Channel.MakePaymentTo(codeNumber, partCodeNumber, amount);
     }
-
+    
     public string Merge(string[] arrCodeNumber)
     {
         return base.Channel.Merge(arrCodeNumber);

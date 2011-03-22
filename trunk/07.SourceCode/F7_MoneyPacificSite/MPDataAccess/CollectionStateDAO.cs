@@ -9,7 +9,11 @@ namespace MPDataAccess
     {
         public static CollectionState GetObject(int id)
         {
-            throw new Exception("chua lam!...");
+            MoneyPacificDataContext mpdb = new MoneyPacificDataContext();
+            CollectionState existState = mpdb.CollectionStates
+                .Where(c => c.Id == id)
+                .SingleOrDefault();
+            return existState;
         }
 
         public static CollectionState GetObject(string nameState)

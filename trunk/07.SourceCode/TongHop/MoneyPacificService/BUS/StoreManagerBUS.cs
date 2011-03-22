@@ -8,6 +8,19 @@ namespace MoneyPacificService.BUS
 {
     public class StoreManagerBUS
     {
+        internal static int GetTotalAmount(Guid userId)
+        {
+            List<StoreUser> lstStoreUser = StoreUserDAO.GetList(userId);
+
+            int iTotalAmount = 0;
+            foreach (StoreUser su in lstStoreUser)
+            {
+                iTotalAmount += StoreUserBUS.GetTotalAmount(su.UserId);
+            }
+
+            return iTotalAmount;
+        }
+
         internal static bool Validate(string phoneNumber, string pinstore)
         {
             bool bResult = false;
@@ -61,5 +74,21 @@ namespace MoneyPacificService.BUS
             return bResult;
 
         }
+        
+        internal static int GetTotalCollectedAmount(Guid managerId)
+        {
+            int statusId = CollectionStateBUS.GetId("Collected");
+            List<Collection> lstCollection = CollectionDAO.GetList(managerId, statusId);
+
+            int iResult = 0;
+
+            foreach (Collection cl in lstCollection)
+            {
+                //if (cl.Amount == null) cl.Amount = 0;
+                iResult += (cl.Amount==null?0:(int)cl.Amount);
+            }
+
+            return iResult;
+        }
     }
-}
+}   

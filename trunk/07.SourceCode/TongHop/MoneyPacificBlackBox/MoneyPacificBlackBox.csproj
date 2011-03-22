@@ -109,6 +109,7 @@
   <ItemGroup>
     <None Include="DAO\MoneyPacificBlackBox.dbml.layout">
       <DependentUpon>MoneyPacificBlackBox.dbml</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

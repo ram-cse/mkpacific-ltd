@@ -50,5 +50,40 @@ namespace MoneyPacificService.BUS
         {
             return StoreUserDAO.GetObject(phoneNumber);
         }
+
+        internal static int GetTotalAmount(Guid userId)
+        {
+            List<PartPacificCode> lstPPC = PartPacificCodeDAO.GetList(userId);
+            
+            int iAmount = 0;
+            BlackBoxServiceClient clientService = new BlackBoxServiceClient();
+
+            foreach (PartPacificCode ppc in lstPPC)
+            {
+                iAmount += clientService.GetValue(ppc.PartCodeNumber);
+            }
+
+            return iAmount;
+        }
+
+        internal static bool Validate(string phoneNumber, string pinStore)
+        {
+            // TODO:
+            // Chưa kiểm tra cả ENABLE & STATUS
+
+            bool bResult = true;
+            if (StoreUserDAO.IsExist(phoneNumber))
+            {
+                StoreUser existStore = StoreUserDAO.GetObject(phoneNumber);
+                bResult = bResult & (existStore.PINStore == pinStore);
+                bResult = bResult & (bool)existStore.Enable;
+
+                return bResult; 
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

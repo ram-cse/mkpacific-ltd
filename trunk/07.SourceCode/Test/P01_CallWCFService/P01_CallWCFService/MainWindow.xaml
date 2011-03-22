@@ -1,7 +1,7 @@
 ﻿<Window x:Class="P01_CallWCFService.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Test Service" Height="497" Width="728" Loaded="Window_Loaded" Icon="/P01_CallWCFService;component/acrobat.ico" Unloaded="Window_Unloaded" Closed="Window_Closed">
+        Title="Test Service" Height="497" Width="728" Loaded="Window_Loaded" Icon="/P01_CallWCFService;component/acrobat.ico" Unloaded="Window_Unloaded" Closed="Window_Closed" ShowInTaskbar="True">
     <Grid>
         <TextBox Height="24" Margin="12,128,93,0" Name="txtContent" VerticalAlignment="Top" Foreground="#FF2C70E4" Text="0932130483*12345*500000*0939146267*500000" />
         <Button Content="Send" Height="23" Margin="0,129,12,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Name="btnSend" Foreground="#FF2C70E4" Click="btnSend_Click" />

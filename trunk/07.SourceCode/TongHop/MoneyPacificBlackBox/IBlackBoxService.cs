@@ -39,6 +39,9 @@ namespace MoneyPacificBlackBox
         int GetValue(string partCodeNumber);
 
         [OperationContract]
+        double GetInitialAmount(string partCodeNumber);
+
+        [OperationContract]
         DateTime GetExpireDate(string partCodeNumber);
 
         [OperationContract]
