@@ -52,7 +52,9 @@ namespace MoneyPacificBlackBox
 
         [OperationContract]
         string Merge(string[] arrCodeNumber);
+        
+       
     }
 
-
+   
 }
