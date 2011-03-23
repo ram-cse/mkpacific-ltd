@@ -36,7 +36,7 @@ namespace MoneyPacificBlackBox.DAO
 
         internal static List<Transaction> GetList(bool condition)
         {
-            // TODO:
+            // TODO:           
             throw new NotImplementedException();
         }
 
