@@ -19,7 +19,7 @@ namespace MoneyPacificService.BUS
             BlackBoxServiceClient clientService = new BlackBoxServiceClient();
             PartPacificCode newPartPacificCode = new PartPacificCode();
   
-            string codeNumber = clientService.NewPacificCode(amountBuy);
+            string codeNumber = clientService.NewPacificCode(amountBuy);    
             
             newPartPacificCode.PartCodeNumber = GetPartCodeNumber(codeNumber);
             newPartPacificCode.StoreUserId = storeGuid;
